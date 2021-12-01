@@ -40,7 +40,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 <div align="center">
   <br>
-  <img alt="R.GISPython.BasicScript.TcGiangotti" src="https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/TcGiangotti.png" width="100px">
+  <img alt="R.GISPython.BasicScript.TcGiangotti" src="https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/TcGiangotti.png" width="200px">
 </div>
 
 
