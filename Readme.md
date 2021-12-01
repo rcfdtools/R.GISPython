@@ -51,6 +51,10 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 
 Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM  y los archivos de formas vectoriales han sido descargados del IGAC y de otras fuentes alternas.
 
+### Keywords
+
+Esri ArcGIS ModelBuilder, Esri ArcGIS ArcToolBox, QGIS Graphical Modeler.
+
 ### Referencias
 * https://en.wikipedia.org/wiki/Interpreted_language
 * https://docs.qgis.org/testing/en/docs/user_manual/plugins/python_console.html
