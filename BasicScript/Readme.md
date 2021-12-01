@@ -75,9 +75,8 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 
 ## Ilustraciones
 
-![R.GISPython.BasicScript.Screenshot1](https://github.com/rcfdtools/R.HydroTools/blob/main/NombreHerramienta/Screenshot/Screenshot1.png)
-![R.GISPython.BasicScript.Screenshot2](https://github.com/rcfdtools/R.HydroTools/blob/main/NombreHerramienta/Screenshot/Screenshot2.png)
-![R.GISPython.BasicScript.Screenshot3](https://github.com/rcfdtools/R.HydroTools/blob/main/NombreHerramienta/Screenshot/Screenshot3.png)
+![R.GISPython.BasicScript.Screenshot1](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python27PyCharm.png)
+Ejecución en PyCharm usando Python 2.7.5. En esta versión podrá notar diferencias en la impresión concatenada usando comas.
 
 
 ## Referencias
