@@ -20,10 +20,10 @@ S = 0.144015	#Pendiente media cauce principal, m/m
 
 #Cálculos e impresión
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
-print ('\n[Parámetros de entrada]')
-print ('Área cuenca, km²: ' + str(A))
-print ('Longitud cauce principal, km: ' + str(L))
-print ('Pendiente media cauce principal, m/m: ' + str(S))
-print ('\n[Resultados]')
+print ('\nParámetros de entrada')
+print ('\tÁrea cuenca, km²: ' + str(A))
+print ('\tLongitud cauce principal, km: ' + str(L))
+print ('\tPendiente media cauce principal, m/m: ' + str(S))
+print ('\nResultados')
 print ('Tc(min):',TcGiandotti*60) #Impresión en pantalla usando coma, no compatible con Python 2. Coma agrega espacio.
 print ('Tc(min): ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, compatible con cualquier versión de Python. + requiere de ingreso manual de espacio.

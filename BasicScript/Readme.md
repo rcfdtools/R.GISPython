@@ -80,6 +80,7 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 ## Referencias
 
 * http://docs.python.org/2.7/tutorial/
+* https://www.delftstack.com/howto/python/python-print-tab/
 
 
 ## Colaboradores
