@@ -2,7 +2,7 @@
 #Python - Script básico
 #Cálculo del tiempo de concentración de una cuenca hidrográfica usando la expresión de Giandotti
 #Créditos: r.cfdtools@gmail.com
-#Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.HydroTools/wiki/License
+#Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License
 #Ejecución: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.7.7 (instalación independiente)
 
 #Variables
