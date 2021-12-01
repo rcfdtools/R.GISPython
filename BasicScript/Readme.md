@@ -44,7 +44,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 </div>
 
 
-### Parámetros de entrada
+### Parámetros
 * tc, tiempo de concentración en horas.
 * A, área de la cuenca = 9.1348 km².
 * L, longitud del cauce principal = 4.6106 km.
