@@ -16,7 +16,7 @@ En QGIS (p.e, 3.10), las versiones integradas de Python son la 2.7.x y la 3.7.x,
 Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py, y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de los scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS for Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
 
 
-## Requerimientos
+### Requerimientos
 
 * ESRI ArcGIS for Desktop 10+
 * ESRI ArcGIS Pro 2.8+
@@ -29,7 +29,7 @@ Un script en Python, es un archivo que contiene diferentes instrucciones que pue
 * PyCharm for Anaconda (opcional)
 
 
-## Referencias
+### Referencias
 * https://en.wikipedia.org/wiki/Interpreted_language
 * https://docs.qgis.org/testing/en/docs/user_manual/plugins/python_console.html
 * http://docs.python.org/2.7/tutorial/
