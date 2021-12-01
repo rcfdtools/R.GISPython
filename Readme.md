@@ -34,18 +34,18 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 * Requerimientos específicos adicionales son indicados en cada script.
 
 ### Tema 1. Fundamentos generales de Python
-Actividad | Descripción
---- | ---
-| Identificar y ejecutar cualquier versión de Python instalada | En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar pruebas de ejecución de comandos por consola o a través de scripts.
-| Definir la versión por defecto en el OS y configurar PyCharm | Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete desde cualquier directorio de su sistema operativo sin tener que ingresar la ruta completa del ejecutable Python.exe.
-| Consultar módulos disponibles, palabras reservadas y bloques de ayuda | Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario.
-| Usar Python como una calculadora | Desde la consola de Python, es posible realizar operaciones matemáticas simples o complejas, definir variables, listas, tuplas, funciones, llamar módulos y en general utilizar cualquier elemento integrado al lenguaje.
-| Script básico | Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py, y son usados para ejecutar o automatizar tareas repetitivas.
-| Creación de scripts interactivos | Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando input().
-| Creación de scripts interactivos e iterativos con funciones | Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como while, for y range.
-| Instalación de librerías - Gráficas usando matplotlib | Complementariamente a las librerías obtenidas con la instalación de Python, es posible adicionar nuevas librerías que posteriormente podrán ser invocadas desde la consola o desde scripts.
-| Control de excepción de errores | En el evento de que el usuario ingrese valores nulos o fuera de rango, el código deberá ser capaz de controlar estas excepciones para no devolver al usuario valores errados. Algunos controles de ejecución pueden ser implementados usando condicionales para la validación de los datos ingresados, o a través de los controles de ejecución propios de Python.
-| Script con archivo log de ejecución y resultados | Al ejecutar scripts, los resultados son mostrados en la consola del entorno de desarrollo o en el Command del sistema operativo. Los resultados también pueden ser volcados en un archivo de registro que puede ser creado y actualizado directamente desde el código. Para este procedimiento utilizaremos la instrucción .write().
+Actividad | Descripción |
+--- | --- |
+| Identificar y ejecutar cualquier versión de Python instalada | En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar pruebas de ejecución de comandos por consola o a través de scripts. |
+| Definir la versión por defecto en el OS y configurar PyCharm | Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete desde cualquier directorio de su sistema operativo sin tener que ingresar la ruta completa del ejecutable Python.exe. |
+| Consultar módulos disponibles, palabras reservadas y bloques de ayuda | Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario. |
+| Usar Python como una calculadora | Desde la consola de Python, es posible realizar operaciones matemáticas simples o complejas, definir variables, listas, tuplas, funciones, llamar módulos y en general utilizar cualquier elemento integrado al lenguaje. |
+| Script básico | Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py, y son usados para ejecutar o automatizar tareas repetitivas. |
+| Creación de scripts interactivos | Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando input(). |
+| Creación de scripts interactivos e iterativos con funciones | Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como while, for y range. |
+| Instalación de librerías - Gráficas usando matplotlib | Complementariamente a las librerías obtenidas con la instalación de Python, es posible adicionar nuevas librerías que posteriormente podrán ser invocadas desde la consola o desde scripts. |
+| Control de excepción de errores | En el evento de que el usuario ingrese valores nulos o fuera de rango, el código deberá ser capaz de controlar estas excepciones para no devolver al usuario valores errados. Algunos controles de ejecución pueden ser implementados usando condicionales para la validación de los datos ingresados, o a través de los controles de ejecución propios de Python. |
+| Script con archivo log de ejecución y resultados | Al ejecutar scripts, los resultados son mostrados en la consola del entorno de desarrollo o en el Command del sistema operativo. Los resultados también pueden ser volcados en un archivo de registro que puede ser creado y actualizado directamente desde el código. Para este procedimiento utilizaremos la instrucción .write(). |
 
 
 
