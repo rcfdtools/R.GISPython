@@ -34,6 +34,8 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 * Requerimientos específicos adicionales son indicados en script.
 
 
+Nota: los datos hidroclimatológicos suministrados corresponden a información tomada y procesada a partir de datos del IDEAM  y los archivos de formas vectoriales han sido descargados del IGAC y de otras fuentes alternas.
+
 ### Referencias
 * https://en.wikipedia.org/wiki/Interpreted_language
 * https://docs.qgis.org/testing/en/docs/user_manual/plugins/python_console.html
