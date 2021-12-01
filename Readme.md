@@ -1,8 +1,7 @@
 <div align="center">
   <br>
-  <h2>Algoritmos y Programación GIS
-    Automatización de procesos geográficos en Esri ArcGIS y QGIS con Python</h2>
-  <strong>by r.cfdtools@gmail.com</strong>
+  <h2>Algoritmos y Programación GIS con Python</h2>
+  <strong>by r.cfdtools@gmail.com</strong> /n
 </div>
 
 
