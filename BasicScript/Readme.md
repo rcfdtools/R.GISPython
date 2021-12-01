@@ -38,7 +38,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentración tc, es el tiempo que tarda una gota de agua que cae en una cuenca desde el punto más lejano hasta su punto de salida. Para este ejemplo calcularemos el tiempo de concentración de una cuenca usando la expresión de Giandotti.
 
-<div align="center">
+<div align="left">
   <br>
   <img alt="R.GISPython.BasicScript.TcGiangotti" src="https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/TcGiangotti.png" width="200px">
 </div>
