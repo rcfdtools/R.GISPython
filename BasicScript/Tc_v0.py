@@ -1,9 +1,17 @@
 #-*- coding: UTF-8 -*-
-#Python - Script básico
-#Cálculo del tiempo de concentración de una cuenca hidrográfica usando la expresión de Giandotti
-#Créditos: r.cfdtools@gmail.com
-#Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License
 #Ejecución: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.7.7 (instalación independiente)
+
+#Librerías
+import sys
+
+#Nombre
+print ('------------------------')
+print ('Script básico en Python')
+print ('------------------------')
+print ('Cálculo del tiempo de concentración de una cuenca hidrográfica utilizando la expresión de Giandotti.')
+print ('Python versión: ' + str(sys.version))
+print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
+print ('Créditos: r.cfdtools@gmail.com')
 
 #Variables
 A = 9.1348		#Área cuenca, km²
@@ -12,6 +20,10 @@ S = 0.144015	#Pendiente media cauce principal, m/m
 
 #Cálculos e impresión
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
-print ("Scrit básico en Python.\nCálculo del tiempo de concentración de una cuenca hidrográfica utilizando la expresión de Giandotti.\n")
-print("Tc(min):",TcGiandotti*60) #Impresión en pantalla usando coma
-print("Tc(min): " + str(TcGiandotti*60)) #Impresión en pantalla usando +
+print ('\n[Parámetros de entrada]')
+print ('Área cuenca, km²: ' + str(A))
+print ('Longitud cauce principal, km: ' + str(L))
+print ('Pendiente media cauce principal, m/m: ' + str(S))
+print ('\n[Resultados]')
+print ('Tc(min):',TcGiandotti*60) #Impresión en pantalla usando coma, no compatible con Python 2. Coma agrega espacio.
+print ('Tc(min): ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, compatible con cualquier versión de Python. + requiere de ingreso manual de espacio.
