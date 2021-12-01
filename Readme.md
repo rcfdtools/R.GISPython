@@ -1,7 +1,8 @@
 <div align="center">
   <br>
   <h2>Algoritmos y Programación GIS con Python</h2>
-  <strong>by r.cfdtools@gmail.com</strong> &nbsp &nbsp
+  <strong>by r.cfdtools@gmail.com</strong>
+  <br><br>
 </div>
 
 
