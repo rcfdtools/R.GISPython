@@ -33,6 +33,13 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 * PyCharm for Anaconda (opcional)
 * Requerimientos específicos adicionales son indicados en script.
 
+## Tema 1. Fundamentos generales de Python
+Actividad | Descripción
+--- | ---
+| Identificar y ejecutar cualquier versión de Python instalada | En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar pruebas de ejecución de comandos por consola o a través de scripts.
+| Definir la versión por defecto en el OS y configurar PyCharm | Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete desde cualquier directorio de su sistema operativo sin tener que ingresar la ruta completa del ejecutable Python.exe.
+
+
 
 Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM  y los archivos de formas vectoriales han sido descargados del IGAC y de otras fuentes alternas.
 
