@@ -54,8 +54,3 @@ Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los
 ### Keywords
 
 Esri ArcGIS ModelBuilder, Esri ArcGIS ArcToolBox, QGIS Graphical Modeler.
-
-### Referencias
-* https://en.wikipedia.org/wiki/Interpreted_language
-* https://docs.qgis.org/testing/en/docs/user_manual/plugins/python_console.html
-* http://docs.python.org/2.7/tutorial/
