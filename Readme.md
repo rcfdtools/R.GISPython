@@ -11,6 +11,8 @@ Python es un potente lenguaje de programación interpretado con licencia de cód
 
 En ArcGIS for Desktop (p.e, 10.2.2), la versión integrada de Python es 2.7.5 y por defecto se instala en Microsoft Windows en el directorio C:\Python27.
 
+En ArcGIS Pro (p.e, 2.9.0), la versión integrada de Python es 3.7.11, por defecto se instala en c:\Program Files\ArcGIS\Pro\bin\Python\ y por clonación en el directorio de usuario (p.e, Admin) en C:\Users\Admin\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone.
+
 En QGIS (p.e, 3.10), las versiones integradas de Python son la 2.7.x y la 3.7.x, por defecto se instalan en Microsoft Windows en el directorio de archivos de programa localizado en C:\Program Files\QGIS 3.10\apps cuando se trata de versiones de 64 bits.
 
 Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py, y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de los scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS for Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
@@ -19,13 +21,13 @@ Un script en Python, es un archivo que contiene diferentes instrucciones que pue
 ### Requerimientos
 
 * ESRI ArcGIS for Desktop 10+
-* ESRI ArcGIS Pro 2.8+
+* ESRI ArcGIS Pro 2.9+
 * QGIS 2.18.28
 * QGIS 3.12+
 * Python 2.7.17 standalone
 * Python 3.7.7 standalone
 * Anaconda (opcional)
-* PyCharm Community
+* PyCharm Community https://www.jetbrains.com/pycharm/download/#section=windows
 * PyCharm for Anaconda (opcional)
 
 
