@@ -5,6 +5,7 @@
 </div>
 
 
+
 Python es un potente lenguaje de programación interpretado con licencia de código abierto que soporta orientación a objetos y es comúnmente utilizado para la automatización de tareas en herramientas geográficas como ArcGIS Desktop y QGIS. Las herramientas que hacen parte de Python están disponibles en versiones de 32 y 64 bits, existiendo una limitante de hasta máximo 2GB en el tamaño de los archivos que pueden ser cargados en memoria para sistemas de 32 bits. Para el procesamiento profesional de grandes volúmenes de datos se recomienda que el sistema operativo, la aplicación GIS y Python sean de 64 bits. Para el desarrollo de los ejercicios de este curso se puede utilizar cualquier versión.
 
 En ArcGIS Desktop 10.2.2, la versión integrada de Python es 2.7.5 y por defecto se instala en Microsoft Windows en el directorio C:\Python27.
