@@ -31,7 +31,7 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 * Anaconda (opcional)
 * PyCharm Community https://www.jetbrains.com/pycharm/download/#section=windows
 * PyCharm for Anaconda (opcional)
-* Requerimientos específicos adicionales son indicados en script.
+* Requerimientos específicos adicionales son indicados en cada script.
 
 ### Tema 1. Fundamentos generales de Python
 Actividad | Descripción
