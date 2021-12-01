@@ -10,7 +10,7 @@ A = 9.1348		#Área cuenca, km²
 L = 4.6106		#Longitud cauce principal, km
 S = 0.144015	#Pendiente media cauce principal, m/m
 
-#Cálculos
+#Cálculos e impresión
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
 print ("Scrit básico en Python.\nCálculo del tiempo de concentración de una cuenca hidrográfica utilizando la expresión de Giandotti.\n")
 print("Tc(min):",TcGiandotti*60) #Impresión en pantalla usando coma
