@@ -5,8 +5,10 @@ Un script en Python, es un archivo que contiene diferentes instrucciones que pue
 
 ### Objetivos
 
-* En PyCharm, ejecutar el script usando la versión de Python 2.7.5.
-* En PyCharm, ejecutar el script usando la versión de Python 3.10.0.
+* En PyCharm, ejecutar el script usando la versión de Python 2.7.5 de ArcGIS for Desktop 10.2.2.
+* En PyCharm, ejecutar el script usando la versión de Python 3.10.0 Standalone.
+* Ejecutar el script desde el IDLE de ArcGIS for Desktop, Python Windows y Python Notebook en ArcGIS Pro.
+* Ejecutar el script desde QGIS.
 * Ejecutar el script desde la consola del sistema operativo o CMD.
 * Entender las diferencias en impresión de pantalla usando la versión 2 y 3 de Python.
 
@@ -14,11 +16,12 @@ Un script en Python, es un archivo que contiene diferentes instrucciones que pue
 ### Requerimientos
 
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2. Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
-* Python 3.10.0 como instalación independiente.
+* ArcGIS Pro 2.9.
+* Python 3.10.0 como instalación independiente o standalone.
 * PyCharm 2021.3 for Anaconda. 
 
 
-### Editores
+### Editores complementarios
 
 Para el desarrollo de este ejercicio podrá utilizar diferentes editores y comprobar su funcionamiento, por ejemplo:
 
@@ -42,10 +45,12 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 
 #### Parámetros
+
 * tc, tiempo de concentración en horas.
 * A, área de la cuenca = 9.1348 km².
 * L, longitud del cauce principal = 4.6106 km.
 * S, pendiente media del cauce principal = 0.144015 m/m
+
 
 ### Script
 
@@ -94,7 +99,24 @@ print ('\tTc(min): ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, co
 | str()                   | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +                                                                                                                                                                                                                                                                                                                                           |
 
 
-Para ejecutar o modificar desde el IDLE de Python de ArcGIS for Desktop, en el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.
+### Ejecución desde Pycharm
+
+Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión podrá notar diferencias en la impresión concatenada usando comas o +.
+![R.GISPython.BasicScript.Python2.7.5PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5PyCharm2021.3.png)
+
+Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se concatenó con comas o +.
+![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
+
+
+### Ejecución usando el IDLE de Python de ArcGIS for Desktop
+
+En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.
+
+Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktopIDLE](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)
+
+
+### Ejecución desde el Command o CMD de Microsoft Windows
 
 Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usando cualquier versión de Python instalada, usar el comando py, la versión requerida (por ejemplo, -3.10) y la ruta completa del archivo .py.
 
@@ -102,7 +124,20 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 
 ```C:\py -3.10 D:\R.GISPython\BasicScript\Tc_v0.py```
 
-Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y el archivo creado. Observará que los resultados de los dos print son idénticos debido a que se ejecutó con la versión 3.7.0.
+Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+
+Ejecución en consola CMD Python 3.10.0 Standalone.
+![R.GISPython.BasicScript.Python3.10.0StandaloneCMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
+
+
+### Ejecución desde la consola Python de QGIS
+
+Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y el archivo creado. Observará que los resultados de los dos print son idénticos debido a que se ejecutó con la versión 3.9.5.
+
+Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
+![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.9.5QGIS3.22.1.png)
+
 
 ### Ejecución usando ArcGIS Pro
 
@@ -125,26 +160,6 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 ![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebook](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebook.png)
 
 ![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebookCod](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebookCode.png)
-
-### Ilustraciones
-
-Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión podrá notar diferencias en la impresión concatenada usando comas o +.
-![R.GISPython.BasicScript.Python2.7.5PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5PyCharm2021.3.png)
-
-Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se concatenó con comas o +.
-![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
-
-Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
-
-Ejecución en consola CMD Python 3.10.0 Standalone.
-![R.GISPython.BasicScript.Python3.10.0StandaloneCMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
-
-Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktopIDLE](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)
-
-Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
-![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.9.5QGIS3.22.1.png)
 
 
 ### Referencias
