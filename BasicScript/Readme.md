@@ -33,7 +33,7 @@ Para el desarrollo de este ejercicio podrá utilizar diferentes editores y compr
 Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\BasicScript\ 
 
 
-## Caso de estudio
+### Caso de estudio
 
 Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentración tc, es el tiempo que tarda una gota de agua que cae en una cuenca desde el punto más lejano hasta su punto de salida. Para este ejemplo utilizaremos la expresión de Giandotti.
 
@@ -41,7 +41,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 <img alt="R.GISPython.BasicScript.TcGiangotti" src="https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/TcGiangotti.png" width="240px">
 
 
-### Parámetros
+#### Parámetros
 * tc, tiempo de concentración en horas.
 * A, área de la cuenca = 9.1348 km².
 * L, longitud del cauce principal = 4.6106 km.
@@ -83,15 +83,15 @@ print ('\tTc(min):', TcGiandotti*60) #Impresión en pantalla usando coma, no com
 print ('\tTc(min): ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, compatible con cualquier versión de Python. + requiere de ingreso manual de espacio.
 ```
 
-## Descripción instrucciones y comandos empleados
+### Descripción instrucciones y comandos empleados
 
-| Instrucción  | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| #            | Comentario de una línea.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| """<br/>"""  | 3 comillas simples o dobles permiten definir el inicio y fin de comentarios en múltiples líneas.                                                                                                                                                                                                                                                                                                                                                            |
-| #-*- coding: UTF-8 -*- | Permite definir la codificación de texto utilizada en el script.                                                                                                                                                                                                                                                                                                                                                                                            |
-| print | Permite realizar la impresión de un resultado en la consola. En las versiones de Python 2.x, todo aquello que aparezca después del print será impreso en pantalla, incluso los paréntesis sí existen concatenaciones con comas. En las versiones de Python 3.x, solo se imprimirá aquello que esté entre paréntesis. Nótese que es posible realizar cálculos adicionales en la impresión (TcGiandotti*60) e incluso concatenar resultados usando coma o +. |
-| str() | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +                                                                                                                                                                                                                                                                                                                                           |
+| Instrucción             | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| #                       | Comentario de una línea.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| """<br/>"""             | 3 comillas simples o dobles permiten definir el inicio y fin de comentarios en múltiples líneas.                                                                                                                                                                                                                                                                                                                                                            |
+| # -*- coding: UTF-8 -*- | Permite definir la codificación de texto utilizada en el script.                                                                                                                                                                                                                                                                                                                                                                                            |
+| print                   | Permite realizar la impresión de un resultado en la consola. En las versiones de Python 2.x, todo aquello que aparezca después del print será impreso en pantalla, incluso los paréntesis sí existen concatenaciones con comas. En las versiones de Python 3.x, solo se imprimirá aquello que esté entre paréntesis. Nótese que es posible realizar cálculos adicionales en la impresión (TcGiandotti*60) e incluso concatenar resultados usando coma o +. |
+| str()                   | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +                                                                                                                                                                                                                                                                                                                                           |
 
 
 Para ejecutar o modificar desde el IDLE de Python de ArcGIS for Desktop, en el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.
@@ -104,8 +104,27 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 
 Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y el archivo creado. Observará que los resultados de los dos print son idénticos debido a que se ejecutó con la versión 3.7.0.
 
+### Ejecución usando ArcGIS Pro
 
-## Ilustraciones
+Desde el Command o CMD de Microsoft Windows:
+
+```c:\Progra~1\ArcGIS\Pro\bin\Python\scripts\propy.bat D:\R.GISPython\BasicScript\Tc_v0.py```
+
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9CMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9CMD.png)
+
+Desde Python Window dentro de ArcGIS Pro:
+
+En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python Window, luego dar clic derecho en la línea de entrada de comando, seleccionar la opción _Load Code_ y seleccionar el script. 
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
+
+Desde Jupiter dentro de ArcGIS Pro:
+En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando _%run -i_ y la ruta del script. 
+
+```%run -i D:\R.GISPython\BasicScript\Tc_v0.py```
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebook](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebook.png)
+
+
+### Ilustraciones
 
 Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión podrá notar diferencias en la impresión concatenada usando comas o +.
 ![R.GISPython.BasicScript.Python2.7.5PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5PyCharm2021.3.png)
@@ -126,32 +145,34 @@ Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
 ![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.9.5QGIS3.22.1.png)
 
 
-## Referencias
+### Referencias
 
 * http://docs.python.org/2.7/tutorial/
 * https://www.delftstack.com/howto/python/python-print-tab/
+* https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/using-conda-with-arcgis-pro.htm
+* https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/python-window.htm
 
 
-## Colaboradores
+### Colaboradores
 
 * Creado por r.cfdtools@gmail.com
 
 
-## Compatibilidad
+### Compatibilidad
 
 * Compatible con cualquier versión de Python.
 
 
-## Keywords
+### Keywords
 Concentration time. Giandotti. Subbasin. Hydrology.
 
 
-## Control de versiones
+### Control de versiones
 
 | Versión    | Descripción                                                                                             |
 |------------|---------------------------------------------------------------------------------------------------------|
 | v.20211201 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.| 
 
 
-## Licencia, cláusulas y condiciones de uso
+### Licencia, cláusulas y condiciones de uso
 https://github.com/rcfdtools/R.GISPython/wiki/License
