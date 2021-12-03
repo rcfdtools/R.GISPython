@@ -38,7 +38,7 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o códi
 
 ### Tema 1. Fundamentos generales de Python
 
-Este tema presenta fundamentos básicos necesarios para la comprensión de la codificación usando el lenguaje Python.  
+Este tema presenta fundamentos básicos necesarios para la comprensión de codificación de scripts usando el lenguaje Python.  
 
 | Actividad                                                             | Descripción
 |-----------------------------------------------------------------------|----
