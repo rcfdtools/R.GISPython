@@ -53,13 +53,13 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ### Descripción de archivos y carpetas
 
-| Instrucción  | Explicación                                                                                      |
-|--------------|--------------------------------------------------------------------------------------------------|
-| #            | Comentario de una línea.                                                                         |
-| """<br/>"""  | 3 comillas simples o dobles permiten definir el inicio y fin de comentarios en múltiples líneas. |
-| #-*- coding: UTF-8 -*- | Permite definir la codificación de texto utilizada en el script.  |
+| Instrucción  | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| #            | Comentario de una línea.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| """<br/>"""  | 3 comillas simples o dobles permiten definir el inicio y fin de comentarios en múltiples líneas.                                                                                                                                                                                                                                                                                                                                                            |
+| #-*- coding: UTF-8 -*- | Permite definir la codificación de texto utilizada en el script.                                                                                                                                                                                                                                                                                                                                                                                            |
 | print | Permite realizar la impresión de un resultado en la consola. En las versiones de Python 2.x, todo aquello que aparezca después del print será impreso en pantalla, incluso los paréntesis sí existen concatenaciones con comas. En las versiones de Python 3.x, solo se imprimirá aquello que esté entre paréntesis. Nótese que es posible realizar cálculos adicionales en la impresión (TcGiandotti*60) e incluso concatenar resultados usando coma o +. |
-| str() | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando + |
+| str() | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +                                                                                                                                                                                                                                                                                                                                           |
 
 
 Para ejecutar o modificar desde el IDLE de Python de ArcGIS for Desktop, en el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción Edit With IDLE. Ejecutar oprimiendo F5. Nota: Para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.
@@ -75,13 +75,17 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 
 ## Ilustraciones
 
-![R.GISPython.BasicScript.Screenshot1](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5PyCharm2021.3.png)
-Ejecución en PyCharm usando Python 2.7.5. En esta versión podrá notar diferencias en la impresión concatenada usando comas.
+![R.GISPython.BasicScript.Python2.7.5PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5PyCharm2021.3.png)
+Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión podrá notar diferencias en la impresión concatenada usando comas.
 
-![R.GISPython.BasicScript.Screenshot2](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
-Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se 
-concateno con comas o +.
+![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
+Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se concatenó con comas o +.
 
+![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2.
+
+![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
+Ejecución en consola CMD Python 3.10.0 Standalone.
 
 
 ## Referencias
