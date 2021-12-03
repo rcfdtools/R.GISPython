@@ -98,9 +98,9 @@ Para ejecutar o modificar desde el IDLE de Python de ArcGIS for Desktop, en el e
 
 Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usando cualquier versión de Python instalada, usar el comando py, la versión requerida (por ejemplo, -3.10) y la ruta completa del archivo .py.
 
-```py -2.7 D:\R.GISPython\BasicScript\Tc_v0.py```
+```C:\py -2.7 D:\R.GISPython\BasicScript\Tc_v0.py```
 
-```py -3.10 D:\R.GISPython\BasicScript\Tc_v0.py```
+```C:\py -3.10 D:\R.GISPython\BasicScript\Tc_v0.py```
 
 Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y el archivo creado. Observará que los resultados de los dos print son idénticos debido a que se ejecutó con la versión 3.7.0.
 
