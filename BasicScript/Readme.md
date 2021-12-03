@@ -34,7 +34,7 @@ permite la creación y edición de scripts en múltiples lenguajes, sino que a s
 Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\BasicScript\ 
 
 
-### Caso de estudio
+## Caso de estudio
 
 Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentración tc, es el tiempo que tarda una gota de agua que cae en una cuenca desde el punto más lejano hasta su punto de salida. Para este ejemplo calcularemos el tiempo de concentración de una cuenca usando la expresión de Giandotti.
 
@@ -51,7 +51,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 * S, pendiente media del cauce principal = 0.144015 m/m
 
 
-### Descripción de archivos y carpetas
+## Descripción de archivos y carpetas
 
 | Instrucción  | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,8 +85,6 @@ Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta ver
 
 Ejecución en consola CMD Python 3.10.0 Standalone.
 ![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
-
-
 
 
 ## Referencias
