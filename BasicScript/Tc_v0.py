@@ -1,5 +1,7 @@
-#-*- coding: UTF-8 -*-
-#Ejecución: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.7.7 (instalación independiente)
+# -*- coding: UTF-8 -*-
+# Nombre: Tc_v0.py
+# Descripción: Script básico para el cálculo del tiempo de concentración
+# Requerimiento: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.10.0 (instalación independiente)
 
 #Librerías
 import sys
@@ -7,7 +9,7 @@ import sys
 #Nombre
 print ('------------------------')
 print ('Script básico en Python')
-print ('------------------------')
+print ('------------------------\n')
 print ('Cálculo del tiempo de concentración de una cuenca hidrográfica utilizando la expresión de Giandotti.')
 print ('Python versión: ' + str(sys.version))
 print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
