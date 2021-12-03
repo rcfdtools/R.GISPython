@@ -8,17 +8,19 @@ Un script en Python, es un archivo que contiene diferentes instrucciones que pue
 * En PyCharm, ejecutar el script usando la versión de Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * En PyCharm, ejecutar el script usando la versión de Python 3.10.0 Standalone.
 * Ejecutar el script desde el IDLE de ArcGIS for Desktop, Python Windows y Python Notebook en ArcGIS Pro.
-* Ejecutar el script desde QGIS.
+* Ejecutar el script desde la consola Python de QGIS.
 * Ejecutar el script desde la consola del sistema operativo o CMD.
 * Entender las diferencias en impresión de pantalla usando la versión 2 y 3 de Python.
 
 
 ### Requerimientos
 
-* Python 2.7.5 de ArcGIS for Desktop 10.2.2. Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
+* Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * ArcGIS Pro 2.9.
 * Python 3.10.0 como instalación independiente o standalone.
 * PyCharm 2021.3 for Anaconda. 
+
+> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
 
 
 ### Editores complementarios
