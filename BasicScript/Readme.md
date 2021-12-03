@@ -167,7 +167,7 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 
 #### Desde Jupiter dentro de ArcGIS Pro
 
-En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando _%run -i_ y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
+En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando `%run -i` y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
 
 ```%run -i D:\R.GISPython\BasicScript\Tc_v0.py```
 
