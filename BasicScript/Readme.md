@@ -118,11 +118,13 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 ![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
 
 Desde Jupiter dentro de ArcGIS Pro:
-En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando _%run -i_ y la ruta del script. 
+En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando _%run -i_ y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
 
 ```%run -i D:\R.GISPython\BasicScript\Tc_v0.py```
+
 ![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebook](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebook.png)
 
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebookCod](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebookCode.png)
 
 ### Ilustraciones
 
@@ -151,6 +153,7 @@ Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
 * https://www.delftstack.com/howto/python/python-print-tab/
 * https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/using-conda-with-arcgis-pro.htm
 * https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/python-window.htm
+* https://stackoverflow.com/questions/42163470/how-to-execute-a-py-file-from-a-ipynb-file-on-the-jupyter-notebook
 
 
 ### Colaboradores
