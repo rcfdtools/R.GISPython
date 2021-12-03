@@ -19,7 +19,7 @@ En QGIS (p.e, 3.10), las versiones integradas de Python son la 2.7.x y la 3.7.x,
 
 ### ¿Qué es un Script en Python?
 
-Un script en Python, es un archivo que contiene diferentes instrucciones o cóodigo que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS for Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
+Un script en Python, es un archivo que contiene diferentes instrucciones o código que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS for Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
 
 
 ### Requerimientos
@@ -35,7 +35,11 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 * PyCharm for Anaconda (opcional)
 * Requerimientos específicos adicionales son indicados en cada script.
 
+
 ### Tema 1. Fundamentos generales de Python
+
+En este tema se presentan los fundamentos básicos necesarios para la comprensión del lenguaje Python.  
+
 | Actividad                                                             | Descripción
 |-----------------------------------------------------------------------|----
 | Identificar y ejecutar cualquier versión de Python instalada          | En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar pruebas de ejecución de comandos por consola o a través de scripts.
@@ -49,8 +53,8 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 | Control de excepción de errores                                       | En el evento de que el usuario ingrese valores nulos o fuera de rango, el código deberá ser capaz de controlar estas excepciones para no devolver al usuario valores errados. Algunos controles de ejecución pueden ser implementados usando condicionales para la validación de los datos ingresados, o a través de los controles de ejecución propios de Python.
 | Script con archivo log de ejecución y resultados                      | Al ejecutar scripts, los resultados son mostrados en la consola del entorno de desarrollo o en el Command del sistema operativo. Los resultados también pueden ser volcados en un archivo de registro que puede ser creado y actualizado directamente desde el código. Para este procedimiento utilizaremos la instrucción .write().
 
-
 > Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM - Colombia  y los archivos de formas vectoriales han sido descargados del IGAC - Colombia y de otras fuentes alternas.
+
 
 ### Referencias generales
 
