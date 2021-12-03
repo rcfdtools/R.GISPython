@@ -196,9 +196,10 @@ Concentration time. Giandotti. Subbasin. Hydrology.
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                             |
-|------------|---------------------------------------------------------------------------------------------------------|
-| v.20211201 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.| 
+| Versión     | Descripción                                                                                             |
+|-------------|---------------------------------------------------------------------------------------------------------|
+| v.20211201  | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python. |
+| v.20211203  | Ejecución usando ArcGIS Pro 2.9.                                                                        |
 
 
 ### Licencia, cláusulas y condiciones de uso
