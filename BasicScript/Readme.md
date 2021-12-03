@@ -114,7 +114,7 @@ Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta 
 Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se concatenó con comas o +.
 ![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
 
->PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima Ctrl + Alt + S para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
+>PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
 
 ![R.GISPython.BasicScript.PyCharm2021.3SetupPythonInterpreter](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
