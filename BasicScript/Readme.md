@@ -79,7 +79,8 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 Ejecución en PyCharm usando Python 2.7.5. En esta versión podrá notar diferencias en la impresión concatenada usando comas.
 
 ![R.GISPython.BasicScript.Screenshot2](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
-Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se concatenó con comas o +.
+Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se 
+concateno con comas o +.
 
 
 
