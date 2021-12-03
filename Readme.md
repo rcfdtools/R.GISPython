@@ -1,7 +1,7 @@
 <div align="center">
   <br>
   <img alt="R.HydroTools" src="https://github.com/rcfdtools/R.GISPython/blob/main/.Icons/R.GISPython.svg" width="300px">
-  <h2>Algoritmos y Programación GIS con Python</h2>
+  <h2>Algoritmos y programación GIS con Python</h2>
   by r.cfdtools@gmail.com
   <br><br>
 </div>
