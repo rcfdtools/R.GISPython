@@ -109,17 +109,19 @@ Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta 
 Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se concatenó con comas o +.
 ![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
 
->PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprimir Ctrl + Alt + S para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
+>PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima Ctrl + Alt + S para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
 
 ![R.GISPython.BasicScript.PyCharm2021.3SetupPythonInterpreter](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
 
 ### Ejecución usando el IDLE de Python de ArcGIS for Desktop
 
-En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.
+En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. 
 
 Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
 ![R.GISPython.BasicScript.Python2.7.5ArcGISDesktopIDLE](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)
+
+>Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.
 
 
 ### Ejecución desde el Command o CMD de Microsoft Windows
@@ -147,18 +149,19 @@ Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
 
 ### Ejecución usando ArcGIS Pro
 
-Desde el Command o CMD de Microsoft Windows:
+#### Desde el Command o CMD de Microsoft Windows
 
 ```c:\Progra~1\ArcGIS\Pro\bin\Python\scripts\propy.bat D:\R.GISPython\BasicScript\Tc_v0.py```
 
 ![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9CMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9CMD.png)
 
-Desde Python Window dentro de ArcGIS Pro:
+#### Desde Python Window dentro de ArcGIS Pro
 
 En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python Window, luego dar clic derecho en la línea de entrada de comando, seleccionar la opción _Load Code_ y seleccionar el script. 
 ![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
 
-Desde Jupiter dentro de ArcGIS Pro:
+#### Desde Jupiter dentro de ArcGIS Pro
+
 En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando _%run -i_ y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
 
 ```%run -i D:\R.GISPython\BasicScript\Tc_v0.py```
