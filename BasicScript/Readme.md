@@ -1,6 +1,6 @@
 ## Python - Script básico
 
-Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py, y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de los scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
+Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de los scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
 
 
 ### Objetivos
@@ -16,8 +16,8 @@ Un script en Python, es un archivo que contiene diferentes instrucciones que pue
 ### Requerimientos
 
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2.
-* ArcGIS Pro 2.9.
 * Python 3.10.0 como instalación independiente o standalone.
+* ArcGIS Pro 2.9.
 * PyCharm 2021.3 for Anaconda. 
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
@@ -75,9 +75,9 @@ print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPyt
 print ('Créditos: r.cfdtools@gmail.com')
 
 # Variables
-A = 9.1348		#Área cuenca, km²
-L = 4.6106		#Longitud cauce principal, km
-S = 0.144015	#Pendiente media cauce principal, m/m
+A = 9.1348 #Área cuenca, km²
+L = 4.6106 #Longitud cauce principal, km
+S = 0.144015 #Pendiente media cauce principal, m/m
 
 # Cálculos e impresión de resultados
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
@@ -121,7 +121,7 @@ Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones
 
 ### Ejecución usando el IDLE de Python de ArcGIS for Desktop
 
-En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. 
+En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. En Windows podrá lanzar manualmente la interfaz gráfica del IDLE buscando la aplicación IDLE (Python GUI).
 
 Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
 ![R.GISPython.BasicScript.Python2.7.5ArcGISDesktopIDLE](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)
