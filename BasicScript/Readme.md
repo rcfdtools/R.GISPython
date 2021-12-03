@@ -83,7 +83,7 @@ print ('\tTc(min):', TcGiandotti*60) #Impresión en pantalla usando coma, no com
 print ('\tTc(min): ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, compatible con cualquier versión de Python. + requiere de ingreso manual de espacio.
 ```
 
-## Descripción instrucciones empleadas
+## Descripción instrucciones y comandos empleados
 
 | Instrucción  | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
