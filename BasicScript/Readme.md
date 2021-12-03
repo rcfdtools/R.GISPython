@@ -195,7 +195,7 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 
 
 ### Keywords
-Concentration time. Giandotti. Subbasin. Hydrology.
+`Concentration time` `Giandotti` `Subbasin` `Hydrology` `GIS`
 
 
 ### Control de versiones
