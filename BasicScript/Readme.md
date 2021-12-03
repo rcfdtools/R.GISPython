@@ -87,6 +87,7 @@ Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 ![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
 Ejecución en consola CMD Python 3.10.0 Standalone.
 
+***
 
 ## Referencias
 
