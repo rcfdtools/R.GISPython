@@ -63,4 +63,4 @@ Esri ArcGIS ModelBuilder, Esri ArcGIS ArcToolBox, QGIS Graphical Modeler.
 
 
 ### Clonación
-Para compatibilidad completa de las rutas utilizadas en varios de los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en D:\R.GISPython. https://github.com/rcfdtools/R.GISPython.git
+Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en _D:\R.GISPython_. https://github.com/rcfdtools/R.GISPython.git
