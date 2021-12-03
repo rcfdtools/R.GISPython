@@ -1,7 +1,8 @@
 <div align="center">
   <br>
+  <img alt="R.HydroTools" src="https://github.com/rcfdtools/rcfdtools/blob/main/Icons/R.HydroTools.svg" width="300px">
   <h2>Algoritmos y Programación GIS con Python</h2>
-  <strong>by r.cfdtools@gmail.com</strong>
+  by r.cfdtools@gmail.com
   <br><br>
 </div>
 
@@ -49,7 +50,12 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o cóod
 | Script con archivo log de ejecución y resultados                      | Al ejecutar scripts, los resultados son mostrados en la consola del entorno de desarrollo o en el Command del sistema operativo. Los resultados también pueden ser volcados en un archivo de registro que puede ser creado y actualizado directamente desde el código. Para este procedimiento utilizaremos la instrucción .write().
 
 
-Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM  y los archivos de formas vectoriales han sido descargados del IGAC y de otras fuentes alternas.
+> Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM  y los archivos de formas vectoriales han sido descargados del IGAC y de otras fuentes alternas.
+
+### Referencias generales
+
+* https://www.educba.com/programming-vs-scripting/
+
 
 ### Keywords
 
