@@ -16,9 +16,9 @@ print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPyt
 print ('Créditos: r.cfdtools@gmail.com')
 
 # Variables
-A = 9.1348		#Área cuenca, km²
-L = 4.6106		#Longitud cauce principal, km
-S = 0.144015	#Pendiente media cauce principal, m/m
+A = 9.1348 #Área cuenca, km²
+L = 4.6106 #Longitud cauce principal, km
+S = 0.144015 #Pendiente media cauce principal, m/m
 
 # Cálculos e impresión de resultados
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
