@@ -86,6 +86,12 @@ Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta ver
 Ejecución en consola CMD Python 3.10.0 Standalone.
 ![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
 
+Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
+![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)
+
+Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
+![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.9.5QGIS3.22.1.png)
+
 
 ## Referencias
 
