@@ -63,7 +63,7 @@ Este tema presenta fundamentos básicos necesarios para la comprensión de codif
 
 ### Keywords
 
-Esri ArcGIS ModelBuilder, Esri ArcGIS ArcToolBox, QGIS Graphical Modeler.
+`Esri ArcGIS ModelBuilder` `Esri ArcGIS ArcToolBox` `QGIS Graphical Modeler`
 
 
 ### Clonación
