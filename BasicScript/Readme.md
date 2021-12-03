@@ -47,6 +47,41 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 * L, longitud del cauce principal = 4.6106 km.
 * S, pendiente media del cauce principal = 0.144015 m/m
 
+### Script
+
+```
+# -*- coding: UTF-8 -*-
+# Nombre: Tc_v0.py
+# Descripción: Script básico para el cálculo del tiempo de concentración
+# Requerimiento: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.10.0 (instalación independiente)
+
+# Librerías
+import sys
+
+# Cabecera
+print ('------------------------')
+print ('Script básico en Python')
+print ('------------------------\n')
+print ('Cálculo del tiempo de concentración Tc de una cuenca hidrográfica utilizando la expresión de Giandotti.')
+print ('Python versión: ' + str(sys.version))
+print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
+print ('Créditos: r.cfdtools@gmail.com')
+
+# Variables
+A = 9.1348		#Área cuenca, km²
+L = 4.6106		#Longitud cauce principal, km
+S = 0.144015	#Pendiente media cauce principal, m/m
+
+# Cálculos e impresión de resultados
+TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
+print ('\nParámetros de entrada')
+print ('\tÁrea cuenca, km²: ' + str(A))
+print ('\tLongitud cauce principal, km: ' + str(L))
+print ('\tPendiente media cauce principal, m/m: ' + str(S))
+print ('\nResultados')
+print ('\tTc(min):', TcGiandotti*60) #Impresión en pantalla usando coma, no compatible con Python 2. Coma agrega espacio.
+print ('\tTc(min): ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, compatible con cualquier versión de Python. + requiere de ingreso manual de espacio.
+```
 
 ## Descripción instrucciones empleadas
 
@@ -63,8 +98,9 @@ Para ejecutar o modificar desde el IDLE de Python de ArcGIS for Desktop, en el e
 
 Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usando cualquier versión de Python instalada, usar el comando py, la versión requerida (por ejemplo, -3.10) y la ruta completa del archivo .py.
 
-* py -2.7 D:\R.GISPython\BasicScript\Tc_v0.py
-* py -3.10 D:\R.GISPython\BasicScript\Tc_v0.py
+```py -2.7 D:\R.GISPython\BasicScript\Tc_v0.py```
+
+```py -3.10 D:\R.GISPython\BasicScript\Tc_v0.py```
 
 Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y el archivo creado. Observará que los resultados de los dos print son idénticos debido a que se ejecutó con la versión 3.7.0.
 
@@ -107,14 +143,14 @@ Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
 
 
 ## Keywords
-Concentration time. Giandotti.
+Concentration time. Giandotti. Subbasin. Hydrology.
 
 
 ## Control de versiones
 
-| Versión    | Descripción      |
-|------------|------------------|
-| v.20211201 | Versión inicial. | 
+| Versión    | Descripción                                                                                             |
+|------------|---------------------------------------------------------------------------------------------------------|
+| v.20211201 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.| 
 
 
 ## Licencia, cláusulas y condiciones de uso
