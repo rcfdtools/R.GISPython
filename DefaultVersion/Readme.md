@@ -14,6 +14,7 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda. 
+* QGIS 3.22.1+.
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
 
@@ -92,3 +93,10 @@ Desde este momento, podrá seleccionar el intérprete de Python que requiera su 
 Opcionalmente podrá asociar el intérprete de Python integrado a QGIS, p.ej, Python 3.9.5 sobre QGIS 3.22.1. La ruta de asociación es _C:\Program Files\QGIS 3.22.1\apps\Python39_
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddQGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddQGIS3.22.1.png)
+
+También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2.9. La ruta de asociación es _C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3_
+
+![R.GISPython.BasicScript.ArcGISProPythonPackageManager.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/ArcGISProPythonPackageManager.png)
+
+![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddArcGISPro2.9.png)
+

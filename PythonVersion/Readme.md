@@ -83,6 +83,6 @@ En el menú _Analysis_ dar clic en el botón de opciones de Python y seleccionar
 
 #### Verificación de versión y rutas de Python en QGIS
 
-En cuanto a QGIS (p.ej, en la versión 3.22.1), dar clic en el botón Python para ingresar a la consola de comandos e ingresar los mismos comandos que utilizó en ArcGIS para consultar la versión y rutas asociadas. La versión instalada en QGIS 3.22.1 es Python 3.9.5. y está en localizada en _C:\Program Files\QGIS 3.22.1\apps\Python39_.
+En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para ingresar a la consola de comandos e ingresar los mismos comandos que utilizó en ArcGIS para consultar la versión y rutas asociadas. La versión instalada en QGIS 3.22.1 es Python 3.9.5. y está en localizada en _C:\Program Files\QGIS 3.22.1\apps\Python39_.
 
 ![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.9.5QGIS3.22.1.png)
