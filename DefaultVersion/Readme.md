@@ -85,6 +85,6 @@ En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Pa
 
 > Para modificar el nombre por defecto, p.ej, de _Python 3.10_ a _Python 3.10 Standalone_, de clic en la opción Editar (ícono lápiz) y modifique el nombre.
 
-Desde este momento, podrá seleccionar el intérprete de Python que requiera su proyecto o un script en particular.
+Desde este momento, podrá seleccionar el intérprete de Python que requiera su proyecto o para la ejecución de un script en particular.
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterShowAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterShowAll.png)
