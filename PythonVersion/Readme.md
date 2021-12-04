@@ -22,7 +22,9 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 ### Consulta de versiones desde el command CMD de Microsoft Windows
 
+
 #### Identificar la versión asociada en las rutas por defecto del sistema operativo Microsoft Windows
+
 
 1. Ir a Inicio, en el cuadro de búsqueda digitar `CMD` y dar Enter o presionar la combinación de teclas `Windows+R` ingresando `CMD` y dando clic en Ok. 
 2. En el prompt del sistema digitar `C:\Python` y dar Enter o utilizar el comando `Python.exe --version` de esta forma podrá conocer la versión por defecto definida en las variables de entorno.
@@ -32,6 +34,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 ![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
+
 #### Identificar las versiones instaladas que pueden ser lanzadas directamente desde el CMD
 
 1. Utilizando la instrucción `py -0` en el `CMD`, python devuelve las versiones instaladas y registradas en el sistema operativo. 
@@ -40,7 +43,15 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 ![R.GISPython.BasicScript.PythonInstalledVersionCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonInstalledVersionCMD.png)
 
-2. Para verificar las versiones instaladas, también podrá utilizar el comando `py -` seguido de los dos primeros dígitos de la versión separados por punto (p.e, -2.7) y el comando `--version`.
+2. Para verificar las versiones instaladas, también podrá utilizar el comando `py -` seguido de los dos primeros dígitos de la versión separados por punto (p.ej, -2.7) y el comando `--version`.
 
 ![R.GISPython.BasicScript.PythonVersionDetailCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonVersionDetailCMD.png)
 
+
+#### Verificación de rutas o path asociado a cada versión de Python
+
+1. En el command o CMD de Microsoft Windows, ejecutar el comando `py -` indicando el número de la versión, p.ej, `py -2.7`.
+
+2. Importar la librería de sistema usando el comando `import sys`, para finalizar ingresar el comando `sys.path`, para salir ingrese el comando `quit()`.
+
+![R.GISPython.BasicScript.PythonPathCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonPathCMD.png)
