@@ -55,3 +55,5 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 2. Importar la librería de sistema usando el comando `import sys`, para finalizar ingresar el comando `sys.path`, para salir ingrese el comando `quit()`.
 
 ![R.GISPython.BasicScript.PythonPathCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonPathCMD.png)
+
+> En la ilustración podrá observar que la versión 2.7.5 de Python se encuentra instalada en C:\Python27 y corresponde a ArcGIS for Desktop 10.2. También podrá observar que la versión 3.10.0 se encuentra instalada en C:\Python310 y corresponde a una instalación independiente o standalone.
