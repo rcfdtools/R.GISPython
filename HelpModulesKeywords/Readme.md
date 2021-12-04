@@ -1,6 +1,6 @@
 ## Ayuda, palabras reservadas y módulos disponibles
 
-Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario.
+Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario y una completa documentación de ayuda que facilita su aprendizaje.
 
 ### Objetivos
 
@@ -29,6 +29,7 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 Para salir de la ayuda, presione las teclas `Ctrl-Z`, de esta forma volverá a la raiz del centro de ayuda >>>.
 
-3. Para obtener la ayuda relacionada con un comando específico, p.ej, `sys`, digite `help('sys')`. Oprimiendo la tecla _Enter_ podrá avanzar a la siguiente sección de la ayuda mostrada. 
+3. Para obtener la ayuda relacionada con un comando específico, p.ej, `sys`, digite `help('sys')`. Oprimiendo la tecla _Enter_ podrá avanzar en la visualización de la ayuda mostrada. 
 
 ![R.GISPython.BasicScript.WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonHelpSys.png)
+
