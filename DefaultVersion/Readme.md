@@ -94,7 +94,7 @@ Opcionalmente podrá asociar el intérprete de Python integrado a QGIS, p.ej, Py
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddQGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddQGIS3.22.1.png)
 
-También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2.9. La ruta de asociación es _C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3_
+También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2.9. La ruta de asociación podrá ser consultada desde las opciones de configuración de ArcGIS Pro en la pestaña Python y está localizada en _C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3_
 
 ![R.GISPython.BasicScript.ArcGISProPythonPackageManager.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/ArcGISProPythonPackageManager.png)
 
