@@ -36,7 +36,15 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 ![R.GISPython.BasicScript.WindowsOSEnvironmentVariablesEdit](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSEnvironmentVariablesEdit.png)
 
-> En caso de que su instalación de ArcGIS for Desktop corresponda a una versión diferente, identifique las rutas de instalación e ingrese o modifique las varibles de entorno. Mas información en https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion
+> En caso de que su instalación de ArcGIS for Desktop corresponda a una versión diferente, identifique las rutas de instalación e ingrese o modifique las variables de entorno. Más información en https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion
 
-> Luego de la modificación de las variables de entorno, para algunas versiones de su sistema operativo, será necesario reiniciar su equipo o cerrar y abrir su sesión de usuario.
+> Luego de la modificación de las variables de entorno, en algunas versiones de su sistema operativo, será necesario reiniciar su equipo o cerrar y abrir su sesión de usuario.
+
+5. Para verificar el direccionamiento correcto, abra una nueva ventana de comandos oprimiendo la combinación de teclas `Windows+R` y _CMD_ ó busque el _Command Prompt_ en su lista de programas (no es necesaria la ejecución como Administrador).
+
+![R.GISPython.BasicScript.WindowsCMD](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMD.png)
+
+6. En el intérprete de comandos de Windows, ejecute el comando Python. Observará que la versión por defecto es la 2.7.5.
+
+![R.GISPython.BasicScript.WindowsCMDPythonVersion](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonVersion.png)
 
