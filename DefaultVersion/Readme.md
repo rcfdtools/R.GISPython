@@ -72,3 +72,15 @@ En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Pa
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreter.png)
 
 5. En la ventana _Project Interpreters_, de clic en la opción de agregar _+_  
+
+![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAdd.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAdd.png)
+
+6. En la ventana de agregar, seleccione la pestaña correspondiente a _System Interpreter_ y de clic en la opción de búsqueda de ruta _..._
+
+![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddSystem.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddSystem.png)
+
+7. Seleccione la ruta de instalación de la versión independiente de Python instalada en su sistema, p.ej, 3.10.0.
+
+![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddSystemPath.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddSystemPath.png)
+
+> Para modificar el nombre por defecto, p.ej, Python 3.10, de clic en la opción Editar (ícono lápiz) y modifique el nombre a Python 3.10 Standalone.
