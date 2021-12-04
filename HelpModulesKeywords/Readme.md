@@ -1,0 +1,34 @@
+## Ayuda, palabras reservadas y módulos disponibles
+
+Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario.
+
+### Objetivos
+
+* Identificar módulos instalados de Python.
+* Acceder a la biblioteca de ayuda de Python.
+* Identificar palabras reservadas del lenguaje.
+
+
+### Requerimientos
+
+* Python 2.7.5 de ArcGIS for Desktop 10.2.2.
+* Python 3.10.0+ como instalación independiente o standalone.
+
+> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
+
+
+### Procedimiento
+
+1. En el command o CMD de Windows, ejecutar Python `C:\Python` y digitar el comando `help()` para ingresar a los bloques de ayuda y documentación del lenguaje.
+
+![R.GISPython.BasicScript.WindowsCMDPythonHelp.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonHelp.png)
+
+2. Para conocer los módulos instalados y disponibles, en la entrada de ayuda _>help_, ingrese el comando `modules`
+
+![R.GISPython.BasicScript.WindowsCMDPythonHelpModules.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonHelpModules.png)
+
+Para salir de la ayuda, presione las teclas `Ctrl-Z`, de esta forma volverá a la raiz del centro de ayuda >>>.
+
+3. Para obtener la ayuda relacionada con un comando específico, p.ej, `sys`, digite `help('sys')`. Oprimiendo la tecla _Enter_ podrá avanzar a la siguiente sección de la ayuda mostrada. 
+
+![R.GISPython.BasicScript.WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonHelpSys.png)
