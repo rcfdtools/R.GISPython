@@ -1,6 +1,6 @@
 ## Definir la versión por defecto de Python en el OS y configurar PyCharm
 
-Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete desde cualquier directorio de su sistema operativo sin tener que ingresar la ruta completa del ejecutable Python.exe y la configuración de intérpretes en PyCharm, le permitirá ejecutar los scripts de un proyecto utilizando una versión predefinida de Python. 
+Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete de comandos desde cualquier directorio de su sistema operativo y sin tener que ingresar la ruta completa del ejecutable Python.exe. La configuración de intérpretes en PyCharm, le permitirá ejecutar scripts de un proyecto utilizando una versión predefinida de Python. 
 
 
 ### Objetivos
@@ -13,7 +13,8 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * Python 3.10.0+ como instalación independiente o standalone.
-* PyCharm 2021.3+ for Anaconda. 
+* PyCharm 2021.3+ for Anaconda.
+* ArcGIS Pro 2.9+.
 * QGIS 3.22.1+.
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
@@ -54,9 +55,9 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 ## Configuración de intérprete(s) de Python en PyCharm 
 
-En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Para este ejemplo, asociaremos Python 2.7.5 de ArcGIS for Desktop y Python 3.10.0 standalone.  
+En PyCharm, él(los) intérprete(s) de comandos son asociados a cada proyecto. Para este ejemplo, asociaremos Python 2.7.5 de ArcGIS for Desktop, Python 3.10.0 standalone y las versiones integradas de Python en ArcGIS Pro 2.9 y QGIS 3.22.1.  
 
-1. Descargue e instale PyCharm Community desde https://www.jetbrains.com/pycharm/download/
+1. Descargue e instale PyCharm Community desde _https://www.jetbrains.com/pycharm/download/_
 
 2. Abra PyCharm y desde el menú _File_, cree (_New Project_) o abra (_Open_) un proyecto existente, (p.ej, crear en la unidad D:\ la carpeta R.GISPython). Seleccione _Virtualenv_ para la creación del nuevo ambiente que utilizará el intérprete y el intérprete base que se utilizará por defecto (p.ej, Python 2.7 ArcGIS for Desktop 10.2.2).
 
@@ -84,7 +85,7 @@ En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Pa
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddSystemPath.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddSystemPath.png)
 
-> Para modificar el nombre por defecto, p.ej, de _Python 3.10_ a _Python 3.10 Standalone_, de clic en la opción Editar (ícono lápiz) y modifique el nombre.
+> Para modificar el nombre por defecto, p.ej, de _Python 3.10_ a _Python 3.10 Standalone_, de clic en la opción Editar (ícono lápiz) y cambie el nombre.
 
 Desde este momento, podrá seleccionar el intérprete de Python que requiera su proyecto o para la ejecución de un script en particular.
 
