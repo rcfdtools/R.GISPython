@@ -61,7 +61,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 #### Verificación de versión y rutas de Python en ArcGIS for Desktop
 
-Para conocer la versión instalada de Python en ArcGIS Desktop y su localización, abrir ArcMAP y dar clic en el ícono de la consola de Python, importar la librería sys con el comando `import sys` y ejecutar el comando `sys.version` y `sys.path`. La versión instalada en ArcGIS 10.2.2 es Python 2.7.5. y está localizada en C:\Python27\
+Para conocer la versión instalada de Python en ArcGIS Desktop y su localización, abrir ArcMAP y dar clic en el ícono de la consola de Python, importar la librería sys con el comando `import sys` y ejecutar el comando `sys.version` y `sys.path`. La versión instalada en ArcGIS 10.2.2 es Python 2.7.5. y está localizada en _C:\Python27\_
 
 
 #### Verificación de versión y rutas de Python en ArcGIS Pro
@@ -71,6 +71,6 @@ Para conocer la versión instalada de Python en ArcGIS Desktop y su localizació
 
 #### Verificación de versión y rutas de Python en QGIS
 
-En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para ingresar a la consola de comandos e ingresar los mismos comandos que utilizó en ArcGIS para consultar la versión y rutas asociadas. La versión instalada en QGIS 3.22.1 es Python 3.9.5. y está en localizada en C:\Program Files\QGIS 3.22.1\apps\Python39
+En cuanto a QGIS (p.ej, en la versión 3.22.1), dar clic en el botón Python para ingresar a la consola de comandos e ingresar los mismos comandos que utilizó en ArcGIS para consultar la versión y rutas asociadas. La versión instalada en QGIS 3.22.1 es Python 3.9.5. y está en localizada en _C:\Program Files\QGIS 3.22.1\apps\Python39_.
 
 ![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.9.5QGIS3.22.1.png)
