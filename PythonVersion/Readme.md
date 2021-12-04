@@ -40,7 +40,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 ![R.GISPython.BasicScript.PythonInstalledVersionCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonInstalledVersionCMD.png)
 
-2. Para verificar las versiones instaladas, utilizar el comando `py -` seguido de los dos primeros dígitos de la versión separados por punto (p.e, -2.7) y el comando `--version`.
+2. Para verificar las versiones instaladas, también podrá utilizar el comando `py -` seguido de los dos primeros dígitos de la versión separados por punto (p.e, -2.7) y el comando `--version`.
 
 ![R.GISPython.BasicScript.PythonVersionDetailCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonVersionDetailCMD.png)
 
