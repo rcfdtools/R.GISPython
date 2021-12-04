@@ -61,7 +61,9 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 #### Verificación de versión y rutas de Python en ArcGIS for Desktop
 
-Para conocer la versión instalada de Python en ArcGIS Desktop y su localización, abrir ArcMAP y dar clic en el ícono de la consola de Python, importar la librería sys con el comando `import sys` y ejecutar el comando `sys.version` y `sys.path`. La versión instalada en ArcGIS 10.2.2 es Python 2.7.5. y está localizada en _C:\Python27\_.
+Para conocer la versión instalada de Python en ArcGIS Desktop y su localización, abrir ArcMAP y dar clic en el ícono de la consola de Python, importar la librería sys con el comando `import sys` y ejecutar el comando `sys.version` y `sys.path`. La versión instalada en ArcGIS 10.2.2 es Python 2.7.5. y está localizada en C:\Python27\.
+
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
 
 
 #### Verificación de versión y rutas de Python en ArcGIS Pro
