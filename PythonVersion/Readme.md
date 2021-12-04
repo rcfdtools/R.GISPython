@@ -22,12 +22,21 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 ### Consulta de versiones desde el command CMD de Microsoft Windows
 
-Para conocer la versión asociada en las rutas por defecto del sistema operativo Microsoft Windows:
+#### Identificar la versión asociada en las rutas por defecto del sistema operativo Microsoft Windows:
 
 1. Ir a Inicio, en el cuadro de búsqueda digitar `CMD` y dar Enter o presionar la combinación de teclas `Windows+R` ingresando `CMD` y dando clic en Ok. 
 2. En el prompt del sistema digitar `C:\Python` y dar Enter o utilizar el comando `Python.exe --version` de esta forma podrá conocer la versión por defecto definida en las variables de entorno.
 3. Para salir de la consola de Python usar `Ctrl+Z` y enter o usar el comando `quit()`. 
 
->Es posible al ingresar Python y dar Enter no se ejecute ninguna instrucción o el SO devuelva un error indicado que el comando ingresado no existe, esto significa que su sistema operativo no dispone por defecto de una versión de Python definida en el entorno de trabajo.
+>Es posible que al ingresar Python y dar Enter no se ejecute ninguna instrucción o el SO devuelva un error indicado que el comando ingresado no existe, esto significa que su sistema operativo no dispone por defecto de una versión de Python definida en el entorno de trabajo.
 
 ![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+
+### Identificar las versiones instaladas que pueden ser lanzadas directamente desde el CMD
+
+1. Utilizando la instrucción `py -0` en el `CMD`, python devuelve las versiones instaladas y registradas en el sistema operativo. 
+> Asterisco (*) indica cuál es la versión por defecto.
+> Si dispone de ArcGIS Pro, en los resultados desplegados no aparecerá la versión asociada.
+
+![R.GISPython.BasicScript.PythonInstalledVersionCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonInstalledVersionCMD.png)
+
