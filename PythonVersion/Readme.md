@@ -112,3 +112,7 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 
 ### Licencia, cláusulas y condiciones de uso
 https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion) |
+|-----------------------------------------------------------------------------------------|-------------------------|
