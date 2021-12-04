@@ -1,6 +1,6 @@
 ## Definir la versión por defecto de Python en el OS y configurar PyCharm
 
-Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete desde cualquier directorio de su sistema operativo sin tener que ingresar la ruta completa del ejecutable Python.exe.
+Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete desde cualquier directorio de su sistema operativo sin tener que ingresar la ruta completa del ejecutable Python.exe y la configuración de intérpretes en PyCharm, le permitirá ejecutar los scripts de un proyecto utilizando una versión predefinida de Python. 
 
 
 ### Objetivos
