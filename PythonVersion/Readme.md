@@ -1,6 +1,7 @@
 ## Identificar y ejecutar cualquier versión de Python instalada
 
-En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar pruebas de ejecución de comandos por consola o a través de scripts.
+En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar la ejecución de comandos por consola o a través de scripts.
+
 
 ### Objetivos
 
@@ -10,11 +11,13 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 * Identificar la versión instalada de Python en ArcGIS Pro.
 * Identificar la versión instalada de Python en QGIS.
 
+
 ### Requerimientos
 
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * Python 3.10.0+ como instalación independiente o standalone.
-* ArcGIS Pro 2.9+.
+* ArcGIS Pro 2.9+ (opcional).
+* QGIS 3.22.1.
 * PyCharm 2021.3+ for Anaconda. 
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
@@ -57,6 +60,9 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 ![R.GISPython.BasicScript.PythonPathCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonPathCMD.png)
 
 > En la ilustración podrá observar que la versión 2.7.5 de Python se encuentra instalada en C:\Python27 y corresponde a ArcGIS for Desktop 10.2. También podrá observar que la versión 3.10.0 se encuentra instalada en C:\Python310 y corresponde a una instalación independiente o standalone.
+
+
+### Consulta de versiones desde las interfaces gráficas GUI de ArcGIS y QGIS
 
 
 #### Verificación de versión y rutas de Python en ArcGIS for Desktop
