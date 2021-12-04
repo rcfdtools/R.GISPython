@@ -42,3 +42,33 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 ![R.GISPython.BasicScript.WindowsCMDPythonHelpKeywords.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpKeywords.png)
 
 > Recuerde que las palabras clave no podrán ser utilizadas para la definición de variables, funciones, objetos, matrices, diccionarios o cualquier otro elemento de usuario.
+
+
+### Referencias
+
+* https://www.w3schools.com/python/python_ref_keywords.asp
+
+
+### Autores
+
+* Creado por r.cfdtools@gmail.com
+
+
+### Compatibilidad
+
+* Compatible con cualquier versión de Python.
+
+
+### Keywords
+`help` `modules` `keywords` 
+
+
+### Control de versiones
+
+| Versión     | Descripción                                                                       |
+|-------------|-----------------------------------------------------------------------------------|
+| v.20211204 | Versión inicial.                                                                  |
+
+
+### Licencia, cláusulas y condiciones de uso
+https://github.com/rcfdtools/R.GISPython/wiki/License
