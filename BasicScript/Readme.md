@@ -111,11 +111,11 @@ Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta 
 ![R.GISPython.BasicScript.Python2.7.5PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5PyCharm2021.3.png)
 
 Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones son idénticas sin importar si se concatenó con comas o +.
-![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
+![R.GISPython.BasicScript.Python3.10.0PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0PyCharm2021.3.png)
 
 >PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
 
-![R.GISPython.BasicScript.PyCharm2021.3SetupPythonInterpreter](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
+![R.GISPython.BasicScript.PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
 
 ### Ejecución usando el IDLE de Python de ArcGIS for Desktop
@@ -123,7 +123,7 @@ Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones
 En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. En Windows podrá lanzar manualmente la interfaz gráfica del IDLE buscando la aplicación IDLE (Python GUI).
 
 Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktopIDLE](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktopIDLE.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)
 
 >Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.
 
@@ -137,10 +137,10 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 ```C:\py -3.10 D:\R.GISPython\BasicScript\Tc_v0.py```
 
 Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
 Ejecución en consola CMD Python 3.10.0 Standalone.
-![R.GISPython.BasicScript.Python3.10.0StandaloneCMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
+![R.GISPython.BasicScript.Python3.10.0StandaloneCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.10.0StandaloneCMD.png)
 
 
 ### Ejecución desde la consola Python de QGIS
@@ -148,7 +148,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y el archivo creado. Observará que los resultados de los dos print son idénticos debido a que se ejecutó con la versión 3.9.5.
 
 Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
-![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.9.5QGIS3.22.1.png)
+![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.9.5QGIS3.22.1.png)
 
 
 ### Ejecución usando ArcGIS Pro
@@ -157,12 +157,12 @@ Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
 
 ```c:\Progra~1\ArcGIS\Pro\bin\Python\scripts\propy.bat D:\R.GISPython\BasicScript\Tc_v0.py```
 
-![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9CMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9CMD.png)
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9CMD.png)
 
 #### Desde Python Window dentro de ArcGIS Pro
 
 En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python Window, luego dar clic derecho en la línea de entrada de comando, seleccionar la opción _Load Code_ y seleccionar el script. 
-![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
 
 #### Desde Jupiter dentro de ArcGIS Pro
 
@@ -170,9 +170,9 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 
 ```%run -i D:\R.GISPython\BasicScript\Tc_v0.py```
 
-![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebook](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebook.png)
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebook.png)
 
-![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebookCod](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebookCode.png)
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonNotebookCod.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebookCode.png)
 
 
 ### Referencias

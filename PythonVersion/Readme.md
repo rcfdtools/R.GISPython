@@ -37,7 +37,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 >Es posible que al ingresar Python y dar Enter no se ejecute ninguna instrucción o el SO devuelva un error indicado que el comando ingresado no existe, esto significa que su sistema operativo no dispone por defecto de una versión de Python definida en el entorno de trabajo.
 
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
 
 #### Identificar las versiones instaladas que pueden ser lanzadas directamente desde el CMD
@@ -46,11 +46,11 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 > Asterisco (*) indica cuál es la versión por defecto.
 > Si dispone de ArcGIS Pro, en los resultados desplegados no aparecerá la versión asociada.
 
-![R.GISPython.BasicScript.PythonInstalledVersionCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonInstalledVersionCMD.png)
+![R.GISPython.BasicScript.PythonInstalledVersionCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonInstalledVersionCMD.png)
 
 2. Para verificar las versiones instaladas, también podrá utilizar el comando `py -` seguido de los dos primeros dígitos de la versión separados por punto (p.ej, -2.7) y el comando `--version` (p.ej, `py -2.7 --version`).
 
-![R.GISPython.BasicScript.PythonVersionDetailCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonVersionDetailCMD.png)
+![R.GISPython.BasicScript.PythonVersionDetailCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonVersionDetailCMD.png)
 
 
 #### Verificación de rutas o path asociado a cada versión de Python
@@ -59,7 +59,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 2. Importar la librería de sistema usando el comando `import sys`, para finalizar ingresar el comando `sys.path`, para salir ingrese el comando `quit()`.
 
-![R.GISPython.BasicScript.PythonPathCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonPathCMD.png)
+![R.GISPython.BasicScript.PythonPathCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonPathCMD.png)
 
 > En la ilustración podrá observar que la versión 2.7.5 de Python se encuentra instalada en C:\Python27 y corresponde a ArcGIS for Desktop 10.2. También podrá observar que la versión 3.10.0 se encuentra instalada en C:\Python310 y corresponde a una instalación independiente o standalone.
 
@@ -71,18 +71,18 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 Para conocer la versión instalada de Python en ArcGIS Desktop y su localización, abrir ArcMAP y dar clic en el ícono de la consola de Python, importar la librería sys con el comando `import sys` y ejecutar el comando `sys.version` y `sys.path`. La versión instalada en ArcGIS 10.2.2 es Python 2.7.5. y está localizada en C:\Python27\.
 
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
 
 
 #### Verificación de versión y rutas de Python en ArcGIS Pro
 
 En el menú _Analysis_ dar clic en el botón de opciones de Python y seleccionar _Python Window_, luego en la ventana de comandos importar la librería sys y ejecutar los comandos `sys.version` y `sys.path`. La versión instalada en ArcGIS Pro 2.9 es Python 3.7.11 y está localizada en c:\Progra~1\ArcGIS\Pro\bin\Python\scripts\.
 
-![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
 
 
 #### Verificación de versión y rutas de Python en QGIS
 
 En cuanto a QGIS (p.ej, en la versión 3.22.1), dar clic en el botón Python para ingresar a la consola de comandos e ingresar los mismos comandos que utilizó en ArcGIS para consultar la versión y rutas asociadas. La versión instalada en QGIS 3.22.1 es Python 3.9.5. y está en localizada en _C:\Program Files\QGIS 3.22.1\apps\Python39_.
 
-![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.9.5QGIS3.22.1.png)
+![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.9.5QGIS3.22.1.png)
