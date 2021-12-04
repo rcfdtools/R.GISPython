@@ -89,6 +89,6 @@ Desde este momento, podrá seleccionar el intérprete de Python que requiera su 
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterShowAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterShowAll.png)
 
-Opcionalmente podrá asociar el intérprete de Python asociado a QGIS, p.ej, Python 3.9 sobre QGIS 3.22.1. La ruta de asociación es _C:\Program Files\QGIS 3.22.1\apps\Python39_
+Opcionalmente podrá asociar el intérprete de Python integrado a QGIS, p.ej, Python 3.9.5 sobre QGIS 3.22.1. La ruta de asociación es _C:\Program Files\QGIS 3.22.1\apps\Python39_
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddQGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddQGIS3.22.1.png)
