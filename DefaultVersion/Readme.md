@@ -17,6 +17,8 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
 
+> Nota: para la instalación de versiones independientes de Python, p.ej, la versión 3.10.0, se recomienda modificar la ruta de instalación a una ruta de fácil acceso como _C:\Python310\_
+
 
 ### Versión por defecto en el sistema operativo
 
@@ -59,9 +61,14 @@ En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Pa
 
 ![R.GISPython.BasicScript.PyCharmCreateProject](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmCreateProject.png)
 
-> Los nombres de los intérpretes base pueden cambiar dependiendo de la versión de ArcGIS for Desktop instalada o de la versión independiente instalada en su sistema. 
+> Los nombres de los intérpretes base pueden cambiar dependiendo de la versión de ArcGIS for Desktop instalada o de la versión independiente instalada de Python en su sistema. 
 
 3. En el menú _File_, seleccione la opción _Settings_ u oprima la combinación de teclas `Ctrl+Alt+S` para acceder a las opciones de configuración de PyCharm.
 
 ![R.GISPython.BasicScript.PyCharmSettings](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmSettings.png)
 
+4. En la ventana de configuración, seleccione la pestaña _Project: R.GISPython_ y la opción Python Interpreter, de clic en el ícono de configuración y seleccione la opción _Show All_. 
+
+![R.GISPython.BasicScript.PyCharmProjectPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreter.png)
+
+5. En la ventana _Project Interpreters_, de clic en la opción de agregar _+_  
