@@ -88,3 +88,7 @@ En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Pa
 Desde este momento, podrá seleccionar el intérprete de Python que requiera su proyecto o para la ejecución de un script en particular.
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterShowAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterShowAll.png)
+
+Opcionalmente podrá asociar el intérprete de Python asociado a QGIS, p.ej, Python 3.9 sobre QGIS 3.22.1. La ruta de asociación es _C:\Program Files\QGIS 3.22.1\apps\Python39_
+
+![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddQGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddQGIS3.22.1.png)
