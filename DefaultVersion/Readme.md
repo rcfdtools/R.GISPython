@@ -100,3 +100,33 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 
 ![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddArcGISPro2.9.png)
 
+
+### Referencias
+
+* https://epjmorris.wordpress.com/2020/09/16/configuring-pycharm-for-use-with-arcgis-pro-and-arcmap/
+
+
+### Colaboradores
+
+* Creado por r.cfdtools@gmail.com
+
+
+### Compatibilidad
+
+* Compatible con cualquier versión de Python.
+
+
+### Keywords
+`PyCharm` `Python Interpreter` `Windows Environmental Variables` 
+
+
+### Control de versiones
+
+| Versión     | Descripción                                                                       |
+|-------------|-----------------------------------------------------------------------------------|
+| v.20211201  | Versión inicial.                                                                  |
+| v.20211204 | Asociación de intérpretes de Python en PyCharm para QGIS 3.22.1 y ArcGIS Pro 2.9. |
+
+
+### Licencia, cláusulas y condiciones de uso
+https://github.com/rcfdtools/R.GISPython/wiki/License
