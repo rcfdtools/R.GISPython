@@ -22,7 +22,7 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 1. En Microsoft Windows oprimir `Windows+R` y ejecutar `sysdm.cpl`. En la ventana dar clic en la pestaña Opciones Avanzadas y luego en Variables de Entorno.
 
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+![R.GISPython.BasicScript.WindowsOSRunSysdm](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSRunSysdm.png)
 
 2. 
 
