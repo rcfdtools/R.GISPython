@@ -68,7 +68,9 @@ Para conocer la versión instalada de Python en ArcGIS Desktop y su localizació
 
 #### Verificación de versión y rutas de Python en ArcGIS Pro
 
+En el menú _Analysis_ dar clic en el botón de opciones de Python y seleccionar _Python Window_, luego en la ventana de comandos importar la librería sys y ejecutar los comandos `sys.version` y `sys.path`. La versión instalada en ArcGIS Pro 2.9 es Python 3.7.11 y está localizada en c:\Progra~1\ArcGIS\Pro\bin\Python\scripts\.
 
+![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
 
 
 #### Verificación de versión y rutas de Python en QGIS
