@@ -74,8 +74,7 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 ### Licencia, cláusulas y condiciones de uso
 https://github.com/rcfdtools/R.GISPython/wiki/License
 
-| | |
-|------------------------|-------------------------|
+<div align="center">
 | [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion) | [Actividad siguiente]() |
-
-
+|------------------------|-------------------------|
+</div>
