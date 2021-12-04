@@ -20,9 +20,21 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 ### Versión por defecto en el sistema operativo
 
-1. En Microsoft Windows oprimir `Windows+R` y ejecutar `sysdm.cpl`. En la ventana dar clic en la pestaña Opciones Avanzadas y luego en Variables de Entorno.
+1. En Microsoft Windows oprimir `Windows+R` y ejecutar `sysdm.cpl` para ingresar a las propiedades avanzadas del sistema.
 
 ![R.GISPython.BasicScript.WindowsOSRunSysdm](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSRunSysdm.png)
 
-2. 
+2. En la ventana dar clic en la pestaña _Opciones Avanzadas_ y luego en _Variables de Entorno_.
+
+![R.GISPython.BasicScript.WindowsOSSystemProperties](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSSystemProperties.png)
+
+3. En _Variables del sistema_, seleccionar _Path_ y dar clic en _Editar_.
+
+![R.GISPython.BasicScript.WindowsOSEnvironmentVariables](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSEnvironmentVariables.png)
+
+4. Para establecer la versión de Python integrada a ArcGIS (p.ej, Python 2.7.5 sobre ArcGIS 10.2.2 for Desktop), ingresar (utilizando la opción _Nuevo_) o verificar que existan las variables de entorno direccionandas a las rutas _C:\Python27\ArcGIS10.2\Scripts_ y _C:\Python27\ArcGIS10.2_.
+
+![R.GISPython.BasicScript.WindowsOSEnvironmentVariablesEdit](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSEnvironmentVariablesEdit.png)
+
+> En caso de que su instalación de ArcGIS for Desktop corresponda a una versión diferente, identifique las rutas de instalación e ingrese o modifique las varibles de entorno. Mas información en https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion
 
