@@ -55,7 +55,7 @@ En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Pa
 
 1. Descargue e instale PyCharm Community desde https://www.jetbrains.com/pycharm/download/
 
-2. Abra PyCharm y desde el menú _File_, cree (_New Project_) o abra (_Open_) un proyecto existente, (p.ej, crear en la unidad D:\ la carpeta R.GISPython). Seleccione _Virtualenv_ para la creación del nuevo ambiente que utilizará el intérprete y el intérprete base que se utilizará por defecto (p.ej, Python 2.7 ArcGIS for Desktop 10.2.2.
+2. Abra PyCharm y desde el menú _File_, cree (_New Project_) o abra (_Open_) un proyecto existente, (p.ej, crear en la unidad D:\ la carpeta R.GISPython). Seleccione _Virtualenv_ para la creación del nuevo ambiente que utilizará el intérprete y el intérprete base que se utilizará por defecto (p.ej, Python 2.7 ArcGIS for Desktop 10.2.2).
 
 ![R.GISPython.BasicScript.PyCharmCreateProject](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmCreateProject.png)
 
@@ -63,5 +63,5 @@ En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Pa
 
 3. En el menú _File_, seleccione la opción _Settings_ u oprima la combinación de teclas `Ctrl+Alt+S` para acceder a las opciones de configuración de PyCharm.
 
-![R.GISPython.BasicScript.PyCharmSettings](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmSettings)
+![R.GISPython.BasicScript.PyCharmSettings](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmSettings.png)
 
