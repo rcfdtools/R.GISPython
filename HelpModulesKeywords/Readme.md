@@ -21,15 +21,15 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 1. En el command o CMD de Windows, ejecutar Python `C:\Python` y digitar el comando `help()` para ingresar a los bloques de ayuda y documentación del lenguaje.
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelp.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonHelp.png)
+![R.GISPython.BasicScript.WindowsCMDPythonHelp.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelp.png)
 
 2. Para conocer los módulos instalados y disponibles, en la entrada de ayuda _>help_, ingrese el comando `modules`
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelpModules.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonHelpModules.png)
+![R.GISPython.BasicScript.WindowsCMDPythonHelpModules.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpModules.png)
 
 Para salir de la ayuda, presione las teclas `Ctrl-Z`, de esta forma volverá a la raiz del centro de ayuda >>>.
 
 3. Para obtener la ayuda relacionada con un comando específico, p.ej, `sys`, digite `help('sys')`. Oprimiendo la tecla _Enter_ podrá avanzar en la visualización de la ayuda mostrada. 
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonHelpSys.png)
+![R.GISPython.BasicScript.WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpSys.png)
 
