@@ -38,3 +38,4 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 > En caso de que su instalación de ArcGIS for Desktop corresponda a una versión diferente, identifique las rutas de instalación e ingrese o modifique las varibles de entorno. Mas información en https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion
 
+> Luego de la modificación de las variables de entorno, para algunas versiones de su sistema operativo, será necesario reiniciar su equipo o cerrar y abrir su sesión de usuario.
