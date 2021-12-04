@@ -33,7 +33,7 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 ![R.GISPython.BasicScript.WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpSys.png)
 
-> Oprimiendo la tecla _Enter_, podrá avanzar en la visualización de la ayuda mostrada y con las teclas `Ctrl-Z.
+> Oprimiendo la tecla _Enter_, podrá avanzar en la visualización de la ayuda mostrada y con las teclas `Ctrl-Z`.
 > Para salir de la ayuda específica de una librería, presione la tecla `f`.
 
 4. Para conocer las palabras claves reservadas, en la ventana de ayuda ingrese el comando keywords `help> keywords`.
