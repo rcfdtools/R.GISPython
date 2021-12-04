@@ -131,3 +131,7 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 
 ### Licencia, cláusulas y condiciones de uso
 https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) |
+|-----------------------------------------------------------------------------------------|-------------------------|
