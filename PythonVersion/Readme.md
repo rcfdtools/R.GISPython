@@ -117,8 +117,3 @@ https://github.com/rcfdtools/R.GISPython/wiki/License
 | [Actividad anterior](https://github.com/rcfdtools/R.GISPython) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion) |
 |-----------------------------------------------------------------------------------------|-------------------------|
 
-
-<div align="center">
-    <a rel="anterior" href="https://github.com/rcfdtools/R.GISPython"> [ Actividad anterior ]</a> &nbsp;&nbsp
-    <a rel="siguiente" href="https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion"> [Actividad siguiente] </a>
-</div>
