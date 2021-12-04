@@ -27,9 +27,11 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 ![R.GISPython.BasicScript.WindowsCMDPythonHelpModules.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpModules.png)
 
-Para salir de la ayuda, presione las teclas `Ctrl-Z`, de esta forma volverá a la raiz del centro de ayuda >>>.
+> Para salir de la ayuda, presione las teclas `Ctrl-Z`, de esta forma volverá a la raiz del centro de ayuda >>>.
 
-3. Para obtener la ayuda relacionada con un comando específico, p.ej, `sys`, digite `help('sys')`. Oprimiendo la tecla _Enter_ podrá avanzar en la visualización de la ayuda mostrada. 
+3. Para obtener la ayuda relacionada con un comando específico, p.ej, `sys`, digite `help('sys')`.
 
 ![R.GISPython.BasicScript.WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpSys.png)
+
+> Oprimiendo la tecla _Enter_ podrá avanzar en la visualización de la ayuda mostrada. 
 
