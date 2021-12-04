@@ -20,7 +20,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
 
 
-### Consulta de versiones desde el command CMD de Microsoft Windows
+### Consulta de versiones desde el Command CMD de Microsoft Windows
 
 
 #### Identificar la versión asociada en las rutas por defecto del sistema operativo Microsoft Windows
@@ -50,10 +50,27 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 #### Verificación de rutas o path asociado a cada versión de Python
 
-1. En el command o CMD de Microsoft Windows, ejecutar el comando `py -` indicando el número de la versión, p.ej, `py -2.7`.
+1. En el Command o CMD de Microsoft Windows, ejecutar el comando `py -` indicando el número de la versión, p.ej, `py -2.7`.
 
 2. Importar la librería de sistema usando el comando `import sys`, para finalizar ingresar el comando `sys.path`, para salir ingrese el comando `quit()`.
 
 ![R.GISPython.BasicScript.PythonPathCMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/PythonPathCMD.png)
 
 > En la ilustración podrá observar que la versión 2.7.5 de Python se encuentra instalada en C:\Python27 y corresponde a ArcGIS for Desktop 10.2. También podrá observar que la versión 3.10.0 se encuentra instalada en C:\Python310 y corresponde a una instalación independiente o standalone.
+
+
+#### Verificación de versión y rutas de Python en ArcGIS for Desktop
+
+Para conocer la versión instalada de Python en ArcGIS Desktop y su localización, abrir ArcMAP y dar clic en el ícono de la consola de Python, importar la librería sys con el comando `import sys` y ejecutar el comando `sys.version` y `sys.path`. La versión instalada en ArcGIS 10.2.2 es Python 2.7.5. y está localizada en C:\Python27\
+
+
+#### Verificación de versión y rutas de Python en ArcGIS Pro
+
+
+
+
+#### Verificación de versión y rutas de Python en QGIS
+
+En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para ingresar a la consola de comandos e ingresar los mismos comandos que utilizó en ArcGIS para consultar la versión y rutas asociadas. La versión instalada en QGIS 3.22.1 es Python 3.9.5. y está en localizada en C:\Program Files\QGIS 3.22.1\apps\Python39
+
+![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.9.5QGIS3.22.1.png)
