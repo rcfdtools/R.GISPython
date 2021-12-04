@@ -30,4 +30,4 @@ Para conocer la versión asociada en las rutas por defecto del sistema operativo
 
 >Es posible al ingresar Python y dar Enter no se ejecute ninguna instrucción o el SO devuelva un error indicado que el comando ingresado no existe, esto significa que su sistema operativo no dispone por defecto de una versión de Python definida en el entorno de trabajo.
 
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
