@@ -6,7 +6,7 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 ### Objetivos
 
 * Establecer una versión de Python como la versión por defecto del OS.
-* Configurar él (los) intérprete (s) a usar en PyCharm para la ejecución de scripts.
+* Configurar él(los) intérprete(s) a usar en PyCharm para la ejecución de scripts.
 
 
 ### Requerimientos
@@ -44,7 +44,24 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 ![R.GISPython.BasicScript.WindowsCMD](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMD.png)
 
-6. En el intérprete de comandos de Windows, ejecute el comando Python. Observará que la versión por defecto es la 2.7.5.
+6. En el intérprete de comandos de Windows, ejecute el comando _Python_. Observará que la versión por defecto es la 2.7.5.
 
 ![R.GISPython.BasicScript.WindowsCMDPythonVersion](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonVersion.png)
+
+
+## Configuración de intérprete(s) de Python en PyCharm 
+
+En PyCharm, el(los) intérprete(s) de comandos son asociados a cada proyecto. Para este ejemplo, asociaremos Python 2.7.5 de ArcGIS for Desktop y Python 3.10.0 standalone.  
+
+1. Descargue e instale PyCharm Community desde https://www.jetbrains.com/pycharm/download/
+
+2. Abra PyCharm y desde el menú _File_, cree (_New Project_) o abra (_Open_) un proyecto existente, (p.ej, crear en la unidad D:\ la carpeta R.GISPython). Seleccione _Virtualenv_ para la creación del nuevo ambiente que utilizará el intérprete y el intérprete base que se utilizará por defecto (p.ej, Python 2.7 ArcGIS for Desktop 10.2.2.
+
+![R.GISPython.BasicScript.PyCharmCreateProject](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmCreateProject.png)
+
+> Los nombres de los intérpretes base pueden cambiar dependiendo de la versión de ArcGIS for Desktop instalada o de la versión independiente instalada en su sistema. 
+
+3. En el menú _File_, seleccione la opción _Settings_ u oprima la combinación de teclas `Ctrl+Alt+S` para acceder a las opciones de configuración de PyCharm.
+
+![R.GISPython.BasicScript.PyCharmSettings](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmSettings)
 
