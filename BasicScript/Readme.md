@@ -184,7 +184,7 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 * https://stackoverflow.com/questions/42163470/how-to-execute-a-py-file-from-a-ipynb-file-on-the-jupyter-notebook
 
 
-### Colaboradores
+### Autores
 
 * Creado por r.cfdtools@gmail.com
 

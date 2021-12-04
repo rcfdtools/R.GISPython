@@ -107,7 +107,7 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 * https://epjmorris.wordpress.com/2020/09/16/configuring-pycharm-for-use-with-arcgis-pro-and-arcmap/
 
 
-### Colaboradores
+### Autores
 
 * Creado por r.cfdtools@gmail.com
 

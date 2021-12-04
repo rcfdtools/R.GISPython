@@ -88,7 +88,7 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 ![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python3.9.5QGIS3.22.1.png)
 
 
-### Colaboradores
+### Autores
 
 * Creado por r.cfdtools@gmail.com
 
