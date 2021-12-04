@@ -32,7 +32,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 ![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD](https://github.com/rcfdtools/R.GISPython/blob/main/PythonVersion/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
-### Identificar las versiones instaladas que pueden ser lanzadas directamente desde el CMD
+#### Identificar las versiones instaladas que pueden ser lanzadas directamente desde el CMD
 
 1. Utilizando la instrucción `py -0` en el `CMD`, python devuelve las versiones instaladas y registradas en el sistema operativo. 
 > Asterisco (*) indica cuál es la versión por defecto.
