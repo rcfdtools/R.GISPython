@@ -40,7 +40,7 @@ En el sistema operativo pueden existir y convivir, además de las versiones inte
 
 #### Identificar las versiones instaladas que pueden ser lanzadas directamente desde el CMD
 
-1. Utilizando la instrucción `py -0` en el `CMD`, python devuelve las versiones instaladas y registradas en el sistema operativo. 
+1. Utilizando la instrucción `py -0` en el `CMD`, python devuelve las versiones instaladas y registradas en el sistema operativo que pueden ser ejecutadas desde cualquier directorio del S.O. sin necesidad de ingresar su ruta completa de localización. 
 > Asterisco (*) indica cuál es la versión por defecto.
 > Si dispone de ArcGIS Pro, en los resultados desplegados no aparecerá la versión asociada.
 
