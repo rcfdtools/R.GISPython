@@ -3,13 +3,14 @@
 Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`.
 
 > Atención: Actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutados directamente desde el entorno gráfico.<br>
-> En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console<br>
+> En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console <br>
 > En ArcGIS Pro, podrá ejecutar scripts interactivos desde la ventana de Python Notebook.
 
 
 ### Objetivos
 
-* En PyCharm, ejecutar el script usando la versión de Python 3.10.
+* En PyCharm, ejecutar el script usando la versión de Python 2.7 y 3.10.
+* Ejecutar el script desde ArcGIS Pro a través de Python Notebook.
 * Ejecutar el script desde la consola del sistema operativo o CMD.
 * Solicitar al usuario los valores de entrada de los parámetros requeridos.
 * Verificar si los caracteres especiales como tildes y eñes se visualizan correctamente en Python 2.7 y 3.10.
@@ -53,7 +54,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 # -*- coding: UTF-8 -*-
 # Nombre: Tc_v1.py
 # Descripción: Script interactivo para el cálculo del tiempo de concentración
-# Requerimiento: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.10.0 (instalación independiente)
+# Requerimiento: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.10.0 (instalación independiente). ArcGIS Pro 2.9 Notebook.
 
 # Librerías
 import sys
@@ -74,7 +75,7 @@ S = float(input("Pendiente media cauce principal, m/m: "))
 
 # Cálculos
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
-print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
+print ("\nTc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 ```
 
 ### Descripción instrucciones y comandos empleados
@@ -88,12 +89,12 @@ print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 | sys.version             | Muestra la versión actual de Python desde la que se está ejecutando el script.                                                                                                                                                                                                                                                                                                                                                                             |
 | \n                      | Agrega un salto de línea en impresiones en pantalla.                                                                                                                                                                                                                                                                                                                                                                                                       |
 | print                   | Permite realizar la impresión de un resultado en la consola. En las versiones de Python 2.x, todo aquello que aparezca después del print será impreso en pantalla, incluso los paréntesis sí existen concatenaciones con comas. En las versiones de Python 3.x, solo se imprimirá aquello que esté entre paréntesis. Nótese que es posible realizar cálculos adicionales en la impresión (TcGiandotti*60) e incluso concatenar resultados usando coma o +. |
-| str()                   | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +                                                                                                                                                                                                                                                                                                                                          |
-| input('mensaje')         | Entrada de usuario por consola.                                                                                                                                                                                                                                                                                                                                                      |
-| float()                 | Convierte la entrada de usuario por consola a un valor numérico flotante.|
+| str()                   | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +.                                                                                                                                                                                                                                                                                                                                         |
+| input('mensaje')         | Entrada de usuario por consola.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| float()                 | Convierte la entrada de usuario por consola a un valor numérico flotante.                                                                                                                                                                                                                                                                                                                                                                                  |
 
-> En Python, por defecto se asume que la entrada ingresada por consola a través del comando `input()` es una cadena de texto, por tal motivo, cuando se trata de entradas numéricas será necesaria la conversión a tipo flotante. <br>
-> Dentro del paréntesis de la entrada `input()`, es necesario ingresar un texto descriptivo que permita al usuario entender el tipo y valor que está ingresando.
+> En Python, por defecto se asume que la entrada ingresada por consola a través del comando `input()` es una cadena de texto, por tal motivo, cuando se trata de entradas numéricas, será necesaria la conversión a tipo flotante. <br>
+> Dentro del paréntesis de la entrada `input()`, es necesario ingresar un texto descriptivo que permita al usuario entender el tipo y valor requerido.
 
 
 ### Ejecución desde Pycharm

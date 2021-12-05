@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # Nombre: Tc_v1.py
 # Descripción: Script interactivo para el cálculo del tiempo de concentración
-# Requerimiento: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.10.0 (instalación independiente)
+# Requerimiento: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.10.0 (instalación independiente). ArcGIS Pro 2.9 Notebook.
 
 # Librerías
 import sys
