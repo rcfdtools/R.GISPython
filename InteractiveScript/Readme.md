@@ -200,6 +200,13 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 ![Python3.7.11ArcGISPro2.9PythonNotebookCode.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebookCode.png)
 
 
+### Ejecución desde el GUI de QGIS
+
+Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y el archivo D:\R.GISPython\InteractiveScript\TcQGIS_v1.py. 
+
+![Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.9.5QGIS3.22.1.png)
+
+
 ### Referencias
 
 * https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console

@@ -17,10 +17,6 @@ print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPyt
 print ('Créditos: r.cfdtools@gmail.com\n')
 
 # Variables
-#A = float(input("Área cuenca, km²: "))
-#L = float(input("Longitud cauce principal, km: "))
-#S = float(input("Pendiente media cauce principal, m/m: "))
-
 A = QInputDialog.getText(None, 'Área', 'Área cuenca, km²:')
 L = QInputDialog.getText(None, 'Longitud', 'Longitud cauce principal, km:')
 S = QInputDialog.getText(None, 'Pendiente', 'Pendiente media cauce principal, m/m:')
