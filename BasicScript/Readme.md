@@ -154,6 +154,13 @@ Ejecución en Python 3.9.5 sobre QGIS 3.22.1.
 ![R.GISPython.BasicScript.Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.9.5QGIS3.22.1.png)
 
 
+### Ejecución usando ArcGIS for Desktop
+
+En ArcMap, dar clic en el ícono de Python, en la consola embebida, dar clic derecho y seleccionar la opción _Load..._, buscar la ruta D:\R.GISPython\BasicScript\Tc_v0.py y abrir el archivo. Para ejecutar dar Enter.
+
+![R.GISPython.Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
+
+
 ### Ejecución usando ArcGIS Pro
 
 #### Desde el Command o CMD de Microsoft Windows
