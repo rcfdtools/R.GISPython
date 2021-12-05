@@ -2,11 +2,11 @@
 
 Desde la consola de Python, es posible realizar operaciones matemáticas simples o complejas, definir variables, listas, tuplas, funciones, llamar módulos y en general utilizar cualquier elemento integrado al lenguaje y sin necesidad de que sea almacenado en un script .py. 
 
-> Tenga presente que las definiciones realizadas y resultados obtenidos desaparecerán una vez cierre la ventana el CMD o la consola de Python.
+> Tenga presente que las definiciones realizadas y resultados obtenidos desaparecerán una vez cierre la ventana del CMD o la consola de Python.
 
 ### Objetivos
 
-* Realizar operaciones básicas desde la consola de Python.
+* Realizar operaciones matemáticas básicas desde la consola de Python.
 * Definir variables temporales.
 
 ### Requerimientos
