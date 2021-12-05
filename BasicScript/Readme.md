@@ -209,3 +209,7 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 
 ### Licencia, cláusulas y condiciones de uso
 https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculator) | [Actividad siguiente]() |
+|-----------------------------------------------------------------------------------------|-------------------------|
