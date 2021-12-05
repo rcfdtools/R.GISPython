@@ -97,4 +97,4 @@ print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 ### Ejecución desde Pycharm
 
 Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
-
+![R.GISPython.BasicScript.PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.pn](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png)
