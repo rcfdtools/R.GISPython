@@ -48,7 +48,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ![R.GISPython.BasicScript.WindowsCMDPythonCalc3.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonAsCalculator/Screenshot/WindowsCMDPythonCalc3.png)
 
-5. Para definir en la consola de Python, las variables numéricas de la ecuación, basta con indicar el nombre de la variable y el valor asignado. 
+5. Para definir en la consola de Python, las variables numéricas de la ecuación, basta con indicar el nombre de la variable y el valor asignado. Para obtener el resultado ingrese la expresión de cálculo reemplazando los valores por los nombres de las variables así `(4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)`
 
 > En Python no es necesario definir los tipos debido a que las variables son manejadas dinámicamente en memoria y sin perder precisión en los valores almacenados. Esta particularidad facilita la ejecución de operaciones y la escritura de scripts o secuencias de comandos.
 
@@ -57,7 +57,8 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ### Referencias
 
-* hhttps://www.aguaysig.com/tiempo-de-concentracion-de-la-cuenca/
+* http://www.repositorio.usac.edu.gt/4482/1/Conceptos%20b%C3%A1sicos%20de%20Morfometr%C3%ADa%20de%20Cuencas%20Hidrogr%C3%A1ficas.pdf
+* https://www.aguaysig.com/tiempo-de-concentracion-de-la-cuenca/
 
 
 ### Autores
