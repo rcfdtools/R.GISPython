@@ -174,7 +174,7 @@ En ArcMap, dar clic en el ícono de Python, en la consola embebida, dar clic der
 En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python Window, luego dar clic derecho en la línea de entrada de comando, seleccionar la opción _Load Code_ y seleccionar el script. 
 ![R.GISPython.BasicScript.Python3.7.11ArcGISPro2.9PythonWindow.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python3.7.11ArcGISPro2.9PythonWindow.png)
 
-#### Desde Python Netbook dentro de ArcGIS Pro
+#### Desde Python Notebook dentro de ArcGIS Pro
 
 En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando `%run -i` y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
 

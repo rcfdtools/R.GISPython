@@ -2,9 +2,9 @@
 
 Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`.
 
-> Atención: Actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutadas directamente desde el entorno gráfico.<br>
+> Atención: Actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutados directamente desde el entorno gráfico.<br>
 > En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console<br>
-> En ArcGIS Pro, podrá ejecutar scripts interactivos desde la ventana de Python Netbook.
+> En ArcGIS Pro, podrá ejecutar scripts interactivos desde la ventana de Python Notebook.
 
 
 ### Objetivos
@@ -145,7 +145,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 ### Ejecución usando ArcGIS Pro
 
-#### Desde Python Netbook dentro de ArcGIS Pro
+#### Desde Python Notebook dentro de ArcGIS Pro
 
 En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando `%run -i` y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
 
