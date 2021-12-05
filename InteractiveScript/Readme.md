@@ -2,7 +2,7 @@
 
 Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`.
 
-> Atención: Actualmente, PyQGIS no permite entradas `input()` desde scripts ejecutadas directamente desde el entorno gráfico, es necesario realizar la entrada desde un cuadro de dialogo. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console
+> Atención: Actualmente, PyQGIS no permite entradas `input()` desde scripts ejecutadas directamente desde el entorno gráfico, es necesario realizar la entrada desde un cuadro de dialogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console
 
 
 ### Objetivos
@@ -97,4 +97,14 @@ print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 ### Ejecución desde Pycharm
 
 Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
-![R.GISPython.BasicScript.PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.pn](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png)
+![R.GISPython.BasicScript.PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png)
+
+Ejecución en PyCharm usando Python 3.10.0.
+![R.GISPython.BasicScript.PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png)
+
+>PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
+
+Ejecución en PyCharm usando Python 3.9.5 de QGIS 3.22.1. 
+![R.GISPython.BasicScript.PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
+
+
