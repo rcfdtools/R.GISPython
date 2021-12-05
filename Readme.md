@@ -29,7 +29,7 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o códi
 * QGIS 2.18.28
 * QGIS 3.12+
 * Python 2.7.17 standalone
-* Python 3.7.7 standalone
+* Python 3.10.0 standalone
 * Anaconda (opcional)
 * PyCharm Community https://www.jetbrains.com/pycharm/download/#section=windows
 * PyCharm for Anaconda (opcional)

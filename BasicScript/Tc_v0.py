@@ -27,5 +27,5 @@ print ('\tÁrea cuenca, km²: ' + str(A))
 print ('\tLongitud cauce principal, km: ' + str(L))
 print ('\tPendiente media cauce principal, m/m: ' + str(S))
 print ('\nResultados')
-print ('\tTc(min):', TcGiandotti*60) #Impresión en pantalla usando coma, no compatible con Python 2. Coma agrega espacio.
-print ('\tTc(min): ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, compatible con cualquier versión de Python. + requiere de ingreso manual de espacio.
+print ('\tTc,min:', TcGiandotti*60) #Impresión en pantalla usando coma, no compatible con Python 2. Coma agrega espacio.
+print ('\tTc,min: ' + str(TcGiandotti*60)) #Impresión en pantalla usando +, compatible con cualquier versión de Python. + requiere de ingreso manual de espacio.
