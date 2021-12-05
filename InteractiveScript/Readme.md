@@ -143,9 +143,9 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 ![Python3.10.0ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0ArcGISDesktop10.2.2CMD.png)
 
 
-#### Desde Python Window dentro de ArcGIS Pro
+### Ejecución usando ArcGIS Pro
 
-#### Desde Jupiter dentro de ArcGIS Pro
+#### Desde Python Netbook dentro de ArcGIS Pro
 
 En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando `%run -i` y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
 
