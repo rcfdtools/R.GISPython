@@ -1,6 +1,6 @@
 ## Creación de scripts interactivos
 
-Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`.
+Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`. En la interfaz gráfica de QGIS, las entradas de usuario se pueden realizar mediante QInputDialog.getText() y en ArcGIS Pro, la ejecución de este tipo de scripts puede ser realizada directamente desde Python Notebook.
 
 > Atención: Actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutados directamente desde el entorno gráfico.<br>
 > En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console <br>
