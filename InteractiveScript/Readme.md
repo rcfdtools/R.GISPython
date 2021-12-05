@@ -218,11 +218,12 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 
 ### Compatibilidad
 
-* Compatible con cualquier versión de Python.
+* Tc_v1.py compatible con cualquier versión de Python.
+* TcQGIS_v1.py compatible con QGIS 3+.
 
 
 ### Keywords
-`Concentration time` `Giandotti` `Subbasin` `Hydrology` `GIS` `Interactive`
+`Concentration time` `Giandotti` `Subbasin` `Hydrology` `GIS` `Interactive` `QInputDialog`
 
 
 ### Control de versiones
