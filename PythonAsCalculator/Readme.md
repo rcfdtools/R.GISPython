@@ -86,6 +86,6 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 https://github.com/rcfdtools/R.GISPython/wiki/License
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion) | [Actividad siguiente]() |
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/BasicScript) |
 |------------------------|-------------------------|
 
