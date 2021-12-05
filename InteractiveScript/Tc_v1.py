@@ -15,11 +15,12 @@ print ('Python versión: ' + str(sys.version))
 print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
 print ('Créditos: r.cfdtools@gmail.com\n')
 
-#Variables
+# Variables
 A = float(input("Área cuenca, km²: "))
 L = float(input("Longitud cauce principal, km: "))
 S = float(input("Pendiente media cauce principal, m/m: "))
 
-#Cálculos
+# Cálculos
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
-print("Tc, min: " + str(TcGiandotti*60)) #Impresión en pantalla usando +
+print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
+
