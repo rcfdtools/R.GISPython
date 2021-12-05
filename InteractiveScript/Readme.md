@@ -126,3 +126,17 @@ Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
 > Opcionalmente podrá utilizar el IDLE de Python 3.10 que aparece en la lista de programas de Windows luego de su instalación.
 
 
+### Ejecución desde el Command o CMD de Microsoft Windows
+
+Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usando cualquier versión de Python instalada, usar el comando py, la versión requerida (por ejemplo, -3.10) y la ruta completa del archivo .py.
+
+```C:\py -2.7 D:\R.GISPython\InteractiveScript\Tc_v1.py```
+
+```C:\py -3.10 D:\R.GISPython\InteractiveScript\Tc_v1.py```
+
+Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+
+Ejecución en consola CMD Python 3.10.0 Standalone.
+![R.GISPython.BasicScript.Python3.10.0ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0ArcGISDesktop10.2.2CMD.png)
+
