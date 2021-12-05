@@ -98,10 +98,6 @@ print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPyt
 print ('Créditos: r.cfdtools@gmail.com\n')
 
 # Variables
-#A = float(input("Área cuenca, km²: "))
-#L = float(input("Longitud cauce principal, km: "))
-#S = float(input("Pendiente media cauce principal, m/m: "))
-
 A = QInputDialog.getText(None, 'Área', 'Área cuenca, km²:')
 L = QInputDialog.getText(None, 'Longitud', 'Longitud cauce principal, km:')
 S = QInputDialog.getText(None, 'Pendiente', 'Pendiente media cauce principal, m/m:')
@@ -135,6 +131,8 @@ print ("\tTc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 | str()                   | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +.                                                                                                                                                                                                                                                                                                                                         |
 | input('mensaje')         | Entrada de usuario por consola.                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | float()                 | Convierte la entrada de usuario por consola a un valor numérico flotante.                                                                                                                                                                                                                                                                                                                                                                                  |
+| from PyQt5.QtWidgets import QInputDialog | QGIS - importación de widget para el lanzamiento de dialogo de entrada de usuario en una ventana flotante.                                                                                                                                                                                                                                                                                                                                              |
+| QInputDialog.getText() | QGIS - llamado de cuadro de diálogo.                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 > En Python, por defecto se asume que la entrada ingresada por consola a través del comando `input()` es una cadena de texto, por tal motivo, cuando se trata de entradas numéricas, será necesaria la conversión a tipo flotante. <br>
 > Dentro del paréntesis de la entrada `input()`, es necesario ingresar un texto descriptivo que permita al usuario entender el tipo y valor requerido.
