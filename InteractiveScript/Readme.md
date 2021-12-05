@@ -9,11 +9,11 @@ Los scripts en Python permiten la entrada directa de datos desde la consola de c
 
 ### Objetivos
 
-* En PyCharm, ejecutar el script usando la versión de Python 2.7 y 3.10.
-* Ejecutar el script desde ArcGIS Pro a través de Python Notebook.
-* Ejecutar el script desde la consola del sistema operativo o CMD.
+* En PyCharm, ejecutar el script interactivo usando la versión de Python 2.7 y 3.10.
+* Ejecutar el script interactivo desde ArcGIS Pro a través de Python Notebook.
+* Ejecutar el script interactivo desde la consola del sistema operativo o CMD.
 * Solicitar al usuario los valores de entrada de los parámetros requeridos.
-* Verificar si los caracteres especiales como tildes y eñes se visualizan correctamente en Python 2.7 y 3.10.
+* Verificar si los caracteres especiales como tildes y eñes del español se visualizan correctamente en Python 2.7 y 3.10.
 
 
 ### Requerimientos
