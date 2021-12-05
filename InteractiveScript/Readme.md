@@ -3,7 +3,7 @@
 Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`.
 
 > Atención: Actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutadas directamente desde el entorno gráfico.<br>
-> En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console.<br>
+> En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console<br>
 > En ArcGIS Pro, podrá ejecutar scripts interactivos desde la ventana de Python Netbook.
 
 
@@ -154,3 +154,38 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 ![Python3.7.11ArcGISPro2.9PythonNotebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebook.png)
 
 ![Python3.7.11ArcGISPro2.9PythonNotebookCode.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebookCode.png)
+
+
+### Referencias
+
+* https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console
+
+
+### Autores
+
+* Creado por r.cfdtools@gmail.com
+
+
+### Compatibilidad
+
+* Compatible con cualquier versión de Python.
+
+
+### Keywords
+`Concentration time` `Giandotti` `Subbasin` `Hydrology` `GIS` `Interactive`
+
+
+### Control de versiones
+
+| Versión    | Descripción                                                                                             |
+|------------|---------------------------------------------------------------------------------------------------------|
+| v.20211201 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python. |
+| v.20211205 | Ejecución usando ArcGIS Pro 2.9.                                                                        |
+
+
+### Licencia, cláusulas y condiciones de uso
+https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/BasicScript) | [Actividad siguiente]() |
+|-----------------------------------------------------------------------------------------|-------------------------|
