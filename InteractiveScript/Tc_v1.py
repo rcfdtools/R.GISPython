@@ -22,5 +22,5 @@ S = float(input("Pendiente media cauce principal, m/m: "))
 
 # Cálculos
 TcGiandotti = (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
-print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
+print ("\nTc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 

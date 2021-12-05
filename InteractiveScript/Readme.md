@@ -2,7 +2,9 @@
 
 Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`.
 
-> Atención: Actualmente, PyQGIS no permite entradas `input()` desde scripts ejecutadas directamente desde el entorno gráfico, es necesario realizar la entrada desde un cuadro de dialogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console
+> Atención: Actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutadas directamente desde el entorno gráfico.<br>
+> En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console.<br>
+> En ArcGIS Pro, podrá ejecutar scripts interactivos desde la ventana de Python Netbook.
 
 
 ### Objetivos
@@ -33,7 +35,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 <br>
 <div  align="center">
-    <img align="center"  alt="R.GISPython.BasicScript.TcGiangotti" src="https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/TcGiangotti.png" width="240px"/>
+    <img align="center"  alt="R.GISPython.InteractiveScript.TcGiangotti" src="https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/TcGiangotti.png" width="240px"/>
 </div>
 
 
@@ -98,19 +100,19 @@ print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 
 > PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
 
-![R.GISPython.BasicScript.PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
+![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
 Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
-![R.GISPython.BasicScript.PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png)
+![PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png)
 
 Ejecución en PyCharm usando Python 3.10.0.
-![R.GISPython.BasicScript.PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png)
+![PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png)
 
 Ejecución en PyCharm usando Python 3.9.5 de QGIS 3.22.1. 
-![R.GISPython.BasicScript.PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png)
+![PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png)
 
 Ejecución en PyCharm usando Python 3.7.11 de ArcGIS Pro 2.9. 
-![R.GISPython.BasicScript.PyCharm2021.3Python3.7.11ArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.7.11ArcGISPro2.9.png)
+![PyCharm2021.3Python3.7.11ArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.7.11ArcGISPro2.9.png)
 
 
 ### Ejecución usando el IDLE de Python de ArcGIS for Desktop
@@ -120,7 +122,7 @@ En el explorador de Windows abrir la carpeta D:\R.GISPython\InteractiveScript y 
 > En Windows 11 podrá lanzar manualmente la interfaz gráfica del IDLE buscando la aplicación _IDLE (Python GUI)_.
 
 Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2IDLE.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2IDLE.png)
+![Python2.7.5ArcGISDesktop10.2.2IDLE.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2IDLE.png)
 
 > Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.<br>
 > Opcionalmente podrá utilizar el IDLE de Python 3.10 que aparece en la lista de programas de Windows luego de su instalación.
@@ -135,11 +137,20 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 ```C:\py -3.10 D:\R.GISPython\InteractiveScript\Tc_v1.py```
 
 Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
-![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
 Ejecución en consola CMD Python 3.10.0 Standalone.
-![R.GISPython.BasicScript.Python3.10.0ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0ArcGISDesktop10.2.2CMD.png)
+![Python3.10.0ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0ArcGISDesktop10.2.2CMD.png)
 
 
-### Ejecución desde ArcGIS for Desktop
+#### Desde Python Window dentro de ArcGIS Pro
 
+#### Desde Jupiter dentro de ArcGIS Pro
+
+En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar Python NoteBook, luego en la celda ingresar el comando `%run -i` y la ruta del script y ejecutar. Opcionalmente en la celda de entrada de comandos podrá copiar y pegar todo el código contenido dentro del script. 
+
+```%run -i D:\R.GISPython\InteractiveScript\Tc_v1.py```
+
+![Python3.7.11ArcGISPro2.9PythonNotebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebook.png)
+
+![Python3.7.11ArcGISPro2.9PythonNotebookCode.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.7.11ArcGISPro2.9PythonNotebookCode.png)
