@@ -121,7 +121,9 @@ Ejecución en PyCharm usando Python 3.10.0. En esta versión las dos impresiones
 
 ### Ejecución usando el IDLE de Python de ArcGIS for Desktop
 
-En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. En Windows podrá lanzar manualmente la interfaz gráfica del IDLE buscando la aplicación IDLE (Python GUI).
+En el explorador de Windows abrir la carpeta D:\R.GISPython\BasicScript y dar clic derecho en Tc_v0.py; seleccionar la opción _Edit With IDLE_. 
+
+>Ejecutar oprimiendo F5. En Windows podrá lanzar manualmente la interfaz gráfica del IDLE buscando la aplicación _IDLE (Python GUI)_.
 
 Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
 ![R.GISPython.BasicScript.Python2.7.5ArcGISDesktopIDLE.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/Python2.7.5ArcGISDesktopIDLE.png)

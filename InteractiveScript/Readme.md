@@ -96,7 +96,7 @@ print ("Tc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 
 ### Ejecución desde Pycharm
 
->PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
+> PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
 
 ![R.GISPython.BasicScript.PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
@@ -111,3 +111,18 @@ Ejecución en PyCharm usando Python 3.9.5 de QGIS 3.22.1.
 
 Ejecución en PyCharm usando Python 3.7.11 de ArcGIS Pro 2.9. 
 ![R.GISPython.BasicScript.PyCharm2021.3Python3.7.11ArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.7.11ArcGISPro2.9.png)
+
+
+### Ejecución usando el IDLE de Python de ArcGIS for Desktop
+
+En el explorador de Windows abrir la carpeta D:\R.GISPython\InteractiveScript y dar clic derecho en Tc_v1.py; seleccionar la opción _Edit With IDLE_. Ejecutar oprimiendo F5. 
+
+> En Windows 11 podrá lanzar manualmente la interfaz gráfica del IDLE buscando la aplicación _IDLE (Python GUI)_.
+
+Script sobre IDLE de Python 2.7.5 en ArcGIS for Desktop.
+![R.GISPython.BasicScript.Python2.7.5ArcGISDesktop10.2.2IDLE.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2IDLE.png)
+
+> Nota: para lanzar correctamente el IDLE de ArcGIS Desktop, es necesario definir, en variables del sistema operativo Windows, el direccionamiento al directorio C:\Python27.<br>
+> Opcionalmente podrá utilizar el IDLE de Python 3.10 que aparece en la lista de programas de Windows luego de su instalación.
+
+
