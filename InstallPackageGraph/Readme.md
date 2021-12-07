@@ -86,7 +86,9 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 2. Para la instalación de la versión más actual de _matplotlib_, en el CMD ejecutar `py -3.10 -m pip install -U matplotlib`.
 
-![Python3.10.0StandalonePyCharm2021.3pipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandalonePyCharm2021.3pipUpdate.png)
+![Python3.10.0StandaloneCMDmatplotlibInstall.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDmatplotlibInstall.png)
+
+> matplotlib también puede ser instalado directamente desde el administrador de paquetes de PyCharm para el intérprete de Python 3.10.
 
 3. Para verificar la correcta instalación de la librería, en el CMD del sistema, ejecutar Python `C:\py -3.10` y realizar el llamado de la librería y consultar la versión y ruta de instalación a través de los siguientes comandos:
 
