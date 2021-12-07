@@ -74,7 +74,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ### Procedimiento de instalación en Python 3.10.0
 
-0. Verificar las librerías instaladas en Python 3.10 dentro del directorio _Scripts_. En el CMD ingresar el comando `dir Python310\Scripts`.
+0. Verificar las librerías instaladas en Python 3.10 dentro del directorio _Scripts_. En la raíz del CMD de Windows ingresar el comando `dir Python310\Scripts` o desde cualquier ruta `dir C:\Python310\Scripts`.
 
 ![Python3.10.0StandaloneCMDScriptsDir.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDScriptsDir.png)
 
