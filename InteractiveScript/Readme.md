@@ -116,7 +116,6 @@ print ("\tTc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 
 ```
 
-
 ### Descripción instrucciones y comandos empleados
 
 | Instrucción             | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                |

@@ -2,7 +2,7 @@
 
 Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como el while, for y range.
 
-Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario, calcular la variación del tiempo obtenido, cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 24).
+Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario, calcular la variación del tiempo obtenido, cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12).
 
 > Para conocer la compatibilidad de entradas por consola en ArcGIS y QGIS utilizando el comando `input()`, consultar la actividad anterior relacionada con la [creación de scripts interactivos](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript).
 
@@ -15,7 +15,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 * Imprimir resultados tabulados y con formato de tabla de texto sin la instalación o llamado de librerías adicionales.
 * Ingresar valores errados como valores con unidades o cadenas de texto en los datos de entrada para así observar el volcamiento del script. Esto le permitirá entender por qué es necesario implementar control de excepción de errores en futuros scripts.
 
-> Utilizando librerías como _beautifultable_ o _TableIt_, podrá formatear e imprimir listas en diferentes formatos de tabla de texto. 
+> Utilizando librerías como _beautifultable_ o _TableIt_, podrá formatear e imprimir resultados y listas en diferentes formatos de tabla de texto. 
 
 ### Requerimientos
 
@@ -61,11 +61,11 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 # Librerías
 import sys
 
-# Variables de entrada
-i, variaciones, Smin = 0, 12, 0.001 # Incremento, variaciones y pendiente mínima
+# Variables
+i, variaciones, pendienteMinima = 0, 12, 0.001 # Incremento, variaciones y pendiente mínima
 
 # Función de cálculo
-def TcGiandotti(A,L,S):
+def TCGiandotti(A,L,S):
 	return (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
 
 # Función para creación de líneas de separación
@@ -74,7 +74,7 @@ def Separador(n=24): # Usando un valor por defecto de 24 guiones
 	print(nc*n)
 
 # Función para crear tablas basadas en textos
-def fTablaTexto(var, ancho): # Variable a formatear, ancho de columna.
+def TablaTexto(var, ancho): # Variable a formatear, ancho de columna.
     return (' ' *  (ancho-len(str(var))))
 
 # Cabecera
@@ -87,46 +87,71 @@ print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/m
 print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
 print ('Créditos: r.cfdtools@gmail.com\n')
 
-# Variables
+# Variables de entrada
 Separador(18)
 print('Datos de entrada')
 Separador(18)
 A = float(input('Área cuenca, km²: '))
 L = float(input('Longitud cauce principal, km: '))
 S = float(input('Pendiente media cauce principal, m/m: '))
-tipoImpresion = input('Imprimir con formato de tabla de texto Python 3 (y/n), Python 2 y 3 ("y"/"n"): ')
+tipoImpresion = input('Imprimir con formato de tabla de texto, Python 3 (y/n), Python 2 y 3 ("y"/"n"): ')
 
 # Cálculos
 if str(tipoImpresion.lower()) == 'n':
-    print('\nTc, min: ' + str(TcGiandotti(A,L,S)*60)) # Impresión en pantalla usando +
+    print('\nTc, min: ' + str(TCGiandotti(A,L,S)*60)) # Impresión en pantalla usando +
     print('\nResultados variando la pendiente y utilizando columnas tabuladas')
     Separador()
     print('i\tS, m/m\tTc, min')
     Separador()
     while i < variaciones:
-        Svar =  (((S-Smin)/(variaciones-1))*i+Smin)
-        #print(i+1, '\t', round(Svar,4), '\t', round(TcGiandotti(A,L,Svar)*60,4)) #Concatenación con coma
-        print(str(i+1)+'\t'+str(round(Svar,4))+'\t'+str(round(TcGiandotti(A,L,Svar)*60,4))) #Concatenación con +
+        Svar =  (((S-pendienteMinima)/(variaciones-1))*i+pendienteMinima)
+        #print(i+1, '\t', round(Svar,4), '\t', round(TCGiandotti(A,L,Svar)*60,4)) #Concatenación con coma
+        print(str(i+1)+'\t'+str(round(Svar,4))+'\t'+str(round(TCGiandotti(A,L,Svar)*60,4))) #Concatenación con +
         i += 1
 else:
-    print('\nTc, min: ' + str(TcGiandotti(A,L,S)*60)) #Impresión en pantalla usando +
+    print('\nTc, min: ' + str(TCGiandotti(A,L,S)*60)) #Impresión en pantalla usando +
     print('\nResultados variando la pendiente y con formato de tabla de texto')
     vColumnaAncho = 10 # Para impresión con concatenación usando coma, al ancho total por columna se le resta 3 debido a que por cada concatenación con comas se agrega un espacio.
     vColumnas = 3
     vFilaAncho = vColumnaAncho*vColumnas+4 # Para impresión con concatenación usando coma, sumar vColumnas*3
     Separador(vFilaAncho)
-    # print('|', 'i', fTablaTexto("i", vColumnaAncho), '|', 'S, m/m', fTablaTexto('S, m/m', vColumnaAncho), '|', 'Tc, min', fTablaTexto('Tc, min', vColumnaAncho), '|')  # Python 3
-    print('|' + 'i' + fTablaTexto("i",vColumnaAncho) + '|' + 'S, m/m' + fTablaTexto('S, m/m',vColumnaAncho) + '|' + 'Tc, min' + fTablaTexto('Tc, min',vColumnaAncho) + '|') # Python 2
+    # print('|', 'i', TablaTexto("i", vColumnaAncho), '|', 'S, m/m', TablaTexto('S, m/m', vColumnaAncho), '|', 'Tc, min', TablaTexto('Tc, min', vColumnaAncho), '|')  # Python 3
+    print('|' + 'i' + TablaTexto("i",vColumnaAncho) + '|' + 'S, m/m' + TablaTexto('S, m/m',vColumnaAncho) + '|' + 'Tc, min' + TablaTexto('Tc, min',vColumnaAncho) + '|') # Python 2
     Separador(vFilaAncho)
     i=0
     while i < variaciones:
-        Svar =  (((S-Smin)/(variaciones-1))*i+Smin)
-        # print('|', i + 1, fTablaTexto((i + 1), vColumnaAncho), '|', round(Svar, 4), fTablaTexto(round(Svar, 4), vColumnaAncho), '|', round(TcGiandotti(A, L, Svar) * 60, 4), fTablaTexto(round(TcGiandotti(A, L, Svar) * 60, 4), vColumnaAncho), '|')
-        print('|' + str(i + 1) + (fTablaTexto((i + 1), vColumnaAncho)) + '|' + str(round(Svar, 4)) + (fTablaTexto(round(Svar, 4), vColumnaAncho)) + '|' + str(round(TcGiandotti(A, L, Svar) * 60, 4)) + (fTablaTexto(round(TcGiandotti(A, L, Svar) * 60, 4), vColumnaAncho)) + '|')
+        Svar =  (((S-pendienteMinima)/(variaciones-1))*i+pendienteMinima)
+        # print('|', i + 1, TablaTexto((i + 1), vColumnaAncho), '|', round(Svar, 4), TablaTexto(round(Svar, 4), vColumnaAncho), '|', round(TCGiandotti(A, L, Svar) * 60, 4), TablaTexto(round(TCGiandotti(A, L, Svar) * 60, 4), vColumnaAncho), '|')
+        print('|' + str(i + 1) + (TablaTexto((i + 1), vColumnaAncho)) + '|' + str(round(Svar, 4)) + (TablaTexto(round(Svar, 4), vColumnaAncho)) + '|' + str(round(TCGiandotti(A, L, Svar) * 60, 4)) + (TablaTexto(round(TCGiandotti(A, L, Svar) * 60, 4), vColumnaAncho)) + '|')
         i += 1
     Separador(vFilaAncho)
 ```
 
+### Descripción instrucciones y comandos empleados
+
+| Instrucción                                                            | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| #                                                                      | Comentario de una línea.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| """<br/>"""                                                            | 3 comillas simples o dobles permiten definir el inicio y fin de comentarios en múltiples líneas.                                                                                                                                                                                                                                                                                                                                                           |
+| # -*- coding: UTF-8 -*-                                                | Permite definir la codificación de texto utilizada en el script.                                                                                                                                                                                                                                                                                                                                                                                           |
+| import sys                                                             | Importación de librería de systema _sys_.                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| sys.version                                                            | Muestra la versión actual de Python desde la que se está ejecutando el script.                                                                                                                                                                                                                                                                                                                                                                             |
+| \n                                                                     | Agrega un salto de línea en impresiones en pantalla.                                                                                                                                                                                                                                                                                                                                                                                                       |
+| print                                                                  | Permite realizar la impresión de un resultado en la consola. En las versiones de Python 2.x, todo aquello que aparezca después del print será impreso en pantalla, incluso los paréntesis sí existen concatenaciones con comas. En las versiones de Python 3.x, solo se imprimirá aquello que esté entre paréntesis. Nótese que es posible realizar cálculos adicionales en la impresión (TcGiandotti*60) e incluso concatenar resultados usando coma o +. |
+| str()                                                                  | Permite convertir una variable o resultado numérico en una cadena de texto. Requerido para concatenación usando +.                                                                                                                                                                                                                                                                                                                                         |
+| input('mensaje')                                                       | Entrada de usuario por consola.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| float()                                                                | Convierte la entrada de usuario por consola a un valor numérico flotante.                                                                                                                                                                                                                                                                                                                                                                                  |
+| i, variaciones, pendienteMinima = 0, 12, 0.001                         | Definición de variables en una única línea.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| def TCGiandotti(A,L,S):<br>return (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5) | Creación de función con tres parámetros de entrada para el cálculo del tiemop de concentración, return es utilizado para devolver el resultado de la función.                                                                                                                                                                                                                                                                                              |
+| def Separador(n=24):<br>nc = '—'<br>print(nc*n)                        | Creación de una función para crear una línea de separación usando guiones y con un valor predeterminado. Esta función no requiere de return.<br>nc*n: Python permite operaciones con strings, por ejemplo, replicando un carácter n veces.                                                                                                                                                                                                                 |
+| Separador(18)<br>Separador()                                           | Llamado de la función Separador() definiendo o no la longitud n de la línea.                                                                                                                                                                                                                                                                                                                                                                               |
+| i += 1                                                                 | += permite incrementar una variable. También puede ser definido como i = i + 1 pero en Python convencionalmente se utiliza la sintaxis +=                                                                                                                                                                                                                                                                                                                  | 
+| if str(tipoImpresion.lower()) == 'n':<br>else:                         | Prueba lógica de igualdad.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| .lower()                                                               | Convierte una cadena o una variable de texto en minúsculas. Requerido para validar entradas de usuario en input() cuando se solicita al usuario ingresar y/n                                                                                                                                                                                                                                                                                               |  
+| while i < variaciones:                                                 | Bucle o ciclo desde i = 0 hasta el valor definido en variaciones.                                                                                                                                                                                                                                                                                                                                                                                          |
+
+> En Python, por defecto se asume que la entrada ingresada por consola a través del comando `input()` es una cadena de texto, por tal motivo, cuando se trata de entradas numéricas, será necesaria la conversión a tipo flotante. <br>
+> Dentro del paréntesis de la entrada `input()`, es necesario ingresar un texto descriptivo que permita al usuario entender el tipo y valor requerido.
 
 
 
