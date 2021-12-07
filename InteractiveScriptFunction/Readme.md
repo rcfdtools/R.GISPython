@@ -187,6 +187,8 @@ Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta ver
 Ejecución en consola CMD Python 3.10.0 Standalone.
 ![Python3.10.0CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0CMD.png)
 
+Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de datos, p.ej, ingresando unidades al final del valor.
+![Python3.10.0CMDError.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0CMDError.png)
 
 ### Referencias
 
