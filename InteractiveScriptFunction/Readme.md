@@ -6,23 +6,25 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 
 > Para conocer la compatibilidad de entradas por consola en ArcGIS y QGIS utilizando el comando `input()`, consultar la actividad anterior relacionada con la [creación de scripts interactivos](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript).
 
+
 ### Objetivos
 
-* En PyCharm, ejecutar el script usando la versión de Python 3.7.
+* En PyCharm, ejecutar el script usando la versión de Python 2.7 y 3.10.
 * Ejecutar el script desde la consola del sistema operativo o CMD.
 * Solicitar al usuario los valores de entrada de los parámetros requeridos.
 * Imprimir diferentes valores del Tc en función del cambio gradual de la pendiente media del cauce principal.
 * Imprimir resultados tabulados y con formato de tabla de texto sin la instalación o llamado de librerías adicionales.
-* Ingresar valores errados como valores con unidades o cadenas de texto en los datos de entrada para así observar el volcamiento del script. Esto le permitirá entender por qué es necesario implementar control de excepción de errores en futuros scripts.
+* Ingresar valores errados (p.ej, valores con unidades o cadenas de texto) en los datos de entrada para obtener el volcamiento del script y despliegue de errores de ejecución. Esto le permitirá entender por qué es necesario implementar control de excepción de errores en la creación de futuros scripts.
 
 > Utilizando librerías como _beautifultable_ o _TableIt_, podrá formatear e imprimir resultados y listas en diferentes formatos de tabla de texto. 
+
 
 ### Requerimientos
 
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda.
-
+* Sistema operativo Microsoft Windows.
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
 
