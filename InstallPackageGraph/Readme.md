@@ -74,13 +74,19 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ### Procedimiento en Python 3.10.0
 
-1. En el command o _CMD_ de Windows ejecutar `py -3.10 -m pip install -U pip`. Esta instrucción permite actualizar la versión existente de `pip`.
+1. En el command o _CMD_ de Windows ejecutar `py -3.10 -m pip install -U pip`. Esta instrucción permite actualizar la versión existente de `pip` antes de instalar paquetes adicionales recientes.
+
+> En el evento de que el paquete _pip_ no se encuentre instalado, la instrucción anterior realizará la instalación. 
 
 ![Python3.10.0StandaloneCMDpipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDpipUpdate.png)
 
 > La actualización también puede ser realizada directamente desde PyCharm, oprimir `Ctrl+Alt+S`, ir a la pestaña _Project_, seleccionar _Python Interpreter_, seleccionar _Python 3.10_, dar doble clic en el paquete _pip_ y en la ventana _Available Packages_ seleccionar _pip_, especificar la versión a actualizar y dar clic en Install Package.
 
 ![Python3.10.0StandalonePyCharm2021.3pipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandalonePyCharm2021.3pipUpdate.png)
+
+2. Para la instalación de la versión más actual de _matplotlib_, en el CMD ejecutar `py -3.10 -m pip install -U matplotlib`.
+
+![Python3.10.0StandalonePyCharm2021.3pipUpdate.png![img.png](img.png)](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandalonePyCharm2021.3pipUpdate.png![img_1.png](img_1.png))
 
 
 
