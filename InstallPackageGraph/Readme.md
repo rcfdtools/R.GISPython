@@ -74,6 +74,13 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ### Procedimiento de instalación en Python 3.10.0
 
+0. Verificar las librerías instaladas en Python 3.10 dentro del directorio _Scripts_. En el CMD ingresar el comando `dir Python310\Scripts`.
+
+![Python3.10.0StandaloneCMDScriptsDir.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDScriptsDir.png)
+
+> Tenga en cuenta que la ruta instalación de Python 3.10 depende de la ruta definida por el usuario en el momento de la instalación. Para consultar las rutas de las versiones instaladas de Python en su sistema, consultar https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion
+
+
 1. En el command o _CMD_ de Windows ejecutar `py -3.10 -m pip install -U pip`. Esta instrucción permite actualizar la versión existente de `pip` antes de instalar paquetes adicionales recientes.
 
 > En el evento de que el paquete _pip_ no se encuentre instalado, la instrucción anterior realizará la instalación. <br><br>
