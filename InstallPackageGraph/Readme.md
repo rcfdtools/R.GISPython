@@ -59,3 +59,31 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 
 ### Script Tc_v3.py
+
+```
+
+```
+
+
+### Descripción instrucciones y comandos empleados
+
+
+> En Python, por defecto se asume que la entrada ingresada por consola a través del comando `input()` es una cadena de texto, por tal motivo, cuando se trata de entradas numéricas, será necesaria la conversión a tipo flotante. <br><br>
+> Dentro del paréntesis de la entrada `input()`, es necesario ingresar un texto descriptivo que permita al usuario entender el tipo y valor requerido.
+
+
+### Procedimiento en Python 3.10.0
+
+1. En el command o _CMD_ de Windows ejecutar `py -3.10 -m pip install -U pip`. Esta instrucción permite actualizar la versión existente de `pip`.
+
+![Python3.10.0StandaloneCMDpipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDpipUpdate.png)
+
+> La actualización también puede ser realizada directamente desde PyCharm, oprimir `Ctrl+Alt+S`, ir a la pestaña _Project_, seleccionar _Python Interpreter_, seleccionar _Python 3.10_, dar doble clic en el paquete _pip_ y en la ventana _Available Packages_ seleccionar _pip_, especificar la versión a actualizar y dar clic en Install Package.
+
+![Python3.10.0StandalonePyCharm2021.3pipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandalonePyCharm2021.3pipUpdate.png)
+
+
+
+### Referencias
+
+* https://packaging.python.org/en/latest/tutorials/installing-packages/
