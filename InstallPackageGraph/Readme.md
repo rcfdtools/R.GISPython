@@ -14,7 +14,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 * Ejecutar el script desde la consola del sistema operativo o CMD.
 * Graficar diferentes tiempos de concentración Tc variando la pendiente.
 
-> Atención: no es recomendable actualizar las librerías preinstaladas de Python para ArcGIS, lo anterior debido a que son utilizadas por todo el entorno del paquete y su modificación puede ocasionar resultados inesperados debido al orden en la entrada de los parámetros.
+> Atención: no es recomendable actualizar las librerías preinstaladas de Python para ArcGIS, lo anterior debido a que son utilizadas por todo el entorno del paquete y su modificación puede ocasionar resultados inesperados debido al orden y etiquetado en la entrada de parámetros.
 
 
 ### ¿Qué es matplotlib?
@@ -22,7 +22,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 Matplotlib es una librería que permite la graficación de datos en múltiples estilos de visualización; por defecto, esta librería viene incorporada en la instalación de Python en ArcGIS for Desktop, ArcGIS Pro y QGIS 3.
 
 > Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería e ingresar la instrucción o etiqueta de versión `libreria.__version__`.<br><br>
-> Para conocer la localización de los archivos usar `matplotlib.__file__`.<br><br>
+> Para conocer la localización de los archivos usar `matplotlib.__file__`.
 
 
 ### Requerimientos
