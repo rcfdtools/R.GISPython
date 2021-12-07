@@ -7,7 +7,7 @@ El procedimiento más común de instalación automatizada se realiza a través d
 > Dentro de la versión 2.7.5 de Python obtenida con la instalación con ArcGIS for Desktop 10.2.2, no se incorpora esta herramienta, sin embargo, puede ser incorporada manualmente o desde PyCharm.
 
 
-## Objetivos
+### Objetivos
 
 * Instalar el paquete o librería matplotlib y actualizar paquetes preinstalados en Python.
 * En PyCharm, ejecutar el script usando la versión de Python 2.7 y 3.10.
@@ -15,8 +15,10 @@ El procedimiento más común de instalación automatizada se realiza a través d
 * Graficar diferentes tiempos de concentración Tc variando la pendiente.
 
 
-¿Qué es matplotlib?
+### ¿Qué es matplotlib?
 
 Matplotlib es una librería que permite la graficación 2D de datos en múltiples estilos de visualización, por defecto, esta librería viene incorporada en la instalación de Python en ArcGIS for Desktop, ArcGIS Pro y QGIS 3.
 
-> Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería e ingresar la instrucción o etiqueta de versión `libreria.__version__`
+> Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería e ingresar la instrucción o etiqueta de versión `libreria.__version__`.<br><br>
+> Para conocer la localización de los archivos usar `matplotlib.__file__`.<br><br>
+> Atención: no es recomendable actualizar las librerías preinstaladas de Python para ArcGIS, lo anterior debido a que son utilizadas por todo el entorno del paquete y su modificación puede ocasionar resultados inesperados debido al orden en la entrada de los parámetros.
