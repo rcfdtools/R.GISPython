@@ -163,16 +163,16 @@ else:
 ![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
 Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2 usando tabuladores. 
-![PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2Tab.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2Tab.png)
+![Python2.7.5ArcGISDesktop10.2.2TabPyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python2.7.5ArcGISDesktop10.2.2TabPyCharm2021.3.png)
 
 Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2 como tabla de texto. 
-![PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2Table.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2Table.png)
+![Python2.7.5ArcGISDesktop10.2.2TablePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python2.7.5ArcGISDesktop10.2.2TablePyCharm2021.3.png)
 
 Ejecución en PyCharm usando Python 3.10.0 usando tabuladores.
-![PyCharm2021.3Python3.10.0StandaloneTab.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python3.10.0StandaloneTab.png)
+![Python3.10.0StandaloneTabPyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0StandaloneTabPyCharm2021.3.png)
 
 Ejecución en PyCharm usando Python 3.10.0 como tabla de texto.
-![PyCharm2021.3Python3.10.0StandaloneTable.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python3.10.0StandaloneTable.png)
+![Python3.10.0StandaloneTablePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0StandaloneTablePyCharm2021.3.png)
 
 
 ### Ejecución desde el Command o CMD de Microsoft Windows
