@@ -1,6 +1,6 @@
-## Creación de scripts interactivos e iterativos con funciones y pruebas lógicas
+## Creación de scripts interactivos e iterativos con funciones y pruebas lógicas simples
 
-Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como el while, for y range, además de la validación de pruebas lógicas.
+Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como el while, for y range, además de la validación de pruebas lógicas simples.
 
 Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario; calcular la variación del tiempo obtenido cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12).
 
