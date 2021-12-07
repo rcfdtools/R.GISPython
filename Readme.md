@@ -26,9 +26,9 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o códi
 
 * ESRI ArcGIS for Desktop 10+
 * ESRI ArcGIS Pro 2.9+
-* QGIS 2.18.28
-* QGIS 3.12+
-* Python 2.7.17 standalone
+* QGIS 2.18.28 (opcional)
+* QGIS 3.22.1+
+* Python 2.7.17 standalone (opcional)
 * Python 3.10.0 standalone
 * Anaconda (opcional)
 * PyCharm Community https://www.jetbrains.com/pycharm/download/#section=windows
