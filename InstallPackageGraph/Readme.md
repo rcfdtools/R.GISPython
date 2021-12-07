@@ -76,7 +76,8 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 1. En el command o _CMD_ de Windows ejecutar `py -3.10 -m pip install -U pip`. Esta instrucción permite actualizar la versión existente de `pip` antes de instalar paquetes adicionales recientes.
 
-> En el evento de que el paquete _pip_ no se encuentre instalado, la instrucción anterior realizará la instalación. 
+> En el evento de que el paquete _pip_ no se encuentre instalado, la instrucción anterior realizará la instalación. <br><br>
+> Para la instalación y actualización sobre la versión por defecto definida en las variables de entorno de Windows, no es necesario especificar la versión de Python y se puede utilizar la instrucción `C:\Python -3.10 -m pip install -U pip`. Tenga en cuenta que si la versión por defecto de Python es la correspondiente a la instalación de ESRI  ArcGIS, se actualizarán las versiones por defecto de la aplicación y podrán presentarse errores o valores errados en la ejecución de los geoprocesos asociados a esta herramienta. 
 
 ![Python3.10.0StandaloneCMDpipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDpipUpdate.png)
 
