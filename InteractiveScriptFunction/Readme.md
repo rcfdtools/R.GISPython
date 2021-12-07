@@ -187,11 +187,44 @@ Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta ver
 Ejecución en consola CMD Python 3.10.0 Standalone.
 ![Python3.10.0CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0CMD.png)
 
-Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de datos, p.ej, ingresando unidades al final del valor.
+Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de datos, p.ej, ingresando unidades al final del valor solicitado.
 ![Python3.10.0CMDError.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0CMDError.png)
+
+> El error indica que no se puede convertir la cadena de texto _9.1348km2_ a valor flotante.
+
 
 ### Referencias
 
 * https://stackoverflow.com/questions/17279059/print-list-in-table-format-in-python
 * http://anh.cs.luc.edu/handsonPythonTutorial/ifstatements.html
 * https://www.youtube.com/watch?v=B9BRuhqEb2Q
+
+
+### Autores
+
+* Creado por r.cfdtools@gmail.com
+
+
+### Compatibilidad
+
+* Compatible con cualquier versión de Python a excepción de la impresión de las líneas de separación de títulos desde el CMD para versiones de Python 2.
+
+
+### Keywords
+`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `if` 
+
+
+### Control de versiones
+
+| Versión     | Descripción                                                                                                     |
+|-------------|-----------------------------------------------------------------------------------------------------------------|
+| v.20211201  | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.         |
+| v.20211207 | Inclusión de condicional para impresión tabulada o en formato de tabla de texto sin usar librerías adicionales. |
+
+
+### Licencia, cláusulas y condiciones de uso
+https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript) | [Actividad siguiente]() |
+|-----------------------------------------------------------------------------------------|-------------------------|
