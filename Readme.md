@@ -66,5 +66,9 @@ Este tema presenta fundamentos básicos necesarios para la comprensión de codif
 `Esri ArcGIS ModelBuilder` `Esri ArcGIS ArcToolBox` `QGIS Graphical Modeler`
 
 
+### Licencia, cláusulas y condiciones de uso
+https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
 ### Clonación
 Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en _D:\R.GISPython_. https://github.com/rcfdtools/R.GISPython.git
