@@ -190,7 +190,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de datos, p.ej, ingresando unidades al final del valor solicitado.
 ![Python3.10.0CMDError.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0CMDError.png)
 
-> El error indica que no se puede convertir la cadena de texto _9.1348km2_ a valor flotante.
+> El error mostrado indica que no se puede convertir la cadena de texto _9.1348km2_ a valor flotante.
 
 
 ### Referencias
