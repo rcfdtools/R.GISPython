@@ -149,10 +149,10 @@ Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 ![PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png)
 
 Ejecución en PyCharm usando Python 3.10.0.
-![PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png)
+![PyCharm2021.3Python3.10.0Standalone.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0Standalone.png)
 
 Ejecución en PyCharm usando Python 3.9.5 de QGIS 3.22.1. 
-![PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2.png)
+![PyCharm2021.3Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.9.5QGIS3.22.1.png)
 
 Ejecución en PyCharm usando Python 3.7.11 de ArcGIS Pro 2.9. 
 ![PyCharm2021.3Python3.7.11ArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.7.11ArcGISPro2.9.png)
@@ -183,7 +183,7 @@ Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta ver
 ![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
 Ejecución en consola CMD Python 3.10.0 Standalone.
-![Python3.10.0CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0CMD.png)
+![Python3.10.0StandaloneCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0StandaloneCMD.png)
 
 
 ### Ejecución usando ArcGIS Pro
