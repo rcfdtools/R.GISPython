@@ -181,11 +181,11 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 
 ```C:\py -3.10 D:\R.GISPython\InteractiveScriptFunction\Tc_v2.py```
 
-Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
-![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español ni la línea de separación utilizada en los títulos y tablas.
+![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
 Ejecución en consola CMD Python 3.10.0 Standalone.
-![Python3.10.0ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0ArcGISDesktop10.2.2CMD.png)
+![Python3.10.0CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0CMD.png)
 
 
 ### Referencias
