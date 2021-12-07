@@ -169,10 +169,10 @@ Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2 como tabl
 ![PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2Table.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2Table.png)
 
 Ejecución en PyCharm usando Python 3.10.0 usando tabuladores.
-![PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2Tab.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2Tab.png)
+![PyCharm2021.3Python3.10.0StandaloneTab.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python3.10.0StandaloneTab.png)
 
 Ejecución en PyCharm usando Python 3.10.0 como tabla de texto.
-![PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2Table.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python3.10.0ArcGISDesktop10.2.2Table.png)
+![PyCharm2021.3Python3.10.0StandaloneTable.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3Python3.10.0StandaloneTable.png)
 
 
 ### Ejecución desde el Command o CMD de Microsoft Windows
@@ -190,10 +190,10 @@ Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 ![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
 Ejecución en consola CMD Python 3.10.0 Standalone.
-![Python3.10.0CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0CMD.png)
+![Python3.10.0StandaloneCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0StandaloneCMD.png)
 
 Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de datos, p.ej, ingresando unidades al final del valor solicitado.
-![Python3.10.0CMDError.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0CMDError.png)
+![Python3.10.0StandaloneCMDError.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python3.10.0StandaloneCMDError.png)
 
 > El error mostrado indica que no se puede convertir la cadena de texto _9.1348km2_ a valor flotante.
 
