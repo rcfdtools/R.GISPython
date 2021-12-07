@@ -12,8 +12,10 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 * Ejecutar el script desde la consola del sistema operativo o CMD.
 * Solicitar al usuario los valores de entrada de los parámetros requeridos.
 * Imprimir diferentes valores del Tc en función del cambio gradual de la pendiente media del cauce principal.
+* Imprimir resultados tabulados y con formato de tabla de texto sin la instalación o llamado de librerías adicionales.
 * Ingresar valores errados como valores con unidades o cadenas de texto en los datos de entrada para así observar el volcamiento del script. Esto le permitirá entender por qué es necesario implementar control de excepción de errores en futuros scripts.
 
+> Utilizando librerías como _beautifultable_ o _TableIt_, podrá formatear e imprimir listas en diferentes formatos de tabla de texto. 
 
 ### Requerimientos
 
@@ -59,7 +61,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 # Librerías
 import sys
 
-# Variables
+# Variables de entrada
 i, variaciones, Smin = 0, 12, 0.001 # Incremento, variaciones y pendiente mínima
 
 # Función de cálculo
@@ -124,3 +126,18 @@ else:
         i += 1
     Separador(vFilaAncho)
 ```
+
+
+
+
+
+
+
+
+
+
+### Referencias
+
+* https://stackoverflow.com/questions/17279059/print-list-in-table-format-in-python
+* http://anh.cs.luc.edu/handsonPythonTutorial/ifstatements.html
+* https://www.youtube.com/watch?v=B9BRuhqEb2Q
