@@ -212,11 +212,11 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 
 ### Compatibilidad
 
-* Compatible con cualquier versión de Python a excepción de la impresión de las líneas de separación de títulos desde el CMD para versiones de Python 2.
+* Compatible con cualquier versión de Python a excepción de la impresión de líneas de separación de títulos desde el CMD para versiones de Python 2.
 
 
 ### Keywords
-`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `if` 
+`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `if` `.lower()`
 
 
 ### Control de versiones
