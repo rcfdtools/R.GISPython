@@ -103,6 +103,17 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 ![Python3.10.0StandaloneCMDmatplotlibCheck.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDmatplotlibCheck.png)
 
 
+### Ejecución desde Pycharm
+
+> PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
+
+![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
+
+Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
+
+Ejecución en PyCharm usando Python 3.10.0.
+![Python3.10.0StandalonePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandalonePyCharm2021.3.png)
 
 
 
