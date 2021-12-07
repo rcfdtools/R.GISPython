@@ -146,16 +146,16 @@ print ("\tTc, min: " + str(TcGiandotti*60)) # Impresión en pantalla usando +
 ![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
 Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
-![PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python2.7.5ArcGISDesktop10.2.2.png)
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
 
 Ejecución en PyCharm usando Python 3.10.0.
-![PyCharm2021.3Python3.10.0Standalone.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.10.0Standalone.png)
+![Python3.10.0StandalonePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.10.0StandalonePyCharm2021.3.png)
 
 Ejecución en PyCharm usando Python 3.9.5 de QGIS 3.22.1. 
-![PyCharm2021.3Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.9.5QGIS3.22.1.png)
+![Python3.9.5QGIS3.22.1PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.9.5QGIS3.22.1PyCharm2021.3.png)
 
 Ejecución en PyCharm usando Python 3.7.11 de ArcGIS Pro 2.9. 
-![PyCharm2021.3Python3.7.11ArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/PyCharm2021.3Python3.7.11ArcGISPro2.9.png)
+![Python3.7.11ArcGISPro2.9PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/Python3.7.11ArcGISPro2.9PyCharm2021.3.png)
 
 
 ### Ejecución usando el IDLE de Python de ArcGIS for Desktop
