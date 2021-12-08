@@ -198,7 +198,7 @@ plt.show()
 
 ![Python3.10.0StandaloneCMDmatplotlibCheck.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDmatplotlibCheck.png)
 
-> En Python 2.7.5 de ArcGIS for Desktop 10.2.2, podrá realizar la verificación de la versión  preinstalada de matplotlib
+> En Python 2.7.5 de ArcGIS for Desktop 10.2.2, podrá realizar la verificación de la versión preinstalada de matplotlib siguiendo el mismo procedimiento descrito anteriormente.
 
 ![Python2.7.5ArcGISDesktop10.2.2CMDmatplotlibCheck.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMDmatplotlibCheck.png)
 
