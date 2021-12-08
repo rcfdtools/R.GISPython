@@ -24,15 +24,15 @@ Un script en Python, es un archivo que contiene diferentes instrucciones o códi
 
 ### Requerimientos
 
-* ESRI ArcGIS for Desktop 10+, www.esri.com
-* ESRI ArcGIS Pro 2.9+, www.esri.com
-* QGIS 2.18.28 (opcional), www.qgis.org
-* QGIS 3.22.1+, www.qgis.org
-* Python 2.7.17 standalone (opcional), www.python.org
-* Python 3.10.0 standalone, www.python.org
-* Anaconda (opcional), www.anaconda.com
-* PyCharm Community www.jetbrains.com/pycharm
-* PyCharm for Anaconda (opcional), www.jetbrains.com/lp/pycharm-anaconda
+* [ESRI ArcGIS for Desktop 10+](www.esri.com)
+* [ESRI ArcGIS Pro 2.9+](www.esri.com)
+* [QGIS 2.18.28 (opcional)](www.qgis.org)
+* [QGIS 3.22.1+]( www.qgis.org)
+* [Python 2.7.17 standalone (opcional)](www.python.org)
+* [Python 3.10.0 standalone](www.python.org)
+* [Anaconda (opcional)](www.anaconda.com)
+* [PyCharm Community](www.jetbrains.com/pycharm)
+* [PyCharm for Anaconda (opcional)](www.jetbrains.com/lp/pycharm-anaconda)
 
 > Requerimientos específicos adicionales son indicados en cada script o en cada microcontenido.
 
