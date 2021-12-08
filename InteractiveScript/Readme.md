@@ -66,6 +66,7 @@ print ('Script interactivo en Python')
 print ('-----------------------------\n')
 print ('Cálculo del tiempo de concentración Tc de una cuenca hidrográfica utilizando la expresión de Giandotti.')
 print ('Python versión: ' + str(sys.version))
+print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript')
 print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
 print ('Créditos: r.cfdtools@gmail.com\n')
 
