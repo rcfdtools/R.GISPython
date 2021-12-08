@@ -214,7 +214,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 
 ### Tags
-`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `[matplotlib](https://matplotlib.org/)` `.lower()` `try` `except`
+`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib` `.lower()` `try` `except`
 
 
 ### Control de versiones
