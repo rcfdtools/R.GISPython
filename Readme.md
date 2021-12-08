@@ -76,4 +76,4 @@ R.GISPython es de uso libre para fines académicos, conoce nuestra [licencia, cl
 
 ### Clonación
 
-Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows [clonar](https://github.com/rcfdtools/R.GISPython.git) y/o descomprimir en _D:\R.GISPython_.
+Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en _D:\R.GISPython_. Enlace para clonación https://github.com/rcfdtools/R.GISPython.git.
