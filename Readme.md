@@ -58,10 +58,16 @@ Este tema presenta los fundamentos básicos generales necesarios para la compren
 > Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM - Colombia  y los archivos de formas vectoriales han sido descargados del IGAC - Colombia y de otras fuentes alternas.
 
 
-### [Referencias generales](https://github.com/rcfdtools/R.GISPython/blob/main/References.md)
+### Referencias generales
 
-### [Licencia, cláusulas y condiciones de uso](https://github.com/rcfdtools/R.GISPython/wiki/License)
+Consulta las [referencias complementarias](https://github.com/rcfdtools/R.GISPython/blob/main/References.md) que hemos recopilado para que complementes tu proceso de aprendizaje.  
 
-### [Clonación](https://github.com/rcfdtools/R.GISPython.git)
 
-Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en _D:\R.GISPython_.
+### Licencia, cláusulas y condiciones de uso
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra [licencia, cláusulas, condiciones de uso](https://github.com/rcfdtools/R.GISPython/wiki/License) y como referenciar los contenidos publicados en este repositorio.
+
+
+### Clonación
+
+Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows [clonar](https://github.com/rcfdtools/R.GISPython.git) y/o descomprimir en _D:\R.GISPython_.
