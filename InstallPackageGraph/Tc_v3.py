@@ -27,7 +27,7 @@ Separador(56)
 print ('Cálculo y graficación del Tiempo de Concentración de una cuenca hidrográfica usando la expresión de Giandotti.')
 print ('Python versión: ' + str(sys.version))
 print ('matplotlib versión: ' + str(matplotlib.__version__))
-print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction')
+print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph')
 print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
 print ('Créditos: r.cfdtools@gmail.com\n')
 
