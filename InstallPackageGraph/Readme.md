@@ -193,7 +193,8 @@ plt.show()
 ![Python3.10.0StandaloneCMDmatplotlibInstall.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDmatplotlibInstall.png)
 
 > matplotlib también puede ser instalado directamente desde el administrador de paquetes de PyCharm para el intérprete de Python seleccionado por el usuario.<br><br>
-> Para instalar una versión específica de una librería podrá utilizar la instrucción indicando al final y despues de _==_ el número de versión requerida `py -3.10 -m pip install -U matplotlib==3.4.0`
+> Para desinstalar la librería podrá utilizar la secuencia de comandos `py -3.10 -m pip uninstall matplotlib`<br><br>
+> Para instalar una versión específica de una librería podrá utilizar la instrucción indicando al final y despues de _==_ el número de versión requerida `py -3.10 -m pip install matplotlib==3.4.0`
 
 3. Para verificar la correcta instalación de la librería, en el CMD del sistema, ejecutar Python `C:\py -3.10` y realizar el llamado de la librería y consultar la versión y ruta de instalación a través de los comandos `import matplotlib`, `matplotlib.__version__`, `matplotlib.__path__` y `matplotlib.__file__`
 
