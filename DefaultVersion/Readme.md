@@ -117,7 +117,7 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 * Compatible con cualquier versión de Python.
 
 
-### Keywords
+### Tags
 `PyCharm` `Python Interpreter` `Windows Environmental Variables` 
 
 

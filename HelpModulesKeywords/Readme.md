@@ -60,7 +60,7 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 * Compatible con cualquier versión de Python.
 
 
-### Keywords
+### Tags
 `help` `modules` `keywords` 
 
 

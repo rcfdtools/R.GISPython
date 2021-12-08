@@ -215,7 +215,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 * Compatible con cualquier versión de Python a excepción de la impresión de líneas de separación de títulos desde el CMD para versiones de Python 2.
 
 
-### Keywords
+### Tags
 `Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `if` `.lower()`
 
 

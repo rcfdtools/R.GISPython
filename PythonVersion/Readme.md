@@ -98,7 +98,8 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 * Compatible con cualquier versión de Python.
 
 
-### Keywords
+### Tags
+
 `import sys` `sys.version` `sys.path` 
 
 

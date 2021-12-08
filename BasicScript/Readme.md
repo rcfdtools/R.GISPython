@@ -205,7 +205,7 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 * Compatible con cualquier versión de Python.
 
 
-### Keywords
+### Tags
 `Concentration time` `Giandotti` `Subbasin` `Hydrology` `GIS`
 
 
