@@ -22,7 +22,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 Matplotlib es una librería que permite la graficación de datos en múltiples estilos de visualización; por defecto, esta librería viene incorporada en la instalación de Python en ArcGIS for Desktop, ArcGIS Pro y QGIS 3.
 
 > Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería e ingresar la instrucción o etiqueta de versión `libreria.__version__`.<br><br>
-> Para conocer la localización de los archivos usar `matplotlib.__file__`.
+> Para conocer la localización de los archivos usar `matplotlib.__path__` y `matplotlib.__file__`.
 
 
 ### Requerimientos
@@ -216,9 +216,54 @@ Ejecución en PyCharm usando Python 3.10.0.
 ![Python3.10.0StandalonePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandalonePyCharm2021.3.png)
 
 
+### Ejecución desde el Command o CMD de Microsoft Windows
 
+Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usando cualquier versión de Python instalada, usar el comando py, la versión requerida (por ejemplo, -3.10) y la ruta completa del archivo .py.
+
+```C:\py -2.7 D:\R.GISPython\InstallPackageGraph\Tc_v3.py```
+
+```C:\py -3.10 D:\R.GISPython\InstallPackageGraph\Tc_v3.py```
+
+Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
+
+> En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
+
+![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
+
+Ejecución en consola CMD Python 3.10.0 Standalone.
+![Python3.10.0StandaloneCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMD.png)
 
 
 ### Referencias
 
 * https://packaging.python.org/en/latest/tutorials/installing-packages/
+
+
+### Autores
+
+* Creado por r.cfdtools@gmail.com
+
+
+### Compatibilidad
+
+* Compatible con cualquier versión de Python.
+
+
+### Tags
+`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib`
+
+
+### Control de versiones
+
+| Versión    | Descripción                                                                                                                                                        |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211201 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.                                                            |
+| v.20211208 | Inclusión de propiedades de estilo en gráfica de resultados. Inclusión de condicional para la inclusión o no del título de la gráfica, no recomendado en Python 2. |
+
+
+### Licencia, cláusulas y condiciones de uso
+https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) | [Actividad siguiente]() |
+|-----------------------------------------------------------------------------------------|-------------------------|
