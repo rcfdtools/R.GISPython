@@ -180,7 +180,7 @@ plt.show()
 1. En el command o _CMD_ de Windows ejecutar `py -3.10 -m pip install -U pip`. Esta instrucción permite actualizar la versión existente de `pip` antes de instalar paquetes adicionales recientes.
 
 > En el evento de que el paquete _pip_ no se encuentre instalado, la instrucción anterior realizará la instalación. <br><br>
-> Para la instalación y actualización sobre la versión por defecto definida en las variables de entorno de Windows, no es necesario especificar la versión de Python y puede utilizar la instrucción `C:\Python -m pip install -U pip`. Tenga en cuenta que si la versión por defecto de Python es la correspondiente a la incluida en instalación de ESRI ArcGIS, se actualizarán las versiones por defecto de la aplicación y podrán presentarse errores o valores errados en la ejecución de los geo-procesos asociados a esta herramienta. 
+> Para la instalación y actualización sobre la versión por defecto definida en las variables de entorno de Windows, no es necesario especificar la versión de Python y puede utilizar la instrucción `C:\Python -m pip install -U pip`. Tenga en cuenta que si la versión por defecto de Python es la correspondiente a la incluida en instalación de ESRI ArcGIS, se actualizarán las versiones por defecto de la aplicación y podrán presentarse errores o valores errados en la ejecución de los geo-procesos asociados a esta herramienta.
 
 ![Python3.10.0StandaloneCMDpipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDpipUpdate.png)
 
@@ -192,7 +192,8 @@ plt.show()
 
 ![Python3.10.0StandaloneCMDmatplotlibInstall.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDmatplotlibInstall.png)
 
-> matplotlib también puede ser instalado directamente desde el administrador de paquetes de PyCharm para el intérprete de Python seleccionado por el usuario.
+> matplotlib también puede ser instalado directamente desde el administrador de paquetes de PyCharm para el intérprete de Python seleccionado por el usuario.<br><br>
+> Para instalar una versión específica de una librería podrá utilizar la instrucción indicando al final y despues de _==_ el número de versión requerida `py -3.10 -m pip install -U matplotlib==3.4.0`
 
 3. Para verificar la correcta instalación de la librería, en el CMD del sistema, ejecutar Python `C:\py -3.10` y realizar el llamado de la librería y consultar la versión y ruta de instalación a través de los comandos `import matplotlib`, `matplotlib.__version__`, `matplotlib.__path__` y `matplotlib.__file__`
 
