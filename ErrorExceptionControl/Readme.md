@@ -185,7 +185,7 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 
 ```C:\py -3.10 D:\R.GISPython\ErrorExceptionControl\Tc_v4.py```
 
-Control de excepción para valores negativos y/o ceros
+Control de excepción para valores negativos y ceros
 ![Python3.10.0StandaloneCMDNegativeControl.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandaloneCMDNegativeControl.png)
 
 Control de excepción para valores numéricos ingresados como texto
