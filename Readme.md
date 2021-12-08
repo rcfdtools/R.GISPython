@@ -58,21 +58,10 @@ Este tema presenta los fundamentos básicos generales necesarios para la compren
 > Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM - Colombia  y los archivos de formas vectoriales han sido descargados del IGAC - Colombia y de otras fuentes alternas.
 
 
-### Referencias generales
+### [Referencias generales](https://github.com/rcfdtools/R.GISPython/blob/main/References.md)
 
-* https://www.educba.com/programming-vs-scripting/
+### [Licencia, cláusulas y condiciones de uso](https://github.com/rcfdtools/R.GISPython/wiki/License)
 
+### [Clonación](https://github.com/rcfdtools/R.GISPython.git)
 
-### Tags
-
-`Esri ArcGIS ModelBuilder` `Esri ArcGIS ArcToolBox` `QGIS Graphical Modeler`
-
-
-### Licencia, cláusulas y condiciones de uso
-
-https://github.com/rcfdtools/R.GISPython/wiki/License
-
-
-### Clonación
-
-Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en _D:\R.GISPython_. https://github.com/rcfdtools/R.GISPython.git
+Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en _D:\R.GISPython_.
