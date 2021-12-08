@@ -17,7 +17,7 @@ Desde la consola de Python, es posible realizar operaciones matemáticas simples
 * Python 3.10.0+ como instalación independiente o standalone.
 * Sistema operativo Microsoft Windows.
 
-> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
+> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
 
 
 ### Caso de estudio

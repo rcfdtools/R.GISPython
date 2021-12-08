@@ -21,7 +21,7 @@ Un script en Python, es un archivo que contiene diferentes instrucciones que pue
 * PyCharm 2021.3+ for Anaconda. 
 * Sistema operativo Microsoft Windows.
 
-> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
+> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
 
 
 ### Editores complementarios

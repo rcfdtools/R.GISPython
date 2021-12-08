@@ -17,7 +17,7 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 * ArcGIS Pro 2.9+.
 * QGIS 3.22.1+.
 
-> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7.17 de Python.
+> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
 
 > Nota: para la instalación de versiones independientes de Python, p.ej, la versión 3.10.0, se recomienda modificar la ruta de instalación a una ruta de fácil acceso como _C:\Python310\_
 
