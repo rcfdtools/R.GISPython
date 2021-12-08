@@ -16,7 +16,7 @@ def TcGiandotti(A,L,S):
 	return (4*(A**0.5)+1.5*L)/(25.3*(S*L)**0.5)
 
 # Función para creación de líneas de separación
-def Separador(n=24): #Usando un valor por defecto de 24 guiones
+def Separador(n=24): # Usando un valor por defecto de 24 guiones
 	nc = "-"
 	print(nc*n)
 
@@ -63,8 +63,7 @@ print("S (m/m)\n",TcGiandottiGx)
 print("Tc (min)\n",TcGiandottiGy)
 graficaTitulo="Tc, Tiempo de concentración\nVariando la pendiente cada "+str(round(((S-pendienteMinima)/(variaciones-1)),4))+" m/m\nA, km²: "+str(A)+", L, km: "+str(L)
 plt.plot(TcGiandottiGx,TcGiandottiGy, label="Tc Giandotti, min", color='black', linewidth=1, marker='p', markersize=4, markerfacecolor='black', markeredgecolor='black')
-if str(imprimirTituloGrafica.lower()) == 'y':
-    plt.title(graficaTitulo)
+if str(imprimirTituloGrafica.lower()) == 'y': plt.title(graficaTitulo)
 plt.xlabel("S, m/m")
 plt.ylabel("Tc, min")
 plt.show()
