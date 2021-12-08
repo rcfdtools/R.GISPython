@@ -64,6 +64,7 @@ Este tema presenta los fundamentos básicos generales necesarios para la compren
 * [Pandas.pydata.org](https://pandas.pydata.org/)
 * [NumPy.org](https://pandas.pydata.org/)
 * [matplotlib.org](https://matplotlib.org/)
+* [pypi.org](https://pypi.org/)
 * [rasterio](https://pypi.org/project/rasterio/0.13.2/)
 * [Enlaces y referencias complementarias](https://github.com/rcfdtools/R.GISPython/blob/main/References.md)  
 
