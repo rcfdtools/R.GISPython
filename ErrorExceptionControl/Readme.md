@@ -2,7 +2,7 @@
 
 En el evento de que el usuario ingrese valores nulos o fuera de rango, el código deberá ser capaz de controlar estas excepciones para no devolver al usuario valores errados o incoherentes. Algunos controles de ejecución pueden ser implementados usando condicionales para la validación de los datos ingresados, o a través de los controles de ejecución propios de Python.
 
-> `try` controla la ejecución del código a través de la evaluación de las instrucciones contenidas en la indentación, permitiendo además ejecutar acciones para cada tipo de error encontrado utilizando except.
+> `try` controla la ejecución del código a través de la evaluación de las instrucciones contenidas en la indentación, permitiendo además ejecutar acciones para cada tipo de error encontrado utilizando `except`.
 
 Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario, calcular la variación del tiempo obtenido cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12), crear la gráfica que permita analizar visualmente la tendencia de los datos; evaluaremos que los parámetros ingresados sean positivos y que sean ingresados correctamente.
 
