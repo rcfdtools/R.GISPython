@@ -172,10 +172,8 @@ except ValueError as e:
 
 ![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
-Ejecución en PyCharm usando Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
-![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
-
-Ejecución en PyCharm usando Python 3.10.0.
+Ejecución en PyCharm usando Python 3.10.0 con control de excepción.
+![Python3.10.0StandalonePyCharm2021.3COntrol.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandalonePyCharm2021.3Control.png)
 ![Python3.10.0StandalonePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandalonePyCharm2021.3.png)
 
 
@@ -193,9 +191,10 @@ Control de excepción para valores negativos
 Control de excepción para valores numéricos ingresados como texto
 ![Python3.10.0StandaloneCMDNumericTextControl.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandaloneCMDNumericTextControl.png)
 
-
 Ejecución en consola CMD Python 3.10.0 Standalone.
 ![Python3.10.0StandaloneCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandaloneCMD.png)
+
+> Nótese que en la entrada de usuario solicitando si se incluye o no el título de la gráfica, se ha indicado _Tal vez_; de acuerdo a los controles de excepción, cualquier respuesta diferente a _y_ es considerada como _n_, por lo que no se imprimirá el título.
 
 
 ### Referencias
