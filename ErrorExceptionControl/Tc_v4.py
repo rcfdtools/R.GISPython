@@ -64,7 +64,7 @@ try:
         print("S, m/m\n",TcGiandottiGx)
         print("Tc, min\n",TcGiandottiGy)
         graficaTitulo = "Tc, Tiempo de concentración\nVariando la pendiente cada " + str(round(((S - pendienteMinima) / (variaciones - 1)), 4)) + " m/m\nA, km²: " + str(A) + ", L, km: " + str(L)
-        plt.plot(TcGiandottiGx,TcGiandottiGy, label="Tc Giandotti (min)")
+        plt.plot(TcGiandottiGx,TcGiandottiGy, label="Tc Giandotti, min", color='black', linewidth=1, marker='p', markersize=4, markerfacecolor='black', markeredgecolor='black')
         if str(imprimirTituloGrafica.lower()) == 'y': plt.title(graficaTitulo)
         plt.xlabel("S, m/m")
         plt.ylabel("Tc, min")

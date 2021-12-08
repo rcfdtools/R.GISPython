@@ -115,7 +115,7 @@ try:
         print("S, m/m\n",TcGiandottiGx)
         print("Tc, min\n",TcGiandottiGy)
         graficaTitulo = "Tc, Tiempo de concentración\nVariando la pendiente cada " + str(round(((S - pendienteMinima) / (variaciones - 1)), 4)) + " m/m\nA, km²: " + str(A) + ", L, km: " + str(L)
-        plt.plot(TcGiandottiGx,TcGiandottiGy, label="Tc Giandotti (min)")
+        plt.plot(TcGiandottiGx,TcGiandottiGy, label="Tc Giandotti, min", color='black', linewidth=1, marker='p', markersize=4, markerfacecolor='black', markeredgecolor='black')
         if str(imprimirTituloGrafica.lower()) == 'y': plt.title(graficaTitulo)
         plt.xlabel("S, m/m")
         plt.ylabel("Tc, min")
@@ -163,7 +163,7 @@ except ValueError as e:
 > En Python, por defecto se asume que la entrada ingresada por consola a través del comando `input()` es una cadena de texto, por tal motivo, cuando se trata de entradas numéricas, será necesaria la conversión a tipo flotante. <br><br>
 > Dentro del paréntesis de la entrada `input()`, es necesario ingresar un texto descriptivo que permita al usuario entender el tipo y valor requerido.<br><br>
 > Para la ejecución en Python 2, no se recomienda imprimir el título de la gráfica debido a que ha sido ensamblado a partir de la concatenación de varios de los valores ingresados.<br><br>
-> La excepción de valores diferentes a y/n en la entrada de datos para incluir o no el título de la gráfica es controlado directamente por la instrucción `if str(imprimirTituloGrafica.lower()) == 'y': plt.title(graficaTitulo)`. En el evento de que el usuario ingrese un carácter diferente, el script no incluirá el título debido a que no se valida la entrada negativa. 
+> La excepción de valores diferentes a y/n en la entrada de datos para incluir o no el título de la gráfica, es controlado directamente por la instrucción `if str(imprimirTituloGrafica.lower()) == 'y': plt.title(graficaTitulo)`. En el evento de que el usuario ingrese un carácter diferente, el script no incluirá el título debido a que no sé válida la entrada negativa. 
 
 
 ### Ejecución desde Pycharm
@@ -187,11 +187,12 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 
 ```C:\py -3.10 D:\R.GISPython\ErrorExceptionControl\Tc_v4.py```
 
-Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
+Control de excepción para valores negativos
+![Python3.10.0StandaloneCMDNegativeControl.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandaloneCMDNegativeControl.png)
 
-> En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español.
+Control de excepción para valores numéricos ingresados como texto
+![Python3.10.0StandaloneCMDNumericTextControl.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandaloneCMDNumericTextControl.png)
 
-![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
 Ejecución en consola CMD Python 3.10.0 Standalone.
 ![Python3.10.0StandaloneCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandaloneCMD.png)
