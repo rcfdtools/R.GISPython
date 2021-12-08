@@ -58,9 +58,14 @@ Este tema presenta los fundamentos básicos generales necesarios para la compren
 > Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM - Colombia  y los archivos de formas vectoriales han sido descargados del IGAC - Colombia y de otras fuentes alternas.
 
 
-### Referencias generales
+### Enlaces de interés
 
-Consulta las [referencias complementarias](https://github.com/rcfdtools/R.GISPython/blob/main/References.md) que hemos recopilado para que complementes tu proceso de aprendizaje.  
+* [Python.org](https://www.python.org/)
+* [Pandas.pydata.org](https://pandas.pydata.org/)
+* [NumPy.org](https://pandas.pydata.org/)
+* [matplotlib.org](https://matplotlib.org/)
+* [rasterio](https://pypi.org/project/rasterio/0.13.2/)
+* [Enlaces y referencias complementarias](https://github.com/rcfdtools/R.GISPython/blob/main/References.md)  
 
 
 ### Licencia, cláusulas y condiciones de uso
