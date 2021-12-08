@@ -21,7 +21,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 
 Matplotlib es una librería que permite la graficación de datos en múltiples estilos de visualización; por defecto, esta librería viene incorporada en la instalación de Python en ArcGIS for Desktop, ArcGIS Pro y QGIS 3.
 
-> Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería e ingresar el comando `libreria.__version__`. Para conocer la localización de los archivos usar los comandos `matplotlib.__path__` y `matplotlib.__file__`.
+> Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería (p.ej, `import pip`) e ingresar el comando `libreria.__version__`. Para conocer la localización de los archivos usar los comandos `libreria.__path__` y `libreria.__file__`, donde _libreria_ corresponde al nombre del paquete a consultar.
 
 
 ### Requerimientos
@@ -165,21 +165,22 @@ plt.show()
 
 > En Python, por defecto se asume que la entrada ingresada por consola a través del comando `input()` es una cadena de texto, por tal motivo, cuando se trata de entradas numéricas, será necesaria la conversión a tipo flotante. <br><br>
 > Dentro del paréntesis de la entrada `input()`, es necesario ingresar un texto descriptivo que permita al usuario entender el tipo y valor requerido.<br><br>
-> Para la ejecución en Python 2 no se recomienda imprimir el título de la gráfica debido a que ha sido ensamblado utilizando concatenación de varios  valores ingresados.
+> Para la ejecución en Python 2, no se recomienda imprimir el título de la gráfica debido a que ha sido ensamblado a partir de la concatenación de varios de los valores ingresados.
+
 
 ### Procedimiento de instalación en Python 3.10.0
 
 0. Verificar las librerías instaladas en Python 3.10 dentro del directorio _Scripts_. En la raíz del CMD de Windows ingresar el comando `dir Python310\Scripts` o desde cualquier ruta `dir C:\Python310\Scripts`.
 
-![Python3.10.0StandaloneCMDScriptsDir.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDScriptsDir.png)
-
 > Tenga en cuenta que la ruta instalación de Python 3.10 depende de la ruta definida por el usuario en el momento de la instalación. Para consultar las rutas de las versiones instaladas de Python en su sistema, consultar https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion
+
+![Python3.10.0StandaloneCMDScriptsDir.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDScriptsDir.png)
 
 
 1. En el command o _CMD_ de Windows ejecutar `py -3.10 -m pip install -U pip`. Esta instrucción permite actualizar la versión existente de `pip` antes de instalar paquetes adicionales recientes.
 
 > En el evento de que el paquete _pip_ no se encuentre instalado, la instrucción anterior realizará la instalación. <br><br>
-> Para la instalación y actualización sobre la versión por defecto definida en las variables de entorno de Windows, no es necesario especificar la versión de Python y se puede utilizar la instrucción `C:\Python -m pip install -U pip`. Tenga en cuenta que si la versión por defecto de Python es la correspondiente a la incluida en instalación de ESRI ArcGIS, se actualizarán las versiones por defecto de la aplicación y podrán presentarse errores o valores errados en la ejecución de los geoprocesos asociados a esta herramienta. 
+> Para la instalación y actualización sobre la versión por defecto definida en las variables de entorno de Windows, no es necesario especificar la versión de Python y puede utilizar la instrucción `C:\Python -m pip install -U pip`. Tenga en cuenta que si la versión por defecto de Python es la correspondiente a la incluida en instalación de ESRI ArcGIS, se actualizarán las versiones por defecto de la aplicación y podrán presentarse errores o valores errados en la ejecución de los geo-procesos asociados a esta herramienta. 
 
 ![Python3.10.0StandaloneCMDpipUpdate.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/Python3.10.0StandaloneCMDpipUpdate.png)
 
