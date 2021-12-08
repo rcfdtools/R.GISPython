@@ -11,3 +11,4 @@
 * [MITO - Python Data Analysis in Seconds.](https://trymito.io/)
 * [Introduction to APIs with Python FastAPI.](https://medium.com/codex/introduction-to-apis-with-python-fastapi-bd72601e5ab5)
 * [10 Python Code Snippets For Everyday Programming Problems.](https://www.geeksforgeeks.org/10-python-code-snippets-for-everyday-programming-problems/)
+* [All You Need to Know About Python Dictionaries.](https://towardsdatascience.com/all-you-need-to-know-about-python-dictionaries-ccd05e5c61dd)
