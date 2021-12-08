@@ -21,8 +21,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 
 Matplotlib es una librería que permite la graficación de datos en múltiples estilos de visualización; por defecto, esta librería viene incorporada en la instalación de Python en ArcGIS for Desktop, ArcGIS Pro y QGIS 3.
 
-> Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería e ingresar el comando `libreria.__version__`.<br><br>
-> Para conocer la localización de los archivos usar los comandos `matplotlib.__path__` y `matplotlib.__file__`.
+> Para conocer la versión instalada de esta o cualquier librería disponible, en la consola de Python, importar la librería e ingresar el comando `libreria.__version__`. Para conocer la localización de los archivos usar los comandos `matplotlib.__path__` y `matplotlib.__file__`.
 
 
 ### Requerimientos
