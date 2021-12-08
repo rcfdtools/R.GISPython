@@ -11,7 +11,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 
 * En PyCharm, ejecutar el script usando la versión de Python 2.7 y 3.10.
 * Ejecutar el script desde la consola del sistema operativo o CMD.
-* Implementar control de excepción de errores en el script de cálculo del Tc.
+* Implementar controles de excepción de errores en el script de cálculo del Tc.
 
 
 ### Requerimientos

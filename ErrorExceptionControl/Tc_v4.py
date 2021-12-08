@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Nombre: Tc_v3.py
+# Nombre: Tc_v4.py
 # Descripción: Script interactivo e iterativo para el cálculo y graficación del tiempo de concentración con control de excepción de errores
 # Requerimiento: PyCharm 2020.1+, Python 2.7.5 (ArcGIS 10.2.2), Python 3.10.0 (instalación independiente).
 
