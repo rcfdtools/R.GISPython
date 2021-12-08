@@ -1,4 +1,4 @@
-## Creación de scripts interactivos e iterativos con funciones y pruebas lógicas simples
+## Scripts interactivos e iterativos con funciones y pruebas lógicas simples
 
 Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como el while, for y range, además de la validación de pruebas lógicas simples.
 
