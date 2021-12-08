@@ -9,3 +9,5 @@
 * [Bokeh - interactive visualizations for modern web browsers.](https://docs.bokeh.org/)
 * [LUX - A Python API for Intelligent Visual Discovery.](https://github.com/lux-org/lux)
 * [MITO - Python Data Analysis in Seconds.](https://trymito.io/)
+* [Introduction to APIs with Python FastAPI.](https://medium.com/codex/introduction-to-apis-with-python-fastapi-bd72601e5ab5)
+* [10 Python Code Snippets For Everyday Programming Problems.](https://www.geeksforgeeks.org/10-python-code-snippets-for-everyday-programming-problems/)
