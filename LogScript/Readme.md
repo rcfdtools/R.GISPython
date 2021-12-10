@@ -5,19 +5,15 @@ Al ejecutar scripts, los resultados son mostrados en la consola del entorno de d
 
 ### Objetivos
 
-* En PyCharm, ejecutar el script usando la versión de Python 2.7 y 3.10.
-* Ejecutar el script desde la consola del sistema operativo o CMD.
-* Registrar las ejecuciones del código en un archivo .log de resultados.
+* En PyCharm, ejecutar el script usando la versión de Python 3.10.
+* Registrar y verificar las ejecuciones del código en un archivo .log de resultados.
 
 
 ### Requerimientos
 
-* Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda.
 * Sistema operativo Microsoft Windows.
-
-> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
 
 
 ### Ruta de ejecución
@@ -201,7 +197,7 @@ PrintLog(   'Cálculo y graficación del Tiempo de Concentración de una cuenca 
 
 ![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/LogScript/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
-Ejecución en PyCharm usando Python 3.10.0 con control de excepción.
+Ejecución en PyCharm usando Python 3.10.0
 ![Python3.10.0StandalonePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LogScript/Screenshot/Python3.10.0StandalonePyCharm2021.3.png)
 ![Tc_v5Log.png](https://github.com/rcfdtools/R.GISPython/blob/main/LogScript/Screenshot/Tc_v5Log.png)
 
