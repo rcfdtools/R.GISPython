@@ -228,5 +228,5 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 https://github.com/rcfdtools/R.GISPython/wiki/License
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) | [Actividad siguiente]() |
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) |
 |----------------------------------------------------------------------------------------------|-------------------------|
