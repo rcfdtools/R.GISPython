@@ -129,7 +129,6 @@ except ValueError as e:
 
 ### Descripción instrucciones y comandos empleados
 
-
 | Instrucción                                                                                                                                                              | Explicación                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | #                                                                                                                                                                        | Comentario de una línea.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -173,7 +172,7 @@ except ValueError as e:
 ![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
 
 Ejecución en PyCharm usando Python 3.10.0 con control de excepción.
-![Python3.10.0StandalonePyCharm2021.3COntrol.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandalonePyCharm2021.3Control.png)
+![Python3.10.0StandalonePyCharm2021.3Control.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandalonePyCharm2021.3Control.png)
 ![Python3.10.0StandalonePyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/Python3.10.0StandalonePyCharm2021.3.png)
 
 

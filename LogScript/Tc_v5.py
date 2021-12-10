@@ -11,7 +11,7 @@ from datetime import datetime
 
 # Variables internas y archivo log de resultados
 i, variaciones, pendienteMinima = 0, 32, 0.001 # Incremento, variaciones y pendiente mínima
-fileLog = open('TC_v5Log.txt','w+') # w+ para crear el archivo si no existe
+fileLog = open('Tc_v5Log.txt','w+') # w+ para crear el archivo si no existe
 
 # Función de cálculo
 def TcGiandotti(A,L,S):
@@ -92,8 +92,9 @@ try:
         print('>>>Error: Ningún valor puede ser menor o igual a cero.')
 except ValueError as e:
     print('>>>Error: Dato ingresado no numérico...')
+print('\nArchivo log: '+ str(fileLog))
 
 ''' 
 Referencias
-https://www.programiz.com/python-programming/datetime/current-datetime
+
 '''
