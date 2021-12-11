@@ -13,7 +13,7 @@ A través de las actividades disponibles en este repositorio, aprenderá los con
 
 ### wiki & listado de actividades disponibles
 
-Encuentra el índice de todas las actividades, scripts, herramientas disponibles, cláusulas, condiciones de uso y como colaborar con R.GISTools, en la sección [wiki](https://github.com/rcfdtools/R.GISPython/wiki) de este repositorio.
+Encuentra el índice de todas las actividades, scripts, herramientas, cláusulas, condiciones de uso y como colaborar con R.GISTools, en la sección [wiki](https://github.com/rcfdtools/R.GISPython/wiki) de este repositorio.
 
 
 ### Clonación
