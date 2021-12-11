@@ -1,6 +1,6 @@
 ---
 name: Referencia complementaria
-about: Proponga y envíe referencias complementarias para una o varias herramientas
+about: Proponga y envíe referencias complementarias para una o varias actividades
   indicando sus enlaces y a cuál(es) actividades(s) R.GISPython aplica.
 title: Referencia complementaria para la actividad >> [indique el nombre aquí]
 labels: documentation
