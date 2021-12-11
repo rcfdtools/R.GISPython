@@ -1,0 +1,10 @@
+R.GISPython
+https://github.com/rcfdtools/R.GISPython.git
+Clone local directory D:\R.GISPython
+
+
+R.GISPython.wiki
+https://github.com/rcfdtools/R.GISPython.wiki.git
+Clone local directory D:\R.GISPython.wiki
+
+https://docs.github.com/en/communities/documenting-your-project-with-wikis/adding-or-editing-wiki-pages
