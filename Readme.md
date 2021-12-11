@@ -11,11 +11,6 @@ Python es un potente lenguaje de programación interpretado con licencia de cód
 A través de las actividades disponibles en este repositorio, aprenderá los conceptos básicos de Python y su aplicabilidad e integración con sistemas de información geográfica - SIG. 
 
 
-### wiki & listado de actividades disponibles
+| [Iniciar a aprender](https://github.com/rcfdtools/R.GISPython/wiki) |
+|---------------------------------------------------------------------|
 
-Encuentra el índice de todas las actividades, scripts, herramientas, cláusulas, condiciones de uso y como colaborar con R.GISTools, en la sección [wiki](https://github.com/rcfdtools/R.GISPython/wiki) de este repositorio.
-
-
-### Clonación
-
-Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en `D:\R.GISPython`. Enlace para clonación https://github.com/rcfdtools/R.GISPython.git.
