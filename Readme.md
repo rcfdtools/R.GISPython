@@ -6,73 +6,10 @@
   <br><br>
 </div>
 
-### Introducción
 
-Python es un potente lenguaje de programación interpretado con licencia de código abierto que soporta orientación a objetos y es comúnmente utilizado para la automatización de tareas en herramientas geográficas en ArcGIS Desktop, ArcGIS Pro y QGIS. Las herramientas que hacen parte de Python están disponibles en versiones de 32 y 64 bits, existiendo una limitante de hasta máximo 2GB en el tamaño de los archivos que pueden ser cargados en memoria para sistemas de 32 bits. Para el procesamiento profesional de grandes volúmenes de datos se recomienda que el sistema operativo, la aplicación GIS y Python sean de 64 bits. Para el desarrollo de los ejercicios se puede utilizar cualquier versión.
+### wiki & listado de herramientas disponibles
 
-
-### Versiones de Python en ArcGIS y QGIS
-
-* En ArcGIS for Desktop (p.e, 10.2.2), la versión integrada de Python es 2.7.5 y por defecto se instala en Microsoft Windows en el directorio C:\Python27.
-* En ArcGIS Pro (p.e, 2.9.0), la versión integrada de Python es 3.7.11, por defecto se instala en C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3 y por clonación en el directorio de usuario (p.e, Admin) en C:\Users\Admin\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone.
-* En QGIS (p.e, 3.22.1), la versión integrada de Python es la 3.9.5, por defecto se instalan en Microsoft Windows en el directorio de archivos de programa localizado en C:\Program Files\QGIS 3.10\apps cuando se trata de versiones de 64 bits.
-
-
-### ¿Qué es un Script en Python?
-
-Un script en Python, es un archivo que contiene diferentes instrucciones o código que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS for Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
-
-
-### Requerimientos
-
-* [ESRI ArcGIS for Desktop 10+](www.esri.com)
-* [ESRI ArcGIS Pro 2.9+](www.esri.com)
-* [QGIS 2.18.28 (opcional)](www.qgis.org)
-* [QGIS 3.22.1+]( www.qgis.org)
-* [Python 2.7.17 standalone (opcional)](www.python.org)
-* [Python 3.10.0 standalone](www.python.org)
-* [Anaconda (opcional)](www.anaconda.com)
-* [PyCharm Community](www.jetbrains.com/pycharm)
-* [PyCharm for Anaconda (opcional)](www.jetbrains.com/lp/pycharm-anaconda)
-
-> Requerimientos específicos adicionales son indicados en cada script o en cada microcontenido.
-
-
-### Tema 1. Fundamentos generales de Python
-
-Este tema presenta los fundamentos básicos generales necesarios para la comprensión de la sintaxis propia de este lenguaje, requerida para la ejecución de instrucciones por consola o para la codificación de scripts.  
-
-| Actividad                                                                                                                                                             | Descripción                                                                                                                                                                                                                                                                                                                                                                                                  |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Identificar y ejecutar cualquier versión de Python instalada](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion)                                      | En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar pruebas de ejecución de comandos por consola o a través de scripts.                                                                                           |
-| [Definir la versión por defecto de Python en el OS y configurar PyCharm](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion)                           | Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete de comandos desde cualquier directorio de su sistema operativo y sin tener que ingresar la ruta completa del ejecutable Python.exe. La configuración de intérpretes en PyCharm, le permitirá ejecutar scripts de un proyecto utilizando una versión predefinida de Python.                     |
-| [Ayuda, palabras reservadas y módulos disponibles](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords)                                            | Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario.                                                                                                                                 |
-| [Usar Python como una calculadora](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculator)                                                             | Desde la consola de Python, es posible realizar operaciones matemáticas simples o complejas, definir variables, listas, tuplas, funciones, llamar módulos y en general utilizar cualquier elemento integrado al lenguaje.                                                                                                                                                                                    |
-| [Script básico](https://github.com/rcfdtools/R.GISPython/tree/main/BasicScript)                                                                                       | Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py, y son usados para ejecutar o automatizar tareas repetitivas. Ejemplo usando PyCharm, Command CMD, ArcGIS For Desktop, ArcGIS Pro y QGIS.                                                                   |
-| [Scripts interactivos](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript)                                                                          | Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`. En la interfaz gráfica de QGIS, las entradas de usuario se pueden realizar mediante QInputDialog.getText() y en ArcGIS Pro, la ejecución de este tipo de scripts puede ser realizada directamente desde Python Notebook.           |
-| [Creación de scripts interactivos e iterativos con funciones y pruebas lógicas simples](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) | Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como while, for y range.                                                                                                                                                                                                                                                                                                   |
-| [Instalación, actualización de paquetes y creación de gráficas básicas usando matplotlib](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph)     | Complementariamente a las librerías obtenidas con la instalación de Python, es posible adicionar nuevas librerías que posteriormente podrán ser invocadas desde la consola o desde scripts y también se pueden actualizar las librerías preinstaladas. El procedimiento más común de instalación automatizada se realiza a través del comando de consola pip disponible en el directorio Scripts de Python.  |
-| [Control de excepción de errores](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl)                                                           | En el evento de que el usuario ingrese valores nulos o fuera de rango, el código deberá ser capaz de controlar estas excepciones para no devolver al usuario valores errados. Algunos controles de ejecución pueden ser implementados usando condicionales para la validación de los datos ingresados, o a través de los controles de ejecución propios de Python.                                           |
-| [Script con archivo log de ejecución y resultados](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript)                                                                                                                  | Al ejecutar scripts, los resultados son mostrados en la consola del entorno de desarrollo o en el Command del sistema operativo. Los resultados también pueden ser volcados en un archivo de registro que puede ser creado y actualizado directamente desde el código. Para este procedimiento utilizaremos la instrucción .write().                                                                         |
-
-> Nota: los datos hidroclimatológicos utilizados para ejemplificar algunos de los ejemplos corresponden a información tomada y procesada a partir de datos del IDEAM - Colombia  y los archivos de formas vectoriales han sido descargados del IGAC - Colombia y de otras fuentes alternas.
-
-
-### Enlaces de interés
-
-* [Python.org](https://www.python.org/)
-* [Pandas.pydata.org](https://pandas.pydata.org/)
-* [NumPy.org](https://pandas.pydata.org/)
-* [matplotlib.org](https://matplotlib.org/)
-* [pypi.org](https://pypi.org/)
-* [rasterio](https://pypi.org/project/rasterio/)
-* [drawio](https://app.diagrams.net/)
-* [Enlaces y referencias complementarias](https://github.com/rcfdtools/R.GISPython/blob/main/References.md)  
-
-
-### Licencia, cláusulas y condiciones de uso
-
-R.GISPython es de uso libre para fines académicos, conoce nuestra [licencia, cláusulas, condiciones de uso](https://github.com/rcfdtools/R.GISPython/wiki/License) y como referenciar los contenidos publicados en este repositorio.
+Encuentra el índice de todas las actividades, scripts, herramientas disponibles, cláusulas, condiciones de uso y como colaborar con R.HydroTools, en la sección [wiki](https://github.com/rcfdtools/R.GISPython/wiki) de este proyecto.
 
 
 ### Clonación
