@@ -1,6 +1,6 @@
 ---
 name: Proponer una actividad adicional
-about: Proponer una actividad complementaria a las actuales en R.GISPython
+about: Proponer una actividad complementaria a las actuales en R.GISPython.
 title: ''
 labels: documentation, enhancement
 assignees: ''
