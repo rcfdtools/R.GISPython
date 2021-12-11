@@ -18,4 +18,4 @@ Encuentra el índice de todas las actividades, scripts, herramientas, cláusulas
 
 ### Clonación
 
-Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en _D:\R.GISPython_. Enlace para clonación https://github.com/rcfdtools/R.GISPython.git.
+Para compatibilidad completa de las rutas utilizadas en los scripts y herramientas de R.GISPython, en Microsoft Windows clonar y/o descomprimir en `D:\R.GISPython`. Enlace para clonación https://github.com/rcfdtools/R.GISPython.git.
