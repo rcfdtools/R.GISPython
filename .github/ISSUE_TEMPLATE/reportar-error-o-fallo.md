@@ -41,6 +41,9 @@ Si el fallo o error puede ser documentado a partir de capturas de pantalla, incl
 **Complete la siguiente información relacionada con el sistema operativo y las versiones utilizadas:**
  - Sistema operativo: [e.j. Microsoft Windows, iOS]
  - Versión de Python [p. ej, 3.10.0]
+ - Versión de ArcGIS for Desktop
+ - Versión de ArcGIS Pro
+ - Versión de QGIS
  - Versión de librerías.
 
 
