@@ -19,7 +19,7 @@ downloadFile = False # Use False for process the last file downloaded
 sampleRecord = 12 # Number of records to show in the sample
 showRecordSample = False # Print some sample records
 showAllRecords = False # Print all the records at the report tail
-showGraphScreen = True # Show graphs on the screen. This script always update ./Graph & ./PivotTable
+showGraphScreen = False # Show graphs on the screen. This script always update ./Graph & ./PivotTable
 stationName = 'nombre'
 latitudeName = 'latitud'
 longitudeName = 'longitud'
@@ -154,7 +154,7 @@ print('\n')
 # Category
 pivotTable=stationTable.pivot_table(index=categoryName, columns=stateActiveName, values=technologyName, aggfunc='count')
 print(pivotTable)
-pivotTable.plot(kind='bar', xlabel='Category', ylabel='Stations', title=graphTitlePrefix+'Stations by category - Date:  '+str(currentDate)+'\n'+mySignature, figsize=(16,8), alpha=0.75, rot=10, stacked=True) # alpha for transparency
+pivotTable.plot(kind='bar', xlabel='Category', ylabel='Stations', title=graphTitlePrefix+'Stations by Category - Date:  '+str(currentDate)+'\n'+mySignature, figsize=(16,8), alpha=0.75, rot=10, stacked=True) # alpha for transparency
 plt.savefig('./Graph/CategoryPivot'+currentDateTxt+'.png')
 if showGraphScreen == True: plt.show()
 pivotTable.to_csv('./PivotTable/CategoryPivot'+currentDateTxt+'.csv')
@@ -162,7 +162,7 @@ print('\n')
 # Technology
 pivotTable=stationTable.pivot_table(index=technologyName, columns=stateActiveName, values=categoryName, aggfunc='count')
 print(pivotTable)
-pivotTable.plot(kind='bar', xlabel='Technology', ylabel='Stations', title=graphTitlePrefix+'Stations by technology - Date: '+str(currentDate)+'\n'+mySignature, figsize=(8,8), alpha=0.75, rot=0, stacked=True)
+pivotTable.plot(kind='bar', xlabel='Technology', ylabel='Stations', title=graphTitlePrefix+'Stations by Technology - Date: '+str(currentDate)+'\n'+mySignature, figsize=(8,8), alpha=0.75, rot=0, stacked=True)
 plt.savefig('./Graph/TechnologyPivot'+currentDateTxt+'.png')
 if showGraphScreen == True: plt.show()
 pivotTable.to_csv('./PivotTable/TechnologyPivot'+currentDateTxt+'.csv')
@@ -170,22 +170,50 @@ print('\n')
 # Geographical state
 pivotTable=stationTable.pivot_table(index=geoStateName, columns=stateActiveName, values=categoryName, aggfunc='count')
 print(pivotTable)
-pivotTable.plot(kind='bar', xlabel='Geographical state', ylabel='Stations', title=graphTitlePrefix+'Stations by Geographical state - Date: '+str(currentDate)+'\n'+mySignature, figsize=(14,18), alpha=0.75, rot=90, stacked=True)
+pivotTable.plot(kind='bar', xlabel='Geographical state', ylabel='Stations', title=graphTitlePrefix+'Stations by Geographical State - Date: '+str(currentDate)+'\n'+mySignature, figsize=(14,18), alpha=0.75, rot=90, stacked=True)
 plt.savefig('./Graph/GeoStatePivot'+currentDateTxt+'.png')
 if showGraphScreen == True: plt.show()
 pivotTable.to_csv('./PivotTable/GeoStatePivot'+currentDateTxt+'.csv')
 print('\n')
 # Geographical operative area
-print(stationTable.pivot_table(index=geoOperativeAreaName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+pivotTable=stationTable.pivot_table(index=geoOperativeAreaName, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Geographical operative area', ylabel='Stations', title=graphTitlePrefix+'Stations by Geographical Operative Area - Date: '+str(currentDate)+'\n'+mySignature, figsize=(14,18), alpha=0.75, rot=15, stacked=True)
+plt.savefig('./Graph/GeoOperativeArea'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/GeoOperativeArea'+currentDateTxt+'.csv')
 print('\n')
-print(stationTable.pivot_table(index=geoHydroAreaName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+# Geographical hydrological area
+pivotTable=stationTable.pivot_table(index=geoHydroAreaName, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Geographical hydrological area', ylabel='Stations', title=graphTitlePrefix+'Stations by Geographical Hydrological Area - Date: '+str(currentDate)+'\n'+mySignature, figsize=(14,18), alpha=0.75, rot=0, stacked=True)
+plt.savefig('./Graph/GeoHydroArea'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/GeoHydroArea'+currentDateTxt+'.csv')
 print('\n')
-print(stationTable.pivot_table(index=geoHydroZoneName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+# Geographical hydrological zone
+pivotTable=stationTable.pivot_table(index=geoHydroZoneName, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Geographical hydrological zone', ylabel='Stations', title=graphTitlePrefix+'Stations by Geographical Hydrological Zone - Date: '+str(currentDate)+'\n'+mySignature, figsize=(14,18), alpha=0.75, rot=90, stacked=True)
+plt.savefig('./Graph/GeoHydroZone'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/GeoHydroZone'+currentDateTxt+'.csv')
 print('\n')
-print(stationTable.pivot_table(index=geoHydroSubZoneName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+# Geographical hydrological subzone
+pivotTable=stationTable.pivot_table(index=geoHydroSubZoneName, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Geographical hydrological subzone', ylabel='Stations', title=graphTitlePrefix+'Stations by Geographical Hydrological Subzone - Date: '+str(currentDate)+'\n'+mySignature, figsize=(44,32), alpha=0.75, rot=89, stacked=True)
+plt.savefig('./Graph/GeoHydroSubzone'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/GeoHydroSubzone'+currentDateTxt+'.csv')
 print('\n')
-stationTablePivotYear = stationTable.pivot_table(index=pd.DatetimeIndex(stationTable[installationDate]).year, columns=stateActiveName, values=categoryName, aggfunc='count')
-print(stationTablePivotYear)
+# Installed stations by year
+pivotTable = stationTable.pivot_table(index=pd.DatetimeIndex(stationTable[installationDate]).year, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Year', ylabel='Stations', title=graphTitlePrefix+'Installed Stations by year - Date: '+str(currentDate)+'\n'+mySignature, figsize=(16,8), alpha=1, rot=90, stacked=True)
+plt.savefig('./Graph/InstallationDateYear'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/InstallationDateYear'+currentDateTxt+'.csv')
 
 # Geospatial array
 geoArray=stationTable[[latitudeName,longitudeName,elevationName]]
@@ -228,16 +256,3 @@ if showAllRecords == True:
     pd.set_option('display.max_rows',stationTable.shape[0]+1)
     print(geoArray[[stationName,latitudeName,longitudeName]])
 
-# General plot graphs
-'''for i in xrange(len(stationTableYearCount)):
-    print(stationTableYearCount.index[i])
-plt.plot(stationTablePivotYear[0],stationTablePivotYear[1], label="Active", color='black', linewidth=1, marker='p', markersize=4, markerfacecolor='black', markeredgecolor='black')
-plt.title('Stations installed by year')
-plt.xlabel("Year")
-plt.ylabel("# stations")
-plt.show()'''
-
-stationTableYearCount.plot(kind='line')
-'''plt.savefig('./Graph/StationInstalledByYear.png')
-plt.show()'''
-#stationTableYearCount.to_excel('/PivotTable/StationInstalledByYear.xlsx')
