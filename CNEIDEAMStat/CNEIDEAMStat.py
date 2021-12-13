@@ -1,0 +1,174 @@
+
+import pandas as pd # Tested with 1.3.4 version.
+import numpy as np # Tested with 1.21.4 version.
+import xlrd # Tested with 2.0.1 version.
+from datetime import datetime
+
+# General vars
+urlFile=r'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
+fileName='CNE_IDEAM.xls'
+sampleRecord=12 # Number of records to show in the sample
+showRecordSample=False # Print some sample records
+showAllRecords=False # Print all the records at the tail report
+latitudeName='latitud'
+longitudeName='longitud'
+elevationName='altitud'
+categoryName='CATEGORIA'
+technologyName='TECNOLOGIA'
+stateActiveName='ESTADO'
+geoStateName='DEPARTAMENTO'
+geoOperativeAreaName='AREA_OPERATIVA'
+geoHydroAreaName='AREA_HIDROGRAFICA'
+geoHydroZoneName='ZONA_HIDROGRAFICA'
+geoHydroSubZoneName='SUBZONA_HIDROGRAFICA'
+thermalLevelRef=[[1000,'Cálido, 24°C+, <= 1000 meters'],[2000,'Templado, 18°C+, <= 2000 meters'],[3000,'Frío, 12°C+, <= 3000 meters'],[4000,'Páramo, 0°C, <= 4000 meters'],[99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
+
+# Reading the file
+stationTable = pd.read_excel('./Data/'+fileName)
+
+# Separation title line function
+def Separador(n=24): # Default using 24 - characters
+	nc = '-'
+	print(nc*n)
+
+# Thermal level evaluation function
+def thermalLevelF(elevation):
+    for i in thermalLevelRef[:]:
+        if elevation<=i[0]:
+            return i[1]
+
+# Header and general file summary
+shapeTable=stationTable.shape # Row and columns array size
+Separador(117)
+print('Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia. Descarga y análisis estadístico general')
+Separador(117)
+print(  'Ejecutado en: '+str(datetime.now()),
+        '\nData summary for '+fileName,
+        '\nUrl: '+urlFile,
+        '\nDataframe type: '+str(type(stationTable)),
+        '\nStations: '+ str(stationTable.shape[0])+'\nAttributes: '+ str(stationTable.shape[1]),
+        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/xxxxxx'
+        '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
+        '\nCréditos: r.cfdtools@gmail.com\n')
+
+# Sample records
+if showRecordSample == True:
+    Separador(14)
+    print('Sample records')
+    Separador(14)
+    print('\nFirst '+str(sampleRecord)+' records:')
+    print(stationTable.head(sampleRecord)) # By default show 5 records
+    print('Last '+str(sampleRecord)+' records:')
+    print(stationTable.tail(sampleRecord)) # By default show 5 records
+    print('\n')
+
+# Attributes summary
+Separador(27)
+print('Attributes an types founded')
+Separador(27)
+print(stationTable.columns)
+print('\nTypes:')
+print(stationTable.dtypes) # With stationTable.columns you can get the attributes names in an array.
+print('\nGeneral dataframe information:')
+print(stationTable.info())
+print('\n')
+
+# Basic dataframe statistics
+Separador(18)
+print('General statistics')
+Separador(18)
+print('\nBasic dataframe statistics:')
+print(stationTable.describe())
+print('\nCategory - Count:')
+print(stationTable[categoryName].value_counts())
+print('\nCategory - Normalize percentage rate:')
+print(stationTable[categoryName].value_counts(normalize=True).round(4))
+print('\nTechnology - Count:')
+print(stationTable[technologyName].value_counts())
+print('\nTechnology - Normalize percentage rate:')
+print(stationTable[technologyName].value_counts(normalize=True).round(4))
+print('\nState active - Count:')
+print(stationTable[stateActiveName].value_counts())
+print('\nState active - Normalize percentage rate:')
+print(stationTable[stateActiveName].value_counts(normalize=True).round(4))
+print('\nGeographical state location- Count:')
+print(stationTable[geoStateName].value_counts())
+print('\nGeographical state location - Normalize percentage rate:')
+print(stationTable[geoStateName].value_counts(normalize=True).round(4))
+print('\nGeographical operative area - Count:')
+print(stationTable[geoOperativeAreaName].value_counts())
+print('\nGeographical operative area - Normalize percentage rate:')
+print(stationTable[geoOperativeAreaName].value_counts(normalize=True).round(4))
+print('\nHydrographic area - Count:')
+print(stationTable[geoHydroAreaName].value_counts())
+print('\nHydrographic area - Normalize percentage rate:')
+print(stationTable[geoHydroAreaName].value_counts(normalize=True).round(4))
+print('\nHydrographic zone - Count:')
+print(stationTable[geoHydroZoneName].value_counts())
+print('\nHydrographic zone - Normalize percentage rate:')
+print(stationTable[geoHydroZoneName].value_counts(normalize=True).round(4))
+print('\nHydrographic subzone - Count:')
+print(stationTable[geoHydroSubZoneName].value_counts())
+print('\nHydrographic subzone - Normalize percentage rate:')
+print(stationTable[geoHydroSubZoneName].value_counts(normalize=True).round(4))
+
+# Pivot tables
+Separador(12)
+print('Pivot tables')
+Separador(12)
+print('\n')
+print(stationTable.pivot_table(index=categoryName, columns=stateActiveName, values=technologyName, aggfunc='count'))
+print('\n')
+print(stationTable.pivot_table(index=technologyName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+print('\n')
+print(stationTable.pivot_table(index=geoStateName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+print('\n')
+print(stationTable.pivot_table(index=geoOperativeAreaName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+print('\n')
+print(stationTable.pivot_table(index=geoHydroAreaName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+print('\n')
+print(stationTable.pivot_table(index=geoHydroZoneName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+print('\n')
+print(stationTable.pivot_table(index=geoHydroSubZoneName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+
+# Geospatial array
+geoArray=stationTable[[latitudeName,longitudeName,elevationName]]
+print('\n')
+Separador(39)
+print('Geospatial array sample with '+str(sampleRecord)+' records')
+Separador(39)
+print(geoArray.head(sampleRecord))
+print('Dataframe type: '+str(type(geoArray))+'\n')
+
+# Thermal level evaluation
+Separador(24)
+print('Thermal level evaluation')
+Separador(24)
+print('\nThermal level reference table:')
+print(pd.DataFrame(thermalLevelRef,columns=['Elevation ref value','Thermic level']))
+print('\n')
+thermalLevelArray = []
+for i in geoArray[elevationName]:
+    thermalLevelArray.append(thermalLevelF(i))
+stationTable['ThermalLevelValue']=thermalLevelArray
+print('Geospatial array sample with '+str(sampleRecord)+' records:')
+geoArray=stationTable[[latitudeName,longitudeName,elevationName,'ThermalLevelValue']]
+print(geoArray.head(sampleRecord))
+print('\nThermal level statistics:')
+print('Count:')
+print(geoArray['ThermalLevelValue'].value_counts())
+print('\nNormalize percentage rate:')
+print(geoArray['ThermalLevelValue'].value_counts(normalize=True).round(4))
+print('\n')
+print(stationTable.pivot_table(index='ThermalLevelValue', columns=stateActiveName, values=categoryName, aggfunc='count'))
+print('\n')
+
+# Show all data
+if showAllRecords == True:
+    print('\n')
+    Separador(22)
+    print('Datos en '+fileName)
+    Separador(22)
+    print('Index: ' + str(stationTable.index))
+    pd.set_option('display.max_rows',stationTable.shape[0])
+    print(stationTable)
