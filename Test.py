@@ -13,3 +13,8 @@ for i in data1[:]:
     print(i[0])
 
 
+# Date time basics
+from datetime import date
+currentDate = date.today()
+print(str(currentDate.year)+str(currentDate.month)+str(currentDate.day))
+

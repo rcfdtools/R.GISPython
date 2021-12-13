@@ -1,30 +1,55 @@
+# -*- coding: UTF-8 -*-
+# Nombre: CNEIDEAMStat.py
+# Descripción: Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia, descarga y análisis.
+# Requerimiento: PyCharm 2021.3+, Python 3.10.0 (instalación independiente)
 
 import pandas as pd # Tested with 1.3.4 version.
-import numpy as np # Tested with 1.21.4 version.
-import xlrd # Tested with 2.0.1 version.
+# import numpy as np # Tested with 1.21.4 version. # Has to be installed and not import required.
+# import xlrd # Tested with 2.0.1 version. # Has to be installed and not import required.
 from datetime import datetime
+from datetime import date
+import requests
+import matplotlib.pyplot as plt
 
 # General vars
-urlFile=r'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
-fileName='CNE_IDEAM.xls'
-sampleRecord=12 # Number of records to show in the sample
-showRecordSample=False # Print some sample records
-showAllRecords=False # Print all the records at the tail report
-latitudeName='latitud'
-longitudeName='longitud'
-elevationName='altitud'
-categoryName='CATEGORIA'
-technologyName='TECNOLOGIA'
-stateActiveName='ESTADO'
-geoStateName='DEPARTAMENTO'
-geoOperativeAreaName='AREA_OPERATIVA'
-geoHydroAreaName='AREA_HIDROGRAFICA'
-geoHydroZoneName='ZONA_HIDROGRAFICA'
-geoHydroSubZoneName='SUBZONA_HIDROGRAFICA'
-thermalLevelRef=[[1000,'Cálido, 24°C+, <= 1000 meters'],[2000,'Templado, 18°C+, <= 2000 meters'],[3000,'Frío, 12°C+, <= 3000 meters'],[4000,'Páramo, 0°C, <= 4000 meters'],[99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
+urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
+fileName = 'CNE_IDEAM'
+fileExtension = '.xls'
+downloadFile = False # Use False for process the last file downloaded
+sampleRecord = 12 # Number of records to show in the sample
+showRecordSample = False # Print some sample records
+showAllRecords = False # Print all the records at the report tail
+showGraphScreen = True # Show graphs on the screen. This script always update ./Graph & ./PivotTable
+stationName = 'nombre'
+latitudeName = 'latitud'
+longitudeName = 'longitud'
+elevationName = 'altitud'
+categoryName = 'CATEGORIA'
+technologyName = 'TECNOLOGIA'
+stateActiveName = 'ESTADO'
+installationDate = 'FECHA_INSTALACION'
+geoStateName = 'DEPARTAMENTO'
+geoOperativeAreaName = 'AREA_OPERATIVA'
+geoHydroAreaName = 'AREA_HIDROGRAFICA'
+geoHydroZoneName = 'ZONA_HIDROGRAFICA'
+geoHydroSubZoneName = 'SUBZONA_HIDROGRAFICA'
+thermalLevelRef = [[1000,'Cálido, 24°C+, <= 1000 meters'],[2000,'Templado, 18°C+, <= 2000 meters'],[3000,'Frío, 12°C+, <= 3000 meters'],[4000,'Páramo, 0°C, <= 4000 meters'],[99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
+graphTitlePrefix='CNE IDEAM Colombia -  '
+mySignature='https://github.com/rcfdtools/R.GISPython'
 
-# Reading the file
-stationTable = pd.read_excel('./Data/'+fileName)
+# Downloading and reading the file
+fileDownloadText = 'File downloaded and updated = No'
+currentDate = date.today()
+currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
+fileRequest = requests.get(urlFile)
+fileSave = './Data/'+fileName+'_'+currentDateTxt+fileExtension
+if downloadFile == True:
+    if fileRequest:
+        open(fileSave, 'wb').write(fileRequest.content)
+        fileDownloadText = 'File downloaded and updated = Yes'
+stationTable = pd.read_excel(fileSave)
+pd.set_option('display.max_rows', stationTable.shape[0]+1) # Show all the records
+pd.set_option('display.max_columns', None) # Show all the records
 
 # Separation title line function
 def Separador(n=24): # Default using 24 - characters
@@ -34,20 +59,21 @@ def Separador(n=24): # Default using 24 - characters
 # Thermal level evaluation function
 def thermalLevelF(elevation):
     for i in thermalLevelRef[:]:
-        if elevation<=i[0]:
+        if elevation <= i[0]:
             return i[1]
 
 # Header and general file summary
-shapeTable=stationTable.shape # Row and columns array size
-Separador(117)
-print('Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia. Descarga y análisis estadístico general')
-Separador(117)
-print(  'Ejecutado en: '+str(datetime.now()),
-        '\nData summary for '+fileName,
+shapeTable = stationTable.shape # Row and columns array size
+Separador(72)
+print('Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia')
+Separador(72)
+print(  '\nEjecutado en: '+str(datetime.now()),
+        '\nData summary for '+fileSave,
         '\nUrl: '+urlFile,
         '\nDataframe type: '+str(type(stationTable)),
+        '\n'+fileDownloadText,
         '\nStations: '+ str(stationTable.shape[0])+'\nAttributes: '+ str(stationTable.shape[1]),
-        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/xxxxxx'
+        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/CNEIDEAMStat'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\nCréditos: r.cfdtools@gmail.com\n')
 
@@ -56,9 +82,9 @@ if showRecordSample == True:
     Separador(14)
     print('Sample records')
     Separador(14)
-    print('\nFirst '+str(sampleRecord)+' records:')
+    print('\nFirst '+str(sampleRecord)+' records: ')
     print(stationTable.head(sampleRecord)) # By default show 5 records
-    print('Last '+str(sampleRecord)+' records:')
+    print('Last '+str(sampleRecord)+' records: ')
     print(stationTable.tail(sampleRecord)) # By default show 5 records
     print('\n')
 
@@ -67,9 +93,9 @@ Separador(27)
 print('Attributes an types founded')
 Separador(27)
 print(stationTable.columns)
-print('\nTypes:')
+print('\nTypes: ')
 print(stationTable.dtypes) # With stationTable.columns you can get the attributes names in an array.
-print('\nGeneral dataframe information:')
+print('\nGeneral dataframe information: ')
 print(stationTable.info())
 print('\n')
 
@@ -77,52 +103,79 @@ print('\n')
 Separador(18)
 print('General statistics')
 Separador(18)
-print('\nBasic dataframe statistics:')
+print('\nBasic dataframe statistics: ')
 print(stationTable.describe())
-print('\nCategory - Count:')
+print('\nCategory - Count: ')
 print(stationTable[categoryName].value_counts())
-print('\nCategory - Normalize percentage rate:')
+print('\nCategory - Normalize percentage rate: ')
 print(stationTable[categoryName].value_counts(normalize=True).round(4))
-print('\nTechnology - Count:')
+print('\nTechnology - Count: ')
 print(stationTable[technologyName].value_counts())
-print('\nTechnology - Normalize percentage rate:')
+print('\nTechnology - Normalize percentage rate: ')
 print(stationTable[technologyName].value_counts(normalize=True).round(4))
-print('\nState active - Count:')
+print('\nState active - Count: ')
 print(stationTable[stateActiveName].value_counts())
-print('\nState active - Normalize percentage rate:')
+print('\nState active - Normalize percentage rate: ')
 print(stationTable[stateActiveName].value_counts(normalize=True).round(4))
-print('\nGeographical state location- Count:')
+print('\nGeographical state location- Count: ')
 print(stationTable[geoStateName].value_counts())
-print('\nGeographical state location - Normalize percentage rate:')
+print('\nGeographical state location - Normalize percentage rate: ')
 print(stationTable[geoStateName].value_counts(normalize=True).round(4))
-print('\nGeographical operative area - Count:')
+print('\nGeographical operative area - Count: ')
 print(stationTable[geoOperativeAreaName].value_counts())
-print('\nGeographical operative area - Normalize percentage rate:')
+print('\nGeographical operative area - Normalize percentage rate: ')
 print(stationTable[geoOperativeAreaName].value_counts(normalize=True).round(4))
-print('\nHydrographic area - Count:')
+print('\nHydrographic area - Count: ')
 print(stationTable[geoHydroAreaName].value_counts())
-print('\nHydrographic area - Normalize percentage rate:')
+print('\nHydrographic area - Normalize percentage rate: ')
 print(stationTable[geoHydroAreaName].value_counts(normalize=True).round(4))
-print('\nHydrographic zone - Count:')
+print('\nHydrographic zone - Count: ')
 print(stationTable[geoHydroZoneName].value_counts())
-print('\nHydrographic zone - Normalize percentage rate:')
+print('\nHydrographic zone - Normalize percentage rate: ')
 print(stationTable[geoHydroZoneName].value_counts(normalize=True).round(4))
-print('\nHydrographic subzone - Count:')
+print('\nHydrographic subzone - Count: ')
 print(stationTable[geoHydroSubZoneName].value_counts())
-print('\nHydrographic subzone - Normalize percentage rate:')
+print('\nHydrographic subzone - Normalize percentage rate: ')
 print(stationTable[geoHydroSubZoneName].value_counts(normalize=True).round(4))
+print('\nInstallation year - Count: ')
+stationTable.sort_values(installationDate, ascending=True, inplace=True) # Reorder and uptate the dataframe by installation date records
+stationTableYearCount = pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=False).round(0)
+print(pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=False).round(0))
+print('\nInstallation year - Normalize percentage rate: ')
+print(pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=False, normalize=True).round(4))
+print('\n')
+
 
 # Pivot tables
 Separador(12)
 print('Pivot tables')
 Separador(12)
 print('\n')
-print(stationTable.pivot_table(index=categoryName, columns=stateActiveName, values=technologyName, aggfunc='count'))
+# Category
+pivotTable=stationTable.pivot_table(index=categoryName, columns=stateActiveName, values=technologyName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Category', ylabel='Stations', title=graphTitlePrefix+'Stations by category - Date:  '+str(currentDate)+'\n'+mySignature, figsize=(16,8), alpha=0.75, rot=10, stacked=True) # alpha for transparency
+plt.savefig('./Graph/CategoryPivot'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/CategoryPivot'+currentDateTxt+'.csv')
 print('\n')
-print(stationTable.pivot_table(index=technologyName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+# Technology
+pivotTable=stationTable.pivot_table(index=technologyName, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Technology', ylabel='Stations', title=graphTitlePrefix+'Stations by technology - Date: '+str(currentDate)+'\n'+mySignature, figsize=(8,8), alpha=0.75, rot=0, stacked=True)
+plt.savefig('./Graph/TechnologyPivot'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/TechnologyPivot'+currentDateTxt+'.csv')
 print('\n')
-print(stationTable.pivot_table(index=geoStateName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+# Geographical state
+pivotTable=stationTable.pivot_table(index=geoStateName, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(pivotTable)
+pivotTable.plot(kind='bar', xlabel='Geographical state', ylabel='Stations', title=graphTitlePrefix+'Stations by Geographical state - Date: '+str(currentDate)+'\n'+mySignature, figsize=(14,18), alpha=0.75, rot=90, stacked=True)
+plt.savefig('./Graph/GeoStatePivot'+currentDateTxt+'.png')
+if showGraphScreen == True: plt.show()
+pivotTable.to_csv('./PivotTable/GeoStatePivot'+currentDateTxt+'.csv')
 print('\n')
+# Geographical operative area
 print(stationTable.pivot_table(index=geoOperativeAreaName, columns=stateActiveName, values=categoryName, aggfunc='count'))
 print('\n')
 print(stationTable.pivot_table(index=geoHydroAreaName, columns=stateActiveName, values=categoryName, aggfunc='count'))
@@ -130,6 +183,9 @@ print('\n')
 print(stationTable.pivot_table(index=geoHydroZoneName, columns=stateActiveName, values=categoryName, aggfunc='count'))
 print('\n')
 print(stationTable.pivot_table(index=geoHydroSubZoneName, columns=stateActiveName, values=categoryName, aggfunc='count'))
+print('\n')
+stationTablePivotYear = stationTable.pivot_table(index=pd.DatetimeIndex(stationTable[installationDate]).year, columns=stateActiveName, values=categoryName, aggfunc='count')
+print(stationTablePivotYear)
 
 # Geospatial array
 geoArray=stationTable[[latitudeName,longitudeName,elevationName]]
@@ -144,7 +200,7 @@ print('Dataframe type: '+str(type(geoArray))+'\n')
 Separador(24)
 print('Thermal level evaluation')
 Separador(24)
-print('\nThermal level reference table:')
+print('\nThermal level reference array:')
 print(pd.DataFrame(thermalLevelRef,columns=['Elevation ref value','Thermic level']))
 print('\n')
 thermalLevelArray = []
@@ -152,7 +208,7 @@ for i in geoArray[elevationName]:
     thermalLevelArray.append(thermalLevelF(i))
 stationTable['ThermalLevelValue']=thermalLevelArray
 print('Geospatial array sample with '+str(sampleRecord)+' records:')
-geoArray=stationTable[[latitudeName,longitudeName,elevationName,'ThermalLevelValue']]
+geoArray=stationTable[[stationName,latitudeName,longitudeName,elevationName,'ThermalLevelValue']]
 print(geoArray.head(sampleRecord))
 print('\nThermal level statistics:')
 print('Count:')
@@ -165,10 +221,23 @@ print('\n')
 
 # Show all data
 if showAllRecords == True:
-    print('\n')
-    Separador(22)
-    print('Datos en '+fileName)
-    Separador(22)
+    Separador(41)
+    print('Stations in '+fileSave)
+    Separador(41)
     print('Index: ' + str(stationTable.index))
-    pd.set_option('display.max_rows',stationTable.shape[0])
-    print(stationTable)
+    pd.set_option('display.max_rows',stationTable.shape[0]+1)
+    print(geoArray[[stationName,latitudeName,longitudeName]])
+
+# General plot graphs
+'''for i in xrange(len(stationTableYearCount)):
+    print(stationTableYearCount.index[i])
+plt.plot(stationTablePivotYear[0],stationTablePivotYear[1], label="Active", color='black', linewidth=1, marker='p', markersize=4, markerfacecolor='black', markeredgecolor='black')
+plt.title('Stations installed by year')
+plt.xlabel("Year")
+plt.ylabel("# stations")
+plt.show()'''
+
+stationTableYearCount.plot(kind='line')
+'''plt.savefig('./Graph/StationInstalledByYear.png')
+plt.show()'''
+#stationTableYearCount.to_excel('/PivotTable/StationInstalledByYear.xlsx')
