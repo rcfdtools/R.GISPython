@@ -1,8 +1,39 @@
 ## Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia, descarga y análisis
 
-El [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/), es la entidad nacional encargada registrar y mantener la información hidrometeorológica del país, incluida la localización y clasificación de la red de estaciones que hace parte del [Catálogo Nacional de Estaciones - CNE](http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls). A través del servicio de [Solicitud de Información](http://www.ideam.gov.co/solicitud-de-informacion) o através del [portal DHIME](http://dhime.ideam.gov.co/atencionciudadano/) del IDEAM, personas naturales o jurídicas, pueden obtener no solamente los catálogos, sino también las capas geográficas y los registros discretos registrados en cada estación.
+El [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/), es la entidad nacional encargada registrar y mantener la información hidrometeorológica del país, incluida la localización y clasificación de la red de estaciones que hace parte del [Catálogo Nacional de Estaciones - CNE](http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls). A través del servicio de [Solicitud de Información](http://www.ideam.gov.co/solicitud-de-informacion) o a través del portal [DHIME](http://dhime.ideam.gov.co/atencionciudadano/) del IDEAM, personas naturales o jurídicas, pueden obtener no solamente los catálogos, sino también las capas geográficas y los registros discretos registrados en cada estación.
 
-El presente repositorio y el código desarrollado en Python, permite descargar de forma automática el archivo del catálogo nacional de estaciones y realizar un análisis estadístico detallado a través de los diferentes clasificadores registrados.  
+El presente repositorio y el código desarrollado en Python, permite descargar de forma automática el archivo del catálogo nacional de estaciones y realizar un análisis estadístico detallado a través de los diferentes clasificadores registrados.
+
+### Funcionalidades
+
+* Descarga automática del archivo del catálogo nacional de estaciones
+* 
+
+### Atributos que componen el catálogo nacional de estaciones
+
+| Atributo | Tipo | Descripción                                                                                                                                                                                                                                    |
+|----------|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OBJECTID | int64 | Identificador de objeto espacial proveniente de la GDB IDEAM.                                                                                                                                                                                  |
+| CODIGO | int64 | Código de la estación.                                                                                                                                                                                                                         |
+| nombre | object | Nombre de la estación. Incluye el código de la estación entre corchetes.                                                                                                                                                                       |
+| CATEGORIA | object | Categoría de la estación: Pluviométrica, Limnimétrica, Limnigráfica, Climática Ordinaria, Climática Principal, Pluviográfica, Meteorológica Especial, Agrometeorológica, Sinóptica Principal, Radio Sonda, Mareográfica, Sinóptica Secundaria. |
+| TECNOLOGIA | object | Tecnología para captura, registro y transmisión: Convencional, Automática con Telemetría, Automática sin Telemetría.                                                                                                                           |
+| ESTADO | object | Estado de funcionamiento: Activa, Suspendida, En Mantenimiento.                                                                                                                                                                                |
+| FECHA_INSTALACION | datetime64[ns] | Fecha de instalación.                                                                                                                                                                                                                          |
+| altitud | int64 | Altitud o cota sobre el nivel del mar en metros.                                                                                                                                                                                               |
+| latitud | float64 | Latitud en grados decimales.                                                                                                                                                                                                                   |
+| longitud | float64 | Longitud en grados decimales.                                                                                                                                                                                                                  |
+| DEPARTAMENTO | object | Departamento o zonificación política. Equivalente a estados en otros países.                                                                                                                                                                   |
+| MUNICIPIO | object | Municipio o subzonificación política. Equivalente a condado en otros países.                                                                                                                                                                   |
+| AREA_OPERATIVA | object | Área operativa que administra la estación.                                                                                                                                                                                                     |
+| AREA_HIDROGRAFICA | object | Área hidrográfica a la cual pertenece.                                                                                                                                                                                                         |
+| ZONA_HIDROGRAFICA | object | Zona hidrográfica a la cual pertenece.                                                                                                                                                                                                         |
+| observacion | object | Observaciones generales.                                                                                                                                                                                                                       |
+| CORRIENTE | object | Corriente, cauce o río próximo o sobre la cuál está localizada la estación.                                                                                                                                                                    |
+| FECHA_SUSPENSION | datetime64[ns] | Fecha de suspensión.                                                                                                                                                                                                                           |
+| SUBZONA_HIDROGRAFICA | object | Subzona hidrográfica a la cual pertenece.                                                                                                                                                                                                      |
+| ENTIDAD | object | Entidad encargada.                                                                                                                                                                                                                             |
+
 
 
 Data sample with Pandas from https://www.codegrepper.com/
