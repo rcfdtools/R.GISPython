@@ -81,7 +81,7 @@ print(  '\nEjecutado en: '+str(datetime.now()),
         '\nDataframe type: '+str(type(stationTable)),
         '\n'+fileDownloadText,
         '\nStations: '+ str(stationTable.shape[0])+'\nAttributes: '+ str(stationTable.shape[1]),
-        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/CNEIDEAMStat'
+        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\nCréditos: r.cfdtools@gmail.com\n')
 
