@@ -13,9 +13,16 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 * Descarga directa del archivo del catálogo nacional de estaciones. Si en la fecha actual ya ha sido descargado el archivo, el script realizará únicamente su procesamiento.
 * Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls`, presentación de resumen corto de estaciones encontradas`sampleRecord = 12`, listado completo de estaciones con geolocalizadores `showAllRecords = False`.
 * Despliegue de gráficas de análisis en ventanas emergentes a petición del usuario `showGraphScreen = False` y volcado automático de gráficas a formato PNG `plt.savefig()`.
-  * Definición del método de análisis para la clasificación por pisos térmicos `thermalLevelCaldas = True`: convencional o Caldas 1802. Los arreglos de datos `thermalLevelRefConv` y `thermalLevelRefCaldas` utilizados para la clasificación pueden ser actualizados por el usuario.
+* Definición del método de análisis para la clasificación por pisos térmicos `thermalLevelCaldas = True`: convencional o Caldas 1802. Los arreglos de datos `thermalLevelRefConv` y `thermalLevelRefCaldas` utilizados para la clasificación pueden ser actualizados por el usuario.
 * Definición de nombres de campos de atributos de análisis. En el evento de que el modelo de datos de estaciones IDEAM sea actualizado, reestructurado o normalizado, el usuario podrá evaluar el nombre de los nuevos campos y realizar la actualización de los nuevos nombres. Aplica para: nombre, latitud, longitud, altitud, CATEGORIA, TECNOLOGIA, ESTADO, FECHA_INSTALACION, DEPARTAMENTO, AREA_OPERATIVA, AREA_HIDROGRAFICA, ZONA_HIDROGRAFICA y SUBZONA_HIDROGRAFICA.
-* Arreglo de datos 
+* Definición de nivel de transparencia en gráficas para ahorro en consumo de insumos de impresión.
+* Identificación y resumen de atributos encontrados en el catálogo.
+* Estadísticos generales sobre campos numéricos del catálogo.
+* Estadístico de conteo y con normalización de estaciones por categoría, tecnología, estado, departamento, área operativa, área hidrográfica, zona hidrográfica, subzona hidrográfica y año de instalación.
+* Generación automática de tablas y gráficas pivote por estado de actividad con análisis para categoría, tecnología, departamento, área operativa, área hidrográfica, zona hidrográfica, subzona hidrográfica y año de instalación.
+* Análisis y graficación de estaciones por piso térmico para el método definido.
+* Mapa de matriz de dispersión con localización de toda la red de estaciones subclasificada por elevación.
+ 
 
 > En caso de que requiera analizar una versión antigua del archivo del catálogo nacional de estaciones, podrá cargar el archivo en cualquier repositorio de uso personal, redireccionar el script a la url del archivo y ejecutar el script. Tener en cuenta que las fechas presentadas en los análisis, corresponderán a la fecha del sistema operativo.
 
@@ -103,9 +110,9 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 | /Reference | Documentos de referencias bibliográficas recopiladas.                                                                                                                                                                                                                                                                                                                           |
 | /Screenshot | Capturas de pantalla de ejecución y configuración.                                                                                                                                                                                                                                                                                                                              |
 
-
-
 > Para los archivos generados u obtenidos a través de la ejecución del script, se conserva el registro de versiones a partir de la fecha de ejecución utilizando el formato aaaammdd.
+
+### Arreglos de datos para clasificación de estaciones por pisos térmicos
 
 
 Data sample with Pandas from https://www.codegrepper.com/
