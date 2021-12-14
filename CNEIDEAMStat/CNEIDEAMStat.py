@@ -57,7 +57,7 @@ pd.set_option('display.max_columns', None) # Show all the records
 # Separation title line function
 def Separador(n=24): # Default using 24 - characters
     nc = '-'
-	print(nc*n)
+    print(nc*n)
 
 # Thermal level evaluation function
 def thermalLevelF(elevation):
