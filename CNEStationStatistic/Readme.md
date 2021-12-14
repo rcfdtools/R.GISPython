@@ -44,7 +44,7 @@ Atributos tomados directamente del archivo [CNE_IDEAM.xls](http://bart.ideam.gov
 
 ### Definiciones generales del catálogo nacional de estaciones
 
-Tomado de [Definiciones CND IDEAM.](http://www.ideam.gov.co/documents/10182/557765/Definiciones+CNE.pdf)
+Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/557765/Definiciones+CNE.pdf) del IDEAM.
 
 #### Categorías de las estaciones
 
