@@ -11,6 +11,8 @@ El presente repositorio y el código desarrollado en Python, permite descargar d
 
 ### Atributos que componen el catálogo nacional de estaciones
 
+Atributos tomados directamente del archivo [CNE_IDEAM.xls](http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls).
+
 | Atributo | Tipo | Descripción                                                                                                                                                                                                                                    |
 |----------|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | OBJECTID | int64 | Identificador de objeto espacial proveniente de la GDB IDEAM.                                                                                                                                                                                  |
@@ -34,7 +36,10 @@ El presente repositorio y el código desarrollado en Python, permite descargar d
 | SUBZONA_HIDROGRAFICA | object | Subzona hidrográfica a la cual pertenece.                                                                                                                                                                                                      |
 | ENTIDAD | object | Entidad encargada.                                                                                                                                                                                                                             |
 
+> Los atributos presentados en la tabla, su tipo de escritura y notación han sido tomados del archivo original y no se encuentran normalizados a 11 caracteres para garantizar la compatibilidad con el formato .dbf. Se puede observar que los datos volcados en el archivo CNE_IDEAM.xls han sido generados utilizando la herramienta _Table to Table_ de ArcGIS desde una Geodatabase que permite la definición de atributos con más de 11 caracteres.
 
+#### 
+ 
 
 Data sample with Pandas from https://www.codegrepper.com/
 ```
