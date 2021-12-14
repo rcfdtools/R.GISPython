@@ -11,9 +11,15 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 ### Funcionalidades
 
 * Descarga directa del archivo del catálogo nacional de estaciones. Si en la fecha actual ya ha sido descargado el archivo, el script realizará únicamente su procesamiento.
-* 
+* Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls`, presentación de resumen corto de estaciones encontradas`sampleRecord = 12`, listado completo de estaciones con geolocalizadores `showAllRecords = False`.
+* Despliegue de gráficas de análisis en ventanas emergentes a petición del usuario `showGraphScreen = False` y volcado automático de gráficas a formato PNG `plt.savefig()`.
+  * Definición del método de análisis para la clasificación por pisos térmicos `thermalLevelCaldas = True`: convencional o Caldas 1802. Los arreglos de datos `thermalLevelRefConv` y `thermalLevelRefCaldas` utilizados para la clasificación pueden ser actualizados por el usuario.
+* Definición de nombres de campos de atributos de análisis. En el evento de que el modelo de datos de estaciones IDEAM sea actualizado, reestructurado o normalizado, el usuario podrá evaluar el nombre de los nuevos campos y realizar la actualización de los nuevos nombres. Aplica para: nombre, latitud, longitud, altitud, CATEGORIA, TECNOLOGIA, ESTADO, FECHA_INSTALACION, DEPARTAMENTO, AREA_OPERATIVA, AREA_HIDROGRAFICA, ZONA_HIDROGRAFICA y SUBZONA_HIDROGRAFICA.
+* Arreglo de datos 
 
 > En caso de que requiera analizar una versión antigua del archivo del catálogo nacional de estaciones, podrá cargar el archivo en cualquier repositorio de uso personal, redireccionar el script a la url del archivo y ejecutar el script. Tener en cuenta que las fechas presentadas en los análisis, corresponderán a la fecha del sistema operativo.
+
+> En el evento de que por reestructuración del modelo de datos IDEAM, desaparezca alguno de los campos utilizados para el análisis general y la creación de las tablas pivote, el usuario deberá crear manualmente en el archivo .xls fuente, las columnas requeridas para la ejecución correcta del script.   
 
 ### Atributos que componen el catálogo nacional de estaciones
 
@@ -48,7 +54,7 @@ Atributos tomados directamente del archivo [CNE_IDEAM.xls](http://bart.ideam.gov
 
 Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/557765/Definiciones+CNE.pdf) del IDEAM.
 
-#### Categorías de las estaciones
+#### Categorías de las estaciones.
 
 | Categoría                        | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -65,7 +71,7 @@ Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/5
 | Estación Sinóptica Principal     | En este tipo de estación se efectúan observaciones de los principales elementos meteorológicos en horas convenidas internacionalmente. Los datos se toman horariamente y corresponden a nubosidad, dirección y velocidad de los vientos, presión atmosférica, temperatura del aire, tipo y altura de las nubes, visibilidad, fenómenos especiales, características de humedad, precipitación, temperaturas extremas, capas significativas de nubes, recorrido del viento y secuencia de los fenómenos atmosféricos |
 | Estación Sinóptica Secundaria    | Al igual que en la estación anterior, las observaciones se realizan a horas convenidas internacionalmente y los datos corresponden comúnmente a visibilidad, fenómenos especiales, tiempo atmosférico, nubosidad, estado del suelo, precipitación, temperatura del aire, humedad del aire, presión y viento                                                                                                                                                                                                        |
 
-#### Estado de la estación
+#### Estado de la estación.
 
 | Estado | Descripción                                                                                                                                                                                |
 |  --- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -73,7 +79,7 @@ Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/5
 | En mantenimiento | Estación que se encuentra en operación pero que temporalmente no registra datos automáticos o tomados por un observador por problemas en los equipos o como consecuencia de un siniestro.  |
 | Suspendida | Estación que se encuentra fuera de servicio de manera definitiva y no registra datos automáticos o tomados por un observador. Solo se puede consultar datos históricos en estas estaciones |
 
-####  Tecnología de la estación
+####  Tecnología de la estación.
 
 | Estado | Descripción                                                                                                                                                                                                                                                                                                                                 |
 |  --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -99,7 +105,7 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 
 
-> Para los archivos generados u obtenidos a través de la ejecución del script, se conserva el registro de versiones a partir de la fecha actual utilizando el formato aaaammdd.
+> Para los archivos generados u obtenidos a través de la ejecución del script, se conserva el registro de versiones a partir de la fecha de ejecución utilizando el formato aaaammdd.
 
 
 Data sample with Pandas from https://www.codegrepper.com/
