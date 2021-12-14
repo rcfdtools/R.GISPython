@@ -22,6 +22,7 @@ sampleRecord = 12 # Number of records to show in the sample
 showRecordSample = False # Print some sample records
 showAllRecords = False # Print all the records at the report tail
 showGraphScreen = False # Show graphs on the screen. This script always update ./Graph & ./PivotTable
+thermalLevelCaldas = True # True for Caldas classification, False for conventional classification range
 stationName = 'nombre'
 latitudeName = 'latitud'
 longitudeName = 'longitud'
@@ -35,10 +36,22 @@ geoOperativeAreaName = 'AREA_OPERATIVA'
 geoHydroAreaName = 'AREA_HIDROGRAFICA'
 geoHydroZoneName = 'ZONA_HIDROGRAFICA'
 geoHydroSubZoneName = 'SUBZONA_HIDROGRAFICA'
-thermalLevelRef = [[1000,'Cálido, 24°C+, <= 1000 meters'],[2000,'Templado, 18°C+, <= 2000 meters'],[3000,'Frío, 12°C+, <= 3000 meters'],[4000,'Páramo, 0°C, <= 4000 meters'],[99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
+thermalLevelRefConv = [[1000,'Cálido, 24°C+, <= 1000 meters'],[2000,'Templado, 18°C+, <= 2000 meters'],[3000,'Frío, 12°C+, <= 3000 meters'],[4000,'Páramo, 0°C, <= 4000 meters'],[99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
+thermalLevelRefCaldas = [[800,'Cálido, T>=24°C, <=800meter'],[1800,'Templado, 24°C>T>18°C, <=1800meter'],[2800,'Frío, 18°C>T>12°C, <=2800meter'],[3700,'Muy Frío, 12°C>T>6°C, <=3700meter'],[4700,'Extremadamente Frio, 6°C>T>0°C, <=4700meter'],[99999,'Nival, T<0°C, >4700meter']] # Elevation value in meters
 graphTitlePrefix='CNE IDEAM Colombia -  '
 mySignature = 'https://github.com/rcfdtools/R.GISPython'
 graphTransparency = 1 # Save color for paper print versions, 1 for full color. Doesn't apply for pie charts
+
+# Separation title line function
+def SeparatorTitle(n=24): # Default using 24 - characters
+    nc = '-'
+    print(nc*n)
+
+# Thermal level evaluation function
+def thermalLevelF(elevation):
+    for i in thermalLevelRef[:]:
+        if elevation <= i[0]:
+            return i[1]
 
 # Downloading and reading the file
 fileDownloadText = 'File downloaded and updated = No'
@@ -55,22 +68,11 @@ stationTable = pd.read_excel(fileSave)
 pd.set_option('display.max_rows', stationTable.shape[0]+1) # Show all the records
 pd.set_option('display.max_columns', None) # Show all the records
 
-# Separation title line function
-def Separador(n=24): # Default using 24 - characters
-    nc = '-'
-    print(nc*n)
-
-# Thermal level evaluation function
-def thermalLevelF(elevation):
-    for i in thermalLevelRef[:]:
-        if elevation <= i[0]:
-            return i[1]
-
 # Header and general file summary
 shapeTable = stationTable.shape # Row and columns array size
-Separador(72)
+SeparatorTitle(72)
 print('Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia')
-Separador(72)
+SeparatorTitle(72)
 print(  '\nEjecutado en: '+str(datetime.now()),
         '\nData summary for '+fileSave,
         '\nUrl: '+urlFile,
@@ -85,9 +87,9 @@ print(  '\nEjecutado en: '+str(datetime.now()),
 
 # Sample records
 if showRecordSample == True:
-    Separador(14)
+    SeparatorTitle(14)
     print('Sample records')
-    Separador(14)
+    SeparatorTitle(14)
     print('\nFirst '+str(sampleRecord)+' records: ')
     print(stationTable.head(sampleRecord)) # By default show 5 records
     print('Last '+str(sampleRecord)+' records: ')
@@ -95,9 +97,9 @@ if showRecordSample == True:
     print('\n')
 
 # Attributes summary
-Separador(27)
+SeparatorTitle(27)
 print('Attributes an types founded')
-Separador(27)
+SeparatorTitle(27)
 print(stationTable.columns)
 print('\nTypes: ')
 print(stationTable.dtypes) # With stationTable.columns you can get the attributes names in an array.
@@ -106,9 +108,9 @@ print(stationTable.info())
 print('\n')
 
 # Basic dataframe statistics
-Separador(18)
+SeparatorTitle(18)
 print('General statistics')
-Separador(18)
+SeparatorTitle(18)
 print('\nBasic dataframe statistics: ')
 print(stationTable.describe())
 print('\nCategory - Count: ')
@@ -153,9 +155,9 @@ print('\n')
 
 
 # Pivot tables
-Separador(12)
+SeparatorTitle(12)
 print('Pivot tables')
-Separador(12)
+SeparatorTitle(12)
 print('\n')
 # Category
 pivotTable=stationTable.pivot_table(index=categoryName, columns=stateActiveName, values=technologyName, aggfunc='count')
@@ -227,16 +229,24 @@ pivotTable.to_csv('./PivotTable/InstallationYear'+currentDateTxt+'.csv')
 # Geospatial array
 geoArray=stationTable[[latitudeName,longitudeName,elevationName]]
 print('\n')
-Separador(39)
+SeparatorTitle(39)
 print('Geospatial array sample with '+str(sampleRecord)+' records')
-Separador(39)
+SeparatorTitle(39)
 print(geoArray.head(sampleRecord))
 print('Dataframe type: '+str(type(geoArray))+'\n')
 
 # Thermal level evaluation
-Separador(24)
-print('Thermal level evaluation')
-Separador(24)
+if thermalLevelCaldas == True:
+    thermalLevelRef = thermalLevelRefCaldas
+    thermalLevelRefTitle = "Caldas classification"
+    SeparatorTitleVal = 48
+else:
+    thermalLevelRef = thermalLevelRefConv
+    thermalLevelRefTitle = "Conventional classification"
+    SeparatorTitleVal = 54
+SeparatorTitle(SeparatorTitleVal)
+print('Thermal level evaluation - '+thermalLevelRefTitle)
+SeparatorTitle(SeparatorTitleVal)
 print('\nThermal level reference array:')
 print(pd.DataFrame(thermalLevelRef,columns=['Elevation ref value','Thermic level']))
 print('\n')
@@ -258,7 +268,7 @@ print(pivotTable)
 pivotTable.plot(kind='bar', xlabel='Thermal level', ylabel='Stations', title=graphTitlePrefix+'Stations by Thermal Level - Date: '+str(currentDate)+'\n'+mySignature, figsize=(12,12), fontsize=11, rot=10, stacked=True, alpha=graphTransparency)
 plt.savefig('./Graph/ThermalLevel'+currentDateTxt+'.png')
 if showGraphScreen == True: plt.show()
-pivotTable.plot(kind='pie', title=graphTitlePrefix+'Stations by Thermal Level - Date: '+str(currentDate)+'\n'+mySignature, figsize=(30,8), startangle=60, subplots=True, autopct='%1.1f%%', fontsize=12, legend=False)
+pivotTable.plot(kind='pie', title=graphTitlePrefix+'Stations by Thermal Level - Date: '+str(currentDate)+'\n'+mySignature, figsize=(36,8), startangle=60, subplots=True, autopct='%1.1f%%', fontsize=12, legend=False)
 plt.savefig('./Graph/ThermalLevelPie'+currentDateTxt+'.png')
 if showGraphScreen == True: plt.show()
 pivotTable.to_csv('./PivotTable/ThermalLevel'+currentDateTxt+'.csv')
@@ -272,9 +282,9 @@ geoArray.to_csv('./PivotTable/StationScatterPlotMap'+currentDateTxt+'.csv')
 
 # Show all data
 if showAllRecords == True:
-    Separador(41)
+    SeparatorTitle(41)
     print('Stations in '+fileSave)
-    Separador(41)
+    SeparatorTitle(41)
     print('Index: ' + str(stationTable.index))
     pd.set_option('display.max_rows',stationTable.shape[0]+1)
     print(geoArray[[stationName,latitudeName,longitudeName]])
