@@ -10,7 +10,7 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 
 ### Funcionalidades
 
-* Descarga automática del archivo del catálogo nacional de estaciones
+* Descarga directa del archivo del catálogo nacional de estaciones
 * 
 
 ### Atributos que componen el catálogo nacional de estaciones
