@@ -1,7 +1,7 @@
 ## Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia, descarga y análisis
 
 <div  align="center">
-    <img align="center"  alt="StationScatterPlotMap20211213.png" src="https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/StationScatterPlotMap20211213.png" width="600px"/>
+    <img align="center"  alt="StationScatterPlotMap20211213.png" src="https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/StationScatterPlotMap20211213.png" width="800px"/>
 </div>
 
 El [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/), es la entidad nacional encargada registrar y mantener la información hidrometeorológica del país, incluida la localización y clasificación de la red de estaciones que hace parte del [Catálogo Nacional de Estaciones - CNE](http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls). A través del servicio de [Solicitud de Información](http://www.ideam.gov.co/solicitud-de-informacion) o a través del portal [DHIME](http://dhime.ideam.gov.co/atencionciudadano/) del IDEAM, personas naturales o jurídicas, pueden obtener no solamente los catálogos, sino también las capas geográficas y los registros discretos registrados en cada estación.
