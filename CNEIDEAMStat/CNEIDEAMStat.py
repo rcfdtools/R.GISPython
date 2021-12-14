@@ -1,8 +1,9 @@
 # -*- coding: UTF-8 -*-
-# Nombre: CNEIDEAMStat.py
-# Descripción: Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia, descarga y análisis.
-# Requerimiento: PyCharm 2021.3+, Python 3.10.0 (instalación independiente)
+# Name: CNEIDEAMStat.py
+# Description: Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia, descarga y análisis.
+# Requirements: PyCharm 2021.3+, Python 3.10.0 (instalación independiente),
 
+# Libraries
 import pandas as pd # Tested with 1.3.4 version.
 # import numpy as np # Tested with 1.21.4 version. # Has to be installed with not import required.
 # import xlrd # Tested with 2.0.1 version. # Has to be installed with not import required.
@@ -12,7 +13,7 @@ import requests
 import matplotlib.pyplot as plt
 import os.path
 
-# General vars
+# General variables
 urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
 fileName = 'CNE_IDEAM'
 fileExtension = '.xls'
