@@ -61,7 +61,7 @@ Atributos tomados directamente del archivo [CNE_IDEAM.xls](http://bart.ideam.gov
 
 Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/557765/Definiciones+CNE.pdf) del IDEAM.
 
-#### Categorías de las estaciones.
+#### Categorías de las estaciones
 
 | Categoría                        | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -78,7 +78,7 @@ Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/5
 | Estación Sinóptica Principal     | En este tipo de estación se efectúan observaciones de los principales elementos meteorológicos en horas convenidas internacionalmente. Los datos se toman horariamente y corresponden a nubosidad, dirección y velocidad de los vientos, presión atmosférica, temperatura del aire, tipo y altura de las nubes, visibilidad, fenómenos especiales, características de humedad, precipitación, temperaturas extremas, capas significativas de nubes, recorrido del viento y secuencia de los fenómenos atmosféricos |
 | Estación Sinóptica Secundaria    | Al igual que en la estación anterior, las observaciones se realizan a horas convenidas internacionalmente y los datos corresponden comúnmente a visibilidad, fenómenos especiales, tiempo atmosférico, nubosidad, estado del suelo, precipitación, temperatura del aire, humedad del aire, presión y viento                                                                                                                                                                                                        |
 
-#### Estado de la estación.
+#### Estado de la estación
 
 | Estado | Descripción                                                                                                                                                                                |
 |  --- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +86,7 @@ Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/5
 | En mantenimiento | Estación que se encuentra en operación pero que temporalmente no registra datos automáticos o tomados por un observador por problemas en los equipos o como consecuencia de un siniestro.  |
 | Suspendida | Estación que se encuentra fuera de servicio de manera definitiva y no registra datos automáticos o tomados por un observador. Solo se puede consultar datos históricos en estas estaciones |
 
-####  Tecnología de la estación.
+####  Tecnología de la estación
 
 | Estado | Descripción                                                                                                                                                                                                                                                                                                                                 |
 |  --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -112,19 +112,31 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 > Para los archivos generados u obtenidos a través de la ejecución del script, se conserva el registro de versiones a partir de la fecha de ejecución utilizando el formato aaaammdd.
 
+
 ### Arreglos de datos para clasificación de estaciones por pisos térmicos
 
 
-Data sample with Pandas from https://www.codegrepper.com/
-```
-df['date'] = pd.to_datetime(df['date'],format='%Y%m%d')
-df['year'] = pd.DatetimeIndex(df['date']).year
-df['month'] = pd.DatetimeIndex(df['date']).month
+#### Cortes convencionales
 
-#Exctract month and create a dedicated column df["Month"] from a 
-#column in datetime format df["Date"]
-df['Month'] = pd.DatetimeIndex(df['Date']).month
-```
+| Valor de corte | Etiqueta |
+|  --- |  --- |
+| 1000 | Cálido, 24°C+, <= 1000 meters |
+| 2000 | Templado, 18°C+, <= 2000 meters |
+| 3000 | Frío, 12°C+, <= 3000 meters |
+| 4000 | Páramo, 0°C, <= 4000 meters |
+| 99999 | Glacial, 0°C-, > 4000 meters |
+
+
+#### Cortes Francisco José de Caldas, año 1802
+
+| Valor de corte | Etiqueta |
+|  --- |  --- |
+| 800 | Cálido, T>=24°C, <=800meter |
+| 1800 | Templado, 24°C>T>18°C, <=1800meter |
+| 2800 | Frío, 18°C>T>12°C, <=2800meter |
+| 3700 | Muy Frío, 12°C>T>6°C, <=3700meter |
+| 4700 | Extremadamente Frio, 6°C>T>0°C, <=4700meter |
+| 99999 | Nival, T<0°C, >4700meter |
 
 
 ### Referencias

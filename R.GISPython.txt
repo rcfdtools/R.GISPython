@@ -8,7 +8,13 @@ Clone local directory D:\R.GISPython.wiki
 
 https://docs.github.com/en/communities/documenting-your-project-with-wikis/adding-or-editing-wiki-pages
 
-https://www.youtube.com/watch?v=WcDaZ67TVRo&t=84s
-3:28
 
+
+Data sample with Pandas from https://www.codegrepper.com/
+df['date'] = pd.to_datetime(df['date'],format='%Y%m%d')
+df['year'] = pd.DatetimeIndex(df['date']).year
+df['month'] = pd.DatetimeIndex(df['date']).month
+#Exctract month and create a dedicated column df["Month"] from a 
+#column in datetime format df["Date"]
+df['Month'] = pd.DatetimeIndex(df['Date']).month
 
