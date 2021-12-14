@@ -3,7 +3,7 @@
 
 
 
-Data sample with Pandas for https://www.codegrepper.com/
+Data sample with Pandas from https://www.codegrepper.com/
 ```
 df['date'] = pd.to_datetime(df['date'],format='%Y%m%d')
 df['year'] = pd.DatetimeIndex(df['date']).year

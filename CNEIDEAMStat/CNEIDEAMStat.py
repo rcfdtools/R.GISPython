@@ -252,6 +252,12 @@ if showGraphScreen == True: plt.show()
 pivotTable.to_csv('./PivotTable/ThermalLevel'+currentDateTxt+'.csv')
 print('\n')
 
+# General plot station
+pivotTable=geoArray.plot.scatter(x=longitudeName, y=latitudeName, c=elevationName, colormap='viridis', colorbar=True, title=graphTitlePrefix+'Stations scatter plot map with altitude - Date: '+str(currentDate)+'\n'+mySignature, figsize=(10,11), grid=True)
+if showGraphScreen == True: plt.show()
+plt.savefig('./Graph/StationScatterPlotMap'+currentDateTxt+'.png')
+geoArray.to_csv('./PivotTable/StationScatterPlotMap'+currentDateTxt+'.csv')
+
 # Show all data
 if showAllRecords == True:
     Separador(41)
@@ -260,3 +266,5 @@ if showAllRecords == True:
     print('Index: ' + str(stationTable.index))
     pd.set_option('display.max_rows',stationTable.shape[0]+1)
     print(geoArray[[stationName,latitudeName,longitudeName]])
+
+
