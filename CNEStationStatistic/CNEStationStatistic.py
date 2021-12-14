@@ -17,7 +17,6 @@ import os.path
 urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
 fileName = 'CNE_IDEAM'
 fileExtension = '.xls'
-downloadFile = False # Use False for process the last file downloaded
 sampleRecord = 12 # Number of records to show in the sample
 showRecordSample = False # Print some sample records
 showAllRecords = False # Print all the records at the report tail
@@ -59,7 +58,6 @@ currentDate = date.today()
 currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
 fileRequest = requests.get(urlFile)
 fileSave = './Data/'+fileName+'_'+currentDateTxt+fileExtension
-#if downloadFile == True:
 if fileRequest:
     if os.path.isfile(fileSave) == False:
         open(fileSave, 'wb').write(fileRequest.content)

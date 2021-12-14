@@ -1,4 +1,4 @@
-## Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia, descarga y análisis usando Python
+## Catálogo nacional de estaciones hidrometeorológica del IDEAM - Colombia, descarga y análisis usando Python
 
 <div  align="center">
     <img align="center"  alt="StationScatterPlotMap20211213.png" src="https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/StationScatterPlotMap20211213.png" width="800px"/>
@@ -12,6 +12,8 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 
 * Descarga directa del archivo del catálogo nacional de estaciones
 * 
+
+> En caso de que requiera analizar una versión antigua del archivo del catálogo nacional de estaciones, podrá cargar el archivo en cualquier repositorio de uso personal, redireccionar el script a la url del archivo y ejecutar el script. Tener en cuenta que las fechas presentadas en los análisis, corresponderán a la fecha del sistema operativo.
 
 ### Atributos que componen el catálogo nacional de estaciones
 
@@ -79,7 +81,7 @@ Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/5
 | Automática con telemetría | Estación que obtiene los datos de manera automática mediante sensores de diferente tipo y que tiene la capacidad de enviarlos de manera automática al centro de recepción por diferentes medios de transmisión (satelital, radiofrecuencia, GPRS, etc.)                                                                                     |
 | Automática sin telemetría | Estación que obtiene los datos de manera automática mediante sensores de diferente tipo y que tiene la capacidad de almacenarlos en un dispositivo dentro de la misma estación. No puede enviar los datos de manera automática. Los datos debes ser obtenidos por una persona que se conecta al sitio donde la estación almacena los datos. |
 
-> De acuerdo a la nota del Anexo 2: Se debe tener en cuenta que la red es de tipo dinámico; es decir, a través de su operación se han instalado y suspendido estaciones a lo largo del territorio nacional, conservando en todo caso los datos históricos registrados. Esto significa que la sumatoria de las estaciones del Catálogo corresponde al número total de estaciones que han hecho parte de la red a través de su historia de operación y registro de información.
+> De acuerdo a la nota del Anexo 2 del IDEAM: se debe tener en cuenta que la red es de tipo dinámico; es decir, a través de su operación se han instalado y suspendido estaciones a lo largo del territorio nacional, conservando en todo caso los datos históricos registrados. Esto significa que la sumatoria de las estaciones del Catálogo corresponde al número total de estaciones que han hecho parte de la red a través de su historia de operación y registro de información.
 
 
 
