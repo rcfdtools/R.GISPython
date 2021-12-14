@@ -85,6 +85,8 @@ Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/5
 
 ### Estructura de directorios
 
+Para la ejecución correcta del script, es necesario clonar, descargar o crear la estructura de directorios definida en la siguiente tabla.
+
 | Directorio | Descripción                                                                                                                                                                                                                                                                                                                                                                     |
 |  --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /Data | Directorio de descarga del archivo CNE_IDEAM.xls con registro de versiones.                                                                                                                                                                                                                                                                                                     |
