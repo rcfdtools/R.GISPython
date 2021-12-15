@@ -315,7 +315,7 @@ for i in geoArray[elevationName]:
     thermalLevelArray.append(thermalLevelF(i))
 stationTable['ThermalLevelValue']=thermalLevelArray
 print('Geospatial array sample with '+str(sampleRecord)+' records:')
-geoArray=stationTable[[stationName,latitudeName,longitudeName,elevationName,'ThermalLevelValue']]
+geoArray=stationTable[[geoStateName, stationName,latitudeName,longitudeName,elevationName,'ThermalLevelValue']]
 print(geoArray.head(sampleRecord))
 print('\nThermal level statistics:')
 print('Count:')
@@ -348,6 +348,16 @@ print('Graph >> '+urlGraphPivotTable+'/Graph/StationScatterPlotMap'+currentDateT
 if showGraphScreen == True: plt.show()
 geoArray.to_csv('./PivotTable/StationScatterPlotMap'+currentDateTxt+'.csv')
 print('Table >> '+urlGraphPivotTable+'/PivotTable/StationScatterPlotMap'+currentDateTxt+'.csv')
+
+geoStateList = stationTable[geoStateName].unique()
+for i in geoStateList:
+    #print(i)
+    geoArrayState = geoArray[geoStateName].str.contains(i)
+    #print(geoArray[geoArrayState])
+    pivotTable=geoArray[geoArrayState].plot.scatter(x=longitudeName, y=latitudeName, c=elevationName, colormap='viridis', colorbar=True, title=graphTitlePrefix+'Stations scatter plot map with altitude - Date: '+str(currentDate)+'\n'+mySignature+'\n'+i, figsize=(10,11), grid=True, alpha=graphTransparency)
+    if showGraphScreen == True: plt.show()
+    plt.savefig('./Graph/PlotMap/StationScatterPlotMap' + i + currentDateTxt + '.png')
+    print('Graph >> ' + urlGraphPivotTable + '/Graph/PlotMap/StationScatterPlotMap' + i + currentDateTxt + '.png')
 
 # Show all data
 if showAllRecords == True:
