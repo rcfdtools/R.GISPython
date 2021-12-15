@@ -466,13 +466,16 @@ Ventana de ejecución con clasificación por piso térmico.
 
 ### Configuración para impresión de log de ejecución en PyCharm 2021.3
 
-#### Configuración general de impresión.
+Configuración general de impresión.
+
 ![Pycharm2021.3RunSetupPrintSettings.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintSettings.png)
 
-#### Configuración de cabecera y pie de página.
+Configuración de cabecera y pie de página.
+
 ![Pycharm2021.3RunSetupPrintHeaderFooter.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintHeaderFooter.png)
 
-#### Configuración avanzada.
+Configuración avanzada.
+
 ![Pycharm2021.3RunSetupPrintAdvanced.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintAdvanced.png)
 
 
@@ -510,10 +513,10 @@ Ventana de ejecución con clasificación por piso térmico.
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                          |
-|------------|--------------------------------------------------------------------------------------|
-| v.20211213 | Versión inicial con estadísticos básicos.                                            |
-| v.20211214 | Incorporación de gráficas y tablas dinámicas, incorporación de clasificación Caldas. |
+| Versión    | Descripción                                                                      |
+|------------|----------------------------------------------------------------------------------|
+| v.20211213 | Versión inicial con estadísticos básicos y clasificación de pisos térmicos.      |
+| v.20211214 | Incorporación de gráficas y tablas dinámicas, inclusión de clasificación Caldas. |
 
 
 ### Licencia, cláusulas y condiciones de uso
