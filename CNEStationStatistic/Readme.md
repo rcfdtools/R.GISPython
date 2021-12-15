@@ -256,7 +256,7 @@ Configuración avanzada.
 
 
 ### Tags
-`IDEAM` `Stations` `Weather` `Plot` `Pandas` `os` `Meteorological` `Automatic` `Pivot Table` `Graph` `Catalog`
+`IDEAM` `Stations` `Weather` `Plot` `matplotlib` `Pandas` `os` `Meteorological` `Automatic` `Pivot Table` `Graph` `Catalog`
 
 
 ### Control de versiones
