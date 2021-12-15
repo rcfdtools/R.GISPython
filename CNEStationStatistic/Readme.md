@@ -129,7 +129,8 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 ### Script 
 
-* [CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
+* [Script principal CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
+* [Diccionario CNEStationDictionary.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py)
 
 
 ### Arreglos de datos para clasificación de estaciones por pisos térmicos
@@ -241,11 +242,11 @@ Configuración avanzada.
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                                                                                                                                                                                                                                                                                                                                   |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211213  | Versión inicial con estadísticos básicos y clasificación de pisos térmicos.                                                                                                                                                                                                                                                                                                                                   |
-| v.20211214  | Incorporación de [gráficas](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Graph) y [tablas dinámicas](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/PivotTable), inclusión de clasificación Caldas.                                                                                                                                                         |
-| v.20211215 | Impresión de hiperenlaces en ventana de ejecución para cada gráfica y tabla dinámica generada. Generación de tablas con estadísticos básicos y normalizados en carpeta [_BasicTable_](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/BasicTable). Creación de [diccionario](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py) general. |
+| Versión     | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211213  | Versión inicial con estadísticos básicos y clasificación de pisos térmicos.                                                                                                                                                                                                                                                                                                                                                           |
+| v.20211214  | Incorporación de [gráficas](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Graph) y [tablas dinámicas](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/PivotTable), inclusión de clasificación Caldas.                                                                                                                                                                                 |
+| v.20211215 | Impresión de hiperenlaces en ventana de ejecución para cada gráfica y tabla dinámica generada. Generación de tablas con estadísticos básicos y normalizados en carpeta [_BasicTable_](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/BasicTable). Creación de [diccionario](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py) general con impresión en consola. |
 
 
 ### Licencia, cláusulas y condiciones de uso

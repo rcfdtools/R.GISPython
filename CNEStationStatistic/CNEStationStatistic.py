@@ -351,11 +351,13 @@ if showAllRecords == True:
     print('Index: ' + str(stationTable.index))
     pd.set_option('display.max_rows',stationTable.shape[0]+1)
     print(geoArray[[stationName,latitudeName,longitudeName]])
+print('\n')
 
 # General definitions
-SeparatorTitle(41)
+SeparatorTitle(8)
 print('Appendix')
-SeparatorTitle(41)
+SeparatorTitle(8)
+print('\nSource: IDEAM Colombia - Clasificación de los climas\nhttp://atlas.ideam.gov.co/basefiles/clima-text.pdf')
 print('\n[Station categories]\n')
 for i in CNEStationDictionary.stationCategoryDictEs:
     print(i[0]+': '+i[1]+'\n')
