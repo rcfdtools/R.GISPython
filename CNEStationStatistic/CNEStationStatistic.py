@@ -12,6 +12,7 @@ from datetime import date
 import requests
 import matplotlib.pyplot as plt
 import os.path
+import CNEStationDictionary # Import CNEStationDictionary.py
 
 # General variables
 urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
@@ -350,3 +351,17 @@ if showAllRecords == True:
     print('Index: ' + str(stationTable.index))
     pd.set_option('display.max_rows',stationTable.shape[0]+1)
     print(geoArray[[stationName,latitudeName,longitudeName]])
+
+# General definitions
+SeparatorTitle(41)
+print('Appendix')
+SeparatorTitle(41)
+print('\n[Station categories]\n')
+for i in CNEStationDictionary.stationCategoryDict:
+    print(i[0]+': '+i[1]+'\n')
+print('\n[Station status]\n')
+for i in CNEStationDictionary.stationStatusDict:
+    print(i[0]+': '+i[1]+'\n')
+print('\n[Station technologies]\n')
+for i in CNEStationDictionary.stationTechnologyDict:
+    print(i[0]+': '+i[1]+'\n')
