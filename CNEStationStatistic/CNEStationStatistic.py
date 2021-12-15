@@ -186,7 +186,7 @@ print(pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=Fa
 pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=False).to_csv('./BasicTable/InstallationYearStatistic'+currentDateTxt+'.csv')
 print('Table >> '+urlGraphPivotTable+'/BasicTable/InstallationYearStatistic'+currentDateTxt+'.csv')
 print('\nInstallation year - Normalize percentage rate: ')
-print(pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=False, normalize=True).round(0))
+print(pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=False, normalize=True).round(6))
 pd.DatetimeIndex(stationTable[installationDate]).year.value_counts(sort=False, normalize=True).to_csv('./BasicTable/InstallationYearStatisticNormalize'+currentDateTxt+'.csv')
 print('Table >> '+urlGraphPivotTable+'/BasicTable/InstallationYearStatisticNormalize'+currentDateTxt+'.csv')
 print('\n')
