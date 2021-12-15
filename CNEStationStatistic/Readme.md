@@ -481,10 +481,17 @@ Configuración avanzada.
 
 ### Ejemplo de gráficas obtenidas
 
-Estaciones por categoría
-
 ![CategoryPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/CategoryPivot20211214.png)
-
+![GeoHydroAreaPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/GeoHydroAreaPivot20211214.png)
+![GeoHydroSubzonePivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/GeoHydroSubzonePivot20211214.png)
+![GeoHydroZonePivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/GeoHydroZonePivot20211214.png)
+![GeoOperativeAreaPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/GeoOperativeAreaPivot20211214.png)
+![GeoStatePivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/GeoStatePivot20211214.png)
+![InstallationYearPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/InstallationYearPivot20211214.png)
+![TechnologyPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/TechnologyPivot20211214.png)
+![TechnologyPivotPie20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/TechnologyPivotPie20211214.png)
+![ThermalLevelPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/ThermalLevelPivot20211214.png)
+![ThermalLevelPivotPie20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/ThermalLevelPivotPie20211214.png)
 
 
 ### Referencias
