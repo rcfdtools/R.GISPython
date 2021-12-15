@@ -357,11 +357,11 @@ SeparatorTitle(41)
 print('Appendix')
 SeparatorTitle(41)
 print('\n[Station categories]\n')
-for i in CNEStationDictionary.stationCategoryDict:
+for i in CNEStationDictionary.stationCategoryDictEs:
     print(i[0]+': '+i[1]+'\n')
 print('\n[Station status]\n')
-for i in CNEStationDictionary.stationStatusDict:
+for i in CNEStationDictionary.stationStatusDictEs:
     print(i[0]+': '+i[1]+'\n')
 print('\n[Station technologies]\n')
-for i in CNEStationDictionary.stationTechnologyDict:
+for i in CNEStationDictionary.stationTechnologyDictEs:
     print(i[0]+': '+i[1]+'\n')
