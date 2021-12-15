@@ -244,7 +244,7 @@ Configuración avanzada.
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com (28 horas)
+* Creado por r.cfdtools@gmail.com (32 horas)
 
 
 ### Compatibilidad
