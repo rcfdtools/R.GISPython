@@ -238,6 +238,7 @@ Configuración avanzada.
 * [How to print an entire Pandas DataFrame in Python?](https://www.geeksforgeeks.org/how-to-print-an-entire-pandas-dataframe-in-python/)
 * [How to filter rows containing a string pattern from a Pandas dataframe](https://stackoverflow.com/questions/27975069/how-to-filter-rows-containing-a-string-pattern-from-a-pandas-dataframe)
 * [Pandas: How to Find Unique Values in a Column](https://www.statology.org/pandas-unique-values-in-column/)
+* [matplotlib get rid of max_open_warning output](https://stackoverflow.com/questions/27476642/matplotlib-get-rid-of-max-open-warning-output)
 * [IDEAM Colombia - Clasificación de los climas (clima-text.pdf)](http://atlas.ideam.gov.co/basefiles/clima-text.pdf)
 * [IDEAM Colombia - Clasificación climática de Caldas](http://www.ideam.gov.co/documents/10182/599272/Clasificacion+Climatica+de+Caldas+2014.pdf/d4ffa383-e60b-4ec5-8aa2-1b553d23b44f?version=1.0)
 * [Pisos térmicos en Costa Rica](https://www.mep.go.cr/sites/default/files/recursos/recursos-interactivos/clima_tiempo/pdf/pisos_termicos.pdf)
