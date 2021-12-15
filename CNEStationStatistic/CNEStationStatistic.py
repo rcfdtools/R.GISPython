@@ -22,6 +22,7 @@ showRecordSample = False # Print some sample records
 showAllRecords = False # Print all the records at the report tail
 showGraphScreen = False # Show graphs on the screen. This script always update ./Graph & ./PivotTable
 thermalLevelCaldas = True # True for Caldas classification, False for conventional classification range
+graphTransparency = 1 # Save color for paper print versions, 1 for full color. Doesn't apply for pie charts
 stationName = 'nombre'
 latitudeName = 'latitud'
 longitudeName = 'longitud'
@@ -38,8 +39,8 @@ geoHydroSubZoneName = 'SUBZONA_HIDROGRAFICA'
 thermalLevelRefConv = [[1000,'Cálido, 24°C+, <= 1000 meters'],[2000,'Templado, 18°C+, <= 2000 meters'],[3000,'Frío, 12°C+, <= 3000 meters'],[4000,'Páramo, 0°C, <= 4000 meters'],[99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
 thermalLevelRefCaldas = [[800,'Cálido, T>=24°C, <=800meter'],[1800,'Templado, 24°C>T>18°C, <=1800meter'],[2800,'Frío, 18°C>T>12°C, <=2800meter'],[3700,'Muy Frío, 12°C>T>6°C, <=3700meter'],[4700,'Extremadamente Frio, 6°C>T>0°C, <=4700meter'],[99999,'Nival, T<0°C, >4700meter']] # Elevation value in meters
 graphTitlePrefix='CNE IDEAM Colombia -  '
-mySignature = 'https://github.com/rcfdtools/R.GISPython'
-graphTransparency = 1 # Save color for paper print versions, 1 for full color. Doesn't apply for pie charts
+mySignature = 'By https://github.com/rcfdtools/R.GISPython' # Signature for graphs header
+urlGraph = 'https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/' # URL path for graphs
 
 # Separation title line function
 def SeparatorTitle(n=24): # Default using 24 - characters
@@ -162,6 +163,7 @@ pivotTable=stationTable.pivot_table(index=categoryName, columns=stateActiveName,
 print(pivotTable)
 pivotTable.plot(kind='barh', xlabel='Category', ylabel='Stations', title=graphTitlePrefix+'Stations by Category - Date:  '+str(currentDate)+'\n'+mySignature, figsize=(16,10), alpha=graphTransparency, rot=0, stacked=True) # alpha for transparency
 plt.savefig('./Graph/CategoryPivot'+currentDateTxt+'.png')
+print('Graph link '+urlGraph+'CategoryPivot'+currentDateTxt+'.png')
 if showGraphScreen == True: plt.show()
 pivotTable.to_csv('./PivotTable/CategoryPivot'+currentDateTxt+'.csv')
 print('\n')
