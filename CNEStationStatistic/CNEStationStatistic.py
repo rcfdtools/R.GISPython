@@ -163,7 +163,7 @@ pivotTable=stationTable.pivot_table(index=categoryName, columns=stateActiveName,
 print(pivotTable)
 pivotTable.plot(kind='barh', xlabel='Category', ylabel='Stations', title=graphTitlePrefix+'Stations by Category - Date:  '+str(currentDate)+'\n'+mySignature, figsize=(16,10), alpha=graphTransparency, rot=0, stacked=True) # alpha for transparency
 plt.savefig('./Graph/CategoryPivot'+currentDateTxt+'.png')
-print('Graph link '+urlGraph+'CategoryPivot'+currentDateTxt+'.png')
+print('[Graph link]('+urlGraph+'CategoryPivot'+currentDateTxt+'.png)')
 if showGraphScreen == True: plt.show()
 pivotTable.to_csv('./PivotTable/CategoryPivot'+currentDateTxt+'.csv')
 print('\n')
@@ -172,6 +172,7 @@ pivotTable=stationTable.pivot_table(index=technologyName, columns=stateActiveNam
 print(pivotTable)
 pivotTable.plot(kind='bar', xlabel='Technology', ylabel='Stations', title=graphTitlePrefix+'Stations by Technology - Date: '+str(currentDate)+'\n'+mySignature, figsize=(8,8), fontsize=11, alpha=graphTransparency, rot=0, stacked=True )
 plt.savefig('./Graph/TechnologyPivot'+currentDateTxt+'.png')
+print('[Graph link]('+urlGraph+'TechnologyPivot'+currentDateTxt+'.png)')
 if showGraphScreen == True: plt.show()
 pivotTable.plot(kind='pie', title=graphTitlePrefix+'Stations by Technology - Date: '+str(currentDate)+'\n'+mySignature, figsize=(24,8), startangle=30, subplots=True, autopct='%1.1f%%', fontsize=12, legend=False)
 plt.savefig('./Graph/TechnologyPivotPie'+currentDateTxt+'.png')
