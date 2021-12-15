@@ -120,7 +120,7 @@ stationTable[categoryName].value_counts().to_csv('./BasicTable/CategoryStatistic
 print('Table >> '+urlGraphPivotTable+'/BasicTable/CategoryStatistic'+currentDateTxt+'.csv')
 print('\nCategory - Normalize percentage rate: ')
 print(stationTable[categoryName].value_counts(normalize=True).round(4))
-stationTable[categoryName].value_counts(normalize=True).to_csv('./BasicTable/CategoryNormalizeStatistic'+currentDateTxt+'.csv')
+stationTable[categoryName].value_counts(normalize=True).to_csv('./BasicTable/CategoryStatisticNormalize'+currentDateTxt+'.csv')
 print('Table >> '+urlGraphPivotTable+'/BasicTable/CategoryStatisticNormalize'+currentDateTxt+'.csv')
 
 
