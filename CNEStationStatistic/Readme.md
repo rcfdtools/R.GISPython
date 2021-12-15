@@ -25,6 +25,7 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 * Generación automática de tablas y gráficas dinámicas por estado de actividad con análisis para categoría, tecnología, departamento, área operativa, área hidrográfica, zona hidrográfica, sub-zona hidrográfica y año de instalación.
 * Análisis y graficación de estaciones por piso térmico para el método definido.
 * Mapa de matriz de dispersión con localización de toda la red de estaciones subclasificada por elevación.
+* Diccionario de definiciones generales impreso como apéndice en la ventana de ejecución.
  
 > En caso de que requiera analizar una versión antigua del archivo del catálogo nacional de estaciones, podrá cargar el archivo en cualquier repositorio de uso personal, redireccionar el script a la url del archivo y ejecutar el script. Tener en cuenta que las fechas presentadas en los análisis, corresponderán a la fecha del sistema operativo. Opcionalmente podrá crear una copia del archivo a analizar y modificar la fecha incluida en el nombre del archivo a la fecha actual en formato aaaammdd.
 
