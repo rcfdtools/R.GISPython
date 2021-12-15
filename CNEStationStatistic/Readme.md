@@ -129,8 +129,8 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 ### Script 
 
-* [Script principal CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
-* [Diccionario CNEStationDictionary.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py)
+* Script principal [CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
+* Script diccionario [CNEStationDictionary.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py)
 
 
 ### Arreglos de datos para clasificación de estaciones por pisos térmicos
