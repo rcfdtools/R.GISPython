@@ -529,10 +529,11 @@ Configuración avanzada.
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                      |
-|------------|----------------------------------------------------------------------------------|
-| v.20211213 | Versión inicial con estadísticos básicos y clasificación de pisos térmicos.      |
-| v.20211214 | Incorporación de gráficas y tablas dinámicas, inclusión de clasificación Caldas. |
+| Versión     | Descripción                                                                                     |
+|-------------|-------------------------------------------------------------------------------------------------|
+| v.20211213  | Versión inicial con estadísticos básicos y clasificación de pisos térmicos.                     |
+| v.20211214  | Incorporación de gráficas y tablas dinámicas, inclusión de clasificación Caldas.                |
+| v.20211215 | Impresión de hiperenlaces en ventana de ejecución para cada gráfica y tabla dinámica generada.  |
 
 
 ### Licencia, cláusulas y condiciones de uso
