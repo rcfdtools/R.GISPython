@@ -160,6 +160,15 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 | 99999 | Nival, T<0°C, >4700meter |
 
 
+### Resumen general de datos analizados y publicados
+
+| Fecha | Activa | Suspendida | En Mantenimiento |
+|  --- |  --- |  --- |-------------------|
+| 44178 | 2643 | 1832 | 17                |
+| 44179 | 2643 | 1832 | 17                |
+| 44180 | 2643 | 1832 | 17                |
+
+
 ### Ejecución en PyCharm usando Python 3.10.0
 
 > PyCharm requiere de configuración previa del intérprete de Python a utilizar en la ejecución del script. Oprima `Ctrl+Alt+S` para acceder a la ventana de configuración y en la pestaña _Project: R.GISPython_ configurar los intérpretes disponibles en su equipo.
