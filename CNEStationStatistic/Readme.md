@@ -479,6 +479,13 @@ Configuración avanzada.
 ![Pycharm2021.3RunSetupPrintAdvanced.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintAdvanced.png)
 
 
+### Ejemplo de gráficas obtenidas
+
+Estaciones por categoría
+![CategoryPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/CategoryPivot20211214.png)
+
+
+
 ### Referencias
 
 * [Data Analysis with Python for Excel Users - Full Course](https://www.youtube.com/watch?v=WcDaZ67TVRo&t=84s)
@@ -523,5 +530,5 @@ Configuración avanzada.
 https://github.com/rcfdtools/R.GISPython/wiki/License
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) |
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) | [Actividad siguiente]() |
 |----------------------------------------------------------------------------------------------|-------------------------|
