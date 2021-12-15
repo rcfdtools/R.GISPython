@@ -122,12 +122,15 @@ print('\nCategory - Normalize percentage rate: ')
 print(stationTable[categoryName].value_counts(normalize=True).round(4))
 stationTable[categoryName].value_counts(normalize=True).to_csv('./BasicTable/CategoryStatisticNormalize'+currentDateTxt+'.csv')
 print('Table >> '+urlGraphPivotTable+'/BasicTable/CategoryStatisticNormalize'+currentDateTxt+'.csv')
-
-
 print('\nTechnology - Count: ')
 print(stationTable[technologyName].value_counts())
+stationTable[technologyName].value_counts().to_csv('./BasicTable/TechnologyStatistic'+currentDateTxt+'.csv')
+print('Table >> '+urlGraphPivotTable+'/BasicTable/TechnologyStatistic'+currentDateTxt+'.csv')
 print('\nTechnology - Normalize percentage rate: ')
 print(stationTable[technologyName].value_counts(normalize=True).round(4))
+stationTable[technologyName].value_counts(normalize=True).to_csv('./BasicTable/TechnologyStatisticNormalize'+currentDateTxt+'.csv')
+print('Table >> '+urlGraphPivotTable+'/BasicTable/TechnologyStatisticNormalize'+currentDateTxt+'.csv')
+
 print('\nState active - Count: ')
 print(stationTable[stateActiveName].value_counts())
 print('\nState active - Normalize percentage rate: ')
