@@ -22,13 +22,13 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 * Identificación y resumen de atributos encontrados en el catálogo.
 * Estadísticos generales sobre campos numéricos del catálogo.
 * Estadístico de conteo y con normalización de estaciones por categoría, tecnología, estado, departamento, área operativa, área hidrográfica, zona hidrográfica, subzona hidrográfica y año de instalación.
-* Generación automática de tablas y gráficas pivote por estado de actividad con análisis para categoría, tecnología, departamento, área operativa, área hidrográfica, zona hidrográfica, subzona hidrográfica y año de instalación.
+* Generación automática de tablas y gráficas dinámicas por estado de actividad con análisis para categoría, tecnología, departamento, área operativa, área hidrográfica, zona hidrográfica, subzona hidrográfica y año de instalación.
 * Análisis y graficación de estaciones por piso térmico para el método definido.
 * Mapa de matriz de dispersión con localización de toda la red de estaciones subclasificada por elevación.
  
 > En caso de que requiera analizar una versión antigua del archivo del catálogo nacional de estaciones, podrá cargar el archivo en cualquier repositorio de uso personal, redireccionar el script a la url del archivo y ejecutar el script. Tener en cuenta que las fechas presentadas en los análisis, corresponderán a la fecha del sistema operativo. Opcionalmente podrá crear una copia del archivo a analizar y modificar la fecha incluida en el nombre del archivo a la fecha actual en formato aaaammdd.
 
-> En el evento de que por reestructuración del modelo de datos IDEAM, desaparezca alguno de los campos utilizados para el análisis general y la creación de las tablas pivote, el usuario deberá crear manualmente en el archivo .xls fuente, las columnas requeridas para la ejecución correcta del script.   
+> En el evento de que por reestructuración del modelo de datos IDEAM, desaparezca alguno de los campos utilizados para el análisis general y la creación de las tablas dinámicas, el usuario deberá crear manualmente en el archivo .xls fuente, las columnas requeridas para la ejecución correcta del script.   
 
 
 ### Requerimientos
@@ -457,7 +457,7 @@ Ventana de ejecución con atributos obtenidos.
 Ventana de ejecución con atributos estadísticas generales. 
 ![Python3.10.0StandalonePyCharm2021.3GeneralStatistic.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Python3.10.0StandalonePyCharm2021.3GeneralStatistic.png)
 
-Ventana de ejecución con tablas pivote. 
+Ventana de ejecución con tablas dinámicas. 
 ![Python3.10.0StandalonePyCharm2021.3PivotTable.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Python3.10.0StandalonePyCharm2021.3PivotTable.png)
 
 Ventana de ejecución con clasificación por piso térmico. 
@@ -505,15 +505,15 @@ Configuración avanzada.
 
 
 ### Tags
-`IDEAM` `Stations` `Weather` `Plot` `Pandas` `os` `Meteorological` `Automatic` `Pivot Table` `Graph`
+`IDEAM` `Stations` `Weather` `Plot` `Pandas` `os` `Meteorological` `Automatic` `Pivot Table` `Graph` `Catalog`
 
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                                                        |
-|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211213 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.                                                            |
-| v.20211214 | Inclusión de propiedades de estilo en gráfica de resultados. Inclusión de condicional para la inclusión o no del título de la gráfica, no recomendado en Python 2. |
+| Versión    | Descripción                                                                          |
+|------------|--------------------------------------------------------------------------------------|
+| v.20211213 | Versión inicial con estadísticos básicos.                                            |
+| v.20211214 | Incorporación de gráficas y tablas dinámicas, incorporación de clasificación Caldas. |
 
 
 ### Licencia, cláusulas y condiciones de uso
