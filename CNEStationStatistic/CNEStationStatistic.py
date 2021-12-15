@@ -13,6 +13,7 @@ import requests
 import matplotlib.pyplot as plt
 import os.path
 import CNEStationDictionary # Import CNEStationDictionary.py
+import matplotlib as mpl
 
 # General variables
 urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
@@ -43,11 +44,12 @@ graphTitlePrefix='CNE IDEAM Colombia -  '
 mySignature = 'By https://github.com/rcfdtools/R.GISPython' # Signature for graphs header
 urlGraphPivotTable = 'https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic' # URL path for graphs
 
-# General pandas settings
+# General pandas and matplotlib settings
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', 0)
+mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_warning
 
 # Separation title line function
 def SeparatorTitle(n=24): # Default using 24 - characters
