@@ -162,6 +162,8 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 ### Resumen general de datos analizados y publicados
 
+Para cada ejecución del script principal, se analizan y publican en este repositorio diferentes [gráficas](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Graph), [tablas básicas](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/BasicTable) y [tablas dinámicas](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/PivotTable) que son ordenadas cronológicamente y a partir de las cuales se presenta el siguiente resumen general. 
+
 | Fecha       | Activa | Suspendida | En Mantenimiento  |
 |-------------|--------|------------|-------------------|
 | 2021.12.13  | 2643   | 1832       | 17                |
