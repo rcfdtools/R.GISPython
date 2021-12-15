@@ -482,7 +482,8 @@ Configuración avanzada.
 ### Ejemplo de gráficas obtenidas
 
 Estaciones por categoría
-![CategoryPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/CategoryPivot20211214.png)
+
+![CategoryPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/CategoryPivot20211214.png)
 
 
 
