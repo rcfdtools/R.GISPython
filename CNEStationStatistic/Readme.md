@@ -43,28 +43,28 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 
 Atributos tomados directamente del archivo [CNE_IDEAM.xls](http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls).
 
-| Atributo | Tipo | Descripción                                                                                                                                                                                                                                     |
-|----------|------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OBJECTID | int64 | Identificador de objeto espacial proveniente de la GDB IDEAM.                                                                                                                                                                                   |
-| CODIGO | int64 | Código de la estación.                                                                                                                                                                                                                          |
-| nombre | object | Nombre de la estación. Incluye el código de la estación entre corchetes.                                                                                                                                                                        |
-| CATEGORIA | object | Categoría de la estación: Pluviométrica, Limnimétrica, Limnigráfica, Climática Ordinaria, Climática Principal, Pluviográfica, Meteorológica Especial, Agrometeorológica, Sinóptica Principal, Radio Sonda, Mareográfica, Sinóptica Secundaria.  |
-| TECNOLOGIA | object | Tecnología para captura, registro y transmisión: Convencional, Automática con Telemetría, Automática sin Telemetría.                                                                                                                            |
-| ESTADO | object | Estado de funcionamiento: Activa, Suspendida, En Mantenimiento.                                                                                                                                                                                 |
-| FECHA_INSTALACION | datetime64[ns] | Fecha de instalación.                                                                                                                                                                                                                           |
-| altitud | int64 | Altitud o cota sobre el nivel del mar en metros.                                                                                                                                                                                                |
-| latitud | float64 | Latitud en grados decimales.                                                                                                                                                                                                                    |
-| longitud | float64 | Longitud en grados decimales.                                                                                                                                                                                                                   |
-| DEPARTAMENTO | object | Departamento o zonificación política. Equivalente a estados en otros países.                                                                                                                                                                    |
-| MUNICIPIO | object | Municipio o subzonificación política. Equivalente a condado en otros países.                                                                                                                                                                    |
-| AREA_OPERATIVA | object | Área operativa que administra la estación.                                                                                                                                                                                                      |
-| AREA_HIDROGRAFICA | object | Área hidrográfica a la cual pertenece.                                                                                                                                                                                                          |
-| ZONA_HIDROGRAFICA | object | Zona hidrográfica a la cual pertenece.                                                                                                                                                                                                          |
-| observacion | object | Observaciones generales.                                                                                                                                                                                                                        |
-| CORRIENTE | object | Corriente, cauce o río próximo o sobre la cuál está localizada la estación.                                                                                                                                                                     |
-| FECHA_SUSPENSION | datetime64[ns] | Fecha de suspensión.                                                                                                                                                                                                                            |
-| SUBZONA_HIDROGRAFICA | object | Subzona hidrográfica a la cual pertenece.                                                                                                                                                                                                       |
-| ENTIDAD | object | Entidad encargada.                                                                                                                                                                                                                              |
+| Atributo             | Tipo           | Descripción                                                                                                                                                                                                                                     |
+|----------------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OBJECTID             | int64          | Identificador de objeto espacial proveniente de la GDB IDEAM.                                                                                                                                                                                   |
+| CODIGO               | int64          | Código de la estación.                                                                                                                                                                                                                          |
+| nombre               | object         | Nombre de la estación. Incluye el código de la estación entre corchetes.                                                                                                                                                                        |
+| CATEGORIA            | object         | Categoría de la estación: Pluviométrica, Limnimétrica, Limnigráfica, Climática Ordinaria, Climática Principal, Pluviográfica, Meteorológica Especial, Agrometeorológica, Sinóptica Principal, Radio Sonda, Mareográfica, Sinóptica Secundaria.  |
+| TECNOLOGIA           | object         | Tecnología para captura, registro y transmisión: Convencional, Automática con Telemetría, Automática sin Telemetría.                                                                                                                            |
+| ESTADO               | object         | Estado de funcionamiento: Activa, Suspendida, En Mantenimiento.                                                                                                                                                                                 |
+| FECHA_INSTALACION    | datetime64[ns] | Fecha de instalación.                                                                                                                                                                                                                           |
+| altitud              | int64          | Altitud o cota sobre el nivel del mar en metros.                                                                                                                                                                                                |
+| latitud              | float64        | Latitud en grados decimales.                                                                                                                                                                                                                    |
+| longitud             | float64        | Longitud en grados decimales.                                                                                                                                                                                                                   |
+| DEPARTAMENTO         | object         | Departamento o zonificación política. Equivalente a estados en otros países.                                                                                                                                                                    |
+| MUNICIPIO            | object         | Municipio o subzonificación política. Equivalente a condado en otros países.                                                                                                                                                                    |
+| AREA_OPERATIVA       | object         | Área operativa que administra la estación.                                                                                                                                                                                                      |
+| AREA_HIDROGRAFICA    | object         | Área hidrográfica a la cual pertenece.                                                                                                                                                                                                          |
+| ZONA_HIDROGRAFICA    | object         | Zona hidrográfica a la cual pertenece.                                                                                                                                                                                                          |
+| observacion          | object         | Observaciones generales.                                                                                                                                                                                                                        |
+| CORRIENTE            | object         | Corriente, cauce o río próximo o sobre la cuál está localizada la estación.                                                                                                                                                                     |
+| FECHA_SUSPENSION     | datetime64[ns] | Fecha de suspensión.                                                                                                                                                                                                                            |
+| SUBZONA_HIDROGRAFICA | object         | Subzona hidrográfica a la cual pertenece.                                                                                                                                                                                                       |
+| ENTIDAD              | object         | Entidad encargada.                                                                                                                                                                                                                              |
 
 > Los atributos presentados en la tabla, su tipo de escritura y notación han sido tomados del archivo original y no se encuentran normalizados a 11 caracteres para garantizar la compatibilidad con el formato .dbf. Se puede observar que los datos volcados en el archivo CNE_IDEAM.xls han sido generados utilizando la herramienta _Table to Table_ de ArcGIS desde una Geodatabase que permite la definición de atributos con más de 11 caracteres.
 
@@ -93,17 +93,17 @@ Tomado de [Anexo 2 - Definiciones CNE](http://www.ideam.gov.co/documents/10182/5
 
 #### Estado de la estación
 
-| Estado | Descripción                                                                                                                                                                                 |
-|  --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Activa | Estación que se encuentra en operación y registra datos automáticos o tomados por un observador.                                                                                            |
+| Estado           | Descripción                                                                                                                                                                                 |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Activa           | Estación que se encuentra en operación y registra datos automáticos o tomados por un observador.                                                                                            |
 | En mantenimiento | Estación que se encuentra en operación pero que temporalmente no registra datos automáticos o tomados por un observador por problemas en los equipos o como consecuencia de un siniestro.   |
-| Suspendida | Estación que se encuentra fuera de servicio de manera definitiva y no registra datos automáticos o tomados por un observador. Solo se puede consultar datos históricos en estas estaciones. |
+| Suspendida       | Estación que se encuentra fuera de servicio de manera definitiva y no registra datos automáticos o tomados por un observador. Solo se puede consultar datos históricos en estas estaciones. |
 
 ####  Tecnología de la estación
 
-| Estado | Descripción                                                                                                                                                                                                                                                                                                                                 |
-|  --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Convencional | Estación donde la toma del dato la efectúa un observador y la registra en una libreta para luego enviarla a los técnicos para que se capture y procesen estos datos.                                                                                                                                                                        |
+| Estado                    | Descripción                                                                                                                                                                                                                                                                                                                                 |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Convencional              | Estación donde la toma del dato la efectúa un observador y la registra en una libreta para luego enviarla a los técnicos para que se capture y procesen estos datos.                                                                                                                                                                        |
 | Automática con telemetría | Estación que obtiene los datos de manera automática mediante sensores de diferente tipo y que tiene la capacidad de enviarlos de manera automática al centro de recepción por diferentes medios de transmisión (satelital, radiofrecuencia, GPRS, etc.)                                                                                     |
 | Automática sin telemetría | Estación que obtiene los datos de manera automática mediante sensores de diferente tipo y que tiene la capacidad de almacenarlos en un dispositivo dentro de la misma estación. No puede enviar los datos de manera automática. Los datos debes ser obtenidos por una persona que se conecta al sitio donde la estación almacena los datos. |
 
@@ -116,10 +116,10 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 | Directorio                                                                                        | Descripción                                                                                                                                                                                                                                                                                                                                                                     |
 |---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/BasicTable](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/BasicTable)  | Directorio para volcado de tablas de estadísticos básicos y normalizados en formato de valores separados por comas.                                                                                                                                                                                                                                                                                                      |
+| [/BasicTable](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/BasicTable)  | Directorio para volcado de tablas de estadísticos básicos y normalizados en formato de valores separados por comas.                                                                                                                                                                                                                                                             |
 | [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Data)              | Directorio de descarga del archivo CNE_IDEAM.xls con registro de versiones.                                                                                                                                                                                                                                                                                                     |
 | [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Graph)            | Directorio para volcado de gráficas en formato [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) (Portable Network Graphic) .png. Para cada ejecución se crea un nuevo grupo de imágenes con registro de versiones.                                                                                                                                                |
-| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Old)                | Directorio con versiones antiguas del script.                                                                                                                                                                                                                                                                                                                               |
+| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Old)                | Directorio con versiones antiguas del script.                                                                                                                                                                                                                                                                                                                                   |
 | [/PDF](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/PDF)                | Directorio de impresión de la ventana de ejecución del scripts. Directamente no se realiza la escritura en un archivo .log de resultados por lo que su impresión se realiza de forma manual. En este directorio pueden existir versiones para clasificación de pisos térmicos con rangos convencionales o con los rangos definidos por Francisco José de Caldas en el año 1802. |
 | [/PivotTable](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/PivotTable)  | Directorio para volcado de las tablas dinámicas producidas por el script en formato de valores separados por comas [CSV](https://en.wikipedia.org/wiki/Comma-separated_values).  Para cada ejecución se crea un nuevo grupo de archivos .csv con registro de versiones.                                                                                                         |
 | [/Reference](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic/Reference)    | Documentos de referencias bibliográficas recopiladas.                                                                                                                                                                                                                                                                                                                           |
@@ -139,34 +139,34 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 #### Cortes convencionales
 
-| Valor de corte | Etiqueta |
-|  --- |  --- |
-| 1000 | Cálido, 24°C+, <= 1000 meters |
-| 2000 | Templado, 18°C+, <= 2000 meters |
-| 3000 | Frío, 12°C+, <= 3000 meters |
-| 4000 | Páramo, 0°C, <= 4000 meters |
-| 99999 | Glacial, 0°C-, > 4000 meters |
+| Valor de corte | Etiqueta                        |
+|----------------|---------------------------------|
+| 1000           | Cálido, 24°C+, <= 1000 meters   |
+| 2000           | Templado, 18°C+, <= 2000 meters |
+| 3000           | Frío, 12°C+, <= 3000 meters     |
+| 4000           | Páramo, 0°C, <= 4000 meters     |
+| 99999          | Glacial, 0°C-, > 4000 meters    |
 
 
 #### Cortes Francisco José de Caldas, año 1802
 
-| Valor de corte | Etiqueta |
-|  --- |  --- |
-| 800 | Cálido, T>=24°C, <=800meter |
-| 1800 | Templado, 24°C>T>18°C, <=1800meter |
-| 2800 | Frío, 18°C>T>12°C, <=2800meter |
-| 3700 | Muy Frío, 12°C>T>6°C, <=3700meter |
-| 4700 | Extremadamente Frio, 6°C>T>0°C, <=4700meter |
-| 99999 | Nival, T<0°C, >4700meter |
+| Valor de corte | Etiqueta                                    |
+|----------------|---------------------------------------------|
+| 800            | Cálido, T>=24°C, <=800meter                 |
+| 1800           | Templado, 24°C>T>18°C, <=1800meter          |
+| 2800           | Frío, 18°C>T>12°C, <=2800meter              |
+| 3700           | Muy Frío, 12°C>T>6°C, <=3700meter           |
+| 4700           | Extremadamente Frio, 6°C>T>0°C, <=4700meter |
+| 99999          | Nival, T<0°C, >4700meter                    |
 
 
 ### Resumen general de datos analizados y publicados
 
-| Fecha | Activa | Suspendida | En Mantenimiento |
-|  --- |  --- |  --- |-------------------|
-| 44178 | 2643 | 1832 | 17                |
-| 44179 | 2643 | 1832 | 17                |
-| 44180 | 2643 | 1832 | 17                |
+| Fecha       | Activa | Suspendida | En Mantenimiento  |
+|-------------|--------|------------|-------------------|
+| 2021.12.13  | 2643   | 1832       | 17                |
+| 2021.12.14  | 2643   | 1832       | 17                |
+| 2021.12.15  | 2643   | 1832       | 17                |
 
 
 ### Ejecución en PyCharm usando Python 3.10.0
@@ -265,4 +265,4 @@ https://github.com/rcfdtools/R.GISPython/wiki/License
 
 
 | [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) | [Actividad siguiente]() |
-|----------------------------------------------------------------------------------------------|-------------------------|
+|------------------------------------------------------------------------------------|-------------------------|
