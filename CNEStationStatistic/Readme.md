@@ -14,15 +14,15 @@ El presente repositorio y el código desarrollado en Python por r.cfdtools@gmail
 ### Funcionalidades incorporadas
 
 * Descarga directa del archivo del catálogo nacional de estaciones. Si en la fecha actual ya ha sido descargado el archivo, el script realizará únicamente su procesamiento.
-* Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls`, presentación de resumen corto de estaciones encontradas`sampleRecord = 12`, listado completo de estaciones con geolocalizadores `showAllRecords = False`.
-* Despliegue de gráficas de análisis en ventanas emergentes a petición del usuario `showGraphScreen = False` y volcado automático de gráficas a formato PNG `plt.savefig()`.
+* Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls`, presentación de resumen corto de estaciones encontradas`sampleRecord = 12`, listado completo de estaciones con geo-localizadores `showAllRecords = False`.
+* Despliegue de gráficas de análisis en ventanas emergentes a petición del usuario `showGraphScreen = False`, volcado automático de gráficas a formato PNG `plt.savefig()` y generación e impresión en consola de enlaces de consulta.
 * Definición del método de análisis para la clasificación por pisos térmicos `thermalLevelCaldas = True`: convencional o Caldas 1802. Los arreglos de datos `thermalLevelRefConv` y `thermalLevelRefCaldas` utilizados para la clasificación pueden ser actualizados por el usuario.
 * Definición de nombres de campos de atributos de análisis. En el evento de que el modelo de datos de estaciones IDEAM sea actualizado, reestructurado o normalizado, el usuario podrá evaluar el nombre de los nuevos campos y realizar la actualización de los nuevos nombres. Aplica para: nombre, latitud, longitud, altitud, CATEGORIA, TECNOLOGIA, ESTADO, FECHA_INSTALACION, DEPARTAMENTO, AREA_OPERATIVA, AREA_HIDROGRAFICA, ZONA_HIDROGRAFICA y SUBZONA_HIDROGRAFICA.
 * Definición de nivel de transparencia en gráficas para ahorro en consumo de insumos de impresión.
 * Identificación y resumen de atributos encontrados en el catálogo.
 * Estadísticos generales sobre campos numéricos del catálogo.
 * Estadístico de conteo y con normalización de estaciones por categoría, tecnología, estado, departamento, área operativa, área hidrográfica, zona hidrográfica, subzona hidrográfica y año de instalación.
-* Generación automática de tablas y gráficas dinámicas por estado de actividad con análisis para categoría, tecnología, departamento, área operativa, área hidrográfica, zona hidrográfica, subzona hidrográfica y año de instalación.
+* Generación automática de tablas y gráficas dinámicas por estado de actividad con análisis para categoría, tecnología, departamento, área operativa, área hidrográfica, zona hidrográfica, sub-zona hidrográfica y año de instalación.
 * Análisis y graficación de estaciones por piso térmico para el método definido.
 * Mapa de matriz de dispersión con localización de toda la red de estaciones subclasificada por elevación.
  
