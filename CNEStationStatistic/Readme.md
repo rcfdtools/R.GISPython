@@ -228,7 +228,7 @@ Configuración avanzada.
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com (27 horas)
+* Creado por r.cfdtools@gmail.com (28 horas)
 
 
 ### Compatibilidad
