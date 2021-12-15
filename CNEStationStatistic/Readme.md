@@ -470,10 +470,10 @@ Configuración general de impresión.
 ![Pycharm2021.3RunSetupPrintSettings.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintSettings.png)
 
 Configuración de cabecera y pie de página.
-![Pycharm2021.3RunSetupPrintHeaderFooter](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintHeaderFooter)
+![Pycharm2021.3RunSetupPrintHeaderFooter.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintHeaderFooter.png)
 
 Configuración avanzada.
-![Pycharm2021.3RunSetupPrintAdvanced](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintAdvanced.png)
+![Pycharm2021.3RunSetupPrintAdvanced.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/Pycharm2021.3RunSetupPrintAdvanced.png)
 
 
 ### Referencias
