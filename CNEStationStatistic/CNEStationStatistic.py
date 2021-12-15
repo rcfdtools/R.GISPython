@@ -116,6 +116,8 @@ stationTable.describe().to_csv('./BasicTable/BasicDataframeStatistic'+currentDat
 print('Table >> '+urlGraphPivotTable+'/BasicTable/BasicDataframeStatistic'+currentDateTxt+'.csv')
 print('\nCategory - Count: ')
 print(stationTable[categoryName].value_counts())
+stationTable[categoryName].value_counts().to_csv('./BasicTable/CategoryStatistic'+currentDateTxt+'.csv')
+print('Table >> '+urlGraphPivotTable+'/BasicTable/CategoryStatistic'+currentDateTxt+'.csv')
 print('\nCategory - Normalize percentage rate: ')
 print(stationTable[categoryName].value_counts(normalize=True).round(4))
 print('\nTechnology - Count: ')
