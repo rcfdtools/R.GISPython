@@ -43,6 +43,12 @@ graphTitlePrefix='CNE IDEAM Colombia -  '
 mySignature = 'By https://github.com/rcfdtools/R.GISPython' # Signature for graphs header
 urlGraphPivotTable = 'https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic' # URL path for graphs
 
+# General pandas settings
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', 0)
+
 # Separation title line function
 def SeparatorTitle(n=24): # Default using 24 - characters
     nc = '-'
