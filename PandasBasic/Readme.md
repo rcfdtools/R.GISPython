@@ -97,12 +97,23 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 > Para la creación del libro podrá utilizar formato .xlsx o .xls. 
 
-6. Convierta cada hoja del libro a formato CSV, nombre cada archivo con el mismo nombre de las hojas.
+6. Convierta cada hoja del libro a formato CSV, nombre cada archivo con el mismo nombre de las hojas. Verifique los archivos convertidos usando el editor de texto.
 
 > Se recomienda que el separador de listas en la configuración regional del sistema operativo Microsoft Windows, sea establecido utilizando comas, punto para decimales y coma para miles.
 
 ![MicrosoftExcelToCSV.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelToCSV.png)
 ![ArcMapValorCSV.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapValorCSV.png)
+
+
+#### En ArcGIS Pro 2.9.0.
+
+1. En ArcGIS pro, cree un proyecto nuevo en blanco y agregue la capa de Municipios.
+
+![ArcGISProNewProject.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProNewProject.png)
+![ArcGISProAddLayer.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProAddLayer.png)
+
+
+> No es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
 
 
 
