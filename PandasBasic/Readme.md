@@ -85,11 +85,11 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 5. En Microsoft Excel, cree en la carpeta `/Datos` un libro en formato .xlsx y guárdelo como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx). Dentro del libro cree las siguientes hojas y registre los valores, porcentajes y conteos de elementos obtenidos en las diferentes clasificaciones:
 
-| Hoja             | Descripción                                       |
-|------------------|---------------------------------------------------|
-| ArcMapValor      | Registro de valores de corte para cada clase.     |
-| ArcMapPercentage | Registro de porcentajes de corte para cada clase. |
-| ArcMapCount      | Registro de conteo de elementos para cada corte.  |
+| Hoja                                                                                                          | Descripción                                       |
+|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
+| [ArcMapValor](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/ArcMapValor.csv)           | Registro de valores de corte para cada clase.     |
+| [ArcMapPercentage](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/ArcMapPercentage.csv) | Registro de porcentajes de corte para cada clase. |
+| [ArcMapCount](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/ArcMapCount.csv)           | Registro de conteo de elementos para cada corte.  |
 
 ![MicrosoftExcelArcMapValor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcMapValor.png)
 ![MicrosoftExcelArcMapPercentage.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcMapPercentage.png)
@@ -122,7 +122,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![ArcGISProQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProQuantile.png)
 ![ArcGISProStandardDeviation.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProStandardDeviation.png)
 
-3. En Microsoft Excel y en el libro de cálculo creado anteriormente y nombrado como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx), agregue una nueva hoja y nombre como _ArcGISProValor_. Registre los valores de corte por clase obtenidos con ArcGIS Pro y exporte a formato CSV usando el mismo nombre de la hoja.
+3. En Microsoft Excel y en el libro de cálculo creado anteriormente y nombrado como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx), agregue una nueva hoja y nombre como [ArcGISProValor](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/ArcGISProValor.csv). Registre los valores de corte por clase obtenidos con ArcGIS Pro y exporte a formato CSV usando el mismo nombre de la hoja.
 
 ![MicrosoftExcelArcGISProValor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcGISProValor.png)
 
