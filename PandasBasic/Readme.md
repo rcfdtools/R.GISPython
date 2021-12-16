@@ -32,7 +32,9 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 
 1. En el portal del [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/) de clic en la opción de [Datos Abiertos]().
 
+![IGACDatosAbiertos.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACDatosAbiertos.png)
 
+2. 
 
 #### En ArcGIS for Desktop 10.2.2
 
