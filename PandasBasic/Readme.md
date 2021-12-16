@@ -140,17 +140,35 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
    
 ![ArcGISProAddField.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProAddField.png)
 
-5. Utilizando Python, realice la marcación del número de clase a la cual pertenece cada polígono en función de su área en km² a partir de los valores de corte obtenidos previamente.
+> Debido a que los campos se crean en la tabla .dbf de la capa shapefile, el nombre del campo no podrá contener más de 10 caracteres.
 
-Expresión para marcación en campos
+5. Utilizando Python y la herramienta `Calculate Fields...`, realice la marcación del número de clase a la cual pertenece cada polígono en función de su área en km² a partir de los valores de corte obtenidos previamente.
+
+Code Block para marcación en campos
 ```
-jenksVal = (2380.173697,9038.960497,20170.29529,999999)
-def JenksEval(value, iAux=1):
-    for i in jenksVal:
+jenksVal = (2380.173697,9038.960497,20170.29529,9999999)
+equalIntVal = (16308.67596, 32601.61906, 48894.56217, 9999999)
+quantileVal = (132.666736, 287.448131, 699.363055, 9999999)
+geoIntVal = (191.655691, 1390.204041, 9555.818893, 9999999)
+stdDevVal = (2612.35632, 5810.910895, 9009.46547, 9999999)
+def JenksEval(value, classMethod, iAux=1):
+    for i in classMethod:
         if value <= i:
             return iAux
         iAux+=1
 ```
+
+> Observe que en la definición de los valores de corte en el bloque de código Python, se ha incluido el valor 9999999 para el último valor de corte, esto permitirá que se obtengan marcaciones correctas en la clase 4 y si valores nulos o clases no definidas. 
+
+Expresiones en Calculate Field
+`CNBJenks = JenksEval(!Areakm2!, jenksVal, iAux=1)`
+`CEqualInt = JenksEval(!Areakm2!, equalIntVal, iAux=1)`
+`CQuantile = JenksEval(!Areakm2!, quantileVal, iAux=1)`
+`CGeomInt = JenksEval(!Areakm2!, geoIntVal, iAux=1)`
+`CStdDev = JenksEval(!Areakm2!, stdDevVal, iAux=1)`
+
+![ArcGISProCalculateFieldCNBJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCNBJenks.png)
+
 
 ### Referencias
 
