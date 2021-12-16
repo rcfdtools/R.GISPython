@@ -161,11 +161,11 @@ def JenksEval(value, classMethod, iAux=1):
 > Observe que en la definición de los valores de corte en el bloque de código Python, se ha incluido el valor 9999999 para el último valor de corte, esto permitirá que se obtengan marcaciones correctas en la clase 4 y si valores nulos o clases no definidas. 
 
 Expresiones en Calculate Field
-`CNBJenks = JenksEval(!Areakm2!, jenksVal, iAux=1)`
-`CEqualInt = JenksEval(!Areakm2!, equalIntVal, iAux=1)`
-`CQuantile = JenksEval(!Areakm2!, quantileVal, iAux=1)`
-`CGeomInt = JenksEval(!Areakm2!, geoIntVal, iAux=1)`
-`CStdDev = JenksEval(!Areakm2!, stdDevVal, iAux=1)`
+* `CNBJenks = JenksEval(!Areakm2!, jenksVal, iAux=1)`
+* `CEqualInt = JenksEval(!Areakm2!, equalIntVal, iAux=1)`
+* `CQuantile = JenksEval(!Areakm2!, quantileVal, iAux=1)`
+* `CGeomInt = JenksEval(!Areakm2!, geoIntVal, iAux=1)`
+* `CStdDev = JenksEval(!Areakm2!, stdDevVal, iAux=1)`
 
 ![ArcGISProCalculateFieldCNBJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCNBJenks.png)
 
