@@ -1,6 +1,6 @@
 ## Introducción a pandas
 
-[Pandas](https://pandas.pydata.org/) es una librería complementaria del lenguaje de programación Python que permite leer, representar y manipular datos almacenados en diferentes formatos, p.ej, en archivos de texto separados por comas _.csv_ [(CSV - Comma separated values)](https://en.wikipedia.org/wiki/Comma-separated_values) y archivos en formatos de libro de cálculo electrónico como [Microsoft Excel](https://es.wikipedia.org/wiki/Microsoft_Excel) en formato _.xls_ y _.xlsx_.
+[Pandas](https://pandas.pydata.org/) es una librería complementaria al lenguaje de programación Python que permite leer, representar y manipular datos almacenados en diferentes formatos, p.ej, en archivos de texto separados por comas _.csv_ [(CSV - Comma separated values)](https://en.wikipedia.org/wiki/Comma-separated_values) y archivos en formatos de libro de cálculo electrónico como [Microsoft Excel](https://es.wikipedia.org/wiki/Microsoft_Excel) en formato _.xls_ y _.xlsx_.
 
 
 ### Caso de estudio
@@ -21,10 +21,17 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 * ArcGIS for Desktop 10.2.2+.
 * ArcGIS Pro 2.9.0+.
 * Python 3.10.0+ como instalación independiente o standalone.
+* PyCharm 2021.3+ for Anaconda.
+* Sistema operativo Microsoft Windows.
 * Capa geográfica de Municipio de Colombia.
 * Archivos CSV y libro de Microsoft Excel con el resultado de los valores de corte y conteo de elementos.
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
+
+
+### Ruta de ejecución
+ 
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\PandasBasic\ 
 
 
 ### Descarga de capa de municipios
@@ -49,7 +56,7 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 ![DatosShapefileMunicipios.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/DatosShapefileMunicipios.png)
 
 
-### Procedimiento para la creación de las tablas requeridas 
+### Procedimiento para la creación de tablas requeridas 
 
 
 #### En ArcGIS for Desktop 10.2.2
