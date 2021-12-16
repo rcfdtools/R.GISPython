@@ -95,6 +95,14 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![MicrosoftExcelArcMapPercentage.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcMapPercentage.png)
 ![MicrosoftExcelArcMapCount.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcMapCount.png)
 
+> Para la creación del libro podrá utilizar formato .xlsx o .xls. 
+
+6. Convierta cada hoja del libro a formato CSV, nombre cada archivo con el mismo nombre de las hojas.
+
+> Se recomienda que el separador de listas en la configuración regional del sistema operativo Microsoft Windows, sea establecido utilizando comas, punto para decimales y coma para miles.
+
+![MicrosoftExcelToCSV.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelToCSV.png)
+![ArcMapValorCSV.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapValorCSV.png)
 
 
 
