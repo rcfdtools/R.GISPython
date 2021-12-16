@@ -65,12 +65,17 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ![ArcGISDesktopAddLayer.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopAddLayer.png)
 
-2. Abra la tabla de atributos de la capa (clic derecho en la capa, _Open Attribute Table_), acóplela a la derecha de la ventana y desde las propiedades de la tabla, cree un nuevo campo de atributos tipo numérico doble usando la opción `Add Field` y nombrelo como `Areakm2`.
+2. Abra la tabla de atributos de la capa (clic derecho en la capa, _Open Attribute Table_), acóplela a la derecha de la ventana y desde las propiedades de la tabla, cree un nuevo campo de atributos tipo numérico doble usando la opción `Add Field...` y nombrelo como `Areakm2`.
 
 ![ArcGISDesktopAddField.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopAddField.png)
 
-3.
+3. Utilizando el calculador de geometría, calcule el valor del área espacial de todos los polígonos de la capa. Clic derecho en la cabecera del campo `Areakm2` y `Calculate Geometry...`.
 
+> Podrá observar que la capa contiene un campo denominado `MpArea` que ya contiene el cálculo en km², sin embargo, se recomienda que sea creado el campo `Areakm2` para actualizar los valores a partir del sistema de proyección _MARNA-SIRGAS / Origen Nacional_ embebido en la capa.
+
+![ArcGISDesktopCalculateGeometry.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopCalculateGeometry.png)
+
+4. 
 
 
 
