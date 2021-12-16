@@ -1,4 +1,4 @@
-## Introducción a pandas
+## Introducción a pandas - Representación 
 
 [Pandas](https://pandas.pydata.org/) es una librería complementaria al lenguaje de programación Python que permite leer, representar y manipular datos almacenados en diferentes formatos, p.ej, en archivos de texto separados por comas _.csv_ [(CSV - Comma separated values)](https://en.wikipedia.org/wiki/Comma-separated_values) y archivos en formatos de libro de cálculo electrónico como [Microsoft Excel](https://es.wikipedia.org/wiki/Microsoft_Excel) en formato _.xls_ y _.xlsx_.
 
@@ -61,7 +61,15 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 #### En ArcGIS for Desktop 10.2.2
 
-1. 
+1. En ArcMap, cree un mapa en blanco y agregue la capa descargada municipios202110.
+
+![ArcGISDesktopAddLayer.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopAddLayer.png)
+
+2. Abra la tabla de atributos de la capa (clic derecho en la capa, _Open Attribute Table_), acóplela a la derecha de la ventana y cree un nuevo campo de atributos denominado `Areakm2` tipo numérico doble.
+
+3.
+
+
 
 
 ### Referencias
