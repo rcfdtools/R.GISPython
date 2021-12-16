@@ -83,7 +83,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![ArcGISDesktopQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopQuantile.png)
 ![ArcGISDesktopStandardDeviation.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopStandardDeviation.png)
 
-5. En Microsoft Excel, cree en la carpeta `/Datos` un libro en formato .xlsx y guárdelo como GISClassificationMethodValue.xlsx. Dentro del libro cree las siguientes hojas y registre los valores, porcentajes y conteos de elementos obtenidos en las diferentes clasificaciones:
+5. En Microsoft Excel, cree en la carpeta `/Datos` un libro en formato .xlsx y guárdelo como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx). Dentro del libro cree las siguientes hojas y registre los valores, porcentajes y conteos de elementos obtenidos en las diferentes clasificaciones:
 
 | Hoja             | Descripción                                       |
 |------------------|---------------------------------------------------|
