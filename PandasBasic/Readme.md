@@ -75,7 +75,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ![ArcGISDesktopCalculateGeometry.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopCalculateGeometry.png)
 
-4. Desde las propiedades de la capa, realice la simbolización por Cantidades y por colores graduados en 5 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice paleta de verdes a naranjas y transparencia del 50%.
+4. Desde las propiedades de la capa, realice la simbolización por Cantidades y por colores graduados en 5 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice paleta de verdes a naranjas y transparencia al 50%.
 
 ![ArcGISDesktopEqualInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopEqualInterval.png)
 ![ArcGISDesktopGeometricalInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopGeometricalInterval.png)
@@ -112,10 +112,21 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![ArcGISProNewProject.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProNewProject.png)
 ![ArcGISProAddLayer.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProAddLayer.png)
 
-
 > No es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
 
+2. En el menú _Apperence_, seleccione la opción _Symbology_ y la opción de representación _Graduated Colors_, realice la simbolización por Cantidades y por colores graduados en 5 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice paleta Viridis y establezca transparencia al 50%.  
 
+![ArcGISProEqualInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProEqualInterval.png)
+![ArcGISProGeometricalInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProGeometricalInterval.png)
+![ArcGISProNaturalBreaksJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProNaturalBreaksJenks.png)
+![ArcGISProQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProQuantile.png)
+![ArcGISProStandardDeviation.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProStandardDeviation.png)
+
+3. En Microsoft Excel y en el libro de cálculo creado anteriormente y nombrado como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx), agregue una nueva hoja y nombre como _ArcGISProValor_. Registre los valores de corte por clase obtenidos con ArcGIS Pro y exporte a formato CSV usando el mismo nombre de la hoja.
+
+![MicrosoftExcelArcGISProValor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcGISProValor.png)
+
+> Como puede observar, los valores de corte obtenidos con ArcGIS for Desktop y ArcGIS Pro son idénticos.
 
 
 
