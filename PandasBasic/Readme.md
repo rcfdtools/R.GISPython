@@ -25,10 +25,7 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
 
 
-### Procedimiento para la creación de las tablas requeridas 
-
-
-#### Descarga de capa de municipios
+### Descarga de capa de municipios
 
 > Tenga en cuenta que el procedimiento de descarga puede no estar actualizado debido a las actualizaciones permanentes que se realizan en el portal del IGAC, sin embargo, podrá utilizar los archivos descargados y utilizados para ejemplificar el caso de estudio que se encuentran en este repositorio.
 
@@ -42,6 +39,12 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 ![IGACCartografiaBaseEscala1a25000.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACCartografiaBaseEscala1a25000.png)
 
 3. 
+
+
+
+
+### Procedimiento para la creación de las tablas requeridas 
+
 
 #### En ArcGIS for Desktop 10.2.2
 
