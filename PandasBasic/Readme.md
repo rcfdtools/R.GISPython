@@ -30,11 +30,18 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 
 #### Descarga de capa de municipios
 
+> Tenga en cuenta que el procedimiento de descarga puede no estar actualizado debido a las actualizaciones permanentes que se realizan en el portal del IGAC, sin embargo, podrá utilizar los archivos descargados y utilizados para ejemplificar el caso de estudio que se encuentran en este repositorio.
+
 1. En el portal del [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/) de clic en la opción de [Datos Abiertos]().
 
 ![IGACDatosAbiertos.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACDatosAbiertos.png)
 
-2. 
+2. En Datos Abiertos, seleccione la opción [Cartografía y Geografía] (https://geoportal.igac.gov.co/contenido/datos-abiertos-cartografia-y-geografia) y luego seleccione la opción [Cartografía Base Escala 1:25000](https://www.colombiaenmapas.gov.co/?e=-82.43784778320864,-0.17644239911865092,-71.23179309571162,9.90326984502256,4686&b=igac&u=0&t=23&servicio=206) contenida en la sección Descarga de Información Integrada. Automáticamente será redirigido al portal colombiaenmapas.gov.co
+
+![IGACCartografiaGeografia.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACCartografiaGeografia.png)
+![IGACCartografiaBaseEscala1a25000.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACCartografiaBaseEscala1a25000.png)
+
+
 
 #### En ArcGIS for Desktop 10.2.2
 
