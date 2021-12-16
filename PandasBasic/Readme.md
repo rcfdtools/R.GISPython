@@ -65,7 +65,9 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ![ArcGISDesktopAddLayer.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopAddLayer.png)
 
-2. Abra la tabla de atributos de la capa (clic derecho en la capa, _Open Attribute Table_), acóplela a la derecha de la ventana y cree un nuevo campo de atributos denominado `Areakm2` tipo numérico doble.
+2. Abra la tabla de atributos de la capa (clic derecho en la capa, _Open Attribute Table_), acóplela a la derecha de la ventana y desde las propiedades de la tabla, cree un nuevo campo de atributos tipo numérico doble usando la opción `Add Field` y nombrelo como `Areakm2`.
+
+![ArcGISDesktopAddField.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopAddField.png)
 
 3.
 
