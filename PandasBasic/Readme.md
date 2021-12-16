@@ -5,7 +5,7 @@
 
 ### Caso de estudio
 
-Clasificar, representar y analizar la división geopolítica de los Municipios de Colombia a través de diferentes métodos de representación en función de su área espacial utilizando los datos abiertos del [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).  
+Clasificar, representar y analizar la división geopolítica de los Municipios de Colombia a través de diferentes métodos de representación disponibles en ArcGIS, en función de su área espacial utilizando los datos abiertos del [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).  
 
 
 ### Objetivos
@@ -21,13 +21,15 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 * ArcGIS for Desktop 10.2.2+.
 * ArcGIS Pro 2.9.0+.
 * Python 3.10.0+ como instalación independiente o standalone.
+* Capa geográfica de Municipio de Colombia.
+* Archivos CSV y libro de Microsoft Excel con el resultado de los valores de corte y conteo de elementos.
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
 
 
 ### Descarga de capa de municipios
 
-> Tenga en cuenta que el procedimiento de descarga puede no estar actualizado debido a las actualizaciones permanentes que se realizan en el portal del IGAC, sin embargo, podrá utilizar los archivos descargados y utilizados para ejemplificar el caso de estudio que se encuentran en este repositorio.
+> Tenga en cuenta que el procedimiento de descarga puede no estar actualizado debido a las actualizaciones permanentes que se realizan en el portal del IGAC, sin embargo, podrá utilizar los archivos descargados y utilizados para ejemplificar el caso de estudio que se encuentran en este repositorio. Descarga realizada en 2021.12.16.
 
 1. En el portal del [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/) de clic en la opción de [Datos Abiertos]().
 
@@ -38,9 +40,13 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 ![IGACCartografiaGeografia.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACCartografiaGeografia.png)
 ![IGACCartografiaBaseEscala1a25000.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACCartografiaBaseEscala1a25000.png)
 
-3. 
+3. En el portal de Colombia en Mapas, filtre por Municipios, de clic en la opción _Municipios, Distritos y Áreas no municipalizadas de Colombia_, seleccione formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm) y luego en el botón Descargar. Automáticamente se creará una orden de servicio y se iniciará la descarga (p.ej, Servicio-610.zip).
 
+![IGACColombiaMapasDescarga.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACColombiaMapasDescarga.png)
 
+4. En la carpeta `/Datos`, descomprima el archivo de Municipios, observará que el [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm) se compone de diferentes archivos (p.ej, .shp, .shx, .dbf y .prj). 
+
+![DatosShapefileMunicipios.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/DatosShapefileMunicipios.png)
 
 
 ### Procedimiento para la creación de las tablas requeridas 
