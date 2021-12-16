@@ -20,6 +20,7 @@ print(str(currentDate.year)+str(currentDate.month)+str(currentDate.day))
 
 # Basic jenks eval
 jenksVal = (2380.173697,9038.960497,20170.29529,65187.50527)
+
 def JenksEval(value, iAux=1):
     for i in jenksVal:
         if value <= i:
