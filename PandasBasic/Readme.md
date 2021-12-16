@@ -128,17 +128,19 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 > Como se observa, los valores de corte obtenidos con ArcGIS for Desktop y ArcGIS Pro son idénticos.
 
-4. En la tabla de atributos de la capa de Municipios, cree los siguientes 5 campos tipo numérico entero y utilizando Python realice la marcación del número de clase a la cual pertenece cada polígono en función de su área en km² y a partir de los valores de corte obtenidos previamente.
+4. En la tabla de atributos de la capa de Municipios, cree los siguientes 5 campos tipo numérico entero.
 
-   | Campo       | Alias                  | Tipo         |
-   |-------------|------------------------|--------------|
-   | CNBJenks    | Natural Breaks (Jenks) | Entero corto |
-   | CEqualInter | Equal Interval         | Entero corto |
-   | CQuantile   | Quantile               | Entero corto |
-   | CGeomInter  | Geometrical Interval   | Entero corto |
-   | CStdDev     | Standard Deviation     | Entero corto |
+| Campo     | Alias                  | Tipo         |
+|-----------|------------------------|--------------|
+| CNBJenks  | Natural Breaks (Jenks) | Entero corto |
+| CEqualInt | Equal Interval         | Entero corto |
+| CQuantile | Quantile               | Entero corto |
+| CGeomInt  | Geometrical Interval   | Entero corto |
+| CStdDev   | Standard Deviation     | Entero corto |
    
 ![ArcGISProAddField.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProAddField.png)
+
+5. Utilizando Python, realice la marcación del número de clase a la cual pertenece cada polígono en función de su área en km² a partir de los valores de corte obtenidos previamente.
 
 Expresión para marcación en campos
 ```
