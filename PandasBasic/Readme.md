@@ -131,6 +131,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 4. En la tabla de atributos de la capa de Municipios, cree los siguientes 5 campos tipo numérico entero y utilizando Python realice la marcación del número de clase a la cual pertenece cada polígono en función de su área en km² y a partir de los valores de corte obtenidos previamente.
 
 *Campo `CJenks`*
+
 Expresión para marcación en campo 
 ```
 jenksVal = (2380.173697,9038.960497,20170.29529,999999)
