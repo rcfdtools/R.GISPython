@@ -83,6 +83,21 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![ArcGISDesktopQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopQuantile.png)
 ![ArcGISDesktopStandardDeviation.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopStandardDeviation.png)
 
+5. En Microsoft Excel, cree en la carpeta `/Datos` un libro en formato .xlsx y guárdelo como GISClassificationMethodValue.xlsx. Dentro del libro cree las siguientes hojas:
+
+| Hoja             | Descripción                                       |
+|------------------|---------------------------------------------------|
+| ArcMapValor      | Registro de valores de corte para cada clase.     |
+| ArcMapPercentage | Registro de porcentajes de corte para cada clase. |
+| ArcMapCount      | Registro de conteo de elementos para cada corte.  |
+
+![MicrosoftExcelArcMapValor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcMapValor.png)
+![MicrosoftExcelArcMapPercentage.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcMapPercentage.png)
+![MicrosoftExcelArcMapCount.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcMapCount.png)
+
+
+
+
 
 
 ### Referencias
