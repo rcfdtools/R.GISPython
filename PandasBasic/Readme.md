@@ -126,7 +126,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ![MicrosoftExcelArcGISProValor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcGISProValor.png)
 
-> Como puede observar, los valores de corte obtenidos con ArcGIS for Desktop y ArcGIS Pro son idénticos.
+> Como se observa, los valores de corte obtenidos con ArcGIS for Desktop y ArcGIS Pro son idénticos.
 
 
 
