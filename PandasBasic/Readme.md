@@ -36,12 +36,12 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 
 ![IGACDatosAbiertos.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACDatosAbiertos.png)
 
-2. En Datos Abiertos, seleccione la opción [Cartografía y Geografía](https://geoportal.igac.gov.co/contenido/datos-abiertos-cartografia-y-geografia) y luego seleccione la opción [Cartografía Base Escala 1:25000](https://www.colombiaenmapas.gov.co/?e=-82.43784778320864,-0.17644239911865092,-71.23179309571162,9.90326984502256,4686&b=igac&u=0&t=23&servicio=206) contenida en la sección Descarga de Información Integrada. Automáticamente será redirigido al portal colombiaenmapas.gov.co
+2. En Datos Abiertos, seleccione la opción [Cartografía y Geografía](https://geoportal.igac.gov.co/contenido/datos-abiertos-cartografia-y-geografia) y luego seleccione la opción [Cartografía Base Escala 1:25000](https://www.colombiaenmapas.gov.co/?e=-82.43784778320864,-0.17644239911865092,-71.23179309571162,9.90326984502256,4686&b=igac&u=0&t=23&servicio=206) contenida en la sección Descarga de Información Integrada. Automáticamente será redirigido al portal [colombiaenmapas.gov.co](https://www.colombiaenmapas.gov.co/).
 
 ![IGACCartografiaGeografia.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACCartografiaGeografia.png)
 ![IGACCartografiaBaseEscala1a25000.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/IGACCartografiaBaseEscala1a25000.png)
 
-
+3. 
 
 #### En ArcGIS for Desktop 10.2.2
 
