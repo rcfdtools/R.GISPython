@@ -24,7 +24,7 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 * PyCharm 2021.3+ for Anaconda.
 * Sistema operativo Microsoft Windows.
 * Capa geográfica de Municipio de Colombia.
-* Archivos CSV y libro de Microsoft Excel con el resultado de los valores de corte y conteo de elementos.
+* Archivos CSV y libro de Microsoft Excel con el resultado de los valores de corte y conteo de elementos obtenidos en la representación espacial GIS.
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
 
