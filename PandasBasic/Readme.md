@@ -69,13 +69,19 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ![ArcGISDesktopAddField.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopAddField.png)
 
-3. Utilizando el calculador de geometría, calcule el valor del área espacial de todos los polígonos de la capa. Clic derecho en la cabecera del campo `Areakm2` y `Calculate Geometry...`.
+3. Utilizando el calculador de geometría, calcule el valor del área espacial en km² de todos los polígonos de la capa. Clic derecho en la cabecera del campo `Areakm2` y `Calculate Geometry...`.
 
 > Podrá observar que la capa contiene un campo denominado `MpArea` que ya contiene el cálculo en km², sin embargo, se recomienda que sea creado el campo `Areakm2` para actualizar los valores a partir del sistema de proyección _MARNA-SIRGAS / Origen Nacional_ embebido en la capa.
 
 ![ArcGISDesktopCalculateGeometry.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopCalculateGeometry.png)
 
-4. 
+4. Desde las propiedades de la capa, realice la simbolización por Cantidades y por colores graduados en 5 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice paleta de verdes a naranjas y transparencia del 50%.
+
+![ArcGISDesktopEqualInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopEqualInterval.png)
+![ArcGISDesktopGeometricalInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopGeometricalInterval.png)
+![ArcGISDesktopNaturalBreaksJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopNaturalBreaksJenks.png)
+![ArcGISDesktopQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopQuantile.png)
+![ArcGISDesktopStandardDeviation.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopStandardDeviation.png)
 
 
 
