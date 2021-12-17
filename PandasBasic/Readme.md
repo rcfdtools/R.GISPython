@@ -6,13 +6,14 @@
 
 ### Caso de estudio
 
-Clasificar, representar y analizar la división geopolítica de los Municipios de Colombia a través de diferentes métodos de representación disponibles en ArcGIS y en función de su área espacial utilizando los datos abiertos del [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).  
+Clasificar, representar y analizar la división geopolítica de los Municipios de Colombia a través de diferentes métodos de representación estadística disponibles en ArcGIS y QGIS, en función de su área espacial y utilizando los datos abiertos del [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).  
 
 
 ### Objetivos
 
-* Utilizando ArcGIS for Desktop y ArcGIS Pro, simbolizar y representar en 5 clases, la capa geográfica de Municipios de Colombia utilizando los métodos de Cortes Naturales, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica.
-* A partir de los valores de corte obtenidos y número de entidades (municipios) obtenidas en cada clase y método, crear archivos CSV y un libro de cálculo con diferentes hojas.
+* Utilizando ArcGIS for Desktop y ArcGIS Pro, simbolizar y representar en 4 clases, la capa geográfica de Municipios de Colombia utilizando los métodos de Cortes Naturales, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica.
+* Utilizando QGIS, representar varios de los métodos que utiliza ArcGIS y los métodos adicionales Pretty Breaks y Escala logarítmica. 
+* A partir de los valores de corte obtenidos, porcentaje de corte y número de entidades (municipios) obtenidas en cada clase y método, crear archivos CSV y un libro de cálculo con diferentes hojas.
 * Leer y visualizar los archivos CSV y las hojas del libro de Microsoft Excel en Python usando pandas a través de dataframes.
 * Representar gráficamente los valores obtenidos utilizando la librería matplotlib y también a través de las funciones de graficación embebidas en pandas. 
 
@@ -189,7 +190,7 @@ Expresiones en Calculate Field
 
 #### En QGIS 3.22
 
-1. En QGIS 3.22.1, cree un proyecto nuevo en blanco, agregue la capa de Municipios y desde las propiedades de la capa, simbolice por colores graduados en 4 clases utilizando los métodos Equal Count (Quantile), . Para las representaciones, utilice la paleta Spectral, visualice la legenda con 6 decimales y establezca transparencia u opacidad al 50%.  
+1. En QGIS 3.22.1, cree un proyecto nuevo en blanco, agregue la capa de Municipios y desde las propiedades de la capa, simbolice por colores graduados en 4 clases utilizando los métodos Equal Count (Quantile), Equal Interval, Logarithmic Scale, Natural Breaks (Jenks), Pretty Breaks y  Standard Deviation. Para las representaciones, utilice la paleta Spectral, visualice la legenda con 6 decimales y establezca transparencia u opacidad al 50%.  
 
 ![QGISEqualCountCQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCQuantile.png)
 ![QGISEqualCountCEqualInt.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCEqualInt.png)
@@ -202,7 +203,12 @@ Expresiones en Calculate Field
 
 > Como se puede observar en las ilustraciones, los valores de corte obtenidos por el método de Cortes Naturales o Jenks e Intervalo de igualdad son idénticos a los obtenidos en ArcGIS. El método de Quantiles presenta diferencias solo en los valores decimales, el método de Intervalo Geométrico no se encuentra por defecto en QGIS, para los datos de área no es posible realizar la representación en 4 clases por el método de la Desviación Estándar y QGIS dispone de dos métodos adicionales denominados Pretty Breaks y Logarithmic Scale.
 
+2. En Microsoft Excel y en el libro de cálculo creado anteriormente y nombrado como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx), agregue una nueva hoja y nombre como [QGIS322Valor](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/QGIS322Valor.csv). Registre los valores de corte por clase obtenidos en QGIS y exporte a formato CSV usando el mismo nombre de la hoja.
 
+![MicrosoftExcelQGIS322Valor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelQGIS322Valor.png)
+
+
+### 
 
 
 ### Referencias
