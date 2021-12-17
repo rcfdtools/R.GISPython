@@ -208,7 +208,19 @@ Expresiones en Calculate Field
 ![MicrosoftExcelQGIS322Valor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelQGIS322Valor.png)
 
 
-### Análisis de tablas CSV y Libro de Excel en Python usando pandas 
+### Estructura de directorios
+
+Para la ejecución correcta del script, es necesario clonar, descargar o crear la estructura de directorios definida en la siguiente tabla.
+
+| Directorio                                                                               | Descripción                                                                                                                    |
+|------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| [/Datos](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Datos)           | Datos base con capa geográfica de municipios, tablas CSV y libro de Microsoft Excel.                                           |
+| [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Graph)           | Volcado de gráficas en formato [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) (Portable Network Graphic) .png. |
+| [/Mapas](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Mapas)           | Mapas de proyecto de ArcGIS for Desktop, ArcGIS Pro y QGIS.                                                                    |
+| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Screenshot) | Capturas de pantalla de ejecución y configuración.                                                                             |
+
+
+### PyCharm 2021.3 - Análisis de tablas CSV y Libro de Excel en Python usando pandas 
 
 #### Script [PandasBasic.py](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/PandasBasic.py)
 
@@ -278,16 +290,15 @@ plt.savefig('./Graph/QGIS322ValorMatplotlib.csv.png')
 plt.show()
 ```
 
-### Estructura de directorios
+#### Ejecución y gráficas de resultados
 
-Para la ejecución correcta del script, es necesario clonar, descargar o crear la estructura de directorios definida en la siguiente tabla.
-
-| Directorio                                                                               | Descripción                                                                                                                    |
-|------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| [/Datos](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Datos)           | Datos base con capa geográfica de municipios, tablas CSV y libro de Microsoft Excel.                                           |
-| [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Graph)           | Volcado de gráficas en formato [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) (Portable Network Graphic) .png. |
-| [/Mapas](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Mapas)           | Mapas de proyecto de ArcGIS for Desktop, ArcGIS Pro y QGIS.                                                                    |
-| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Screenshot) | Capturas de pantalla de ejecución y configuración.                                                                             |
+![Python3.10.0StandalonePyCharm2021.3Run.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/Python3.10.0StandalonePyCharm2021.3Run.png)
+![ArcMapValor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapValor.csvPandas.png)
+![ArcMapPercentage.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapValor.csvPandas.png)
+![ArcMapCount.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapCount.csvPandas.png)
+![ArcGISProValor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProValor.csvPandas.png)
+![QGIS322Valor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGIS322Valor.csvPandas.png)
+![QGIS322ValorMatplotlib.csv.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGIS322ValorMatplotlib.csv.png)
 
 
 ### Referencias
