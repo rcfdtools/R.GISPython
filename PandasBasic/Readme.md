@@ -25,7 +25,7 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 * Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda.
 * Sistema operativo Microsoft Windows.
-* Capa geográfica de Municipio de Colombia.
+* Capa geográfica de Municipios de Colombia.
 * Archivos CSV y libro de Microsoft Excel con el resultado de los valores de corte y conteo de elementos obtenidos en la representación espacial GIS.
 
 > Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
@@ -36,7 +36,7 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\PandasBasic\ 
 
 
-### Descarga de capa de municipios
+### Descarga de capa geográfica de municipios
 
 > Tenga en cuenta que el procedimiento de descarga puede no estar actualizado debido a las actualizaciones permanentes que se realizan en el portal del IGAC, sin embargo, podrá utilizar los archivos descargados y utilizados para ejemplificar el caso de estudio que se encuentran en este repositorio. Descarga realizada en 2021.12.16.
 
@@ -58,10 +58,10 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![DatosShapefileMunicipios.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/DatosShapefileMunicipios.png)
 
 
-### Procedimiento para la creación de tablas requeridas 
+### Procedimiento para representación y creación tablas requeridas 
 
 
-#### En ArcGIS for Desktop 10.2.2
+#### Simbología por colores graduados en ArcGIS for Desktop 10.2.2
 
 1. En ArcMap, cree un mapa en blanco y agregue la capa descargada municipios202110.
 
@@ -107,7 +107,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![ArcMapValorCSV.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapValorCSV.png)
 
 
-#### En ArcGIS Pro 2.9.0.
+#### Simbología por colores graduados en ArcGIS Pro 2.9.0.
 
 1. En ArcGIS pro, cree un proyecto nuevo en blanco y agregue la capa de Municipios.
 
@@ -188,7 +188,7 @@ Expresiones en Calculate Field
 > De acuerdo a los resultados obtenidos, se puede evidenciar que el número de elementos obtenidos en cada clase en ArcGIS Pro, es idéntico al obtenido en ArcGIS for Desktop.
 
 
-#### En QGIS 3.22
+#### Simbología por colores graduados en QGIS 3.22
 
 1. En QGIS 3.22.1, cree un proyecto nuevo en blanco, agregue la capa de Municipios y desde las propiedades de la capa, simbolice por colores graduados en 4 clases utilizando los métodos Equal Count (Quantile), Equal Interval, Logarithmic Scale, Natural Breaks (Jenks), Pretty Breaks y  Standard Deviation. Para las representaciones, utilice la paleta Spectral, visualice la legenda con 6 decimales y establezca transparencia u opacidad al 50%.  
 
@@ -199,7 +199,7 @@ Expresiones en Calculate Field
 ![QGISEqualCountCPrettyBre.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCPrettyBre.png)
 ![QGISEqualCountCLogarithm.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCLogarithm.png)
 
-> No es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
+> Así como en ArcGIS Pro, no es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
 
 > Como se puede observar en las ilustraciones, los valores de corte obtenidos por el método de Cortes Naturales o Jenks e Intervalo de igualdad son idénticos a los obtenidos en ArcGIS. El método de Quantiles presenta diferencias solo en los valores decimales, el método de Intervalo Geométrico no se encuentra por defecto en QGIS, para los datos de área no es posible realizar la representación en 4 clases por el método de la Desviación Estándar y QGIS dispone de dos métodos adicionales denominados Pretty Breaks y Logarithmic Scale.
 
@@ -210,7 +210,7 @@ Expresiones en Calculate Field
 
 ### Análisis de tablas CSV y Libro de Excel en Python usando pandas 
 
-
+#### Script [PandasBasic.py]()
 
 
 
@@ -223,3 +223,5 @@ Expresiones en Calculate Field
 * [Pandas - Plotting](https://pandas.pydata.org/pandas-docs/stable/reference/plotting.html)
 * [Pandas - Dataframe Plot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html)
 * [Wikipedia - Pandas (software)](https://es.wikipedia.org/wiki/Pandas_(software))
+* [pandas DataFrame set_index](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.set_index.html)
+* [Set X Axis Values in Matplotlib](https://www.delftstack.com/howto/matplotlib/set-x-axis-values-matplotlib/)

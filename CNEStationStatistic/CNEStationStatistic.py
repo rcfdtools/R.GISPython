@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # Name: CNEStationStatistic.py
 # Description: Catálogo nacional de estaciones hidroclimatológicas del IDEAM - Colombia, descarga y análisis.
-# Requirements: PyCharm 2021.3+, Python 3.10.0 (instalación independiente),
+# Requirements: PyCharm 2021.3+, Python 3.10.0 (instalación independiente)
 
 # Libraries
 import pandas as pd # Tested with 1.3.4 version.
