@@ -208,7 +208,7 @@ Expresiones en Calculate Field
 
 ### C. PyCharm 2021.3 - Análisis de tablas CSV y Libro de Excel en Python usando pandas y matplotlib
 
-### Estructura de directorios
+#### Estructura de directorios
 
 Para la ejecución correcta del script, es necesario clonar, descargar o crear la estructura de directorios definida en la siguiente tabla.
 
@@ -304,7 +304,7 @@ plt.show()
 ```
 
 
-### Descripción instrucciones y comandos empleados
+#### Descripción instrucciones y comandos empleados
 
 | Instrucción                                                                                            | Explicación                                                                                                       |
 |--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
