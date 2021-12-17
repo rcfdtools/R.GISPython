@@ -304,13 +304,13 @@ plt.show()
 ```
 
 
-#### Descripción instrucciones y comandos empleados
+#### Descripción de instrucciones y comandos empleados
 
 | Instrucción                                                                                            | Explicación                                                                                                       |
 |--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') | Nombre de archivos CSV y hojas en libro de Microsoft Excel.                                                       |
+| csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') | Lista con nombres de archivos CSV y/o hojas en libro de Microsoft Excel.                                          |
 | pd.set_option()                                                                                        | Configuración general de pandas para la visualización de datos en consola.                                        |
-| dataFrame = pd.read_csv(filePath,index_col=0)                                                          | Lectura de archivo .csv como dataframe con indexación a partir de la columna 0.                                   |
+| dataFrame = pd.read_csv(filePath,index_col=0)                                                          | Lectura de archivo .csv como dataframe con indexación a partir de valores leídos en la columna 0.                 |
 | dataFrame.head()                                                                                       | Indicación acerca de sí la primer línea del archivo corresponde a cabecera de columnas.                           |
 | dataFrame.plot()                                                                                       | Graficación de dataset usando pandas.                                                                             |
 | plt.savefig()                                                                                          | Almacenamiento de gráfica como archivo .png.                                                                      |
