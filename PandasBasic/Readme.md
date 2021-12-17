@@ -220,7 +220,7 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 | [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Screenshot) | Capturas de pantalla de ejecución y configuración.                                                                             |
 
 
-### PyCharm 2021.3 - Análisis de tablas CSV y Libro de Excel en Python usando pandas 
+### PyCharm 2021.3 - Análisis de tablas CSV y Libro de Excel en Python usando pandas y matplotlib
 
 #### Script [PandasBasic.py](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/PandasBasic.py)
 
@@ -293,12 +293,12 @@ plt.show()
 #### Ejecución y gráficas de resultados
 
 ![Python3.10.0StandalonePyCharm2021.3Run.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/Python3.10.0StandalonePyCharm2021.3Run.png)
-![ArcMapValor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapValor.csvPandas.png)
-![ArcMapPercentage.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapValor.csvPandas.png)
-![ArcMapCount.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcMapCount.csvPandas.png)
-![ArcGISProValor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProValor.csvPandas.png)
-![QGIS322Valor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGIS322Valor.csvPandas.png)
-![QGIS322ValorMatplotlib.csv.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGIS322ValorMatplotlib.csv.png)
+![ArcMapValor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/ArcMapValor.csvPandas.png)
+![ArcMapPercentage.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/ArcMapValor.csvPandas.png)
+![ArcMapCount.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/ArcMapCount.csvPandas.png)
+![ArcGISProValor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/ArcGISProValor.csvPandas.png)
+![QGIS322Valor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/QGIS322Valor.csvPandas.png)
+![QGIS322ValorMatplotlib.csv.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/QGIS322ValorMatplotlib.csv.png)
 
 
 ### Referencias
