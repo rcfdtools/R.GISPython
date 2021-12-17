@@ -208,7 +208,10 @@ Expresiones en Calculate Field
 ![MicrosoftExcelQGIS322Valor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelQGIS322Valor.png)
 
 
-### 
+### Análisis de tablas CSV y Libro de Excel en Python usando pandas 
+
+
+
 
 
 ### Referencias
