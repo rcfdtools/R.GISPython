@@ -148,7 +148,7 @@ Code Block para marcación en campos
 ```
 jenksVal = (2380.173697,9038.960497,20170.29529,9999999)
 equalIntVal = (16308.67596, 32601.61906, 48894.56217, 9999999)
-quantileVal = (132.666736, 287.448131, 699.363055, 9999999)
+quantileVal = (132.66673572, 287.44813064, 699.36305533, 9999999)
 geoIntVal = (191.655691, 1390.204041, 9555.818893, 9999999)
 stdDevVal = (2612.35632, 5810.910895, 9009.46547, 9999999)
 def JenksEval(value, classMethod, iAux=1):
@@ -178,6 +178,10 @@ Expresiones en Calculate Field
 ![ArcGISProSummaryStatisticsCNBJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCNBJenks.png)
 ![ArcGISProSummaryStatisticsCNBJenksTable.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCNBJenksTable.png)
 ![ArcGISProSummaryStatisticsCNBJenksGraph.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCNBJenksGraph.png)
+![ArcGISProSummaryStatisticsCEqualIntGraph.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCEqualIntGraph.png)
+![ArcGISProSummaryStatisticsCQuantileGraph.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCQuantileGraph.png)
+![ArcGISProSummaryStatisticsCGeomIntGraph.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCGeomIntGraph.png)
+![ArcGISProSummaryStatisticsCStdDevGraph.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCStdDevGraph.png)
 
 > De acuerdo a los resultados obtenidos, se puede evidenciar que el número de elementos obtenidos en cada clase en ArcGIS Pro, es idéntico al obtenido en ArcGIS for Desktop.
 
