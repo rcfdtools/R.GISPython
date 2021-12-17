@@ -97,7 +97,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 > Para la creación del libro podrá utilizar formato .xlsx o .xls. 
 
-6. Convierta cada hoja del libro a formato CSV, nombre cada archivo con el mismo nombre de las hojas. Verifique los archivos convertidos usando el editor de texto.
+6. Convierta cada hoja del libro a formato CSV y guarde en la carpeta `/Datos`, nombre cada archivo con el mismo nombre de las hojas. Verifique los archivos convertidos usando el editor de texto.
 
 > Se recomienda que el separador de listas en la configuración regional del sistema operativo Microsoft Windows, sea establecido utilizando comas, punto para decimales y coma para miles.
 
@@ -114,7 +114,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 > No es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
 
-2. En el menú _Apperence_, seleccione la opción _Symbology_ y la opción de representación _Graduated Colors_, realice la simbolización por Cantidades y por colores graduados en 4 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice la paleta Viridis y establezca transparencia al 50%.  
+2. En el menú _Apperence_, seleccione la opción _Symbology_ y la opción de representación _Graduated Colors_, realice la simbolización por Cantidades y por Colores Graduados en 4 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice la paleta _Viridis_ y establezca transparencia al 50%.  
 
 ![ArcGISProEqualInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProEqualInterval.png)
 ![ArcGISProGeometricalInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProGeometricalInterval.png)
@@ -122,7 +122,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![ArcGISProQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProQuantile.png)
 ![ArcGISProStandardDeviation.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProStandardDeviation.png)
 
-3. En Microsoft Excel y en el libro de cálculo creado anteriormente y nombrado como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx), agregue una nueva hoja y nombre como [ArcGISProValor](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/ArcGISProValor.csv). Registre los valores de corte por clase obtenidos con ArcGIS Pro y exporte a formato CSV usando el mismo nombre de la hoja.
+3. En Microsoft Excel y en el libro de cálculo creado anteriormente y nombrado como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx), agregue una nueva hoja y nombre como [ArcGISProValor](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/ArcGISProValor.csv). Registre los valores de corte por clase obtenidos con ArcGIS Pro y exporte en `/Datos` a formato CSV usando el mismo nombre de la hoja.
 
 ![MicrosoftExcelArcGISProValor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelArcGISProValor.png)
 
@@ -158,7 +158,7 @@ def JenksEval(value, classMethod, iAux=1):
         iAux+=1
 ```
 
-> Observe que en la definición de los valores de corte en el bloque de código Python, se ha incluido el valor 9999999 para el último valor de corte, esto permitirá que se obtengan marcaciones correctas en la clase 4 y si valores nulos o clases no definidas. 
+> Observe que en la definición de los valores de corte en el bloque de código Python, se ha incluido el valor 9999999 para el último valor de corte, esto permitirá que se obtengan marcaciones correctas en la clase 4 y sin valores nulos o clases no definidas. 
 
 Expresiones en Calculate Field
 * CNBJenks = `JenksEval(!Areakm2!, jenksVal, iAux=1)`
@@ -173,7 +173,7 @@ Expresiones en Calculate Field
 ![ArcGISProCalculateFieldCGeomInt.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCGeomInt.png)
 ![ArcGISProCalculateFieldCStdDev.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCStdDev.png)
 
-6. Utilizando la herramienta `Summarize` o la herramienta `Statistics` disponible en la cabecera de cada campo, cree un resumen estadístico por conteo para cada uno de los campos de atributos en los que se realizó la marcación de la clase a la cual pertenece cada entidad y verifique sí el número de elementos obtenidos en cada clase, corresponde al número de elementos obtenidos en ArcGIS for Desktop.
+6. Utilizando la herramienta `Summarize` o la herramienta `Statistics` disponible en la cabecera de cada campo, visualice o cree un resumen estadístico por conteo para cada uno de los campos de atributos en los que se realizó la marcación de la clase a la cual pertenece cada entidad y verifique sí el número de elementos obtenidos en cada clase, corresponde al número de elementos obtenidos en ArcGIS for Desktop.
 
 ![ArcGISProSummaryStatisticsCNBJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCNBJenks.png)
 ![ArcGISProSummaryStatisticsCNBJenksTable.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCNBJenksTable.png)
@@ -188,7 +188,7 @@ Expresiones en Calculate Field
 
 #### Simbología por colores graduados en QGIS 3.22
 
-1. En QGIS 3.22.1, cree un proyecto nuevo en blanco, agregue la capa de Municipios y desde las propiedades de la capa, simbolice por colores graduados en 4 clases utilizando los métodos Equal Count (Quantile), Equal Interval, Logarithmic Scale, Natural Breaks (Jenks), Pretty Breaks y  Standard Deviation. Para las representaciones, utilice la paleta Spectral, visualice la legenda con 6 decimales y establezca transparencia u opacidad al 50%.  
+1. En QGIS 3.22.1, cree un proyecto nuevo en blanco, agregue la capa de Municipios y desde las propiedades de la capa, simbolice por colores graduados en 4 clases utilizando los métodos Equal Count (Quantile), Equal Interval, Logarithmic Scale, Natural Breaks (Jenks), Pretty Breaks y  Standard Deviation. Para las representaciones, utilice la paleta _Spectral_, visualice la legenda con 6 decimales y establezca transparencia u opacidad al 50%.  
 
 ![QGISEqualCountCQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCQuantile.png)
 ![QGISEqualCountCEqualInt.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCEqualInt.png)
@@ -199,12 +199,14 @@ Expresiones en Calculate Field
 
 > Así como en ArcGIS Pro, no es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
 
-> Como se puede observar en las ilustraciones, los valores de corte obtenidos por el método de Cortes Naturales o Jenks e Intervalo de igualdad son idénticos a los obtenidos en ArcGIS. El método de Quantiles presenta diferencias solo en los valores decimales, el método de Intervalo Geométrico no se encuentra por defecto en QGIS, para los datos de área no es posible realizar la representación en 4 clases por el método de la Desviación Estándar y QGIS dispone de dos métodos adicionales denominados Pretty Breaks y Logarithmic Scale.
+> Como se puede observar en las ilustraciones, los valores de corte obtenidos por el método de Cortes Naturales o Jenks e Intervalo de Igualdad son idénticos a los obtenidos en ArcGIS. El método de Quantiles presenta diferencias solo en los valores decimales y el método de Intervalo Geométrico no se encuentra por defecto en QGIS. Para los datos de área, no es posible realizar la representación en 4 clases por el método de la Desviación Estándar y por otra parte, QGIS dispone de dos métodos adicionales denominados Pretty Breaks y Logarithmic Scale.
 
 2. En Microsoft Excel y en el libro de cálculo creado anteriormente y nombrado como [GISClassificationMethodValue.xlsx](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/GISClassificationMethodValue.xlsx), agregue una nueva hoja y nombre como [QGIS322Valor](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/QGIS322Valor.csv). Registre los valores de corte por clase obtenidos en QGIS y exporte a formato CSV usando el mismo nombre de la hoja.
 
 ![MicrosoftExcelQGIS322Valor.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/MicrosoftExcelQGIS322Valor.png)
 
+
+### C. PyCharm 2021.3 - Análisis de tablas CSV y Libro de Excel en Python usando pandas y matplotlib
 
 ### Estructura de directorios
 
@@ -218,8 +220,6 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 | [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic/Screenshot) | Capturas de pantalla de ejecución y configuración.                                                                             |
 
 
-### PyCharm 2021.3 - Análisis de tablas CSV y Libro de Excel en Python usando pandas y matplotlib
-
 #### Script [PandasBasic.py](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/PandasBasic.py)
 
 ```
@@ -232,9 +232,11 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 import sys
 import pandas as pd # Tested with 1.3.4 version
 import matplotlib.pyplot as plt # Tested with 3.5.0 version
+import openpyxl # Tested with 3.0.9 version, required from pandas for read xlsx files
 
 # Variables
-csvFiles = ('ArcMapValor.csv','ArcMapCount.csv','ArcMapPercentage.csv','ArcGISProValor.csv','QGIS322Valor.csv')
+csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') # Nombre de archivos CSV y hojas en libro de Microsoft Excel.
+excelFilePath = './Datos/GISClassificationMethodValue.xlsx'
 
 # Configuración general de pandas y matplotlib
 pd.set_option('display.max_rows', None)
@@ -252,22 +254,35 @@ def Separador(n=24): # Usando un valor por defecto de 24 guiones
 Separador(76)
 print ('Introducción a pandas - Representación estadística de Municipios de Colombia')
 Separador(76)
-print ('Python versión: ' + str(sys.version))
-print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic')
-print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
-print ('Créditos: r.cfdtools@gmail.com')
+print ( 'Python versión: ' + str(sys.version) + '\n'
+        'Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic\n'
+        'Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License\n'
+        'Créditos: r.cfdtools@gmail.com\n')
 
 # Visualización y graficación de archivos CSV
-for i in csvFiles:
-    filePath = r'./Datos/'+i # r para prevenir saltos de línea \n
-    csvFileLoad = filePath
-    dataFrame = pd.read_csv(csvFileLoad,index_col=0)
+Separador(43)
+print ('Visualización y graficación de archivos CSV')
+Separador(43)
+for i in csvFilesExcelSheets:
+    filePath = r'./Datos/'+i+'.csv' # r para prevenir saltos de línea \n
+    dataFrame = pd.read_csv(filePath,index_col=0)
     dataFrame.head() # Primera línea corresponde a cabecera de columnas
     print('\nArchivo: '+filePath)
     print(dataFrame)
     dataFrame.plot(kind='line', xlabel='Clase', ylabel='Valor', title='Graficación de '+i+' con pandas', figsize=(8, 8), alpha=0.85, rot=0, grid=True)  # alpha for transparency
     plt.savefig('./Graph/' + i + 'Pandas.png')
     plt.show()
+print('\n')
+
+# Visualización de libros de Microsoft Excel
+Separador(42)
+print ('Visualización de libros de Microsoft Excel')
+Separador(42)
+print('\nLibro de Excel: '+excelFilePath)
+for i in csvFilesExcelSheets:
+    print('Hoja: '+i)
+    dataFrame = pd.read_excel(excelFilePath, index_col=0, sheet_name=i)
+    print(dataFrame)
 
 # Graficación manual de QGIS322Valor.csv con matplotlib
 csvFileLoad = r'./Datos/QGIS322Valor.csv'
