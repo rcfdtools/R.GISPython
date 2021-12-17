@@ -7,9 +7,11 @@
 import sys
 import pandas as pd # Tested with 1.3.4 version
 import matplotlib.pyplot as plt # Tested with 3.5.0 version
+import openpyxl # Tested with 3.0.9 version, required from pandas for read xlsx files
 
 # Variables
-csvFiles = ('ArcMapValor.csv','ArcMapCount.csv','ArcMapPercentage.csv','ArcGISProValor.csv','QGIS322Valor.csv')
+csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') # Nombre de archivos CSV y hojas en libro de Microsoft Excel.
+excelFilePath = './Datos/GISClassificationMethodValue.xlsx'
 
 # Configuración general de pandas y matplotlib
 pd.set_option('display.max_rows', None)
@@ -30,19 +32,32 @@ Separador(76)
 print ('Python versión: ' + str(sys.version))
 print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic')
 print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
-print ('Créditos: r.cfdtools@gmail.com')
+print ('Créditos: r.cfdtools@gmail.com\n')
 
 # Visualización y graficación de archivos CSV
-for i in csvFiles:
-    filePath = r'./Datos/'+i # r para prevenir saltos de línea \n
-    csvFileLoad = filePath
-    dataFrame = pd.read_csv(csvFileLoad,index_col=0)
+Separador(43)
+print ('Visualización y graficación de archivos CSV')
+Separador(43)
+for i in csvFilesExcelSheets:
+    filePath = r'./Datos/'+i+'.csv' # r para prevenir saltos de línea \n
+    dataFrame = pd.read_csv(filePath,index_col=0)
     dataFrame.head() # Primera línea corresponde a cabecera de columnas
     print('\nArchivo: '+filePath)
     print(dataFrame)
     dataFrame.plot(kind='line', xlabel='Clase', ylabel='Valor', title='Graficación de '+i+' con pandas', figsize=(8, 8), alpha=0.85, rot=0, grid=True)  # alpha for transparency
     plt.savefig('./Graph/' + i + 'Pandas.png')
     plt.show()
+print('\n')
+
+# Visualización de libros de Microsoft Excel
+Separador(42)
+print ('Visualización de libros de Microsoft Excel')
+Separador(42)
+print('\nLibro de Excel: '+excelFilePath)
+for i in csvFilesExcelSheets:
+    print('Hoja: '+i)
+    dataFrame = pd.read_excel(excelFilePath, index_col=0, sheet_name=i)
+    print(dataFrame)
 
 # Graficación manual de QGIS322Valor.csv con matplotlib
 csvFileLoad = r'./Datos/QGIS322Valor.csv'

@@ -290,9 +290,18 @@ plt.savefig('./Graph/QGIS322ValorMatplotlib.csv.png')
 plt.show()
 ```
 
+
+### Descripción instrucciones y comandos empleados
+
+| Instrucción                                                                                                      | Explicación                                                                                      |
+|------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| csvFiles = ('ArcMapValor.csv','ArcMapCount.csv','ArcMapPercentage.csv','ArcGISProValor.csv','QGIS322Valor.csv')  | Lista con nombres de archivos CSV.                                                               |
+| """<br/>"""                                                                                                      | 3 comillas simples o dobles permiten definir el inicio y fin de comentarios en múltiples líneas. |
+
 #### Ejecución y gráficas de resultados
 
-![Python3.10.0StandalonePyCharm2021.3Run.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/Python3.10.0StandalonePyCharm2021.3Run.png)
+![Python3.10.0StandalonePyCharm2021.3CSV.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/Python3.10.0StandalonePyCharm2021.3CSV.png)
+![Python3.10.0StandalonePyCharm2021.3XLSX.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/Python3.10.0StandalonePyCharm2021.3XLSX.png)
 ![ArcMapValor.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/ArcMapValor.csvPandas.png)
 ![ArcMapPercentage.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/ArcMapValor.csvPandas.png)
 ![ArcMapCount.csvPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/ArcMapCount.csvPandas.png)
