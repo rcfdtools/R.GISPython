@@ -114,7 +114,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 > No es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
 
-2. En el menú _Apperence_, seleccione la opción _Symbology_ y la opción de representación _Graduated Colors_, realice la simbolización por Cantidades y por colores graduados en 5 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice paleta Viridis y establezca transparencia al 50%.  
+2. En el menú _Apperence_, seleccione la opción _Symbology_ y la opción de representación _Graduated Colors_, realice la simbolización por Cantidades y por colores graduados en 5 clases a partir del campo `Areakm2` para los métodos de clasificación Cortes Naturales - Jenks, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica. Para las representaciones, utilice la paleta Viridis y establezca transparencia al 50%.  
 
 ![ArcGISProEqualInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProEqualInterval.png)
 ![ArcGISProGeometricalInterval.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProGeometricalInterval.png)
@@ -186,9 +186,20 @@ Expresiones en Calculate Field
 > De acuerdo a los resultados obtenidos, se puede evidenciar que el número de elementos obtenidos en cada clase en ArcGIS Pro, es idéntico al obtenido en ArcGIS for Desktop.
 
 
+#### En QGIS 3.22
 
+1. En QGIS 3.22.1, cree un proyecto nuevo en blanco, agregue la capa de Municipios y desde las propiedades de la capa, simbolice por colores graduados en 4 clases utilizando los métodos Equal Count (Quantile), . Para las representaciones, utilice la paleta Spectral, visualice la legenda con 6 decimales y establezca transparencia u opacidad al 50%.  
 
-### QGIS
+![QGISEqualCountCQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCQuantile.png)
+![QGISEqualCountCEqualInt.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCEqualInt.png)
+![QGISEqualCountCNBJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCNBJenks.png)
+![QGISEqualCountCStdDev.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCStdDev.png)
+![QGISEqualCountCPrettyBre.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/QGISEqualCountCPrettyBre.png)
+
+> No es necesaria la creación del campo `Areakm2` debido a que previamente en ArcGIS for Desktop, se realizó la creación y cálculo del área de cada entidad.
+
+> Como se puede observar en las ilustraciones, los valores de corte obtenidos por el método de Cortes Naturales o Jenks e Intervalo de igualdad son idénticos a los obtenidos en ArcGIS. El método de Quantiles presenta diferencias solo en los valores decimales, el método de Intervalo Geométrico no se encuentra por defecto en QGIS, para los datos de área no es posible realizar la representación en 4 clases por el método de la Desviación Estándar y QGIS dispone de un método adicional denominado Pretty Breaks.
+
 
 
 
