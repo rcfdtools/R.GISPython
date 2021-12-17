@@ -173,8 +173,12 @@ Expresiones en Calculate Field
 ![ArcGISProCalculateFieldCGeomInt.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCGeomInt.png)
 ![ArcGISProCalculateFieldCStdDev.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCStdDev.png)
 
-6. Utilizando la herramienta `Summarize`, cree un resumen estadístico para cada uno de los campos de atributos en los que se realizó la marcación de la clase a la cual pertenece cada entidad.
+6. Utilizando la herramienta `Summarize`, cree un resumen estadístico por conteo para cada uno de los campos de atributos en los que se realizó la marcación de la clase a la cual pertenece cada entidad y verifique que el número de elementos en cada clase, corresponde al número de elementos obtenidos en ArcGIS for Desktop.
 
+![ArcGISProSummaryStatisticsCNBJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCNBJenks.png)
+![ArcGISProSummaryStatisticsCNBJenksTable.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProSummaryStatisticsCNBJenksTable.png)
+
+> De acuerdo a los resultados obtenidos, se puede evidenciar que el número de elementos obtenidos en cada clase en ArcGIS Pro, es idéntico al obtenido en ArcGIS for Desktop.
 
 
 
