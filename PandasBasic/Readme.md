@@ -29,6 +29,16 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 * Archivos CSV y libro de Microsoft Excel con el resultado de los valores de corte y conteo de elementos obtenidos en la representación espacial GIS.
 
 
+### Instalación de pandas
+
+Para la instalación en Python 3.10 de la librería oficial de `pandas`, desde el `CMD` de Microsoft Windows ejecutar las siguientes instrucciones del administrador de paquetes `pip` o desde las opciones de configuración de PyCharm, realice la instalación desde el intérprete de comandos asociado al proyecto.
+
+Actualizar la versión existente de pip `py -3.10 -m pip install -U pip`
+Instalación de pandas `py -3.10 -m pip install -U pandas`
+
+![CMDInstallPandas.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/CMDInstallPandas.png)
+
+
 ### Ruta de ejecución
  
 Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\PandasBasic\ 
