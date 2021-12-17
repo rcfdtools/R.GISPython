@@ -7,12 +7,11 @@
 import sys
 import pandas as pd # Tested with 1.3.4 version
 import matplotlib.pyplot as plt # Tested with 3.5.0 version
-from matplotlib.pyplot import figure
 
 # Variables
 csvFiles = ('ArcMapValor.csv','ArcMapCount.csv','ArcMapPercentage.csv','ArcGISProValor.csv','QGIS322Valor.csv')
 
-# General pandas and matplotlib settings
+# Configuración general de pandas y matplotlib
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
@@ -45,7 +44,7 @@ for i in csvFiles:
     plt.savefig('./Graph/' + i + 'Pandas.png')
     plt.show()
 
-# Graficación manual de QGIS322Valor.csv
+# Graficación manual de QGIS322Valor.csv con matplotlib
 csvFileLoad = r'./Datos/QGIS322Valor.csv'
 dataFrame = pd.read_csv(csvFileLoad)
 plt.figure(figsize=(8, 8), dpi=100)
