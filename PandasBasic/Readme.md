@@ -142,7 +142,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 > Debido a que los campos se crean en la tabla .dbf de la capa shapefile, el nombre del campo no podrá contener más de 10 caracteres.
 
-5. Utilizando Python y la herramienta `Calculate Fields...`, realice la marcación del número de clase a la cual pertenece cada polígono en función de su área en km² a partir de los valores de corte obtenidos previamente.
+5. Utilizando Python y la herramienta `Calculate Field`, realice la marcación del número de clase a la cual pertenece cada polígono en función de su área en km² a partir de los valores de corte obtenidos previamente.
 
 Code Block para marcación en campos
 ```
@@ -161,13 +161,26 @@ def JenksEval(value, classMethod, iAux=1):
 > Observe que en la definición de los valores de corte en el bloque de código Python, se ha incluido el valor 9999999 para el último valor de corte, esto permitirá que se obtengan marcaciones correctas en la clase 4 y si valores nulos o clases no definidas. 
 
 Expresiones en Calculate Field
-* `CNBJenks = JenksEval(!Areakm2!, jenksVal, iAux=1)`
-* `CEqualInt = JenksEval(!Areakm2!, equalIntVal, iAux=1)`
-* `CQuantile = JenksEval(!Areakm2!, quantileVal, iAux=1)`
-* `CGeomInt = JenksEval(!Areakm2!, geoIntVal, iAux=1)`
-* `CStdDev = JenksEval(!Areakm2!, stdDevVal, iAux=1)`
+* CNBJenks = `JenksEval(!Areakm2!, jenksVal, iAux=1)`
+* CEqualInt = `JenksEval(!Areakm2!, equalIntVal, iAux=1)`
+* CQuantile = `JenksEval(!Areakm2!, quantileVal, iAux=1)`
+* CGeomInt = `JenksEval(!Areakm2!, geoIntVal, iAux=1)`
+* CStdDev = `JenksEval(!Areakm2!, stdDevVal, iAux=1)`
 
 ![ArcGISProCalculateFieldCNBJenks.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCNBJenks.png)
+![ArcGISProCalculateFieldCEqualInt.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCEqualInt.png)
+![ArcGISProCalculateFieldCQuantile.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCQuantile.png)
+![ArcGISProCalculateFieldCGeomInt.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCGeomInt.png)
+![ArcGISProCalculateFieldCStdDev.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISProCalculateFieldCStdDev.png)
+
+6. Utilizando la herramienta `Summarize`, cree un resumen estadístico para cada uno de los campos de atributos en los que se realizó la marcación de la clase a la cual pertenece cada entidad.
+
+
+
+
+
+### QGIS
+
 
 
 ### Referencias
