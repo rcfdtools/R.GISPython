@@ -293,10 +293,25 @@ plt.show()
 
 ### Descripción instrucciones y comandos empleados
 
-| Instrucción                                                                                                      | Explicación                                                                                      |
-|------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| csvFiles = ('ArcMapValor.csv','ArcMapCount.csv','ArcMapPercentage.csv','ArcGISProValor.csv','QGIS322Valor.csv')  | Lista con nombres de archivos CSV.                                                               |
-| """<br/>"""                                                                                                      | 3 comillas simples o dobles permiten definir el inicio y fin de comentarios en múltiples líneas. |
+| Instrucción                                                                                            | Explicación                                                                                                       |
+|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') | Nombre de archivos CSV y hojas en libro de Microsoft Excel.                                                       |
+| pd.set_option()                                                                                        | Configuración general de pandas para la visualización de datos en consola.                                        |
+| dataFrame = pd.read_csv(filePath,index_col=0)                                                          | Lectura de archivo .csv como dataframe con indexación a partir de la columna 0.                                   |
+| dataFrame.head()                                                                                       | Indicación acerca de sí la primer línea del archivo corresponde a cabecera de columnas.                           |
+| dataFrame.plot()                                                                                       | Graficación de dataset usando pandas.                                                                             |
+| plt.savefig()                                                                                          | Almacenamiento de gráfica como archivo .png.                                                                      |
+| plt.show()                                                                                             | Mostrar gráfica en pantalla.                                                                                      |
+| dataFrame = pd.read_excel(excelFilePath, index_col=0, sheet_name=i)                                    | Lectura de libro de Microsoft Excel con indicación de primera columna como índice y definición de nombre de hoja. |
+| plt.figure(figsize=(8, 8), dpi=100)                                                                    | matplotlib. Configuración del tamaño de la gráfica y resolución.                                                  |
+| plt.title(                                                                                             | matplotlib. Definición de título de gráfica.                                                                      |
+| plt.plot(dataFrame['Clase'],dataFrame['Quantile'], 'g.-', label='Quantile')                            | matplotlib. Definición de serie de datos a graficar.                                                              |
+| plt.xlabel('Clase')                                                                                    | matplotlib. Definición de etiqueta para abscisas.                                                                 |
+| plt.ylabel('Valor')                                                                                    | matplotlib. Definición de etiqueta para ordenadas.                                                                |
+| plt.legend(loc='best', shadow=False, fontsize=11)                                                      | matplotlib. Definición de localización de legenda, sombreado y tamaño de fuente tipográfica.                      |
+| plt.grid()                                                                                             | matplotlib. Definición de grillas visibles.                                                                       |
+| plt.xticks(dataFrame['Clase'])                                                                         | matplotlib. Definición de rotulación de abscisas a partir de la columna de atributos Clase.                       |
+
 
 #### Ejecución y gráficas de resultados
 

@@ -29,10 +29,10 @@ def Separador(n=24): # Usando un valor por defecto de 24 guiones
 Separador(76)
 print ('Introducción a pandas - Representación estadística de Municipios de Colombia')
 Separador(76)
-print ('Python versión: ' + str(sys.version))
-print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic')
-print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
-print ('Créditos: r.cfdtools@gmail.com\n')
+print ( 'Python versión: ' + str(sys.version) + '\n'
+        'Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic\n'
+        'Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License\n'
+        'Créditos: r.cfdtools@gmail.com\n')
 
 # Visualización y graficación de archivos CSV
 Separador(43)
