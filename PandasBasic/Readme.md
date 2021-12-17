@@ -1,6 +1,6 @@
 ## Introducción a pandas - Representación estadística de Municipios de Colombia 
 
-[Pandas](https://pandas.pydata.org/) es una librería complementaria al lenguaje de programación Python que permite leer, representar y manipular datos almacenados en diferentes formatos, p.ej, en archivos de texto separados por comas _.csv_ [(CSV - Comma separated values)](https://en.wikipedia.org/wiki/Comma-separated_values) y archivos en formatos de libro de cálculo electrónico como [Microsoft Excel](https://es.wikipedia.org/wiki/Microsoft_Excel) en formato _.xls_ y _.xlsx_.
+[Pandas](https://pandas.pydata.org/), es una librería complementaria al lenguaje de programación Python que permite leer, representar y manipular datos almacenados en diferentes formatos, p.ej, en archivos de texto separados por comas _.csv_ [(CSV - Comma separated values)](https://en.wikipedia.org/wiki/Comma-separated_values) y archivos en formatos de libro de cálculo electrónico como [Microsoft Excel](https://es.wikipedia.org/wiki/Microsoft_Excel) en formato _.xls_ y _.xlsx_.
 
 > En la versión 1.3.4 de pandas, no existe una función o un módulo que directamente permita la conversión de bases de datos de DBase (.dbf) a dataframes para su representación y análisis. Este proceso puede ser realizado mediante la lectura de datos a través de la librería `dbf` y su posterior llamado usando la instrucción de pandas `pd.DataFrame(table)`. [Más información.](https://stackoverflow.com/questions/41898561/pandas-transform-a-dbf-table-into-a-dataframe)
 
@@ -13,9 +13,9 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 
 * Utilizando ArcGIS for Desktop y ArcGIS Pro, simbolizar y representar en 4 clases, la capa geográfica de Municipios de Colombia utilizando los métodos de Cortes Naturales, Intervalo de Igualdad, Cuantil, Intervalo Geométrico y Desviación Típica.
 * Utilizando QGIS, representar varios de los métodos que utiliza ArcGIS y los métodos adicionales Pretty Breaks y Escala logarítmica. 
-* A partir de los valores de corte obtenidos, porcentaje de corte y número de entidades (municipios) obtenidas en cada clase y método, crear archivos CSV y un libro de cálculo con diferentes hojas.
-* Leer y visualizar los archivos CSV y las hojas del libro de Microsoft Excel en Python usando pandas a través de dataframes.
-* Representar gráficamente los valores obtenidos utilizando la librería matplotlib y también a través de las funciones de graficación embebidas en pandas. 
+* A partir de los valores de corte obtenidos, porcentaje de corte y número de entidades (municipios) obtenidas en cada clase y método, crear archivos CSV y un libro de cálculo electrónico en formato .xlsx con diferentes hojas.
+* Leer y visualizar los archivos CSV y hojas del libro de Microsoft Excel en Python, usando pandas a través de dataframes.
+* Representar gráficamente los valores obtenidos utilizando la librería matplotlib y a través de las funciones de graficación embebidas en pandas. 
 
 
 ### Requerimientos
@@ -28,15 +28,13 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 * Capa geográfica de Municipios de Colombia.
 * Archivos CSV y libro de Microsoft Excel con el resultado de los valores de corte y conteo de elementos obtenidos en la representación espacial GIS.
 
-> Nota: en caso de no disponer de ArcGIS en su equipo, puede realizar las pruebas de funcionamiento realizando la instalación independiente de la versión 2.7 de Python.
-
 
 ### Ruta de ejecución
  
 Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\PandasBasic\ 
 
 
-### Descarga de capa geográfica de municipios
+### A. Descarga de capa geográfica de municipios
 
 > Tenga en cuenta que el procedimiento de descarga puede no estar actualizado debido a las actualizaciones permanentes que se realizan en el portal del IGAC, sin embargo, podrá utilizar los archivos descargados y utilizados para ejemplificar el caso de estudio que se encuentran en este repositorio. Descarga realizada en 2021.12.16.
 
@@ -58,12 +56,12 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ![DatosShapefileMunicipios.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/DatosShapefileMunicipios.png)
 
 
-### Procedimiento para representación y creación tablas requeridas 
+### B. Procedimiento para representación y creación tablas requeridas 
 
 
 #### Simbología por colores graduados en ArcGIS for Desktop 10.2.2
 
-1. En ArcMap, cree un mapa en blanco y agregue la capa descargada municipios202110.
+1. En ArcMap, cree un mapa en blanco y agregue la capa descargada [municipios202110](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Datos/Servicio-610.zip).
 
 ![ArcGISDesktopAddLayer.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/ArcGISDesktopAddLayer.png)
 
