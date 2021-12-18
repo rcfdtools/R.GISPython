@@ -247,7 +247,7 @@ import openpyxl # Tested with 3.0.9 version, required from pandas for read xlsx 
 
 # Variables
 csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') # Nombre de archivos CSV y hojas en libro de Microsoft Excel.
-absolutePath = 'D:/R.GISPython/PandasBasic'
+absolutePath = r'D:/R.GISPython/PandasBasic'
 excelFilePath = absolutePath+'/Datos/GISClassificationMethodValue.xlsx'
 
 # Configuración general de pandas y matplotlib
@@ -384,11 +384,11 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                                                         |
-|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211216 | Versión inicial con visualización de dataframes.                                                                                                                    |
-| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                             |
-| v.20211218 | Inclusión de rutas absolutas, p.ej, `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook.<>Rutas relativas previas `./Data` o `./Graph`. |
+| Versión    | Descripción                                                                                                                                                                                                             |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211216 | Versión inicial con visualización de dataframes.                                                                                                                                                                        |
+| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                                                                                 |
+| v.20211218 | Inclusión de rutas absolutas `absolutePath = r'D:/R.GISPython/PandasBasic'` y llamado `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook.<br>Rutas relativas previas `./Data` o `./Graph`. |
 
 
 ### Licencia, cláusulas y condiciones de uso

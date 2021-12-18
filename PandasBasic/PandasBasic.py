@@ -11,7 +11,7 @@ import openpyxl # Tested with 3.0.9 version, required from pandas for read xlsx 
 
 # Variables
 csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') # Nombre de archivos CSV y hojas en libro de Microsoft Excel.
-absolutePath = 'D:/R.GISPython/PandasBasic'
+absolutePath = r'D:/R.GISPython/PandasBasic'
 excelFilePath = absolutePath+'/Datos/GISClassificationMethodValue.xlsx'
 
 # Configuración general de pandas y matplotlib
