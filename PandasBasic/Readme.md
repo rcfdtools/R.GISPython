@@ -349,7 +349,7 @@ plt.show()
 ![QGIS322ValorMatplotlib.csv.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/QGIS322ValorMatplotlib.csv.png)
 
 
-> Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R.GISPython\PandasBasic\PandasBasic.py`
+Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R.GISPython\PandasBasic\PandasBasic.py`
 
 ![Python3.7.11ArcGISProNotebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/Python3.7.11ArcGISProNotebook.png)
 
