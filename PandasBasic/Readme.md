@@ -247,7 +247,8 @@ import openpyxl # Tested with 3.0.9 version, required from pandas for read xlsx 
 
 # Variables
 csvFilesExcelSheets = ('ArcMapValor','ArcMapCount','ArcMapPercentage','ArcGISProValor','QGIS322Valor') # Nombre de archivos CSV y hojas en libro de Microsoft Excel.
-excelFilePath = './Datos/GISClassificationMethodValue.xlsx'
+absolutePath = 'D:/R.GISPython/PandasBasic'
+excelFilePath = absolutePath+'/Datos/GISClassificationMethodValue.xlsx'
 
 # Configuración general de pandas y matplotlib
 pd.set_option('display.max_rows', None)
@@ -275,13 +276,14 @@ Separador(43)
 print ('Visualización y graficación de archivos CSV')
 Separador(43)
 for i in csvFilesExcelSheets:
-    filePath = r'./Datos/'+i+'.csv' # r para prevenir saltos de línea \n
+    #filePath = r'./Datos/'+i+'.csv' # r para prevenir saltos de línea \n
+    filePath = absolutePath+'/Datos/'+i+'.csv' # r para prevenir saltos de línea \n
     dataFrame = pd.read_csv(filePath,index_col=0)
     dataFrame.head() # Primera línea corresponde a cabecera de columnas
     print('\nArchivo: '+filePath)
     print(dataFrame)
     dataFrame.plot(kind='line', xlabel='Clase', ylabel='Valor', title='Graficación de '+i+' con pandas', figsize=(8, 8), alpha=0.85, rot=0, grid=True)  # alpha for transparency
-    plt.savefig('./Graph/' + i + 'Pandas.png')
+    plt.savefig(absolutePath+'/Graph/' + i + 'Pandas.png')
     plt.show()
 print('\n')
 
@@ -296,7 +298,7 @@ for i in csvFilesExcelSheets:
     print(dataFrame)
 
 # Graficación manual de QGIS322Valor.csv con matplotlib
-csvFileLoad = r'./Datos/QGIS322Valor.csv'
+csvFileLoad = absolutePath+'/Datos/QGIS322Valor.csv'
 dataFrame = pd.read_csv(csvFileLoad)
 plt.figure(figsize=(8, 8), dpi=100)
 plt.title('Graficación manual de '+i+' con matplotlib')
@@ -310,7 +312,7 @@ plt.ylabel('Valor')
 plt.legend(loc='best', shadow=False, fontsize=11)
 plt.grid()
 plt.xticks(dataFrame['Clase'])
-plt.savefig('./Graph/QGIS322ValorMatplotlib.csv.png')
+plt.savefig(absolutePath+'/Graph/QGIS322ValorMatplotlib.csv.png')
 plt.show()
 ```
 
@@ -382,11 +384,11 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                             |
-|------------|---------------------------------------------------------------------------------------------------------|
-| v.20211216 | Versión inicial con visualización de dataframes.                                                        |
-| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib. |
-| v.20211218 | Inclusión de ruta absoluta para ejecución desde Jupyter o desde ArcGIS Pro Notebook.                   |
+| Versión    | Descripción                                                                                                                                                         |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211216 | Versión inicial con visualización de dataframes.                                                                                                                    |
+| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                             |
+| v.20211218 | Inclusión de rutas absolutas, p.ej, `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook.<>Rutas relativas previas `./Data` o `./Graph`. |
 
 
 ### Licencia, cláusulas y condiciones de uso
