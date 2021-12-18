@@ -384,11 +384,11 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                                                                                                             |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211216 | Versión inicial con visualización de dataframes.                                                                                                                                                                        |
-| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                                                                                 |
-| v.20211218 | Inclusión de rutas absolutas `absolutePath = r'D:/R.GISPython/PandasBasic'` y llamado `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook.<br>Rutas relativas previas `./Data` o `./Graph`. |
+| Versión    | Descripción                                                                                                                                                                                                          |
+|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211216 | Versión inicial con visualización de dataframes.                                                                                                                                                                     |
+| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                                                                              |
+| v.20211218 | Inclusión de rutas absolutas `absolutePath = r'D:/R.GISPython/PandasBasic'` y llamado `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook. Rutas relativas previas `./Data` o `./Graph`. |
 
 
 ### Licencia, cláusulas y condiciones de uso
