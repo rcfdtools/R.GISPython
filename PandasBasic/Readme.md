@@ -349,6 +349,11 @@ plt.show()
 ![QGIS322ValorMatplotlib.csv.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/QGIS322ValorMatplotlib.csv.png)
 
 
+> Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R.GISPython\PandasBasic\PandasBasic.py`
+
+![Python3.7.11ArcGISProNotebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/Python3.7.11ArcGISProNotebook.png)
+
+
 ### Referencias
 
 * [Pandas - Oficial](https://pandas.pydata.org/)
@@ -377,10 +382,11 @@ plt.show()
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                               |
-|-------------|-----------------------------------------------------------------------------------------------------------|
-| v.20211216  | Versión inicial con visualización de dataframes.                                                          |
-| v.20211217  | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.   |
+| Versión    | Descripción                                                                                             |
+|------------|---------------------------------------------------------------------------------------------------------|
+| v.20211216 | Versión inicial con visualización de dataframes.                                                        |
+| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib. |
+| v.20211218 | Inclusión de ruta absoluta para ejecución desde Jupyter o desde ArcGIS Pro Notebook.                   |
 
 
 ### Licencia, cláusulas y condiciones de uso
