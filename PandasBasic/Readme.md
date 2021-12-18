@@ -351,7 +351,7 @@ plt.show()
 
 > Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R.GISPython\PandasBasic\PandasBasic.py`
 
-![Python3.7.11ArcGISProNotebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Graph/Python3.7.11ArcGISProNotebook.png)
+![Python3.7.11ArcGISProNotebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/Python3.7.11ArcGISProNotebook.png)
 
 
 ### Referencias
