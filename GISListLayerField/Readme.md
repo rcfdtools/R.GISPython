@@ -6,7 +6,7 @@ En actividad contiene script en Python que permite listar todas las capas geogr�
 ### Objetivos
 
 * Utilizar el núcleo y las funciones [ArcPy](https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/what-is-arcpy-.htm) de ESRI ArcGIS for Desktop y ArcGIS Pro.
-* Utilizar el núcleo y las funciones `PyQGIS` de QGIS.
+* Utilizar el núcleo y las funciones [PyQGIS](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/index.html) de QGIS.
 * Listar las capas y atributos contenidos en el directorio de datos de un proyecto geográfico.
 * Representar gráficamente los datos contenidos en la tabla de atributos de las capas geográficas.
 
