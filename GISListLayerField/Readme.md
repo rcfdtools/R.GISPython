@@ -1,14 +1,19 @@
 ## Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 
-En actividad contiene script en Python que permite listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local o en las capas cargadas en un proyecto de QGIS, consultar los atributos disponibles en cada capa y sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de dos campos específicos.
+En actividad contiene script en Python que permite listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de dos campos específicos.
 
 
 ### Objetivos
 
-* Utilizar el núcleo de Python `arcpy` de ESRI ArcGIS for Desktop y ArcGIS Pro.
-* Utilizar el núcleo de Python `pyqgis` de QGIS.
+* Utilizar el núcleo y las funciones `[ArcPy](https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/what-is-arcpy-.htm)` de ESRI ArcGIS for Desktop y ArcGIS Pro.
+* Utilizar el núcleo y las funciones `PyQGIS` de QGIS.
 * Listar las capas y atributos contenidos en el directorio de datos de un proyecto geográfico.
 * Representar gráficamente los datos contenidos en la tabla de atributos de las capas geográficas.
+
+
+### ¿Qué es ArcPy y PyQGIS?
+
+ArcPy y PyQGIS son paquete de Python para ArcGIS y QGIS que contiene gran variedad de funciones para análisis  espacial, conversión de datos, administración y automatización de tareas geográficas. En un script o en un Notebook de ArcGIS Pro o en QGIS, ingresando `arcpy.` o `qgis.` más una letra o palabra clave, el usuario obtendrá una lista desplegable con las propiedades y métodos disponibles y podrá de forma rápida seleccionar alguna de ellas para ser insertada en el código o para conocer sus parámetros. [ArcPy + información. ](https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/what-is-arcpy-.htm). [PyQGIS + información. ](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/index.html).
 
 
 ### Caso de estudio
