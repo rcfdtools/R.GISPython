@@ -1,6 +1,6 @@
 ## Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 
-En esta actividad aprenderá a crear un script en Python que permita listar todas las capas en formato shapefile disponibles en el directorio de datos local o en las capas cargadas en un proyecto de QGIS, consultar los atributos disponibles en cada capa y sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de un campo específico.
+En actividad contiene script en Python que permite listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local o en las capas cargadas en un proyecto de QGIS, consultar los atributos disponibles en cada capa y sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de dos campos específicos.
 
 
 ### Objetivos
