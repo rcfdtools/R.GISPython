@@ -13,7 +13,7 @@ En esta actividad aprenderá a crear un script en Python que permita listar toda
 
 ### Caso de estudio
 
-Estudio de la localización y valores de precipitación, evaporación y temperatura de las estaciones hidrometeorológicas del [IDEAM](http://www.ideam.gov.co/) - Colombia localizadas sobre varios Departamentos de la zona central del país.
+Estudio de localización y valores de precipitación, evaporación y temperatura de las estaciones hidrometeorológicas del [IDEAM](http://www.ideam.gov.co/) - Colombia localizadas sobre varios Departamentos de la zona central del país.
 
 
 ### Requerimientos
