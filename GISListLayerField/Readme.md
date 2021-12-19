@@ -13,7 +13,7 @@ En actividad contiene script en Python que permite listar todas las capas geogr�
 
 ### ¿Qué es ArcPy y PyQGIS?
 
-ArcPy y PyQGIS son paquete de Python para ArcGIS y QGIS que contiene gran variedad de funciones para análisis  espacial, conversión de datos, administración y automatización de tareas geográficas. En un script o en un Notebook de ArcGIS Pro o en QGIS, ingresando `arcpy.` o `qgis.` más una letra o palabra clave, el usuario obtendrá una lista desplegable con las propiedades y métodos disponibles y podrá de forma rápida seleccionar alguna de ellas para ser insertada en el código o para conocer sus parámetros. [ArcPy + información. ](https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/what-is-arcpy-.htm). [PyQGIS + información. ](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/index.html).
+ArcPy y PyQGIS son paquete de Python para ArcGIS y QGIS que contiene gran variedad de funciones para análisis  espacial, conversión de datos, administración y automatización de tareas geográficas. En un script o en un Notebook de ArcGIS Pro o en QGIS, ingresando `arcpy.` o `qgis.` más una letra o palabra clave, el usuario obtendrá una lista desplegable con las propiedades y métodos disponibles y podrá de forma rápida seleccionar alguna de ellas para ser insertada en el código o para conocer sus parámetros. [ArcPy + información. ](https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/what-is-arcpy-.htm). [PyQGIS + información. ](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/index.html)
 
 
 ### Caso de estudio
