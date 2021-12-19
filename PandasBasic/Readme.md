@@ -22,6 +22,8 @@ Clasificar, representar y analizar la división geopolítica de los Municipios d
 
 * ArcGIS for Desktop 10.2.2+.
 * ArcGIS Pro 2.9.0+.
+* QGIS 3.22.1+.
+* Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
 * Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda.
 * Sistema operativo Microsoft Windows.
