@@ -39,16 +39,70 @@ En el directorio `/Datos`, se encuentran las siguientes capas geográficas en fo
 | Evaporacion.shp   | Estaciones con estadísticos mensuales multianuales de _Evaporación Mensual Total_ a partir de registros discretos del [IDEAM](http://www.ideam.gov.co/).                                                                                                                                                                                                               |
 | Temperatura.shp   | Estaciones con estadísticos mensuales multianuales de _Temperatura del Aire Mensual Media_ a partir de registros discretos del [IDEAM](http://www.ideam.gov.co/).                                                                                                                                                                                                      |
 
+> Tenga en cuenca que los datos utilizados pueden estar desactualizados y solamente se utilizan como recurso para ejemplificar esta actividad.  
+
 
 ### Ruta de ejecución
  
-Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\GISListLayerField\
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se almacenen en D:\R.GISPython\GISListLayerField\
 
 
-### Scripts en Python
+### Scripts
 
 * Script GISListLayerFieldArcGIS.py
 * Script GISListLayerFieldArcGIS.py
 
 
+### Descripción instrucciones y comandos empleados
+
+| Instrucción | Explicación                |
+|-------------|----------------------------|
+| #           | Comentario de una línea.   |
+
+
+### Ejecución en Pycharm
+
+
+### Ejecución en ArcGIS for Desktop
+
+
+### Ejecución en ArcGIS Pro
+
+
+# Ejecución en QGIS
+
+
+### Referencias
+
+* 
+
+
+### Autores
+
+* Creado por r.cfdtools@gmail.com
+
+
+### Compatibilidad
+
+* Compatible con cualquier versión de Python.
+
+
+### Tags
+`Hydrology` `Stations` `Prepipitation` `Evaporation` `Temperature` `arcpy` `pyqgis`
+
+
+### Control de versiones
+
+| Versión    | Descripción      |
+|------------|------------------|
+| v.20211219 | Versión inicial. |
+
+
+
+### Licencia, cláusulas y condiciones de uso
+https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]() |
+|------------------------|------------|-------------------------|
 

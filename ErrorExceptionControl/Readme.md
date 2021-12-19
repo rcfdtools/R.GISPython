@@ -26,7 +26,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 
 ### Ruta de ejecución
  
-Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en D:\R.GISPython\ErrorExceptionControl\ 
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se almacenen en D:\R.GISPython\ErrorExceptionControl\ 
 
 
 ### Caso de estudio
