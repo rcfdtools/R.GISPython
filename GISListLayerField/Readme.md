@@ -1,6 +1,6 @@
-## Consulta de capas vectoriales, propiedades y atributos en proyectos geográficos
+## Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 
-En esta actividad aprenderá a crear un script en Python que permita listar todas las capas disponibles en el directorio de datos local o en las capas cargadas en un proyecto de QGIS, consultar los atributos disponibles en cada capa y sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de un campo específico.
+En esta actividad aprenderá a crear un script en Python que permita listar todas las capas en formato shapefile disponibles en el directorio de datos local o en las capas cargadas en un proyecto de QGIS, consultar los atributos disponibles en cada capa y sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de un campo específico.
 
 
 ### Objetivos
@@ -74,7 +74,11 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Referencias
 
-* 
+* https://pro.arcgis.com/es/pro-app/arcpy/functions/listfields.htm
+* https://pro.arcgis.com/es/pro-app/arcpy/classes/field.htm
+* https://pro.arcgis.com/es/pro-app/tool-reference/data-management/get-count.htm
+* https://community.esri.com/thread/36300
+* https://pro.arcgis.com/es/pro-app/arcpy/functions/searchcursor.htm
 
 
 ### Autores
@@ -88,7 +92,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 
 ### Tags
-`Hydrology` `Stations` `Prepipitation` `Evaporation` `Temperature` `arcpy` `pyqgis`
+`Hydrology` `Stations` `Prepipitation` `Evaporation` `Temperature` `arcpy` `pyqgis` 'Metadata'
 
 
 ### Control de versiones

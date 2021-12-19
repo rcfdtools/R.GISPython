@@ -31,7 +31,7 @@ print ('Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/m
 print ('Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License')
 print ('Créditos: r.cfdtools@gmail.com\n')
 
-# Variables de entrada
+# Ejecución
 Separador(18)
 print("Datos de entrada")
 Separador(18)
