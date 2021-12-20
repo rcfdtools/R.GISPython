@@ -2,6 +2,7 @@
 
 En actividad contiene script en Python que permite listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de dos campos específicos.
 
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/GISListLayerField.png)
 
 ### Objetivos
 
@@ -79,17 +80,15 @@ Ejecución usando Python 3.7.11 de ArcGIS Pro para todas las capas.
 Ejecución usando Python 3.7.11 de ArcGIS Pro para una capa específica.
 ![Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png)
 
-
-### Ejecución en ArcGIS for Desktop
-
-
 > Debido a que ArcGIS For Desktop utiliza Python 2, es necesario ingresar los nombres de los campos solicitados por consola entre comillas.
 
 
-### Ejecución en ArcGIS Pro
+### Ejecución en Notebook de ArcGIS Pro
 
+En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFieldArcGIS.py`
 
-`%run -i D:\R.GISPython\GISListLayerField\GISListLayerFieldArcGIS.py`
+![Python3.7.11ArcGISPro2.9.0Run.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0Run.png)
+![Python3.7.11ArcGISPro2.9.0Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0Layer.png)
 
 > Debido a que ArcGIS Pro utiliza Python 3, no es necesario ingresar los nombres de los campos solicitados por consola entre comillas.
 
