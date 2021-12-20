@@ -44,7 +44,7 @@ En el directorio `/Datos`, se encuentran las siguientes capas geográficas en fo
 | Evaporacion.shp   | Estaciones con estadísticos mensuales multianuales de _Evaporación Mensual Total_ a partir de registros discretos del [IDEAM](http://www.ideam.gov.co/).                                                                                                                                                                                                               |
 | Temperatura.shp   | Estaciones con estadísticos mensuales multianuales de _Temperatura del Aire Mensual Media_ a partir de registros discretos del [IDEAM](http://www.ideam.gov.co/).                                                                                                                                                                                                      |
 
-> Tenga en cuenca que los datos utilizados pueden estar desactualizados y solamente se utilizan como recurso para ejemplificar esta actividad.  
+> Tenga en cuenta que los datos utilizados pueden estar desactualizados y solamente se utilizan como recurso para ejemplificar esta actividad.  
 
 
 ### Ruta de ejecución
@@ -74,7 +74,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ### Ejecución en ArcGIS Pro
 
 
-# Ejecución en QGIS
+### Ejecución en QGIS
 
 
 ### Referencias

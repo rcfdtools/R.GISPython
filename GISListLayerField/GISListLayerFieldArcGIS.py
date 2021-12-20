@@ -3,10 +3,6 @@
 # Descripción: Consulta de capas vectoriales, propiedades y atributos en proyectos geográficos - ArcGIS for Desktop
 # Requerimiento: PyCharm 2021.3+, Python 2.7.5 (ArcGIS 10.2.2)
 
-
-#Consultar todas (opción 0) las capas disponibles en el directorio de trabajo, ver sus atributos y tipos.
-#Permite consultar las propiedades de una capa específica y definir dos campos para su graficación.
-
 # Librerías
 import sys
 import arcpy
@@ -42,6 +38,7 @@ Separador(100)
 print ('Consulta de capas vectoriales, propiedades y atributos en proyectos geográficos - ArcGIS for Desktop')
 Separador(100)
 print ( 'Python versión: ' + str(sys.version)+
+        '\nPython rutas: ' + str(sys.path[0:2])+
         '\nmatplotlib versión: ' + str(matplotlib.__version__)+
         '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/GISListLayerField'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
@@ -50,7 +47,7 @@ print ( 'Python versión: ' + str(sys.version)+
         '\nPara una capa específica muestra los atributos y permite definir dos campos para su graficación.\n')
 
 # Consultar la lista de capas disponibles
-featureList = arcpy.ListFeatureClasses() # Para el espacio de trabajo definido arcpy.env.workspace
+featureList = arcpy.ListFeatureClasses() # Lista de clases de entidad para el espacio de trabajo definido arcpy.env.workspace
 Separador(28)
 print('Listado de capas disponibles')
 Separador(28)
@@ -78,11 +75,11 @@ try:
         Separador(len(tituloLista))
         print(tituloLista)
         Separador(len(tituloLista))
-        print('  ' + campoRotulo + ', ' + campoEvaluar)
+        print('Index, ' + campoRotulo + ', ' + campoEvaluar)
         cont = 0
         # Propiedades encontradas para el campo a evaluar
         for fila in cursor:
-            if fila.getValue(campoEvaluar) >= campoFiltro:
+            if fila.getValue(campoEvaluar) >= int(campoFiltro):
                 listaCampoRotulo.append(cont)
                 listaCampoEtiqueta.append(fila.getValue(campoRotulo))
                 listaCampoEvaluar.append(fila.getValue(campoEvaluar))
