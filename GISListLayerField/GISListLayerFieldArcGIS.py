@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # Nombre: GISListLayerFieldArcGIS.py
-# Descripción: Consulta de capas vectoriales, propiedades y atributos en proyectos geográficos - ArcGIS for Desktop
+# Descripción: Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 # Requerimiento: PyCharm 2021.3+, Python 2.7.5 (ArcGIS 10.2.2)
 
 # Librerías
@@ -12,7 +12,8 @@ import matplotlib.pyplot as plt
 
 # Validación unicode Python 2
 pythonVersion = sys.version
-if pythonVersion[0] == 2:
+print('Python '+str(pythonVersion[0])+' en ejecución...')
+if int(pythonVersion[0]) == 2:
     reload(sys)
     sys.setdefaultencoding('utf8')  # Definición de unicode UTF-8
 
@@ -43,11 +44,12 @@ absolutePath = r'D:/R.GISPython/GISListLayerField' # Usar r'.' para retornar a r
 arcpy.env.workspace = absolutePath+'/Datos'
 
 # Cabecera
-Separador(100)
-print ('Consulta de capas vectoriales, propiedades y atributos en proyectos geográficos - ArcGIS for Desktop')
-Separador(100)
-print ( 'Python versión: ' + str(sys.version)+
-        '\nPython rutas: ' + str(sys.path[0:2])+
+Separador(92)
+print ('Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos')
+Separador(92)
+print ( 'Compatible con: ArcGIS for Desktop y ArcGIS Pro'
+        '\nPython versión: ' + str(sys.version)+
+        '\nPython rutas: ' + str(sys.path[0:5])+
         '\nmatplotlib versión: ' + str(matplotlib.__version__)+
         '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/GISListLayerField'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'

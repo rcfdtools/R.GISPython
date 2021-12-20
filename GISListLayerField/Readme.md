@@ -67,9 +67,17 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Ejecución en Pycharm
 
-Ejecución usando Python 2.7.5 de ArcGIS for Desktop.
-![Python2.7.5ArcGISDesktop10.2.2TablePyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python2.7.5ArcGISDesktop10.2.2TablePyCharm2021.3All.png)
+Ejecución usando Python 2.7.5 de ArcGIS for Desktop para todas las capas.
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png)
 
+Ejecución usando Python 2.7.5 de ArcGIS for Desktop para una capa específica.
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3Layer.png)
+
+Ejecución usando Python 3.7.11 de ArcGIS Pro para todas las capas.
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3All.png)
+
+Ejecución usando Python 3.7.11 de ArcGIS Pro para una capa específica.
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png)
 
 
 ### Ejecución en ArcGIS for Desktop
