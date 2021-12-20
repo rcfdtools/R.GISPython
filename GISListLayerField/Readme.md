@@ -151,7 +151,7 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 
 ### Autores
 
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (24h)
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (24h).
 
 
 ### Compatibilidad
