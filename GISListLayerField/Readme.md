@@ -172,6 +172,11 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 | v.20211220 | Versión con incorporación de gráficas tipo pastel, validación de codificación de texto según la versión de Python. |
 
 
-| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Licencia](https://github.com/rcfdtools/R.GISPython/wiki/License) | [Actividad siguiente]()    |
-|------------------------|---------------------------------------------------------|-------------------------------------------------------------------|----------------------------|
+### Licencia, cláusulas y condiciones de uso
+
+https://github.com/rcfdtools/R.GISPython/wiki/License
+
+
+| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
+|------------------------|---------------------------------------------------------|-----------------------------|
 
