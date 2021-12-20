@@ -91,7 +91,7 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
 
 
 ### Compatibilidad
@@ -114,7 +114,7 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra [licencia, cláusulas, condiciones de uso](https://github.com/rcfdtools/R.GISPython/wiki/License) y como referenciar los contenidos publicados en este repositorio.
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
 
 | [Actividad anterior](https://github.com/rcfdtools/R.GISPython/wiki) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion) |
