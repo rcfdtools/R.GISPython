@@ -74,8 +74,8 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ### Referencias
 
-* http://www.repositorio.usac.edu.gt/4482/1/Conceptos%20b%C3%A1sicos%20de%20Morfometr%C3%ADa%20de%20Cuencas%20Hidrogr%C3%A1ficas.pdf
-* https://www.aguaysig.com/tiempo-de-concentracion-de-la-cuenca/
+* [Conceptos básicos de Morfometría de Cuencas Hidrográficas, usac.edu.gt](http://www.repositorio.usac.edu.gt/4482/1/Conceptos%20b%C3%A1sicos%20de%20Morfometr%C3%ADa%20de%20Cuencas%20Hidrogr%C3%A1ficas.pdf)
+* [Tiempo de concentración de una cuenca, aguaysig.com](https://www.aguaysig.com/tiempo-de-concentracion-de-la-cuenca/)
 
 
 ### Autores
