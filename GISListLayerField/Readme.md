@@ -56,7 +56,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Scripts
 
-* Script [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
+[GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
 
 #### Descripción instrucciones y comandos empleados
 
@@ -65,7 +65,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 | import arcpy                                                     | Importación de la librería acrpy de ArcGIS.                                                                                                                                                      |
 | def CapaPropiedades(i):                                          | Función que permite consultar las propiedades generales de una capa geográfica (nombre, geometría) los atributos disponibles y sus tipos. En los parámetros, i corresponde al nombre de la capa. |
 | totalEntidades = arcpy.GetCount_management(i)                    | Total de entidades encontradas en la capa.                                                                                                                                                       |
-| descGeometria = arcpy.Describe(i)                                | Describe(i): Descripción general de la capa.                                                                                                                                                     |
+| descGeometria = arcpy.Describe(i)                                | Descripción general de la capa.                                                                                                                                                     |
 | tipoGeometria = DescGeometria.shapeType                          | shapeType permite conocer el tipo de geometría nativa de la capa (puntos, líneas o polígonos).                                                                                                   |
 | campos = arcpy.ListFields(i)                                     | Lista los campos disponibles en la capa y los almacena en la variable Campos. Las propiedades más comunes son el nombre (name) y tipo (type).                                                    |
 | absolutePath = r'D:/R.GISPython/GISListLayerField'               | Definición de ruta absoluta para compaibilidad de ejecución en ArcGIS Pro Notebook y Jupyter. Usar `r'.'` para retornar a ruta relativa.                                                         |
@@ -80,11 +80,29 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 | except IndexError as e:                                          | Excepción para error en índices o valores fuera de rango.                                                                                                                                        |
 | except RuntimeError as e:                                        | Excepción para error general de ejecución cuando no puede ser evaluada por otro tipo de excepcion.                                                                                               |
 
-* Script [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
+[GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
 
 #### Descripción instrucciones y comandos empleados
 
-
+| Instrucción                                                                          | Explicación                                                                                                                                                                                              |
+|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| from qgis.core import *                                                              | Importación del núcleo de QGIS.                                                                                                                                                                          |
+| import qgis.utils                                                                    | Importación de paquete de utilidades generales.                                                                                                                                                          |
+| from qgis.core import QgsProject                                                     | Importación de paquete para administración del proyecto en el GUI de la aplicación.                                                                                                                      |
+| featureList = [layer.name() for layer in QgsProject.instance().mapLayers().values()] | Creación de lista con las capas disponibles en el proyecto actual. No incluye las extensiones de las capas. El For aninado dentro de los corchetes es un tipo de sintaxis compacta utilizada por Python. |
+| for layer in QgsProject.instance().mapLayers().values():                             | for principal para la visualización de capas, sus atributos y tipos.                                                                                                                                     |
+| totalEntidades = layer.featureCount()                                                | Conteo de entidades dentro de la capa actual.                                                                                                                                                            |
+| if layer.wkbType() == QgsWkbTypes.Point:                                             | Evaluación de geometría de capa para tipo punto.                                                                                                                                                         |
+| elif layer.wkbType() == QgsWkbTypes.LineString:                                      | Evaluación de geometría de capa para tipo línea.                                                                                                                                                         |
+| elif layer.wkbType() == QgsWkbTypes.Polygon:                                         | Evaluación de geometría de capa para tipo polígono.                                                                                                                                                      |
+| elif layer.wkbType() == QgsWkbTypes.MultiPolygon:                                    | Evaluación de geometría de capa para tipo multi-polígono.                                                                                                                                                |
+| for field in layer.fields():                                                         | for para evaluar cada atributo en cada registro de la capa actual.                                                                                                                                       |
+| field.name()                                                                         | Nombre del campo de atributo.                                                                                                                                                                            |
+| field.typeName()                                                                     | Tipo de atributo.                                                                                                                                                                                        |
+| #layerInput = iface.addVectorLayer(gisFileInput,'','ogr')                            | Cargar una capa al mapa actual.                                                                                                                                                                          |
+| layerInput = QgsVectorLayer(gisFileInput,'','ogr')                                   | Cargar una capa solo en memoria.                                                                                                                                                                         |
+| fCount = layerInput.featureCount()                                                   | Conteo de entidades en la capa cargada en el mapa o en memoria.                                                                                                                                          |
+| plt.style.use('fast')                                                                | Estilo de ploteo de gráficas en la versión 3.1.1+ de matplotlib.                                                                                                                                         |
 
 ### Ejecución en Pycharm
 
