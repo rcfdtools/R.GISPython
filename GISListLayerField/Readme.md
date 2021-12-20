@@ -62,9 +62,25 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
 
-| Instrucción | Explicación                |
-|-------------|----------------------------|
-| #           | Comentario de una línea.   |
+| Instrucción                                                      | Explicación                                                                                                                                                                                      |
+|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| import arcpy                                                     | Importación de la librería acrpy de ArcGIS.                                                                                                                                                      |
+| def CapaPropiedades(i):                                          | Función que permite consultar las propiedades generales de una capa geográfica (nombre, geometría) los atributos disponibles y sus tipos. En los parámetros, i corresponde al nombre de la capa. |
+| totalEntidades = arcpy.GetCount_management(i)                    | Total de entidades encontradas en la capa.                                                                                                                                                       |
+| descGeometria = arcpy.Describe(i)                                | Describe(i): Descripción general de la capa.                                                                                                                                                     |
+| tipoGeometria = DescGeometria.shapeType                          | shapeType permite conocer el tipo de geometría nativa de la capa (puntos, líneas o polígonos).                                                                                                   |
+| campos = arcpy.ListFields(i)                                     | Lista los campos disponibles en la capa y los almacena en la variable Campos. Las propiedades más comunes son el nombre (name) y tipo (type).                                                    |
+| absolutePath = r'D:/R.GISPython/GISListLayerField'               | Definición de ruta absoluta para compaibilidad de ejecución en ArcGIS Pro Notebook y Jupyter. Usar `r'.'` para retornar a ruta relativa.                                                         |
+| arcpy.env.workspace = absolutePath+'/Datos'                      | Definición del espacio de trabajo.                                                                                                                                                               |
+| featureList = arcpy.ListFeatureClasses()                         | Lista las capas disponibles en el espacio de trabajo y las almacena en la variable FeatureList.                                                                                                  |
+| cursor = arcpy.SearchCursor(FeatureList[NumCapaEntrada-1])       | Mediante cursores es posible almacenar en una variable toda la información de la tabla de atributos de una capa.                                                                                 |
+| fila.getValue(campoEvaluar)                                      | Permite obtener el valor de un campo específico desde el registro activo.                                                                                                                        |
+| plt.bar(listaCampoRotulo, listaCampoEvaluar, color = 'darkGray') | Graficar mediante barras de color gris oscuro a partir de dos campos numéricos.                                                                                                                  |
+| except NameError as e:                                           | Excepción para error en nombre de variable o variable no encontrada.                                                                                                                             |
+| except ValueError as e:                                          | Excepción para error en valor definido en una variable al ejecutar una operación o cuando una función recibe el valor como un argumento.                                                         |
+| except SyntaxError as e:                                         | Excepción para error en sintaxis.                                                                                                                                                                |
+| except IndexError as e:                                          | Excepción para error en índices o valores fuera de rango.                                                                                                                                        |
+| except RuntimeError as e:                                        | Excepción para error general de ejecución cuando no puede ser evaluada por otro tipo de excepcion.                                                                                               |
 
 
 ### Ejecución en Pycharm
