@@ -2,7 +2,7 @@
 
 En actividad contiene script en Python que permite listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de dos campos específicos.
 
-![Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/GISListLayerField.png)
+![GISListLayerField.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/GISListLayerField.png)
 
 ### Objetivos
 
@@ -26,6 +26,7 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 * ArcGIS for Desktop 10.2.2+.
 * ArcGIS Pro 2.9.0+.
+* QGIS 2.18.28+
 * QGIS 3.22.1+.
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * PyCharm 2021.3+ for Anaconda.
@@ -95,6 +96,8 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 
 ### Ejecución en QGIS
 
+![Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.9.5QGIS3.22.1.png)
+
 
 ### Referencias
 
@@ -104,6 +107,9 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 * https://community.esri.com/thread/36300
 * https://pro.arcgis.com/es/pro-app/arcpy/functions/searchcursor.htm
 * [Fix Python Error – UnicodeEncodeError: ‘ascii’ codec can’t encode character’](https://gankrin.org/fix-unicodeencodeerror-ascii-codec-cant-encode-character/)
+* https://gis.stackexchange.com/questions/118862/getting-list-of-layer-names-using-pyqgis
+* https://gis.stackexchange.com/questions/312153/how-to-test-the-geometry-type-from-a-list-of-layers-and-then-join-it-with-pyqgis
+* [Tipo de geometría en QGIS](https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/geometry.html) 
 
 
 ### Autores

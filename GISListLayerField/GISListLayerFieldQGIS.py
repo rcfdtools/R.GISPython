@@ -1,95 +1,104 @@
-#-*- coding: UTF-8 -*-
-#Curso: TSIG - Sistemas de Información Geográfica Aplicados
-#Microcontenido: HPSD0007 - Python - Cargar capas Vectoriales, consultar sus propiedades y atributos en QGIS
-#Créditos: william.aguilar@escuelaing.edu.co, r.cfdtools@gmail.com
-#Cláusulas y condiciones de uso en https://pruebacorreoescuelaingeduco.sharepoint.com/sites/TSIG626
-#Ejecución: QGIS 3.10 con Python 3.7.0
-#Consultar todas las capas cargadas en el proyecto actual, ver sus atributos y tipos.
-#Permite consultar las propiedades de una capa específica y definir dos campos para su graficación.
-#https://gis.stackexchange.com/questions/118862/getting-list-of-layer-names-using-pyqgis
-#https://gis.stackexchange.com/questions/312153/how-to-test-the-geometry-type-from-a-list-of-layers-and-then-join-it-with-pyqgis
+# -*- coding: UTF-8 -*-
+# Nombre: GISListLayerFieldQGIS.py
+# Descripción: Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
+# Requerimiento: QGIS 3.22.1 con Python 3.9.5
 
-#Importación de módulos
+# Librerías
+import sys
 from qgis.core import *
 import qgis.utils
 from qgis.core import QgsProject
+import matplotlib
 import matplotlib.pyplot as plt
 
-#Función para creación de líneas de separación
+# Función para creación de líneas de separación
 def Separador(n=24): #Usando un valor por defecto de 24 guiones
     nc = '-'
     print(nc*n)
 
-#Mostrar la lista de capas disponibles
-Separador(30)
-print('Listado de capas disponibles')
-Separador(30)
-FeatureList = [layer.name() for layer in QgsProject.instance().mapLayers().values()]
-Cont = 1
-for i in FeatureList:
-    print(' ',Cont, i)
-    Cont += 1
+# Cabecera
+Separador(92)
+print('Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos')
+Separador(92)
+print( 'Compatible con: QGIS 3'
+       '\nPython versión: ' + str(sys.version)+
+       '\nPython rutas: ' + str(sys.path[0:5])+
+       '\nmatplotlib versión: ' + str(matplotlib.__version__)+
+       '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/GISListLayerField'
+       '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
+       '\nCréditos: r.cfdtools@gmail.com\n')
 
-#Mostrar la lista de atributos por cada capa disponible
-#layer = iface.activeLayer()
+# Mostrar la lista de capas disponibles
+Separador(46)
+print('Listado de capas disponibles en el mapa actual')
+Separador(46)
+featureList = [layer.name() for layer in QgsProject.instance().mapLayers().values()]
+cont = 1
+for i in featureList:
+    print(' ',cont, i)
+    cont += 1
+
+# Mostrar la lista de atributos por cada capa disponible
+# layer = iface.activeLayer()
 for layer in QgsProject.instance().mapLayers().values():
-    TotalEntidades = layer.featureCount()
+    totalEntidades = layer.featureCount()
     #Tipo de geometría
-    #https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/geometry.html
-    GeomTipo = ''
+    geomTipo = ''
     if layer.wkbType() == QgsWkbTypes.Point:
-        GeomTipo = 'G' + str(layer.wkbType()) + ' Puntos'
+        geomTipo = 'G' + str(layer.wkbType()) + ' Puntos'
     elif layer.wkbType() == QgsWkbTypes.LineString:
-        GeomTipo = 'G' + str(layer.wkbType()) + ' Lineas'
+        geomTipo = 'G' + str(layer.wkbType()) + ' Lineas'
     elif layer.wkbType() == QgsWkbTypes.Polygon:
-        GeomTipo = 'G' + str(layer.wkbType()) + ' Poligonos'
+        geomTipo = 'G' + str(layer.wkbType()) + ' Polígonos'
     elif layer.wkbType() == QgsWkbTypes.MultiPolygon:
-        GeomTipo = 'G' + str(layer.wkbType()) + ' Multi-poligonos'
+        geomTipo = 'G' + str(layer.wkbType()) + ' Multi-polígonos'
     else:
-        GeomTipo = str(layer.wkbType())
-    Separador(48)
-    print("Campos en", layer.name(), '(' + GeomTipo + ' ' + str(TotalEntidades) + ')')
-    Separador(48)
-    Cont = 1
+        geomTipo = str(layer.wkbType())
+    layerTitle = 'Campos en '+ layer.name() + ' (' + geomTipo + ' ' + str(totalEntidades) + ')'
+    Separador(len(layerTitle))
+    print(layerTitle)
+    Separador(len(layerTitle))
+    cont = 1
     for field in layer.fields():
-        print('  ' + str(Cont) + ', '+ field.name() + ', ' + field.typeName())
-        Cont += 1
+        print('  ' + str(cont) + ', '+ field.name() + ', ' + field.typeName())
+        cont += 1
 
-#Mostrar valores encontrados
-MainPathIn = r'C:/TSIG/Taller1/Datos/' #Ruta de datos de entrada
-GISFileInput = MainPathIn+"Precipitacion.shp"
-CampoRotulo = 'ESTACIONID'
-CampoEvaluar = 'TotalAnno'
-CampoFiltro = 4500
-#LayerInput = iface.addVectorLayer(GISFileInput,'','ogr') #Cargar en mapa QGIS
-LayerInput = QgsVectorLayer(GISFileInput,'','ogr') #Sin cargar en mapa QGIS
-FCount = LayerInput.featureCount()
-print('\nCapa a evaluar:', GISFileInput)
-print('Campo para rotulación:', CampoRotulo)
-print('Campo a evaluar:', CampoEvaluar)
-print('Mostrar valores >= a:', CampoFiltro,'\n')
-ListaCampoRotulo, ListaCampoEvaluar = [], []
+# Mostrar valores encontrados
+absolutePath = r'D:/R.GISPython/GISListLayerField/Datos/' # Ruta absoluta de datos de entrada. Usar r'./Datos' para rutas relativas.
+gisFileInput = absolutePath+'Precipitacion.shp'
+campoRotulo = 'ESTACIONID'
+campoEvaluar = 'TotalAnno'
+campoFiltro = 2000
+#layerInput = iface.addVectorLayer(gisFileInput,'','ogr') #Cargar en mapa QGIS
+layerInput = QgsVectorLayer(gisFileInput,'','ogr') # Sin cargar en mapa QGIS
+fCount = layerInput.featureCount()
+print('\nCapa a evaluar:', gisFileInput)
+print('Campo para rotulación:', campoRotulo)
+print('Campo a evaluar:', campoEvaluar)
+print('Mostrar valores >= a:', campoFiltro,'\n')
+listacampoRotulo, listacampoEvaluar = [], []
 Separador(38)
-print('Lista de valores encontrados >=',CampoFiltro)
+print('Lista de valores encontrados >=',campoFiltro)
 Separador(38)
-print('  ' + CampoRotulo + ', ' + CampoEvaluar)
-Cont = 0
-for i in range(0, FCount):
-    Feature = LayerInput.getFeature(i)
-    if Feature[CampoEvaluar] >= CampoFiltro:
-        #ListaCampoRotulo.append(int(Feature[CampoRotulo]))
-        ListaCampoRotulo.append(Cont)
-        ListaCampoEvaluar.append(Feature[CampoEvaluar])
-        print('  ' + str(Feature[CampoRotulo]) + ', ' + str(Feature[CampoEvaluar]))
-        Cont += 1
-print('  (' + str(Cont) + ' registros)')
-# Graficación de datos
-Separador(30)
-print('Graficación de datos')
-Separador(30)
-plt.bar(ListaCampoRotulo, ListaCampoEvaluar, color = 'darkGray')
-plt.style.use('fast') #https://matplotlib.org/3.1.1/gallery/style_sheets/style_sheets_reference.html
-plt.title('VALORES ENCONTRADOS')
-plt.xlabel(CampoRotulo)
-plt.ylabel(CampoEvaluar)
+print('  ' + campoRotulo + ', ' + campoEvaluar)
+cont = 0
+for i in range(0, fCount):
+    feature = layerInput.getFeature(i)
+    if feature[campoEvaluar] >= campoFiltro:
+        #listacampoRotulo.append(int(feature[campoRotulo]))
+        listacampoRotulo.append(cont)
+        listacampoEvaluar.append(feature[campoEvaluar])
+        print('  ' + str(feature[campoRotulo]) + ', ' + str(feature[campoEvaluar]))
+        cont += 1
+print('  (' + str(cont) + ' registros)')
+
+# Graficar datos
+Separador(14)
+print('Graficar datos')
+Separador(14)
+plt.bar(listacampoRotulo, listacampoEvaluar, color = 'darkGray')
+plt.style.use('fast') # https://matplotlib.org/3.1.1/gallery/style_sheets/style_sheets_reference.html
+plt.title('Valores encontrados')
+plt.xlabel(campoRotulo)
+plt.ylabel(campoEvaluar)
 plt.show()

@@ -27,7 +27,6 @@ def JenksEval(value, iAux=1):
         iAux+=1
 print('Valor en rango: '+str(JenksEval(175.4)))
 
-
 # Multiple eval classification
 jenksVal = (2380.173697,9038.960497,20170.29529,999999)
 equalIntVal = (16308.67596, 32601.61906, 48894.56217, 65187.50527)
@@ -40,3 +39,6 @@ def JenksEval(value, classMethod, iAux=1):
             return iAux
         iAux+=1
 print('Valor en rango: '+str(JenksEval(175.4,jenksVal,1)))
+
+# For with internal counter
+
