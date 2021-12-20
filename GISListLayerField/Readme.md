@@ -71,7 +71,13 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ### Ejecución en ArcGIS for Desktop
 
 
+> Debido a que ArcGIS For Desktop utiliza Python 2, es necesario ingresar los nombres de los campos solicitados por consola entre comillas.
+
+
 ### Ejecución en ArcGIS Pro
+
+
+> Debido a que ArcGIS Pro utiliza Python 3, no es necesario ingresar los nombres de los campos solicitados por consola entre comillas.
 
 
 ### Ejecución en QGIS
