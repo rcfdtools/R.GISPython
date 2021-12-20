@@ -143,7 +143,7 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 * https://pro.arcgis.com/es/pro-app/tool-reference/data-management/get-count.htm
 * https://community.esri.com/thread/36300
 * https://pro.arcgis.com/es/pro-app/arcpy/functions/searchcursor.htm
-* (https://gankrin.org/fix-unicodeencodeerror-ascii-codec-cant-encode-character/)
+* https://gankrin.org/fix-unicodeencodeerror-ascii-codec-cant-encode-character/
 * https://gis.stackexchange.com/questions/118862/getting-list-of-layer-names-using-pyqgis
 * https://gis.stackexchange.com/questions/312153/how-to-test-the-geometry-type-from-a-list-of-layers-and-then-join-it-with-pyqgis
 * https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/geometry.html 
