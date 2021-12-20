@@ -1,25 +1,26 @@
 ## Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 
-Esta actividad contiene scripts en Python que permiten listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de la definición de dos campos específicos.
+Esta actividad contiene scripts en Python que permiten listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de dos campos específicos definidos por el usuario.
 
 ![GISListLayerField.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/GISListLayerField.png)
+
 
 ### Objetivos
 
 * Utilizar el núcleo y las funciones [ArcPy](https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/what-is-arcpy-.htm) de ESRI ArcGIS for Desktop y ArcGIS Pro.
 * Utilizar el núcleo y las funciones [PyQGIS](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/index.html) de QGIS.
-* Listar las capas y atributos contenidos en el directorio de datos de un proyecto geográfico.
-* Representar gráficamente los datos contenidos en la tabla de atributos de las capas geográficas.
+* Listar las capas y atributos contenidos en el directorio de datos de un proyecto geográfico de ArcMap o en un mapa de QGIS.
+* Representar gráficamente los datos contenidos en las tablas de atributos de las capas geográficas.
 
 
 ### ¿Qué es ArcPy y PyQGIS?
 
-ArcPy y PyQGIS son paquete de Python para ArcGIS y QGIS que contiene gran variedad de funciones para análisis  espacial, conversión de datos, administración y automatización de tareas geográficas. En un script o en un Notebook de ArcGIS Pro o en QGIS, ingresando `arcpy.` o `qgis.` más una letra o palabra clave, el usuario obtendrá una lista desplegable con las propiedades y métodos disponibles y podrá de forma rápida seleccionar alguna de ellas para ser insertada en el código o para conocer sus parámetros. 
+ArcPy y PyQGIS son paquetes de Python para ArcGIS y QGIS que contiene gran variedad de funciones para análisis espacial, conversión de datos, administración y automatización de tareas geográficas. En un script o en un Notebook de ArcGIS Pro o en QGIS, ingresando `arcpy.` o `qgis.` más una letra o palabra clave, el usuario obtiene una lista desplegable con las propiedades y métodos disponibles y podrá de forma rápida seleccionar alguna de ellas para ser insertada en el código o para conocer sus parámetros. 
 
 
 ### Caso de estudio
 
-Estudio de localización y valores de precipitación, evaporación y temperatura de las estaciones hidrometeorológicas del [IDEAM](http://www.ideam.gov.co/) - Colombia localizadas sobre varios Departamentos de la zona central del país.
+Estudio de localización y valores de precipitación, evaporación y temperatura de las estaciones hidrometeorológicas del [IDEAM - Colombia](http://www.ideam.gov.co/) localizadas sobre varios Departamentos de la zona central del país.
 
 
 ### Requerimientos
