@@ -166,16 +166,12 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                               |
-|------------|-----------------------------------------------------------------------------------------------------------|
-| v.20211219 | Versión inicial.                                                                                          |
-| v.20211220 | Versión con incorporación de gráficas tipo pastel, validación de codificación según la versión de Python. |
+| Versión    | Descripción                                                                                                        |
+|------------|--------------------------------------------------------------------------------------------------------------------|
+| v.20211219 | Versión inicial.                                                                                                   |
+| v.20211220 | Versión con incorporación de gráficas tipo pastel, validación de codificación de texto según la versión de Python. |
 
 
-### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
-
-
-| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]() |
-|------------------------|------------|-------------------------|
+| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Licencia](https://github.com/rcfdtools/R.GISPython/wiki/License) | [Actividad siguiente]()    |
+|------------------------|---------------------------------------------------------|-------------------------------------------------------------------|----------------------------|
 
