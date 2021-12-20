@@ -55,7 +55,7 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (3h).
 
 
 ### Compatibilidad
@@ -75,9 +75,9 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculator) |
-|------------------------|-------------------------|
-
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/DefaultVersion) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculator) |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
