@@ -57,10 +57,8 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 ### Scripts
 
 * Script [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
-* Script [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
 
-
-### Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
+#### Descripción instrucciones y comandos empleados
 
 | Instrucción                                                      | Explicación                                                                                                                                                                                      |
 |------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -81,6 +79,11 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 | except SyntaxError as e:                                         | Excepción para error en sintaxis.                                                                                                                                                                |
 | except IndexError as e:                                          | Excepción para error en índices o valores fuera de rango.                                                                                                                                        |
 | except RuntimeError as e:                                        | Excepción para error general de ejecución cuando no puede ser evaluada por otro tipo de excepcion.                                                                                               |
+
+* Script [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
+
+#### Descripción instrucciones y comandos empleados
+
 
 
 ### Ejecución en Pycharm
