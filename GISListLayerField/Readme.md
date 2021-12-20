@@ -39,13 +39,13 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 En el directorio `/Datos`, se encuentran las siguientes capas geográficas en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm) que han sido utilizadas para el desarrollo de esta actividad.
 
-| Shapefile         | Descripción                                                                                                                                                                                                                                                                            |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Departamentos.shp | Capa de Departamentos de Colombia - Suramérica. Construida a partir de la capa [IGAC](https://www.igac.gov.co/) de Municipios de Colombia - Suramérica.                                                                                                                                |
+| Shapefile         | Descripción                                                                                                                                                                                                                                                                                      |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Departamentos.shp | Capa de Departamentos de Colombia - Suramérica. Construida a partir de la capa [IGAC](https://www.igac.gov.co/) de Municipios de Colombia - Suramérica.                                                                                                                                          |
 | Estaciones.shp    | Estaciones hidrometeorológicas del [IDEAM - Colombia](http://www.ideam.gov.co/) localizadas sobre varios Departamentos de la zona central del país. Más información en la actividad Catálogo nacional de estaciones hidrometeorológicas del IDEAM - Colombia, descarga y análisis usando Python. |
-| Precipitacion.shp | Estaciones con estadísticos mensuales multianuales de _Precipitación Mensual Total_ a partir de registros discretos del [IDEAM - Colombia](http://www.ideam.gov.co/).                                                                                                                             |
-| Evaporacion.shp   | Estaciones con estadísticos mensuales multianuales de _Evaporación Mensual Total_ a partir de registros discretos del [IDEAM - Colombia](http://www.ideam.gov.co/).                                                                                                                               |
-| Temperatura.shp   | Estaciones con estadísticos mensuales multianuales de _Temperatura del Aire Mensual Media_ a partir de registros discretos del [IDEAM - Colombia](http://www.ideam.gov.co/).                                                                                                                      |
+| Precipitacion.shp | Estaciones con estadísticos mensuales multianuales de _Precipitación Mensual Total_ a partir de registros discretos del [IDEAM - Colombia](http://www.ideam.gov.co/).                                                                                                                            |
+| Evaporacion.shp   | Estaciones con estadísticos mensuales multianuales de _Evaporación Mensual Total_ a partir de registros discretos del [IDEAM - Colombia](http://www.ideam.gov.co/).                                                                                                                              |
+| Temperatura.shp   | Estaciones con estadísticos mensuales multianuales de _Temperatura del Aire Mensual Media_ a partir de registros discretos del [IDEAM - Colombia](http://www.ideam.gov.co/).                                                                                                                     |
 
 > Tenga en cuenta que los datos utilizados pueden estar desactualizados y solamente se utilizan como recurso para ejemplificar esta actividad.  
 
@@ -55,7 +55,7 @@ En el directorio `/Datos`, se encuentran las siguientes capas geográficas en fo
 Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se almacenen en D:\R.GISPython\GISListLayerField\
 
 
-### Scripts
+### Script para Esri ArcGIS for Desktop y ArcGIS Pro
 
 [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
 
@@ -80,6 +80,9 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 | except SyntaxError as e:                                         | Excepción para error en sintaxis.                                                                                                                                                                |
 | except IndexError as e:                                          | Excepción para error en índices o valores fuera de rango.                                                                                                                                        |
 | except RuntimeError as e:                                        | Excepción para error general de ejecución cuando no puede ser evaluada por otro tipo de excepcion.                                                                                               |
+
+
+### Script para QGIS 3
 
 [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
 
