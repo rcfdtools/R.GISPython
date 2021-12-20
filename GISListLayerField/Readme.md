@@ -407,9 +407,8 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 
 ### Licencia, cláusulas y condiciones de uso
 
-https://github.com/rcfdtools/R.GISPython/wiki/License
+R.GISPython es de uso libre para fines académicos, conoce nuestra [licencia, cláusulas, condiciones de uso](https://github.com/rcfdtools/R.GISPython/wiki/License) y como referenciar los contenidos publicados en este repositorio.
 
 
 | [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
 |------------------------|---------------------------------------------------------|-----------------------------|
-
