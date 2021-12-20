@@ -110,7 +110,7 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
 
 
 ### Compatibilidad
