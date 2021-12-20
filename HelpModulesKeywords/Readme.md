@@ -2,7 +2,7 @@
 
 Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario y una completa documentación de ayuda que facilita su aprendizaje.
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelp.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelp.png)
+![HelpModulesKeywords.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/HelpModulesKeywords.png)
 
 
 ### Objetivos
@@ -24,11 +24,11 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 1. En el command o CMD de Windows, ejecutar Python `C:\Python` y digitar el comando `help()` para ingresar a los bloques de ayuda y documentación del lenguaje.
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelp.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelp.png)
+![WindowsCMDPythonHelp.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelp.png)
 
 2. Para conocer los módulos instalados y disponibles, en la entrada de ayuda _>help_, ingrese el comando `modules`
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelpModules.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpModules.png)
+![WindowsCMDPythonHelpModules.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpModules.png)
 
 > Para salir de la ayuda, presione las teclas `Ctrl-Z`, de esta forma volverá a la raíz del centro de ayuda >>>.<br>
 > Desde la raíz del command de Python, también podrá consultar los módulos ingresando el comando `help('modules')`.<br>
@@ -36,14 +36,14 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 3. Para obtener la ayuda relacionada con un comando específico, p.ej, `sys`, digite `help('sys')`.
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpSys.png)
+![WindowsCMDPythonHelpSys.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpSys.png)
 
 > Oprimiendo la tecla _Enter_, podrá avanzar en la visualización de la ayuda mostrada y con las teclas `Ctrl-Z`.
 > Para salir de la ayuda específica de una librería, presione la tecla `f`.
 
 4. Para conocer las palabras claves reservadas, en la ventana de ayuda ingrese el comando keywords `help> keywords`.
 
-![R.GISPython.BasicScript.WindowsCMDPythonHelpKeywords.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpKeywords.png)
+![WindowsCMDPythonHelpKeywords.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelpKeywords.png)
 
 > Recuerde que las palabras clave no podrán ser utilizadas para la definición de variables, funciones, objetos, matrices, diccionarios o cualquier otro elemento de usuario.
 
