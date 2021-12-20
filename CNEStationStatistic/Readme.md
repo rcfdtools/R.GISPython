@@ -9,6 +9,7 @@
 
 El [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/), es la entidad nacional encargada registrar y mantener la información hidrometeorológica del país, incluida la localización y clasificación de la red de estaciones que hace parte del [Catálogo Nacional de Estaciones - CNE](http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls). A través del servicio de [Solicitud de Información](http://www.ideam.gov.co/solicitud-de-informacion) o a través del portal [DHIME](http://dhime.ideam.gov.co/atencionciudadano/) del IDEAM desde la pestaña _Recursos_, personas naturales o jurídicas, pueden obtener no solamente los catálogos, sino también las capas geográficas y los registros discretos registrados en cada estación. El código desarrollado en Python por [r.cfdtools](r.cfdtools@gmail.com), descarga de forma directa el archivo del catálogo nacional de estaciones y realiza un análisis estadístico detallado a través de los diferentes atributos registrados.
 
+
 ### Funcionalidades incorporadas
 
 * Descarga directa del archivo del catálogo nacional de estaciones. Si en la fecha actual ya ha sido descargado el archivo, el script realizará únicamente su procesamiento.
@@ -128,7 +129,7 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 > Para los archivos generados u obtenidos a través de la ejecución del script, se conserva el registro de versiones a partir de la fecha de ejecución utilizando el formato aaaammdd.
 
 
-### Script 
+### Scripts
 
 * Script principal [CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
 * Script diccionario [CNEStationDictionary.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py)
