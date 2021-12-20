@@ -63,6 +63,15 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 ![WindowsCMDPythonCalc4.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonAsCalculator/Screenshot/WindowsCMDPythonCalc4.png)
 
 
+### Variables en memoria
+
+1. Para conocer el listado de variables alojadas en memoria, ingresar el comando `dir()`.
+
+2. Para eliminar una variable de la memoria, ingresar el comando `del nombrevariable`.
+
+![WindowsCMDPythonCalc5.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonAsCalculator/Screenshot/WindowsCMDPythonCalc5.png)
+
+
 ### Referencias
 
 * http://www.repositorio.usac.edu.gt/4482/1/Conceptos%20b%C3%A1sicos%20de%20Morfometr%C3%ADa%20de%20Cuencas%20Hidrogr%C3%A1ficas.pdf
