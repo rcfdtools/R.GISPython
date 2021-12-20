@@ -57,9 +57,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Script para Esri ArcGIS for Desktop y ArcGIS Pro
 
-[GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
-
-#### Descripción instrucciones y comandos empleados
+#### Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
 
 | Instrucción                                                      | Explicación                                                                                                                                                                                      |
 |------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -84,9 +82,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Script para QGIS 3
 
-[GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
-
-#### Descripción instrucciones y comandos empleados
+#### Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
 
 | Instrucción                                                                          | Explicación                                                                                                                                                                                              |
 |--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
