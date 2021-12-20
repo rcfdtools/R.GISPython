@@ -2,6 +2,9 @@
 
 Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario y una completa documentación de ayuda que facilita su aprendizaje.
 
+![R.GISPython.BasicScript.WindowsCMDPythonHelp.png](https://github.com/rcfdtools/R.GISPython/blob/main/HelpModulesKeywords/Screenshot/WindowsCMDPythonHelp.png)
+
+
 ### Objetivos
 
 * Identificar módulos instalados de Python.

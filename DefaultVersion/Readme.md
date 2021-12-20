@@ -27,19 +27,19 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 1. En Microsoft Windows oprimir `Windows+R` y ejecutar `sysdm.cpl` para ingresar a las propiedades avanzadas del sistema.
 
-![R.GISPython.BasicScript.WindowsOSRunSysdm.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSRunSysdm.png)
+![WindowsOSRunSysdm.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSRunSysdm.png)
 
 2. En la ventana dar clic en la pestaña _Opciones Avanzadas_ y luego en _Variables de Entorno_.
 
-![R.GISPython.BasicScript.WindowsOSSystemProperties.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSSystemProperties.png)
+![WindowsOSSystemProperties.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSSystemProperties.png)
 
 3. En _Variables del sistema_, seleccionar _Path_ y dar clic en _Editar_.
 
-![R.GISPython.BasicScript.WindowsOSEnvironmentVariables.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSEnvironmentVariables.png)
+![WindowsOSEnvironmentVariables.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSEnvironmentVariables.png)
 
 4. Para establecer la versión de Python integrada a ArcGIS (p.ej, Python 2.7.5 sobre ArcGIS 10.2.2 for Desktop), ingresar (utilizando la opción _Nuevo_) o verificar que existan las variables de entorno direccionandas a las rutas _C:\Python27\ArcGIS10.2\Scripts_ y _C:\Python27\ArcGIS10.2_.
 
-![R.GISPython.BasicScript.WindowsOSEnvironmentVariablesEdit.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSEnvironmentVariablesEdit.png)
+![WindowsOSEnvironmentVariablesEdit.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsOSEnvironmentVariablesEdit.png)
 
 > En caso de que su instalación de ArcGIS for Desktop corresponda a una versión diferente, identifique las rutas de instalación e ingrese o modifique las variables de entorno. Más información en https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion
 
@@ -47,11 +47,11 @@ Definir una versión por defecto de Python en el CMD de Microsoft Windows, le pe
 
 5. Para verificar el direccionamiento correcto, abra una nueva ventana de comandos oprimiendo la combinación de teclas `Windows+R` y _CMD_ ó busque el _Command Prompt_ en su lista de programas (no es necesaria la ejecución como Administrador).
 
-![R.GISPython.BasicScript.WindowsCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMD.png)
+![WindowsCMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMD.png)
 
 6. En el intérprete de comandos de Windows, ejecute el comando _Python_. Observará que la versión por defecto es la 2.7.5.
 
-![R.GISPython.BasicScript.WindowsCMDPythonVersion.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonVersion.png)
+![WindowsCMDPythonVersion.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/WindowsCMDPythonVersion.png)
 
 
 ## Configuración de intérprete(s) de Python en PyCharm 
@@ -62,45 +62,45 @@ En PyCharm, él(los) intérprete(s) de comandos son asociados a cada proyecto. P
 
 2. Abra PyCharm y desde el menú _File_, cree (_New Project_) o abra (_Open_) un proyecto existente, (p.ej, crear en la unidad D:\ la carpeta R.GISPython). Seleccione _Virtualenv_ para la creación del nuevo ambiente que utilizará el intérprete y el intérprete base que se utilizará por defecto (p.ej, Python 2.7 ArcGIS for Desktop 10.2.2).
 
-![R.GISPython.BasicScript.PyCharmCreateProject.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmCreateProject.png)
+![PyCharmCreateProject.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmCreateProject.png)
 
 > Los nombres de los intérpretes base pueden cambiar dependiendo de la versión de ArcGIS for Desktop instalada o de la versión independiente instalada de Python en su sistema. 
 
 3. En el menú _File_, seleccione la opción _Settings_ u oprima la combinación de teclas `Ctrl+Alt+S` para acceder a las opciones de configuración de PyCharm.
 
-![R.GISPython.BasicScript.PyCharmSettings.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmSettings.png)
+![PyCharmSettings.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmSettings.png)
 
 4. En la ventana de configuración, seleccione la pestaña _Project: R.GISPython_ y la opción Python Interpreter, de clic en el ícono de configuración y seleccione la opción _Show All_. 
 
-![R.GISPython.BasicScript.PyCharmProjectPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreter.png)
+![PyCharmProjectPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreter.png)
 
 5. En la ventana _Project Interpreters_, de clic en la opción de agregar _+_  
 
-![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAdd.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAdd.png)
+![PyCharmProjectPythonInterpreterAdd.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAdd.png)
 
 6. En la ventana de agregar, seleccione la pestaña correspondiente a _System Interpreter_ y de clic en la opción de búsqueda de ruta _..._
 
-![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddSystem.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddSystem.png)
+![PyCharmProjectPythonInterpreterAddSystem.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddSystem.png)
 
 7. Seleccione la ruta de instalación de la versión independiente de Python instalada en su sistema, p.ej, 3.10.0.
 
-![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddSystemPath.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddSystemPath.png)
+![PyCharmProjectPythonInterpreterAddSystemPath.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddSystemPath.png)
 
 > Para modificar el nombre por defecto, p.ej, de _Python 3.10_ a _Python 3.10 Standalone_, de clic en la opción Editar (ícono lápiz) y cambie el nombre.
 
 Desde este momento, podrá seleccionar el intérprete de Python que requiera su proyecto o para la ejecución de un script en particular.
 
-![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterShowAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterShowAll.png)
+![PyCharmProjectPythonInterpreterShowAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterShowAll.png)
 
 Opcionalmente podrá asociar el intérprete de Python integrado a QGIS, p.ej, Python 3.9.5 sobre QGIS 3.22.1. La ruta de asociación es _C:\Program Files\QGIS 3.22.1\apps\Python39_
 
-![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddQGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddQGIS3.22.1.png)
+![PyCharmProjectPythonInterpreterAddQGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddQGIS3.22.1.png)
 
 También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2.9. La ruta de asociación podrá ser consultada desde las opciones de configuración de ArcGIS Pro en la pestaña Python y está localizada en _C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3_
 
-![R.GISPython.BasicScript.ArcGISProPythonPackageManager.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/ArcGISProPythonPackageManager.png)
+![ArcGISProPythonPackageManager.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/ArcGISProPythonPackageManager.png)
 
-![R.GISPython.BasicScript.PyCharmProjectPythonInterpreterAddArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddArcGISPro2.9.png)
+![PyCharmProjectPythonInterpreterAddArcGISPro2.9.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/PyCharmProjectPythonInterpreterAddArcGISPro2.9.png)
 
 
 ### Referencias
