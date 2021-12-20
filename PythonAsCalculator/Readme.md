@@ -2,6 +2,8 @@
 
 Desde la consola de Python, es posible realizar operaciones matemáticas simples o complejas, definir variables, listas, tuplas, funciones, llamar módulos y en general utilizar cualquier elemento integrado al lenguaje y sin necesidad de que sea almacenado en un script .py. 
 
+![PythonAsCalculator.png](https://github.com/rcfdtools/R.GISPython/blob/main/PythonAsCalculator/Screenshot/PythonAsCalculator.png)
+
 > Tenga presente que las definiciones realizadas y resultados obtenidos desaparecerán una vez cierre la ventana del CMD o la consola de Python.
 
 
@@ -69,7 +71,7 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (4h).
 
 
 ### Compatibilidad
@@ -90,9 +92,9 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/BasicScript) |
-|------------------------|-------------------------|
-
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/BasicScript) |
+|----------------------------------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
