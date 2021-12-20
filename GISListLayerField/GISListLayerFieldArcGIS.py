@@ -4,10 +4,17 @@
 # Requerimiento: PyCharm 2021.3+, Python 2.7.5 (ArcGIS 10.2.2)
 
 # Librerías
+from __future__ import unicode_literals  # Importación de unicodes para manejo de eñes y tildes.
 import sys
 import arcpy
 import matplotlib
 import matplotlib.pyplot as plt
+
+# Validación unicode Python 2
+pythonVersion = sys.version
+if pythonVersion[0] == 2:
+    reload(sys)
+    sys.setdefaultencoding('utf8')  # Definición de unicode UTF-8
 
 # Función para creación de líneas de separación
 def Separador(n=24): # Usando un valor por defecto de 24 guiones
@@ -31,7 +38,9 @@ def CapaPropiedades(i):
         cont += 1
 
 # Variables
-arcpy.env.workspace = r'./Datos' # Definición del espacio de trabajo. Usar r para evitar salto de línea en directorios que empiezan por la letra n.
+# Definición del espacio de trabajo. Usar r para evitar salto de línea en directorios que empiezan por la letra n.
+absolutePath = r'D:/R.GISPython/GISListLayerField' # Usar r'.' para retornar a ruta relativa
+arcpy.env.workspace = absolutePath+'/Datos'
 
 # Cabecera
 Separador(100)
@@ -67,7 +76,7 @@ try:
         CapaPropiedades(featureList[numCapaEntrada-1])
         campoRotulo = input('  >>> Nombre del campo para rotulación (usar comillas): ')
         campoEvaluar = input('  >>> Nombre del campo a evaluar (usar comillas): ')
-        graficoTipo = input('  >>> Tipo de gráfica (Bar, Pie) (usar comillas): ')
+        graficoTipo = input('  >>> Tipo de gráfica (Bar, Pie) (usar comillas): ').lower()
         campoFiltro = input('  >>> Mostrar valores >= a: ')
         cursor = arcpy.SearchCursor(featureList[numCapaEntrada-1]) # Records in properties table
         listaCampoRotulo, listaCampoEvaluar, listaCampoEtiqueta = [], [], []
@@ -87,10 +96,10 @@ try:
                 cont += 1
         print('  (' + str(cont) + ' registros)')
         # Graficación de datos
-        Separador(20)
-        print('Graficación de datos')
-        Separador(20)
-        if graficoTipo == 'Bar':
+        Separador(14)
+        print('Graficar datos')
+        Separador(14)
+        if graficoTipo == 'bar':
             plt.bar(listaCampoRotulo, listaCampoEvaluar, color = 'darkGray')
         else:
             plt.pie(listaCampoEvaluar, labels=listaCampoRotulo)

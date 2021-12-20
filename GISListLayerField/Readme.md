@@ -67,6 +67,10 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Ejecución en Pycharm
 
+Ejecución usando Python 2.7.5 de ArcGIS for Desktop.
+![Python2.7.5ArcGISDesktop10.2.2TablePyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python2.7.5ArcGISDesktop10.2.2TablePyCharm2021.3All.png)
+
+
 
 ### Ejecución en ArcGIS for Desktop
 
@@ -76,6 +80,8 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 ### Ejecución en ArcGIS Pro
 
+
+`%run -i D:\R.GISPython\GISListLayerField\GISListLayerFieldArcGIS.py`
 
 > Debido a que ArcGIS Pro utiliza Python 3, no es necesario ingresar los nombres de los campos solicitados por consola entre comillas.
 
@@ -90,6 +96,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 * https://pro.arcgis.com/es/pro-app/tool-reference/data-management/get-count.htm
 * https://community.esri.com/thread/36300
 * https://pro.arcgis.com/es/pro-app/arcpy/functions/searchcursor.htm
+* [Fix Python Error – UnicodeEncodeError: ‘ascii’ codec can’t encode character’](https://gankrin.org/fix-unicodeencodeerror-ascii-codec-cant-encode-character/)
 
 
 ### Autores
