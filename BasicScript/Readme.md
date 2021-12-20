@@ -2,6 +2,8 @@
 
 Un script en Python, es un archivo que contiene diferentes instrucciones que pueden ser ejecutadas por el intérprete de comandos. Generalmente los archivos son almacenados con la extensión .py y son usados para ejecutar o automatizar tareas repetitivas. Para la creación de los scripts, es recomendable utilizar un editor de código que permita identificar con facilidad la estructura y escritura propia del lenguaje o un entorno de desarrollo de aplicaciones (IDE), por ejemplo, Notepad++, Sublime Text, Gedit, Anaconda o PyCharm. En QGIS (p.e, 3.10), desde la consola de Python es posible acceder al editor de scripts, desde el cual se puede crear, abrir, editar y ejecutar directamente este tipo de archivos. En ArcGIS Desktop, es posible editar y ejecutar archivos .py directamente desde el ambiente integrado de desarrollo o IDLE de Python incorporado.
 
+![BasicScript.png](https://github.com/rcfdtools/R.GISPython/blob/main/BasicScript/Screenshot/BasicScript.png)
+
 
 ### Objetivos
 
@@ -198,7 +200,7 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
 
 
 ### Compatibilidad
@@ -219,8 +221,9 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculator) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript)|
-|-----------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculatoR) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript) |
+|---------------------------------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
