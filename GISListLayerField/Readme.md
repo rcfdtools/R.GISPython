@@ -151,24 +151,25 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFi
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por r.cfdtools@gmail.com (16h)
 
 
 ### Compatibilidad
 
-* Compatible con cualquier versión de Python.
+* Compatible con ArcGIS for Desktop, ArcGIS Pro y QGIS 3+.
 
 
 ### Tags
+
 `Hydrology` `Stations` `Prepipitation` `Evaporation` `Temperature` `arcpy` `pyqgis` `Metadata`
 
 
 ### Control de versiones
 
-| Versión    | Descripción      |
-|------------|------------------|
-| v.20211219 | Versión inicial. |
-
+| Versión    | Descripción                                                                                               |
+|------------|-----------------------------------------------------------------------------------------------------------|
+| v.20211219 | Versión inicial.                                                                                          |
+| v.20211220 | Versión con incorporación de gráficas tipo pastel, validación de codificación según la versión de Python. |
 
 
 ### Licencia, cláusulas y condiciones de uso
