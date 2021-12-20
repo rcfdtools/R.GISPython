@@ -2,6 +2,7 @@
 
 Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete de comandos desde cualquier directorio de su sistema operativo y sin tener que ingresar la ruta completa del ejecutable Python.exe. La configuración de intérpretes en PyCharm, le permitirá ejecutar scripts de un proyecto utilizando una versión predefinida de Python. 
 
+![DefaultVersion.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/DefaultVersion.png)
 
 ### Objetivos
 
@@ -128,10 +129,10 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 | v.20211201  | Versión inicial.                                                                  |
 | v.20211204 | Asociación de intérpretes de Python en PyCharm para QGIS 3.22.1 y ArcGIS Pro 2.9. |
 
-
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra [licencia, cláusulas, condiciones de uso](https://github.com/rcfdtools/R.GISPython/wiki/License) y como referenciar los contenidos publicados en este repositorio.
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) |
-|-----------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki)   | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) |
+|----------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------|
