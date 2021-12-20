@@ -101,7 +101,7 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 
 ### Tags
 
-`import sys` `sys.version` `sys.path` 
+`import` `sys` `sys.version` `sys.path` 
 
 
 ### Control de versiones
