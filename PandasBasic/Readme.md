@@ -2,6 +2,8 @@
 
 [Pandas](https://pandas.pydata.org/), es una librería complementaria al lenguaje de programación Python que permite leer, representar y manipular datos almacenados en diferentes formatos, p.ej, en archivos de texto separados por comas _.csv_ [(CSV - Comma separated values)](https://en.wikipedia.org/wiki/Comma-separated_values) y archivos en formatos de libro de cálculo electrónico como [Microsoft Excel](https://es.wikipedia.org/wiki/Microsoft_Excel) en formato _.xls_ y _.xlsx_.
 
+![PandasBasic.png](https://github.com/rcfdtools/R.GISPython/blob/main/PandasBasic/Screenshot/PandasBasic.png)
+
 > En la versión 1.3.4 de pandas, no existe una función o un módulo que directamente permita la conversión de bases de datos de DBase (.dbf) a dataframes para su representación y análisis. Este proceso puede ser realizado mediante la lectura de datos a través de la librería `dbf` y su posterior llamado usando la instrucción de pandas `pd.DataFrame(table)`. [Más información.](https://stackoverflow.com/questions/41898561/pandas-transform-a-dbf-table-into-a-dataframe)
 
 ### Caso de estudio
@@ -372,7 +374,7 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com (13 horas)
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (13h).
 
 
 ### Compatibilidad
@@ -394,8 +396,9 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
 
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
-| [Actividad anterior]() | [Actividad siguiente]() |
-|------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic |
+|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
+
