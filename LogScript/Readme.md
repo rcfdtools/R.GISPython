@@ -2,6 +2,7 @@
 
 Al ejecutar scripts, los resultados son mostrados en la consola del entorno de desarrollo o en el Command del sistema operativo. Los resultados también pueden ser volcados en un archivo de registro que puede ser creado y actualizado directamente desde el script. Para este procedimiento utilizaremos la instrucción `.write()`.
 
+![LogScript.png](https://github.com/rcfdtools/R.GISPython/blob/main/LogScript/Screenshot/LogScript.png)
 
 ### Objetivos
 
@@ -27,7 +28,7 @@ Para el desarrollo del script, estimaremos el tiempo de concentración en una cu
 
 <br>
 <div  align="center">
-    <img align="center"  alt="R.GISPython.InteractiveScript.TcGiangotti" src="https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/TcGiangotti.png" width="240px"/>
+    <img align="center"  alt="TcGiangotti.png" src="https://github.com/rcfdtools/R.GISPython/blob/main/LogScript/Screenshot/TcGiangotti.png" width="240px"/>
 </div>
 
 
@@ -209,7 +210,7 @@ Ejecución en PyCharm usando Python 3.10.0
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
 
 
 ### Compatibilidad
@@ -230,8 +231,8 @@ Ejecución en PyCharm usando Python 3.10.0
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
 
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) | [Actividad siguiente]() |
-|----------------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic) |
+|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
