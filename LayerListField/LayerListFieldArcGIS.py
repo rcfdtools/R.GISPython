@@ -40,7 +40,7 @@ def CapaPropiedades(i):
 
 # Variables
 # Definición del espacio de trabajo. Usar r para evitar salto de línea en directorios que empiezan por la letra n.
-absolutePath = r'D:/R.GISPython/GISListLayerField' # Usar r'.' para retornar a ruta relativa
+absolutePath = r'D:/R.GISPython/LayerListField' # Usar r'.' para retornar a ruta relativa
 arcpy.env.workspace = absolutePath+'/Datos'
 
 # Cabecera
@@ -51,7 +51,7 @@ print ( 'Compatible con: ArcGIS for Desktop y ArcGIS Pro'
         '\nPython versión: ' + str(sys.version)+
         '\nPython rutas: ' + str(sys.path[0:5])+
         '\nmatplotlib versión: ' + str(matplotlib.__version__)+
-        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/GISListLayerField'
+        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\nCréditos: r.cfdtools@gmail.com'
         '\nLa opción 0 muestra las capas disponibles en el directorio de trabajo, sus atributos y tipos.'

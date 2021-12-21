@@ -2,7 +2,7 @@
 
 Esta actividad contiene scripts en Python que permiten listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de dos campos específicos definidos por el usuario.
 
-![LayerListField.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/LayerListField.png)
+![LayerListField.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/LayerListField.png)
 
 
 ### Objetivos
@@ -100,7 +100,7 @@ def CapaPropiedades(i):
 
 # Variables
 # Definición del espacio de trabajo. Usar r para evitar salto de línea en directorios que empiezan por la letra n.
-absolutePath = r'D:/R.GISPython/GISListLayerField' # Usar r'.' para retornar a ruta relativa
+absolutePath = r'D:/R.GISPython/LayerListField' # Usar r'.' para retornar a ruta relativa
 arcpy.env.workspace = absolutePath+'/Datos'
 
 # Cabecera
@@ -111,7 +111,7 @@ print ( 'Compatible con: ArcGIS for Desktop y ArcGIS Pro'
         '\nPython versión: ' + str(sys.version)+
         '\nPython rutas: ' + str(sys.path[0:5])+
         '\nmatplotlib versión: ' + str(matplotlib.__version__)+
-        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/GISListLayerField'
+        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\nCréditos: r.cfdtools@gmail.com'
         '\nLa opción 0 muestra las capas disponibles en el directorio de trabajo, sus atributos y tipos.'
@@ -193,7 +193,7 @@ Descripción instrucciones y comandos empleados en [LayerListFieldArcGIS.py](htt
 | descGeometria = arcpy.Describe(i)                                | Descripción general de la capa.                                                                                                                                                     |
 | tipoGeometria = DescGeometria.shapeType                          | shapeType permite conocer el tipo de geometría nativa de la capa (puntos, líneas o polígonos).                                                                                                   |
 | campos = arcpy.ListFields(i)                                     | Lista los campos disponibles en la capa y los almacena en la variable Campos. Las propiedades más comunes son el nombre (name) y tipo (type).                                                    |
-| absolutePath = r'D:/R.GISPython/GISListLayerField'               | Definición de ruta absoluta para compaibilidad de ejecución en ArcGIS Pro Notebook y Jupyter. Usar `r'.'` para retornar a ruta relativa.                                                         |
+| absolutePath = r'D:/R.GISPython/LayerListField'               | Definición de ruta absoluta para compaibilidad de ejecución en ArcGIS Pro Notebook y Jupyter. Usar `r'.'` para retornar a ruta relativa.                                                         |
 | arcpy.env.workspace = absolutePath+'/Datos'                      | Definición del espacio de trabajo.                                                                                                                                                               |
 | featureList = arcpy.ListFeatureClasses()                         | Lista las capas disponibles en el espacio de trabajo y las almacena en la variable FeatureList.                                                                                                  |
 | cursor = arcpy.SearchCursor(FeatureList[NumCapaEntrada-1])       | Mediante cursores es posible almacenar en una variable toda la información de la tabla de atributos de una capa.                                                                                 |
@@ -235,7 +235,7 @@ print( 'Compatible con: QGIS 3'
        '\nPython versión: ' + str(sys.version)+
        '\nPython rutas: ' + str(sys.path[0:5])+
        '\nmatplotlib versión: ' + str(matplotlib.__version__)+
-       '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/GISListLayerField'
+       '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField'
        '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
        '\nCréditos: r.cfdtools@gmail.com\n')
 
@@ -275,7 +275,7 @@ for layer in QgsProject.instance().mapLayers().values():
         cont += 1
 
 # Mostrar valores encontrados
-absolutePath = r'D:/R.GISPython/GISListLayerField/Datos/' # Ruta absoluta de datos de entrada. Usar r'./Datos' para rutas relativas.
+absolutePath = r'D:/R.GISPython/LayerListField/Datos/' # Ruta absoluta de datos de entrada. Usar r'./Datos' para rutas relativas.
 gisFileInput = absolutePath+'Precipitacion.shp'
 campoRotulo = 'ESTACIONID'
 campoEvaluar = 'TotalAnno'
@@ -356,7 +356,7 @@ Ejecución usando Python 3.7.11 de ArcGIS Pro para una capa específica.
 
 ### Ejecución en Notebook de ArcGIS Pro
 
-En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFieldArcGIS.py`
+En un Notebook ejecutar `%run -i D:\R.GISPython\LayerListField\LayerListFieldArcGIS.py`
 
 ![Python3.7.11ArcGISPro2.9.0Run.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python3.7.11ArcGISPro2.9.0Run.png)
 ![Python3.7.11ArcGISPro2.9.0Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python3.7.11ArcGISPro2.9.0Layer.png)

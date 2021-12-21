@@ -24,7 +24,7 @@ print( 'Compatible con: QGIS 3'
        '\nPython versión: ' + str(sys.version)+
        '\nPython rutas: ' + str(sys.path[0:5])+
        '\nmatplotlib versión: ' + str(matplotlib.__version__)+
-       '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/GISListLayerField'
+       '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField'
        '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
        '\nCréditos: r.cfdtools@gmail.com\n')
 
@@ -64,7 +64,7 @@ for layer in QgsProject.instance().mapLayers().values():
         cont += 1
 
 # Mostrar valores encontrados
-absolutePath = r'D:/R.GISPython/GISListLayerField/Datos/' # Ruta absoluta de datos de entrada. Usar r'./Datos' para rutas relativas.
+absolutePath = r'D:/R.GISPython/LayerListField/Datos/' # Ruta absoluta de datos de entrada. Usar r'./Datos' para rutas relativas.
 gisFileInput = absolutePath+'Precipitacion.shp'
 campoRotulo = 'ESTACIONID'
 campoEvaluar = 'TotalAnno'
