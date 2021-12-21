@@ -15,7 +15,7 @@ def TCGiandotti(A,L,S):
 
 # Función para creación de líneas de separación
 def Separador(n=24): # Usando un valor por defecto de 24 guiones
-	nc = '—'
+	nc = '-'
 	print(nc*n)
 
 # Función para crear tablas basadas en textos
