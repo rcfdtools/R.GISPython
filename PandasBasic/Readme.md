@@ -399,6 +399,6 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic |
-|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic) |
+|----------------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 
