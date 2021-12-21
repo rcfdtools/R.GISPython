@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Nombre: GISListLayerFieldQGIS.py
+# Nombre: LayerListFieldQGIS.py
 # Descripción: Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 # Requerimiento: QGIS 3.22.1 con Python 3.9.5
 

@@ -52,14 +52,14 @@ En el directorio `/Datos`, se encuentran las siguientes capas geográficas en fo
 
 ### Ruta de ejecución
  
-Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se almacenen en D:\R.GISPython\GISListLayerField\
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se almacenen en D:\R.GISPython\LayerListField\
 
 
 ### Script para Esri ArcGIS for Desktop y ArcGIS Pro
 
 ```
 # -*- coding: UTF-8 -*-
-# Nombre: GISListLayerFieldArcGIS.py
+# Nombre: LayerListFieldArcGIS.py
 # Descripción: Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 # Requerimiento: PyCharm 2021.3+, Python 2.7.5 (ArcGIS 10.2.2)
 
@@ -183,7 +183,7 @@ except RuntimeError as e:
 ```
 
 
-Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/GISListLayerFieldArcGIS.py)
+Descripción instrucciones y comandos empleados en [LayerListFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/LayerListFieldArcGIS.py)
 
 | Instrucción                                                      | Explicación                                                                                                                                                                                      |
 |------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -210,7 +210,7 @@ Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](
 
 ```
 # -*- coding: UTF-8 -*-
-# Nombre: GISListLayerFieldQGIS.py
+# Nombre: LayerListFieldQGIS.py
 # Descripción: Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 # Requerimiento: QGIS 3.22.1 con Python 3.9.5
 
@@ -315,7 +315,7 @@ plt.ylabel(campoEvaluar)
 plt.show()
 ```
 
-Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/GISListLayerFieldQGIS.py)
+Descripción instrucciones y comandos empleados en [LayerListFieldQGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/LayerListFieldQGIS.py)
 
 | Instrucción                                                                          | Explicación                                                                                                                                                                                              |
 |--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

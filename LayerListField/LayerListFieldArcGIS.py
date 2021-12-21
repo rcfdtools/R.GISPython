@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Nombre: GISListLayerFieldArcGIS.py
+# Nombre: LayerListFieldArcGIS.py
 # Descripción: Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
 # Requerimiento: PyCharm 2021.3+, Python 2.7.5 (ArcGIS 10.2.2)
 
