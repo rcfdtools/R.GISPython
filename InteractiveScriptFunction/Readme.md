@@ -209,7 +209,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 
 ### Autores
 
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
 
 
 ### Compatibilidad
