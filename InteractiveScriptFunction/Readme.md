@@ -187,7 +187,7 @@ Para ejecutar desde la consola de comandos CMD del sistema operativo Windows usa
 
 Ejecución en consola CMD Python 2.7.5 de ArcGIS for Desktop 10.2.2. 
 
-> En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español ni la línea de separación utilizada en los títulos y tablas.
+> En esta versión, la codificación de texto no imprime correctamente caracteres acentuados del español ni la línea de separación utilizada en los títulos y tablas cuando se usan caracteres diferentes al guión o caracteres ascii para tablas de texto.
 
 ![Python2.7.5ArcGISDesktop10.2.2CMD.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/Python2.7.5ArcGISDesktop10.2.2CMD.png)
 
