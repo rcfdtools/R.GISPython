@@ -399,10 +399,11 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\LayerListField\LayerListFieldArc
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                        |
-|------------|--------------------------------------------------------------------------------------------------------------------|
-| v.20211219 | Versión inicial.                                                                                                   |
-| v.20211220 | Versión con incorporación de gráficas tipo pastel, validación de codificación de texto según la versión de Python. |
+| Versión     | Descripción                                                                                                        |
+|-------------|--------------------------------------------------------------------------------------------------------------------|
+| v.20211219  | Versión inicial.                                                                                                   |
+| v.20211220  | Versión con incorporación de gráficas tipo pastel, validación de codificación de texto según la versión de Python. |
+| v.20211222 | Cambio de nombre de directorio de proyecto _GISListLayerField_ a _LayerListField_.                                 |
 
 
 ### Licencia, cláusulas y condiciones de uso
