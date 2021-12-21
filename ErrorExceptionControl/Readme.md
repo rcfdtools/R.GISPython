@@ -9,7 +9,7 @@ En el evento de que el usuario ingrese valores nulos o fuera de rango, el códig
 Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario, calcular la variación del tiempo obtenido cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12), crear la gráfica que permita analizar visualmente la tendencia de los datos; evaluaremos que los parámetros ingresados sean positivos y que sean ingresados correctamente.
 
 
-### Controles de excepción de errores
+### Controles de excepción de error
 
 | Excepción     | Explicación                                                                                                                              |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------|
@@ -20,7 +20,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 | RuntimeError  | Excepción para error general de ejecución cuando no puede ser evaluada por otro tipo de excepcion.                                       |
 | ZeroDivisionError  | Excepción para error producido por división por cero.                                                                                    |
 
-Para más información [aquí](https://docs.python.org/3/library/exceptions.html?highlight=except%20nameerror).
+Más información acerca de controles de excepción [aquí](https://docs.python.org/3/library/exceptions.html?highlight=except%20nameerror).
 
 
 ### Objetivos
