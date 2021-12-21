@@ -29,4 +29,4 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 
 
 ### Referencias
-[^1] https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm
+[^1]: https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm
