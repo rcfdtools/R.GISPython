@@ -4,6 +4,8 @@ Python dispone de múltiples estructuras para la ejecución de procesos iterativ
 
 Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario; calcular la variación del tiempo obtenido cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12).
 
+![PyCharm2021.3SetupPythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/PyCharm2021.3SetupPythonInterpreter.png)
+
 > Para conocer la compatibilidad de entradas por consola en ArcGIS y QGIS utilizando el comando `input()`, consultar la actividad anterior relacionada con la [creación de scripts interactivos](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript).
 
 
@@ -207,7 +209,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
 
 
 ### Compatibilidad
@@ -228,8 +230,9 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) |
-|-----------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript)) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) |
+|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
