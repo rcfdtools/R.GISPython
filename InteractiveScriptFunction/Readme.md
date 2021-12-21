@@ -6,7 +6,7 @@ Para el ejemplo de estimación del tiempo de concentración, además de permitir
 
 ![InteractiveScriptFunction.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScriptFunction/Screenshot/InteractiveScriptFunction.png)
 
-> Para conocer la compatibilidad de entradas por consola en ArcGIS y QGIS utilizando el comando `input()`, consultar la actividad anterior relacionada con la [creación de scripts interactivos](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript).
+> Para conocer la compatibilidad de entradas por consola en ArcGIS y QGIS utilizando el comando `input()`, consultar la actividad anterior relacionada con [creación de scripts interactivos](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript).
 
 
 ### Objetivos
