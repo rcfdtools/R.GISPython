@@ -9,6 +9,20 @@ En el evento de que el usuario ingrese valores nulos o fuera de rango, el códig
 Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario, calcular la variación del tiempo obtenido cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12), crear la gráfica que permita analizar visualmente la tendencia de los datos; evaluaremos que los parámetros ingresados sean positivos y que sean ingresados correctamente.
 
 
+### Controles de excepción de errores
+
+| Excepción     | Explicación                                                                                                                              |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| NameError     | Excepción para error en nombre de variable o variable no encontrada.                                                                     |
+| ValueError    | Excepción para error en valor definido en una variable al ejecutar una operación o cuando una función recibe el valor como un argumento. |
+| SyntaxError   | Excepción para error en sintaxis.                                                                                                        |
+| IndexError    | Excepción para error en índices o valores fuera de rango.                                                                                |
+| RuntimeError  | Excepción para error general de ejecución cuando no puede ser evaluada por otro tipo de excepcion.                                       |
+| ZeroDivisionError  | Excepción para error producido por división por cero.                                                                                    |
+
+Para más información [aquí](https://docs.python.org/3/library/exceptions.html?highlight=except%20nameerror).
+
+
 ### Objetivos
 
 * En PyCharm, ejecutar el script usando la versión de Python 2.7 y 3.10.
@@ -202,6 +216,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 * https://docs.python.org/3/tutorial/errors.html
 * https://www.programiz.com/python-programming/exception-handling
+* https://docs.python.org/3/library/exceptions.html
 
 
 ### Autores
