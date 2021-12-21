@@ -53,7 +53,7 @@ En el directorio `/Datos`, se encuentran las siguientes capas geográficas en fo
 
 ### Ruta de ejecución
  
-Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se almacenen en D:\R.GISPython\LayerListField\
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\LayerListField\`
 
 
 ### Script para Esri ArcGIS for Desktop y ArcGIS Pro

@@ -20,12 +20,12 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 
 ### Ruta de ejecución
  
-Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en `D:\R.GISPython\LayerStatistic\`. 
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\LayerStatistic\`. 
 
 
 ### Caso de estudio
 
-Para el desar
+Estudio de localización y valores de precipitación, evaporación y temperatura de las estaciones hidrometeorológicas del [IDEAM - Colombia](http://www.ideam.gov.co/) localizadas sobre varios Departamentos de la zona central del país.
 
 
 ### Estadísticos en capas geográficas [^1]
@@ -43,12 +43,58 @@ Para el desar
 | LAST        | Finds the last record in the Input Table and uses its specified field value.                                                                                  |
 
 
+### Estadísticos generales de una capa geográfica en ArcGIS
 
+script LayerStatisticArcGIS.py
+
+Explicación de instrucciones empleadas
+
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png)
+
+
+### Estadísticos de una capa geográfica con comparación por filtrado en ArcGIS
+
+script LayerStatisticCompareArcGIS.py
+
+Explicación de instrucciones empleadas
+
+
+### Estadísticos de una capa geográfica con comparación por filtrado en QGIS
+
+script LayerStatisticCompareQGIS3.py
+
+Explicación de instrucciones empleadas
 
 
 ### Referencias
 
 
 
+### Autores
 
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (16h).
+
+
+### Compatibilidad
+
+* Compatible con ArcGIS for Desktop, ArcGIS Pro y QGIS 3+.
+
+
+### Control de versiones
+
+| Versión    | Descripción                                        |
+|------------|----------------------------------------------------|
+| v.20211220 | Versión inicial.                                   |
+| v.20211221 | Documentación y pruebas funcionales en ArcGIS Pro. |
+
+
+### Licencia, cláusulas y condiciones de uso
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+
+
+| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
+|------------------------|---------------------------------------------------------|-----------------------------|
+
+Notas a pie
 [^1]: https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm

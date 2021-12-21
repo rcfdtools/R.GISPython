@@ -39,7 +39,7 @@ Para el desarrollo de este ejercicio podrá utilizar diferentes editores y compr
 
 ### Ruta de ejecución
  
-Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en `D:\R.GISPython\BasicScript\`.
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\BasicScript\`.
 
 
 ### Caso de estudio
