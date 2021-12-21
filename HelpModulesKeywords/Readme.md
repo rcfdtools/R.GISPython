@@ -1,4 +1,5 @@
 ## Ayuda, palabras reservadas y módulos disponibles
+Topics: `help` `modules` `keywords` 
 
 Dependiendo de la versión de Python instalada, dispondrá de algunas librerías o módulos preinstalados. Python además, al igual que otros lenguajes de programación, dispone de palabras reservadas que no podrán ser utilizadas para definir variables u objetos de usuario y una completa documentación de ayuda que facilita su aprendizaje.
 
@@ -61,10 +62,6 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
-
-
-### Tags
-`help` `modules` `keywords` 
 
 
 ### Control de versiones

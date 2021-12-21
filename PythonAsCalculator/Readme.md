@@ -1,4 +1,5 @@
 ## Usar Python como una calculadora
+Topics: `Command` `CMD` `Calculator` 
 
 Desde la consola de Python, es posible realizar operaciones matemáticas simples o complejas, definir variables, listas, tuplas, funciones, llamar módulos y en general utilizar cualquier elemento integrado al lenguaje y sin necesidad de que sea almacenado en un script .py. 
 
@@ -86,11 +87,6 @@ Tiempo de concentración en una cuenca hidrográfica: el tiempo de concentració
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
-
-
-### Tags
-
-`Command` `CMD` `Calculator` 
 
 
 ### Control de versiones

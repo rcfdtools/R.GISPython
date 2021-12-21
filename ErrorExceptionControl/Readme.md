@@ -1,4 +1,5 @@
 ## Control de excepción de errores
+Topics: `Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib` `.lower()` `try` `except` 
 
 En el evento de que el usuario ingrese valores nulos o fuera de rango, el código deberá ser capaz de controlar estas excepciones para no devolver al usuario valores errados o incoherentes. Algunos controles de ejecución pueden ser implementados usando condicionales para la validación de los datos ingresados, o a través de los controles de ejecución propios de Python.
 
@@ -227,10 +228,6 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
-
-
-### Tags
-`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib` `.lower()` `try` `except`
 
 
 ### Control de versiones

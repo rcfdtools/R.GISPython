@@ -1,4 +1,5 @@
 ## Identificar y ejecutar cualquier versión de Python instalada
+Topics: `import` `sys` `sys.version` `sys.path` 
 
 En el sistema operativo pueden existir y convivir, además de las versiones integradas a las herramientas GIS, otras versiones de Python registradas y una como versión por defecto. Identificar las versiones instaladas le permitirá realizar la ejecución de comandos por consola o a través de scripts.
 
@@ -97,11 +98,6 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
-
-
-### Tags
-
-`import` `sys` `sys.version` `sys.path` 
 
 
 ### Control de versiones

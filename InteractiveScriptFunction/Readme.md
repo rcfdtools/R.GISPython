@@ -1,4 +1,5 @@
 ## Scripts interactivos e iterativos con funciones y pruebas lógicas simples
+Topics: `Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `if` `.lower()` 
 
 Python dispone de múltiples estructuras para la ejecución de procesos iterativos, como `while`, `for` y `range`, además de la validación de pruebas lógicas simples.
 
@@ -215,10 +216,6 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python a excepción de la impresión de líneas de separación de títulos desde el CMD para versiones de Python 2.
-
-
-### Tags
-`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `if` `.lower()`
 
 
 ### Control de versiones

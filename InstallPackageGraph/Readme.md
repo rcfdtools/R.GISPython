@@ -1,4 +1,5 @@
 ## Instalación, actualización de paquetes y creación de gráficas básicas usando matplotlib
+Topics: `Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib` `.lower()` 
 
 Complementariamente a las librerías obtenidas con la instalación de Python, es posible adicionar nuevas librerías que posteriormente podrán ser invocadas desde la consola o desde scripts y también se pueden actualizar las librerías preinstaladas. El procedimiento más común de instalación automatizada se realiza a través del comando de consola `pip` disponible en el directorio _Scripts_ de Python. 
 
@@ -251,10 +252,6 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
-
-
-### Tags
-`Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib` `.lower()`
 
 
 ### Control de versiones
