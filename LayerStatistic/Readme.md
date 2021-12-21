@@ -96,5 +96,5 @@ R.GISPython es de uso libre para fines acad√©micos, conoce nuestra licencia, cl√
 | [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
 |------------------------|---------------------------------------------------------|-----------------------------|
 
-Notas a pie
+
 [^1]: https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm
