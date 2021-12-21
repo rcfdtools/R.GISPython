@@ -1,5 +1,5 @@
 ## CNE - Catálogo nacional de estaciones hidrometeorológicas del IDEAM - Colombia, descarga y análisis usando Python
-Topics `IDEAM` `Stations` `Weather` `Plot` `matplotlib` `Pandas` `os` `Meteorological` `Automatic` `Pivot Table` `Graph` `Catalog`
+Topics: `IDEAM` `Station` `Weather` `Plot` `matplotlib` `Pandas` `os` `Meteorological` `Pivot Table` `Graph` `Catalog`
 
 <div  align="center">
     <img align="center"  alt="CNEStationStatistic.png" src="https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/CNEStationStatistic.png" width="800px"/>
