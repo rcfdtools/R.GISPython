@@ -2,6 +2,8 @@
 
 Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`. En la interfaz gráfica de QGIS, las entradas de usuario se pueden realizar mediante QInputDialog.getText() y en ArcGIS Pro, la ejecución de este tipo de scripts puede ser realizada directamente desde Python Notebook.
 
+![InteractiveScript.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/InteractiveScript.png)
+
 > Atención: actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutados directamente desde el entorno gráfico.<br><br>
 > En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console <br><br>
 > En ArcGIS Pro, podrá ejecutar scripts interactivos desde la ventana de Python Notebook.
@@ -215,7 +217,7 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
 
 
 ### Compatibilidad
@@ -237,8 +239,9 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/BasicScript) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) |
-|-----------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/BasicScript) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) |
+|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
