@@ -8,6 +8,24 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 * 
 
 
+### Requerimientos
+
+* Python 2.7.5 de ArcGIS for Desktop 10.2.2+.
+* ArcGIS Pro 2.9+.
+* QGIS 3.22.1+.
+* Python 3.10.0+ como instalación independiente o standalone.
+* PyCharm 2021.3+ for Anaconda. 
+* Sistema operativo Microsoft Windows.
+
+
+### Ruta de ejecución
+ 
+Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se encuentren en `D:\R.GISPython\LayerStatistic\`. 
+
+
+### Caso de estudio
+
+Para el desar
 
 
 ### Estadísticos en capas geográficas [^1]
