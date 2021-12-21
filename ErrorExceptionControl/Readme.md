@@ -2,6 +2,8 @@
 
 En el evento de que el usuario ingrese valores nulos o fuera de rango, el código deberá ser capaz de controlar estas excepciones para no devolver al usuario valores errados o incoherentes. Algunos controles de ejecución pueden ser implementados usando condicionales para la validación de los datos ingresados, o a través de los controles de ejecución propios de Python.
 
+![ErrorExceptionControl.png](https://github.com/rcfdtools/R.GISPython/blob/main/ErrorExceptionControl/Screenshot/ErrorExceptionControl.png)
+
 > `try` controla la ejecución del código a través de la evaluación de las instrucciones contenidas en la indentación, permitiendo además ejecutar acciones para cada tipo de error encontrado utilizando `except`.
 
 Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario, calcular la variación del tiempo obtenido cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12), crear la gráfica que permita analizar visualmente la tendencia de los datos; evaluaremos que los parámetros ingresados sean positivos y que sean ingresados correctamente.
@@ -204,7 +206,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
 
 
 ### Compatibilidad
@@ -225,8 +227,8 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
 
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) |
-|----------------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript)  |
+|----------------------------------------------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------|
