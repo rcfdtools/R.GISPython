@@ -2,7 +2,7 @@
 
 Esta actividad contiene scripts en Python que permiten listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de dos campos específicos definidos por el usuario.
 
-![GISListLayerField.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/GISListLayerField.png)
+![LayerListField.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/LayerListField.png)
 
 
 ### Objetivos
@@ -32,7 +32,7 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 * PyCharm 2021.3+ for Anaconda.
 * Sistema operativo Microsoft Windows.
-* Paquete [Datos.zip](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Datos/Datos.zip) con archivos de formas [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm).
+* Paquete [Datos.zip](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Datos/Datos.zip) con archivos de formas [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm).
 
 
 ### Paquete de datos
@@ -183,7 +183,7 @@ except RuntimeError as e:
 ```
 
 
-Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldArcGIS.py)
+Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/GISListLayerFieldArcGIS.py)
 
 | Instrucción                                                      | Explicación                                                                                                                                                                                      |
 |------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -315,7 +315,7 @@ plt.ylabel(campoEvaluar)
 plt.show()
 ```
 
-Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/GISListLayerFieldQGIS.py)
+Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/GISListLayerFieldQGIS.py)
 
 | Instrucción                                                                          | Explicación                                                                                                                                                                                              |
 |--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -340,16 +340,16 @@ Descripción instrucciones y comandos empleados en [GISListLayerFieldArcGIS.py](
 ### Ejecución en Pycharm
 
 Ejecución usando Python 2.7.5 de ArcGIS for Desktop para todas las capas.
-![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png)
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png)
 
 Ejecución usando Python 2.7.5 de ArcGIS for Desktop para una capa específica.
-![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3Layer.png)
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3Layer.png)
 
 Ejecución usando Python 3.7.11 de ArcGIS Pro para todas las capas.
-![Python3.7.11ArcGISPro2.9.0PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3All.png)
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3All.png)
 
 Ejecución usando Python 3.7.11 de ArcGIS Pro para una capa específica.
-![Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png)
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3Layer.png)
 
 > Debido a que ArcGIS For Desktop utiliza Python 2, es necesario ingresar los nombres de los campos solicitados por consola entre comillas.
 
@@ -358,15 +358,15 @@ Ejecución usando Python 3.7.11 de ArcGIS Pro para una capa específica.
 
 En un Notebook ejecutar `%run -i D:\R.GISPython\GISListLayerField\GISListLayerFieldArcGIS.py`
 
-![Python3.7.11ArcGISPro2.9.0Run.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0Run.png)
-![Python3.7.11ArcGISPro2.9.0Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.7.11ArcGISPro2.9.0Layer.png)
+![Python3.7.11ArcGISPro2.9.0Run.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python3.7.11ArcGISPro2.9.0Run.png)
+![Python3.7.11ArcGISPro2.9.0Layer.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python3.7.11ArcGISPro2.9.0Layer.png)
 
 > Debido a que ArcGIS Pro utiliza Python 3, no es necesario ingresar los nombres de los campos solicitados por consola entre comillas.
 
 
 ### Ejecución en QGIS
 
-![Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/GISListLayerField/Screenshot/Python3.9.5QGIS3.22.1.png)
+![Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python3.9.5QGIS3.22.1.png)
 
 
 ### Referencias
