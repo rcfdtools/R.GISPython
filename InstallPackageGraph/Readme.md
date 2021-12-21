@@ -2,6 +2,8 @@
 
 Complementariamente a las librerías obtenidas con la instalación de Python, es posible adicionar nuevas librerías que posteriormente podrán ser invocadas desde la consola o desde scripts y también se pueden actualizar las librerías preinstaladas. El procedimiento más común de instalación automatizada se realiza a través del comando de consola `pip` disponible en el directorio _Scripts_ de Python. 
 
+![InstallPackageGraph.png](https://github.com/rcfdtools/R.GISPython/blob/main/InstallPackageGraph/Screenshot/InstallPackageGraph.png)
+
 Para el ejemplo de estimación del tiempo de concentración, además de permitir la entrada de datos del usuario y calcular la variación del tiempo obtenido cambiando la pendiente desde un valor bajo (p.ej, 0.001 m/m) hasta la pendiente ingresada por el usuario y para un determinado número de variaciones (p.ej, 12), crearemos una gráfica que permita analizar visualmente la tendencia de los datos.
 
 > Dentro de las versiones independientes o standalone de Python no se incorpora el paquete matplotlib, sin embargo, puede ser instalada manualmente o desde PyCharm.
@@ -243,7 +245,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 ### Autores
 
-* Creado por r.cfdtools@gmail.com
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
 
 
 ### Compatibilidad
@@ -264,8 +266,8 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 
 ### Licencia, cláusulas y condiciones de uso
-https://github.com/rcfdtools/R.GISPython/wiki/License
 
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) |
-|-----------------------------------------------------------------------------------------|-------------------------|
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) |
+|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
