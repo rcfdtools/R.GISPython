@@ -5,7 +5,7 @@ Los scripts en Python permiten la entrada directa de datos desde la consola de c
 ![InteractiveScript.png](https://github.com/rcfdtools/R.GISPython/blob/main/InteractiveScript/Screenshot/InteractiveScript.png)
 
 > Atención: actualmente, ArcGIS for Desktop, ArcGIS Pro a través de consola y QGIS no permiten entradas `input()` desde scripts ejecutados directamente desde el entorno gráfico.<br><br>
-> En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. Más información en: https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console <br><br>
+> En QGIS es necesario realizar la entrada desde un cuadro de diálogo, sin embargo, el script puede ser ejecutado desde PyCharm si se encuentra asociado el intérprete de Python asociado a QGIS. [Más información](https://gis.stackexchange.com/questions/53958/how-to-use-raw-input-in-qgis-python-console). <br><br>
 > En ArcGIS Pro, podrá ejecutar scripts interactivos desde la ventana de Python Notebook.
 
 
