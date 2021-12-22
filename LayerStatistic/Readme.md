@@ -315,10 +315,11 @@ print(layer.featureCount())
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                           |
-|------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211220 | Versión inicial.                                                                                                                      |
-| v.20211221 | Documentación y pruebas funcionales en ArcGIS Pro. Inclusión de rutas absolutas para compatiblidad con Jupyter y ArcGIS Pro Notebook. |
+| Versión     | Descripción                                                                                                                           |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211220  | Versión inicial.                                                                                                                      |
+| v.20211221  | Documentación y pruebas funcionales en ArcGIS Pro. Inclusión de rutas absolutas para compatiblidad con Jupyter y ArcGIS Pro Notebook. |
+| v.20211222  | Inclusión de gráficas de análisis con matplotlib.                                                                                     |
 
 
 ### Licencia, cláusulas y condiciones de uso
