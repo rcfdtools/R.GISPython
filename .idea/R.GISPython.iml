@@ -4,8 +4,9 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/.Refs" />
+      <excludeFolder url="file://$MODULE_DIR$/venvPython2.7ArcGISForDesktop10.2.2" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 QGIS 3.22.1" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7 (venvPython2.7ArcGISForDesktop10.2.2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
   </component>

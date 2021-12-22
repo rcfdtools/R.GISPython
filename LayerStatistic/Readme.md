@@ -1,11 +1,13 @@
-## Estadísticos de una capa geográfica
+## Estadísticos de capas geográficas
 Topics: 
 
 A partir de una capa geográfica en formato shapefile o feature class dentro de una Geodatabase, obtener los estadísticos de un campo de atributos determinado y por comparación por filtrado en ArcGIS y QGIS.
 
 ### Objetivos
 
-* 
+* Listar las capas disponibles en /Datos
+* Seleccionar una capa, definir el atributo y valor de corte a analizar.
+* Obtener los estadísticos generales de la capa seleccionada.
 
 
 ### Requerimientos
@@ -30,18 +32,23 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 ### Estadísticos en capas geográficas [^1]
 
-| Estadístico | Descripción                                                                                                                                                   |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SUM         | Adds the total value for the specified field.                                                                                                                 |
-| MEAN        | Calculates the average for the specified field.                                                                                                               |
-| MIN         | Finds the smallest value for all records of the specified field.                                                                                              |
-| MAX         | Finds the largest value for all records of the specified field.                                                                                               |
-| RANGE       | Finds the range of values (MAX minus MIN) for the specified field.                                                                                            |
-| STD         | Finds the standard deviation on values in the specified field.                                                                                                |
-| COUNT       | Finds the number of values included in statistical calculations. This counts each value except null values. To determine the number of null values in a field |
-| FIRST       | Finds the first record in the Input Table and uses its specified field value.                                                                                 |
-| LAST        | Finds the last record in the Input Table and uses its specified field value.                                                                                  |
+| Estadístico | Descripción                                                                                                                                                   | Desktop | Pro |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-----|
+| SUM         | Adds the total value for the specified field.                                                                                                                 | Yes     | Yes |
+| MEAN        | Calculates the average for the specified field.                                                                                                               | Yes     | Yes |
+| MIN         | Finds the smallest value for all records of the specified field.                                                                                              | Yes     | Yes |
+| MAX         | Finds the largest value for all records of the specified field.                                                                                               | Yes     | Yes |
+| RANGE       | Finds the range of values (MAX minus MIN) for the specified field.                                                                                            | Yes     | Yes |
+| STD         | Finds the standard deviation on values in the specified field.                                                                                                | Yes     | Yes |
+| COUNT       | Finds the number of values included in statistical calculations. This counts each value except null values. To determine the number of null values in a field | Yes     | Yes |
+| FIRST       | Finds the first record in the Input Table and uses its specified field value.                                                                                 | Yes     | Yes |
+| LAST        | Finds the last record in the Input Table and uses its specified field value.                                                                                  | Yes     | Yes |
+| MEDIAN      | The median for all records of the specified field will be calculated.                                                                                         | No      | Yes |
+| VARIANCE    | The variance for all records of the specified field will be calculated.                                                                                       | No      | Yes |
+| UNIQUE      | The number of unique values of the specified field will be counted.                                                                                           | No      | Yes |
 
+
+> Atención: para la ejecución correcta de los sripts se recomienda cerrar sus aplicativos GIS.
 
 ### Estadísticos generales de una capa geográfica en ArcGIS
 
@@ -82,10 +89,10 @@ Explicación de instrucciones empleadas
 
 ### Control de versiones
 
-| Versión    | Descripción                                        |
-|------------|----------------------------------------------------|
-| v.20211220 | Versión inicial.                                   |
-| v.20211221 | Documentación y pruebas funcionales en ArcGIS Pro. |
+| Versión    | Descripción                                                                                                                           |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211220 | Versión inicial.                                                                                                                      |
+| v.20211221 | Documentación y pruebas funcionales en ArcGIS Pro. Inclusión de rutas absolutas para compatiblidad con Jupyter y ArcGIS Pro Notebook. |
 
 
 ### Licencia, cláusulas y condiciones de uso

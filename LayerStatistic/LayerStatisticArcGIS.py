@@ -1,71 +1,85 @@
-# -*- coding: utf-8 -*-
-'''***************************************************************************
-    Curso: TSIG - Sistemas de Información Geográfica Aplicados
-    Microcontenido: HPSD0010 - Python - Estadísticos de una capa geográfica en ArcGIS
-    Date                 : Marzo 2020
-    Copyright            : Copyleft
-    Version inicial por  : karel.sanchez@mail.escuelaing.edu.co
-                           luis.sierra-p@mail.escuelaing.edu.co
-                           fernando.montejo@mail.escuelaing.edu.co
-                           miguel.jimenez-b@mail.escuelaing.edu.co
-    Implementación de valores de corte y actualización de código:
-                           william.aguilar@escuelaing.edu.co
+# -*- coding: UTF-8 -*-
+# Nombre: LayerStatisticArcGIS.py
+# Descripción: Estadísticos de capas geográficas - ArcGIS for Desktop - ArcGIS Pro
+# Requerimiento: PyCharm 2021.3+, ArcGIS 10.2.2, ArcGIS Pro 2.9.0
 
-    Este programa es de libre uso, puede modificarlo a gusto, siempre que
-    se mantenga el nombre del autor y la referencia al desarrolo de sistemas
-    de información geográfica de la Escuela Colombiana de Ingeniería.
+# Librerías
+import arcpy                        # Importación de arcpy de ArcGIS for Desktop.
+from arcpy import env               # Importación de librería para manejo del entorno de trabajo.
+arcpy.env.overwriteOutput = True    # Permitir sobreescribir archivos en directorio del entorno de trabajo.
+import sys
+import matplotlib
+import matplotlib.pyplot as plt
+import pandas as pd
 
-	Descripción:
-	- Ejecutado desde el IDE Python de ArcGIS
-    - Se asume que la carpeta '/Datos' que contiene el shape 'Precipitación.shp' se encuentra en la misma ruta del script .py
-    - Ejecución: ArcGIS for Desktop 10.2.2 con Python 2.7.5
-***************************************************************************'''
-
-#Librerias
-import arcpy                        #Importación de arcpy para ArcGIS for Desktop.
-from arcpy import env               #importación de librería para manejo del entorno de trabajo.
-arcpy.env.overwriteOutput = True    #Permitir sobreescribir archivos en directorio del entorno de trabajo.
-
-# Funcion separador
-def separador(n=24):
-    nc='-'
+# Función para creación de líneas de separación
+def Separador(n=24): # Usando un valor por defecto de 24 guiones
+    nc = '-'
     print(nc*n)
 
-# Datos
-workspaceFolder = r'Datos/'
-outputFolder = r'Output/'
-arcpy.env.workspace = workspaceFolder
-vGISFileInput = 'Precipitacion.shp'
-vGISFileSelect = outputFolder+'LayerSelect.shp'
-vGISFileaStatistic = outputFolder+'LayerStat.dbf'
-vAnalysis = 'TotalAnno' #Atributo para resumen estadístico
-vCut = 300
+# Función para consultar los campos de atributos disponibles
+def CapaPropiedades(i):
+    cont = 1
+    totalEntidades = arcpy.GetCount_management(i)
+    descGeometria = arcpy.Describe(i)
+    tipoGeometria = descGeometria.shapeType
+    tituloCapa = 'Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')'
+    Separador(len(tituloCapa))
+    print(tituloCapa)
+    Separador(len(tituloCapa))
+    print('  #, Campo, Tipo')
+    campos = arcpy.ListFields(i)
+    for campo in campos:
+        print('  ' + str(cont) + ', ' + campo.name + ', ' + campo.type)  # Print field properties
+        cont += 1
+
+# Variables
+absolutePath = r'D:/R.GISPython/LayerStatistic' # Usar r'.' para retornar a ruta relativa
+arcpy.env.workspace = absolutePath+'/Datos/'
+outputFolder = absolutePath+'/Output/'
+layerInput = 'Precipitacion.shp'
+layerSelect = outputFolder+'LayerSelect.shp'
+layerStatistic = outputFolder+'LayerStat.dbf'
+layerStatisticXLS = outputFolder+'LayerStat.xls'
+layerStatisticFilter = outputFolder+'LayerStatFilter.dbf'
+layerStatisticFilterXLS = outputFolder+'LayerStatFilter.xls'
+
+
+# Cabecera
+Separador(67)
+print ('Estadísticos de capas geográficas - ArcGIS for Desktop - ArcGIS Pro')
+Separador(67)
+print ( 'Compatible con: ArcGIS for Desktop y ArcGIS Pro'
+        '\nPython versión: ' + str(sys.version)+
+        '\nPython rutas: ' + str(sys.path[0:5])+
+        '\nmatplotlib versión: ' + str(matplotlib.__version__)+
+        '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic'
+        '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
+        '\nCréditos: r.cfdtools@gmail.com\n')
 
 # Ejecución
-separador(65)
-print('Estadísticos de una capa geográfica en ArcGIS')
-separador(65)
-print('Archivos de entrada: '+vGISFileInput)
-print('Archivos de salida:  '+vGISFileaStatistic)
-print('Ejecutando estadistica para ' + vAnalysis + ' >= ' + str(vCut) + '...')
-arcpy.Select_analysis(vGISFileInput, vGISFileSelect, vAnalysis+'>='+str(vCut))
-arcpy.Statistics_analysis(vGISFileSelect,vGISFileaStatistic,[[vAnalysis,'MIN'],
-                                                            [vAnalysis,'MEAN'],
-                                                            [vAnalysis,'MAX'],
-                                                            [vAnalysis,'STD'],
-                                                            [vAnalysis,'RANGE'],
-                                                            [vAnalysis,'COUNT']])
-print('Proceso compledado.')
-print('Visualice tabla de resultados en ArcMap.')
+print(  'Archivos de entrada: '+layerInput+'\n'
+        'Archivos de filtrado: '+layerSelect+'\n'
+        'Archivos de estadísticos:  '+layerStatistic+'\n'
+        'Archivos de estadísticos filtro:  '+layerStatisticFilter+'\n')
+CapaPropiedades(layerInput)
+print('\n  Antes de continuar, cierre ArcGIS...')
+fieldEval = input('  >>> Nombre del campo a evaluar (usar comillas): ')
+fieldValue = input('  >>> Mostrar valores >= a: ')
+print('\nEjecutando estadística para ' + outputFolder + layerInput + '...')
+# Estadísticos compatibles con ArcGIS for Desktop
+statisticsType = [[fieldEval,'MIN'],[fieldEval,'MEAN'],[fieldEval,'MAX'],[fieldEval,'STD'],[fieldEval,'RANGE'],[fieldEval,'COUNT']]
+arcpy.Statistics_analysis(layerInput,layerStatistic,statisticsType)
+print('Ejecutando estadística para ' + layerSelect + ' con '+ fieldEval + ' >= ' + str(fieldValue) + '...')
+arcpy.Select_analysis(layerInput, layerSelect, fieldEval+'>='+str(fieldValue))
+arcpy.Statistics_analysis(layerSelect,layerStatisticFilter,statisticsType)
+# Conversión a libro de Microsoft Excel
+print ('Conversión de estadísticos a XLS file...')
+arcpy.TableToExcel_conversion(layerStatistic,layerStatisticXLS)
+arcpy.TableToExcel_conversion(layerStatisticFilter,layerStatisticFilterXLS)
 
-'''
-ArcGIS: Summary Statistics (Analysis)
-SUM—Adds the total value for the specified field. 
-MEAN—Calculates the average for the specified field. 
-MIN—Finds the smallest value for all records of the specified field. 
-MAX—Finds the largest value for all records of the specified field. 
-RANGE—Finds the range of values (MAX minus MIN) for the specified field. 
-STD—Finds the standard deviation on values in the specified field.
-COUNT—Finds the number of values included in statistical calculations. This counts each value except null values. To determine the number of null values in a field, use the COUNT statistic on the field in question, and a COUNT statistic on a different field which does not contain nulls (for example, the OID if present), then subtract the two values. 
-FIRST—Finds the first record in the Input Table and uses its specified field value. 
-LAST—Finds the last record in the Input Table and uses its specified field value.'''
+# Visualización de resultados usando pandas
+
+
+
+print('Proceso completado, visualice la capa filtrada y las tablas de resultados estadísticos en ArcGIS.')
