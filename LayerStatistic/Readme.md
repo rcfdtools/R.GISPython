@@ -291,11 +291,13 @@ print(layer.featureCount())
 '''
 ```
 
-Explicación de instrucciones empleadas
+#### Explicación de instrucciones empleadas
 
 
+#### Resultados de ejecución en GUI QGIS 3
 
 ![Python3.9.5QGIS3.22.1.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.9.5QGIS3.22.1.png)
+
 
 ### Referencias
 
@@ -303,7 +305,7 @@ Explicación de instrucciones empleadas
 
 ### Autores
 
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (16h).
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (246h).
 
 
 ### Compatibilidad
