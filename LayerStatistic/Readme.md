@@ -30,7 +30,7 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 Estudio de localización y valores de precipitación, evaporación y temperatura de las estaciones hidrometeorológicas del [IDEAM - Colombia](http://www.ideam.gov.co/) localizadas sobre varios Departamentos de la zona central del país.
 
 
-### Estadísticos en capas geográficas [^1]
+### Estadísticos en capas geográficas vectoriales sobre ArcGIS [^1]
 
 | Estadístico | Descripción                                                                                                                                                   | Desktop | Pro |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-----|

@@ -68,7 +68,7 @@ fieldEval = input('  >>> Nombre del campo a evaluar (usar comillas): ')
 fieldValue = input('  >>> Mostrar valores >= a: ')
 print('\nEjecutando estadística para ' + outputFolder + layerInput + '...')
 # Estadísticos compatibles con ArcGIS for Desktop
-statisticsType = [[fieldEval,'MIN'],[fieldEval,'MEAN'],[fieldEval,'MAX'],[fieldEval,'STD'],[fieldEval,'RANGE'],[fieldEval,'COUNT']]
+statisticsType = [[fieldEval,'SUM'],[fieldEval,'MEAN'],[fieldEval,'MIN'],[fieldEval,'MAX'],[fieldEval,'RANGE'],[fieldEval,'STD'],[fieldEval,'COUNT'],[fieldEval,'FIRST'],[fieldEval,'LAST']]
 arcpy.Statistics_analysis(layerInput,layerStatistic,statisticsType)
 print('Ejecutando estadística para ' + layerSelect + ' con '+ fieldEval + ' >= ' + str(fieldValue) + '...')
 arcpy.Select_analysis(layerInput, layerSelect, fieldEval+'>='+str(fieldValue))
