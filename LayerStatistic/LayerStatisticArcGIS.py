@@ -8,9 +8,6 @@ import arcpy                        # Importación de arcpy de ArcGIS for Deskto
 from arcpy import env               # Importación de librería para manejo del entorno de trabajo.
 arcpy.env.overwriteOutput = True    # Permitir sobreescribir archivos en directorio del entorno de trabajo.
 import sys
-import matplotlib
-import matplotlib.pyplot as plt
-import pandas as pd
 
 # Función para creación de líneas de separación
 def Separador(n=24): # Usando un valor por defecto de 24 guiones
@@ -36,14 +33,13 @@ def CapaPropiedades(i):
 # Variables
 absolutePath = r'D:/R.GISPython/LayerStatistic' # Usar r'.' para retornar a ruta relativa
 arcpy.env.workspace = absolutePath+'/Datos/'
-outputFolder = absolutePath+'/Output/'
+outputPath = absolutePath+'/Output/'
 layerInput = 'Precipitacion.shp'
-layerSelect = outputFolder+'LayerSelect.shp'
-layerStatistic = outputFolder+'LayerStat.dbf'
-layerStatisticXLS = outputFolder+'LayerStat.xls'
-layerStatisticFilter = outputFolder+'LayerStatFilter.dbf'
-layerStatisticFilterXLS = outputFolder+'LayerStatFilter.xls'
-
+layerSelect = outputPath+'LayerSelect.shp'
+layerStatistic = outputPath+'LayerStat.dbf'
+layerStatisticXLS = outputPath+'LayerStat.xls'
+layerStatisticFilter = outputPath+'LayerStatFilter.dbf'
+layerStatisticFilterXLS = outputPath+'LayerStatFilter.xls'
 
 # Cabecera
 Separador(67)
@@ -52,7 +48,6 @@ Separador(67)
 print ( 'Compatible con: ArcGIS for Desktop y ArcGIS Pro'
         '\nPython versión: ' + str(sys.version)+
         '\nPython rutas: ' + str(sys.path[0:5])+
-        '\nmatplotlib versión: ' + str(matplotlib.__version__)+
         '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\nCréditos: r.cfdtools@gmail.com\n')
@@ -66,7 +61,7 @@ CapaPropiedades(layerInput)
 print('\n  Antes de continuar, cierre ArcGIS...')
 fieldEval = input('  >>> Nombre del campo a evaluar (usar comillas): ')
 fieldValue = input('  >>> Mostrar valores >= a: ')
-print('\nEjecutando estadística para ' + outputFolder + layerInput + '...')
+print('\nEjecutando estadística para ' + outputPath + layerInput + '...')
 # Estadísticos compatibles con ArcGIS for Desktop
 statisticsType = [[fieldEval,'SUM'],[fieldEval,'MEAN'],[fieldEval,'MIN'],[fieldEval,'MAX'],[fieldEval,'RANGE'],[fieldEval,'STD'],[fieldEval,'COUNT'],[fieldEval,'FIRST'],[fieldEval,'LAST']]
 arcpy.Statistics_analysis(layerInput,layerStatistic,statisticsType)
@@ -77,9 +72,4 @@ arcpy.Statistics_analysis(layerSelect,layerStatisticFilter,statisticsType)
 print ('Conversión de estadísticos a XLS file...')
 arcpy.TableToExcel_conversion(layerStatistic,layerStatisticXLS)
 arcpy.TableToExcel_conversion(layerStatisticFilter,layerStatisticFilterXLS)
-
-# Visualización de resultados usando pandas
-
-
-
-print('Proceso completado, visualice la capa filtrada y las tablas de resultados estadísticos en ArcGIS.')
+print('Proceso completado, visualice la capa filtrada y las tablas de resultados estadísticos en ArcGIS o en Microsoft Excel.')
