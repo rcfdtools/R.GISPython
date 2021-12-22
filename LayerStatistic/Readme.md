@@ -1,7 +1,9 @@
 ## Estadísticos de capas geográficas
-Topics: 
+Topics: `arcpy` `env` `arcpy.env.overwriteOutput`  `arcpy.GetCount_management()` `arcpy.Describe` `arcpy.ListFields()` `arcpy.env.workspace` `arcpy.Statistics_analysis()` `arcpy.TableToExcel_conversion()`
 
 A partir de una capa geográfica en formato shapefile o feature class dentro de una Geodatabase, obtener los estadísticos de un campo de atributos determinado y por comparación por filtrado en ArcGIS y QGIS.
+
+![LayerStatistic.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/LayerStatistic.png)
 
 
 ### Objetivos
@@ -158,14 +160,14 @@ print('Proceso completado, visualice la capa filtrada y las tablas de resultados
 Desde PyCharm 2021.3. usando Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 ![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
 
-Visulización de resultados en ArcGIS for Desktop.
+Visualización de resultados en ArcGIS for Desktop.
 ![Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
 
 Desde PyCharm 2021.3. usando Python 3.7. de ArcGIS Prop 2.9.0.
 ![Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png)
 
-Visulización de resultados en ArcGIS Pro.
-
+Visualización de resultados en ArcGIS Pro.
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png)
 
 
 ### Estadísticos de una capa geográfica con comparación por filtrado en ArcGIS
