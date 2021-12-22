@@ -293,6 +293,18 @@ print(layer.featureCount())
 
 #### Explicación de instrucciones empleadas
 
+| Instrucción                                                 | Descripción                                                                                                                                                               |
+|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| from qgis.core import *                                     | Importación del núcleo de QGIS.                                                                                                                                           |
+| import qgis.utils                                           | Importación de paquete de utilidades generales.                                                                                                                           |
+| import matplotlib.pyplot as plt                             | Importación de paquete para administración del proyecto en el GUI de la aplicación.                                                                                       |
+| layerMAPProject = iface.addVectorLayer(layerInput,'','ogr') | Cargar y visualizar capa a analizar en mapa de QGIS. layerMAPProject corresponde a la variable de usuario definida para almacenar el identificador de la capa de entrada. |
+| layerMAPProject = QgsVectorLayer(layerInput,'','ogr')       | Cargar capa a analizar en memoria de QGIS sin visualizar en el GUI.                                                                                                       |
+| layerMAPProject.id()                                        | Mostrar el nombre del identificador interno de la capa en el entorno de QGIS.                                                                                             |
+| layerMAPProject.fields()                                    | Listar campos disponibles en la capa.                                                                                                                                     |
+| layerMAPProject.featureCount()                              | Contar el número de entidades espaciales de la capa.                                                                                                                      |
+| layerMAPProject.getFeature(i)                               | Obtención de valores para cada registro encontrado en la capa.                                                                                                            |
+
 
 #### Resultados de ejecución en GUI QGIS 3
 
