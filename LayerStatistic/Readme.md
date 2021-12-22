@@ -166,6 +166,8 @@ print('Proceso completado, visualice la capa filtrada y las tablas de resultados
 Desde PyCharm 2021.3. usando Python 2.7.5 de ArcGIS for Desktop 10.2.2.
 ![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
 
+> En ArcGIS for Desktop es necesario ingresar las entradas `input()` para cadenas de texto entre comillas debido a que utiliza la versión 2 de Python.
+
 Visualización de resultados en ArcGIS for Desktop.
 ![Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
 
@@ -175,7 +177,9 @@ Desde PyCharm 2021.3. usando Python 3.7. de ArcGIS Prop 2.9.0.
 Ejecución desde Notebook en ArcGIS Pro con `%run -i D:\R.GISPython\LayerStatistic\LayerStatisticArcGIS.py`.
 ![Python3.7.11ArcGISPro2.9.0Notebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0Notebook.png)
 
-> La ejecución desde un Notebook utiliza el entorno gráfico o GUI de ArcGIS Pro y sobreescribe automáticamente los resultados de la capa de filtrado y tablas de estadísticos obtenidos sin que la aplicación deba ser cerrada.  
+> La ejecución desde un Notebook utiliza el entorno gráfico o GUI de ArcGIS Pro y sobreescribe automáticamente los resultados de la capa de filtrado y tablas de estadísticos obtenidos sin que la aplicación deba ser cerrada.
+
+> En ArcGIS Pro no es necesario ingresar las entradas `input()` para cadenas de texto entre comillas debido a que utiliza la versión 3 de Python.  
 
 Visualización de resultados en ArcGIS Pro.
 ![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0.png)
