@@ -49,13 +49,16 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 > Atención: para la ejecución correcta de los sripts se recomienda cerrar sus aplicativos GIS. Para garantizar la compatibilidad con la versión Desktop de ArcGIS, no se han incluido los estadísticos `MEDIAN`, `VARIANCE` y `UNIQUE`.
 
-### Estadísticos generales de una capa geográfica en ArcGIS
+### Estadísticos generales de una capa geográfica en ArcGIS for Desktop
 
-script LayerStatisticArcGIS.py
+script [LayerStatisticArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/LayerStatisticArcGIS.py)
 
 Explicación de instrucciones empleadas
 
-![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3All.png)
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
+![Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
+
+
 
 
 ### Estadísticos de una capa geográfica con comparación por filtrado en ArcGIS

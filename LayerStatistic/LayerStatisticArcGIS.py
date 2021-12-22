@@ -53,10 +53,10 @@ print ( 'Compatible con: ArcGIS for Desktop y ArcGIS Pro'
         '\nCréditos: r.cfdtools@gmail.com\n')
 
 # Ejecución
-print(  'Archivos de entrada: '+layerInput+'\n'
-        'Archivos de filtrado: '+layerSelect+'\n'
-        'Archivos de estadísticos:  '+layerStatistic+'\n'
-        'Archivos de estadísticos filtro:  '+layerStatisticFilter+'\n')
+print(  'Capa de entrada: '+layerInput+'\n'
+        'Capa de filtrado: '+layerSelect+'\n'
+        'Estadísticos capa entrada:  '+layerStatistic+'\n'
+        'Estadísticos capa filtrada:  '+layerStatisticFilter+'\n')
 CapaPropiedades(layerInput)
 print('\n  Antes de continuar, cierre ArcGIS...')
 fieldEval = input('  >>> Nombre del campo a evaluar (usar comillas): ')
