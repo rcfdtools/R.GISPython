@@ -8,9 +8,11 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 
 ### Objetivos
 
-* Seleccionar una capa, definir el atributo y valor de corte a analizar.
-* Obtener los estadísticos generales de la capa seleccionada con y sin filtrado.
-* Presentar en gráficas de barras, los valores discretos evaluados a partir del campo de atributos definido y el valor de corte.  
+* Estudiar las propiedades y metadatos de una capa geográfica
+* Definir un atributo y el valor de corte a evaluar.
+* Obtener los estadísticos generales de la capa seleccionada con y sin filtrado a partir del atributo definido.
+* Mostrar los valores discretos de la tabla de atributos con y sin filtrado.
+* Analizar con gráficas de barras, los valores discretos evaluados a partir del campo de atributos definido y el valor de corte.  
 
 
 ### Requerimientos
@@ -23,7 +25,7 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 * Sistema operativo Microsoft Windows.
 * matplotlib
 
-> Para la instalación o actualización de librerías en ArcGIS for Desktop o en ArcGIS Pro se recomienda crear un entorno virtual, de esta forma no se modificarán las versiones originales del paquete requeridas para su correcta ejecución.
+> Para la instalación o actualización de librerías en ArcGIS for Desktop o en ArcGIS Pro se recomienda crear entornos virtuales, de esta forma no se modificarán las versiones originales del paquete requeridas para su correcta ejecución.
 
 
 ### Ruta de ejecución
