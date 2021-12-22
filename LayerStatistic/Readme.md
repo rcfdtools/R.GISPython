@@ -51,7 +51,7 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 ### Estadísticos generales de una capa geográfica en ArcGIS for Desktop
 
-script [LayerStatisticArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/LayerStatisticArcGIS.py)
+#### Script [LayerStatisticArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/LayerStatisticArcGIS.py)
 
 ```
 # -*- coding: UTF-8 -*-
@@ -131,7 +131,7 @@ arcpy.TableToExcel_conversion(layerStatisticFilter,layerStatisticFilterXLS)
 print('Proceso completado, visualice la capa filtrada y las tablas de resultados estadísticos en ArcGIS o en Microsoft Excel.')
 ```
 
-Explicación de instrucciones empleadas
+#### Explicación de instrucciones empleadas
 
 
 
