@@ -167,12 +167,12 @@ Desde PyCharm 2021.3. usando Python 3.7. de ArcGIS Prop 2.9.0.
 ![Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png)
 
 Ejecución desde Notebook en ArcGIS Pro con `%run -i D:\R.GISPython\LayerStatistic\LayerStatisticArcGIS.py`.
-![Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png)
+![Python3.7.11ArcGISPro2.9.0Notebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0Notebook.png)
 
 > La ejecución desde un Notebook utiliza el entorno gráfico o GUI de ArcGIS Pro y sobreescribe automáticamente los resultados de la capa de filtrado y tablas de estadísticos obtenidos sin que la aplicación deba ser cerrada.  
 
 Visualización de resultados en ArcGIS Pro.
-![Python3.7.11ArcGISPro2.9.0Notebook.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0Notebook.png)
+![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0.png)
 
 
 ### Estadísticos de una capa geográfica con comparación por filtrado en ArcGIS
