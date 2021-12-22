@@ -1,4 +1,4 @@
-## Estadísticos de capa geográfica
+## Estadísticos de una capa geográfica
 Topics: `arcpy` `env` `arcpy.env.overwriteOutput`  `arcpy.GetCount_management()` `arcpy.Describe` `arcpy.ListFields()` `arcpy.env.workspace` `arcpy.Statistics_analysis()` `arcpy.TableToExcel_conversion()`
 
 A partir de una capa geográfica en formato shapefile o feature class dentro de una Geodatabase, obtener los estadísticos de un campo de atributos determinado y estadísticos por filtrado a partir de un valor de corte en ArcGIS y QGIS.
@@ -9,7 +9,8 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 ### Objetivos
 
 * Seleccionar una capa, definir el atributo y valor de corte a analizar.
-* Obtener los estadísticos generales de la capa seleccionada sin y con filtrado.
+* Obtener los estadísticos generales de la capa seleccionada con y sin filtrado.
+* Presentar en gráficas de barras, los valores discretos evaluados a partir del campo de atributos definido y el valor de corte.  
 
 
 ### Requerimientos

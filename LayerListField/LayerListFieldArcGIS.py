@@ -87,8 +87,8 @@ try:
         print(tituloLista)
         Separador(len(tituloLista))
         print('Index, ' + campoRotulo + ', ' + campoEvaluar)
-        cont = 0
         # Propiedades encontradas para el campo a evaluar
+        cont = 0
         for fila in cursor:
             if fila.getValue(campoEvaluar) >= int(campoFiltro):
                 listaCampoRotulo.append(cont)
