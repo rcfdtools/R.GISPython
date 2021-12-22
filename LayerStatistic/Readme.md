@@ -34,7 +34,7 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 | Estadístico | Descripción                                                                                                                                                   | Desktop | Pro |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-----|
-| SUM         | Adds the total value for the specified field.                                                                                                                 | [ X ]   | Yes |
+| SUM         | Adds the total value for the specified field.                                                                                                                 | - [X]   | Yes |
 | MEAN        | Calculates the average for the specified field.                                                                                                               | Yes     | Yes |
 | MIN         | Finds the smallest value for all records of the specified field.                                                                                              | Yes     | Yes |
 | MAX         | Finds the largest value for all records of the specified field.                                                                                               | Yes     | Yes |
