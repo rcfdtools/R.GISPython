@@ -21,6 +21,9 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 * Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda. 
 * Sistema operativo Microsoft Windows.
+* matplotlib
+
+> Para la instalación o actualización de librerías en ArcGIS for Desktop o en ArcGIS Pro se recomienda crear un entorno virtual, de esta forma no se modificarán las versiones originales del paquete requeridas para su correcta ejecución.
 
 
 ### Ruta de ejecución
