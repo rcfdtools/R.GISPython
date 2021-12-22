@@ -17,11 +17,11 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 
 ### Requerimientos
 
-* Python 2.7.5 de ArcGIS for Desktop 10.2.2+.
-* ArcGIS Pro 2.9+.
-* QGIS 3.22.1+.
-* PyCharm 2021.3+ for Anaconda. 
-* Sistema operativo Microsoft Windows.
+* [Python 2.7.5 de ArcGIS for Desktop 10.2.2+](https://www.esri.com/en-us/home)
+* [ArcGIS Pro 2.9+](https://www.esri.com/en-us/home)
+* [QGIS 3.22.1+](https://qgis.org/en/site/)
+* [PyCharm 2021.3+ Commmunity](https://www.jetbrains.com/pycharm/download/#section=windows) 
+* [Sistema operativo Microsoft Windows](https://www.microsoft.com/en-us/windows?r=1)
 * [matplotlib](https://matplotlib.org/)
 
 > Para la instalación o actualización de librerías en ArcGIS for Desktop o en ArcGIS Pro se recomienda crear entornos virtuales, de esta forma como usuario no modificará las versiones originales del paquete requeridas para su correcta ejecución.
