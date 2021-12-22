@@ -399,3 +399,4 @@ R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cl�
 | [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic) |
 |----------------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 
+_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_

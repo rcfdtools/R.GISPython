@@ -268,3 +268,5 @@ R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cl�
 
 | [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) |
 |----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
+
+_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
