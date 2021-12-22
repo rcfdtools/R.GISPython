@@ -221,7 +221,7 @@ Configuración avanzada.
 ![ThermalLevelPivot20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/ThermalLevelPivot20211214.png)
 ![ThermalLevelPivotPie20211214.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/ThermalLevelPivotPie20211214.png)
 ![StationScatterPlotMapCundinamarca20211215.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/PlotMap/StationScatterPlotMapCundinamarca20211215.png)
-![CNEStationStatisticPlotMapDirectory.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Graph/PlotMap/CNEStationStatisticPlotMapDirectory.png)
+![CNEStationStatisticPlotMapDirectory.png](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/Screenshot/CNEStationStatisticPlotMapDirectory.png)
 
 
 ### Referencias
