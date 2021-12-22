@@ -301,6 +301,8 @@ print(layer.featureCount())
 
 ### Referencias
 
+* https://pro.arcgis.com/en/pro-app/2.8/arcpy/geoprocessing_and_python/using-tools-in-python.htm
+* https://docs.qgis.org/2.18/en/docs/user_manual/plugins/python_console.html
 
 
 ### Autores
