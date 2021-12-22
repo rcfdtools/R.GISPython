@@ -20,17 +20,25 @@ A partir de una capa geográfica en formato shapefile o feature class dentro de 
 * Python 2.7.5 de ArcGIS for Desktop 10.2.2+.
 * ArcGIS Pro 2.9+.
 * QGIS 3.22.1+.
-* Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda. 
 * Sistema operativo Microsoft Windows.
-* matplotlib
+* [matplotlib](https://matplotlib.org/)
 
-> Para la instalación o actualización de librerías en ArcGIS for Desktop o en ArcGIS Pro se recomienda crear entornos virtuales, de esta forma no se modificarán las versiones originales del paquete requeridas para su correcta ejecución.
+> Para la instalación o actualización de librerías en ArcGIS for Desktop o en ArcGIS Pro se recomienda crear entornos virtuales, de esta forma como usuario no modificará las versiones originales del paquete requeridas para su correcta ejecución.
 
 
 ### Ruta de ejecución
  
 Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\LayerStatistic\`. 
+
+Para la correcta ejecución de los scripts se recomienda utilizar la siguiente estructura de directorios.
+
+| Directorio | Descripción                                                                                     |
+|------------|-------------------------------------------------------------------------------------------------|
+| /Datos     | Directorio de datos de entrada.                                                                 |
+| /Mapas     | Directorio con mapas para visualización de resultados en ArcGIS for Desktop, ArcGIS Pro y QGIS. |
+| /Output    | Directorio de salida de capa filtrada y archivos de resultados estadísticos.                    |
+
 
 
 ### Caso de estudio
@@ -57,7 +65,9 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 > Atención: para la ejecución correcta de los sripts se recomienda cerrar sus aplicativos GIS. Para garantizar la compatibilidad con la versión Desktop de ArcGIS, no se han incluido los estadísticos `MEDIAN`, `VARIANCE` y `UNIQUE`.
 
+
 ### Estadísticos generales de una capa geográfica en ArcGIS for Desktop
+
 
 #### Script [LayerStatisticArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/LayerStatisticArcGIS.py)
 
