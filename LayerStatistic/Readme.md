@@ -1,5 +1,3 @@
-<img alt="R.HydroTools" src="https://github.com/rcfdtools/R.GISPython/blob/main/.Icons/R.GISPython.svg" width="100px">
-
 ## Estadísticos de una capa geográfica
 Topics: `arcpy` `env` `arcpy.env.overwriteOutput`  `arcpy.GetCount_management()` `arcpy.Describe` `arcpy.ListFields()` `arcpy.env.workspace` `arcpy.Statistics_analysis()` `arcpy.TableToExcel_conversion()` `qgis.core` `qgis.utils` `iface` `QgsVectorLayer()` `.fields()` `.featureCount()` `.getFeature()` 
 
@@ -420,3 +418,4 @@ _¡Encontraste útil este microcontenido!, apoya su difusión marcando este repo
 
 [^1]: https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm
 
+<img alt="R.HydroTools" src="https://github.com/rcfdtools/R.GISPython/blob/main/.Icons/R.GISPython.svg" width="200px">
