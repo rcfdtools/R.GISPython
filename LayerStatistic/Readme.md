@@ -414,6 +414,6 @@ R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cl�
 | [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
 |------------------------|---------------------------------------------------------|-----------------------------|
 
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una `⭐`_
+_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
 
 [^1]: https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm
