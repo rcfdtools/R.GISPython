@@ -40,6 +40,6 @@ def JenksEval(value, classMethod, iAux=1):
         iAux+=1
 print('Valor en rango: '+str(JenksEval(175.4,jenksVal,1)))
 
-# For with internal counter
+# For with internal counter and skip line jump
 for i in range(2,12):
-    print(' ',i,)
+    print(' ',i, end = ', ')

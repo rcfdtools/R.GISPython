@@ -50,6 +50,7 @@ Separador(67)
 print ( 'Compatible con: ArcGIS for Desktop y ArcGIS Pro'
         '\nPython versión: ' + str(sys.version)+
         '\nPython rutas: ' + str(sys.path[0:5])+
+        '\nmatplotlib versión: ' + str(matplotlib.__version__) +
         '\nEncuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\nCréditos: r.cfdtools@gmail.com\n')

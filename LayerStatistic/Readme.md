@@ -185,19 +185,15 @@ Visualización de resultados en ArcGIS Pro.
 ![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0.png)
 
 
-### Estadísticos de una capa geográfica con comparación por filtrado en ArcGIS
-
-Script LayerStatisticCompareArcGIS.py
-
-Explicación de instrucciones empleadas
-
-
 ### Estadísticos de una capa geográfica con comparación por filtrado en QGIS
 
-Script LayerStatisticCompareQGIS3.py
+#### Script [LayerStatisticQGIS3.py]()
 
 Explicación de instrucciones empleadas
 
+
+
+![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python3.7.11ArcGISPro2.9.0.png)
 
 ### Referencias
 
