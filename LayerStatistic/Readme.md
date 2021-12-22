@@ -55,8 +55,8 @@ script [LayerStatisticArcGIS.py](https://github.com/rcfdtools/R.GISPython/blob/m
 
 Explicación de instrucciones empleadas
 
-![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
-![Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerListField/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
+![Python2.7.5ArcGISDesktop10.2.2.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/Python2.7.5ArcGISDesktop10.2.2.png)
 
 
 
