@@ -1,7 +1,7 @@
-## Estadísticos de capas geográficas
+## Estadísticos de capa geográfica
 Topics: `arcpy` `env` `arcpy.env.overwriteOutput`  `arcpy.GetCount_management()` `arcpy.Describe` `arcpy.ListFields()` `arcpy.env.workspace` `arcpy.Statistics_analysis()` `arcpy.TableToExcel_conversion()`
 
-A partir de una capa geográfica en formato shapefile o feature class dentro de una Geodatabase, obtener los estadísticos de un campo de atributos determinado y por comparación por filtrado en ArcGIS y QGIS.
+A partir de una capa geográfica en formato shapefile o feature class dentro de una Geodatabase, obtener los estadísticos de un campo de atributos determinado y estadísticos por filtrado a partir de un valor de corte en ArcGIS y QGIS.
 
 ![LayerStatistic.png](https://github.com/rcfdtools/R.GISPython/blob/main/LayerStatistic/Screenshot/LayerStatistic.png)
 
