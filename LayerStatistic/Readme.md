@@ -33,12 +33,11 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 Para la correcta ejecución de los scripts se recomienda utilizar la siguiente estructura de directorios.
 
-| Directorio | Descripción                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------|
-| /Datos     | Directorio de datos de entrada.                                                                 |
-| /Mapas     | Directorio con mapas para visualización de resultados en ArcGIS for Desktop, ArcGIS Pro y QGIS. |
-| /Output    | Directorio de salida de capa filtrada y archivos de resultados estadísticos.                    |
-
+| Directorio  | Descripción                                                                                     |
+|-------------|-------------------------------------------------------------------------------------------------|
+| [/Datos](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Datos)  | Directorio de datos de entrada.                                                                 |
+| [/Mapas](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Mapas)  | Directorio con mapas para visualización de resultados en ArcGIS for Desktop, ArcGIS Pro y QGIS. |
+| [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Output) | Directorio de salida de capa filtrada y archivos de resultados estadísticos.                    |
 
 
 ### Caso de estudio
