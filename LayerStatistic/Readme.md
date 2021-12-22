@@ -319,7 +319,7 @@ print(layer.featureCount())
 
 ### Autores
 
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (246h).
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (24h).
 
 
 ### Compatibilidad
@@ -343,6 +343,5 @@ R.GISPython es de uso libre para fines acad√©micos, conoce nuestra licencia, cl√
 
 | [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
 |------------------------|---------------------------------------------------------|-----------------------------|
-
 
 [^1]: https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm
