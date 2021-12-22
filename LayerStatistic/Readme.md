@@ -3,11 +3,11 @@ Topics:
 
 A partir de una capa geográfica en formato shapefile o feature class dentro de una Geodatabase, obtener los estadísticos de un campo de atributos determinado y por comparación por filtrado en ArcGIS y QGIS.
 
+
 ### Objetivos
 
-* Listar las capas disponibles en /Datos
 * Seleccionar una capa, definir el atributo y valor de corte a analizar.
-* Obtener los estadísticos generales de la capa seleccionada.
+* Obtener los estadísticos generales de la capa seleccionada sin y con filtrado.
 
 
 ### Requerimientos
@@ -34,7 +34,7 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 
 | Estadístico | Descripción                                                                                                                                                   | Desktop | Pro |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-----|
-| SUM         | Adds the total value for the specified field.                                                                                                                 | Yes     | Yes |
+| SUM         | Adds the total value for the specified field.                                                                                                                 | [ x ]   | Yes |
 | MEAN        | Calculates the average for the specified field.                                                                                                               | Yes     | Yes |
 | MIN         | Finds the smallest value for all records of the specified field.                                                                                              | Yes     | Yes |
 | MAX         | Finds the largest value for all records of the specified field.                                                                                               | Yes     | Yes |
