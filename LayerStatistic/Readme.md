@@ -47,8 +47,7 @@ Estudio de localización y valores de precipitación, evaporación y temperatura
 | VARIANCE    | The variance for all records of the specified field will be calculated.                                                                                       | No      | Yes |
 | UNIQUE      | The number of unique values of the specified field will be counted.                                                                                           | No      | Yes |
 
-
-> Atención: para la ejecución correcta de los sripts se recomienda cerrar sus aplicativos GIS.
+> Atención: para la ejecución correcta de los sripts se recomienda cerrar sus aplicativos GIS. Para garantizar la compatibilidad con la versión Desktop de ArcGIS, no se han incluido los estadísticos `MEDIAN`, `VARIANCE` y `UNIQUE`.
 
 ### Estadísticos generales de una capa geográfica en ArcGIS
 
