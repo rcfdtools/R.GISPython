@@ -1,4 +1,4 @@
-## Zonificación hidrográfica de Colombia - Análisis usando Python
+## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python
 
 La zonificación hidrográfica de Colombia desde el punto de vista hidrológico, tiene sus inicios en el HIMAT mediante la Resolución 0337 del 1978, la cual establece que el país está conformado por cinco Áreas hidrográficas (1-Caribe, 2- Magdalena - Cauca, 3- Orinoco, 4- Amazonas y 5-Pacífico) que a su vez están divididas en Zonas Hidrográficas y subdivididas en Subzonas Hidrográficas. En ese entonces, el propósito de la zonificación fue de adoptar un sistema de codificación para estaciones Hidrometerológicas. Posteriormente, el IDEAM introduce esta zonificación para otros fines, tales como estudios y análisis hidrológicos relacionados con los informes ambientales, p.ej, el Índice de Aridez, el Escurrimiento y el Rendimiento Hídrico. [^1]
 
@@ -97,7 +97,7 @@ Catálogo de objetos en Subzonas [^4]
 
 #### Drenajes de Colombia: tomados de datos abiertos IGAC - Escala 1:100k
 
-1. Ingrese al portal https://www.colombiaenmapas.gov.co/, en temática seleccione _Cartografía Básica_ y busque `Base de datos vectorial básica. Colombia. Escala 1:100.000. Año 2019`. En la parte inferior del _Detalle del Servicio_ seleccione en _Formato de descarga_ `Geodatabase` y de clic en _Descargar_, automáticamente iniciará la descarga a través de una orden de servicio.
+1. Ingrese al portal https://www.colombiaenmapas.gov.co/, en temática seleccione _Cartografía Básica_ y busque `Base de datos vectorial básica. Colombia. Escala 1:100.000. Año 2019`. En la parte inferior del _Detalle del Servicio_ seleccione en _Formato de descarga_ `Geodatabase` y de clic en _Descargar_, automáticamente iniciará la descarga a través de una orden de servicio. La GDB comprimida tiene un tamaño apoximado de 
 
 ![IGACGDB100k.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/IGACGDB100k.png)
 
