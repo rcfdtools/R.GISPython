@@ -14,8 +14,6 @@ Las cuencas hidrográficas que entregan o desembocan sus aguas superficiales dir
 | 4   | Amazonas               |
 | 5   | Pacífico               |
 
-
-
 | AH  | Área Hidrográfica | ZH  | Zona Hidrográfica                  |
 |-----|-------------------|-----|------------------------------------|
 | 1   | Caribe            | 11  | Atrato - Darién                    |
