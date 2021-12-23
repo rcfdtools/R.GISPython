@@ -6,4 +6,4 @@
 
 
 ### Referencias
-- [] A
+-[x] A
