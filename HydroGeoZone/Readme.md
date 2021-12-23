@@ -58,23 +58,23 @@ Las cuencas hidrográficas que entregan o desembocan sus aguas superficiales dir
 | 5   | Pacífico          | 57  | Islas del Pacífico                 |
 
 
-
 ### Caso de estudio
 
 Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de Colombia a partir de la delimitación geográfica realizada por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/) y la red de drenajes sencillos digitalizada a escala 1:25k por el [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).
 
 
-
-
 ### Capas requeridas
 
-#### Subzonas hidrográficas de Colombia
+
+#### Subzonas hidrográficas de Colombia - Escala 1:500k
 
 Este mapa representa las unidades de análisis para el ordenamiento ambiental de territorio definidas por el Ideam en convenio con el Instituto Geográfico Agustín Codazzi (IGAC), a escala 1:500.000 llamadas zonificación hidrográfica de Colombia. [^3]
 
 1. Ingrese al portal http://www.ideam.gov.co/en/capas-geo y en el cuadro de búsqueda escriba _Zonificación Hidrográfica_, observará que a 2021.12.23 existen dos versiones de la capa de zonificación correspondientes al año 2010 y 2013.
 
 2. Para las dos capas, realice la descarga del archivo de formas Shapefile y consulte sus metadatos y el catálogo de objetos disponible.
+
+3. Descomprima solo los datos contenidos en las carpetas `/shape` en la carpeta `/Data` dentro de D:\R.GISPython\HydroGeoZone.
 
 Catálogo de objetos en Subzonas [^4]
 | Nombre       | Alias          | Definición                                                                   | Tipo de dato |
@@ -94,7 +94,23 @@ Catálogo de objetos en Subzonas [^4]
 
 ![IDEAMZonificacionHidrograficaDescarga.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/IDEAMZonificacionHidrograficaDescarga.png)
 
-#### Drenajes de Colombia: tomados de los datos abiertos IGAC a escala 1:25k.
+
+#### Drenajes de Colombia: tomados de datos abiertos IGAC - Escala 1:100k
+
+1. Ingrese al portal https://www.colombiaenmapas.gov.co/, en temática seleccione _Cartografía Básica_ y busque `Base de datos vectorial básica. Colombia. Escala 1:100.000. Año 2019`. En la parte inferior del _Detalle del Servicio_ seleccione en _Formato de descarga_ `Geodatabase` y de clic en _Descargar_, automáticamente iniciará la descarga a través de una orden de servicio.
+
+![IGACGDB100k.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/IGACGDB100k.png)
+
+2. Descomprima la base de datos geográfica en la carpeta de descargas, cree un mapa nuevo en blanco en ArcGIS for Desktop o en ArcGIS Pro, agregue el mapa base _World Light Gray Canvas Base_ y desde el dataset `Superficies_Agua`, agregue la capa `Drenaje_Sencillo`.
+
+![IGACDrenajeSencillo100k.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/IGACDrenajeSencillo100k.png)
+
+> Para el desarrollo del análisis no se ha utilizado la digitalización de la Base de datos vectorial básica - Colombia a Escala 1:25.000 del Año 2018 debido a que aún no se encuentran todas las planchas del país digitalizadas y almacenadas en la GDB disponible para descarga.
+
+Información disponible a escala 1:25k
+![IGACGDB25k.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/IGACGDB25k.png)
+
+
 
 
 ### Referencias
