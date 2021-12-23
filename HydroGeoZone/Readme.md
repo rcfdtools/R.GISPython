@@ -6,7 +6,7 @@ La zonificación de cuencas hidrográficas corresponde a tres niveles de jerarqu
 
 Las cuencas hidrográficas que entregan o desembocan sus aguas superficiales directamente de una área hidrográfica se denominaran zonas hidrográficas. Agrupan varias cuencas que se presentan como un subsistema hídrico con características de relieve y drenaje homogéneo y sus aguas tributan a través de un afluente principal hacia un área hidrográfica. Están integradas por cuencas de las partes altas, medias o bajas de una zona hidrográfica que captan agua y sedimentos de los tributarios de diferente orden tales como nacimientos de agua, arroyos, quebradas y ríos. Las cuencas que tributan sus aguas a su vez a las zonas hidrográficas se denomina subzonas hidrográficas. Ahora bien, respecto a la toponimia con que se identifican zonas y subzonas hidrográficas, a estas unidades se les asignó la toponimia de acuerdo con el nombre de la corriente más representativa o río principal o con el nombre heredado de la zonificación del HIMAT, que puede corresponder al espacio geográfico o región a la cual drenan las aguas superficiales. [^2]
 
-| ID  | AH - Área Hidrográfica |
+| AH | Área Hidrográfica |
 |-----|------------------------|
 | 1   | Caribe                 |
 | 2   | Magdalena-Cauca        |
@@ -68,8 +68,31 @@ Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de C
 
 ### Capas requeridas
 
-* Drenajes de Colombia: tomados de los datos abiertos IGAC a escala 1:25k.
-* Subzonas hidrográficas de Colombia: 
+* Drenajes de Colombia: tomados de los datos abiertos IGAC a escala 1:25k. 
+
+#### Subzonas hidrográficas de Colombia
+
+Este mapa representa las unidades de análisis para el ordenamiento ambiental de territorio definidas por el Ideam en convenio con el Instituto Geográfico Agustín Codazzi (IGAC), a escala 1:500.000 llamadas zonificación hidrográfica de Colombia. [^3]
+
+1. Ingrese al portal http://www.ideam.gov.co/en/capas-geo y en el cuadro de búsqueda escriba _Zonificación Hidrográfica_, observará que a 2021.12.23 existen dos versiones de la capa de zonificación correspondientes al año 2010 y 2013.
+
+2. Para las dos capas, realice la descarga del archivo de formas Shapefile y consulte sus metadatos y el catálogo de objetos disponible.
+
+Catálogo de objetos en Subzonas [^4]
+| Nombre       | Alias          | Definición                                                                   | Tipo de dato |
+|--------------|----------------|------------------------------------------------------------------------------|--------------|
+| OBJECTID     | OBJECTID       | Identificador de objeto geográfico.                                          | Texto        |
+| Shape        | Shape          | Tipo de geometría.                                                           | Geometría    |
+| COD_AH       | Código Area    | Código del Area hidrográfica a la que corresponde.                           | Entero       |
+| COD_ZH       | Código Zona    | Código de la Zona hidrográfica a la que corresponde.                         | Entero       |
+| COD_SZH      | Código Subzona | Código de Subzona hidrográfica a la que corresponde.                         | Entero       |
+| NOM_AH       | Nombre Área    | Nombre del área hidrográfica a la que corresponde. Dominio Área Hidográfica. | Texto        |
+| NOM_ZH       | Nombre Zona    | Nombre de la zona hidrográfica a la que corresponde.                         | Texto        |
+| NOM_SZH      | Nombre Subzona | Nombre de la Subzona hidrográfica a la que corresponde.                      | Texto        |
+| Shape_Length | Shape_Length   | Perímetro en las unidades del sistema de referencia espacial.                | Entero       |
+| Shape_Area   | Shape_Area     | Área en las unidades del sistema de referencia espacial.                     | Entero       |
+| RULEID       | RULEID         | Id único asignado por el sistema a la representación gráfica.                | Entero       |
+| Override     | Override       | Representación gráfica.                                                      | Blob         |
 
 
 
@@ -81,9 +104,11 @@ Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de C
 * http://www.siac.gov.co/catalogo-de-mapas
 * http://www.ideam.gov.co/web/agua/zonificacion-hidrografica
 * http://visor.ideam.gov.co/geovisor/#!/profiles/3
-* [Hidrografía Colombiana - IDEAM y SiGaia](https://www.arcgis.com/home/item.html?id=89f6818e093f4b0faa99b456ad98018d)
+* [Hidrografía Colombiana - IDEAM y SiGaia (versión no oficial de zonificación a 2018)](https://www.arcgis.com/home/item.html?id=89f6818e093f4b0faa99b456ad98018d)
 
 
 
 [^1]: http://www.ideam.gov.co/web/agua/zonificacion-hidrografica
 [^2]: http://documentacion.ideam.gov.co/openbiblio/bvirtual/022655/MEMORIASMAPAZONIFICACIONHIDROGRAFICA.pdf
+[^3]: http://geoservicios.ideam.gov.co/geonetwork/srv/eng/catalog.search#/metadata/7696695f-ae9c-4780-a6d0-d3cd1808819a
+[^4]: http://geoservicios.ideam.gov.co/CatalogoObjetos/queryByUUID?uuid=bcd645c9-0f11-4770-926e-1e1fdfbf5ce6
