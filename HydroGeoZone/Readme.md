@@ -26,4 +26,4 @@ La zonificación hidrográfica de Colombia desde el punto de vista hidrológico,
 
 
 
-[^1] http://www.ideam.gov.co/web/agua/zonificacion-hidrografica
+[^1]: http://www.ideam.gov.co/web/agua/zonificacion-hidrografica
