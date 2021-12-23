@@ -68,8 +68,6 @@ Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de C
 
 ### Capas requeridas
 
-* Drenajes de Colombia: tomados de los datos abiertos IGAC a escala 1:25k. 
-
 #### Subzonas hidrográficas de Colombia
 
 Este mapa representa las unidades de análisis para el ordenamiento ambiental de territorio definidas por el Ideam en convenio con el Instituto Geográfico Agustín Codazzi (IGAC), a escala 1:500.000 llamadas zonificación hidrográfica de Colombia. [^3]
@@ -95,6 +93,8 @@ Catálogo de objetos en Subzonas [^4]
 | Override     | Override       | Representación gráfica.                                                      | Blob         |
 
 ![IDEAMZonificacionHidrograficaDescarga.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/IDEAMZonificacionHidrograficaDescarga.png)
+
+#### Drenajes de Colombia: tomados de los datos abiertos IGAC a escala 1:25k.
 
 
 ### Referencias
