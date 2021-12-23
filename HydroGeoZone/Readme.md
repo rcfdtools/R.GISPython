@@ -94,7 +94,7 @@ Catálogo de objetos en Subzonas [^4]
 | RULEID       | RULEID         | Id único asignado por el sistema a la representación gráfica.                | Entero       |
 | Override     | Override       | Representación gráfica.                                                      | Blob         |
 
-
+![IDEAMZonificacionHidrograficaDescarga.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/IDEAMZonificacionHidrograficaDescarga.png)
 
 
 ### Referencias
