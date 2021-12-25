@@ -7,8 +7,42 @@ https://github.com/rcfdtools/R.GISPython.wiki.git
 Clone local directory D:\R.GISPython.wiki
 
 https://docs.github.com/en/communities/documenting-your-project-with-wikis/adding-or-editing-wiki-pages
+PEP 8 -- Style Guide for Python Code >>> https://www.python.org/dev/peps/pep-0008/
 
+Python interpreters and names
 
+	Python 3.7 ArcGIS Pro 2.9
+	C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe
+	
+	Python 3.10 Standalone
+	C:\Python310\python.exe
+	
+	Python 3.9 QGIS 3.22.1
+	C:\Program Files\QGIS 3.22.1\apps\Python39\python.exe
+
+	Python 3.8 Standalone
+	C:\Python381\python.exe
+	
+	Python 2.7 QGIS 2.18.28
+	C:\Program Files\QGIS 2.18\bin\python.exe
+
+Repair syncing problems with VCS - Version control system
+	1. Close PyCharm
+	2. From the directory project delete .idea and .git folders.
+	3. Open Pycharm and reopen the project in a new windows.
+	4. Open the main Readme.md file and make a simple change.
+	5. Check and Commit.
+	Done
+
+How to return to push commits and files in the .main
+	1. Close PyCharm
+	2. Rename the current folder of the project (don't delete the local files because you can lose your last modifications in the files) D:\R.GISPythonOld
+	3. Open PyCharm, select the current project, go to File and select Close current project. You can redirect automatically to the Welcome To Pycharm window.
+	4. In the Welcome To Pycharm window, select the option 'Get from VCS', select Version control: Git, type your URL: https://github.com/rcfdtools/R.GISPython.git, select the local drive D:\R.GISPython and hit in the 'Clone' button.
+	5. Check what files you update locally in the renamed folder D:\R.GISPythonOld and copy manually to the official folder D:\R.GISPython.
+	6. Open the main Readme.md file and make a simple change.
+	7. Check and Commit.
+	Done
 
 Data sample with Pandas from https://www.codegrepper.com/
 df['date'] = pd.to_datetime(df['date'],format='%Y%m%d')
@@ -18,3 +52,16 @@ df['month'] = pd.DatetimeIndex(df['date']).month
 #column in datetime format df["Date"]
 df['Month'] = pd.DatetimeIndex(df['Date']).month
 
+git push -u origin main
+
+Git large file storage https://git-lfs.github.com/
+
+GitHub issues syncing
+https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro
+error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+Solition 1 (doesn't work with 2GB files for sync>>> git config --global http.postBuffer 524288000
+Solition 2 >>> 
+	$ git config --global http.version HTTP/1.1
+	After it push was ok and I have changed HTTP version to 2 again:
+	$ git config --global http.version HTTP/2
+Solition 3 >>> git config http.postBuffer 524288000

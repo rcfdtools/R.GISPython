@@ -6,7 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.Refs" />
       <excludeFolder url="file://$MODULE_DIR$/venvPython2.7ArcGISForDesktop10.2.2" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 2.7 ArcGIS for Desktop 10.2.2" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 ArcGIS Pro 2.9" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
   </component>
