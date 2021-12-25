@@ -1,12 +1,27 @@
-.idea
-venv
+.idea/
+venv/
 # HydroGeoZone/Output
 HydroGeoZone/Data/Drenaje_Sencillo.shp
 HydroGeoZone/Data/Drenaje_Sencillo.dbf
 HydroGeoZone/Output/DrenajeSencilloIntersect.shp
 HydroGeoZone/Output/DrenajeSencilloIntersect.dbf
-Drenaje_Sencillo.dbf
-Drenaje_Sencillo.shp
-DrenajeSencilloIntersect.shp
-DrenajeSencilloIntersect.dbf
-DrenajeSencilloIntersect.dbf
+
+# Some samples
+# http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files
+# ignore all .a files
+#*.a
+
+# but do track lib.a, even though you're ignoring .a files above
+#!lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+#/TODO
+
+# ignore all files in any directory named build
+#build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+#doc/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+#doc/**/*.pdf
