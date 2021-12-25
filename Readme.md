@@ -8,6 +8,8 @@ Python es un potente lenguaje de programación interpretado con licencia de cód
 
 A través de las actividades disponibles en este repositorio, aprenderá los conceptos básicos de Python y su aplicabilidad e integración con sistemas de información geográfica - SIG. 
 
+...
+
 | [Empezar a aprender](https://github.com/rcfdtools/R.GISPython/wiki) |
 |---------------------------------------------------------------------|
 
