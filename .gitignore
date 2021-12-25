@@ -1,5 +1,6 @@
 # Ignore files for push...
 
+hola.txt
 .gitignore
 .idea/
 venv/
