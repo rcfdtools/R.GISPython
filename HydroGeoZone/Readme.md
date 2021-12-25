@@ -163,9 +163,9 @@ Estado de drenajes - Subtipos
 
 
 
-## Resultados del análisis
+### Resultados del análisis
 
-### AH - Áreas hidrográficas año 2013 para drenajes permanentes e intermitentes. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.xls).
+#### AH - Áreas hidrográficas año 2013 para drenajes permanentes e intermitentes. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.xls).
 
 | Código | Nombre | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |
 |---|---|---|---|---|---|---|---|---|
@@ -175,10 +175,10 @@ Estado de drenajes - Subtipos
 | 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.62 | 0.87 | 0.3 |
 | 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.02 | 1.05 | 0.45 |
 
-### ZH - Zonas hidrográficas año 2013 para drenajes permanentes e intermitentes. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls).
+#### ZH - Zonas hidrográficas año 2013 para drenajes permanentes e intermitentes. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls).
 
 
-### SZH - Subzonas hidrográficas año 2013 para drenajes permanentes e intermitentes. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls).
+#### SZH - Subzonas hidrográficas año 2013 para drenajes permanentes e intermitentes. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls).
 
 
 ### Referencias
