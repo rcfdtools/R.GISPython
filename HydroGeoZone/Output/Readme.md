@@ -1,6 +1,15 @@
-De la sincronización en el repositorio de GitHub se han excluido los archivos de salida correspondientes a la capa intersectada de drenajes sencillo y subzonas hidrográficas. Para obtener esta capa es necesario que se ejecute el script principal en su directorio local D:\R.GISPython\HydroGeoZone 
+## Notas generales en ./Output
 
-Exlusiones en .gitignore:
-DrenajeSencilloIntersect.*
+Debido al tamaño de los archivos (aproximadamente 1GB), de la sincronización en GitHub se han excluido los archivos independientes de salida de la capa `DrenajeSencilloIntersect.shp` correspondientes a la intersección entre la capa `Drenajes_Sencillo.shp` y `SubZonaHidrografica.shp`. Para obtener esta capa es necesario que se ejecute el script principal en su directorio local `D:\R.GISPython\HydroGeoZone\`
 
-Una copia comprimida del archivo de resultados ha sido comprimida en varias partes de 95MB como DrenajeSencilloIntersectDownload.part01.rar a .part05.rar
+
+### Exclusiones en .gitignore
+
+En el archivo general de exclusiones contenido en la raíz del repositorio, se han registrado las siguientes exclusiones: 
+
+* DrenajeSencilloIntersect.*
+
+
+### Copia de resultados para descarga
+
+Una copia comprimida del archivo de resultados de la capa `DrenajeSencilloIntersect.shp` ha sido dividida en varias partes de 95MB con los nombres DrenajeSencilloIntersectDownload.part01.rar a .part05.rar
