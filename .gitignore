@@ -1,5 +1,12 @@
-
+.idea
+venv
+# HydroGeoZone/Output
+HydroGeoZone/Data/Drenaje_Sencillo.shp
+HydroGeoZone/Data/Drenaje_Sencillo.dbf
+HydroGeoZone/Output/DrenajeSencilloIntersect.shp
+HydroGeoZone/Output/DrenajeSencilloIntersect.dbf
 Drenaje_Sencillo.dbf
 Drenaje_Sencillo.shp
 DrenajeSencilloIntersect.shp
+DrenajeSencilloIntersect.dbf
 DrenajeSencilloIntersect.dbf
