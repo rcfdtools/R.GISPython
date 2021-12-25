@@ -64,11 +64,11 @@ Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de C
 
 Análisis de forma y densidad
 
-| Parámetro | Descripción                   | Fórmula                | 
-|-----------|-------------------------------|------------------------|
-| Kc        | Coeficiente de compacidad     | Kc = 0.25 * P / A ^0.5 |
-| Dd        | Densidad de drenajes, km/km²  | Dd = Σ LCi / A         |
-| Dc        | Densidad de corrientes, 1/km² | Dd = n / A             |
+| Parámetro | Descripción                   | Fórmula                 | 
+|-----------|-------------------------------|-------------------------|
+| Kc        | Coeficiente de compacidad     | Kc = 0.25 * P / A ^ 0.5 |
+| Dd        | Densidad de drenajes, km/km²  | Dd = Σ LCi / A          |
+| Dc        | Densidad de corrientes, 1/km² | Dd = n / A              |
 
 Donde,
 * P, perímetro de la zona hidrográfica en kilómetros.
