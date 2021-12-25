@@ -3,7 +3,11 @@
 .gitignore
 .idea/
 venv/
-# HydroGeoZone/Output
+
+# Exclusion for D:\R.GISPython\HydroGeoZone\Data
+# Excluded because the files sizes are more than 100MB
+# Drenaje_Sencillo layer compress in 95MB files as DrenajeSencilloDownload.part1.rar to .part4
+# HydroGeoZone/Output/
 HydroGeoZone/Data/Drenaje_Sencillo.*
 HydroGeoZone/Output/DrenajeSencilloIntersect.*
 
