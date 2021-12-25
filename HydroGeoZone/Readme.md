@@ -150,10 +150,10 @@ Estado de drenajes - Subtipos
 
 
 
-### Resultados
+### Resultados del análisis
 
 Áreas hidrográficas
-| COD_AH | NOM_AH | Area | Perm | FREQUENCY | SUM_LDre | Kc | Dd | Dc |
+| COD_AH | NOM_AH | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Caribe | 102803.08 | 4814.69 | 39119 | 108190.65 | 3.75 | 1.05 | 0.38 |
 | 2 | Magdalena Cauca | 270888.94 | 3763.38 | 134281 | 314458.56 | 1.81 | 1.16 | 0.5 |

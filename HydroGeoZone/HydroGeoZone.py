@@ -214,7 +214,7 @@ print('\n')
 
 TitleSeparator('Visualización de tablas resultados en formato Markdown', 'Both')
 print(statisticsTableAHDBF)
-print('| ' + fieldAHCode + ' | ' + fieldAHName + ' | Area | Perm | FREQUENCY | SUM_LDre | Kc | Dd | Dc |')
+print('| ' + fieldAHCode + ' | ' + fieldAHName + ' | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |')
 print('|---|---|---|---|---|---|---|---|---|')
 cursor = arcpy.SearchCursor(hydroAreaLayer)
 for fila in cursor:
