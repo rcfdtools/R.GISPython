@@ -1,3 +1,5 @@
+# Ignore files for push...
+
 .idea/
 venv/
 # HydroGeoZone/Output
@@ -8,20 +10,18 @@ HydroGeoZone/Output/DrenajeSencilloIntersect.dbf
 
 # Some samples
 # http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files
+
 # ignore all .a files
-#*.a
+# *.a
 
 # but do track lib.a, even though you're ignoring .a files above
-#!lib.a
-
-# only ignore the TODO file in the current directory, not subdir/TODO
-#/TODO
+# !lib.a
 
 # ignore all files in any directory named build
-#build/
+# build/
 
 # ignore doc/notes.txt, but not doc/server/arch.txt
-#doc/*.txt
+# doc/*.txt
 
 # ignore all .pdf files in the doc/ directory and any of its subdirectories
-#doc/**/*.pdf
+# doc/**/*.pdf
