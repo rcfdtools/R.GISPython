@@ -165,7 +165,7 @@ Estado de drenajes - Subtipos
 
 ### Resultados del análisis
 
-AH - Áreas hidrográficas año 2013. [DBF](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrografica.dbf), [XLS](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.xls).
+AH - Áreas hidrográficas año 2013. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrografica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.xls).
 
 | Código | Nombre | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |
 |---|---|---|---|---|---|---|---|---|
