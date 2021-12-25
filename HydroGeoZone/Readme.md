@@ -63,6 +63,20 @@ Las cuencas hidrográficas que entregan o desembocan sus aguas superficiales dir
 
 Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de Colombia a partir de la delimitación geográfica realizada por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/) y la red de drenajes sencillos digitalizada a escala 1:25k por el [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).
 
+Análisis de forma y densidad
+
+| Parámetro | Descripción                   | Fórmula                | 
+|-----------|-------------------------------|------------------------|
+| Kc        | Coeficiente de compacidad     | Kc = 0.25 * P / A ^0.5 |
+| Dd        | Densidad de drenajes, km/km²  | Dd = Σ LCi / A         |
+| Dc        | Densidad de corrientes, 1/km² | Dd = n / A             |
+
+Donde,
+* P, perímetro de la zona hidrográfica en kilómetros.
+* A, área de la zona hidrográfica hen km².
+* LCi, longitud de cada cauce o corriente de agua.
+* n, número de cauces o corrientes de agua.
+
 
 ### Capas requeridas
 
@@ -151,6 +165,8 @@ Estado de drenajes - Subtipos
 
 
 ### Resultados del análisis
+
+
 
 AH - Áreas hidrográficas
 | Código | Nombre | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |
