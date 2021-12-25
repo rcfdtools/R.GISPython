@@ -60,6 +60,7 @@ fieldAHCode, fieldZHCode, fieldSZHCode= 'COD_AH', 'COD_ZH', 'COD_SZH'
 fieldAHName, fieldZHName, fieldSZHName= 'NOM_AH', 'NOM_ZH', 'NOM_SZH'
 outCoordinateSystem = "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"
 intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
 
 # Cabecera
 TitleSeparator('Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python')
@@ -158,14 +159,17 @@ else:
 print('\n')
 
 TitleSeparator('Estadísticos de análisis','Both')
-print('Generando estadísticos en DBF')
-print('\tAH - área hidrográfica ' + statisticsTableAHDBF)
-arcpy.Statistics_analysis(drainageLayerIntersect, statisticsTableAHDBF, [['LDre','SUM']], [fieldAHCode, fieldAHName])
-print('\tZH - zona hidrográfica ' + statisticsTableZHDBF)
-arcpy.Statistics_analysis(drainageLayerIntersect, statisticsTableZHDBF, [['LDre','SUM']], [fieldAHCode, fieldAHName, fieldZHCode, fieldZHName])
-print('\tSZH - subzona hidrográfica ' + statisticsTableSZHDBF)
-arcpy.Statistics_analysis(drainageLayerIntersect, statisticsTableSZHDBF, [['LDre','SUM']], [fieldAHCode, fieldAHName, fieldZHCode, fieldZHName, fieldSZHCode, fieldSZHName])
-print('\n')
+if statisticActive == True:
+    print('Generando estadísticos en DBF')
+    print('\tAH - área hidrográfica ' + statisticsTableAHDBF)
+    arcpy.Statistics_analysis(drainageLayerIntersect, statisticsTableAHDBF, [['LDre','SUM']], [fieldAHCode, fieldAHName])
+    print('\tZH - zona hidrográfica ' + statisticsTableZHDBF)
+    arcpy.Statistics_analysis(drainageLayerIntersect, statisticsTableZHDBF, [['LDre','SUM']], [fieldAHCode, fieldAHName, fieldZHCode, fieldZHName])
+    print('\tSZH - subzona hidrográfica ' + statisticsTableSZHDBF)
+    arcpy.Statistics_analysis(drainageLayerIntersect, statisticsTableSZHDBF, [['LDre','SUM']], [fieldAHCode, fieldAHName, fieldZHCode, fieldZHName, fieldSZHCode, fieldSZHName])
+    print('\n')
+else:
+    print('Estadísticos desactivados...')
 
 TitleSeparator('Unión de capas geográficas y estadísticos')
 print('Tenga en cuenta que en algunas subzonas hidrográficas pueden no existir drenajes restituidos.')
@@ -195,12 +199,25 @@ arcpy.CalculateField_management (hydroSubZoneLayerCopy, 'Dc', '!FREQUENCY!/!Area
 print('\n')
 
 TitleSeparator('Convirtiendo estadísticos y resultados a XLS', 'Both')
-print('\tAH - área hidrográfica ' + statisticsTableAHXLS)
-arcpy.TableToExcel_conversion(hydroAreaLayer,statisticsTableAHXLS)
-print('\tZH - zona hidrográfica ' + statisticsTableZHXLS)
-arcpy.TableToExcel_conversion(hydroZoneLayer,statisticsTableZHXLS)
-print('\tSZH - subzona hidrográfica ' + statisticsTableSZHXLS)
-arcpy.TableToExcel_conversion(hydroSubZoneLayerCopy,statisticsTableSZHXLS)
+if statisticActive == True:
+    print('\tAH - área hidrográfica ' + statisticsTableAHXLS)
+    arcpy.TableToExcel_conversion(hydroAreaLayer,statisticsTableAHXLS)
+    print('\tZH - zona hidrográfica ' + statisticsTableZHXLS)
+    arcpy.TableToExcel_conversion(hydroZoneLayer,statisticsTableZHXLS)
+    print('\tSZH - subzona hidrográfica ' + statisticsTableSZHXLS)
+    arcpy.TableToExcel_conversion(hydroSubZoneLayerCopy,statisticsTableSZHXLS)
+else:
+    print('Conversión a XLS desactivada...')
+print('\n')
+
+TitleSeparator('Visualización de tablas resultados en formato Markdown', 'Both')
+print(statisticsTableAHDBF)
+print('| ' + fieldAHCode + ' | ' + fieldAHName + ' | Area | Perm | FREQUENCY | SUM_LDre | Kc | Dd | Dc |')
+print('|---|---|---|---|---|---|---|---|---|')
+cursor = arcpy.SearchCursor(hydroAreaLayer)
+for fila in cursor:
+    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue('Area')) + ' | ' + str(fila.getValue('Perm')) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(fila.getValue('SUM_LDre')) + ' | ' + str(fila.getValue('Kc')) + ' | ' + str(fila.getValue('Dd')) + ' | ' + str(fila.getValue('Dc')) + ' |')
+
 
 print('\nProceso terminado.')
 

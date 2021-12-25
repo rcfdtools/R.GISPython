@@ -395,6 +395,7 @@ print(layer.featureCount())
 ### Compatibilidad
 
 * Compatible con ArcGIS for Desktop, ArcGIS Pro y QGIS 3+.
+* Ejecutar usando ArcGIS en idioma inglés debido a que en las tablas de resumen estadístico y cálculos se utiliza el campo FREQUENCY generado automáticamente por arcpy.Statistics_analysis().
 
 
 ### Control de versiones

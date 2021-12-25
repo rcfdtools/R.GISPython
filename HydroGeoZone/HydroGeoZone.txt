@@ -1,8 +1,7 @@
 Tareas
-	Mostrar cantidad de subzonas y drenajes.
 	Subclasificación por tamaño.
 	Estadística general de permanentes e intermitentes.
-	Mostrar tablas.
+	Mostrar tablas de resultados.
 	Indicar si la cuenca es alargada u ovalada ver Field Calculator
 
 Longitudes
