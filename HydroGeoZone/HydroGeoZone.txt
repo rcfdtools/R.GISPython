@@ -1,8 +1,7 @@
 Tareas
 	Subclasificación por tamaño.
-	Estadística general de permanentes e intermitentes.
-	Mostrar tablas de resultados.
-	Indicar si la cuenca es alargada u ovalada ver Field Calculator
+	Indicar si la cuenca es alargada u ovalada ver Field Calculator.
+	Graficas de análisis como en LaterStatisticQGIS.
 
 Longitudes
 Drenajes intersect 	1104464.501861

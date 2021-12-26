@@ -7,6 +7,37 @@ import sys
 import matplotlib
 import matplotlib.pyplot as plt
 
+# Variables y datos de entrada
+absolutePath = r'D:/R.GISPython/HydroGeoZone' # Usar r'.' para retornar a ruta relativa
+arcpy.env.workspace = absolutePath+'/Data/'
+arcpy.env.overwriteOutput = True
+dataPath = absolutePath+'/Data/'
+outputPath = absolutePath+'/Output/'
+hydroSubZoneLayer = dataPath+'Zonificacion_hidrografica_2013.shp'    # Capa que será utilizada como máscara de selección
+drainageLayer = dataPath+'Drenaje_Sencillo.shp' # Capa con entidades que se seleccionaran
+hydroAreaLayer = outputPath+'AreaHidrografica.shp'
+hydroZoneLayer = outputPath+'ZonaHidrografica.shp'
+hydroSubZoneLayerProject = outputPath+'SubZonaHidrograficaProject.shp'
+hydroSubZoneLayerCopy = outputPath+'SubZonaHidrografica.shp'
+drainageLayerIntersect = outputPath+'DrenajeSencilloIntersect.shp'
+statisticsTableDrainageDBF = outputPath+'DrenajeSencilloSubtipoEstadistica.dbf'
+statisticsTableAHDBF = outputPath+'AreaHidrograficaEstadistica.dbf'
+statisticsTableZHDBF = outputPath+'ZonaHidrograficaEstadistica.dbf'
+statisticsTableSZHDBF = outputPath+'SubZonaHidrograficaEstadistica.dbf'
+statisticsTableAHXLS = outputPath+'AreaHidrograficaEstadistica.xls'
+statisticsTableZHXLS = outputPath+'ZonaHidrograficaEstadistica.xls'
+statisticsTableSZHXLS = outputPath+'SubZonaHidrograficaEstadistica.xls'
+fieldAHCode, fieldZHCode, fieldSZHCode = 'COD_AH', 'COD_ZH', 'COD_SZH'
+fieldAHName, fieldZHName, fieldSZHName = 'NOM_AH', 'NOM_ZH', 'NOM_SZH'
+drainageSubtype, drainageLen = 'ESTADO_DRE', 'SHAPE_Leng'
+outCoordinateSystem = "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"
+evalValueKc = [[1,'Casi redonda a oval redonda'], [1.7,'Oval-redonda a oval oblonga'], [999999,'Oval-oblonga a rectangular-oblonga']] # Rangos coeficiente de compacidad Kc según ANLA - Colombia en modelo de datos GDB Nacional
+evalAreaSZH= [300, 700, 900, 1100, 1300, 1500, 2000, 2500, 3500, 5000, 10000, 20000, 999999] # Valores de corte para evaluar número de subzonas
+decimalPos = 2 # Posiciones decimales para impresión de tablas en formato Markdown
+intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
+
+# Función para impresión de títulos con lineas
 def TitleSeparator(titleText,titleType='Both'):
     # titleType: Top, Bottom, Both
     nc='-'
@@ -36,33 +67,11 @@ def CapaPropiedades(i):
         print('  ' + str(cont) + ', ' + campo.name + ', ' + campo.type)  # Print field properties
         cont += 1
 
-# Datos
-absolutePath = r'D:/R.GISPython/HydroGeoZone' # Usar r'.' para retornar a ruta relativa
-arcpy.env.workspace = absolutePath+'/Data/'
-arcpy.env.overwriteOutput = True
-dataPath = absolutePath+'/Data/'
-outputPath = absolutePath+'/Output/'
-hydroSubZoneLayer = dataPath+'Zonificacion_hidrografica_2013.shp'    # Capa que será utilizada como máscara de selección
-drainageLayer = dataPath+'Drenaje_Sencillo.shp' # Capa con entidades que se seleccionaran
-hydroAreaLayer = outputPath+'AreaHidrografica.shp'
-hydroZoneLayer = outputPath+'ZonaHidrografica.shp'
-hydroSubZoneLayerProject = outputPath+'SubZonaHidrograficaProject.shp'
-hydroSubZoneLayerCopy = outputPath+'SubZonaHidrografica.shp'
-drainageLayerIntersect = outputPath+'DrenajeSencilloIntersect.shp'
-#statisticsTableDBF = outputPath+'Estadistica.dbf'
-statisticsTableAHDBF = outputPath+'AreaHidrograficaEstadistica.dbf'
-statisticsTableZHDBF = outputPath+'ZonaHidrograficaEstadistica.dbf'
-statisticsTableSZHDBF = outputPath+'SubZonaHidrograficaEstadistica.dbf'
-statisticsTableAHXLS = outputPath+'AreaHidrograficaEstadistica.xls'
-statisticsTableZHXLS = outputPath+'ZonaHidrograficaEstadistica.xls'
-statisticsTableSZHXLS = outputPath+'SubZonaHidrograficaEstadistica.xls'
-fieldAHCode, fieldZHCode, fieldSZHCode= 'COD_AH', 'COD_ZH', 'COD_SZH'
-fieldAHName, fieldZHName, fieldSZHName= 'NOM_AH', 'NOM_ZH', 'NOM_SZH'
-outCoordinateSystem = "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"
-decimalPos = 2
-intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
-statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
-
+# Función para evaluar el coeficiente de compacidad Kc
+def CoeficienteCompacidadKc(Kc):
+    for i in evalValueKc[:]:
+        if Kc <= i[0]:
+            return i[1]
 
 # Cabecera
 TitleSeparator('Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python')
@@ -76,9 +85,16 @@ print ( 'Compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
 print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 
 
-print('Propiedades encontradas para las capas de entrada:')
-CapaPropiedades(drainageLayer)
+print('Propiedades y entidades encontradas para las capas de entrada:\n')
 CapaPropiedades(hydroSubZoneLayer)
+print('\n')
+CapaPropiedades(drainageLayer)
+print('Evaluando drenajes por subtipo...')
+print('(0 - Sin asignación, 5101 - Permanente, 5102 - Intermitente)')
+arcpy.Statistics_analysis(drainageLayer, statisticsTableDrainageDBF, [[drainageLen, 'SUM']], [drainageSubtype])
+cursor = arcpy.SearchCursor(statisticsTableDrainageDBF)
+for fila in cursor:
+    print('Código ' + str(fila.getValue(drainageSubtype)) + ', ' + str(fila.getValue('FREQUENCY')) + ' drenajes')
 print('\n')
 
 # Procesos y cálculos
@@ -106,30 +122,32 @@ TitleSeparator('Inclusión de campos para cálculo de áreas, perímetros, longi
 print('Agregando campo area (Area) en km²')
 print('Agregando campo perimetro (Perm) en km')
 print('\tAH - áreas hidrográficas...')
-arcpy.AddField_management(hydroAreaLayer, 'Area', 'Double')
-arcpy.AddField_management(hydroAreaLayer, 'Perm', 'Double')
+arcpy.AddField_management(hydroAreaLayer, 'Area', 'DOUBLE')
+arcpy.AddField_management(hydroAreaLayer, 'Perm', 'DOUBLE')
 print('\tZH - zonas hidrográficas...')
-arcpy.AddField_management(hydroZoneLayer, 'Area', 'Double')
-arcpy.AddField_management(hydroZoneLayer, 'Perm', 'Double')
+arcpy.AddField_management(hydroZoneLayer, 'Area', 'DOUBLE')
+arcpy.AddField_management(hydroZoneLayer, 'Perm', 'DOUBLE')
 print('\tSZH - subzonas hidrográficas...')
-arcpy.AddField_management(hydroSubZoneLayerCopy, 'Area', 'Double')
-arcpy.AddField_management(hydroSubZoneLayerCopy, 'Perm', 'Double')
+arcpy.AddField_management(hydroSubZoneLayerCopy, 'Area', 'DOUBLE')
+arcpy.AddField_management(hydroSubZoneLayerCopy, 'Perm', 'DOUBLE')
 print('Agregando Kc - Coeficiente de Compacidad')
 print('Agregando Dd - Densidad de Drenaje km/km²')
 print('Agregando Dc - Densidad de corrientes 1/Km²')
 print('\tAH - áreas hidrográficas...')
-arcpy.AddField_management(hydroAreaLayer, 'Kc', 'Double')
-arcpy.AddField_management(hydroAreaLayer, 'Dd', 'Double')
-arcpy.AddField_management(hydroAreaLayer, 'Dc', 'Double')
+arcpy.AddField_management(hydroAreaLayer, 'Kc', 'DOUBLE')
+arcpy.AddField_management(hydroAreaLayer, 'KcTag', 'TEXT')
+arcpy.AddField_management(hydroAreaLayer, 'Dd', 'DOUBLE')
+arcpy.AddField_management(hydroAreaLayer, 'Dc', 'DOUBLE')
 print('\tZH - zonas hidrográficas...')
-arcpy.AddField_management(hydroZoneLayer, 'Kc', 'Double')
-arcpy.AddField_management(hydroZoneLayer, 'Dd', 'Double')
-arcpy.AddField_management(hydroZoneLayer, 'Dc', 'Double')
+arcpy.AddField_management(hydroZoneLayer, 'Kc', 'DOUBLE')
+arcpy.AddField_management(hydroZoneLayer, 'KcTag', 'TEXT')
+arcpy.AddField_management(hydroZoneLayer, 'Dd', 'DOUBLE')
+arcpy.AddField_management(hydroZoneLayer, 'Dc', 'DOUBLE')
 print('\tSZH - subzonas hidrográficas...')
-arcpy.AddField_management(hydroSubZoneLayerCopy, 'Kc', 'Double')
-arcpy.AddField_management(hydroSubZoneLayerCopy, 'Dd', 'Double')
-arcpy.AddField_management(hydroSubZoneLayerCopy, 'Dc', 'Double')
-
+arcpy.AddField_management(hydroSubZoneLayerCopy, 'Kc', 'DOUBLE')
+arcpy.AddField_management(hydroSubZoneLayerCopy, 'KcTag', 'TEXT')
+arcpy.AddField_management(hydroSubZoneLayerCopy, 'Dd', 'DOUBLE')
+arcpy.AddField_management(hydroSubZoneLayerCopy, 'Dc', 'DOUBLE')
 print('\n')
 
 TitleSeparator('Cálculo de áreas y perímetros','Both')
@@ -151,13 +169,13 @@ if intersectActive == True:
     arcpy.Intersect_analysis([hydroSubZoneLayerCopy,drainageLayer],drainageLayerIntersect,'ALL','','LINE')
     print('Intersección completada...')
     print('Agregando campo longitud (LDre) en km a drenajes intersecados...')
-    arcpy.AddField_management(drainageLayer, 'LDre', 'Double')
+    arcpy.AddField_management(drainageLayer, 'LDre', 'DOUBLE')
     print('Calculando longitud (LDre) en km de cada segmento de drenaje intersecado...')
     print('Este proceso tardara varios minutos...')
     arcpy.CalculateGeometryAttributes_management(drainageLayerIntersect, [['LDre', 'LENGTH']], 'KILOMETERS')
     print('Calculo de longitudes completado...')
 else:
-    print('Intersección de drenajes desactivada...')
+    print('Actualización de intersección de drenajes con subzonas desactivada...')
 print('\n')
 
 TitleSeparator('Estadísticos de análisis','Both')
@@ -171,7 +189,7 @@ if statisticActive == True:
     arcpy.Statistics_analysis(drainageLayerIntersect, statisticsTableSZHDBF, [['LDre','SUM']], [fieldAHCode, fieldAHName, fieldZHCode, fieldZHName, fieldSZHCode, fieldSZHName])
     print('\n')
 else:
-    print('Estadísticos desactivados...')
+    print('Actualización de estadísticos detallados desactivada...\n')
 
 TitleSeparator('Unión de capas geográficas y estadísticos')
 print('Tenga en cuenta que en algunas subzonas hidrográficas pueden no existir drenajes restituidos.')
@@ -185,17 +203,24 @@ arcpy.JoinField_management(hydroSubZoneLayerCopy, 'COD_SZH', statisticsTableSZHD
 print('\n')
 
 TitleSeparator('Análisis de forma y densidad', 'Both')
+codeEvalKc='''def getKcTag(Kc):
+    for i in evalValueKc[:]:
+        if Kc <= i[0]:
+            return i[1]'''
 print('Calculando Kc - Coeficiente de Compacidad, Dd - Densidad de Drenaje km/km² y Dc - Densidad de corrientes 1/Km²')
 print('\tAH - áreas hidrográficas...')
 arcpy.CalculateField_management (hydroAreaLayer, 'Kc', '0.25*!Perm!/(!Area!**0.5)', 'Python')
+arcpy.CalculateField_management (hydroAreaLayer, 'KcTag', 'getKcTag(float(!Kc!))', 'Python', codeEvalKc)
 arcpy.CalculateField_management (hydroAreaLayer, 'Dd', '!SUM_LDre!/!Area!', 'Python')
 arcpy.CalculateField_management (hydroAreaLayer, 'Dc', '!FREQUENCY!/!Area!', 'Python')
 print('\tZH - zonas hidrográficas...')
 arcpy.CalculateField_management (hydroZoneLayer, 'Kc', '0.25*!Perm!/(!Area!**0.5)', 'Python')
+arcpy.CalculateField_management (hydroZoneLayer, 'KcTag', 'getKcTag(float(!Kc!))', 'Python', codeEvalKc)
 arcpy.CalculateField_management (hydroZoneLayer, 'Dd', '!SUM_LDre!/!Area!', 'Python')
 arcpy.CalculateField_management (hydroZoneLayer, 'Dc', '!FREQUENCY!/!Area!', 'Python')
 print('\tSZH - subzonas hidrográficas...')
 arcpy.CalculateField_management (hydroSubZoneLayerCopy, 'Kc', '0.25*!Perm!/(!Area!**0.5)', 'Python')
+arcpy.CalculateField_management (hydroSubZoneLayerCopy, 'KcTag', 'getKcTag(float(!Kc!))', 'Python', codeEvalKc)
 arcpy.CalculateField_management (hydroSubZoneLayerCopy, 'Dd', '!SUM_LDre!/!Area!', 'Python')
 arcpy.CalculateField_management (hydroSubZoneLayerCopy, 'Dc', '!FREQUENCY!/!Area!', 'Python')
 print('\n')
@@ -209,31 +234,32 @@ if statisticActive == True:
     print('\tSZH - subzona hidrográfica ' + statisticsTableSZHXLS)
     arcpy.TableToExcel_conversion(hydroSubZoneLayerCopy,statisticsTableSZHXLS)
 else:
-    print('Conversión a XLS desactivada...')
+    print('Actualización de conversión a XLS desactivada...')
 print('\n')
 
 TitleSeparator('Visualización de tablas resultados en formato Markdown', 'Both')
 print('\nAH - área hidrográfica')
 print(statisticsTableAHDBF)
-print('| AH | Nombre AH | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |')
-print('|---|---|---|---|---|---|---|---|---|')
+print('| AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |')
+print('|---|---|---|---|---|---|---|---|---|---|')
 cursor = arcpy.SearchCursor(hydroAreaLayer)
 for fila in cursor:
-    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' |')
+    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |')
 print('\nZH - zona hidrográfica')
 print(statisticsTableZHDBF)
-print('| AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |')
-print('|---|---|---|---|---|---|---|---|---|---|---|')
+print('| AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |')
+print('|---|---|---|---|---|---|---|---|---|---|---|---|')
 cursor = arcpy.SearchCursor(hydroZoneLayer)
 for fila in cursor:
-    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' |')
+    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |')
 print('\nSZH - Subzona hidrográfica')
 print(statisticsTableSZHDBF)
-print('| AH | Nombre AH | ZH | Nombre ZH | SZH | Nombre SZH | Área, km² | Perm, km | # Drenajes | Long. dren, km | Kc | Dd | Dc |')
-print('|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+print('| AH | Nombre AH | ZH | Nombre ZH | SZH | Nombre SZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |')
+print('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
 cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
 for fila in cursor:
-    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(fila.getValue(fieldSZHCode)) + ' | ' + fila.getValue(fieldSZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' |')
+    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(fila.getValue(fieldSZHCode)) + ' | ' + fila.getValue(fieldSZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |')
+
 
 
 
