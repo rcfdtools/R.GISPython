@@ -171,7 +171,12 @@ Estado de drenajes - Subtipos
 
 
 
-### Resultados del análisis
+### Ejecución y resultados del análisis
+
+> Para la ejecución completa, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y 
+`statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
+
+> Para analizar solo para drenajes permanentes, establecer la variable `onlyPermanentDrainActive = True`.  
 
 #### AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.xls).
 
@@ -185,6 +190,13 @@ Estado de drenajes - Subtipos
 
 #### AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019.
 
+| AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | Caribe | 102803.08 | 4814.69 | 39119 | 108190.65 | 4.24 | 1.05 | 0.38 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 270888.94 | 3763.38 | 129469 | 306115.95 | 2.04 | 1.13 | 0.48 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 346081.36 | 3736.08 | 122458 | 301766.4 | 1.79 | 0.87 | 0.35 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.96 | 0.87 | 0.3 | Oval-oblonga a rectangular-oblonga |
+| 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
 #### ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls).
 
@@ -231,6 +243,51 @@ Estado de drenajes - Subtipos
 | 5 | Pacifico | 54 | San Juán | 16393.56 | 946.72 | 8156 | 20697.74 | 2.09 | 1.26 | 0.5 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5968.79 | 719.69 | 3277 | 7614.21 | 2.63 | 1.28 | 0.55 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
+
+#### ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. 
+
+| AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Caribe | 11 | Atrato - Darién | 37837.02 | 1568.38 | 13615 | 39050.93 | 2.27 | 1.03 | 0.36 | Oval-oblonga a rectangular-oblonga |
+| 1 | Caribe | 12 | Caribe - Litoral | 12975.9 | 1336.35 | 4344 | 13865.35 | 3.31 | 1.07 | 0.33 | Oval-oblonga a rectangular-oblonga |
+| 1 | Caribe | 13 | Sinú | 14101.53 | 890.79 | 3166 | 10845.28 | 2.12 | 0.77 | 0.22 | Oval-oblonga a rectangular-oblonga |
+| 1 | Caribe | 15 | Caribe - Guajira | 21371.89 | 1252.31 | 8310 | 23469.98 | 2.42 | 1.1 | 0.39 | Oval-oblonga a rectangular-oblonga |
+| 1 | Caribe | 16 | Catatumbo | 16439.46 | 789.96 | 9679 | 20948.14 | 1.74 | 1.27 | 0.59 | Oval-oblonga a rectangular-oblonga |
+| 1 | Caribe | 17 | Islas Caribe | 77.29 | 109.87 | 5 | 10.96 | 3.53 | 0.14 | 0.06 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 44503.94 | 1891.31 | 23171 | 53994.39 | 2.53 | 1.21 | 0.52 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 22 | Saldaña | 9961.0 | 603.0 | 7728 | 14795.96 | 1.7 | 1.49 | 0.78 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 59628.27 | 2005.81 | 31515 | 70271.55 | 2.32 | 1.18 | 0.53 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 24 | Sogamoso | 23206.44 | 1046.29 | 12392 | 28066.87 | 1.94 | 1.21 | 0.53 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 25 | Bajo Magdalena- Cauca -San Jorge | 21142.21 | 1045.18 | 5496 | 17827.1 | 2.03 | 0.84 | 0.26 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 45739.61 | 2627.71 | 23865 | 55293.99 | 3.47 | 1.21 | 0.52 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 27 | Nechí | 14603.72 | 872.53 | 9014 | 17023.33 | 2.04 | 1.17 | 0.62 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 28 | Cesar | 22892.03 | 849.58 | 7227 | 22353.01 | 1.58 | 0.98 | 0.32 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 29 | Bajo Magdalena | 29211.73 | 1309.22 | 9061 | 26489.77 | 2.16 | 0.91 | 0.31 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 31 | Inírida | 53591.77 | 1926.75 | 20940 | 50386.44 | 2.35 | 0.94 | 0.39 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 32 | Guaviare | 84348.26 | 2733.95 | 29348 | 75165.5 | 2.66 | 0.89 | 0.35 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 33 | Vichada | 26118.92 | 1469.25 | 15943 | 28040.12 | 2.56 | 1.07 | 0.61 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 34 | Tomo | 20213.3 | 1189.87 | 7857 | 15978.9 | 2.36 | 0.79 | 0.39 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 35 | Meta | 82506.03 | 2504.65 | 26097 | 73274.44 | 2.46 | 0.89 | 0.32 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 36 | Casanare | 24176.66 | 791.28 | 2903 | 14808.37 | 1.44 | 0.61 | 0.12 | Oval-redonda a oval oblonga |
+| 3 | Orinoco | 37 | Arauca | 11348.72 | 999.15 | 2944 | 9176.94 | 2.65 | 0.81 | 0.26 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 38 | Orinoco Directos | 43514.08 | 3424.61 | 16336 | 34695.0 | 4.63 | 0.8 | 0.38 | Oval-oblonga a rectangular-oblonga |
+| 3 | Orinoco | 39 | Apure | 263.63 | 106.78 | 90 | 240.7 | 1.86 | 0.91 | 0.34 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 41 | Guanía | 31130.32 | 1561.0 | 12852 | 29879.38 | 2.5 | 0.96 | 0.41 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 42 | Vaupes | 37570.93 | 1820.01 | 7763 | 25828.86 | 2.65 | 0.69 | 0.21 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 43 | Apaporis | 53359.39 | 2615.79 | 12581 | 42687.56 | 3.19 | 0.8 | 0.24 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 44 | Caquetá | 99768.59 | 3755.68 | 32157 | 93819.82 | 3.35 | 0.94 | 0.32 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 45 | Yarí | 36591.94 | 1621.95 | 10793 | 33205.62 | 2.39 | 0.91 | 0.29 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 46 | Caguán | 21207.97 | 1279.19 | 8737 | 21303.05 | 2.48 | 1.0 | 0.41 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 47 | Putumayo | 57822.73 | 3855.06 | 15800 | 48839.68 | 4.52 | 0.84 | 0.27 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 48 | Amazonas - Directos | 3256.52 | 375.27 | 698 | 2444.36 | 1.86 | 0.75 | 0.21 | Oval-oblonga a rectangular-oblonga |
+| 4 | Amazonas | 49 | Napo | 456.15 | 159.57 | 191 | 430.64 | 2.11 | 0.94 | 0.42 | Oval-oblonga a rectangular-oblonga |
+| 5 | Pacifico | 51 | Mira | 5874.67 | 679.52 | 2357 | 4443.78 | 2.5 | 0.76 | 0.4 | Oval-oblonga a rectangular-oblonga |
+| 5 | Pacifico | 52 | Patía | 24029.6 | 1236.12 | 10183 | 23227.29 | 2.25 | 0.97 | 0.42 | Oval-oblonga a rectangular-oblonga |
+| 5 | Pacifico | 53 | Tapaje - Dagua - Directos | 20848.95 | 1088.56 | 8732 | 20179.07 | 2.13 | 0.97 | 0.42 | Oval-oblonga a rectangular-oblonga |
+| 5 | Pacifico | 54 | San Juán | 16393.56 | 946.72 | 8156 | 20697.74 | 2.09 | 1.26 | 0.5 | Oval-oblonga a rectangular-oblonga |
+| 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5968.79 | 719.69 | 3277 | 7614.21 | 2.63 | 1.28 | 0.55 | Oval-oblonga a rectangular-oblonga |
+| 5 | Pacifico | 56 | Pacífico - Directos | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
+
 
 #### SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls).
 

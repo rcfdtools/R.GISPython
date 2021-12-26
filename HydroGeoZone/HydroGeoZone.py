@@ -95,7 +95,8 @@ for fila in cursor:
     print('\tCódigo ' + str(fila.getValue(drainageSubtype)) + ', ' + str(fila.getValue('FREQUENCY')) + ' drenajes')
 if onlyPermanentDrainActive == True:
     print(  'Filtrado de drenajes permanentes activado.\n'
-            'Filtrando drenajes solo permanentes, este proceso tardará varios minutos...')
+            'Filtrando drenajes solo permanentes en ' + drainageLayer +
+            'Este proceso tardará varios minutos...')
     whereFilter = '"'+drainageSubtype+'"='+str(drainageSubtypePerm)
     arcpy.Select_analysis(drainageLayerIn, drainageLayer, whereFilter)
 else:
