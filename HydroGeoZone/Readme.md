@@ -175,7 +175,9 @@ Estado de drenajes - Subtipos
 
 > Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
 
-> Para analizar solo a partir de drenajes permanentes, establecer en True las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.  
+> Para analizar solo a partir de drenajes permanentes, establecer en True las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
+
+> Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
 
 #### AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip]().
 
@@ -286,7 +288,7 @@ Estado de drenajes - Subtipos
 | 5 | Pacifico | 56 | Pacífico - Directos | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
 
-#### SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls).
+#### SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip]().
 
 > Debido al número de subzonas hidrográficas, en esta sección no se presentan los resultados detallados para drenajes solo permanentes. Una copia de los estadísticos obtenidos se encuentra en el comprimido de este enlace [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadisticaSoloPermanente.zip)
 

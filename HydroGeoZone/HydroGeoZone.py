@@ -37,9 +37,9 @@ evalValueKc = [[1.25,'Casi redonda a oval redonda'], [1.5,'Oval-redonda a oval o
 evalAreaSZH= [300, 700, 900, 1100, 1300, 1500, 2000, 2500, 3500, 5000, 10000, 20000, 999999] # Valores de corte para evaluar número de subzonas
 decimalPos = 2 # Posiciones decimales para impresión de tablas en formato Markdown
 consKc = 0.28209479179826
-intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
-statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
-onlyPermanentDrainActive = True # Analizar solo para drenajes permanentes.
+intersectActive = True # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = True # Volver a generar estadísticos en DBF y convertir a Excel.
+onlyPermanentDrainActive = False # Analizar solo para drenajes permanentes.
 
 # Función para impresión de títulos con lineas
 def TitleSeparator(titleText,titleType='Both'):
@@ -100,7 +100,7 @@ if onlyPermanentDrainActive == True:
     whereFilter = '"'+drainageSubtype+'"='+str(drainageSubtypePerm)
     arcpy.Select_analysis(drainageLayerIn, drainageLayer, whereFilter)
 else:
-    print('Filtrado de drenajes permanentes desactivado...')
+    print('Filtrado de drenajes solo permanentes desactivado...')
     drainageLayer = drainageLayerIn
 print('\n')
 
@@ -175,7 +175,7 @@ if intersectActive == True:
     print('Intersección completada...')
     print('Agregando campo longitud (LDre) en km a drenajes intersecados...')
     arcpy.AddField_management(drainageLayer, 'LDre', 'DOUBLE')
-    print('Calculando longitud (LDre) en km de cada segmento de drenaje intersecado...')
+    print('Calculando longitud (LDre) en km para cada segmento de drenaje intersecado...')
     print('Este proceso tardara varios minutos...')
     arcpy.CalculateGeometryAttributes_management(drainageLayerIntersect, [['LDre', 'LENGTH']], 'KILOMETERS')
     print('Calculo de longitudes completado...')
