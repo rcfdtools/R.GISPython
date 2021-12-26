@@ -183,6 +183,9 @@ Estado de drenajes - Subtipos
 | 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.96 | 0.87 | 0.3 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
+#### AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019.
+
+
 #### ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls).
 
 > No se muestran los resultados para drenajes solo permanentes..
