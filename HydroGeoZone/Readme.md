@@ -64,17 +64,25 @@ Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de C
 
 Análisis de forma y densidad
 
-| Parámetro | Descripción                   | Fórmula                 | 
-|-----------|-------------------------------|-------------------------|
-| Kc        | Coeficiente de compacidad     | Kc = 0.25 * P / A ^ 0.5 |
-| Dd        | Densidad de drenajes, km/km²  | Dd = Σ LCi / A          |
-| Dc        | Densidad de corrientes, 1/km² | Dd = n / A              |
+| Parámetro | Descripción                    | Fórmula                                                               | 
+|-----------|--------------------------------|-----------------------------------------------------------------------|
+| Kc        | Índice de compacidad Gravelius | Kc = P / (2π ( A / π ) ^ 0.5 )<br>Kc = 0.28209479179826 * P / A ^ 0.5 |
+| Dd        | Densidad de drenajes, km/km²   | Dd = Σ LCi / A                                                        |
+| Dc        | Densidad de corrientes, 1/km²  | Dd = n / A                                                            |
 
 Donde,
 * P, perímetro de la zona hidrográfica en kilómetros.
 * A, área de la zona hidrográfica hen km².
 * LCi, longitud de cada cauce o corriente de agua.
 * n, número de cauces o corrientes de agua.
+
+Para la marcación complementaria del coeficiente de compacidad Kc, se utilizará la clasificación de la [Autoridad Nacional de Licencias Ambientales de Colombia - ANLA](https://www.anla.gov.co/), cuya clasificación en el modelo nacional de datos geográficos establecido en el dominio `Dom_Forma_IndComp` relacionado con la capa geográfica `CuencaHidrografica` del componente `HIDROLOGIA`, indica que se subclasifican en los siguientes 3 tipos: [^6] 
+
+| Código | Descripción                        | Valor de referencia [^7] | 
+|--------|------------------------------------|--------------------------|
+| 1001   | Casi redonda a oval redonda        | 1 a 1.25                 |
+| 1002   | Oval-redonda a oval oblonga        | 1.25 a 1.5               |
+| 1003   | Oval-oblonga a rectangular-oblonga | > 1.5                    |
 
 
 ### Capas requeridas
@@ -549,15 +557,18 @@ Estado de drenajes - Subtipos
 * [Hidrografía Colombiana - IDEAM y SiGaia (versión no oficial de zonificación a 2018)](https://www.arcgis.com/home/item.html?id=89f6818e093f4b0faa99b456ad98018d)
 * https://desktop.arcgis.com/en/arcmap/10.6/tools/data-management-toolbox/calculate-geometry-attributes.htm
 
+
 ### Compatibilidad
 
 * Compatible con ArcGIS for Desktop 10.6 o superior.
 * Compatible con ArcGIS Pro.
 
 
-
+Notas a pie
 [^1]: http://www.ideam.gov.co/web/agua/zonificacion-hidrografica
 [^2]: http://documentacion.ideam.gov.co/openbiblio/bvirtual/022655/MEMORIASMAPAZONIFICACIONHIDROGRAFICA.pdf
 [^3]: http://geoservicios.ideam.gov.co/geonetwork/srv/eng/catalog.search#/metadata/7696695f-ae9c-4780-a6d0-d3cd1808819a
 [^4]: http://geoservicios.ideam.gov.co/CatalogoObjetos/queryByUUID?uuid=bcd645c9-0f11-4770-926e-1e1fdfbf5ce6
 [^5]: https://www.igac.gov.co/sites/igac.gov.co/files/anexo_1.1_catalogo_objetos_cartografiabasica_v1.0_.pdf
+[^6]: http://portal.anla.gov.co/sistema-informacion-geografica
+[^7]: https://www.cvc.gov.co/sites/default/files/Planes_y_Programas/Planes_de_Ordenacion_y_Manejo_de_Cuencas_Hidrografica/La%20Vieja%20-%20POMCA%20en%20Ajuste/Fase%20Diagnostico/7_CapituloI_Diagnostico_Morfometria.pdf
