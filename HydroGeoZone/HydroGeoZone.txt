@@ -1,7 +1,10 @@
 Tareas
 	Subclasificación por tamaño.
-	Indicar si la cuenca es alargada u ovalada ver Field Calculator.
 	Graficas de análisis como en LaterStatisticQGIS.
+
+
+drainageLayer = drainageLayerIn
+
 
 Longitudes
 Drenajes intersect 	1104464.501861
@@ -19,3 +22,4 @@ fieldAHCode, fieldZHCode, fieldSZHCode= 'COD_AH', 'COD_ZH', 'COD_SZH'
 fieldAHName, fieldZHName, fieldSZHName= 'NOM_AH', 'NOM_ZH', 'NOM_SZH'
 
 https://www.igac.gov.co/sites/igac.gov.co/files/catalogo_representacion_10k_v1.0.pdf
+
