@@ -173,12 +173,11 @@ Estado de drenajes - Subtipos
 
 ### Ejecución y resultados del análisis
 
-> Para la ejecución completa, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y 
-`statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
+> Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
 
-> Para analizar solo para drenajes permanentes, establecer la variable `onlyPermanentDrainActive = True`.  
+> Para analizar solo a partir de drenajes permanentes, establecer en True las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.  
 
-#### AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.xls).
+#### AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip]().
 
 | AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|
@@ -188,7 +187,7 @@ Estado de drenajes - Subtipos
 | 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.96 | 0.87 | 0.3 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
-#### AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019.
+#### AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
 
 | AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|
@@ -198,9 +197,7 @@ Estado de drenajes - Subtipos
 | 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.96 | 0.87 | 0.3 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
-#### ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls).
-
-> Debido al número de subzonas hidrográficas, en esta sección no se presentan los resultados para drenajes solo permanentes. Una copia de los estadísticos obtenidos se encuentra en el comprimido [SubZonaHidrograficaEstadisticaSoloPermanente.zip]()
+#### ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip]().
 
 | AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -244,7 +241,7 @@ Estado de drenajes - Subtipos
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5968.79 | 719.69 | 3277 | 7614.21 | 2.63 | 1.28 | 0.55 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
-#### ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. 
+#### ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadisticaSoloPermanente.zip)
 
 | AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -290,6 +287,8 @@ Estado de drenajes - Subtipos
 
 
 #### SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls).
+
+> Debido al número de subzonas hidrográficas, en esta sección no se presentan los resultados detallados para drenajes solo permanentes. Una copia de los estadísticos obtenidos se encuentra en el comprimido de este enlace [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadisticaSoloPermanente.zip)
 
 | AH | Nombre AH | ZH | Nombre ZH | SZH | Nombre SZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
