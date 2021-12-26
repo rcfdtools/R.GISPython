@@ -13,8 +13,9 @@ arcpy.env.workspace = absolutePath+'/Data/'
 arcpy.env.overwriteOutput = True
 dataPath = absolutePath+'/Data/'
 outputPath = absolutePath+'/Output/'
-hydroSubZoneLayer = dataPath+'Zonificacion_hidrografica_2013.shp'    # Capa que será utilizada como máscara de selección
-drainageLayer = dataPath+'Drenaje_Sencillo.shp' # Capa con entidades que se seleccionaran
+hydroSubZoneLayer = dataPath+'Zonificacion_hidrografica_2013.shp'
+drainageLayerIn = dataPath+'Drenaje_Sencillo.shp'
+drainageLayer = outputPath+'DrenajeSencilloFiltro.shp' # Capa drenajes filtro solo permanentes
 hydroAreaLayer = outputPath+'AreaHidrografica.shp'
 hydroZoneLayer = outputPath+'ZonaHidrografica.shp'
 hydroSubZoneLayerProject = outputPath+'SubZonaHidrograficaProject.shp'
@@ -30,6 +31,7 @@ statisticsTableSZHXLS = outputPath+'SubZonaHidrograficaEstadistica.xls'
 fieldAHCode, fieldZHCode, fieldSZHCode = 'COD_AH', 'COD_ZH', 'COD_SZH'
 fieldAHName, fieldZHName, fieldSZHName = 'NOM_AH', 'NOM_ZH', 'NOM_SZH'
 drainageSubtype, drainageLen = 'ESTADO_DRE', 'SHAPE_Leng'
+drainageSubtypePerm = 5101
 outCoordinateSystem = "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"
 evalValueKc = [[1.25,'Casi redonda a oval redonda'], [1.5,'Oval-redonda a oval oblonga'], [999999,'Oval-oblonga a rectangular-oblonga']] # Rangos coeficiente de compacidad Kc según ANLA - Colombia en modelo de datos GDB Nacional
 evalAreaSZH= [300, 700, 900, 1100, 1300, 1500, 2000, 2500, 3500, 5000, 10000, 20000, 999999] # Valores de corte para evaluar número de subzonas
@@ -37,6 +39,7 @@ decimalPos = 2 # Posiciones decimales para impresión de tablas en formato Markd
 consKc = 0.28209479179826
 intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
 statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
+onlyPermanentDrainActive = True # Analizar solo para drenajes permanentes.
 
 # Función para impresión de títulos con lineas
 def TitleSeparator(titleText,titleType='Both'):
@@ -68,12 +71,6 @@ def CapaPropiedades(i):
         print('  ' + str(cont) + ', ' + campo.name + ', ' + campo.type)  # Print field properties
         cont += 1
 
-# Función para evaluar el coeficiente de compacidad Kc
-def CoeficienteCompacidadKc(Kc):
-    for i in evalValueKc[:]:
-        if Kc <= i[0]:
-            return i[1]
-
 # Cabecera
 TitleSeparator('Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python')
 print ( 'Compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
@@ -89,19 +86,25 @@ print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 print('Propiedades y entidades encontradas para las capas de entrada:\n')
 CapaPropiedades(hydroSubZoneLayer)
 print('\n')
-CapaPropiedades(drainageLayer)
+CapaPropiedades(drainageLayerIn)
 print('Evaluando drenajes por subtipo...')
-print('(0 - Sin asignación, 5101 - Permanente, 5102 - Intermitente)')
-arcpy.Statistics_analysis(drainageLayer, statisticsTableDrainageDBF, [[drainageLen, 'SUM']], [drainageSubtype])
+print('\t(0 - Sin asignación, 5101 - Permanente, 5102 - Intermitente)')
+arcpy.Statistics_analysis(drainageLayerIn, statisticsTableDrainageDBF, [[drainageLen, 'SUM']], [drainageSubtype])
 cursor = arcpy.SearchCursor(statisticsTableDrainageDBF)
 for fila in cursor:
-    print('Código ' + str(fila.getValue(drainageSubtype)) + ', ' + str(fila.getValue('FREQUENCY')) + ' drenajes')
+    print('\tCódigo ' + str(fila.getValue(drainageSubtype)) + ', ' + str(fila.getValue('FREQUENCY')) + ' drenajes')
+if onlyPermanentDrainActive == True:
+    print(  'Filtrado de drenajes permanentes activado.\n'
+            'Filtrando drenajes solo permanentes, este proceso tardará varios minutos...')
+    whereFilter = '"'+drainageSubtype+'"='+str(drainageSubtypePerm)
+    arcpy.Select_analysis(drainageLayerIn, drainageLayer, whereFilter)
+else:
+    print('Filtrado de drenajes permanentes desactivado...')
+    drainageLayer = drainageLayerIn
 print('\n')
 
 # Procesos y cálculos
 TitleSeparator('Reproyección de subzonas','Both')
-#print('Copiando SZH - subzonas hidrográficas: '+hydroZoneLayer)
-#arcpy.Select_analysis(hydroSubZoneLayer, hydroSubZoneLayerCopy, '')
 print('Reproyectando SZH a '+hydroSubZoneLayerProject+'...')
 print('Sistema de coordenadas: '+outCoordinateSystem)
 arcpy.Project_management(hydroSubZoneLayer, hydroSubZoneLayerProject, outCoordinateSystem)

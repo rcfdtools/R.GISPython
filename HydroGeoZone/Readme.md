@@ -185,6 +185,8 @@ Estado de drenajes - Subtipos
 
 #### ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.dbf](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf), [.xls](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls).
 
+> No se muestran los resultados para drenajes solo permanentes. 
+
 | AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | Caribe | 11 | Atrato - Darién | 37837.02 | 1568.38 | 13615 | 39050.93 | 2.27 | 1.03 | 0.36 | Oval-oblonga a rectangular-oblonga |
