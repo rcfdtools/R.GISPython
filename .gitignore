@@ -10,6 +10,8 @@ venv/
 # HydroGeoZone/Output/
 HydroGeoZone/Data/Drenaje_Sencillo.*
 HydroGeoZone/Output/DrenajeSencilloIntersect.*
+HydroGeoZone/Output/DrenajeSencilloFiltro.*
+HydroGeoZone/Output/DrenajeSencillo*
 
 # Some samples
 # http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files
