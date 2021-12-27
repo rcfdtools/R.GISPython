@@ -40,8 +40,8 @@ evalValueKc = [[1.25,'Casi redonda a oval redonda'], [1.5,'Oval-redonda a oval o
 evalAreaSZH= [[300,0,0], [700,0,0], [900,0,0], [1100,0,0], [1300,0,0], [1500,0,0], [2000,0,0], [2500,0,0], [3500,0,0], [5000,0,0], [10000,0,0], [20000,0,0], [999999,0,0]] # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
 decimalPos = 2 # Posiciones decimales para impresión de tablas en formato Markdown
 consKc = 0.28209479179826
-intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
-statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
+intersectActive = True # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = True # Volver a generar estadísticos en DBF y convertir a Excel.
 onlyPermanentDrainActive = False # Analizar solo para drenajes permanentes.
 
 # Log file creation
@@ -66,7 +66,7 @@ def CapaPropiedades(i):
     totalEntidades = arcpy.GetCount_management(i)
     descGeometria = arcpy.Describe(i)
     tipoGeometria = descGeometria.shapeType
-    PrintLog('### Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
+    PrintLog('#### Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
     PrintLog('| # | Campo | Tipo |', True)
     TableHeadMarkdown(3)
     campos = arcpy.ListFields(i)
@@ -291,7 +291,7 @@ else:
     print('Actualización de conversión a XLS desactivada...')
 print('\n')
 
-PrintLog('\n## Visualización de tablas resultados', True)
+PrintLog('\n## Visualización de tablas resultados con análisis de forma y densidad', True)
 PrintLog('\n### AH - área hidrográfica\n', True)
 PrintLog(statisticsTableAHDBF, True)
 PrintLog('\n| AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |', True)
