@@ -34,11 +34,11 @@ drainageSubtype, drainageLen = 'ESTADO_DRE', 'SHAPE_Leng'
 drainageSubtypePerm = 5101
 outCoordinateSystem = "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"
 evalValueKc = [[1.25,'Casi redonda a oval redonda'], [1.5,'Oval-redonda a oval oblonga'], [999999,'Oval-oblonga a rectangular-oblonga']] # Rangos coeficiente de compacidad Kc según ANLA - Colombia en modelo de datos GDB Nacional
-evalAreaSZH= [300, 700, 900, 1100, 1300, 1500, 2000, 2500, 3500, 5000, 10000, 20000, 999999] # Valores de corte para evaluar número de subzonas
+evalAreaSZH= [[300,0,0], [700,0,0], [900,0,0], [1100,0,0], [1300,0,0], [1500,0,0], [2000,0,0], [2500,0,0], [3500,0,0], [5000,0,0], [10000,0,0], [20000,0,0], [999999,0,0]] # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
 decimalPos = 2 # Posiciones decimales para impresión de tablas en formato Markdown
 consKc = 0.28209479179826
-intersectActive = True # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
-statisticActive = True # Volver a generar estadísticos en DBF y convertir a Excel.
+intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
 onlyPermanentDrainActive = False # Analizar solo para drenajes permanentes.
 
 # Función para impresión de títulos con lineas
@@ -81,7 +81,6 @@ print ( 'Compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
         '\nCláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\nCréditos: r.cfdtools@gmail.com\n')
 print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
-
 
 print('Propiedades y entidades encontradas para las capas de entrada:\n')
 CapaPropiedades(hydroSubZoneLayer)
@@ -136,6 +135,7 @@ print('\tSZH - subzonas hidrográficas...')
 arcpy.AddField_management(hydroSubZoneLayerCopy, 'Area', 'DOUBLE')
 arcpy.AddField_management(hydroSubZoneLayerCopy, 'Perm', 'DOUBLE')
 print('Agregando Kc - Coeficiente de Compacidad')
+print('Agregando KcTag - Coeficiente de Compacidad - Rótulo')
 print('Agregando Dd - Densidad de Drenaje km/km²')
 print('Agregando Dc - Densidad de corrientes 1/Km²')
 print('\tAH - áreas hidrográficas...')
@@ -164,6 +164,23 @@ print('\tZH - zonas hidrográficas...')
 arcpy.CalculateGeometryAttributes_management(hydroZoneLayer,[['Area','AREA'],['Perm','PERIMETER_LENGTH']],'KILOMETERS','SQUARE_KILOMETERS')
 print('\tSZH - subzonas hidrográficas...')
 arcpy.CalculateGeometryAttributes_management(hydroSubZoneLayerCopy,[['Area','AREA'],['Perm','PERIMETER_LENGTH']],'KILOMETERS','SQUARE_KILOMETERS')
+print('\n')
+
+TitleSeparator('Total nacional de SZH - subzonas hidrográficas por rango de área, Markdown')
+print('| Rango km² | # Subzonas | Acumulado |')
+print('|---|---|---|')
+cont = 0
+for i in evalAreaSZH:
+    cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
+    for fila in cursor:
+        if fila.getValue('Area') <= i[0]: i[2] += 1
+    if cont != 0:
+        evalAreaSZH[cont][1] = evalAreaSZH[cont][2] - evalAreaSZH[cont-1][2]
+        print('| ' + str(evalAreaSZH[cont - 1][0]) + '-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+    else:
+        evalAreaSZH[cont][1] = evalAreaSZH[cont][2]
+        print('| 0-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+    cont += 1
 print('\n')
 
 TitleSeparator('Intersección de drenajes con subzonas hidrográficas y cálculo de longitud por segmento','Both')

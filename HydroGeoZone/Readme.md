@@ -85,6 +85,12 @@ Para la marcación complementaria del coeficiente de compacidad Kc, se utilizar�
 | 1003   | Oval-oblonga a rectangular-oblonga | > 1.5                    |
 
 
+### Funcionalidades
+
+* 
+
+> La capa de drenajes utiliza el sistema de proyección `9377 MAGNA-SIRGAS / Origen-Nacional` que contiene sistema proyectado con unidades en metros y para el cálculo de las longitudes requeridas por este script, no es necesaria su reproyección. La capa de subzonas hidrográficas requiere ser proyectada al origen nacional debido a que se encuentra referenciada en `4686 MAGNA` solo en sistema geográfico.
+
 ### Capas requeridas
 
 
@@ -173,11 +179,29 @@ Estado de drenajes - Subtipos
 
 ### Ejecución y resultados del análisis
 
-> Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
+Consideraciones generales:
 
-> Para analizar solo a partir de drenajes permanentes, establecer en True las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
+* Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
+* Para analizar solo a partir de drenajes permanentes, establecer en True las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
+* Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
 
-> Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
+#### Total nacional de SZH - subzonas hidrográficas por rango de área
+
+| Rango km² | # Subzonas | Acumulado |
+|---|---|---|
+| 0-300 | 9 | 9 |
+| 300-700 | 19 | 28 |
+| 700-900 | 16 | 44 |
+| 900-1100 | 18 | 62 |
+| 1100-1300 | 18 | 80 |
+| 1300-1500 | 11 | 91 |
+| 1500-2000 | 34 | 125 |
+| 2000-2500 | 29 | 154 |
+| 2500-3500 | 40 | 194 |
+| 3500-5000 | 45 | 239 |
+| 5000-10000 | 60 | 299 |
+| 10000-20000 | 14 | 313 |
+| 20000-999999 | 1 | 314 |
 
 #### AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.zip).
 

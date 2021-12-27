@@ -1,5 +1,5 @@
 Tareas
-	Subclasificación por tamaño.
+	Subclasificación por area.
 	Graficas de análisis como en LaterStatisticQGIS.
 
 

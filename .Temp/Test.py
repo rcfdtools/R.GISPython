@@ -3,6 +3,26 @@
 import pandas as pd
 import numpy as np
 
+# Multidimensional array basic operations
+evalAreaSZH= [[300,120], [700,180], [900,320], [1100,400], [1300,0], [1500,0], [2000,0], [2500,0], [3500,0], [5000,0], [10000,0], [20000,0], [999999,0]]
+evalAreaSZH[4][1] = 1973
+cont = 0
+for i in evalAreaSZH:
+    if cont == 0:
+        print(str(i[0]) + ', ' + str(i[1]))
+    else:
+        print(str(i[0]) + ', ' + str(i[1]-evalAreaSZH[cont-1][1]))
+    cont += 1
+
+cont = 0
+for i in evalAreaSZH:
+    if cont == 0:
+        print(str(i[0]) + ', ' + str(i[1]))
+    else:
+        print(str(i[0]) + ', ' + str(i[1]-evalAreaSZH[cont-1][1]))
+    cont += 1
+
+'''
 # Simple array evaluation with numpy
 data = np.array([[1,'Alto'],[2,'Medio'],[3,'Bajo']])
 print(pd.DataFrame(data,columns=['A','B']))
@@ -43,3 +63,5 @@ print('Valor en rango: '+str(JenksEval(175.4,jenksVal,1)))
 # For with internal counter and skip line jump
 for i in range(2,12):
     print(' ',i, end = ', ')
+
+'''
