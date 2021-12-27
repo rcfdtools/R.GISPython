@@ -8,13 +8,14 @@
 * Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License
 * Créditos: r.cfdtools@gmail.com
 
-Fecha y hora de inicio de ejecución: 2021-12-27 16:00:01.301841
+Fecha y hora de inicio de ejecución: 2021-12-27 16:04:17.667686
 
 ### Propiedades y entidades encontradas para las capas de entrada
 
 #### Campos en D:/R.GISPython/HydroGeoZone/Data/Zonificacion_hidrografica_2013.shp (Polygons 316)
 
 | # | Campo | Tipo |
+|---|---|---|
 | 1 | FID | OID |
 | 2 | Shape | Geometry |
 | 3 | OBJECTID_1 | Integer |
@@ -32,6 +33,7 @@ Fecha y hora de inicio de ejecución: 2021-12-27 16:00:01.301841
 #### Campos en D:/R.GISPython/HydroGeoZone/Data/Drenaje_Sencillo.shp (Polylines 426719)
 
 | # | Campo | Tipo |
+|---|---|---|
 | 1 | FID | OID |
 | 2 | Shape | Geometry |
 | 3 | OBJECTID | Integer |
@@ -48,9 +50,11 @@ Fecha y hora de inicio de ejecución: 2021-12-27 16:00:01.301841
 | 14 | LDre | Double |
 
 #### Evaluación de drenajes por subtipo
+
 > (0 - Sin asignación, 5101 - Permanente, 5102 - Intermitente)
 
 | Código | # Drenajes |
+|---|---|---|
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
 | 0-300 | 9 | 9 |

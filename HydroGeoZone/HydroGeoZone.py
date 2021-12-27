@@ -67,7 +67,7 @@ def printTitle(titleText,titleType='Both'):
 # Función para crear separador de filas cabecera en formato Markdown
 def TableHeadMarkdown(n=2):
     lineSep = '|---'
-    print(lineSep * n + '|')
+    PrintLog(lineSep * n + '|', True)
 
 # Función de impresión en pantalla y log de resultados
 def PrintLog(txtPrint, onScreen=True):
@@ -82,7 +82,6 @@ def CapaPropiedades(i):
     descGeometria = arcpy.Describe(i)
     tipoGeometria = descGeometria.shapeType
     PrintLog('#### Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
-    TableHeadMarkdown(3)
     PrintLog('| # | Campo | Tipo |', True)
     TableHeadMarkdown(3)
     campos = arcpy.ListFields(i)
