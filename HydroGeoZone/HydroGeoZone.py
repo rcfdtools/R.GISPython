@@ -166,23 +166,6 @@ print('\tSZH - subzonas hidrográficas...')
 arcpy.CalculateGeometryAttributes_management(hydroSubZoneLayerCopy,[['Area','AREA'],['Perm','PERIMETER_LENGTH']],'KILOMETERS','SQUARE_KILOMETERS')
 print('\n')
 
-TitleSeparator('Total nacional de SZH - subzonas hidrográficas por rango de área, Markdown')
-print('| Rango km² | # Subzonas | Acumulado |')
-print('|---|---|---|')
-cont = 0
-for i in evalAreaSZH:
-    cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
-    for fila in cursor:
-        if fila.getValue('Area') <= i[0]: i[2] += 1
-    if cont != 0:
-        evalAreaSZH[cont][1] = evalAreaSZH[cont][2] - evalAreaSZH[cont-1][2]
-        print('| ' + str(evalAreaSZH[cont - 1][0]) + '-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
-    else:
-        evalAreaSZH[cont][1] = evalAreaSZH[cont][2]
-        print('| 0-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
-    cont += 1
-print('\n')
-
 TitleSeparator('Intersección de drenajes con subzonas hidrográficas y cálculo de longitud por segmento','Both')
 print('Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior.')
 if intersectActive == True:
@@ -223,6 +206,48 @@ arcpy.JoinField_management(hydroZoneLayer, 'COD_ZH', statisticsTableZHDBF, 'COD_
 print('\tSZH - subzona hidrográfica ' + hydroSubZoneLayerCopy)
 arcpy.JoinField_management(hydroSubZoneLayerCopy, 'COD_SZH', statisticsTableSZHDBF, 'COD_SZH')
 print('\n')
+
+TitleSeparator('Total nacional de SZH - subzonas hidrográficas por rango de área')
+print('| Rango km² | # Subzonas | Acumulado |')
+print('|---|---|---|')
+cont = 0
+for i in evalAreaSZH:
+    cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
+    for fila in cursor:
+        if fila.getValue('Area') <= i[0]: i[2] += 1
+    if cont != 0:
+        evalAreaSZH[cont][1] = evalAreaSZH[cont][2] - evalAreaSZH[cont-1][2]
+        print('| ' + str(evalAreaSZH[cont - 1][0]) + '-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+    else:
+        evalAreaSZH[cont][1] = evalAreaSZH[cont][2]
+        print('| 0-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+    cont += 1
+print('\n')
+
+TitleSeparator('SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica')
+print('Imprimiendo en formato Markdown...')
+print('\n')
+cursorZH = arcpy.SearchCursor(hydroAreaLayer)
+for filaZH in cursorZH:
+    for j in evalAreaSZH: # Reinicializar acumuladores
+        j[1] = 0
+        j[2] = 0
+    print('AH - Área hidrográfica: ' + str(filaZH.getValue(fieldAHCode)) + ' - ' + str(filaZH.getValue(fieldAHName)))
+    print('| Rango km² | # Subzonas | Acumulado |')
+    print('|---|---|---|')
+    cont = 0
+    for i in evalAreaSZH:
+        cursorSZH = arcpy.SearchCursor(hydroSubZoneLayerCopy)
+        for fila in cursorSZH:
+            if fila.getValue('Area') <= i[0] and fila.getValue(fieldAHCode) == filaZH.getValue(fieldAHCode): i[2] += 1
+        if cont != 0:
+            evalAreaSZH[cont][1] = evalAreaSZH[cont][2] - evalAreaSZH[cont-1][2]
+            print('| ' + str(evalAreaSZH[cont - 1][0]) + '-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+        else:
+            evalAreaSZH[cont][1] = evalAreaSZH[cont][2]
+            print('| 0-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+        cont += 1
+    print('\n')
 
 TitleSeparator('Análisis de forma y densidad', 'Both')
 codeEvalKc='''def getKcTag(Kc):
