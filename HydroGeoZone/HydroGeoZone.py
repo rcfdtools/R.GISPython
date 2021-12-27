@@ -84,7 +84,7 @@ PrintLog ('\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
         '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\n* Créditos: r.cfdtools@gmail.com\n', True)
 PrintLog('Fecha y hora de inicio de ejecución: '+str(datetime.now())+'\n', True)
-PrintLog('\tSistema de coordenadas: ' + outCoordinateSystem + '\n', False)
+PrintLog('```Sistema de coordenadas: ' + outCoordinateSystem + '```\n', False)
 print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 
 PrintLog('## Propiedades y entidades encontradas para las capas de entrada\n')
