@@ -222,7 +222,6 @@ AH - Área hidrográfica: 1 - Caribe
 | 10000-20000 | 0 | 46 |
 | 20000-999999 | 0 | 46 |
 
-
 AH - Área hidrográfica: 2 - Magdalena Cauca
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
@@ -239,7 +238,6 @@ AH - Área hidrográfica: 2 - Magdalena Cauca
 | 5000-10000 | 14 | 104 |
 | 10000-20000 | 1 | 105 |
 | 20000-999999 | 0 | 105 |
-
 
 AH - Área hidrográfica: 3 - Orinoco
 | Rango km² | # Subzonas | Acumulado |
@@ -258,7 +256,6 @@ AH - Área hidrográfica: 3 - Orinoco
 | 10000-20000 | 6 | 73 |
 | 20000-999999 | 0 | 73 |
 
-
 AH - Área hidrográfica: 4 - Amazonas
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
@@ -275,7 +272,6 @@ AH - Área hidrográfica: 4 - Amazonas
 | 5000-10000 | 20 | 49 |
 | 10000-20000 | 7 | 56 |
 | 20000-999999 | 1 | 57 |
-
 
 AH - Área hidrográfica: 5 - Pacifico
 | Rango km² | # Subzonas | Acumulado |
@@ -294,8 +290,9 @@ AH - Área hidrográfica: 5 - Pacifico
 | 10000-20000 | 0 | 33 |
 | 20000-999999 | 0 | 33 |
 
+#### Forma y densidad por zonificación hidrográfica 
 
-#### AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.zip).
+AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.zip).
 
 | AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|
@@ -305,7 +302,7 @@ AH - Área hidrográfica: 5 - Pacifico
 | 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.96 | 0.87 | 0.3 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
-#### AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
+AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
 
 | AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|
@@ -315,7 +312,7 @@ AH - Área hidrográfica: 5 - Pacifico
 | 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.96 | 0.87 | 0.3 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
-#### ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
+ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
 
 | AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -359,7 +356,7 @@ AH - Área hidrográfica: 5 - Pacifico
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5968.79 | 719.69 | 3277 | 7614.21 | 2.63 | 1.28 | 0.55 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
-#### ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadisticaSoloPermanente.zip)
+ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadisticaSoloPermanente.zip)
 
 | AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -403,8 +400,7 @@ AH - Área hidrográfica: 5 - Pacifico
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5968.79 | 719.69 | 3277 | 7614.21 | 2.63 | 1.28 | 0.55 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
-
-#### SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.zip).
+SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.zip).
 
 > Debido al número de subzonas hidrográficas, en esta sección no se presentan los resultados detallados para drenajes solo permanentes. Una copia de los estadísticos obtenidos se encuentra en el comprimido de este enlace [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadisticaSoloPermanente.zip)
 

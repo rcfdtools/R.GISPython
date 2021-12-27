@@ -1,5 +1,5 @@
 Tareas
-	Subclasificación por area.
+	Subclasificación por area Impresión en archivo externo.
 	Graficas de análisis como en LaterStatisticQGIS.
 
 
