@@ -60,7 +60,7 @@ Las cuencas hidrográficas que entregan o desembocan sus aguas superficiales dir
 
 ### Caso de estudio
 
-Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de Colombia a partir de la delimitación geográfica realizada por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/) y la red de drenajes sencillos digitalizada a escala 1:25k por el [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).
+Estudiar la forma y densidad de las áreas, zonas y subzonas hidrográficas de Colombia a partir de la delimitación geográfica realizada por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia, adscrito al [Ministerio de Medio Ambiente - Minambiente](https://www.minambiente.gov.co/) y la red de drenajes sencillos digitalizada a escala 1:100k por el [Instituto Geográfico Agustín Codazzi - IGAC](https://www.igac.gov.co/).
 
 Análisis de forma y densidad
 

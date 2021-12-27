@@ -40,8 +40,8 @@ evalValueKc = [[1.25,'Casi redonda a oval redonda'], [1.5,'Oval-redonda a oval o
 evalAreaSZH= [[300,0,0], [700,0,0], [900,0,0], [1100,0,0], [1300,0,0], [1500,0,0], [2000,0,0], [2500,0,0], [3500,0,0], [5000,0,0], [10000,0,0], [20000,0,0], [999999,0,0]] # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
 decimalPos = 2 # Posiciones decimales para impresión de tablas en formato Markdown
 consKc = 0.28209479179826
-intersectActive = True # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
-statisticActive = True # Volver a generar estadísticos en DBF y convertir a Excel.
+intersectActive = False # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = False # Volver a generar estadísticos en DBF y convertir a Excel.
 onlyPermanentDrainActive = False # Analizar solo para drenajes permanentes.
 
 # Log file creation
@@ -76,15 +76,15 @@ def CapaPropiedades(i):
 
 # Cabecera
 PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python (log de resultados)', True)
-PrintLog ('\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
-        '\n* Python versión: ' + str(sys.version)+
-        '\n* Python rutas: ' + str(sys.path[0:5])+
-        '\n* matplotlib versión: ' + str(matplotlib.__version__) +
-        '\n* Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone'
-        '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
-        '\n* Créditos: r.cfdtools@gmail.com\n', True)
-PrintLog('Fecha y hora de inicio de ejecución: '+str(datetime.now())+'\n', True)
-PrintLog('```\nSistema de coordenadas: ' + outCoordinateSystem + '\n```\n', False) # Mostrar como código en Markdown
+PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
+            '\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
+            '\n* Python versión: ' + str(sys.version)+
+            '\n* Python rutas: ' + str(sys.path[0:5])+
+            '\n* matplotlib versión: ' + str(matplotlib.__version__) +
+            '\n* Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone'
+            '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
+            '\n* Créditos: r.cfdtools@gmail.com\n', True)
+PrintLog('\tSistema de coordenadas: ' + outCoordinateSystem + '\n', False) # Mostrar como código en Markdown
 print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 
 PrintLog('## Propiedades y entidades encontradas para las capas de entrada\n')
@@ -214,6 +214,7 @@ print('\tSZH - subzona hidrográfica ' + hydroSubZoneLayerCopy)
 arcpy.JoinField_management(hydroSubZoneLayerCopy, 'COD_SZH', statisticsTableSZHDBF, 'COD_SZH')
 print('\n')
 
+PrintLog('\n## Distribución de áreas en km² de subzonas por área hidrográfica', True)
 PrintLog('\n### Total nacional de SZH - subzonas hidrográficas por rango de área\n', True)
 print('Imprimiendo en formato Markdown...')
 PrintLog('| Rango km² | # Subzonas | Acumulado |', True)
@@ -291,7 +292,7 @@ else:
     print('Actualización de conversión a XLS desactivada...')
 print('\n')
 
-PrintLog('\n## Visualización de tablas resultados con análisis de forma y densidad', True)
+PrintLog('\n## Visualización de tablas resultados para análisis de forma y densidad', True)
 PrintLog('\n### AH - área hidrográfica\n', True)
 PrintLog(statisticsTableAHDBF, True)
 PrintLog('\n| AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |', True)

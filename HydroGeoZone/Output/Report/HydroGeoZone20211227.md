@@ -1,5 +1,6 @@
 ## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python (log de resultados)
 
+* Fecha y hora de inicio de ejecución: 2021-12-27 18:52:51.519894
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -8,11 +9,7 @@
 * Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License
 * Créditos: r.cfdtools@gmail.com
 
-Fecha y hora de inicio de ejecución: 2021-12-27 18:28:54.972821
-
-```
-Sistema de coordenadas: PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]
-```
+	Sistema de coordenadas: PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]
 
 ## Propiedades y entidades encontradas para las capas de entrada
 
@@ -62,6 +59,8 @@ Sistema de coordenadas: PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGN
 | 0 | 140 |
 | 5101 | 421909 |
 | 5102 | 4670 |
+
+## Distribución de áreas en km² de subzonas por área hidrográfica
 
 ### Total nacional de SZH - subzonas hidrográficas por rango de área
 
@@ -174,7 +173,7 @@ Sistema de coordenadas: PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGN
 | 10000-20000 | 0 | 33 |
 | 20000-999999 | 0 | 33 |
 
-## Visualización de tablas resultados con análisis de forma y densidad
+## Visualización de tablas resultados para análisis de forma y densidad
 
 ### AH - área hidrográfica
 
@@ -555,6 +554,6 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5502 | Río Docampadó y Directos Pacífico | 1908.15 | 324.3 | 1039 | 2428.37 | 2.09 | 1.27 | 0.54 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 5601 | Directos Pacifico Frontera Panamá | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
-Fecha y hora de terminación de ejecución: 2021-12-27 18:36:49.310045
+Fecha y hora de terminación de ejecución: 2021-12-27 18:53:16.728884
 
-Proceso completado (dt = 474.3 sec o 7.9 min)
+Proceso completado (dt = 25.2 sec o 0.4 min)
