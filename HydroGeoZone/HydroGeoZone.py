@@ -8,6 +8,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from datetime import datetime
 from datetime import date
+import time
 
 # Variables y datos de entrada
 absolutePath = r'D:/R.GISPython/HydroGeoZone' # Usar r'.' para retornar a ruta relativa
@@ -47,6 +48,7 @@ onlyPermanentDrainActive = False # Analizar solo para drenajes permanentes.
 currentDate = date.today()
 currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
 fileLog = open(outputPath+'Report/HydroGeoZone'+currentDateTxt+'.md', 'w+') # w+ para crear el archivo si no existe
+timeStart = time.time()
 
 # Función para impresión de títulos con líneas
 def printTitle(titleText,titleType='Both'):
@@ -71,8 +73,7 @@ def TableHeadMarkdown(n=2):
 
 # Función de impresión en pantalla y log de resultados
 def PrintLog(txtPrint, onScreen=True):
-    if onScreen == True:
-        print(txtPrint)
+    if onScreen == True: print(txtPrint)
     fileLog.write(txtPrint + '\n')
 
 # Función para consultar los campos de atributos disponibles
@@ -306,29 +307,30 @@ else:
     print('Actualización de conversión a XLS desactivada...')
 print('\n')
 
-print('Visualización de tablas resultados en formato Markdown', 'Both')
-print('\nAH - área hidrográfica')
-print(statisticsTableAHDBF)
-print('| AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |')
-print('|---|---|---|---|---|---|---|---|---|---|')
+PrintLog('\n## Visualización de tablas resultados en formato Markdown', True)
+PrintLog('\n### AH - área hidrográfica\n', True)
+PrintLog(statisticsTableAHDBF, True)
+PrintLog('\n| AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |', True)
+TableHeadMarkdown(10)
 cursor = arcpy.SearchCursor(hydroAreaLayer)
 for fila in cursor:
-    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |')
-print('\nZH - zona hidrográfica')
-print(statisticsTableZHDBF)
-print('| AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |')
-print('|---|---|---|---|---|---|---|---|---|---|---|---|')
+    PrintLog('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |', True)
+PrintLog('\n### ZH - zona hidrográfica\n', True)
+PrintLog(statisticsTableZHDBF, True)
+PrintLog('\n| AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |', True)
+TableHeadMarkdown(13)
 cursor = arcpy.SearchCursor(hydroZoneLayer)
 for fila in cursor:
-    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |')
-print('\nSZH - Subzona hidrográfica')
-print(statisticsTableSZHDBF)
-print('| AH | Nombre AH | ZH | Nombre ZH | SZH | Nombre SZH | Área, km² | Perm, km | n Drenajes | Σ LCi, km | Kc | Dd | Dc | Kc Tag |')
-print('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+    PrintLog('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |', True)
+PrintLog('\n### SZH - Subzona hidrográfica\n', True)
+PrintLog(statisticsTableSZHDBF, True)
+PrintLog('\n| AH | Nombre AH | ZH | Nombre ZH | SZH | Nombre SZH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |', True)
+TableHeadMarkdown(14)
 cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
 for fila in cursor:
-    print('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(fila.getValue(fieldSZHCode)) + ' | ' + fila.getValue(fieldSZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |')
+    PrintLog('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(fila.getValue(fieldSZHCode)) + ' | ' + fila.getValue(fieldSZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |', True)
 
+PrintLog('\nFecha y hora de terminación de ejecución: '+str(datetime.now()), True)
+timeEnd = time.time()
+PrintLog('Proceso completado (dt = ' + str(round(timeEnd - timeStart,1)) + ' sec o ' + str(round((timeEnd - timeStart)/60,1)) + ' min)', True)
 fileLog.close()
-print('\nFecha y hora de terminación de ejecución: '+str(datetime.now()))
-print('Proceso finalizado.')

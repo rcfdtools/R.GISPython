@@ -1,18 +1,13 @@
 Tareas
-	Subclasificación por area Impresión en archivo externo.
 	Graficas de análisis como en LaterStatisticQGIS.
 
-
-drainageLayer = drainageLayerIn
-
-
-Longitudes
+Longitudes en red de drenaje 2019
 Drenajes intersect 	1104464.501861
 Zubzona Sum:		1104464.501861
 Zona Sum:			1104464.501861
 AreaH Sum:			1104464.501861
 
-Frecuencias
+Frecuencias en red de drenaje 2019
 Drenajes intersect 	432554
 ZubzonaH Sum: 		432554
 ZonaH Sum:			432554
