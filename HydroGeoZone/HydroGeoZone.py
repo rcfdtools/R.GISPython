@@ -81,7 +81,7 @@ def CapaPropiedades(i):
     totalEntidades = arcpy.GetCount_management(i)
     descGeometria = arcpy.Describe(i)
     tipoGeometria = descGeometria.shapeType
-    PrintLog('#### Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
+    PrintLog('### Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
     PrintLog('| # | Campo | Tipo |', True)
     TableHeadMarkdown(3)
     campos = arcpy.ListFields(i)
@@ -90,7 +90,7 @@ def CapaPropiedades(i):
         cont += 1
 
 # Cabecera
-PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python', True)
+PrintLog('# Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python', True)
 PrintLog ('\n* Compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
         '\n* Python versión: ' + str(sys.version)+
         '\n* Python rutas: ' + str(sys.path[0:5])+
@@ -99,20 +99,21 @@ PrintLog ('\n* Compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
         '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\n* Créditos: r.cfdtools@gmail.com\n', True)
 PrintLog('Fecha y hora de inicio de ejecución: '+str(datetime.now())+'\n', True)
+PrintLog('Sistema de coordenadas: ' + outCoordinateSystem + '\n', False)
 print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 
-PrintLog('### Propiedades y entidades encontradas para las capas de entrada\n')
+PrintLog('## Propiedades y entidades encontradas para las capas de entrada\n')
 CapaPropiedades(hydroSubZoneLayer)
 PrintLog('\n', True)
 CapaPropiedades(drainageLayerIn)
-PrintLog('\n#### Evaluación de drenajes por subtipo\n', True)
+PrintLog('\n### Evaluación de drenajes por subtipo\n', True)
 PrintLog('> (0 - Sin asignación, 5101 - Permanente, 5102 - Intermitente)\n', True)
 arcpy.Statistics_analysis(drainageLayerIn, statisticsTableDrainageDBF, [[drainageLen, 'SUM']], [drainageSubtype])
 cursor = arcpy.SearchCursor(statisticsTableDrainageDBF)
 PrintLog('| Código | # Drenajes |', True)
 TableHeadMarkdown(3)
 for fila in cursor:
-    print('| ' + str(fila.getValue(drainageSubtype)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' |')
+    PrintLog('| ' + str(fila.getValue(drainageSubtype)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' |', True)
 if onlyPermanentDrainActive == True:
     print(  'Filtrado de drenajes permanentes activado.\n'
             'Filtrando drenajes solo permanentes en ' + drainageLayer +
@@ -228,10 +229,10 @@ print('\tSZH - subzona hidrográfica ' + hydroSubZoneLayerCopy)
 arcpy.JoinField_management(hydroSubZoneLayerCopy, 'COD_SZH', statisticsTableSZHDBF, 'COD_SZH')
 print('\n')
 
-print('Total nacional de SZH - subzonas hidrográficas por rango de área')
+PrintLog('\n### Total nacional de SZH - subzonas hidrográficas por rango de área\n', True)
 print('Imprimiendo en formato Markdown...')
 PrintLog('| Rango km² | # Subzonas | Acumulado |', True)
-PrintLog('|---|---|---|', True)
+TableHeadMarkdown(3)
 cont = 0
 for i in evalAreaSZH:
     cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
@@ -246,16 +247,16 @@ for i in evalAreaSZH:
     cont += 1
 print('\n')
 
-print('SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica')
+PrintLog('\n### SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica\n', True)
 print('Imprimiendo en formato Markdown...')
 cursorZH = arcpy.SearchCursor(hydroAreaLayer)
 for filaZH in cursorZH:
     for j in evalAreaSZH: # Reinicializar acumuladores
         j[1] = 0
         j[2] = 0
-    print('AH - Área hidrográfica ' + str(filaZH.getValue(fieldAHCode)) + ' - ' + str(filaZH.getValue(fieldAHName)))
-    print('| Rango km² | # Subzonas | Acumulado |')
-    print('|---|---|---|')
+    PrintLog('\n#### AH - Área hidrográfica ' + str(filaZH.getValue(fieldAHCode)) + ' - ' + str(filaZH.getValue(fieldAHName))+'\n', True)
+    PrintLog('| Rango km² | # Subzonas | Acumulado |', True)
+    TableHeadMarkdown(3)
     cont = 0
     for i in evalAreaSZH:
         cursorSZH = arcpy.SearchCursor(hydroSubZoneLayerCopy)
@@ -263,10 +264,10 @@ for filaZH in cursorZH:
             if fila.getValue('Area') <= i[0] and fila.getValue(fieldAHCode) == filaZH.getValue(fieldAHCode): i[2] += 1
         if cont != 0:
             evalAreaSZH[cont][1] = evalAreaSZH[cont][2] - evalAreaSZH[cont-1][2]
-            print('| ' + str(evalAreaSZH[cont - 1][0]) + '-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+            PrintLog('| ' + str(evalAreaSZH[cont - 1][0]) + '-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |', True)
         else:
             evalAreaSZH[cont][1] = evalAreaSZH[cont][2]
-            print('| 0-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+            PrintLog('| 0-' + str(evalAreaSZH[cont][0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |', True)
         cont += 1
     print('\n')
 
