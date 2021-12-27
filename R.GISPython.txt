@@ -44,6 +44,22 @@ How to return to push commits and files in the .main
 	7. Check and Commit.
 	Done
 
+# Función para impresión de títulos con líneas v20211227
+def printTitle(titleText,titleType='Both'):
+    # titleType: Top, Bottom, Both
+    nc='-'
+    nVal=len(titleText)
+    if titleType == 'Both':
+        print(nc*nVal)
+        print(titleText)
+        print(nc * nVal)
+    elif  titleType == 'Top':
+        print(nc*nVal)
+        print(titleText)
+    else:
+        print(titleText)
+        print(nc*nVal)
+
 Data sample with Pandas from https://www.codegrepper.com/
 df['date'] = pd.to_datetime(df['date'],format='%Y%m%d')
 df['year'] = pd.DatetimeIndex(df['date']).year

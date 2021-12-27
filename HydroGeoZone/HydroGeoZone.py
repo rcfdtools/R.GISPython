@@ -50,22 +50,6 @@ currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
 fileLog = open(outputPath+'Report/HydroGeoZone'+currentDateTxt+'.md', 'w+') # w+ para crear el archivo si no existe
 timeStart = time.time()
 
-# Función para impresión de títulos con líneas
-def printTitle(titleText,titleType='Both'):
-    # titleType: Top, Bottom, Both
-    nc='-'
-    nVal=len(titleText)
-    if titleType == 'Both':
-        print(nc*nVal)
-        print(titleText)
-        print(nc * nVal)
-    elif  titleType == 'Top':
-        print(nc*nVal)
-        print(titleText)
-    else:
-        print(titleText)
-        print(nc*nVal)
-
 # Función para crear separador de filas cabecera en formato Markdown
 def TableHeadMarkdown(n=2):
     lineSep = '|---'
@@ -91,8 +75,8 @@ def CapaPropiedades(i):
         cont += 1
 
 # Cabecera
-PrintLog('# Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python', True)
-PrintLog ('\n* Compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
+PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python (log de resultados)', True)
+PrintLog ('\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
         '\n* Python versión: ' + str(sys.version)+
         '\n* Python rutas: ' + str(sys.path[0:5])+
         '\n* matplotlib versión: ' + str(matplotlib.__version__) +
@@ -100,7 +84,7 @@ PrintLog ('\n* Compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
         '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
         '\n* Créditos: r.cfdtools@gmail.com\n', True)
 PrintLog('Fecha y hora de inicio de ejecución: '+str(datetime.now())+'\n', True)
-PrintLog('Sistema de coordenadas: ' + outCoordinateSystem + '\n', False)
+PrintLog('\tSistema de coordenadas: ' + outCoordinateSystem + '\n', False)
 print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 
 PrintLog('## Propiedades y entidades encontradas para las capas de entrada\n')
@@ -112,7 +96,7 @@ PrintLog('> (0 - Sin asignación, 5101 - Permanente, 5102 - Intermitente)\n', Tr
 arcpy.Statistics_analysis(drainageLayerIn, statisticsTableDrainageDBF, [[drainageLen, 'SUM']], [drainageSubtype])
 cursor = arcpy.SearchCursor(statisticsTableDrainageDBF)
 PrintLog('| Código | # Drenajes |', True)
-TableHeadMarkdown(3)
+TableHeadMarkdown(2)
 for fila in cursor:
     PrintLog('| ' + str(fila.getValue(drainageSubtype)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' |', True)
 if onlyPermanentDrainActive == True:
@@ -307,7 +291,7 @@ else:
     print('Actualización de conversión a XLS desactivada...')
 print('\n')
 
-PrintLog('\n## Visualización de tablas resultados en formato Markdown', True)
+PrintLog('\n## Visualización de tablas resultados', True)
 PrintLog('\n### AH - área hidrográfica\n', True)
 PrintLog(statisticsTableAHDBF, True)
 PrintLog('\n| AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |', True)
@@ -318,7 +302,7 @@ for fila in cursor:
 PrintLog('\n### ZH - zona hidrográfica\n', True)
 PrintLog(statisticsTableZHDBF, True)
 PrintLog('\n| AH | Nombre AH | ZH | Nombre ZH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |', True)
-TableHeadMarkdown(13)
+TableHeadMarkdown(12)
 cursor = arcpy.SearchCursor(hydroZoneLayer)
 for fila in cursor:
     PrintLog('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |', True)
@@ -332,5 +316,5 @@ for fila in cursor:
 
 PrintLog('\nFecha y hora de terminación de ejecución: '+str(datetime.now()), True)
 timeEnd = time.time()
-PrintLog('Proceso completado (dt = ' + str(round(timeEnd - timeStart,1)) + ' sec o ' + str(round((timeEnd - timeStart)/60,1)) + ' min)', True)
+PrintLog('\nProceso completado (dt = ' + str(round(timeEnd - timeStart,1)) + ' sec o ' + str(round((timeEnd - timeStart)/60,1)) + ' min)', True)
 fileLog.close()
