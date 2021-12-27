@@ -2,24 +2,22 @@
 
 import pandas as pd
 import numpy as np
+import sys
 
-# Multidimensional array basic operations
+# Multidimensional array basic operations with print in a file
+logAreaEval = open('C:/Temp/ZonificacionAnalisisAreas.txt', 'w+')
 evalAreaSZH= [[300,120], [700,180], [900,320], [1100,400], [1300,0], [1500,0], [2000,0], [2500,0], [3500,0], [5000,0], [10000,0], [20000,0], [999999,0]]
 evalAreaSZH[4][1] = 1973
 cont = 0
 for i in evalAreaSZH:
     if cont == 0:
-        print(str(i[0]) + ', ' + str(i[1]))
+        vTxt = str(i[0]) + ', ' + str(i[1])
+        print(vTxt)
+        logAreaEval.write(vTxt + '\n' )
     else:
-        print(str(i[0]) + ', ' + str(i[1]-evalAreaSZH[cont-1][1]))
-    cont += 1
-
-cont = 0
-for i in evalAreaSZH:
-    if cont == 0:
-        print(str(i[0]) + ', ' + str(i[1]))
-    else:
-        print(str(i[0]) + ', ' + str(i[1]-evalAreaSZH[cont-1][1]))
+        vTxt = str(i[0]) + ', ' + str(i[1]-evalAreaSZH[cont-1][1])
+        print(vTxt)
+        logAreaEval.write(vTxt + '\n')
     cont += 1
 
 '''

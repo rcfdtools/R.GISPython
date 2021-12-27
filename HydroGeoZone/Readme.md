@@ -179,13 +179,15 @@ Estado de drenajes - Subtipos
 
 ### Ejecución y resultados del análisis
 
-Consideraciones generales:
+#### Consideraciones generales
 
 * Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
-* Para analizar solo a partir de drenajes permanentes, establecer en True las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
+* Para analizar solo a partir de drenajes permanentes, establecer en `True` las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
 * Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
 
 #### Total nacional de SZH - subzonas hidrográficas por rango de área
+
+> Debido a que algunas subzonas hidrográficas pueden no contener drenajes, luego del proceso de análisis e intersección espacial, es posible que en el total no se incluyan estas subzonas. Para las capas geográficas utilizadas en el presente análisis, de los 316 polígonos se han clasificado por área 314.
 
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
@@ -205,7 +207,7 @@ Consideraciones generales:
 
 #### SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica
 
-AH - Área hidrográfica: 1 - Caribe
+AH - Área hidrográfica 1 - Caribe
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
 | 0-300 | 3 | 3 |
@@ -222,7 +224,7 @@ AH - Área hidrográfica: 1 - Caribe
 | 10000-20000 | 0 | 46 |
 | 20000-999999 | 0 | 46 |
 
-AH - Área hidrográfica: 2 - Magdalena Cauca
+AH - Área hidrográfica 2 - Magdalena Cauca
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
 | 0-300 | 4 | 4 |
@@ -239,7 +241,7 @@ AH - Área hidrográfica: 2 - Magdalena Cauca
 | 10000-20000 | 1 | 105 |
 | 20000-999999 | 0 | 105 |
 
-AH - Área hidrográfica: 3 - Orinoco
+AH - Área hidrográfica 3 - Orinoco
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
 | 0-300 | 2 | 2 |
@@ -256,7 +258,7 @@ AH - Área hidrográfica: 3 - Orinoco
 | 10000-20000 | 6 | 73 |
 | 20000-999999 | 0 | 73 |
 
-AH - Área hidrográfica: 4 - Amazonas
+AH - Área hidrográfica 4 - Amazonas
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
 | 0-300 | 0 | 0 |
@@ -273,7 +275,7 @@ AH - Área hidrográfica: 4 - Amazonas
 | 10000-20000 | 7 | 56 |
 | 20000-999999 | 1 | 57 |
 
-AH - Área hidrográfica: 5 - Pacifico
+AH - Área hidrográfica 5 - Pacifico
 | Rango km² | # Subzonas | Acumulado |
 |---|---|---|
 | 0-300 | 0 | 0 |
