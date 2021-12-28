@@ -1,5 +1,5 @@
 ## Estadísticos de una capa geográfica
-Topics: `arcpy` `env` `arcpy.env.overwriteOutput`  `arcpy.GetCount_management()` `arcpy.Describe` `arcpy.ListFields()` `arcpy.env.workspace` `arcpy.Statistics_analysis()` `arcpy.TableToExcel_conversion()` `qgis.core` `qgis.utils` `iface` `QgsVectorLayer()` `.fields()` `.featureCount()` `.getFeature()` 
+Keywords: `arcpy` `env` `arcpy.env.overwriteOutput`  `arcpy.GetCount_management()` `arcpy.Describe` `arcpy.ListFields()` `arcpy.env.workspace` `arcpy.Statistics_analysis()` `arcpy.TableToExcel_conversion()` `qgis.core` `qgis.utils` `iface` `QgsVectorLayer()` `.fields()` `.featureCount()` `.getFeature()` 
 
 A partir de una capa geográfica en formato shapefile o feature class dentro de una Geodatabase, obtener los estadísticos de un campo de atributos determinado y estadísticos por filtrado a partir de un valor de corte en ArcGIS y QGIS.
 
@@ -33,10 +33,10 @@ Para el desarrollo de este ejercicio se recomienda que los scripts y demás arch
 
 Para la correcta ejecución de los scripts se recomienda utilizar la siguiente estructura de directorios.
 
-| Directorio  | Descripción                                                                                     |
-|-------------|-------------------------------------------------------------------------------------------------|
-| [/Datos](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Datos)  | Directorio de datos de entrada.                                                                 |
-| [/Mapas](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Mapas)  | Directorio con mapas para visualización de resultados en ArcGIS for Desktop, ArcGIS Pro y QGIS. |
+| Directorio                                                                          | Descripción                                                                                     |
+|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Datos)  | Directorio de datos de entrada.                                                                 |
+| [/Mapas](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Mapas)   | Directorio con mapas para visualización de resultados en ArcGIS for Desktop, ArcGIS Pro y QGIS. |
 | [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic/Output) | Directorio de salida de capa filtrada y archivos de resultados estadísticos.                    |
 
 
