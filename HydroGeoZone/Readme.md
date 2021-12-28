@@ -377,13 +377,25 @@ AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](ht
 ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
 
 Mapa de áreas por ZH - Zona Hidrográfica
-![ZHZonaHidrograficaAreaAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaAreaAll.png)
+![ZHZonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaArea.png)
 
 Mapa de número de drenajes por ZH - Zona Hidrográfica
 ![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
 
 Mapa de sumatoria de longitud de drenajes por ZH - Zona Hidrográfica
 ![ZHZonaHidrograficaSumLDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaSumLDrenajesAll.png)
+
+Mapa de Kc - Coeficiente de Compacidad por ZH - Zona Hidrográfica
+
+> Debido a que algunas ZH - Zonas Hidrográficas están compuestas por entidades multiparte, se pueden presentar valores altos en el cálculo del índice de compacidad, p.ej, la zona `38 - Orinoco Directos` se compone de 5 entidades polígonos.   
+
+![ZHZonaHidrograficaKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaKcAll.png)
+
+Mapa de Dd - Densidad de Drenajes por ZH - Zona Hidrográfica
+![ZHZonaHidrograficaDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaDdAll.png)
+
+Mapa de Dc - Densidad de Corrientes por ZH - Zona Hidrográfica
+![ZHZonaHidrograficaDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaDcAll.png)
 
 | AH  | Nombre AH       | ZH  | Nombre ZH                        | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc   | Dd   | Dc   | Kc Tag                             |
 |-----|-----------------|-----|----------------------------------|-----------|----------|------------|--------------|------|------|------|------------------------------------|
