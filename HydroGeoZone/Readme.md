@@ -1,6 +1,8 @@
 ## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python
 Keywords: `arcpy` `env` `arcpy.env.workspace` `arcpy.env.overwriteOutput` `datetime` `time` `Kc` `Gravelius` `Dd` `Dc` `arcpy.GetCount_management()` `arcpy.Describe()` `shapeType` `arcpy.ListFields()` `matplotlib` `arcpy.Statistics_analysis` `arcpy.SearchCursor()` `getValue()` `arcpy.Dissolve_management()` `arcpy.JoinField_management` `arcpy.AddField_management()` `arcpy.CalculateGeometryAttributes_management()` `arcpy.Intersect_analysis()` `arcpy.Statistics_analysis()` `arcpy.JoinField_management()` `arcpy.TableToExcel_conversion()` `open()` `.write()` `close()` 
 
+![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)
+
 La zonificación hidrográfica de Colombia desde el punto de vista hidrológico, tiene sus inicios en el HIMAT mediante la Resolución 0337 del 1978, la cual establece que el país está conformado por cinco Áreas hidrográficas (1-Caribe, 2- Magdalena - Cauca, 3- Orinoco, 4- Amazonas y 5-Pacífico) que a su vez están divididas en Zonas Hidrográficas y subdivididas en Subzonas Hidrográficas. En ese entonces, el propósito de la zonificación fue de adoptar un sistema de codificación para estaciones Hidrometerológicas. Posteriormente, el IDEAM introduce esta zonificación para otros fines, tales como estudios y análisis hidrológicos relacionados con los informes ambientales, p.ej, el Índice de Aridez, el Escurrimiento y el Rendimiento Hídrico.[^1]
 
 La zonificación de cuencas hidrográficas corresponde a tres niveles de jerarquía: áreas, zonas y subzonas hidrográficas. Las áreas hidrográficas corresponden a las regiones hidrográficas o vertientes que, en sentido estricto, son las grandes cuencas que agrupan un conjunto de ríos con sus afluentes que desembocan en un mismo mar. Ahora bien, en Colombia se distinguen cuatro vertientes, dos de ellas asociadas a ríos de importancia continental (vertiente del Orinoco y vertiente del Amazonas) y las vertientes del Atlántico y del Pacífico. Se delimita adicionalmente como áea hidrográfica la cuenca Magdalena-Cauca, que aunque tributa y forma parte de la vertiente del Atlántico, tiene importancia socioeconómica por su alto poblamiento y aporte al producto interno bruto.[^2]
@@ -781,13 +783,11 @@ SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes
 
 ### Referencias
 
-* [Zonificación y Codificación de Cuencas Hidrográficas - Colombia - Suramérica](http://documentacion.ideam.gov.co/openbiblio/bvirtual/022655/MEMORIASMAPAZONIFICACIONHIDROGRAFICA.pdf)
 * http://www.ideam.gov.co/capas-geo
 * http://www.siac.gov.co/catalogo-de-mapas
-* http://www.ideam.gov.co/web/agua/zonificacion-hidrografica
 * http://visor.ideam.gov.co/geovisor/#!/profiles/3
-* [Hidrografía Colombiana - IDEAM y SiGaia (versión no oficial de zonificación a 2018)](https://www.arcgis.com/home/item.html?id=89f6818e093f4b0faa99b456ad98018d)
 * https://desktop.arcgis.com/en/arcmap/10.6/tools/data-management-toolbox/calculate-geometry-attributes.htm
+* [Hidrografía Colombiana - IDEAM y SiGaia (versión no oficial de zonificación a 2018)](https://www.arcgis.com/home/item.html?id=89f6818e093f4b0faa99b456ad98018d)
 
 
 ### Autores
