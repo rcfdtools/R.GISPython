@@ -244,6 +244,8 @@ Estado de drenajes - Subtipos
 
 > Debido a que existen algunas subzonas hidrográficas con el mismo código y como polígonos independientes, y debido a que el script principal realiza el proceso de unificación en entidades multiparte para garantizar que el conteo y estadísticos de análisis a partir de drenajes sea consistente en el proceso de intersección espacial, el número de polígonos de la capa original (316) corresponde a un total de 314 subzonas únicas como se muestra en los siguientes resultados. 
 
+![SZHSubzonaHidrograficaRangoArea2013All.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaRangoArea2013All.png)
+
 | Rango km²    | # Subzonas | Acumulado |
 |--------------|------------|-----------|
 | 0-300        | 9          | 9         |
@@ -260,7 +262,6 @@ Estado de drenajes - Subtipos
 | 10000-20000  | 14         | 313       |
 | 20000-999999 | 1          | 314       |
 
-![SZHSubzonaHidrograficaRangoArea2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaRangoArea2013.png)
 
 #### SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica
 
@@ -353,7 +354,7 @@ AH - Área hidrográfica 5 - Pacifico
 
 AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.zip).
 
-![AHAreaHidrograficaFormaDensidad2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013.png)
+![AHAreaHidrograficaFormaDensidad2013All.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013All.png)
 
 | AH  | Nombre AH       | Área, km² | Perm, km | n Drenajes | Sum. LCi, km  | Kc   | Dd   | Dc   | Kc Tag                             |
 |-----|-----------------|-----------|----------|------------|---------------|------|------|------|------------------------------------|
@@ -376,7 +377,7 @@ AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](ht
 ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
 
 Mapa de áreas por ZH - Zona Hidrográfica
-![ZHZonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaArea.png)
+![ZHZonaHidrograficaAreaAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaAreaAll.png)
 
 Mapa de número de drenajes por ZH - Zona Hidrográfica
 ![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
