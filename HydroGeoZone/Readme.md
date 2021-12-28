@@ -353,6 +353,8 @@ AH - Área hidrográfica 5 - Pacifico
 
 AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.zip).
 
+![AHAreaHidrograficaFormaDensidad2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013.png)
+
 | AH  | Nombre AH       | Área, km² | Perm, km | n Drenajes | Sum. LCi, km  | Kc   | Dd   | Dc   | Kc Tag                             |
 |-----|-----------------|-----------|----------|------------|---------------|------|------|------|------------------------------------|
 | 1   | Caribe          | 102803.08 | 4814.69  | 39119      | 108190.65     | 4.24 | 1.05 | 0.38 | Oval-oblonga a rectangular-oblonga |
@@ -360,8 +362,6 @@ AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 
 | 3   | Orinoco         | 346081.36 | 3736.08  | 122458     | 301766.4      | 1.79 | 0.87 | 0.35 | Oval-oblonga a rectangular-oblonga |
 | 4   | Amazonas        | 341164.55 | 6122.88  | 101572     | 298438.97     | 2.96 | 0.87 | 0.3  | Oval-oblonga a rectangular-oblonga |
 | 5   | Pacifico        | 77372.03  | 3360.07  | 35124      | 81609.93      | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
-
-![AHAreaHidrograficaFormaDensidad2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013.png)
 
 AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
 
@@ -374,6 +374,12 @@ AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](ht
 | 5   | Pacifico        | 77372.03  | 3360.07  | 35124      | 81609.93     | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
 ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
+
+Mapa de áreas por ZH - Zona Hidrográfica
+![ZHZonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaArea.png)
+
+Mapa de número de drenajes por ZH - Zona Hidrográfica
+![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
 
 | AH  | Nombre AH       | ZH  | Nombre ZH                        | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc   | Dd   | Dc   | Kc Tag                             |
 |-----|-----------------|-----|----------------------------------|-----------|----------|------------|--------------|------|------|------|------------------------------------|
@@ -416,12 +422,6 @@ ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2
 | 5   | Pacifico        | 54  | San Juán                         | 16393.56  | 946.72   | 8156       | 20697.74     | 2.09 | 1.26 | 0.5  | Oval-oblonga a rectangular-oblonga |
 | 5   | Pacifico        | 55  | Baudó - Directos Pacifico        | 5968.79   | 719.69   | 3277       | 7614.21      | 2.63 | 1.28 | 0.55 | Oval-oblonga a rectangular-oblonga |
 | 5   | Pacifico        | 56  | Pacífico - Directos              | 4256.46   | 1031.69  | 2419       | 5447.84      | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
-
-Mapa de áreas por ZH - Zona Hidrográfica
-![ZHZonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaArea.png)
-
-Mapa de número de drenajes por ZH - Zona Hidrográfica
-![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
 
 
 
