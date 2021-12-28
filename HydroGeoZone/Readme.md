@@ -830,7 +830,7 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona Hidrográfica
 
 ![PlotAreaVsContDrenajeAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsContDrenajeAll.png)
 ![PlotAreaVsLongDrenajeAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsLongDrenajeAll.png)
-![PlotAreaVsKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsKcAllv.png)
+![PlotAreaVsKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsKcAll.png)
 ![PlotAreaVsDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDdAll.png)
 ![PlotAreaVsDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDcAll.png)
 
