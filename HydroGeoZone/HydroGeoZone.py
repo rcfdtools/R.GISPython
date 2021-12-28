@@ -67,7 +67,7 @@ def PrintLog(txtPrint, onScreen=True):
     fileLog.write(txtPrint + '\n')
 
 # Función para consultar los campos de atributos disponibles
-def CapaPropiedades(i):
+def CapaPropiedades(capa):
     cont = 1
     totalEntidades = arcpy.GetCount_management(i)
     descGeometria = arcpy.Describe(i)
@@ -75,7 +75,7 @@ def CapaPropiedades(i):
     PrintLog('#### Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
     PrintLog('| # | Campo | Tipo |', True)
     TableHeadMarkdown(3)
-    campos = arcpy.ListFields(i)
+    campos = arcpy.ListFields(capa)
     for campo in campos:
         PrintLog('| ' + str(cont) + ' | ' + campo.name + ' | ' + campo.type + ' |', True)  # Print field properties
         cont += 1
@@ -130,9 +130,9 @@ arcpy.Dissolve_management(hydroSubZoneLayerProject, hydroSubZoneLayerCopy, field
 print('Incorporando atributos a capa disuelta SZH - subzona hidrográfica ' + hydroSubZoneLayerCopy+'...')
 arcpy.JoinField_management(hydroSubZoneLayerCopy, 'COD_SZH', hydroSubZoneLayerProject, 'COD_SZH')  # Siempre se ejecuta antes de las demás disoluciones
 print('Disolviendo a multiparte AH - áreas hidrográficas '+hydroAreaLayer+'...')
-arcpy.Dissolve_management(hydroSubZoneLayerCopy, hydroAreaLayer, fieldAHCode, '','MULTI_PART', '')
+arcpy.Dissolve_management(hydroSubZoneLayerCopy, hydroAreaLayer, fieldAHCode, '', 'MULTI_PART', '')
 print('Disolviendo a multiparte ZH - zonas hidrográficas '+hydroZoneLayer+'...')
-arcpy.Dissolve_management(hydroSubZoneLayerCopy, hydroZoneLayer, fieldZHCode, '','MULTI_PART', '')
+arcpy.Dissolve_management(hydroSubZoneLayerCopy, hydroZoneLayer, fieldZHCode, '', 'MULTI_PART', '')
 print('\n')
 
 print('### Inclusión de campos para cálculo de áreas, perímetros, longitudes, forma y densidad')
