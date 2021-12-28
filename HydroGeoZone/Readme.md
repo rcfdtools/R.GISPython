@@ -382,6 +382,9 @@ Mapa de áreas por ZH - Zona Hidrográfica
 Mapa de número de drenajes por ZH - Zona Hidrográfica
 ![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
 
+Mapa de sumatoria de longitud de drenajes por ZH - Zona Hidrográfica
+![ZHZonaHidrograficaSumLDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaSumLDrenajesAll.png)
+
 | AH  | Nombre AH       | ZH  | Nombre ZH                        | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc   | Dd   | Dc   | Kc Tag                             |
 |-----|-----------------|-----|----------------------------------|-----------|----------|------------|--------------|------|------|------|------------------------------------|
 | 1   | Caribe          | 11  | Atrato - Darién                  | 37837.02  | 1568.38  | 13615      | 39050.93     | 2.27 | 1.03 | 0.36 | Oval-oblonga a rectangular-oblonga |
