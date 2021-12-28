@@ -417,6 +417,14 @@ ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2
 | 5   | Pacifico        | 55  | Baudó - Directos Pacifico        | 5968.79   | 719.69   | 3277       | 7614.21      | 2.63 | 1.28 | 0.55 | Oval-oblonga a rectangular-oblonga |
 | 5   | Pacifico        | 56  | Pacífico - Directos              | 4256.46   | 1031.69  | 2419       | 5447.84      | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
+Mapa de áreas por ZH - Zona Hidrográfica
+![ZHZonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaArea.png)
+
+Mapa de número de drenajes por ZH - Zona Hidrográfica
+![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
+
+
+
 ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadisticaSoloPermanente.zip)
 
 | AH  | Nombre AH       | ZH  | Nombre ZH                        | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc   | Dd   | Dc   | Kc Tag                             |
