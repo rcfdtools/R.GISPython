@@ -837,7 +837,7 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona Hidrográfica
 
 ### Ejecución en ArcGIS Pro
 
-![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/Python3.7.11ArcGISPro2.9.0.png)
+![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/Python3.7.11ArcGISPro2.9.0.png)
 
 
 ### Referencias
