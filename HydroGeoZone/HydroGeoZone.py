@@ -84,7 +84,7 @@ PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
             '\n* Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone'
             '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
             '\n* Créditos: r.cfdtools@gmail.com\n', True)
-PrintLog('\n\tSistema de coordenadas: ' + outCoordinateSystem + '\n', False) # Mostrar como código en Markdown
+PrintLog('\n```Sistema de coordenadas: ' + outCoordinateSystem + '\n```\n', False) # Mostrar como código en Markdown
 print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 
 PrintLog('## Propiedades y entidades encontradas para las capas de entrada\n')
