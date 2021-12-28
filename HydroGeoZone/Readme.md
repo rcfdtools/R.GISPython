@@ -489,6 +489,25 @@ SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes
 
 > Debido al número de subzonas hidrográficas, en esta sección no se presentan los resultados detallados para drenajes solo permanentes. Una copia de los estadísticos obtenidos se encuentra en el comprimido de este enlace [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadisticaSoloPermanente.zip)
 
+Mapa de áreas por SZH - Zona Hidrográfica
+![SZHSubzonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaArea.png)
+
+Mapa de número de drenajes por SZH - Subzona Hidrográfica
+![SZHSubzonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaNumDrenajesAll.png)
+
+Mapa de sumatoria de longitud de drenajes por SZH - Subzona Hidrográfica
+![SZHSubzonaHidrograficaSumLDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaSumLDrenajesAll.png)
+
+Mapa de Kc - Coeficiente de Compacidad por SZH - Subzona Hidrográfica
+
+![SZHSubzonaHidrograficaKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaKcAll.png)
+
+Mapa de Dd - Densidad de Drenajes por SZH - Subzona Hidrográfica
+![SZHSubzonaHidrograficaDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaDdAll.png)
+
+Mapa de Dc - Densidad de Corrientes por SZH - Subzona Hidrográfica
+![SZHSubzonaHidrograficaDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaDcAll.png)
+
 | AH  | Nombre AH       | ZH  | Nombre ZH                        | SZH  | Nombre SZH                                               | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc   | Dd   | Dc   | Kc Tag                             |
 |-----|-----------------|-----|----------------------------------|------|----------------------------------------------------------|-----------|----------|------------|--------------|------|------|------|------------------------------------|
 | 1   | Caribe          | 11  | Atrato - Darién                  | 1101 | Río Andágueda                                            | 901.97    | 214.5    | 410        | 1020.98      | 2.01 | 1.13 | 0.45 | Oval-oblonga a rectangular-oblonga |
