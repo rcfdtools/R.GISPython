@@ -1,6 +1,6 @@
 ## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - Todos los subtipos de drenajes
 
-* Fecha y hora de inicio de ejecución: 2021-12-27 19:16:11.371669
+* Fecha y hora de inicio de ejecución: 2021-12-27 19:31:09.679916
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -183,7 +183,7 @@ D:/R.GISPython/HydroGeoZone/Output/AreaHidrograficaEstadistica.dbf
 | AH | Nombre AH | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc | Dd | Dc | Kc Tag |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | Caribe | 102803.08 | 4814.69 | 39119 | 108190.65 | 4.24 | 1.05 | 0.38 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 270888.94 | 3763.38 | 134281 | 314458.56 | 2.04 | 1.16 | 0.5 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 270888.94 | 3763.38 | 129469 | 306115.95 | 2.04 | 1.13 | 0.48 | Oval-oblonga a rectangular-oblonga |
 | 3 | Orinoco | 346081.36 | 3736.08 | 122458 | 301766.4 | 1.79 | 0.87 | 0.35 | Oval-oblonga a rectangular-oblonga |
 | 4 | Amazonas | 341164.55 | 6122.88 | 101572 | 298438.97 | 2.96 | 0.87 | 0.3 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 77372.03 | 3360.07 | 35124 | 81609.93 | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
@@ -200,15 +200,15 @@ D:/R.GISPython/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf
 | 1 | Caribe | 15 | Caribe - Guajira | 21371.89 | 1252.31 | 8310 | 23469.98 | 2.42 | 1.1 | 0.39 | Oval-oblonga a rectangular-oblonga |
 | 1 | Caribe | 16 | Catatumbo | 16439.46 | 789.96 | 9679 | 20948.14 | 1.74 | 1.27 | 0.59 | Oval-oblonga a rectangular-oblonga |
 | 1 | Caribe | 17 | Islas Caribe | 77.29 | 109.87 | 5 | 10.96 | 3.53 | 0.14 | 0.06 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 44503.94 | 1891.31 | 23992 | 55857.48 | 2.53 | 1.26 | 0.54 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 22 | Saldaña | 9961.0 | 603.0 | 7774 | 14866.61 | 1.7 | 1.49 | 0.78 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 59628.27 | 2005.81 | 32194 | 71567.76 | 2.32 | 1.2 | 0.54 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 44503.94 | 1891.31 | 23171 | 53994.39 | 2.53 | 1.21 | 0.52 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 22 | Saldaña | 9961.0 | 603.0 | 7728 | 14795.96 | 1.7 | 1.49 | 0.78 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 59628.27 | 2005.81 | 31515 | 70271.55 | 2.32 | 1.18 | 0.53 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 24 | Sogamoso | 23206.44 | 1046.29 | 12392 | 28066.87 | 1.94 | 1.21 | 0.53 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 25 | Bajo Magdalena- Cauca -San Jorge | 21142.21 | 1045.18 | 5496 | 17827.1 | 2.03 | 0.84 | 0.26 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 45739.61 | 2627.71 | 25193 | 57307.42 | 3.47 | 1.25 | 0.55 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 27 | Nechí | 14603.72 | 872.53 | 9015 | 17024.62 | 2.04 | 1.17 | 0.62 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 28 | Cesar | 22892.03 | 849.58 | 9155 | 25441.49 | 1.58 | 1.11 | 0.4 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 29 | Bajo Magdalena | 29211.73 | 1309.22 | 9070 | 26499.23 | 2.16 | 0.91 | 0.31 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 45739.61 | 2627.71 | 23865 | 55293.99 | 3.47 | 1.21 | 0.52 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 27 | Nechí | 14603.72 | 872.53 | 9014 | 17023.33 | 2.04 | 1.17 | 0.62 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 28 | Cesar | 22892.03 | 849.58 | 7227 | 22353.01 | 1.58 | 0.98 | 0.32 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 29 | Bajo Magdalena | 29211.73 | 1309.22 | 9061 | 26489.77 | 2.16 | 0.91 | 0.31 | Oval-oblonga a rectangular-oblonga |
 | 3 | Orinoco | 31 | Inírida | 53591.77 | 1926.75 | 20940 | 50386.44 | 2.35 | 0.94 | 0.39 | Oval-oblonga a rectangular-oblonga |
 | 3 | Orinoco | 32 | Guaviare | 84348.26 | 2733.95 | 29348 | 75165.5 | 2.66 | 0.89 | 0.35 | Oval-oblonga a rectangular-oblonga |
 | 3 | Orinoco | 33 | Vichada | 26118.92 | 1469.25 | 15943 | 28040.12 | 2.56 | 1.07 | 0.61 | Oval-oblonga a rectangular-oblonga |
@@ -301,29 +301,29 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 2 | Magdalena Cauca | 21 | Alto Magdalena | 2114 | Río Cabrera | 2804.02 | 355.14 | 1788 | 3707.31 | 1.89 | 1.32 | 0.64 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 21 | Alto Magdalena | 2115 | Directos Magdalena entre ríos Cabrera y Sumapaz | 1035.29 | 294.4 | 593 | 1282.62 | 2.58 | 1.24 | 0.57 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 21 | Alto Magdalena | 2116 | Río Prado | 1674.75 | 207.0 | 862 | 2134.97 | 1.43 | 1.27 | 0.51 | Oval-redonda a oval oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2118 | Río Luisa y otros directos al Magdalena | 1075.5 | 227.81 | 509 | 1380.92 | 1.96 | 1.28 | 0.47 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2118 | Río Luisa y otros directos al Magdalena | 1075.5 | 227.81 | 505 | 1373.04 | 1.96 | 1.28 | 0.47 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 21 | Alto Magdalena | 2119 | Río Sumapaz | 3045.26 | 352.88 | 1206 | 3411.17 | 1.8 | 1.12 | 0.4 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2120 | Río Bogotá | 5925.89 | 581.65 | 2396 | 6362.44 | 2.13 | 1.07 | 0.4 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2121 | Río Coello | 1831.15 | 285.94 | 1390 | 2970.78 | 1.89 | 1.62 | 0.76 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2122 | Río Opía | 552.76 | 153.34 | 108 | 529.95 | 1.84 | 0.96 | 0.2 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2123 | Río Seco y otros Directos al Magdalena | 1771.39 | 346.21 | 829 | 2134.23 | 2.32 | 1.2 | 0.47 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2124 | Río Totare | 1436.31 | 203.79 | 633 | 1735.02 | 1.52 | 1.21 | 0.44 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2125 | Río Lagunilla y Otros Directos al Magdalena | 2751.75 | 272.46 | 1382 | 3908.06 | 1.47 | 1.42 | 0.5 | Oval-redonda a oval oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2120 | Río Bogotá | 5925.89 | 581.65 | 2388 | 6333.24 | 2.13 | 1.07 | 0.4 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2121 | Río Coello | 1831.15 | 285.94 | 1351 | 2886.37 | 1.89 | 1.58 | 0.74 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2122 | Río Opía | 552.76 | 153.34 | 107 | 529.74 | 1.84 | 0.96 | 0.19 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2123 | Río Seco y otros Directos al Magdalena | 1771.39 | 346.21 | 584 | 1595.6 | 2.32 | 0.9 | 0.33 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2124 | Río Totare | 1436.31 | 203.79 | 626 | 1709.49 | 1.52 | 1.19 | 0.44 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 21 | Alto Magdalena | 2125 | Río Lagunilla y Otros Directos al Magdalena | 2751.75 | 272.46 | 865 | 2730.83 | 1.47 | 0.99 | 0.31 | Oval-redonda a oval oblonga |
 | 2 | Magdalena Cauca | 22 | Saldaña | 2201 | Alto Saldaña | 2583.74 | 267.84 | 1660 | 3503.69 | 1.49 | 1.36 | 0.64 | Oval-redonda a oval oblonga |
 | 2 | Magdalena Cauca | 22 | Saldaña | 2202 | Río Atá | 1534.98 | 247.22 | 870 | 1954.49 | 1.78 | 1.27 | 0.57 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 22 | Saldaña | 2203 | Medio Saldaña | 604.01 | 161.92 | 458 | 869.99 | 1.86 | 1.44 | 0.76 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 22 | Saldaña | 2204 | Río Amoyá | 1462.36 | 233.18 | 1081 | 2148.82 | 1.72 | 1.47 | 0.74 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 22 | Saldaña | 2204 | Río Amoyá | 1462.36 | 233.18 | 1053 | 2104.21 | 1.72 | 1.44 | 0.72 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 22 | Saldaña | 2206 | Río Tetuán, Río Ortega | 1204.44 | 183.87 | 1357 | 2182.59 | 1.49 | 1.81 | 1.13 | Oval-redonda a oval oblonga |
-| 2 | Magdalena Cauca | 22 | Saldaña | 2207 | Rïo Cucuana | 1865.74 | 261.08 | 1901 | 3276.16 | 1.71 | 1.76 | 1.02 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 22 | Saldaña | 2207 | Rïo Cucuana | 1865.74 | 261.08 | 1883 | 3250.12 | 1.71 | 1.74 | 1.01 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 22 | Saldaña | 2208 | Bajo Saldaña | 705.73 | 232.02 | 447 | 930.87 | 2.46 | 1.32 | 0.63 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2301 | Río Gualí | 875.8 | 219.88 | 531 | 1302.38 | 2.1 | 1.49 | 0.61 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2302 | Río Guarinó | 843.39 | 234.13 | 545 | 1248.2 | 2.27 | 1.48 | 0.65 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2303 | Directos al Magdalena entre Ríos Seco y Negro (md) | 434.39 | 153.13 | 272 | 570.36 | 2.07 | 1.31 | 0.63 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2304 | Directos Magdalena entre Ríos Guarinó y La Miel | 965.1 | 169.23 | 767 | 1771.98 | 1.54 | 1.84 | 0.79 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2305 | Río La Miel (Samaná) | 2398.89 | 264.82 | 1842 | 3829.8 | 1.53 | 1.6 | 0.77 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2306 | Río Negro | 4567.37 | 438.65 | 3027 | 5631.62 | 1.83 | 1.23 | 0.66 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2301 | Río Gualí | 875.8 | 219.88 | 235 | 713.08 | 2.1 | 0.81 | 0.27 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2302 | Río Guarinó | 843.39 | 234.13 | 363 | 915.94 | 2.27 | 1.09 | 0.43 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2303 | Directos al Magdalena entre Ríos Seco y Negro (md) | 434.39 | 153.13 | 260 | 550.92 | 2.07 | 1.27 | 0.6 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2304 | Directos Magdalena entre Ríos Guarinó y La Miel | 965.1 | 169.23 | 747 | 1703.82 | 1.54 | 1.77 | 0.77 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2305 | Río La Miel (Samaná) | 2398.89 | 264.82 | 1744 | 3687.18 | 1.53 | 1.54 | 0.73 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2306 | Río Negro | 4567.37 | 438.65 | 2971 | 5512.64 | 1.83 | 1.21 | 0.65 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 23 | Medio Magdalena | 2307 | Directos Magdalena Medio entre ríos La Miel y Nare | 1483.27 | 244.57 | 415 | 1446.11 | 1.79 | 0.97 | 0.28 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2308 | Río Nare | 5596.74 | 458.68 | 4432 | 7589.83 | 1.73 | 1.36 | 0.79 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 23 | Medio Magdalena | 2308 | Río Nare | 5596.74 | 458.68 | 4417 | 7564.37 | 1.73 | 1.35 | 0.79 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 23 | Medio Magdalena | 2310 | Rió San Bartolo y otros directos al Magdalena Medio | 3592.46 | 350.67 | 1912 | 4083.5 | 1.65 | 1.14 | 0.53 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 23 | Medio Magdalena | 2311 | Directos al Magdalena Medio entre ríos Negro | 2681.99 | 359.54 | 1162 | 3070.69 | 1.96 | 1.14 | 0.43 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 23 | Medio Magdalena | 2312 | Río Carare (Minero) | 7273.39 | 544.29 | 3474 | 8252.58 | 1.8 | 1.13 | 0.48 | Oval-oblonga a rectangular-oblonga |
@@ -347,21 +347,21 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 2 | Magdalena Cauca | 26 | Cauca | 2607 | Río Guachal (Bolo - Fraile y Párraga) | 1186.31 | 185.58 | 358 | 1094.17 | 1.52 | 0.92 | 0.3 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2608 | Rios Pescador - RUT - Chanco - Catarina y Cañaveral | 1288.7 | 313.98 | 516 | 1375.36 | 2.47 | 1.07 | 0.4 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2609 | Ríos Amaime y Cerrito | 1124.62 | 189.54 | 432 | 1269.5 | 1.59 | 1.13 | 0.38 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2610 | Ríos Tulua y Morales | 1078.41 | 179.44 | 562 | 1377.42 | 1.54 | 1.28 | 0.52 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2610 | Ríos Tulua y Morales | 1078.41 | 179.44 | 540 | 1343.55 | 1.54 | 1.25 | 0.5 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2611 | Río Frío | 476.3 | 124.47 | 162 | 491.39 | 1.61 | 1.03 | 0.34 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2612 | Río La Vieja | 2836.45 | 303.82 | 1672 | 4590.07 | 1.61 | 1.62 | 0.59 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2612 | Río La Vieja | 2836.45 | 303.82 | 941 | 3502.7 | 1.61 | 1.23 | 0.33 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2613 | Río Otún y otros directos al Cauca | 1220.72 | 226.26 | 585 | 1648.57 | 1.83 | 1.35 | 0.48 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2614 | Río Risaralda | 1259.39 | 231.16 | 697 | 1889.28 | 1.84 | 1.5 | 0.55 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2615 | Río Chinchiná | 1054.24 | 177.36 | 551 | 1466.09 | 1.54 | 1.39 | 0.52 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2616 | Rio Tapias y otros directos al Cauca | 1404.02 | 226.68 | 1417 | 2503.89 | 1.71 | 1.78 | 1.01 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2616 | Rio Tapias y otros directos al Cauca | 1404.02 | 226.68 | 1374 | 2459.16 | 1.71 | 1.75 | 0.98 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2617 | Río Frío y Otros Directos al Cauca | 1638.21 | 338.8 | 799 | 2150.88 | 2.36 | 1.31 | 0.49 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2618 | Río Arma | 1860.27 | 261.43 | 1367 | 2797.17 | 1.71 | 1.5 | 0.73 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2618 | Río Arma | 1860.27 | 261.43 | 1259 | 2646.15 | 1.71 | 1.42 | 0.68 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2619 | Río San Juan | 1416.12 | 217.9 | 724 | 1843.55 | 1.63 | 1.3 | 0.51 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2620 | Directos Río Cauca  entre Río San Juan y  Pto Valdivia | 3552.96 | 503.22 | 2404 | 4602.56 | 2.38 | 1.3 | 0.68 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2620 | Directos Río Cauca  entre Río San Juan y  Pto Valdivia | 3552.96 | 503.22 | 2403 | 4602.46 | 2.38 | 1.3 | 0.68 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2621 | Directos Río Cauca entre Río San Juan y Pto Valdia | 3413.51 | 524.35 | 2217 | 4404.63 | 2.53 | 1.29 | 0.65 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2622 | Río Desbaratado | 191.48 | 113.15 | 70 | 197.4 | 2.31 | 1.03 | 0.37 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2624 | Río Taraza - Río Man | 2578.59 | 346.4 | 885 | 2346.37 | 1.92 | 0.91 | 0.34 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2625 | Directos al Cauca entre Pto Valdivia y Río Nechí | 1436.42 | 405.47 | 846 | 1569.53 | 3.02 | 1.09 | 0.59 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2625 | Directos al Cauca entre Pto Valdivia y Río Nechí | 1436.42 | 405.47 | 845 | 1567.33 | 3.02 | 1.09 | 0.59 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2626 | Directos Bajo Cauca - Cga La Raya entre río Nechí | 4343.67 | 459.57 | 2163 | 4180.79 | 1.97 | 0.96 | 0.5 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2627 | Río Piendamo | 601.69 | 208.32 | 467 | 917.32 | 2.4 | 1.52 | 0.78 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2628 | Río Quinamayo y otros directos al Cauca | 810.98 | 174.12 | 472 | 1353.56 | 1.72 | 1.67 | 0.58 | Oval-oblonga a rectangular-oblonga |
@@ -371,15 +371,15 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 2 | Magdalena Cauca | 26 | Cauca | 2632 | Ríos Guabas,Sabaletas y Sonso | 556.67 | 114.0 | 179 | 604.49 | 1.36 | 1.09 | 0.32 | Oval-redonda a oval oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2633 | Ríos Guadalajara y San Pedro | 463.3 | 148.76 | 125 | 404.88 | 1.95 | 0.87 | 0.27 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 26 | Cauca | 2634 | Ríos Cali | 212.46 | 81.26 | 45 | 147.69 | 1.57 | 0.7 | 0.21 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2635 | Río Bugalagrande | 834.94 | 210.88 | 536 | 1135.96 | 2.06 | 1.36 | 0.64 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2636 | Río Paila | 525.76 | 109.02 | 239 | 645.88 | 1.34 | 1.23 | 0.45 | Oval-redonda a oval oblonga |
-| 2 | Magdalena Cauca | 26 | Cauca | 2637 | Rios Las Cañas - Los Micos y Obando | 782.38 | 187.43 | 261 | 699.22 | 1.89 | 0.89 | 0.33 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 27 | Nechí | 2701 | Río Porce | 5228.39 | 639.38 | 4206 | 7586.11 | 2.49 | 1.45 | 0.8 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2635 | Río Bugalagrande | 834.94 | 210.88 | 325 | 767.53 | 2.06 | 0.92 | 0.39 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2636 | Río Paila | 525.76 | 109.02 | 153 | 518.49 | 1.34 | 0.99 | 0.29 | Oval-redonda a oval oblonga |
+| 2 | Magdalena Cauca | 26 | Cauca | 2637 | Rios Las Cañas - Los Micos y Obando | 782.38 | 187.43 | 136 | 500.9 | 1.89 | 0.64 | 0.17 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 27 | Nechí | 2701 | Río Porce | 5228.39 | 639.38 | 4205 | 7584.82 | 2.49 | 1.45 | 0.8 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 27 | Nechí | 2702 | Alto Nechí | 2936.92 | 340.29 | 2771 | 3997.73 | 1.77 | 1.36 | 0.94 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 27 | Nechí | 2703 | Bajo Nechí (md) | 4487.76 | 409.48 | 1432 | 3744.25 | 1.72 | 0.83 | 0.32 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 27 | Nechí | 2704 | Directos al Bajo Nechí (mi) | 1950.66 | 263.85 | 606 | 1696.53 | 1.69 | 0.87 | 0.31 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 28 | Cesar | 2801 | Alto Cesar | 3435.73 | 294.28 | 2625 | 5754.67 | 1.42 | 1.67 | 0.76 | Oval-redonda a oval oblonga |
-| 2 | Magdalena Cauca | 28 | Cesar | 2802 | Medio Cesar | 8260.98 | 459.97 | 2752 | 8256.57 | 1.43 | 1.0 | 0.33 | Oval-redonda a oval oblonga |
+| 2 | Magdalena Cauca | 28 | Cesar | 2801 | Alto Cesar | 3435.73 | 294.28 | 1232 | 3473.64 | 1.42 | 1.01 | 0.36 | Oval-redonda a oval oblonga |
+| 2 | Magdalena Cauca | 28 | Cesar | 2802 | Medio Cesar | 8260.98 | 459.97 | 2217 | 7449.12 | 1.43 | 0.9 | 0.27 | Oval-redonda a oval oblonga |
 | 2 | Magdalena Cauca | 28 | Cesar | 2804 | Río Ariguaní | 5325.51 | 428.45 | 1745 | 5650.34 | 1.66 | 1.06 | 0.33 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 28 | Cesar | 2805 | Bajo Cesar | 5869.81 | 391.02 | 2033 | 5779.91 | 1.44 | 0.98 | 0.35 | Oval-redonda a oval oblonga |
 | 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2901 | Directos al Bajo Magdalena entre El Plato y Calamar | 2010.94 | 231.53 | 850 | 2485.3 | 1.46 | 1.24 | 0.42 | Oval-redonda a oval oblonga |
@@ -387,7 +387,7 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2903 | Canal del Dique margen derecho | 2103.34 | 312.05 | 656 | 2046.38 | 1.92 | 0.97 | 0.31 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2904 | Directos al Bajo Magdalena entre Calamar y desembocadura | 1151.53 | 215.04 | 278 | 914.23 | 1.79 | 0.79 | 0.24 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2905 | Canal del Dique margen izquierda | 2299.23 | 393.21 | 722 | 2008.96 | 2.31 | 0.87 | 0.31 | Oval-oblonga a rectangular-oblonga |
-| 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2906 | Cga Grande de Santa Marta | 8219.98 | 529.41 | 2713 | 7182.44 | 1.65 | 0.87 | 0.33 | Oval-oblonga a rectangular-oblonga |
+| 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2906 | Cga Grande de Santa Marta | 8219.98 | 529.41 | 2704 | 7172.98 | 1.65 | 0.87 | 0.33 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2907 | Directos Bajo Magdalena entre El Banco y El Plato | 6998.88 | 568.62 | 1848 | 5324.61 | 1.92 | 0.76 | 0.26 | Oval-oblonga a rectangular-oblonga |
 | 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2908 | Ríos Chimicuica y Corozal | 3692.2 | 284.91 | 1070 | 3708.04 | 1.32 | 1.0 | 0.29 | Oval-redonda a oval oblonga |
 | 2 | Magdalena Cauca | 29 | Bajo Magdalena | 2909 | Cienaga Mallorquin | 262.04 | 89.87 | 80 | 233.07 | 1.57 | 0.89 | 0.31 | Oval-oblonga a rectangular-oblonga |
@@ -555,6 +555,6 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5502 | Río Docampadó y Directos Pacífico | 1908.15 | 324.3 | 1039 | 2428.37 | 2.09 | 1.27 | 0.54 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 5601 | Directos Pacifico Frontera Panamá | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
-Fecha y hora de terminación de ejecución: 2021-12-27 19:16:37.773792
+Fecha y hora de terminación de ejecución: 2021-12-27 19:31:35.198940
 
-Proceso completado (dt = 26.4 sec o 0.4 min)
+Proceso completado (dt = 25.5 sec o 0.4 min)

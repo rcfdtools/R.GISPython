@@ -37,17 +37,17 @@ drainageSubtype, drainageLen = 'ESTADO_DRE', 'SHAPE_Leng'
 drainageSubtypePerm = 5101
 outCoordinateSystem = "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"
 evalValueKc = [[1.25, 'Casi redonda a oval redonda'], [1.5, 'Oval-redonda a oval oblonga'], [999999, 'Oval-oblonga a rectangular-oblonga']]  # Rangos coeficiente de compacidad Kc según ANLA - Colombia en modelo de datos GDB Nacional
-evalAreaSZH = [[300, 0, 0], [700, 0, 0], [900, 0, 0], [1100, 0, 0], [1300, 0, 0], [1500, 0, 0], [2000, 0, 0], [2500, 0, 0], [3500, 0, 0], [5000, 0, 0], [10000, 0, 0], [20000, 0, 0], [999999,0,0]]  # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
+evalAreaSZH = [[300, 0, 0], [700, 0, 0], [900, 0, 0], [1100, 0, 0], [1300, 0, 0], [1500, 0, 0], [2000, 0, 0], [2500, 0, 0], [3500, 0, 0], [5000, 0, 0], [10000, 0, 0], [20000, 0, 0], [999999, 0, 0]]  # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
 decimalPos = 2  # Posiciones decimales para impresión de tablas en formato Markdown
 consKc = 0.28209479179826
 intersectActive = False  # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
 statisticActive = False  # Volver a generar estadísticos en DBF y convertir a Excel.
-onlyPermanentDrainActive = False  # Analizar solo para drenajes permanentes.
+onlyPerDrainActive = False  # Analizar solo para drenajes permanentes.
 
 # Log file creation
 currentDate = date.today()
 currentDateTxt = str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
-if onlyPermanentDrainActive == True:
+if onlyPerDrainActive == True:
     fileNameAux = 'DrainPer'
     titleAuxTxt = 'Solo drenajes subtipo permanente'
 else:
@@ -69,10 +69,10 @@ def PrintLog(txtPrint, onScreen=True):
 # Función para consultar los campos de atributos disponibles
 def CapaPropiedades(capa):
     cont = 1
-    totalEntidades = arcpy.GetCount_management(i)
-    descGeometria = arcpy.Describe(i)
+    totalEntidades = arcpy.GetCount_management(capa)
+    descGeometria = arcpy.Describe(capa)
     tipoGeometria = descGeometria.shapeType
-    PrintLog('#### Campos en ' + i + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
+    PrintLog('#### Campos en ' + capa + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
     PrintLog('| # | Campo | Tipo |', True)
     TableHeadMarkdown(3)
     campos = arcpy.ListFields(capa)
@@ -105,7 +105,7 @@ PrintLog('| Código | # Drenajes |', True)
 TableHeadMarkdown(2)
 for fila in cursor:
     PrintLog('| ' + str(fila.getValue(drainageSubtype)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' |', True)
-if onlyPermanentDrainActive == True:
+if onlyPerDrainActive == True:
     print(  'Filtrado de drenajes permanentes activado.'
             '\nFiltrando drenajes solo permanentes en ' + drainageLayer +
             '\nEste proceso tardará varios minutos...')
