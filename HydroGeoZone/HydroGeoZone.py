@@ -34,7 +34,7 @@ statisticsTableSZHXLS = outputPath+'SubZonaHidrograficaEstadistica.xls'
 fieldAHCode, fieldZHCode, fieldSZHCode = 'COD_AH', 'COD_ZH', 'COD_SZH'
 fieldAHName, fieldZHName, fieldSZHName = 'NOM_AH', 'NOM_ZH', 'NOM_SZH'
 drainageSubtype, drainageLen = 'ESTADO_DRE', 'SHAPE_Leng'
-drainageSubtypePerm = 5101 # Código de drenajes subtipo permanente
+drainageSubtypePerm = 5101  # Código de drenajes subtipo permanente
 outCoordinateSystem = "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"
 evalValueKc = [[1.25, 'Casi redonda a oval redonda'], [1.5, 'Oval-redonda a oval oblonga'], [999999, 'Oval-oblonga a rectangular-oblonga']]  # Rangos coeficiente de compacidad Kc según ANLA - Colombia en modelo de datos GDB Nacional
 evalAreaSZH = [[300, 0, 0], [700, 0, 0], [900, 0, 0], [1100, 0, 0], [1300, 0, 0], [1500, 0, 0], [2000, 0, 0], [2500, 0, 0], [3500, 0, 0], [5000, 0, 0], [10000, 0, 0], [20000, 0, 0], [999999, 0, 0]]  # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
@@ -47,7 +47,7 @@ onlyPerDrainActive = False  # Analizar solo para drenajes permanentes.
 # Log file creation
 currentDate = date.today()
 currentDateTxt = str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
-if onlyPerDrainActive == True:
+if onlyPerDrainActive:
     fileNameAux = 'DrainPer'
     titleAuxTxt = 'Solo drenajes subtipo permanente'
 else:
@@ -321,7 +321,29 @@ cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
 for fila in cursor:
     PrintLog('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(fila.getValue(fieldSZHCode)) + ' | ' + fila.getValue(fieldSZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |', True)
 
+print('\n### Graficas generales\n')
+scatterVarX, scatterVarXLabel = 'Area', 'Área, km²'
+scatterVarY = ['FREQUENCY', 'SUM_LDre', 'Kc', 'Dd', 'Dc']
+scatterVarYLabel = ['# Drenajes', 'Sum. Long. Drenajes, km', 'Kc - Índice de Compacidad', 'Dd - Densidad de drenajes', 'Dc - Densidad de corrientes']
+iLabel = 0
+for iY in scatterVarY[:]:
+    xPlotValues, yPlotValues = [], []
+    print('Graficando ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt + '...')
+    cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
+    for fila in cursor:
+        xPlotValues.append(fila.getValue(scatterVarX))
+        yPlotValues.append(fila.getValue(iY))
+    plt.grid(color='0.95')
+    plt.scatter(xPlotValues, yPlotValues, c='k', label=scatterVarYLabel[iLabel], s=12)
+    plt.xlabel(scatterVarXLabel)
+    plt.ylabel(scatterVarYLabel[iLabel])
+    plt.legend(loc='lower right')
+    plt.title(scatterVarX + ' vs. ' + scatterVarYLabel[iLabel] + ' - ' + titleAuxTxt)
+    plt.show()
+    iLabel +=1
+
 PrintLog('\nFecha y hora de terminación de ejecución: '+str(datetime.now()), True)
 timeEnd = time.time()
 PrintLog('\nProceso completado (dt = ' + str(round(timeEnd - timeStart,1)) + ' sec o ' + str(round((timeEnd - timeStart)/60,1)) + ' min)', True)
 fileLog.close()
+

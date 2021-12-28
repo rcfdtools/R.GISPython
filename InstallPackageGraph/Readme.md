@@ -242,6 +242,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 ### Referencias
 
 * https://packaging.python.org/en/latest/tutorials/installing-packages/
+* https://matplotlib.org/stable/gallery/color/named_colors.html
 
 
 ### Autores

@@ -826,6 +826,15 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona Hidrográfica
 | 5   | Pacifico        | 56  | Pacífico - Directos              | 5601 | Directos Pacifico Frontera Panamá                        | 4256.46   | 1031.69  | 2419       | 5447.84      | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
 
+### Matrices de dispersión
+
+![PlotAreaVsContDrenajeAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsContDrenajeAll.png)
+![PlotAreaVsLongDrenajeAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsLongDrenajeAll.png)
+![PlotAreaVsKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsKcAllv.png)
+![PlotAreaVsDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDdAll.png)
+![PlotAreaVsDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDcAll.png)
+
+
 ### Referencias
 
 * http://www.ideam.gov.co/capas-geo
@@ -833,7 +842,8 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona Hidrográfica
 * http://visor.ideam.gov.co/geovisor/#!/profiles/3
 * https://desktop.arcgis.com/en/arcmap/10.6/tools/data-management-toolbox/calculate-geometry-attributes.htm
 * [Hidrografía Colombiana - IDEAM y SiGaia (versión no oficial de zonificación a 2018)](https://www.arcgis.com/home/item.html?id=89f6818e093f4b0faa99b456ad98018d)
-
+* [ESRI - Versiones de Python según la versión de ArcGIS](https://support.esri.com/en/technical-article/000013224)
+* [ESRI - Python, NumPy, and MatPlotlib en ArcGIS 10.6](https://desktop.arcgis.com/en/arcmap/10.6/get-started/installation-guide/python-requirement.htm)
 
 ### Autores
 
