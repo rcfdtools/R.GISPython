@@ -826,7 +826,7 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona Hidrográfica
 | 5   | Pacifico        | 56  | Pacífico - Directos              | 5601 | Directos Pacifico Frontera Panamá                        | 4256.46   | 1031.69  | 2419       | 5447.84      | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
 
-### Matrices de dispersión
+### Matrices de dispersión en SZH - Subzonas hidrográficas
 
 ![PlotAreaVsContDrenajeAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsContDrenajeAll.png)
 ![PlotAreaVsLongDrenajeAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsLongDrenajeAll.png)

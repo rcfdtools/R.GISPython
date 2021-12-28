@@ -346,4 +346,3 @@ PrintLog('\nFecha y hora de terminación de ejecución: '+str(datetime.now()), T
 timeEnd = time.time()
 PrintLog('\nProceso completado (dt = ' + str(round(timeEnd - timeStart,1)) + ' sec o ' + str(round((timeEnd - timeStart)/60,1)) + ' min)', True)
 fileLog.close()
-
