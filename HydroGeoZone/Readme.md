@@ -244,7 +244,7 @@ Estado de drenajes - Subtipos
 
 > Debido a que existen algunas subzonas hidrográficas con el mismo código y como polígonos independientes, y debido a que el script principal realiza el proceso de unificación en entidades multiparte para garantizar que el conteo y estadísticos de análisis a partir de drenajes sea consistente en el proceso de intersección espacial, el número de polígonos de la capa original (316) corresponde a un total de 314 subzonas únicas como se muestra en los siguientes resultados. 
 
-![SZHSubzonaHidrograficaRangoArea2013All.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaRangoArea2013All.png)
+![SZHSubzonaHidrograficaRangoArea2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaRangoArea2013.png)
 
 | Rango km²    | # Subzonas | Acumulado |
 |--------------|------------|-----------|
