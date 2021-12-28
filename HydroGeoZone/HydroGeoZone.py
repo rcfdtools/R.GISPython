@@ -48,9 +48,9 @@ onlyPermanentDrainActive = False # Analizar solo para drenajes permanentes.
 currentDate = date.today()
 currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
 if onlyPermanentDrainActive == True:
-    fileNameAux = 'DrainAll'
+    fileNameAux = 'DrainPermanent'
 else:
-    fileNameAux = 'DrainIntermitent'
+    fileNameAux = 'DrainAll'
 fileLog = open(absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md', 'w+') # w+ para crear el archivo si no existe
 timeStart = time.time()
 
