@@ -47,7 +47,11 @@ onlyPermanentDrainActive = False # Analizar solo para drenajes permanentes.
 # Log file creation
 currentDate = date.today()
 currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
-fileLog = open(outputPath+'Report/HydroGeoZone'+currentDateTxt+'.md', 'w+') # w+ para crear el archivo si no existe
+if onlyPermanentDrainActive == True:
+    fileNameAux = 'DrainAll'
+else:
+    fileNameAux = 'DrainIntermitent'
+fileLog = open(absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md', 'w+') # w+ para crear el archivo si no existe
 timeStart = time.time()
 
 # Función para crear separador de filas cabecera en formato Markdown
