@@ -361,6 +361,8 @@ AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 
 | 4   | Amazonas        | 341164.55 | 6122.88  | 101572     | 298438.97     | 2.96 | 0.87 | 0.3  | Oval-oblonga a rectangular-oblonga |
 | 5   | Pacifico        | 77372.03  | 3360.07  | 35124      | 81609.93      | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
+![AHAreaHidrograficaFormaDensidad2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013.png)
+
 AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
 
 | AH  | Nombre AH       | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc   | Dd   | Dc   | Kc Tag                             |
