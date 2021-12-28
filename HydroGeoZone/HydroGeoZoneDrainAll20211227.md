@@ -1,4 +1,4 @@
-## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - Todos los subtipos de drenajes
+## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - Todos los subtipos de drenaje
 
 * Fecha y hora de inicio de ejecución: 2021-12-27 19:31:09.679916
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro

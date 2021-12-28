@@ -52,7 +52,7 @@ if onlyPerDrainActive == True:
     titleAuxTxt = 'Solo drenajes subtipo permanente'
 else:
     fileNameAux = 'DrainAll'
-    titleAuxTxt = 'Todos los subtipos de drenajes'
+    titleAuxTxt = 'Todos los subtipos de drenaje'
 fileLog = open(absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md', 'w+')  # w+ para crear el archivo si no existe
 timeStart = time.time()
 
