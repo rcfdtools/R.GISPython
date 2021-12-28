@@ -49,8 +49,10 @@ currentDate = date.today()
 currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
 if onlyPermanentDrainActive == True:
     fileNameAux = 'DrainPermanent'
+    titleAuxTxt = 'Solo drenajes subtipo permanentes'
 else:
     fileNameAux = 'DrainAll'
+    titleAuxTxt = 'Todos los subtipos de drenajes'
 fileLog = open(absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md', 'w+') # w+ para crear el archivo si no existe
 timeStart = time.time()
 
@@ -79,7 +81,7 @@ def CapaPropiedades(i):
         cont += 1
 
 # Cabecera
-PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python (log de resultados)', True)
+PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - '+titleAuxTxt, True)
 PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
             '\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
             '\n* Python versión: ' + str(sys.version)+

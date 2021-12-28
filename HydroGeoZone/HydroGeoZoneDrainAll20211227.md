@@ -1,6 +1,6 @@
-## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python (log de resultados)
+## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - Todos los subtipos de drenajes
 
-* Fecha y hora de inicio de ejecución: 2021-12-27 19:12:37.244427
+* Fecha y hora de inicio de ejecución: 2021-12-27 19:16:11.371669
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -555,6 +555,6 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5502 | Río Docampadó y Directos Pacífico | 1908.15 | 324.3 | 1039 | 2428.37 | 2.09 | 1.27 | 0.54 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 5601 | Directos Pacifico Frontera Panamá | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
-Fecha y hora de terminación de ejecución: 2021-12-27 19:13:03.590533
+Fecha y hora de terminación de ejecución: 2021-12-27 19:16:37.773792
 
-Proceso completado (dt = 26.3 sec o 0.4 min)
+Proceso completado (dt = 26.4 sec o 0.4 min)
