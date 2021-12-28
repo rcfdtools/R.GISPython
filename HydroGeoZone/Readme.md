@@ -17,6 +17,8 @@ La zonificación de cuencas hidrográficas corresponde a tres niveles de jerarqu
 
 Las cuencas hidrográficas que entregan o desembocan sus aguas superficiales directamente de una área hidrográfica se denominaran zonas hidrográficas. Agrupan varias cuencas que se presentan como un subsistema hídrico con características de relieve y drenaje homogéneo y sus aguas tributan a través de un afluente principal hacia un área hidrográfica. Están integradas por cuencas de las partes altas, medias o bajas de una zona hidrográfica que captan agua y sedimentos de los tributarios de diferente orden tales como nacimientos de agua, arroyos, quebradas y ríos. Las cuencas que tributan sus aguas a su vez a las zonas hidrográficas se denomina subzonas hidrográficas. Ahora bien, respecto a la toponimia con que se identifican zonas y subzonas hidrográficas, a estas unidades se les asignó la toponimia de acuerdo con el nombre de la corriente más representativa o río principal o con el nombre heredado de la zonificación del HIMAT, que puede corresponder al espacio geográfico o región a la cual drenan las aguas superficiales.[^2]
 
+![SZHSubzonaHidrografica2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrografica2013.png)
+
 | AH  | Área Hidrográfica | ZH  | Zona Hidrográfica                  |
 |-----|-------------------|-----|------------------------------------|
 | 1   | Caribe            | 11  | Atrato - Darién                    |
@@ -222,16 +224,12 @@ Catálogo de objetos en Drenaje_Sencillo para capa en formato Shapefile
 | GLOBALID   | GLOBALID   | Identificador global en la base de datos espacial.                                                 | Texto                 |
 | SHAPE_Leng | SHAPE_Leng | Longitud del elemento.                                                                             | Numérico              |
 
-
-
 Estado de drenajes - Subtipos
 
 | Code               | Description  |
 |--------------------|--------------|
 | 5101               | Permanente   | 
 | 5102               | Intermitente |
-
-
 
 
 ### Ejecución y resultados del análisis
@@ -261,6 +259,8 @@ Estado de drenajes - Subtipos
 | 5000-10000   | 60         | 299       |
 | 10000-20000  | 14         | 313       |
 | 20000-999999 | 1          | 314       |
+
+![SZHSubzonaHidrograficaRangoArea2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaRangoArea2013.png)
 
 #### SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica
 
