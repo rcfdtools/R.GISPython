@@ -84,8 +84,8 @@ PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
             '\n* Encuentra este script en https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone'
             '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
             '\n* Créditos: r.cfdtools@gmail.com\n', True)
-PrintLog('\n```Sistema de coordenadas: ' + outCoordinateSystem + '\n```\n', False) # Mostrar como código en Markdown
-print('Antes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
+PrintLog('```\nSistema de coordenadas: ' + outCoordinateSystem + '\n```', False) # Mostrar como código en Markdown
+print('\nAntes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
 
 PrintLog('## Propiedades y entidades encontradas para las capas de entrada\n')
 CapaPropiedades(hydroSubZoneLayer)
@@ -233,7 +233,7 @@ for i in evalAreaSZH:
     cont += 1
 print('\n')
 
-PrintLog('\n### SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica\n', True)
+PrintLog('\n### Total SZH - subzonas hidrográficas por rango de área para cada AH - área hidrográfica\n', True)
 print('Imprimiendo en formato Markdown...')
 cursorZH = arcpy.SearchCursor(hydroAreaLayer)
 for filaZH in cursorZH:
