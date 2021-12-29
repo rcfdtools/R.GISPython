@@ -324,11 +324,21 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona hidrográfica
 
 #### Matrices de dispersión en SZH - Subzonas hidrográficas
 
+Todos los subtipos de drenaje
+
 ![PlotAreaVsFREQUENCYDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsFREQUENCYDrainAll.png)
 ![PlotAreaVsSUM_LDreDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsSUM_LDreDrainAll.png)
 ![PlotAreaVsKcDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsKcDrainAll.png)
 ![PlotAreaVsDdDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDdDrainAll.png)
 ![PlotAreaVsDcDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDcDrainAll.png)
+
+Solo drenajes permanentes
+
+![PlotAreaVsFREQUENCYDrainPer.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsFREQUENCYDrainPer.png)
+![PlotAreaVsSUM_LDreDrainPer.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsSUM_LDreDrainPer.png)
+![PlotAreaVsKcDrainPer.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsKcDrainPer.png)
+![PlotAreaVsDdDrainPer.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDdDrainPer.png)
+![PlotAreaVsDcDrainPer.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDcDrainPer.png)
 
 
 #### Ejecución en ArcGIS Pro
