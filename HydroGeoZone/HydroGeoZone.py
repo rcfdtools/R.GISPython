@@ -332,15 +332,15 @@ cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
 for fila in cursor:
     PrintLog('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(fila.getValue(fieldSZHCode)) + ' | ' + fila.getValue(fieldSZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |', True)
 
-print('\n### Graficas generales\n')
+PrintLog('\n### Graficas generales\n')
 scatterVarX, scatterVarXLabel = 'Area', 'Área, km²'
 scatterVarY = ['FREQUENCY', 'SUM_LDre', 'Kc', 'Dd', 'Dc']
 scatterVarYLabel = ['# Drenajes', 'Sum. Long. Drenajes, km', 'Kc - Índice de Compacidad', 'Dd - Densidad de drenajes', 'Dc - Densidad de corrientes']
 iLabel = 0
 for iY in scatterVarY[:]:
     xPlotValues, yPlotValues = [], []
-    print('Grafica ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt + '...')
-    print(urlGitHubFile+'/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png')
+    PrintLog('Grafica ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt + '...')
+    PrintLog(urlGitHubFile+'/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png')
     cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
     for fila in cursor:
         xPlotValues.append(fila.getValue(scatterVarX))

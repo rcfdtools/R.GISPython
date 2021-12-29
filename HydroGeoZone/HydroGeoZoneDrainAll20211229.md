@@ -1,6 +1,6 @@
 ## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - Todos los subtipos de drenaje
 
-* Fecha y hora de inicio de ejecución: 2021-12-29 10:08:08.060676
+* Fecha y hora de inicio de ejecución: 2021-12-29 10:36:38.084383
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -566,6 +566,34 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 | 5 | Pacifico | 55 | Baudó - Directos Pacifico | 5502 | Río Docampadó y Directos Pacífico | 1908.15 | 324.3 | 1039 | 2428.37 | 2.09 | 1.27 | 0.54 | Oval-oblonga a rectangular-oblonga |
 | 5 | Pacifico | 56 | Pacífico - Directos | 5601 | Directos Pacifico Frontera Panamá | 4256.46 | 1031.69 | 2419 | 5447.84 | 4.46 | 1.28 | 0.57 | Oval-oblonga a rectangular-oblonga |
 
-Fecha y hora de terminación de ejecución: 2021-12-29 10:08:38.357235
+### Graficas generales
 
-Proceso completado (dt = 30.3 sec o 0.5 min)
+Grafica Area vs. FREQUENCY - Todos los subtipos de drenaje...
+https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsFREQUENCYDrainAll.png
+Grafica Area vs. SUM_LDre - Todos los subtipos de drenaje...
+https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsSUM_LDreDrainAll.png
+Grafica Area vs. Kc - Todos los subtipos de drenaje...
+https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsKcDrainAll.png
+Grafica Area vs. Dd - Todos los subtipos de drenaje...
+https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsDdDrainAll.png
+Grafica Area vs. Dc - Todos los subtipos de drenaje...
+https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsDcDrainAll.png
+
+### Archivos de resultados
+
+* Capa AH - Área hidrográfica: D:/R.GISPython/HydroGeoZone/Output/AreaHidrografica.shp
+* Capa ZH - Zona hidrográfica: D:/R.GISPython/HydroGeoZone/Output/ZonaHidrografica.shp
+* Capa SZH - Subzona hidrográfica: D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrografica.shp
+* Capa Drenajes filtro permanentes: D:/R.GISPython/HydroGeoZone/Data/Drenaje_Sencillo.shp
+* Capa intersección SZH & Drenajes: D:/R.GISPython/HydroGeoZone/Output/DrenajeSencilloIntersect.shp
+* Tabla resultados AH - Área hidrográfica (dBase): D:/R.GISPython/HydroGeoZone/Output/AreaHidrograficaEstadistica.dbf
+* Tabla resultados ZH - Zona hidrográfica (dBase): D:/R.GISPython/HydroGeoZone/Output/ZonaHidrograficaEstadistica.dbf
+* Tabla resultados SZH - Subzona hidrográfica (dBase): D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
+* Tabla resultados AH - Área hidrográfica (Excel): D:/R.GISPython/HydroGeoZone/Output/AreaHidrograficaEstadistica.xls
+* Tabla resultados ZH - Zona hidrográfica (Excel): D:/R.GISPython/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls
+* Tabla resultados SZH - Subzona hidrográfica (Excel): D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls
+* Tabla resultados Drenajes por subtipo: D:/R.GISPython/HydroGeoZone/Output/DrenajeSencilloSubtipoEstadistica.dbf
+
+Fecha y hora de terminación de ejecución: 2021-12-29 10:37:10.105008
+
+Proceso completado (dt = 32.0 sec o 0.5 min)
