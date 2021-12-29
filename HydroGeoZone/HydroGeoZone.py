@@ -84,6 +84,7 @@ def CapaPropiedades(capa):
 
 # Cabecera
 PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - '+titleAuxTxt, True)
+PrintLog('![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)')
 PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
             '\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
             '\n* Python versión: ' + str(sys.version)+
@@ -332,15 +333,15 @@ cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
 for fila in cursor:
     PrintLog('| ' + str(fila.getValue(fieldAHCode)) + ' | ' + fila.getValue(fieldAHName) + ' | ' + str(fila.getValue(fieldZHCode)) + ' | ' + fila.getValue(fieldZHName) + ' | ' + str(fila.getValue(fieldSZHCode)) + ' | ' + fila.getValue(fieldSZHName) + ' | ' + str(round(fila.getValue('Area'),decimalPos)) + ' | ' + str(round(fila.getValue('Perm'),decimalPos)) + ' | ' + str(fila.getValue('FREQUENCY')) + ' | ' + str(round(fila.getValue('SUM_LDre'),decimalPos)) + ' | ' + str(round(fila.getValue('Kc'),decimalPos)) + ' | ' + str(round(fila.getValue('Dd'),decimalPos)) + ' | ' + str(round(fila.getValue('Dc'),decimalPos)) + ' | ' + fila.getValue('KcTag') + ' |', True)
 
-PrintLog('\n### Graficas generales\n')
+PrintLog('\n### Graficas generales')
 scatterVarX, scatterVarXLabel = 'Area', 'Área, km²'
 scatterVarY = ['FREQUENCY', 'SUM_LDre', 'Kc', 'Dd', 'Dc']
 scatterVarYLabel = ['# Drenajes', 'Sum. Long. Drenajes, km', 'Kc - Índice de Compacidad', 'Dd - Densidad de drenajes', 'Dc - Densidad de corrientes']
 iLabel = 0
 for iY in scatterVarY[:]:
     xPlotValues, yPlotValues = [], []
-    PrintLog('Grafica ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt + '...')
-    PrintLog(urlGitHubFile+'/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png')
+    PrintLog('\nGrafica ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt)
+    PrintLog('![Graph' + str(iLabel) + '](' + urlGitHubFile + '/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png)')
     cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
     for fila in cursor:
         xPlotValues.append(fila.getValue(scatterVarX))
