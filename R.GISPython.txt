@@ -9,6 +9,16 @@ Clone local directory D:\R.GISPython.wiki
 https://docs.github.com/en/communities/documenting-your-project-with-wikis/adding-or-editing-wiki-pages
 PEP 8 -- Style Guide for Python Code >>> https://www.python.org/dev/peps/pep-0008/
 
+Pending
+	Tema 2 - Procesamiento de tablas geocodificadas
+		Actualización de elevaciones en el catálogo nacional de estaciones hidrometeorológicas del IDEAM - Colombia
+		Creación de capas geográficas en formato shapefile a partir de tablas geocodificadas
+		Creación de modelos de terreno a partir de tablas geocodificadas
+		Representación espacial de tablas geocodificadas con rasterio
+	Tema 3 - Fundamentos generales de SIG
+		Métodos de clasificación de capas geográficas en QGIS
+		Reproyección masiva de archivos de formas shapefile
+
 Python interpreters and names
 
 	Python 3.7 ArcGIS Pro 2.9

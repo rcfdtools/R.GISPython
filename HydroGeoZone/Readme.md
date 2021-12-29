@@ -62,7 +62,7 @@ Las cuencas hidrográficas que entregan o desembocan sus aguas superficiales dir
 | 5   | Pacífico          | 56  | Pacífico - Directos                |
 | 5   | Pacífico          | 57  | Islas del Pacífico                 |
 
-> En el presente análisis no se han incluido resultados para la ZH - zona hidrográfica 57 correspondiente a las Islas del Pacífico, debido a que la capa geográfica SZH - subzonas hidrográficas no contiene el polígono de delimitación. 
+> En el presente análisis no se han incluido resultados para la ZH - zona hidrográfica 57, correspondiente a las Islas del Pacífico, debido a que la capa geográfica SZH - subzonas hidrográficas no contiene el polígono de delimitación. 
 
 
 ### Caso de estudio
