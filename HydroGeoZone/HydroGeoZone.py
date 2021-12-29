@@ -96,7 +96,7 @@ PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
 PrintLog('```\nSistema de coordenadas: ' + outCoordinateSystem + '\n```', False)  # Mostrar como código en Markdown
 print('\nAntes de iniciar cierre las aplicaciones de ArcGIS for Desktop...')
 
-PrintLog( '\n### Parámetros de entrada\n'
+PrintLog( '\n### Parámetros y datos de entrada ([/Data](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Data))\n'
           '\n* Ruta absoluta: ' + absolutePath +
           '\n* Espacio de trabajo ArcPy: ' + arcpy.env.workspace +
           '\n* Capa de entrada SZH - Subzonas hidrográficas: ' + hydroSubZoneLayerIn +
@@ -356,7 +356,7 @@ for iY in scatterVarY[:]:
     plt.show()
     iLabel +=1
 
-PrintLog('\n### Archivos de resultados\n'
+PrintLog('\n### Archivos de resultados ([/Output](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Output) [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Graph))\n'
          '\n* Capa AH - Área hidrográfica: ' + hydroAreaLayer +
          '\n* Capa ZH - Zona hidrográfica: ' + hydroZoneLayer +
          '\n* Capa SZH - Subzona hidrográfica: ' + hydroSubZoneLayerCopy +
@@ -369,6 +369,8 @@ PrintLog('\n### Archivos de resultados\n'
          '\n* Tabla resultados ZH - Zona hidrográfica (Excel): ' + statisticsTableZHXLS +
          '\n* Tabla resultados SZH - Subzona hidrográfica (Excel): ' + statisticsTableSZHXLS +
          '\n* Tabla resultados Drenajes por subtipo: ' + statisticsTableDrainageDBF)
+
+PrintLog('> Los mapas desplegados en [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map) han sido generados manualmente en ArcGIS a partir de los datos obtenidos utilizando los mapas disponibles en [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map).')
 
 PrintLog('\nFecha y hora de terminación de ejecución: '+str(datetime.now()), True)
 timeEnd = time.time()

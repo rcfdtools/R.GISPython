@@ -2,7 +2,7 @@
 
 ![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)
 
-* Fecha y hora de inicio de ejecución: 2021-12-29 10:47:03.963638
+* Fecha y hora de inicio de ejecución: 2021-12-29 10:54:33.648015
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -15,7 +15,7 @@
 Sistema de coordenadas: PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]] # GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]
 ```
 
-### Parámetros de entrada
+### Parámetros y datos de entrada ([/Data](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Data))
 
 * Ruta absoluta: D:/R.GISPython/HydroGeoZone
 * Espacio de trabajo ArcPy: D:/R.GISPython/HydroGeoZone/Data
@@ -590,7 +590,7 @@ Grafica Area vs. Dc - Todos los subtipos de drenaje
 
 ![Graph4](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsDcDrainAll.png)
 
-### Archivos de resultados
+### Archivos de resultados ([/Output](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Output) [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Graph))
 
 * Capa AH - Área hidrográfica: D:/R.GISPython/HydroGeoZone/Output/AreaHidrografica.shp
 * Capa ZH - Zona hidrográfica: D:/R.GISPython/HydroGeoZone/Output/ZonaHidrografica.shp
@@ -604,7 +604,8 @@ Grafica Area vs. Dc - Todos los subtipos de drenaje
 * Tabla resultados ZH - Zona hidrográfica (Excel): D:/R.GISPython/HydroGeoZone/Output/ZonaHidrograficaEstadistica.xls
 * Tabla resultados SZH - Subzona hidrográfica (Excel): D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls
 * Tabla resultados Drenajes por subtipo: D:/R.GISPython/HydroGeoZone/Output/DrenajeSencilloSubtipoEstadistica.dbf
+> Los mapas desplegados en [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map) han sido generados manualmente en ArcGIS a partir de los datos obtenidos utilizando los mapas disponibles en [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map).
 
-Fecha y hora de terminación de ejecución: 2021-12-29 10:47:37.915444
+Fecha y hora de terminación de ejecución: 2021-12-29 10:55:04.566737
 
-Proceso completado (dt = 34.0 sec o 0.6 min)
+Proceso completado (dt = 30.9 sec o 0.5 min)
