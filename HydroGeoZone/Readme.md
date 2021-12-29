@@ -240,7 +240,7 @@ Estado de drenajes - Subtipos
 * Para analizar solo a partir de drenajes permanentes, establecer en `True` las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
 * Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
 
-#### Reportes detallado de resultados
+#### Reportes detallados de resultados
 
 El detalle de los resultados obtenidos del análisis, ha sido generado automáticamente por el script en Python y puede ser consultado o descargado en formato Markdown a través de los enlaces presentados en la siguiente tabla. 
 
@@ -249,6 +249,7 @@ El detalle de los resultados obtenidos del análisis, ha sido generado automáti
 | [HydroGeoZoneDrainAll20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainAll20211229.md) | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes de todos los subtipos. |
 | [HydroGeoZoneDrainPerm20211229.md]()                                                                                               | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes solo permanentes.      |
 
+A continuación se observan los resultados obtenidos a partir de la intersección espacial entre las SZH - Subzonas hidrográficas IDEAM del año 2013 con los drenajes permanentes e intermitentes IGAC a 2019.  
 
 #### Total nacional de SZH - subzonas hidrográficas por rango de área
 
@@ -268,23 +269,7 @@ AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 
 
 ![AHAreaHidrograficaFormaDensidad2013All.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013All.png)
 
-| AH  | Nombre AH       | Área, km² | Perm, km | n Drenajes | Sum. LCi, km  | Kc   | Dd   | Dc   | Kc Tag                             |
-|-----|-----------------|-----------|----------|------------|---------------|------|------|------|------------------------------------|
-| 1   | Caribe          | 102803.08 | 4814.69  | 39119      | 108190.65     | 4.24 | 1.05 | 0.38 | Oval-oblonga a rectangular-oblonga |
-| 2   | Magdalena Cauca | 270888.94 | 3763.38  | 134281     | 314458.56     | 2.04 | 1.16 | 0.5  | Oval-oblonga a rectangular-oblonga |
-| 3   | Orinoco         | 346081.36 | 3736.08  | 122458     | 301766.4      | 1.79 | 0.87 | 0.35 | Oval-oblonga a rectangular-oblonga |
-| 4   | Amazonas        | 341164.55 | 6122.88  | 101572     | 298438.97     | 2.96 | 0.87 | 0.3  | Oval-oblonga a rectangular-oblonga |
-| 5   | Pacifico        | 77372.03  | 3360.07  | 35124      | 81609.93      | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
-
 AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
-
-| AH  | Nombre AH       | Área, km² | Perm, km | n Drenajes | Sum. LCi, km | Kc   | Dd   | Dc   | Kc Tag                             |
-|-----|-----------------|-----------|----------|------------|--------------|------|------|------|------------------------------------|
-| 1   | Caribe          | 102803.08 | 4814.69  | 39119      | 108190.65    | 4.24 | 1.05 | 0.38 | Oval-oblonga a rectangular-oblonga |
-| 2   | Magdalena Cauca | 270888.94 | 3763.38  | 129469     | 306115.95    | 2.04 | 1.13 | 0.48 | Oval-oblonga a rectangular-oblonga |
-| 3   | Orinoco         | 346081.36 | 3736.08  | 122458     | 301766.4     | 1.79 | 0.87 | 0.35 | Oval-oblonga a rectangular-oblonga |
-| 4   | Amazonas        | 341164.55 | 6122.88  | 101572     | 298438.97    | 2.96 | 0.87 | 0.3  | Oval-oblonga a rectangular-oblonga |
-| 5   | Pacifico        | 77372.03  | 3360.07  | 35124      | 81609.93     | 3.41 | 1.05 | 0.45 | Oval-oblonga a rectangular-oblonga |
 
 ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
 
