@@ -78,7 +78,7 @@ def CapaPropiedades(capa):
     totalEntidades = arcpy.GetCount_management(capa)
     descGeometria = arcpy.Describe(capa)
     tipoGeometria = descGeometria.shapeType
-    PrintLog('#### Campos en ' + capa + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
+    PrintLog('### Campos en ' + capa + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
     PrintLog('| # | Campo | Tipo |', True)
     TableHeadMarkdown(3)
     campos = arcpy.ListFields(capa)

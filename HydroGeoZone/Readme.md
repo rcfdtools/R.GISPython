@@ -233,6 +233,109 @@ Estado de drenajes - Subtipos
 | 5102               | Intermitente |
 
 
+### Ejecución y resultados del análisis
+
+#### Consideraciones generales
+
+* Para la ejecución correcta es necesario cerrar las aplicaciones de ArcGIS for Desktop antes de iniciar. En ArcGIS Pro a través de ejecución usando un Notebook desde la GUI, no es necesario cerrar la aplicación antes de iniciar la ejecución.
+* Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
+* Para analizar solo a partir de drenajes permanentes, establecer en `True` las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
+* Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
+
+> Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior, por tal motivo, el número de tramos drenajes de la capa original `Drenaje_Sencillo.shp` puede ser diferente al número de tramos de la capa de intersección.
+
+#### Reportes detallados de resultados
+
+El detalle de los resultados obtenidos del análisis, ha sido generado automáticamente por el script en Python y puede ser consultado o descargado en formato Markdown a través de los enlaces presentados en la siguiente tabla. 
+
+| Reporte                                                                                                                             | Descripción                                                                                                            |
+|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| [HydroGeoZoneDrainAll20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainAll20211229.md)  | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes de todos los subtipos. |
+| [HydroGeoZoneDrainPer20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainPer20211229.md)  | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes solo permanentes.      |
+
+A continuación se presentan los resultados obtenidos a partir de la intersección espacial entre las SZH - Subzonas hidrográficas IDEAM del año 2013 con los drenajes permanentes e intermitentes IGAC a 2019.  
+
+#### Total nacional de SZH - subzonas hidrográficas por rango de área
+
+> Debido a que existen algunas subzonas hidrográficas con el mismo código y como polígonos independientes, y debido a que el script principal realiza el proceso de unificación en entidades multiparte para garantizar que el conteo y estadísticos de análisis a partir de drenajes sea consistente en el proceso de intersección espacial, el número de polígonos de la capa original (316) corresponde a un total de 314 subzonas únicas como se muestra en los siguientes resultados. 
+
+![SZHSubzonaHidrograficaRangoArea2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaRangoArea2013.png)
+
+
+#### SZH - subzonas hidrográficas por rango de área para cada AH - Área hidrográfica
+
+Los resultados detallados de las sub-clasificaciones de área espacial para cada AH - Área hidrográfica se encuentran en los reportes detallados. 
+
+
+#### Forma y densidad por zonificación hidrográfica 
+
+AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.zip).
+
+![AHAreaHidrograficaFormaDensidad2013All.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013All.png)
+
+AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
+
+ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
+
+Mapa de áreas por ZH - Zona hidrográfica
+![ZHZonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaArea.png)
+
+Mapa de número de drenajes por ZH - Zona hidrográfica
+![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
+
+Mapa de sumatoria de longitud de drenajes por ZH - Zona hidrográfica
+![ZHZonaHidrograficaSumLDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaSumLDrenajesAll.png)
+
+Mapa de Kc - Coeficiente de Compacidad por ZH - Zona hidrográfica
+
+> Debido a que algunas ZH - Zonas Hidrográficas están compuestas por entidades multiparte, se pueden presentar valores altos en el cálculo del índice de compacidad, p.ej, la zona `38 - Orinoco Directos` se compone de 5 entidades polígonos.   
+
+![ZHZonaHidrograficaKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaKcAll.png)
+
+Mapa de Dd - Densidad de Drenajes por ZH - Zona hidrográfica
+![ZHZonaHidrograficaDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaDdAll.png)
+
+Mapa de Dc - Densidad de Corrientes por ZH - Zona hidrográfica
+![ZHZonaHidrograficaDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaDcAll.png)
+
+ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadisticaSoloPermanente.zip)
+
+SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.zip).
+
+Mapa de áreas por SZH - Zona hidrográfica
+![SZHSubzonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaArea.png)
+
+Mapa de número de drenajes por SZH - Subzona hidrográfica
+![SZHSubzonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaNumDrenajesAll.png)
+
+Mapa de sumatoria de longitud de drenajes por SZH - Subzona hidrográfica
+![SZHSubzonaHidrograficaSumLDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaSumLDrenajesAll.png)
+
+Mapa de Kc - Coeficiente de Compacidad por SZH - Subzona hidrográfica
+
+![SZHSubzonaHidrograficaKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaKcAll.png)
+
+Mapa de Dd - Densidad de Drenajes por SZH - Subzona hidrográfica
+![SZHSubzonaHidrograficaDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaDdAll.png)
+
+Mapa de Dc - Densidad de Corrientes por SZH - Subzona hidrográfica
+![SZHSubzonaHidrograficaDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaDcAll.png)
+
+
+#### Matrices de dispersión en SZH - Subzonas hidrográficas
+
+![PlotAreaVsFREQUENCYDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsFREQUENCYDrainAll.png)
+![PlotAreaVsSUM_LDreDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsSUM_LDreDrainAll.png)
+![PlotAreaVsKcDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsKcDrainAll.png)
+![PlotAreaVsDdDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDdDrainAll.png)
+![PlotAreaVsDcDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDcDrainAll.png)
+
+
+#### Ejecución en ArcGIS Pro
+
+![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/Python3.7.11ArcGISPro2.9.0.png)
+
+
 ### Script [HydroGeoZone.py](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZone.py)
 
 ```
@@ -283,8 +386,8 @@ evalValueKc = [[1.25, 'Casi redonda a oval redonda'], [1.5, 'Oval-redonda a oval
 evalAreaSZH = [[300, 0, 0], [700, 0, 0], [900, 0, 0], [1100, 0, 0], [1300, 0, 0], [1500, 0, 0], [2000, 0, 0], [2500, 0, 0], [3500, 0, 0], [5000, 0, 0], [10000, 0, 0], [20000, 0, 0], [999999, 0, 0]]  # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
 decimalPos = 2  # Posiciones decimales para impresión de tablas en formato Markdown
 consKc = 0.28209479179826
-intersectActive = True  # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
-statisticActive = True  # Volver a generar estadísticos en DBF y convertir a Excel.
+intersectActive = False  # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = False  # Volver a generar estadísticos en DBF y convertir a Excel.
 onlyPerDrainActive = False  # Analizar solo para drenajes permanentes.
 
 # Log file creation
@@ -296,7 +399,8 @@ if onlyPerDrainActive:
 else:
     fileNameAux = 'DrainAll'
     titleAuxTxt = 'Todos los subtipos de drenaje'
-fileLog = open(absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md', 'w+')  # w+ para crear el archivo si no existe
+fileLogName = absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md'
+fileLog = open(fileLogName, 'w+')  # w+ para crear el archivo si no existe
 timeStart = time.time()
 
 # Función para crear separador de filas cabecera en formato Markdown
@@ -315,7 +419,7 @@ def CapaPropiedades(capa):
     totalEntidades = arcpy.GetCount_management(capa)
     descGeometria = arcpy.Describe(capa)
     tipoGeometria = descGeometria.shapeType
-    PrintLog('#### Campos en ' + capa + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
+    PrintLog('### Campos en ' + capa + ' (' + tipoGeometria + 's ' + str(totalEntidades) + ')\n', True)
     PrintLog('| # | Campo | Tipo |', True)
     TableHeadMarkdown(3)
     campos = arcpy.ListFields(capa)
@@ -326,7 +430,8 @@ def CapaPropiedades(capa):
 # Cabecera
 PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - ' + titleAuxTxt, True)
 PrintLog('\n![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)')
-PrintLog('\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
+PrintLog('\n* Archivo de resultados: ' + fileLogName +
+         '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
          '\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
          '\n* Python versión: ' + str(sys.version) +
          '\n* Python rutas: ' + str(sys.path[0:5]) +
@@ -433,7 +538,7 @@ arcpy.CalculateGeometryAttributes_management(hydroSubZoneLayerCopy, [['Area', 'A
 print('\n')
 
 print('### Intersección de drenajes con subzonas hidrográficas y cálculo de longitud por segmento')
-print('Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior.')
+print('Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior, por tal motivo, el número de tramos drenajes de la capa original `Drenaje_Sencillo.shp` puede ser diferente al número de tramos de la capa de intersección.')
 if intersectActive:
     print('Intersecando drenajes con subzonas ' + drainageLayerIntersect+'...')
     print('Este proceso tardara varios minutos...')
@@ -619,110 +724,6 @@ PrintLog('\nProceso completado (dt = ' + str(round(timeEnd - timeStart, 1)) + ' 
 fileLog.close()
 ```
 
-
-### Ejecución y resultados del análisis
-
-#### Consideraciones generales
-
-* Para la ejecución correcta es necesario cerrar las aplicaciones de ArcGIS for Desktop antes de iniciar. En ArcGIS Pro a través de ejecución usando un Notebook desde la GUI, no es necesario cerrar la aplicación antes de iniciar la ejecución.
-* Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
-* Para analizar solo a partir de drenajes permanentes, establecer en `True` las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
-* Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
-
-> Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior, por tal motivo, el número de tramos drenajes de la capa original `Drenaje_Sencillo.shp` puede ser diferente al número de tramos de la capa de intersección.
-
-#### Reportes detallados de resultados
-
-El detalle de los resultados obtenidos del análisis, ha sido generado automáticamente por el script en Python y puede ser consultado o descargado en formato Markdown a través de los enlaces presentados en la siguiente tabla. 
-
-| Reporte                                                                                                                             | Descripción                                                                                                            |
-|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| [HydroGeoZoneDrainAll20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainAll20211229.md)  | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes de todos los subtipos. |
-| [HydroGeoZoneDrainPer20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainPer20211229.md)  | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes solo permanentes.      |
-
-A continuación se presentan los resultados obtenidos a partir de la intersección espacial entre las SZH - Subzonas hidrográficas IDEAM del año 2013 con los drenajes permanentes e intermitentes IGAC a 2019.  
-
-#### Total nacional de SZH - subzonas hidrográficas por rango de área
-
-> Debido a que existen algunas subzonas hidrográficas con el mismo código y como polígonos independientes, y debido a que el script principal realiza el proceso de unificación en entidades multiparte para garantizar que el conteo y estadísticos de análisis a partir de drenajes sea consistente en el proceso de intersección espacial, el número de polígonos de la capa original (316) corresponde a un total de 314 subzonas únicas como se muestra en los siguientes resultados. 
-
-![SZHSubzonaHidrograficaRangoArea2013.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaRangoArea2013.png)
-
-
-#### SZH - subzonas hidrográficas por rango de área para cada AH - Área hidrográfica
-
-Los resultados detallados de las sub-clasificaciones de área espacial para cada AH - Área hidrográfica se encuentran en los reportes detallados. 
-
-
-#### Forma y densidad por zonificación hidrográfica 
-
-AH - Áreas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadistica.zip).
-
-![AHAreaHidrograficaFormaDensidad2013All.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/AHAreaHidrograficaFormaDensidad2013All.png)
-
-AH - Áreas hidrográficas año 2013 solo drenajes permanentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/AreaHidrograficaEstadisticaSoloPermanente.zip)
-
-ZH - Zonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadistica.zip).
-
-Mapa de áreas por ZH - Zona hidrográfica
-![ZHZonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaArea.png)
-
-Mapa de número de drenajes por ZH - Zona hidrográfica
-![ZHZonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaNumDrenajesAll.png)
-
-Mapa de sumatoria de longitud de drenajes por ZH - Zona hidrográfica
-![ZHZonaHidrograficaSumLDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaSumLDrenajesAll.png)
-
-Mapa de Kc - Coeficiente de Compacidad por ZH - Zona hidrográfica
-
-> Debido a que algunas ZH - Zonas Hidrográficas están compuestas por entidades multiparte, se pueden presentar valores altos en el cálculo del índice de compacidad, p.ej, la zona `38 - Orinoco Directos` se compone de 5 entidades polígonos.   
-
-![ZHZonaHidrograficaKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaKcAll.png)
-
-Mapa de Dd - Densidad de Drenajes por ZH - Zona hidrográfica
-![ZHZonaHidrograficaDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaDdAll.png)
-
-Mapa de Dc - Densidad de Corrientes por ZH - Zona hidrográfica
-![ZHZonaHidrograficaDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/ZHZonaHidrograficaDcAll.png)
-
-ZH - Zonas hidrográficas año 2013 con solo drenajes permanentes 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/ZonaHidrograficaEstadisticaSoloPermanente.zip)
-
-SZH - Subzonas hidrográficas año 2013 con drenajes permanentes e intermitentes a 2019. [.zip](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.zip).
-
-Mapa de áreas por SZH - Zona hidrográfica
-![SZHSubzonaHidrograficaArea.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaArea.png)
-
-Mapa de número de drenajes por SZH - Subzona hidrográfica
-![SZHSubzonaHidrograficaNumDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaNumDrenajesAll.png)
-
-Mapa de sumatoria de longitud de drenajes por SZH - Subzona hidrográfica
-![SZHSubzonaHidrograficaSumLDrenajesAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaSumLDrenajesAll.png)
-
-Mapa de Kc - Coeficiente de Compacidad por SZH - Subzona hidrográfica
-
-![SZHSubzonaHidrograficaKcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaKcAll.png)
-
-Mapa de Dd - Densidad de Drenajes por SZH - Subzona hidrográfica
-![SZHSubzonaHidrograficaDdAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaDdAll.png)
-
-Mapa de Dc - Densidad de Corrientes por SZH - Subzona hidrográfica
-![SZHSubzonaHidrograficaDcAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/SZHSubzonaHidrograficaDcAll.png)
-
-
-### Matrices de dispersión en SZH - Subzonas hidrográficas
-
-![PlotAreaVsFREQUENCYDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsFREQUENCYDrainAll.png)
-![PlotAreaVsSUM_LDreDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsSUM_LDreDrainAll.png)
-![PlotAreaVsKcDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsKcDrainAll.png)
-![PlotAreaVsDdDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDdDrainAll.png)
-![PlotAreaVsDcDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDcDrainAll.png)
-
-
-### Ejecución en ArcGIS Pro
-
-![Python3.7.11ArcGISPro2.9.0.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Screenshot/Python3.7.11ArcGISPro2.9.0.png)
-
-
 ### Referencias
 
 * http://www.ideam.gov.co/capas-geo
@@ -732,6 +733,7 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona hidrográfica
 * [Hidrografía Colombiana - IDEAM y SiGaia (versión no oficial de zonificación a 2018)](https://www.arcgis.com/home/item.html?id=89f6818e093f4b0faa99b456ad98018d)
 * [ESRI - Versiones de Python según la versión de ArcGIS](https://support.esri.com/en/technical-article/000013224)
 * [ESRI - Python, NumPy, and MatPlotlib en ArcGIS 10.6](https://desktop.arcgis.com/en/arcmap/10.6/get-started/installation-guide/python-requirement.htm)
+
 
 ### Autores
 
