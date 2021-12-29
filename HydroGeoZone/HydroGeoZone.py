@@ -45,9 +45,9 @@ evalValueKc = [[1.25, 'Casi redonda a oval redonda'], [1.5, 'Oval-redonda a oval
 evalAreaSZH = [[300, 0, 0], [700, 0, 0], [900, 0, 0], [1100, 0, 0], [1300, 0, 0], [1500, 0, 0], [2000, 0, 0], [2500, 0, 0], [3500, 0, 0], [5000, 0, 0], [10000, 0, 0], [20000, 0, 0], [999999, 0, 0]]  # Valores de corte para evaluar número de subzonas, posición 0 corresponde al valor de corte, posición 1 para conteo y posición 2 para acumulado.
 decimalPos = 2  # Posiciones decimales para impresión de tablas en formato Markdown
 consKc = 0.28209479179826
-intersectActive = True  # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
-statisticActive = True  # Volver a generar estadísticos en DBF y convertir a Excel.
-onlyPerDrainActive = True  # Analizar solo para drenajes permanentes.
+intersectActive = False  # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
+statisticActive = False  # Volver a generar estadísticos en DBF y convertir a Excel.
+onlyPerDrainActive = False  # Analizar solo para drenajes permanentes.
 
 # Log file creation
 currentDate = date.today()
@@ -197,7 +197,7 @@ arcpy.CalculateGeometryAttributes_management(hydroSubZoneLayerCopy, [['Area', 'A
 print('\n')
 
 print('### Intersección de drenajes con subzonas hidrográficas y cálculo de longitud por segmento')
-print('Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior.')
+print('Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior, por tal motivo, el número de tramos drenajes de la capa original `Drenaje_Sencillo.shp` puede ser diferente al número de tramos de la capa de intersección.')
 if intersectActive:
     print('Intersecando drenajes con subzonas ' + drainageLayerIntersect+'...')
     print('Este proceso tardara varios minutos...')

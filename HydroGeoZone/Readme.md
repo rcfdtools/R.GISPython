@@ -94,9 +94,10 @@ Para la marcación complementaria del coeficiente de compacidad Kc, se utilizar�
 
 ### Objetivos
 
-* Identificar las AH - áreas hidrográficas, ZH - zonas hidrográficas y SZH - subzonas hidrográficas de Colombia - Suramérica.
-* Mediante intersección espacial, determinar el número y longitud de drenajes en cada zonificación.
-* Estimar los coeficientes de forma y densidad en cada zonificación.
+* Identificar las SZH - subzonas hidrográficas de Colombia - Suramérica.
+* A partir de las SZH - subzonas hidrográficas, crear las capas disueltas de AH - áreas hidrográficas y ZH - zonas hidrográficas.
+* Mediante intersección espacial, determinar el número y longitud de drenajes para cada zonificación.
+* Estimar los coeficientes de forma y densidad para cada zonificación.
 * Ejecutar varias de las funciones de geoprocesamiento disponibles en ArcPy de ArcGIS.  
 
 
@@ -627,6 +628,8 @@ fileLog.close()
 * Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
 * Para analizar solo a partir de drenajes permanentes, establecer en `True` las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
 * Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
+
+> Tenga en cuenta que la definición de las subzonas hidrográficas se realizó a escala 1:500k y los drenajes a escala 1:100k, por lo que espacialmente pueden existir fragmentos de tramos de drenaje que cruzan entre zonas. Los cálculos de densidad y forma se realizan a partir de la intersección espacial fraccionada de drenajes dentro de cada área teniendo en cuenta la consideración anterior, por tal motivo, el número de tramos drenajes de la capa original `Drenaje_Sencillo.shp` puede ser diferente al número de tramos de la capa de intersección.
 
 #### Reportes detallados de resultados
 

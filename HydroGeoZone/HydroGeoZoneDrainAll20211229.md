@@ -2,7 +2,8 @@
 
 ![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)
 
-* Fecha y hora de inicio de ejecución: 2021-12-29 11:41:34.973231
+* Archivo de resultados: D:/R.GISPython/HydroGeoZone/HydroGeoZoneDrainAll20211229.md
+* Fecha y hora de inicio de ejecución: 2021-12-29 12:06:47.443074
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -607,6 +608,6 @@ Grafica Área, km² vs. Dc - Densidad de corrientes - Todos los subtipos de drenaj
 
 > Los mapas desplegados en [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map) han sido generados manualmente en ArcGIS a partir de los datos obtenidos utilizando los mapas de proyecto disponibles en [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map).
 
-Fecha y hora de terminación de ejecución: 2021-12-29 11:49:51.169394
+Fecha y hora de terminación de ejecución: 2021-12-29 12:15:11.799881
 
-Proceso completado (dt = 496.2 sec o 8.3 min)
+Proceso completado (dt = 504.4 sec o 8.4 min)
