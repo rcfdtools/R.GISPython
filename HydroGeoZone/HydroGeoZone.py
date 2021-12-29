@@ -16,7 +16,8 @@ arcpy.env.workspace = absolutePath+'/Data/'
 arcpy.env.overwriteOutput = True
 dataPath = absolutePath+'/Data/'
 outputPath = absolutePath+'/Output/'
-hydroSubZoneLayer = dataPath+'Zonificacion_hidrografica_2013.shp'
+outputPathGraph = absolutePath+'/Graph/'
+hydroSubZoneLayerIn = dataPath+'Zonificacion_hidrografica_2013.shp'
 drainageLayerIn = dataPath+'Drenaje_Sencillo.shp'
 drainageLayer = outputPath+'DrenajeSencilloFiltro.shp'  # Capa drenajes filtro solo permanentes
 hydroAreaLayer = outputPath+'AreaHidrografica.shp'
@@ -91,10 +92,19 @@ PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
             '\n* Cláusulas y condiciones de uso en https://github.com/rcfdtools/R.GISPython/wiki/License'
             '\n* Créditos: r.cfdtools@gmail.com\n', True)
 PrintLog('```\nSistema de coordenadas: ' + outCoordinateSystem + '\n```', False)  # Mostrar como código en Markdown
-print('\nAntes de iniciar cierre las aplicaciones de ArcGIS for Desktop...\n')
+print('\nAntes de iniciar cierre las aplicaciones de ArcGIS for Desktop...')
 
-PrintLog('## Propiedades y entidades encontradas para las capas de entrada\n')
-CapaPropiedades(hydroSubZoneLayer)
+PrintLog( '\n### Parámetros de entrada\n'
+          '\n* Ruta absoluta: ' + absolutePath +
+          '\n* Espacio de trabajo ArcPy: ' + arcpy.env.workspace +
+          '\n* Capa de entrada SZH - Subzonas hidrográficas: ' + hydroSubZoneLayerIn +
+          '\n* Capa de entrada Drenajes: ' + drainageLayerIn +
+          '\n* Intersección SZH & Drenajes: ' + str(intersectActive) +
+          '\n* Recálculo de estadísticos: ' + str(statisticActive) +
+          '\n* Analizar solo drenajes permanentes: ' + str(onlyPerDrainActive))
+
+PrintLog('\n## Propiedades y entidades encontradas para las capas de entrada\n')
+CapaPropiedades(hydroSubZoneLayerIn)
 PrintLog('\n', True)
 CapaPropiedades(drainageLayerIn)
 PrintLog('\n### Evaluación de drenajes por subtipo\n', True)
@@ -120,7 +130,7 @@ print('\n')
 print('### Reproyección de subzonas')
 print('Reproyectando SZH a '+hydroSubZoneLayerProject+'...')
 print('Sistema de coordenadas: '+outCoordinateSystem)
-arcpy.Project_management(hydroSubZoneLayer, hydroSubZoneLayerProject, outCoordinateSystem)
+arcpy.Project_management(hydroSubZoneLayerIn, hydroSubZoneLayerProject, outCoordinateSystem)
 print('\n')
 
 print('### Disolución de subzona, zona y área hidrográfica')
@@ -339,6 +349,7 @@ for iY in scatterVarY[:]:
     plt.ylabel(scatterVarYLabel[iLabel])
     plt.legend(loc='lower right')
     plt.title(scatterVarX + ' vs. ' + scatterVarYLabel[iLabel] + ' - ' + titleAuxTxt)
+    plt.savefig(outputPathGraph+'Plot'+scatterVarX+'Vs'+iY+fileNameAux+'.png')
     plt.show()
     iLabel +=1
 
