@@ -332,7 +332,7 @@ Todos los subtipos de drenaje
 ![PlotAreaVsDdDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDdDrainAll.png)
 ![PlotAreaVsDcDrainAll.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsDcDrainAll.png)
 
-Solo drenajes permanentes
+Solo drenajes subtipo permanente
 
 ![PlotAreaVsFREQUENCYDrainPer.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsFREQUENCYDrainPer.png)
 ![PlotAreaVsSUM_LDreDrainPer.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/PlotAreaVsSUM_LDreDrainPer.png)
