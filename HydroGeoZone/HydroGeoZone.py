@@ -17,6 +17,7 @@ arcpy.env.overwriteOutput = True
 dataPath = absolutePath+'/Data/'
 outputPath = absolutePath+'/Output/'
 outputPathGraph = absolutePath+'/Graph/'
+urlGitHubFile = 'https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/'
 hydroSubZoneLayerIn = dataPath+'Zonificacion_hidrografica_2013.shp'
 drainageLayerIn = dataPath+'Drenaje_Sencillo.shp'
 drainageLayer = outputPath+'DrenajeSencilloFiltro.shp'  # Capa drenajes filtro solo permanentes
@@ -338,7 +339,8 @@ scatterVarYLabel = ['# Drenajes', 'Sum. Long. Drenajes, km', 'Kc - Índice de Co
 iLabel = 0
 for iY in scatterVarY[:]:
     xPlotValues, yPlotValues = [], []
-    print('Graficando ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt + '...')
+    print('Grafica ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt + '...')
+    print(urlGitHubFile+'/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png')
     cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
     for fila in cursor:
         xPlotValues.append(fila.getValue(scatterVarX))
@@ -352,6 +354,20 @@ for iY in scatterVarY[:]:
     plt.savefig(outputPathGraph+'Plot'+scatterVarX+'Vs'+iY+fileNameAux+'.png')
     plt.show()
     iLabel +=1
+
+PrintLog('\n### Archivos de resultados\n'
+         '\n* Capa AH - Área hidrográfica: ' + hydroAreaLayer +
+         '\n* Capa ZH - Zona hidrográfica: ' + hydroZoneLayer +
+         '\n* Capa SZH - Subzona hidrográfica: ' + hydroSubZoneLayerCopy +
+         '\n* Capa Drenajes filtro permanentes: ' + drainageLayer +
+         '\n* Capa intersección SZH & Drenajes: ' + drainageLayerIntersect +
+         '\n* Tabla resultados AH - Área hidrográfica (dBase): ' + statisticsTableAHDBF +
+         '\n* Tabla resultados ZH - Zona hidrográfica (dBase): ' + statisticsTableZHDBF +
+         '\n* Tabla resultados SZH - Subzona hidrográfica (dBase): ' + statisticsTableSZHDBF +
+         '\n* Tabla resultados AH - Área hidrográfica (Excel): ' + statisticsTableAHXLS +
+         '\n* Tabla resultados ZH - Zona hidrográfica (Excel): ' + statisticsTableZHXLS +
+         '\n* Tabla resultados SZH - Subzona hidrográfica (Excel): ' + statisticsTableSZHXLS +
+         '\n* Tabla resultados Drenajes por subtipo: ' + statisticsTableDrainageDBF)
 
 PrintLog('\nFecha y hora de terminación de ejecución: '+str(datetime.now()), True)
 timeEnd = time.time()
