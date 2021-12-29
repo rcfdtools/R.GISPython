@@ -340,7 +340,7 @@ scatterVarYLabel = ['# Drenajes', 'Sum. Long. Drenajes, km', 'Kc - Índice de Co
 iLabel = 0
 for iY in scatterVarY[:]:
     xPlotValues, yPlotValues = [], []
-    PrintLog('\nGrafica ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt)
+    PrintLog('\nGrafica ' + scatterVarXLabel + ' vs. ' + scatterVarYLabel[iLabel] + ' - ' + titleAuxTxt)
     PrintLog('\n![Graph' + str(iLabel) + '](' + urlGitHubFile + '/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png)')
     cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
     for fila in cursor:
@@ -370,7 +370,7 @@ PrintLog('\n### Archivos de resultados ([/Output](https://github.com/rcfdtools/R
          '\n* Tabla resultados SZH - Subzona hidrográfica (Excel): ' + statisticsTableSZHXLS +
          '\n* Tabla resultados Drenajes por subtipo: ' + statisticsTableDrainageDBF)
 
-PrintLog('> Los mapas desplegados en [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map) han sido generados manualmente en ArcGIS a partir de los datos obtenidos utilizando los mapas disponibles en [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map).')
+PrintLog('\n> Los mapas desplegados en [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map) han sido generados manualmente en ArcGIS a partir de los datos obtenidos utilizando los mapas de proyecto disponibles en [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map).')
 
 PrintLog('\nFecha y hora de terminación de ejecución: '+str(datetime.now()), True)
 timeEnd = time.time()
