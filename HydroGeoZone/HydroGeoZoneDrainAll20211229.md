@@ -1,7 +1,8 @@
 ## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - Todos los subtipos de drenaje
+
 ![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)
 
-* Fecha y hora de inicio de ejecución: 2021-12-29 10:44:32.948324
+* Fecha y hora de inicio de ejecución: 2021-12-29 10:47:03.963638
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -570,18 +571,23 @@ D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.dbf
 ### Graficas generales
 
 Grafica Area vs. FREQUENCY - Todos los subtipos de drenaje
+
 ![Graph0](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsFREQUENCYDrainAll.png)
 
 Grafica Area vs. SUM_LDre - Todos los subtipos de drenaje
+
 ![Graph1](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsSUM_LDreDrainAll.png)
 
 Grafica Area vs. Kc - Todos los subtipos de drenaje
+
 ![Graph2](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsKcDrainAll.png)
 
 Grafica Area vs. Dd - Todos los subtipos de drenaje
+
 ![Graph3](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsDdDrainAll.png)
 
 Grafica Area vs. Dc - Todos los subtipos de drenaje
+
 ![Graph4](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone//Graph/PlotAreaVsDcDrainAll.png)
 
 ### Archivos de resultados
@@ -599,6 +605,6 @@ Grafica Area vs. Dc - Todos los subtipos de drenaje
 * Tabla resultados SZH - Subzona hidrográfica (Excel): D:/R.GISPython/HydroGeoZone/Output/SubZonaHidrograficaEstadistica.xls
 * Tabla resultados Drenajes por subtipo: D:/R.GISPython/HydroGeoZone/Output/DrenajeSencilloSubtipoEstadistica.dbf
 
-Fecha y hora de terminación de ejecución: 2021-12-29 10:45:06.363919
+Fecha y hora de terminación de ejecución: 2021-12-29 10:47:37.915444
 
-Proceso completado (dt = 33.4 sec o 0.6 min)
+Proceso completado (dt = 34.0 sec o 0.6 min)

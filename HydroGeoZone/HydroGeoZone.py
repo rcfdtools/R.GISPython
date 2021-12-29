@@ -84,7 +84,7 @@ def CapaPropiedades(capa):
 
 # Cabecera
 PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - '+titleAuxTxt, True)
-PrintLog('![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)')
+PrintLog('\n![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)')
 PrintLog (  '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
             '\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
             '\n* Python versión: ' + str(sys.version)+
@@ -341,7 +341,7 @@ iLabel = 0
 for iY in scatterVarY[:]:
     xPlotValues, yPlotValues = [], []
     PrintLog('\nGrafica ' + scatterVarX + ' vs. ' + iY  + ' - ' + titleAuxTxt)
-    PrintLog('![Graph' + str(iLabel) + '](' + urlGitHubFile + '/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png)')
+    PrintLog('\n![Graph' + str(iLabel) + '](' + urlGitHubFile + '/Graph/Plot' + scatterVarX + 'Vs' + iY + fileNameAux + '.png)')
     cursor = arcpy.SearchCursor(hydroSubZoneLayerCopy)
     for fila in cursor:
         xPlotValues.append(fila.getValue(scatterVarX))
