@@ -623,6 +623,7 @@ fileLog.close()
 
 #### Consideraciones generales
 
+* Para la ejecución correcta es necesario cerrar las aplicaciones de ArcGIS for Desktop antes de iniciar. En ArcGIS Pro a través de ejecución usando un Notebook desde la GUI, no es necesario cerrar la aplicación antes de iniciar la ejecución.
 * Para la ejecución completa del análisis para drenajes permanentes, intermitentes y no clasificados, establecer las variables `intersectActive = True` para volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados y `statisticActive = True` para volver a generar estadísticos en DBF y convertirlos a Excel.
 * Para analizar solo a partir de drenajes permanentes, establecer en `True` las variables anteriores y establecer adicionalmente la variable `onlyPermanentDrainActive = True`.
 * Para realizar modificaciones en el Script e incluir nuevas funcionalidades y ejecutar pruebas de funcionamiento, se recomienda ejecutar todos los procesos incluyendo todos los drenajes (permanentes e intermitentes) y luego de obtener las capas principales del análisis espacial `DrenajeSencilloFiltro.shp` y `DrenajeSencilloIntersect.shp`. Luego desactivar la ejecución de drenajes intersecados y recálculo de estadísticos detallados, de esta forma no tendrá que esperar (aproximadamente 10 minutos para 500k drenajes) a la creación completa de las capas principales resultantes del análisis.
@@ -631,10 +632,10 @@ fileLog.close()
 
 El detalle de los resultados obtenidos del análisis, ha sido generado automáticamente por el script en Python y puede ser consultado o descargado en formato Markdown a través de los enlaces presentados en la siguiente tabla. 
 
-| Reporte                                                                                                                            | Descripción                                                                                                            |
-|------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| [HydroGeoZoneDrainAll20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainAll20211229.md) | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes de todos los subtipos. |
-| [HydroGeoZoneDrainPerm20211229.md]()                                                                                               | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes solo permanentes.      |
+| Reporte                                                                                                                             | Descripción                                                                                                            |
+|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| [HydroGeoZoneDrainAll20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainAll20211229.md)  | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes de todos los subtipos. |
+| [HydroGeoZoneDrainPer20211229.md](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/HydroGeoZoneDrainPer20211229.md)  | Análisis para SZH - Subzonas hidrográficas IDEAM 2013 y Drenajes Sencillos IGAC 2019 - Drenajes solo permanentes.      |
 
 A continuación se presentan los resultados obtenidos a partir de la intersección espacial entre las SZH - Subzonas hidrográficas IDEAM del año 2013 con los drenajes permanentes e intermitentes IGAC a 2019.  
 
@@ -731,7 +732,7 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona hidrográfica
 
 ### Autores
 
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (40h).
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (48h).
 
 
 ### Compatibilidad
@@ -742,9 +743,10 @@ Mapa de Dc - Densidad de Corrientes por SZH - Subzona hidrográfica
 
 ### Control de versiones
 
-| Versión     | Descripción      |
-|-------------|------------------|
-| v.20211228  | Versión inicial. |
+| Versión     | Descripción                                                                                                                                                                                                                                                                           |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v.20211228  | Versión inicial.                                                                                                                                                                                                                                                                      |
+| v.20211229  | Optimización de script. Inclusión de rutas de datos de entrada y salida en archivo Markdown de resultados. Exportación automática de gráficas de matriz de dispersión con nombramiento independiente para análisis a partir de todos los subtipos de drenaje o solo para permanentes. |
 
 
 ### Licencia, cláusulas y condiciones de uso

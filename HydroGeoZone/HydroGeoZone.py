@@ -47,7 +47,7 @@ decimalPos = 2  # Posiciones decimales para impresión de tablas en formato Mark
 consKc = 0.28209479179826
 intersectActive = True  # Volver a realizar la intersección espacial y calcular las longitudes de los drenajes intersecados.
 statisticActive = True  # Volver a generar estadísticos en DBF y convertir a Excel.
-onlyPerDrainActive = False  # Analizar solo para drenajes permanentes.
+onlyPerDrainActive = True  # Analizar solo para drenajes permanentes.
 
 # Log file creation
 currentDate = date.today()
@@ -58,7 +58,8 @@ if onlyPerDrainActive:
 else:
     fileNameAux = 'DrainAll'
     titleAuxTxt = 'Todos los subtipos de drenaje'
-fileLog = open(absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md', 'w+')  # w+ para crear el archivo si no existe
+fileLogName = absolutePath+'/HydroGeoZone'+fileNameAux+currentDateTxt+'.md'
+fileLog = open(fileLogName, 'w+')  # w+ para crear el archivo si no existe
 timeStart = time.time()
 
 # Función para crear separador de filas cabecera en formato Markdown
@@ -88,7 +89,8 @@ def CapaPropiedades(capa):
 # Cabecera
 PrintLog('## Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python - ' + titleAuxTxt, True)
 PrintLog('\n![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)')
-PrintLog('\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
+PrintLog('\n* Archivo de resultados: ' + fileLogName +
+         '\n* Fecha y hora de inicio de ejecución: ' + str(datetime.now()) +
          '\n* Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
          '\n* Python versión: ' + str(sys.version) +
          '\n* Python rutas: ' + str(sys.path[0:5]) +
