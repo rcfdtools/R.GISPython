@@ -1,5 +1,5 @@
 ## Introducción a pandas - Representación estadística de Municipios de Colombia 
-Topics: `IGAC` `County` `Plot` `matplotlib` `Pandas` `system` `Graph` `ArcGIS` `QGIS` 
+Keywords: `IGAC` `County` `Plot` `matplotlib` `Pandas` `system` `Graph` `ArcGIS` `QGIS` 
 
 [Pandas](https://pandas.pydata.org/), es una librería complementaria al lenguaje de programación Python que permite leer, representar y manipular datos almacenados en diferentes formatos, p.ej, en archivos de texto separados por comas _.csv_ [(CSV - Comma separated values)](https://en.wikipedia.org/wiki/Comma-separated_values) y archivos en formatos de libro de cálculo electrónico como [Microsoft Excel](https://es.wikipedia.org/wiki/Microsoft_Excel) en formato _.xls_ y _.xlsx_.
 

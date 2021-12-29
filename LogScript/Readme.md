@@ -1,5 +1,5 @@
 ## Script con archivo log de ejecución y resultados
-Topics: `Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib` `.lower()` `try` `except` `.write()` 
+Keywords: `Concentration time` `Giandotti` `Subbasin` `Hydrology` `Interactive` `define` `while` `matplotlib` `.lower()` `try` `except` `.write()` 
 
 Al ejecutar scripts, los resultados son mostrados en la consola del entorno de desarrollo o en el Command del sistema operativo. Los resultados también pueden ser volcados en un archivo de registro que puede ser creado y actualizado directamente desde el script. Para este procedimiento utilizaremos la instrucción `.write()`.
 

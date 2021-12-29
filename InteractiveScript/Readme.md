@@ -1,5 +1,5 @@
 ## Scripts interactivos
-Topics: `Concentration time` `Giandotti` `Subbasin` `Hydrology` `GIS` `Interactive` `QInputDialog` 
+Keywords: `Concentration time` `Giandotti` `Subbasin` `Hydrology` `GIS` `Interactive` `QInputDialog` 
 
 Los scripts en Python permiten la entrada directa de datos desde la consola de comandos o desde el intérprete de comandos, para ello puede utilizar el comando `input()`. En la interfaz gráfica de QGIS, las entradas de usuario se pueden realizar mediante QInputDialog.getText() y en ArcGIS Pro, la ejecución de este tipo de scripts puede ser realizada directamente desde Python Notebook.
 

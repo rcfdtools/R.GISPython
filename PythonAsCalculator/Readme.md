@@ -1,5 +1,5 @@
 ## Usar Python como una calculadora
-Topics: `Command` `CMD` `Calculator` 
+Keywords: `Command` `CMD` `Calculator` 
 
 Desde la consola de Python, es posible realizar operaciones matemáticas simples o complejas, definir variables, listas, tuplas, funciones, llamar módulos y en general utilizar cualquier elemento integrado al lenguaje y sin necesidad de que sea almacenado en un script .py. 
 

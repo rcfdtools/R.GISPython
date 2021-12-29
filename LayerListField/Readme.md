@@ -1,5 +1,5 @@
 ## Consulta de metadatos, propiedades y atributos en capas vectoriales de proyectos geográficos
-Topics: `Hydrology` `Stations` `Precipitation` `Evaporation` `Temperature` `arcpy` `pyqgis` `Metadata`
+Keywords: `Hydrology` `Stations` `Precipitation` `Evaporation` `Temperature` `arcpy` `pyqgis` `Metadata`
 
 Esta actividad contiene scripts en Python que permiten listar todas las capas geográficas (en formato [shapefile](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/shapefiles/what-is-a-shapefile.htm)) disponibles en el directorio de datos local de un proyecto de ArcGIS o en las capas cargadas en un mapa de QGIS, consultar los atributos disponibles en cada capa, sus tipos, filtrar a partir de un campo específico y graficar los valores encontrados a partir de dos campos específicos definidos por el usuario.
 
