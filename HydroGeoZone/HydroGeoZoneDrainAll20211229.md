@@ -3,7 +3,7 @@
 ![HydroGeoZone.png](https://github.com/rcfdtools/R.GISPython/blob/main/HydroGeoZone/Graph/HydroGeoZone.png)
 
 * Archivo de resultados: D:/R.GISPython/HydroGeoZone/HydroGeoZoneDrainAll20211229.md
-* Fecha y hora de inicio de ejecución: 2021-12-29 12:06:47.443074
+* Fecha y hora de inicio de ejecución: 2021-12-29 12:24:41.952392
 * Script compatible con: ArcGIS for Desktop 10.6+ y ArcGIS Pro
 * Python versión: 3.7.11 [MSC v.1927 64 bit (AMD64)]
 * Python rutas: ['D:\\R.GISPython\\HydroGeoZone', 'C:\\Program Files\\ArcGIS\\Pro\\Resources\\ArcPy', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3\\python37.zip']
@@ -22,13 +22,13 @@ Sistema de coordenadas: PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGN
 * Espacio de trabajo ArcPy: D:/R.GISPython/HydroGeoZone/Data
 * Capa de entrada SZH - Subzonas hidrográficas: D:/R.GISPython/HydroGeoZone/Data/Zonificacion_hidrografica_2013.shp
 * Capa de entrada Drenajes: D:/R.GISPython/HydroGeoZone/Data/Drenaje_Sencillo.shp
-* Intersección SZH & Drenajes: True
-* Recálculo de estadísticos: True
+* Intersección SZH & Drenajes: False
+* Recálculo de estadísticos: False
 * Analizar solo drenajes permanentes: False
 
 ## Propiedades y entidades encontradas para las capas de entrada
 
-#### Campos en D:/R.GISPython/HydroGeoZone/Data/Zonificacion_hidrografica_2013.shp (Polygons 316)
+### Campos en D:/R.GISPython/HydroGeoZone/Data/Zonificacion_hidrografica_2013.shp (Polygons 316)
 
 | # | Campo | Tipo |
 |---|---|---|
@@ -46,7 +46,7 @@ Sistema de coordenadas: PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGN
 | 12 | RULEID | Integer |
 
 
-#### Campos en D:/R.GISPython/HydroGeoZone/Data/Drenaje_Sencillo.shp (Polylines 426719)
+### Campos en D:/R.GISPython/HydroGeoZone/Data/Drenaje_Sencillo.shp (Polylines 426719)
 
 | # | Campo | Tipo |
 |---|---|---|
@@ -608,6 +608,6 @@ Grafica Área, km² vs. Dc - Densidad de corrientes - Todos los subtipos de drenaj
 
 > Los mapas desplegados en [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map) han sido generados manualmente en ArcGIS a partir de los datos obtenidos utilizando los mapas de proyecto disponibles en [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone/Map).
 
-Fecha y hora de terminación de ejecución: 2021-12-29 12:15:11.799881
+Fecha y hora de terminación de ejecución: 2021-12-29 12:25:12.813859
 
-Proceso completado (dt = 504.4 sec o 8.4 min)
+Proceso completado (dt = 30.9 sec o 0.5 min)

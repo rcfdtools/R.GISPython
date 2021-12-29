@@ -1,5 +1,4 @@
 Tareas
-	Graficas de análisis como en LaterStatisticQGIS.
 
 Longitudes en red de drenaje 2019
 Drenajes intersect 	1104464.501861
