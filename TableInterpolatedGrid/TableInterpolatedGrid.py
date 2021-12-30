@@ -9,182 +9,176 @@ import os.path
 import shutil
 import time
 import warnings
-import TableToGridModule as rtg
-warnings.filterwarnings("ignore")
+import TableInterpolatedGridModule as rtg
+warnings.filterwarnings('ignore')
 
 # Local variables
-vFolderMain = r"D:/R.GISPython/TableToGrid/"
-env.workspace = vFolderMain + 'OutputGrid'
-vFolderOutput = vFolderMain+"OutputGrid/"
-vFolderOutputColorMap = vFolderMain+"OutputColorMap/"
-vFolderTemp = vFolderMain+"Temp/"
-vFileName = vFolderMain+"Data/TablePrecipitationMonthly.csv"
-vShapeFile = vFolderTemp+"TempShapefile.shp"
-vFolderColorMapStyle = vFolderMain+"ColorMapStyle/"
-vTimeStart = time.time()
-os.system("color 0E")
+absolutePath = r'D:/R.GISPython/TableInterpolatedGrid/'
+env.workspace = absolutePath + 'OutputGrid'
+outputPath = absolutePath+'OutputGrid/'
+outputPathColorMap = absolutePath+'OutputColorMap/'
+outputTemp = absolutePath+'Temp/'
+fileCSVIn = absolutePath+'Data/TablePrecipitationMonthly.csv'
+shapefileTemp = outputTemp+'TempShapefile.shp'
+colorMapStyleFolder = absolutePath+'ColorMapStyle/'
+studyCase = 'Estudio de precipitación en el Departamento del Cesar - Colombia - Suramérica'
+timeStart = time.time()
+os.system('color 0E')
+arcpy.env.overwriteOutput = True
 
 # Welcome & Info screen
-print ""
-print "-----------------------------------------------------------------------------------------"
-print " CREATE WEATHER PARAMETER GRID SETS USING dBASE TABLE v1.15"
-print " by r.cfdtools@gmail.com Python: 2.7.12. ArcGIS: 10.5"
-print "-----------------------------------------------------------------------------------------"
-print " Description: Using a R Weather CDMS App tables, let build interpolate"
-print " grids maps in a tiff format for daily or monthly values. With the generate"
-print " tiff maps user can make a video for to study a weather parameter on the time."
-print ""
-print " Table format file input valid: comma separated values .csv"
-print " Float or doubles values required dot as decimal separator."
-print ""
-print " Requirements:"
-print "   csv file with header row."
-print "   Decimal values always been separated using dot."
-print "   Field with text values can't content comma."
-print "   Header row minimun required: Julian, Month, CX, CX, CZ, Var."
-print "   Var content values to analysis."
-print('   Spatial Analyst: ' + arcpy.CheckOutExtension('Spatial') + '\n')
-print raw_input(rtg.systemprompt()+"Alert - Close ARCGIS applications and press Enter >> ")
-print "\tProcessing file",vFileName
-
+print('-------------------------------------------------------------'
+      '\nMassive grid temporal interpolation with a dBASE table'
+      '\nby r.cfdtools@gmail.com Python: 2.7.12. ArcGIS: 10.5'
+      '\n-------------------------------------------------------------\n'
+      '\nUsing a R Weather CDMS App tables, let build interpolate grids maps in a tiff format for daily or monthly values. With the generate tiff maps user can make a video for to study a weather parameter on the time.\n')
+rtg.printtitle('Requirements')
+print('\n\t* Valid table format file: comma separated values .csv'
+      '\n\t* Float or double values required period as decimal separator.'
+      '\n\t* CSV file with header row.'
+      '\n\t* Field or attribute names can not content comma or special characters.'
+      '\n\t* Header attributes names required: Julian (1-366), Month (1-12), CX, CX, CZ, Var.'
+      '\n\t* Var correspond to the numeric variable for analysis. User can choice the var name.'
+      '\n\t* Compatible with ArcGIS for Desktop 10+ and ArcGIS Pro.'
+      '\n\t* ArcGIS Spatial analyst extension: ' + arcpy.CheckOutExtension('Spatial') + '\n')
 
 # Preprocesing variables
-vFields=rtg.fCSVTotalFieldFound(vFileName)
-vRowTotal = rtg.fCSVTotalRecordFound(vFileName)
-rtg.fCSVPreviewRecord(vFileName,vRowTotal+1)
-vFieldNumberEval=rtg.fCSVHeader(vFileName,vRowTotal,vFields)
-rtg.fGraphTxt(vFileName,vRowTotal,vFieldNumberEval[0])
-vCSVStatistic = rtg.fCSVStatistic(vFileName,vRowTotal,vFieldNumberEval[0])
-vMax =  vCSVStatistic[3]
-vMin =  vCSVStatistic[4]
-vCSVSpacialDomain = rtg.fCSVSpacialDomain(vFileName)
-vGridCellSizeRecommended = vCSVSpacialDomain[2]
-vFieldEvalStr = vFieldNumberEval[1]
-vDataFrecuency=rtg.fDataFrecuency()
-vFrecuencyFieldOpt = vDataFrecuency[1]
-vFrecuenciaMaxVal = int(vDataFrecuency[0])
-vNumGrid = rtg.fOptionRange("Total Grids to create",1,vFrecuenciaMaxVal)
-vCoordSystem = rtg.fCoordSystem()
-vResGrid = rtg.fOptionRangeFloat(("Output grid resolution for the coordinate system selected (%f recommended)" %(vGridCellSizeRecommended)),0,10000)
-vColorMapFileArray = rtg.fColorMapStyle(vFolderColorMapStyle)
-vColorMapFile = vColorMapFileArray[0]
-vColorMapFilePrev = vColorMapFileArray[1]
-vColorMapFileColors = float(vColorMapFileArray[2])
-vNumColor = int(vColorMapFileColors)
-vSlopeRampData = vNumColor / (vMax - vMin)
-os.system(vColorMapFilePrev)
+rtg.printtitle('Study case & File data summary')
+print('\n\t* Study case: ' + str(studyCase) +
+      '\n\t* Input file: ' + fileCSVIn)
+fieldsCSV = rtg.fCSVTotalFieldFound(fileCSVIn)
+totalRecords = rtg.fCSVTotalRecordFound(fileCSVIn)
+input('\n' + rtg.systemprompt() + 'Attention - Close all the ArcGIS for Desktop applications and press Enter >> ')
+rtg.fCSVPreviewRecord(fileCSVIn, totalRecords+1)
+fieldNumberEval=rtg.fCSVHeader(fileCSVIn,totalRecords,fieldsCSV)
+print('\n')
+rtg.fGraphTxt(fileCSVIn,totalRecords,fieldNumberEval[0])
+StatisticCSV = rtg.fCSVStatistic(fileCSVIn,totalRecords,fieldNumberEval[0])
+maxVal = StatisticCSV[3]
+minVal = StatisticCSV[4]
+spatialDomainCSV = rtg.fCSVSpacialDomain(fileCSVIn)
+gidCellSizeRecommended = spatialDomainCSV[2]
+fieldEvalStr = fieldNumberEval[1]
+dataFrecuency = rtg.fDataFrecuency()
+frecuencyFieldOpt = dataFrecuency[1]
+frecuencyMaxVal = int(dataFrecuency[0])
+numGrid = rtg.fOptionRange('Total grids to create ',1,frecuencyMaxVal)
+userCRS = rtg.fCoordSystem()
+gridResolution = rtg.fOptionRangeFloat(('Output grid resolution for the coordinate system selected (%f recommended)' %(round(gidCellSizeRecommended, 2))),0,10000)
+colorMapFileArray = rtg.fColorMapStyle(colorMapStyleFolder)
+colorMapFile = colorMapFileArray[0]
+colorMapFilePrev = colorMapFileArray[1]
+colorMapFileColors = float(colorMapFileArray[2])
+numColor = int(colorMapFileColors)
+slopeRampData = numColor / (maxVal - minVal)
+os.system(colorMapFilePrev)
 
 
 # Delete previous data Temp and Out folder created
 try:
-    shutil.rmtree(vFolderOutput) #Remove Out folder
+    shutil.rmtree(outputPath)  # Remove Out folder
 except:
-    print rtg.systemprompt(),"Out folder doesn't exists"
-os.mkdir(vFolderOutput) #Create empty Out folder
+    print(rtg.systemprompt() + 'Out folder does not exists')
+os.mkdir(outputPath)  # Create empty Out folder
 try:
-    shutil.rmtree(vFolderOutputColorMap) #Remove Temp folder
+    shutil.rmtree(outputPathColorMap) #Remove Temp folder
 except:
-    print rtg.systemprompt(),"Out Color Map folder doesn't exists"
-os.mkdir(vFolderOutputColorMap) #Create empty Temp folder
+    print(rtg.systemprompt() + 'Out Color Map folder does not exists')
+os.mkdir(outputPathColorMap)  # Create empty Temp folder
 try:
-    shutil.rmtree(vFolderTemp) #Remove Temp folder
+    shutil.rmtree(outputTemp)  # Remove Temp folder
 except:
-    print rtg.systemprompt(),"Temp folder doesn't exists"
-os.mkdir(vFolderTemp) #Create empty Temp folder
+    print(rtg.systemprompt() + 'Temp folder does not exists')
+os.mkdir(outputTemp)  # Create empty Temp folder
 
 
 # Grid builder section
-vNumGridStr = str(vNumGrid)
-vInc=1; vMaxPixelValue = -1e99; vMinPixelValue = 1e99; vDayMonthMax = 0; vDayMonthMin = 0;
-print "\n\t-----------------------------------------------------------------------------------------"
-print "\tSTARTING", vNumGridStr, "GRIDS CREATION FILES"
-print "\t-----------------------------------------------------------------------------------------"
-while vInc <= vNumGrid:
-    vIncStr = str(vInc)
+numGridStr = str(numGrid)
+incV=1; maxValPixelValue = -1e99; minValPixelValue = 1e99; dayMonthMax = 0; dayMonthMin = 0;
+print('\n')
+rtg.printtitle('Creating ' + numGridStr + ' file grids', 'Both')
+while incV <= numGrid:
+    incVStr = str(incV)
 
     # Process: Make XY Event Layer
-    vEventLyr = "EventLyr" + vIncStr
-    #vCoordSystem = "PROJCS['GAUSS_BTA_MAGNA',GEOGCS['CGS_SIRGAS',DATUM['CGS_SIRGAS',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',1000000.0],PARAMETER['False_Northing',1000000.0],PARAMETER['Central_Meridian',-74.077507917],PARAMETER['Scale_Factor',1.0],PARAMETER['Latitude_Of_Origin',4.596200417],UNIT['Meter',1.0]];-4623200 -9510300 10000;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision"
-    #arcpy.MakeXYEventLayer_management(vFileName, "CX", "CY", vEventLyr, vCoordSystem, "CZ")
-    arcpy.MakeXYEventLayer_management(vFileName, "CX", "CY", vEventLyr, vCoordSystem, "")
+    eventLyr = 'EventLyr' + incVStr
+    arcpy.MakeXYEventLayer_management(fileCSVIn, 'CX', 'CY', eventLyr, userCRS, '')
 
     # Process: Select records from Julian day number
-    vFrecuencyFieldOptTxt = "\""+vFrecuencyFieldOpt+"\" ="
-    arcpy.Select_analysis(vEventLyr, vShapeFile, vFrecuencyFieldOptTxt + vIncStr)
+    frequencyFieldOptTxt = '\"'+frecuencyFieldOpt+'\" ='
+    arcpy.Select_analysis(eventLyr, shapefileTemp, frequencyFieldOptTxt + incVStr)
 
     # Process: IDW - Inverse Distance Weight Intepolation
-    vGRDayNFileName = "GRDM" + vIncStr.zfill(3) + ".tif"
-    vGRDayNTif = vFolderOutput + vGRDayNFileName
-    #arcpy.gp.Idw_sa(vShapeFile, "Var", vGRDayNTif, vResGrid, "2", "VAR 12", "")
-    #arcpy.gp.Idw_sa(vShapeFile, vFieldEvalStr, vGRDayNTif, vResGrid, "2", "", "")
+    gridDayNFileName = 'GRDM' + incVStr.zfill(3) + '.tif'
+    gridDayNTiff = outputPath + gridDayNFileName
+    #arcpy.gp.Idw_sa(shapefileTemp, 'Var', gridDayNTiff, gridResolution, '2', 'VAR 12', '')
+    #arcpy.gp.Idw_sa(shapefileTemp, fieldEvalStr, gridDayNTiff, gridResolution, '2', '', '')
     power = 2
     searchRadius = RadiusVariable(10, 150000)
-    outIDW = Idw(vShapeFile, vFieldEvalStr, vResGrid, power, searchRadius) ############
-    outIDW.save(vGRDayNTif)
+    outIDW = Idw(shapefileTemp, fieldEvalStr, gridResolution, power, searchRadius) 
+    outIDW.save(gridDayNTiff)
 
     # Remove and create Temp folder
-    shutil.rmtree(vFolderTemp) #Remove Temp folder
-    os.mkdir(vFolderTemp) #Create empty Temp folder
+    shutil.rmtree(outputTemp) #Remove Temp folder
+    os.mkdir(outputTemp) #Create empty Temp folder
 
     # Process: Show created raster properties
-    vCYMax = arcpy.GetRasterProperties_management(vGRDayNTif, "TOP", "")
-    vCYMaxAux = float (vCYMax.getOutput(0))
-    vCYMin = arcpy.GetRasterProperties_management(vGRDayNTif, "BOTTOM", "")
-    vCYMinAux = float (vCYMin.getOutput(0))
-    vYSize = (vCYMaxAux - vCYMinAux) / 1000
-    vCXMax = arcpy.GetRasterProperties_management(vGRDayNTif, "RIGHT", "")
-    vCXMaxAux = float (vCXMax.getOutput(0))
-    vCXMin = arcpy.GetRasterProperties_management(vGRDayNTif, "LEFT", "")
-    vCXMinAux = float (vCXMin.getOutput(0))
-    vXSize = (vCXMaxAux - vCXMinAux) / 1000
-    vValMax = arcpy.GetRasterProperties_management(vGRDayNTif, "MAXIMUM", "")
-    vValMaxAux = float (vValMax.getOutput(0))
-    vValMin = arcpy.GetRasterProperties_management(vGRDayNTif, "MINIMUM", "")
-    vValMinAux = float (vValMin.getOutput(0))
-    print "\tFile", vGRDayNFileName, "- High(km):",vYSize,"- Width(km):",vXSize,"- Min:",round(vValMinAux,4),"- Max:",round(vValMaxAux,4),"- Ok..."
-    if vValMaxAux > vMaxPixelValue:
-        vMaxPixelValue = vValMaxAux
-        vDayMonthMax = vInc
-    if vValMinAux < vMinPixelValue:
-        vMinPixelValue = vValMinAux
-        vDayMonthMin = vInc
-    vInc += 1
+    cyMax = arcpy.GetRasterProperties_management(gridDayNTiff, 'TOP', '')
+    cyMaxAux = float (cyMax.getOutput(0))
+    cyMin = arcpy.GetRasterProperties_management(gridDayNTiff, 'BOTTOM', '')
+    cyMinAux = float (cyMin.getOutput(0))
+    ySize = (cyMaxAux - cyMinAux) / 1000
+    cxMax = arcpy.GetRasterProperties_management(gridDayNTiff, 'RIGHT', '')
+    cxMaxAux = float (cxMax.getOutput(0))
+    cxMin = arcpy.GetRasterProperties_management(gridDayNTiff, 'LEFT', '')
+    cxMinAux = float (cxMin.getOutput(0))
+    xSize = (cxMaxAux - cxMinAux) / 1000
+    valMax = arcpy.GetRasterProperties_management(gridDayNTiff, 'MAXIMUM', '')
+    valMaxAux = float (valMax.getOutput(0))
+    valMin = arcpy.GetRasterProperties_management(gridDayNTiff, 'MINIMUM', '')
+    valMinAux = float (valMin.getOutput(0))
+    print('\tFile', gridDayNFileName, '- High(km):', ySize, '- Width(km):', xSize, '- Min:', round(valMinAux, 4), '- Max:', round(valMaxAux, 4), '- Ok...')
+    if valMaxAux > maxValPixelValue:
+        maxValPixelValue = valMaxAux
+        dayMonthMax = incV
+    if valMinAux < minValPixelValue:
+        minValPixelValue = valMinAux
+        dayMonthMin = incV
+    incV += 1
 
 
 # Grid color map using integer scale
-vInc=1; vMaxPixelValueStr = str(vMaxPixelValue); vMinStr = str(vMin); vNumColorStr = str(vNumColor); vSlopeRampDataStr = str(vSlopeRampData); 
-print "\n\t-----------------------------------------------------------------------------------------"
-print "\tSTARTING", vNumGridStr, "GRIDS COLOR SCALED CREATION FILES ("+(str(vNumColor))+" colors)"
-print "\t-----------------------------------------------------------------------------------------"
-print "\tAll database values"
-print "\t  Max Data Value:\t",vMax
-print "\t  Min Data Value:\t",vMin
-print "\t  Slope Colors Ramp:\t",vSlopeRampData
-print "\tGrids created"
-print "\t  Max Pixel Value:\t",vMaxPixelValue
-print "\t  Min Pixel Value:\t",vMinPixelValue
-while vInc <= vNumGrid:
-    vIncStr = str(vInc)
-    vGRDayNFileName = "GRDM" + vIncStr.zfill(3) + ".tif"
-    vGRDayNTifSorce = vFolderOutput + vGRDayNFileName
-    vGRDayNTifTarget = vFolderOutputColorMap + vGRDayNFileName
-    vAlgebraMapClc = "Con((Int(((\""+vGRDayNTifSorce+"\"-"+vMinStr+")*"+vSlopeRampDataStr+")))>"+vNumColorStr+","+vNumColorStr+",(Int(((\""+vGRDayNTifSorce+"\"-"+vMinStr+")*"+vSlopeRampDataStr+"))))"
-    arcpy.gp.RasterCalculator_sa(vAlgebraMapClc, vGRDayNTifTarget)
-    arcpy.AddColormap_management(vGRDayNTifTarget, "", vColorMapFile)
-    print "\tFile Color Map", vGRDayNFileName,"Ok..."
-    vInc += 1
+incV=1; maxValPixelValueStr = str(maxValPixelValue); minValStr = str(minVal); numColorStr = str(numColor); slopeRampDataStr = str(slopeRampData);
+print('\n')
+rtg.printtitle('Creating ' + str(numGridStr) + ' grid color scaled creation files ('+(str(numColor)) + ' colors)')
+print('\tAll database values'
+      '\n\tMax Data Value:',maxVal ,
+      '\n\tMin Data Value:',minVal,
+      '\n\tSlope Colors Ramp:',slopeRampData,
+      '\n\tGrids created'
+      '\n\tMax Pixel Value:',maxValPixelValue,
+      '\n\tMin Pixel Value:',minValPixelValue)
+while incV <= numGrid:
+    incVStr = str(incV)
+    gridDayNFileName = 'GRDM' + incVStr.zfill(3) + '.tif'
+    gridDayNTiffSorce = outputPath + gridDayNFileName
+    gridDayNTiffTarget = outputPathColorMap + gridDayNFileName
+    vAlgebraMapClc = 'Con((Int(((\''+gridDayNTiffSorce+'\'-'+minValStr+')*'+slopeRampDataStr+')))>'+numColorStr+','+numColorStr+',(Int(((\''+gridDayNTiffSorce+'\'-'+minValStr+')*'+slopeRampDataStr+'))))'
+    arcpy.gp.RasterCalculator_sa(vAlgebraMapClc, gridDayNTiffTarget)
+    arcpy.AddColormap_management(gridDayNTiffTarget, '', colorMapFile)
+    print('\tFile color map', gridDayNFileName, 'Ok...')
+    incV += 1
 
 
 # Show final process resume
-vTimeEnd = time.time()
-print "\n\t-----------------------------------------------------------------------------------------"
-print "\tSTATISTICS AND RESUME GRID CREATION REPORT"
-print "\t-----------------------------------------------------------------------------------------"
-print "\tGrids created on                ", vFolderOutput
-print "\tColor Map Grids created on      ", vFolderOutputColorMap
-print "\tMinimun pixel value all grids   ", round(vMinPixelValue,4)
-print "\tMaximun pixel value all grids   ", round(vMaxPixelValue,4)
-print "\tArcScene Z Scale conversion     ", round((vMaxPixelValue/vColorMapFileColors),6)
-print "\tDay or Month with maximum value ", vDayMonthMax
-print "\tProcess Acomplished              (dt = ", round(vTimeEnd - vTimeStart,1) , "sec(s) or" , round((vTimeEnd - vTimeStart)/60,1) , "min(s))"
-vExit = raw_input("\n%s Press Enter to Exit" %(rtg.systemprompt()))
+timeEnd = time.time()
+print('\n')
+rtg.printtitle('Statistics and summary grid creation report')
+print('\n\t* Grids created on:', outputPath ,
+      '\n\t* Color Map Grids created on:', outputPathColorMap,
+      '\n\t* Minimum pixel value all grids:', round(minValPixelValue, 4),
+      '\n\t* Maximum pixel value all grids:', round(maxValPixelValue, 4) ,
+      '\n\t* ArcScene Z Scale conversion:', round((maxValPixelValue/colorMapFileColors), 6),
+      '\n\t* Day or Month with maximum value:', dayMonthMax,
+      '\n\t* Process acomplished (dt = ', round(timeEnd - timeStart, 1), 'sec or', round((timeEnd - timeStart)/60, 1), 'min)')
+vExit = input('\n%s Press Enter to Exit...' %(rtg.systemprompt()))

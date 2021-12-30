@@ -63,7 +63,7 @@ def printTitle(titleText,titleType='Both'):
         print(nc*nVal)
         print(titleText)
         print(nc * nVal)
-    elif  titleType == 'Top':
+    elif titleType == 'Top':
         print(nc*nVal)
         print(titleText)
     else:
