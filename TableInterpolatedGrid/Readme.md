@@ -85,13 +85,14 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 > En representaciones diarias, el juliano 366 corresponde al día 29 de febrero para años bisiestos. 
 
+### Ejecuciones
 
-#### Ejecución en ArcGIS for Desktop
+#### Ejecución en ArcGIS for Desktop sobre PyCharm
 
 ![Python3.7.11ArcGISPro2.9.0.png]()
 
 
-#### Ejecución en ArcGIS Pro
+#### Ejecución en ArcGIS Pro sobre PyCharm
 
 ![Python3.7.11ArcGISPro2.9.0.png]()
 
