@@ -13,7 +13,7 @@ Para representar correctamente la serie temporal de la variable en estudio y pod
 
 ### Caso de estudio
 
-Estudio variables hidrometeorológicos (precipitación, evaporación y brillo solar a nivel diario medio y mensual) en diferentes zonas de Colombia - Suramérica a partir de datos escalados utilizando las series de datos del IDEAM.  
+Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo solar a nivel diario medio y mensual) en diferentes zonas de Colombia - Suramérica a partir de datos escalados utilizando las series de datos del IDEAM.  
 
 
 ### Requerimientos
@@ -38,11 +38,7 @@ Estudio variables hidrometeorológicos (precipitación, evaporación y brillo so
 * Definición de la resolución de salida de los mapas a interpolar. El valor se ingresa en función de las unidades del CRS seleccionado. El script hace una recomendación del tamaño de pixel para la interpolación.
 * Selección de la rampa de colores (128, 256, 512, 1024 valores discretos únicos de color) a utilizar en la representación.
 * Interpolación espacial masiva de grillas a partir de la escala temporal definida teniendo en cuenta los parámetros definidos previamente.
-* Conversión de grillas a grillas de representación por simbología única. Se crea una copia de las grillas originales. 
-
-> En un mismo archivo de entrada pueden existir múltiples columnas registrando diferentes variables meteorológicas, para lo cual el usuario podrá elegir la variable de entrada a analizar.
-
-> En representaciones mensuales, el juliano 366 corresponde al día 29 de febrero para años bisiestos.
+* Conversión de grillas principales a grillas de representación por simbología única. 
 
 > Actualmente el script no dispone de representación segmentada (slices) para de una serie diaria elegir el juliano inicial y final. 
  
@@ -53,8 +49,41 @@ Estudio variables hidrometeorológicos (precipitación, evaporación y brillo so
 > Las rampas de colores en formato .clr incluidas en la carpeta `ColorMapStyle` han sido creadas por r.cfdtools.
 
  
-### Ruta de ejecución y estructura de datos de entrada
+### Ruta de ejecución
 
+Para el desarrollo de este microcontenido se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\HydroGeoZone\` utilizando la siguiente estructura de directorios. 
+
+| Directorio                                                                                         | Descripción                                                                                                              |
+|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid/Data)             | Directorio de datos de entrada.                                                                                          |
+| [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid/Graph)           | Directorio con gráficas e ilustraciones.                                                                                 |
+| [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid/Map)               | Directorio con mapas para visualización de resultados en ArcGIS for Desktop y ArcGIS Pro.                                |
+| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid/Old)               | Directorio con versiones antiguas del script y módulos.                                                                  |
+| /OutputColorMap                                                                                    | Directorio de salida de grillas remuestreadas con rampa única de color.                                                  |
+| /OutputGrid                                                                                        | Directorio de salida de grillas generadas.                                                                               |
+| [/PDF](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid/PDF)               | Directorio con registros de ejecución en formado Adobe Acrobat.                                                          |
+| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid/Screenshot) | Capturas de pantalla con resultados de ejecución.                                                                        |
+| /Temp                                                                                              | Directorio donde se localizan los archivos de forma temporales generados para la creación de las grillas interpoladas.   |
+
+> Los directorios `/OutputColorMap`, `/OutputGrid`, `/Temp` se crea automáticamente en la unidad local y no visibles en el repositorio de GitHub debido al tamaño de los archivos generados. 
+
+
+### Estructura de datos de entrada
+
+Para la correcta ejecución del script se requiere que los archivos de texto separados por comas utilizando la siguiente estructura:
+
+| Campo  | Descripción                      | Aplica diarios | Aplica mensuales |
+|--------|----------------------------------|----------------|------------------|
+| Julian | Número de día del año de 1 a 366 | ✅              | ⛔               |
+| Month  | Mes del año de 1 a 12            | ⛔              | ✅               |
+| CX     | Coordenada en x o este           | ✅              | ✅               |
+| CY     | Coordenada en y o noerte         | ✅              | ✅               |
+| Var    | Variable númerica a representar  | ✅              | ✅               |
+
+
+> En un mismo archivo de entrada pueden existir múltiples columnas registrando diferentes variables meteorológicas, para lo cual el usuario podrá elegir la variable de entrada a analizar.
+
+> En representaciones diarias, el juliano 366 corresponde al día 29 de febrero para años bisiestos. 
 
 
 ### Referencias

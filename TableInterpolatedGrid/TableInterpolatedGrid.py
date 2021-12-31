@@ -49,7 +49,7 @@ print('\nValid table format file: comma separated values .csv'
       '\nFloat or double values required period as decimal separator.'
       '\nCSV file with header row.'
       '\nField or attribute names can not content comma or special characters.'
-      '\nHeader attributes names required: Julian (1-366), Month (1-12), CX, CX, CZ, Var.'
+      '\nHeader attributes names required: Julian (1-366), Month (1-12), CX, CX, Var.'
       '\nVar correspond to the numeric variable for analysis. User can choice the var name.'
       '\nCompatible with ArcGIS for Desktop 10+ and ArcGIS Pro.'
       '\nArcGIS Spatial analyst extension: ' + arcpy.CheckOutExtension('Spatial') + '\n')

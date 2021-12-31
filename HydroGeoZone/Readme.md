@@ -137,9 +137,7 @@ Para la marcación complementaria del coeficiente de compacidad Kc, se utilizar�
 
 ### Ruta de ejecución
  
-Para el desarrollo de este ejercicio se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\HydroGeoZone\`. 
-
-Para la correcta ejecución de los scripts se recomienda utilizar la siguiente estructura de directorios.
+Para el desarrollo de este microcontenido se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\HydroGeoZone\` utilizando la siguiente estructura de directorios.
 
 | Directorio                                                                                 | Descripción                                                                                |
 |--------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
