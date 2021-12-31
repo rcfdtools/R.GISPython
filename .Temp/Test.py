@@ -4,6 +4,12 @@ import pandas as pd
 import numpy as np
 import sys
 
+from datetime import datetime
+dTime = datetime.today()  # Get timezone naive now
+secondsInt = int(dTime.timestamp()*100)
+print('Time stamp: '+ str(secondsInt))
+
+'''
 # Multidimensional array basic operations with print in a file
 logAreaEval = open('C:/Temp/ZonificacionAnalisisAreas.txt', 'w+')
 evalAreaSZH= [[300,120], [700,180], [900,320], [1100,400], [1300,0], [1500,0], [2000,0], [2500,0], [3500,0], [5000,0], [10000,0], [20000,0], [999999,0]]
@@ -20,7 +26,6 @@ for i in evalAreaSZH:
         logAreaEval.write(vTxt + '\n')
     cont += 1
 
-'''
 # Simple array evaluation with numpy
 data = np.array([[1,'Alto'],[2,'Medio'],[3,'Bajo']])
 print(pd.DataFrame(data,columns=['A','B']))

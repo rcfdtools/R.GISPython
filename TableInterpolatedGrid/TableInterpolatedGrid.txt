@@ -1,0 +1,3 @@
+Futuras actualizaciones
+	Log de ejecución detallado en formato Markdown.
+	

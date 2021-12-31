@@ -1,60 +1,75 @@
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
+# Script name: TableInterpolatedGrid.py
+# Description: Interpolación y representación espacial de datos hidrometeorológicos en rango de escala única
+# Requirements: PyCharm 2021.3+, ArcGIS 10+, ArcGIS Pro 2.9.0
 
 # Libraries
 import arcpy
 from arcpy import env
 from arcpy.sa import *
-import os
 import os.path
 import shutil
 import time
 import warnings
+import matplotlib
+import matplotlib.pyplot as plt
+from datetime import datetime
 import TableInterpolatedGridModule as rtg
-warnings.filterwarnings('ignore')
 
 # Local variables
+studyCase = 'Estudio de la precipitación media en el Departamento del Cesar - Colombia - Suramérica'
+warnings.filterwarnings('ignore')
 absolutePath = r'D:/R.GISPython/TableInterpolatedGrid/'
 env.workspace = absolutePath + 'OutputGrid'
 outputPath = absolutePath+'OutputGrid/'
 outputPathColorMap = absolutePath+'OutputColorMap/'
 outputTemp = absolutePath+'Temp/'
-fileCSVIn = absolutePath+'Data/Sample3PrecipitationMonthly.csv'
+fileCSVIn = absolutePath+'Data/Sample3PrecipitationAverageMonthly.csv'
 shapefileTemp = outputTemp+'TempShapefile.shp'
 colorMapStyleFolder = absolutePath+'ColorMapStyle/'
-studyCase = 'Estudio de precipitación en el Departamento del Cesar - Colombia - Suramérica'
+logExecutionFle = open('TableInterpolatedGridLog.csv', 'a')
 timeStart = time.time()
 os.system('color 0E')
 arcpy.env.overwriteOutput = True
 
-# Welcome & Info screen
-print('-------------------------------------------------------------'
-      '\nMassive grid temporal interpolation with a dBASE table'
-      '\nby r.cfdtools@gmail.com Python: 2.7.12. ArcGIS: 10.5'
-      '\n-------------------------------------------------------------\n'
-      '\nUsing a R Weather CDMS App tables, let build interpolate grids maps in a tiff format for daily or monthly values. With the generate tiff maps user can make a video for to study a weather parameter on the time.\n')
-rtg.printtitle('Requirements')
-print('\n\tValid table format file: comma separated values .csv'
-      '\n\tFloat or double values required period as decimal separator.'
-      '\n\tCSV file with header row.'
-      '\n\tField or attribute names can not content comma or special characters.'
-      '\n\tHeader attributes names required: Julian (1-366), Month (1-12), CX, CX, CZ, Var.'
-      '\n\tVar correspond to the numeric variable for analysis. User can choice the var name.'
-      '\n\tCompatible with ArcGIS for Desktop 10+ and ArcGIS Pro.'
-      '\n\tArcGIS Spatial analyst extension: ' + arcpy.CheckOutExtension('Spatial') + '\n')
+# Header
+rtg.printtitle('Spatial interpolation and representation of meteorological data in a unique symbology ramp', 'both', False)
+print('\nExecution date & time: ' + str(datetime.now()) +
+      '\nScript compatibility: ArcGIS for Desktop 10.6+ y ArcGIS Pro'
+      '\nPython version: ' + str(sys.version) +
+      '\nPython path: ' + str(sys.path[0:5]) +
+      '\nmatplotlib version: ' + str(matplotlib.__version__) +
+      '\nRepository: https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid'
+      '\nLicense and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License'
+      '\nCredits: r.cfdtools@gmail.com\n')
 
-# Pre-procesing variables
+# Requirements
+rtg.printtitle('Requirements')
+print('\nValid table format file: comma separated values .csv'
+      '\nFloat or double values required period as decimal separator.'
+      '\nCSV file with header row.'
+      '\nField or attribute names can not content comma or special characters.'
+      '\nHeader attributes names required: Julian (1-366), Month (1-12), CX, CX, CZ, Var.'
+      '\nVar correspond to the numeric variable for analysis. User can choice the var name.'
+      '\nCompatible with ArcGIS for Desktop 10+ and ArcGIS Pro.'
+      '\nArcGIS Spatial analyst extension: ' + arcpy.CheckOutExtension('Spatial') + '\n')
+
+# Preprocessing variables
 rtg.printtitle('Study case & File data summary')
-print('\n\tStudy case: ' + str(studyCase) +
-      '\n\tInput file: ' + fileCSVIn)
+dTime = datetime.today()  # Get timezone naive now
+logFileNumber = int(dTime.timestamp()*100)
+print('\nStudy case: ' + studyCase +
+      '\nInput file: ' + fileCSVIn +
+      '\nLog file #: ' + str(logFileNumber))
 fieldsCSV = rtg.csvtotalfieldfound(fileCSVIn)
 totalRecords = rtg.csvtotalrecordfound(fileCSVIn)
 input('\n' + rtg.systemprompt() + 'Attention - Close all the ArcGIS for Desktop applications and press Enter >> ')
 rtg.csvsamplerecord(fileCSVIn, totalRecords+1)
-fieldNumberEval=rtg.csvheader(fileCSVIn,totalRecords,fieldsCSV)
+fieldNumberEval = rtg.csvheader(fileCSVIn, totalRecords, fieldsCSV)
 print('\n')
-rtg.graphtxt(fileCSVIn,totalRecords,fieldNumberEval[0])
+rtg.graphtxt(fileCSVIn, totalRecords, fieldNumberEval[0])
 print('\n')
-StatisticCSV = rtg.csvstatistic(fileCSVIn,totalRecords,fieldNumberEval[0])
+StatisticCSV = rtg.csvstatistic(fileCSVIn, totalRecords, fieldNumberEval[0])
 maxVal = StatisticCSV[3]
 minVal = StatisticCSV[4]
 spatialDomainCSV = rtg.csvspacialdomain(fileCSVIn)
@@ -63,9 +78,9 @@ fieldEvalStr = fieldNumberEval[1]
 dataFrecuency = rtg.datafrecuency()
 frecuencyFieldOpt = dataFrecuency[1]
 frecuencyMaxVal = int(dataFrecuency[0])
-numGrid = rtg.optionrange('Total grids to create ',1,frecuencyMaxVal)
+numGrid = rtg.optionrange('Total grids to create ', 1, frecuencyMaxVal)
 userCRS = rtg.crscoordsystem()
-gridResolution = rtg.optionrangefloat(('Output grid resolution for the coordinate system selected (%f recommended)' %(gidCellSizeRecommended)),0,10000)
+gridResolution = rtg.optionrangefloat(('Output grid resolution for the coordinate system selected (%f recommended)' % (gidCellSizeRecommended)), 0, 10000)
 colorMapFileArray = rtg.colormapstyle(colorMapStyleFolder)
 colorMapFile = colorMapFileArray[0]
 colorMapFilePrev = colorMapFileArray[1]
@@ -82,7 +97,7 @@ except:
     print(rtg.systemprompt() + 'Out folder does not exists')
 os.mkdir(outputPath)  # Create empty Out folder
 try:
-    shutil.rmtree(outputPathColorMap) #Remove Temp folder
+    shutil.rmtree(outputPathColorMap)  # Remove Temp folder
 except:
     print(rtg.systemprompt() + 'Out Color Map folder does not exists')
 os.mkdir(outputPathColorMap)  # Create empty Temp folder
@@ -95,9 +110,9 @@ os.mkdir(outputTemp)  # Create empty Temp folder
 
 # Grid builder section
 numGridStr = str(numGrid)
-incV=1; maxValPixelValue = -1e99; minValPixelValue = 1e99; dayMonthMax = 0; dayMonthMin = 0;
+incV = 1; maxValPixelValue = -1e99; minValPixelValue = 1e99; dayMonthMax = 0; dayMonthMin = 0;
 print('\n')
-rtg.printtitle('Creating ' + numGridStr + ' file grids', 'Both')
+rtg.printtitle('Creating ' + numGridStr + ' file grids', 'both')
 while incV <= numGrid:
     incVStr = str(incV)
 
@@ -120,25 +135,25 @@ while incV <= numGrid:
     outIDW.save(gridDayNTiff)
 
     # Remove and create Temp folder
-    shutil.rmtree(outputTemp) #Remove Temp folder
-    os.mkdir(outputTemp) #Create empty Temp folder
+    shutil.rmtree(outputTemp)  # Remove Temp folder
+    os.mkdir(outputTemp)  # Create empty Temp folder
 
     # Process: Show created raster properties
     cyMax = arcpy.GetRasterProperties_management(gridDayNTiff, 'TOP', '')
-    cyMaxAux = float (cyMax.getOutput(0))
+    cyMaxAux = float(cyMax.getOutput(0))
     cyMin = arcpy.GetRasterProperties_management(gridDayNTiff, 'BOTTOM', '')
-    cyMinAux = float (cyMin.getOutput(0))
+    cyMinAux = float(cyMin.getOutput(0))
     ySize = (cyMaxAux - cyMinAux) / 1000
     cxMax = arcpy.GetRasterProperties_management(gridDayNTiff, 'RIGHT', '')
-    cxMaxAux = float (cxMax.getOutput(0))
+    cxMaxAux = float(cxMax.getOutput(0))
     cxMin = arcpy.GetRasterProperties_management(gridDayNTiff, 'LEFT', '')
-    cxMinAux = float (cxMin.getOutput(0))
+    cxMinAux = float(cxMin.getOutput(0))
     xSize = (cxMaxAux - cxMinAux) / 1000
     valMax = arcpy.GetRasterProperties_management(gridDayNTiff, 'MAXIMUM', '')
-    valMaxAux = float (valMax.getOutput(0))
+    valMaxAux = float(valMax.getOutput(0))
     valMin = arcpy.GetRasterProperties_management(gridDayNTiff, 'MINIMUM', '')
-    valMinAux = float (valMin.getOutput(0))
-    print('\tFile', gridDayNFileName, '- High(km):', ySize, '- Width(km):', xSize, '- Min:', round(valMinAux, 4), '- Max:', round(valMaxAux, 4), '- Ok...')
+    valMinAux = float(valMin.getOutput(0))
+    print('File' + gridDayNFileName + '- High(km):' + str(ySize) + '- Width(km):' + str(xSize) + '- Min:' + str(round(valMinAux, 4)) + '- Max:' + str(round(valMaxAux, 4)) + '- Ok...')
     if valMaxAux > maxValPixelValue:
         maxValPixelValue = valMaxAux
         dayMonthMax = incV
@@ -152,13 +167,13 @@ while incV <= numGrid:
 incV=1; maxValPixelValueStr = str(maxValPixelValue); minValStr = str(minVal); numColorStr = str(numColor); slopeRampDataStr = str(slopeRampData);
 print('\n')
 rtg.printtitle('Creating ' + str(numGridStr) + ' grid color scaled files ('+(str(numColor)) + ' colors)')
-print('\n\tAll database values'
-      '\n\tMax data value: ' + str(maxVal) +
-      '\n\tMin data value: ' + str(minVal) +
-      '\n\tSlope colors ramp: ' + str(slopeRampData) +
-      '\n\n\tGrids created'
-      '\n\tMax pixel value: ' + str(maxValPixelValue) +
-      '\n\tMin pixel value: ' + str(minValPixelValue) + '\n')
+print('\nAll database values'
+      '\nMax data value: ' + str(maxVal) +
+      '\nMin data value: ' + str(minVal) +
+      '\nSlope colors ramp: ' + str(slopeRampData) +
+      '\n\nGrids created'
+      '\nMax pixel value: ' + str(maxValPixelValue) +
+      '\nMin pixel value: ' + str(minValPixelValue) + '\n')
 while incV <= numGrid:
     incVStr = str(incV)
     gridDayNFileName = 'GRDM' + incVStr.zfill(3) + '.tif'
@@ -167,7 +182,7 @@ while incV <= numGrid:
     vAlgebraMapClc = 'Con((Int(((\''+gridDayNTiffSorce+'\'-'+minValStr+')*'+slopeRampDataStr+')))>'+numColorStr+','+numColorStr+',(Int(((\''+gridDayNTiffSorce+'\'-'+minValStr+')*'+slopeRampDataStr+'))))'
     arcpy.gp.RasterCalculator_sa(vAlgebraMapClc, gridDayNTiffTarget)
     arcpy.AddColormap_management(gridDayNTiffTarget, '', colorMapFile)
-    print('\tFile color map ' + gridDayNFileName + ' - Ok...')
+    print('File color map ' + gridDayNFileName + ' - Ok...')
     incV += 1
 
 
@@ -175,11 +190,13 @@ while incV <= numGrid:
 timeEnd = time.time()
 print('\n')
 rtg.printtitle('Statistics and summary grid creation report')
-print('\n\tGrids created on: ' + outputPath +
-      '\n\tColor Map Grids created on: ' + outputPathColorMap +
-      '\n\tMinimum pixel value all grids: ' + str(round(minValPixelValue, 4)) +
-      '\n\tMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
-      '\n\tArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
-      '\n\tDay or Month with maximum value: ' + str(dayMonthMax) +
-      '\n\tProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
-vExit = input('\n%s Press Enter to exit...' %(rtg.systemprompt()))
+print('\nGrids created on: ' + outputPath +
+      '\nColor Map Grids created on: ' + outputPathColorMap +
+      '\nMinimum pixel value all grids: ' + str(round(minValPixelValue, 4)) +
+      '\nMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
+      '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
+      '\nDay or Month with maximum value: ' + str(dayMonthMax) +
+      '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
+logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
+logExecutionFle.close()
+vExit = input('\n%s Press Enter to exit...' % (rtg.systemprompt()))

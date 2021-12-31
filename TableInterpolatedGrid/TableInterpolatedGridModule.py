@@ -10,34 +10,37 @@ def systemprompt():
     return systemprompt
 
 # Print titles
-def printtitle(titleText, titleType = 'Both'):
-    # titleType: Top, Bottom, Both
+def printtitle(titleText, titleType = 'both', showTab = False):
+    # titleType: Top, Bottom, both
     nc = '-'
     nVal = len(titleText)
-    if titleType == 'Both':
-        print('\t' + nc * nVal)
-        print('\t' + titleText)
-        print('\t' + nc * nVal)
+    tabTxt = ''
+    if showTab:
+        tabTxt = '\t'
+    if titleType == 'both':
+        print(tabTxt + nc * nVal)
+        print(tabTxt + titleText)
+        print(tabTxt + nc * nVal)
     elif titleType == 'Top':
-        print('\t' + nc * nVal)
-        print('\t' + titleText)
+        print(tabTxt + nc * nVal)
+        print(tabTxt + titleText)
     else:
-        print('\t' + titleText)
-        print('\t' + nc * nVal)
+        print(tabTxt + titleText)
+        print(tabTxt + nc * nVal)
 
 # Range options for integers or list values
-def optionrange(txtMsg,minOpt,maxOpt):
+def optionrange(txtMsg, minOpt, maxOpt):
     valOpt = 0
     while valOpt == 0:
-        valueUser = input('\n%s%s (%d/%d): >> ' %(systemprompt(), txtMsg, minOpt, maxOpt))
+        valueUser = input('\n%s%s (%d/%d): >> ' % (systemprompt(), txtMsg, minOpt, maxOpt))
         if type(valueUser) != int:
             try:
                 valueUser = int(valueUser)
                 if valueUser >= minOpt and valueUser <= maxOpt:
-                    print('\tEntry option was %d.' %(valueUser))
+                    print('Entry option was %d.' % (valueUser))
                     valOpt = 1
                 else:
-                    print('%sAttention, value out of range (%d-%d).' %(systemprompt(), minOpt, maxOpt))
+                    print('%sAttention, value out of range (%d-%d).' % (systemprompt(), minOpt, maxOpt))
             except:
                 #print('%s Attention, invalid value. Enter an integer value.' %(systemprompt()))
                 vExcept = 0
@@ -46,20 +49,20 @@ def optionrange(txtMsg,minOpt,maxOpt):
 
 # Range options for floats values in a range
 # For example for grid resolutions
-def optionrangefloat(txtMsg,minOpt,maxOpt):
+def optionrangefloat(txtMsg, minOpt, maxOpt):
     valOpt = 0
     while valOpt == 0:
-        valueUser = input('%s%s (%d/%d): >> ' %(systemprompt(), txtMsg, minOpt, maxOpt))
+        valueUser = input('%s%s (%d/%d): >> ' % (systemprompt(), txtMsg, minOpt, maxOpt))
         if type(valueUser) != float:
             try:
                 valueUser = float(valueUser)
                 if valueUser >= minOpt and valueUser <= maxOpt:
-                    print('\tEntry option was %f.' %(valueUser))
+                    print('Entry option was %f.' % (valueUser))
                     valOpt = 1
                 else:
-                    print('%sAttention, value out of range (%d-%d).' %(systemprompt(),minOpt, maxOpt))
+                    print('%sAttention, value out of range (%d-%d).' % (systemprompt(), minOpt, maxOpt))
             except:
-                #print('%s Atention, invalid value. Enter an integer value.' %(systemprompt()))
+                #  print('%s Atention, invalid value. Enter an integer value.' %(systemprompt()))
                 vExcept = 0
     return valueUser
 
@@ -68,14 +71,14 @@ def optionrangefloat(txtMsg,minOpt,maxOpt):
 def optionyesno(txtMsg):
     valOpt = 0
     while valOpt == 0:
-        valueUser = input('%s%s (Y/N, Python 2 with quotes) >> ' %(systemprompt(), txtMsg))
+        valueUser = input('%s%s (Y/N, Python 2 with quotes) >> ' % (systemprompt(), txtMsg))
         if type(valueUser) == str:
             valueUserlow = valueUser.lower()
             if valueUserlow == 'y' or valueUserlow == 'n': 
                 valOpt = 1
             else:
-                print('\tOption %s invalid. Try again.\n' %(valueUser))
-    print('\tEntry option was %s.' %(valueUser))
+                print('Option %s invalid. Try again.\n' % (valueUser))
+    print('Entry option was %s.' % (valueUser))
     return valueUser.lower()
 
 
@@ -86,7 +89,7 @@ def csvtotalfieldfound(userFileName):
     recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line
     recordLineArray = recordLine.split(',')
     fieldsLen = len(recordLineArray)
-    print('\tAttributes: %d' %(fieldsLen))
+    print('Attributes: %d' % (fieldsLen))
     userFile.close()
     return fieldsLen
 
@@ -97,9 +100,9 @@ def csvtotalrecordfound(userFileName):
     userFile = open (userFileName)  # Open only for reading
     totalRecord = len(open(userFileName).readlines())
     if totalRecord == 0:
-        print('\tRecords: 0')
+        print('Records: 0')
     else:
-        print('\tRecords: %d' %(totalRecord-1))
+        print('Records: %d' % (totalRecord-1))
     totalRecord -= 1
     userFile.close()
     return totalRecord
@@ -110,29 +113,29 @@ def csvtotalrecordfound(userFileName):
 def csvspacialdomain(userFileName):
     printtitle('Spatial domain in the station records')
     fieldsLen = csvtotalfieldfound(userFileName)
-    userFile = open (userFileName) #Open only for reading
-    recordLine = userFile.readline().rstrip('\n') #rstrip remove jump line #Read de header line
+    userFile = open (userFileName)  # Open only for reading
+    recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line #Read de header line
     recordLineArray = recordLine.split(',')
-    #Eval column number with CX Values
+    # Eval column number with CX Values
     cxNum, cyNum = -1, -1
-    for j in range (0,fieldsLen):
+    for j in range(0, fieldsLen):
         if recordLineArray[j].upper() == 'CX':
             cxNum = j
-            print('\tCX field number:',(cxNum+1))
+            print('CX field number:', (cxNum+1))
         elif recordLineArray[j].upper() == 'CY':
             cyNum = j
-            print('\tCY field number:',(cyNum+1))
+            print('CY field number:', (cyNum+1))
     if cxNum == -1 or cyNum == -1:
-        print('\tAlert: Cy or CY fiends not found')
+        print('Alert: Cy or CY fiends not found')
     totalRecord = len(open(userFileName).readlines())
     if totalRecord == 0:
-        print('\tNo records found.')
+        print('No records found.')
     else:
-        print('\t%d records found.' %(totalRecord-1))
+        print('%d records found.' % (totalRecord-1))
     totalRecord -= 1
     cyMax, cyMin, cxMax, cxMin = 0, 1e99, 0, 1e99
     for i in range(0, totalRecord):
-        recordLine = userFile.readline().rstrip('\n') #rstrip remove jump line
+        recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line
         recordLineArray = recordLine.split(',')
         if recordLineArray[cxNum] != '\n' and recordLineArray[cxNum] != '' and recordLineArray[cyNum] != '\n' and recordLineArray[cyNum] != '':
             if float(recordLineArray[cxNum]) > cxMax: cxMax = float(recordLineArray[cxNum])
@@ -142,12 +145,12 @@ def csvspacialdomain(userFileName):
     vSpatialDomainWidth = cxMax - cxMin
     vSpatialDomaintHeigh = cyMax - cyMin
     if vSpatialDomainWidth > vSpatialDomaintHeigh:
-        vGridCellSizeRecommended = vSpatialDomaintHeigh / 150 #Divide minor value into 150 pixels
+        vGridCellSizeRecommended = vSpatialDomaintHeigh / 150  # Divide minor value into 150 pixels
     else:
-        vGridCellSizeRecommended = vSpatialDomainWidth / 150 #Divide minor value into 150 pixels    
-    print('\tCX max: %f  CX min: %f  Width: %f' %(cxMax, cxMin, vSpatialDomainWidth))
-    print('\tCY max: %f  CY min: %f  Heigh: %f' %(cyMax, cyMin, vSpatialDomaintHeigh))
-    print('\tRecommended grid size: ' + str(vGridCellSizeRecommended) + '\n')
+        vGridCellSizeRecommended = vSpatialDomainWidth / 150  # Divide minor value into 150 pixels
+    print('CX max: %f  CX min: %f  Width: %f' % (cxMax, cxMin, vSpatialDomainWidth))
+    print('CY max: %f  CY min: %f  Heigh: %f' % (cyMax, cyMin, vSpatialDomaintHeigh))
+    print('Recommended grid size: ' + str(vGridCellSizeRecommended) + '\n')
     userFile.close()
     return (vSpatialDomainWidth, vSpatialDomaintHeigh, vGridCellSizeRecommended)
 
@@ -155,32 +158,32 @@ def csvspacialdomain(userFileName):
 # Show records sample
 # userFileName: Complete File name to process
 # totalRecord: Total rows in the file
-def csvsamplerecord(userFileName,totalRecord):
+def csvsamplerecord(userFileName, totalRecord):
     userFile = open(userFileName)
     csvNumRecordSample = optionrange('Number sample records for print', 0, totalRecord)
     print('\n')
-    printtitle('Data file record sample (%d records)' %(csvNumRecordSample))
+    printtitle('Data file record sample (%d records)' % (csvNumRecordSample))
     for j in range(0, csvNumRecordSample):
-        recordLine = userFile.readline().rstrip('\n') # rstrip remove jump line
+        recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line
         recordLineArray = recordLine.split(',')
-        print('\t('+(str(j+1).zfill(5))+')' + str(recordLineArray))
+        print('('+(str(j+1).zfill(5))+')' + str(recordLineArray))
     userFile.close()
 
 
 # Daily or montly data
 def datafrecuency():
     dataFrecuency = np.array([
-        (1,366,'Dayly','Julian'),
-        (2,12,'Monthly','Month')])
+        (1, 366, 'Dayly', 'Julian'),
+        (2, 12, 'Monthly', 'Month')])
     dataFrecuencyCount = len(dataFrecuency)
-    print('\tFrecuencies:',dataFrecuencyCount)
+    print('Frecuencies:', dataFrecuencyCount)
     printtitle('ID, Max. val, Frequency field required')
-    for j in range (0,dataFrecuencyCount):
-        print('\t' + str((dataFrecuency[j,0]).zfill(2)) + '  ' + str((dataFrecuency[j,1].zfill(4))) + '  ' + dataFrecuency[j,2] + '\t' + dataFrecuency[j,3])
-    dataFrecuencyOpt = optionrange('Frequency to use',1,(dataFrecuencyCount))
-    frecuencyMaxVal = dataFrecuency[(dataFrecuencyOpt-1),1]
-    frecuencyField = dataFrecuency[(dataFrecuencyOpt-1),3]
-    return (frecuencyMaxVal,frecuencyField)
+    for j in range(0, dataFrecuencyCount):
+        print(str((dataFrecuency[j, 0]).zfill(2)) + '  ' + str((dataFrecuency[j, 1].zfill(4))) + '  ' + dataFrecuency[j, 2] + '  ' + dataFrecuency[j, 3])
+    dataFrecuencyOpt = optionrange('Frequency to use', 1, (dataFrecuencyCount))
+    frecuencyMaxVal = dataFrecuency[(dataFrecuencyOpt-1), 1]
+    frecuencyField = dataFrecuency[(dataFrecuencyOpt-1), 3]
+    return (frecuencyMaxVal, frecuencyField)
 
 
 # CRS - Coordinate reference system
@@ -188,15 +191,15 @@ def crscoordsystem():
     coordSystem = np.array([
         (1, '4326 WGS84', "GEOGCS['GCS_WGS_1984',DATUM['D_WGS_1984',SPHEROID['WGS_1984',6378137.0,298.257223563]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"),
         (2, '3116 MAGNAColombiaBogota', "PROJCS['GAUSS_BTA_MAGNA',GEOGCS['CGS_SIRGAS',DATUM['CGS_SIRGAS',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',1000000.0],PARAMETER['False_Northing',1000000.0],PARAMETER['Central_Meridian',-74.077507917],PARAMETER['Scale_Factor',1.0],PARAMETER['Latitude_Of_Origin',4.596200417],UNIT['Meter',1.0]];-4623200 -9510300 10000;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision"),
-        (3, '9377 MAGNA-SIRGAS / Origen-Nacional', "PROJCS['MAGNA-SIRGAS / Origen-Nacional',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]]")])
+        (3, '9377 MAGNA-SIRGAS / Origen-Nacional', "PROJCS['MAGNA_Colombia_Origen_Unico',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]]")])
     coordSystemCount = len(coordSystem)
-    print('\n\tCoordinate Systems:',coordSystemCount)
+    print('\nCoordinate Systems:', coordSystemCount)
     printtitle('ID, Coordinate system')
-    for j in range (0,coordSystemCount):
-        print('\t' + str((coordSystem[j,0])).zfill(2) + '  ' + (coordSystem[j,1].zfill(4)))
-    coordSystemOpt = optionrange('Coordinate system to use',1,(coordSystemCount))
-    coordSystemVal = coordSystem[(coordSystemOpt-1),2]
-    print('\n\t' + coordSystemVal + '\n')
+    for j in range(0, coordSystemCount):
+        print(str((coordSystem[j, 0])).zfill(2) + '  ' + (coordSystem[j, 1].zfill(4)))
+    coordSystemOpt = optionrange('Coordinate system to use', 1, (coordSystemCount))
+    coordSystemVal = coordSystem[(coordSystemOpt-1), 2]
+    print('\n' + coordSystemVal + '\n')
     return (coordSystemVal)
 
 
@@ -204,39 +207,39 @@ def crscoordsystem():
 # userFileName: Complete File name to process
 # totalRecord: Total rows in the file
 # totalRecord: Total fields in the file
-def csvheader(userFileName,totalRecord,fieldsLen):
-    userFile = open (userFileName)
-    recordLine = userFile.readline().rstrip('\n') #rstrip remove jump line
+def csvheader(userFileName, totalRecord, fieldsLen):
+    userFile = open(userFileName)
+    recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line
     recordLineArray = recordLine.split(',')
-    print('\n\tHeaders in data file:')
+    print('\nHeaders in data file:')
     printtitle('#, Field name')
-    for k in range(0,fieldsLen):
-        print('\t('+(str(k+1).zfill(2))+')',recordLineArray[k])
-    fieldNumberEval = optionrange('Field number to eval',1,fieldsLen)
+    for k in range(0, fieldsLen):
+        print('('+(str(k+1).zfill(2))+')', recordLineArray[k])
+    fieldNumberEval = optionrange('Field number to eval', 1, fieldsLen)
     vFieldEvalStr = recordLineArray[fieldNumberEval-1]
     userFile.close()
-    print('\tVariable in use is ['+vFieldEvalStr+']\n')
-    return (fieldNumberEval,vFieldEvalStr)
+    print('Variable in use is ['+vFieldEvalStr+']\n')
+    return (fieldNumberEval, vFieldEvalStr)
 
 
 # Statistics
 # userFileName: Complete File name to process
 # totalRecord: Total rows in the file
 # fieldNumberEval: Column field number to eval
-def csvstatistic(userFileName,totalRecord,fieldNumberEval):
+def csvstatistic(userFileName, totalRecord, fieldNumberEval):
     printtitle('Statistics')
-    userFile = open (userFileName)
-    recordLine = userFile.readline().rstrip('\n') #rstrip remove jump line
+    userFile = open(userFileName)
+    recordLine = userFile.readline().rstrip('\n')  # strip remove jump line
     varSum = 0
     varMax = -1e-99
     varMin = 1e99
     varCount = 0
     for i in range(0, totalRecord):
-        recordLine = userFile.readline().rstrip('\n') #rstrip remove jump line
+        recordLine = userFile.readline().rstrip('\n')  # strip remove jump line
         recordLineArray = recordLine.split(',')
-        #print('\tVar ',i,' ',recordLineArray[fieldNumberEval-1])
+        # print('Var ',i,' ',recordLineArray[fieldNumberEval-1])
         if recordLineArray[fieldNumberEval-1] != '\n' and recordLineArray[fieldNumberEval-1] != '':
-            varCount +=1
+            varCount += 1
             # Eval Total
             varSum += float(recordLineArray[fieldNumberEval-1])
             # Eval Maximum
@@ -247,13 +250,13 @@ def csvstatistic(userFileName,totalRecord,fieldNumberEval):
                 varMin = float(recordLineArray[fieldNumberEval-1])      
     varAverage = varSum/varCount
     varNulls = totalRecord-varCount
-    print('\tRegisters:',totalRecord,
-          '\n\tCount:',varCount,'(Not nulls)',
-          '\n\tNulls:',varNulls,
-          '\n\tMax:',varMax,
-          '\n\tMin:',varMin,
-          '\n\tSum:',varSum,
-          '\n\tAvg:',varAverage, '\n')
+    print('Registers:', totalRecord,
+          '\nCount:', varCount, '(not null)',
+          '\nNulls:', varNulls,
+          '\nMax:', varMax,
+          '\nMin:', varMin,
+          '\nSum:', varSum,
+          '\nAvg:', varAverage, '\n')
     return (totalRecord, varCount, varNulls, varMax, varMin, varSum, varAverage)
     userFile.close()
 
@@ -278,45 +281,45 @@ def colormapstyle(folderColorMapStyle):
         (13, 512, 'Green Sea - Blue Sea - Purple - Red - Orange - Yellow (x18)'),
         (14, 1024, 'Dark Pink - Mercury - Lime - Green (x13)')])
     colorMapStyleCount = len(colorMapStyleArray)
-    print('\n\tTotal Color Map Styles:',colorMapStyleCount)
+    print('\nTotal Color Map Styles:', colorMapStyleCount)
     printtitle('ID, Colors, Color map style name')
-    for j in range (0,colorMapStyleCount):
-        print('\t' + str((colorMapStyleArray[j,0]).zfill(2)) + ' ' + str((colorMapStyleArray[j,1].zfill(4))) + ' ' + colorMapStyleArray[j, 2])
-    colorMapFileOpt = optionrange('Ramp color number',0,(colorMapStyleCount-1))
-    colorMapFileColors = colorMapStyleArray[colorMapFileOpt,1]    
+    for j in range(0, colorMapStyleCount):
+        print(str((colorMapStyleArray[j, 0]).zfill(2)) + ' ' + str((colorMapStyleArray[j, 1].zfill(4))) + ' ' + colorMapStyleArray[j, 2])
+    colorMapFileOpt = optionrange('Ramp color number', 0, (colorMapStyleCount-1))
+    colorMapFileColors = colorMapStyleArray[colorMapFileOpt, 1]
     colorMapFile = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'_v'+str(colorMapFileOpt)+'.clr'
     colorMapFilePrev = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'_v'+str(colorMapFileOpt)+'.jpg'
-    print('\n\tColor map file:',colorMapFile)
-    print('\tColor map sample:',colorMapFilePrev)
+    print('\nColor map file:', colorMapFile)
+    print('Color map sample:', colorMapFilePrev)
     return (colorMapFile, colorMapFilePrev, colorMapFileColors)
 
 
 # Plot text graph values between 0 and maximum value founded
 # varMaxVal: Max val into all data set
 # valOpt: Value to scale respect max val
-def graphtxt(userFileName,totalRecord,fieldNumberEval):
+def graphtxt(userFileName, totalRecord, fieldNumberEval):
     optionAswer = optionyesno('Print all records in source file')
     if optionAswer.lower() == 'y':
         printtitle('Graph text format in field # ' + str(fieldNumberEval))
-        userFile = open (userFileName)
+        userFile = open(userFileName)
         recordLine = userFile.readline().rstrip('\n')
         varMax = -1e-99
-        for i in range(0,totalRecord):
+        for i in range(0, totalRecord):
             recordLine = userFile.readline().rstrip('\n')
             recordLineArray = recordLine.split(',')
             if recordLineArray[fieldNumberEval-1] != '\n' and recordLineArray[fieldNumberEval-1] != '':
                 if float(recordLineArray[fieldNumberEval-1]) > varMax:
                     varMax = float(recordLineArray[fieldNumberEval-1])
-        print('\tMax value: ',varMax)
+        print('Max value: ', varMax)
         userFile.close()
-        userFile = open (userFileName)
+        userFile = open(userFileName)
         recordLine = userFile.readline().rstrip('\n')
-        for l in range (1,totalRecord+1):
+        for l in range(1, totalRecord+1):
             recordLine = userFile.readline().rstrip('\n')
             recordLineArray = recordLine.split(',')
             if recordLineArray[fieldNumberEval-1] != '\n' and recordLineArray[fieldNumberEval-1] != '':
                 valOpt = float(recordLineArray[fieldNumberEval-1])
-                #print('\l:',valOpt)
+                # print('\l:',valOpt)
                 barChar = '|'
                 barCharMaxChar = 50
                 barFactorAmpVar = 100
@@ -325,9 +328,9 @@ def graphtxt(userFileName,totalRecord,fieldNumberEval):
                 barValuePorc = valOpt * 100 / varMax
                 barValuePrintA = barChar * int(barValue)
                 barValuePrintB = ' ' * int(barCharMaxCharLess)
-                print('\t' + (str(l).zfill(5)) + ' [' + barValuePrintA + barValuePrintB + '] ' + str(round(valOpt,4)) + ' of ' + str(varMax) + '(' + str(round(barValuePorc,1)) + '%)')
+                print((str(l).zfill(5)) + ' [' + barValuePrintA + barValuePrintB + '] ' + str(round(valOpt, 4)) + ' of ' + str(varMax) + '(' + str(round(barValuePorc, 1)) + '%)')
         userFile.close()
-        #print('\n')
+        #  print('\n')
 
 
 # Plot text graph values between 0 and maximum value founded
@@ -340,5 +343,5 @@ def graphtxtonevalue(varMax, valOpt):
     barFactorAmpVar = 100
     barValue = ((int(valOpt*barFactorAmpVar)) * barCharMaxChar) / (int(varMax*barFactorAmpVar))
     barCharMaxCharLess = (barCharMaxChar - barValue)
-    barValuePorc = str(round((valOpt * 100) / varMax , 2))
-    print('\t['+(barValue*barChar)+(barCharMaxCharLess*' '),']',valOpt,'of',varMax,'('+barValuePorc+'%)')
+    barValuePorc = str(round((valOpt * 100) / varMax, 2))
+    print('['+(barValue*barChar)+(barCharMaxCharLess*' '), ']', valOpt, 'of', varMax, '('+barValuePorc+'%)')
