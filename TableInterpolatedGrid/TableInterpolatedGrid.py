@@ -17,7 +17,7 @@ from datetime import datetime
 import TableInterpolatedGridModule as rtg
 
 # Local variables
-studyCase = 'Estudio de la precipitación media en el Departamento del Cesar - Colombia - Suramérica'
+studyCase = 'Estudio de la precipitación diaria media en el Departamento del Cesar - Colombia - Suramérica'
 warnings.filterwarnings('ignore')
 absolutePath = r'D:/R.GISPython/TableInterpolatedGrid/'
 env.workspace = absolutePath + 'OutputGrid'
@@ -153,7 +153,7 @@ while incV <= numGrid:
     valMaxAux = float(valMax.getOutput(0))
     valMin = arcpy.GetRasterProperties_management(gridDayNTiff, 'MINIMUM', '')
     valMinAux = float(valMin.getOutput(0))
-    print('File' + gridDayNFileName + '- High(km):' + str(ySize) + '- Width(km):' + str(xSize) + '- Min:' + str(round(valMinAux, 4)) + '- Max:' + str(round(valMaxAux, 4)) + '- Ok...')
+    print('File' + gridDayNFileName + ' - High, km: ' + str(ySize) + ' - Width, km: ' + str(xSize) + ' - Min: ' + str(round(valMinAux, 4)) + ' - Max: ' + str(round(valMaxAux, 4)) + ' - Ok...')
     if valMaxAux > maxValPixelValue:
         maxValPixelValue = valMaxAux
         dayMonthMax = incV
@@ -196,7 +196,8 @@ print('\nGrids created on: ' + outputPath +
       '\nMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
       '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
       '\nDay or Month with maximum value: ' + str(dayMonthMax) +
-      '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
+      '\nManual PDF print as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
+      '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
 logExecutionFle.close()
 vExit = input('\n%s Press Enter to exit...' % (rtg.systemprompt()))

@@ -160,7 +160,7 @@ def csvspacialdomain(userFileName):
 # totalRecord: Total rows in the file
 def csvsamplerecord(userFileName, totalRecord):
     userFile = open(userFileName)
-    csvNumRecordSample = optionrange('Number sample records for print', 0, totalRecord)
+    csvNumRecordSample = optionrange('Number sample records for print with header', 0, totalRecord)
     print('\n')
     printtitle('Data file record sample (%d records)' % (csvNumRecordSample))
     for j in range(0, csvNumRecordSample):
@@ -189,9 +189,13 @@ def datafrecuency():
 # CRS - Coordinate reference system
 def crscoordsystem():
     coordSystem = np.array([
-        (1, '4326 WGS84', "GEOGCS['GCS_WGS_1984',DATUM['D_WGS_1984',SPHEROID['WGS_1984',6378137.0,298.257223563]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]]"),
-        (2, '3116 MAGNAColombiaBogota', "PROJCS['GAUSS_BTA_MAGNA',GEOGCS['CGS_SIRGAS',DATUM['CGS_SIRGAS',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',1000000.0],PARAMETER['False_Northing',1000000.0],PARAMETER['Central_Meridian',-74.077507917],PARAMETER['Scale_Factor',1.0],PARAMETER['Latitude_Of_Origin',4.596200417],UNIT['Meter',1.0]];-4623200 -9510300 10000;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision"),
-        (3, '9377 MAGNA-SIRGAS / Origen-Nacional', "PROJCS['MAGNA_Colombia_Origen_Unico',GEOGCS['GCS_MAGNA',DATUM['D_MAGNA',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]],PROJECTION['Transverse_Mercator'],PARAMETER['False_Easting',5000000.0],PARAMETER['False_Northing',2000000.0],PARAMETER['Central_Meridian',-73.0],PARAMETER['Scale_Factor',0.9992],PARAMETER['Latitude_Of_Origin',4.0],UNIT['Meter',1.0]]")])
+        (1, 'WKID: 4326, WGS84', 'GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]'),
+        (2, 'WKID: 3116, MAGNA Colombia Origen Bogota', 'PROJCS["MAGNA_Colombia_Bogota",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",1000000.0],PARAMETER["False_Northing",1000000.0],PARAMETER["Central_Meridian",-74.07750791666666],PARAMETER["Scale_Factor",1.0],PARAMETER["Latitude_Of_Origin",4.596200416666666],UNIT["Meter",1.0]],VERTCS["WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PARAMETER["Vertical_Shift",0.0],PARAMETER["Direction",1.0],UNIT["Meter",1.0]]'),
+        (3, 'WKID: 3117, MAGNA Colombia Origen Este', 'PROJCS["MAGNA_Colombia_Este",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",1000000.0],PARAMETER["False_Northing",1000000.0],PARAMETER["Central_Meridian",-71.07750791666666],PARAMETER["Scale_Factor",1.0],PARAMETER["Latitude_Of_Origin",4.596200416666666],UNIT["Meter",1.0]],VERTCS["WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PARAMETER["Vertical_Shift",0.0],PARAMETER["Direction",1.0],UNIT["Meter",1.0]]'),
+        (4, 'WKID: 3118, MAGNA Colombia Origen Este Este', 'PROJCS["MAGNA_Colombia_Este_Este",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",1000000.0],PARAMETER["False_Northing",1000000.0],PARAMETER["Central_Meridian",-68.07750791666666],PARAMETER["Scale_Factor",1.0],PARAMETER["Latitude_Of_Origin",4.596200416666666],UNIT["Meter",1.0]],VERTCS["WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PARAMETER["Vertical_Shift",0.0],PARAMETER["Direction",1.0],UNIT["Meter",1.0]]'),
+        (5, 'WKID: 3115, MAGNA Colombia Origen Oeste', 'PROJCS["MAGNA_Colombia_Oeste",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",1000000.0],PARAMETER["False_Northing",1000000.0],PARAMETER["Central_Meridian",-77.07750791666666],PARAMETER["Scale_Factor",1.0],PARAMETER["Latitude_Of_Origin",4.596200416666666],UNIT["Meter",1.0]],VERTCS["WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PARAMETER["Vertical_Shift",0.0],PARAMETER["Direction",1.0],UNIT["Meter",1.0]]'),
+        (6, 'WKID: 3114, MAGNA Colombia Origen Oeste oeste', 'PROJCS["MAGNA_Colombia_Oeste_Oeste",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",1000000.0],PARAMETER["False_Northing",1000000.0],PARAMETER["Central_Meridian",-80.07750791666666],PARAMETER["Scale_Factor",1.0],PARAMETER["Latitude_Of_Origin",4.596200416666666],UNIT["Meter",1.0]],VERTCS["WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PARAMETER["Vertical_Shift",0.0],PARAMETER["Direction",1.0],UNIT["Meter",1.0]]'),
+        (7, 'WKID: 9377, MAGNA-SIRGAS / Origen-Nacional', 'PROJCS["MAGNA_Colombia_Origen_Unico",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",5000000.0],PARAMETER["False_Northing",2000000.0],PARAMETER["Central_Meridian",-73.0],PARAMETER["Scale_Factor",0.9992],PARAMETER["Latitude_Of_Origin",4.0],UNIT["Meter",1.0]]')])
     coordSystemCount = len(coordSystem)
     print('\nCoordinate Systems:', coordSystemCount)
     printtitle('ID, Coordinate system')
@@ -328,7 +332,7 @@ def graphtxt(userFileName, totalRecord, fieldNumberEval):
                 barValuePorc = valOpt * 100 / varMax
                 barValuePrintA = barChar * int(barValue)
                 barValuePrintB = ' ' * int(barCharMaxCharLess)
-                print((str(l).zfill(5)) + ' [' + barValuePrintA + barValuePrintB + '] ' + str(round(valOpt, 4)) + ' of ' + str(varMax) + '(' + str(round(barValuePorc, 1)) + '%)')
+                print((str(l).zfill(5)) + ' [' + barValuePrintA + barValuePrintB + '] ' + str(round(valOpt, 4)) + ' of ' + str(varMax) + ' (' + str(round(barValuePorc, 1)) + '%)')
         userFile.close()
         #  print('\n')
 
@@ -344,4 +348,4 @@ def graphtxtonevalue(varMax, valOpt):
     barValue = ((int(valOpt*barFactorAmpVar)) * barCharMaxChar) / (int(varMax*barFactorAmpVar))
     barCharMaxCharLess = (barCharMaxChar - barValue)
     barValuePorc = str(round((valOpt * 100) / varMax, 2))
-    print('['+(barValue*barChar)+(barCharMaxCharLess*' '), ']', valOpt, 'of', varMax, '('+barValuePorc+'%)')
+    print('[' + (barValue*barChar) + (barCharMaxCharLess*' ') + ']' + str(valOpt) + ' of ' + str(varMax) + ' ('+barValuePorc+'%)')

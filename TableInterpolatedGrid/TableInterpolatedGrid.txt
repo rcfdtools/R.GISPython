@@ -1,3 +1,19 @@
 Futuras actualizaciones
 	Log de ejecución detallado en formato Markdown.
-	
+	Incluir múltiples métodos de selección. Usuario selecciona 1.
+	matplotlib graphs.
+	Fix: text plot is showing one more white space between [ ].
+	Palette style generator. VBS reference code.
+	Plot color ramps with pandas. Read files as module does.
+	366 correspond to february 29 for leap years
+
+
+# Install Rasterio over Python 3.10
+# https://rasterio.readthedocs.io/en/latest/topics/plotting.html
+
+import rasterio
+from matplotlib import pyplot
+src = rasterio.open("D:\R.GISPython\TableInterpolatedGrid\OutputGrid\GRDM039.tif")
+pyplot.imshow(src.read(1), cmap='pink')
+#<matplotlib.image.AxesImage object at 0x...>
+pyplot.show()

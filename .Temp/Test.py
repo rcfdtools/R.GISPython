@@ -4,6 +4,13 @@ import pandas as pd
 import numpy as np
 import sys
 
+# Print
+import matplotlib.pyplot as plt
+img = plt.imread('D:\R.GISPython\TableInterpolatedGrid\OutputGrid\GRDM010.tif')
+plt.imshow(img)
+plt.show()
+
+
 from datetime import datetime
 dTime = datetime.today()  # Get timezone naive now
 secondsInt = int(dTime.timestamp()*100)
