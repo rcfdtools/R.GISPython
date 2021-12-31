@@ -103,7 +103,7 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 '''
 
-#### Script [TableInterpolatedGridModule.pyy]()
+#### Script [TableInterpolatedGridModule.py]()
 
 '''
 
