@@ -86,9 +86,63 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 > En representaciones diarias, el juliano 366 corresponde al día 29 de febrero para años bisiestos. 
 
 
+#### Ejecución en ArcGIS for Desktop
+
+![Python3.7.11ArcGISPro2.9.0.png]()
+
+
+#### Ejecución en ArcGIS Pro
+
+![Python3.7.11ArcGISPro2.9.0.png]()
+
+
+### Script [TableInterpolatedGrid.py]()
+
+'''
+
+'''
+
+### Script [TableInterpolatedGridModule.pyy]()
+
+'''
+
+'''
+
+
 ### Referencias
 
 * https://desktop.arcgis.com/en/arcmap/10.3/analyze/arcpy-functions/checkoutextension.htm
 * https://stackoverflow.com/questions/7852855/in-python-how-do-you-convert-a-datetime-object-to-seconds
 * https://stackoverflow.com/questions/34165941/how-to-display-tiff-file-in-color
-* 
+
+
+
+### Autores
+
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (60h).
+
+
+### Compatibilidad
+
+* Compatible con ArcGIS for Desktop 10 o superior.
+* Compatible con ArcGIS Pro.
+
+
+### Control de versiones
+
+| Versión    | Descripción                                                                                           |
+|------------|-------------------------------------------------------------------------------------------------------|
+| v.20171123 | Versión inicial sobre Python 2 solo compatible con ArcGIS for Desktop.                                |
+| v.20180124 | Versión con módulo y funciones.                                                                       |
+| v.20211231 | Actualización para compatibilidad con Python 3 y ArcGIS Pro. Optimización de script. Log de registro. |
+
+
+### Licencia, cláusulas y condiciones de uso
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+
+
+| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
+|------------------------|---------------------------------------------------------|-----------------------------|
+
+_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
