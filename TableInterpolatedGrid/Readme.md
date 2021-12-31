@@ -70,7 +70,7 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 
 ### Estructura de datos de entrada
 
-Para la correcta ejecución del script se requiere que los archivos de texto separados por comas utilizando la siguiente estructura:
+Para la correcta ejecución del script se requiere que los archivos de texto separados por comas utilicen la siguiente estructura:
 
 | Campo  | Descripción                      | Aplica diarios | Aplica mensuales |
 |--------|----------------------------------|----------------|------------------|
@@ -81,7 +81,7 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 | Var    | Variable númerica a representar  | ✅              | ✅               |
 
 
-> En un mismo archivo de entrada pueden existir múltiples columnas registrando diferentes variables meteorológicas, para lo cual el usuario podrá elegir la variable de entrada a analizar.
+> En un mismo archivo de entrada pueden existir múltiples columnas `Var` registrando diferentes variables meteorológicas, para lo cual el usuario podrá elegir la variable de entrada a analizar a partir de la lista de atributos encontrados.
 
 > En representaciones diarias, el juliano 366 corresponde al día 29 de febrero para años bisiestos. 
 
