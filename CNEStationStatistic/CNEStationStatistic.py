@@ -20,10 +20,10 @@ urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
 fileName = 'CNE_IDEAM'
 fileExtension = '.xls'
 sampleRecord = 12 # Number of records to show in the sample
-showRecordSample = False # Print some sample records
-showAllRecords = False # Print all the records at the report tail
-showGraphScreen = False # Show graphs on the screen. This script always update ./Graph & ./PivotTable
-thermalLevelCaldas = True # True for Caldas classification, False for conventional classification range
+showRecordSample = False  # Print some sample records
+showAllRecords = False  # Print all the records at the report tail
+showGraphScreen = False  # Show graphs on the screen. This script always update ./Graph & ./PivotTable
+thermalLevelCaldas = True  # True for Caldas classification, False for conventional classification range
 graphTransparency = 1 # Save color for paper print versions, 1 for full color. Doesn't apply for pie charts
 stationName = 'nombre'
 latitudeName = 'latitud'
@@ -65,7 +65,7 @@ def thermalLevelF(elevation):
 # Downloading and reading the file
 fileDownloadText = 'File downloaded and updated = No'
 currentDate = date.today()
-currentDateTxt=str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
+currentDateTxt=str(currentDate.year).zfill(4)+str(currentDate.month).zfill(2)+str(currentDate.day).zfill(2)
 fileRequest = requests.get(urlFile)
 fileSave = './Data/'+fileName+'_'+currentDateTxt+fileExtension
 if fileRequest:

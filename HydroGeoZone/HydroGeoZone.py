@@ -51,7 +51,7 @@ onlyPerDrainActive = False  # Analizar solo para drenajes permanentes.
 
 # Log file creation
 currentDate = date.today()
-currentDateTxt = str(currentDate.year)+str(currentDate.month)+str(currentDate.day)
+currentDateTxt = str(currentDate.year).zfill(4)+str(currentDate.month).zfill(2)+str(currentDate.day).zfill(2)
 if onlyPerDrainActive:
     fileNameAux = 'DrainPer'
     titleAuxTxt = 'Solo drenajes subtipo permanente'

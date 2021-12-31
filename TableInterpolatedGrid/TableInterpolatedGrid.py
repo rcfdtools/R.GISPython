@@ -18,7 +18,7 @@ env.workspace = absolutePath + 'OutputGrid'
 outputPath = absolutePath+'OutputGrid/'
 outputPathColorMap = absolutePath+'OutputColorMap/'
 outputTemp = absolutePath+'Temp/'
-fileCSVIn = absolutePath+'Data/TablePrecipitationMonthly.csv'
+fileCSVIn = absolutePath+'Data/Sample3PrecipitationMonthly.csv'
 shapefileTemp = outputTemp+'TempShapefile.shp'
 colorMapStyleFolder = absolutePath+'ColorMapStyle/'
 studyCase = 'Estudio de precipitación en el Departamento del Cesar - Colombia - Suramérica'
@@ -33,39 +33,40 @@ print('-------------------------------------------------------------'
       '\n-------------------------------------------------------------\n'
       '\nUsing a R Weather CDMS App tables, let build interpolate grids maps in a tiff format for daily or monthly values. With the generate tiff maps user can make a video for to study a weather parameter on the time.\n')
 rtg.printtitle('Requirements')
-print('\n\t* Valid table format file: comma separated values .csv'
-      '\n\t* Float or double values required period as decimal separator.'
-      '\n\t* CSV file with header row.'
-      '\n\t* Field or attribute names can not content comma or special characters.'
-      '\n\t* Header attributes names required: Julian (1-366), Month (1-12), CX, CX, CZ, Var.'
-      '\n\t* Var correspond to the numeric variable for analysis. User can choice the var name.'
-      '\n\t* Compatible with ArcGIS for Desktop 10+ and ArcGIS Pro.'
-      '\n\t* ArcGIS Spatial analyst extension: ' + arcpy.CheckOutExtension('Spatial') + '\n')
+print('\n\tValid table format file: comma separated values .csv'
+      '\n\tFloat or double values required period as decimal separator.'
+      '\n\tCSV file with header row.'
+      '\n\tField or attribute names can not content comma or special characters.'
+      '\n\tHeader attributes names required: Julian (1-366), Month (1-12), CX, CX, CZ, Var.'
+      '\n\tVar correspond to the numeric variable for analysis. User can choice the var name.'
+      '\n\tCompatible with ArcGIS for Desktop 10+ and ArcGIS Pro.'
+      '\n\tArcGIS Spatial analyst extension: ' + arcpy.CheckOutExtension('Spatial') + '\n')
 
-# Preprocesing variables
+# Pre-procesing variables
 rtg.printtitle('Study case & File data summary')
-print('\n\t* Study case: ' + str(studyCase) +
-      '\n\t* Input file: ' + fileCSVIn)
-fieldsCSV = rtg.fCSVTotalFieldFound(fileCSVIn)
-totalRecords = rtg.fCSVTotalRecordFound(fileCSVIn)
+print('\n\tStudy case: ' + str(studyCase) +
+      '\n\tInput file: ' + fileCSVIn)
+fieldsCSV = rtg.csvtotalfieldfound(fileCSVIn)
+totalRecords = rtg.csvtotalrecordfound(fileCSVIn)
 input('\n' + rtg.systemprompt() + 'Attention - Close all the ArcGIS for Desktop applications and press Enter >> ')
-rtg.fCSVPreviewRecord(fileCSVIn, totalRecords+1)
-fieldNumberEval=rtg.fCSVHeader(fileCSVIn,totalRecords,fieldsCSV)
+rtg.csvsamplerecord(fileCSVIn, totalRecords+1)
+fieldNumberEval=rtg.csvheader(fileCSVIn,totalRecords,fieldsCSV)
 print('\n')
-rtg.fGraphTxt(fileCSVIn,totalRecords,fieldNumberEval[0])
-StatisticCSV = rtg.fCSVStatistic(fileCSVIn,totalRecords,fieldNumberEval[0])
+rtg.graphtxt(fileCSVIn,totalRecords,fieldNumberEval[0])
+print('\n')
+StatisticCSV = rtg.csvstatistic(fileCSVIn,totalRecords,fieldNumberEval[0])
 maxVal = StatisticCSV[3]
 minVal = StatisticCSV[4]
-spatialDomainCSV = rtg.fCSVSpacialDomain(fileCSVIn)
+spatialDomainCSV = rtg.csvspacialdomain(fileCSVIn)
 gidCellSizeRecommended = spatialDomainCSV[2]
 fieldEvalStr = fieldNumberEval[1]
-dataFrecuency = rtg.fDataFrecuency()
+dataFrecuency = rtg.datafrecuency()
 frecuencyFieldOpt = dataFrecuency[1]
 frecuencyMaxVal = int(dataFrecuency[0])
-numGrid = rtg.fOptionRange('Total grids to create ',1,frecuencyMaxVal)
-userCRS = rtg.fCoordSystem()
-gridResolution = rtg.fOptionRangeFloat(('Output grid resolution for the coordinate system selected (%f recommended)' %(round(gidCellSizeRecommended, 2))),0,10000)
-colorMapFileArray = rtg.fColorMapStyle(colorMapStyleFolder)
+numGrid = rtg.optionrange('Total grids to create ',1,frecuencyMaxVal)
+userCRS = rtg.crscoordsystem()
+gridResolution = rtg.optionrangefloat(('Output grid resolution for the coordinate system selected (%f recommended)' %(gidCellSizeRecommended)),0,10000)
+colorMapFileArray = rtg.colormapstyle(colorMapStyleFolder)
 colorMapFile = colorMapFileArray[0]
 colorMapFilePrev = colorMapFileArray[1]
 colorMapFileColors = float(colorMapFileArray[2])
@@ -150,14 +151,14 @@ while incV <= numGrid:
 # Grid color map using integer scale
 incV=1; maxValPixelValueStr = str(maxValPixelValue); minValStr = str(minVal); numColorStr = str(numColor); slopeRampDataStr = str(slopeRampData);
 print('\n')
-rtg.printtitle('Creating ' + str(numGridStr) + ' grid color scaled creation files ('+(str(numColor)) + ' colors)')
-print('\tAll database values'
-      '\n\tMax Data Value:',maxVal ,
-      '\n\tMin Data Value:',minVal,
-      '\n\tSlope Colors Ramp:',slopeRampData,
-      '\n\tGrids created'
-      '\n\tMax Pixel Value:',maxValPixelValue,
-      '\n\tMin Pixel Value:',minValPixelValue)
+rtg.printtitle('Creating ' + str(numGridStr) + ' grid color scaled files ('+(str(numColor)) + ' colors)')
+print('\n\tAll database values'
+      '\n\tMax data value: ' + str(maxVal) +
+      '\n\tMin data value: ' + str(minVal) +
+      '\n\tSlope colors ramp: ' + str(slopeRampData) +
+      '\n\n\tGrids created'
+      '\n\tMax pixel value: ' + str(maxValPixelValue) +
+      '\n\tMin pixel value: ' + str(minValPixelValue) + '\n')
 while incV <= numGrid:
     incVStr = str(incV)
     gridDayNFileName = 'GRDM' + incVStr.zfill(3) + '.tif'
@@ -166,7 +167,7 @@ while incV <= numGrid:
     vAlgebraMapClc = 'Con((Int(((\''+gridDayNTiffSorce+'\'-'+minValStr+')*'+slopeRampDataStr+')))>'+numColorStr+','+numColorStr+',(Int(((\''+gridDayNTiffSorce+'\'-'+minValStr+')*'+slopeRampDataStr+'))))'
     arcpy.gp.RasterCalculator_sa(vAlgebraMapClc, gridDayNTiffTarget)
     arcpy.AddColormap_management(gridDayNTiffTarget, '', colorMapFile)
-    print('\tFile color map', gridDayNFileName, 'Ok...')
+    print('\tFile color map ' + gridDayNFileName + ' - Ok...')
     incV += 1
 
 
@@ -174,11 +175,11 @@ while incV <= numGrid:
 timeEnd = time.time()
 print('\n')
 rtg.printtitle('Statistics and summary grid creation report')
-print('\n\t* Grids created on:', outputPath ,
-      '\n\t* Color Map Grids created on:', outputPathColorMap,
-      '\n\t* Minimum pixel value all grids:', round(minValPixelValue, 4),
-      '\n\t* Maximum pixel value all grids:', round(maxValPixelValue, 4) ,
-      '\n\t* ArcScene Z Scale conversion:', round((maxValPixelValue/colorMapFileColors), 6),
-      '\n\t* Day or Month with maximum value:', dayMonthMax,
-      '\n\t* Process acomplished (dt = ', round(timeEnd - timeStart, 1), 'sec or', round((timeEnd - timeStart)/60, 1), 'min)')
-vExit = input('\n%s Press Enter to Exit...' %(rtg.systemprompt()))
+print('\n\tGrids created on: ' + outputPath +
+      '\n\tColor Map Grids created on: ' + outputPathColorMap +
+      '\n\tMinimum pixel value all grids: ' + str(round(minValPixelValue, 4)) +
+      '\n\tMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
+      '\n\tArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
+      '\n\tDay or Month with maximum value: ' + str(dayMonthMax) +
+      '\n\tProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
+vExit = input('\n%s Press Enter to exit...' %(rtg.systemprompt()))
