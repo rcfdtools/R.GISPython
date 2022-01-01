@@ -88,18 +88,18 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 #### Ejecución en ArcGIS for Desktop sobre PyCharm
 
-![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png]()
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png)
 
 
 #### Ejecución en ArcGIS Pro sobre PyCharm
 
-![Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png]()
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png)
 
 
 #### Carpetas de resultados
 
-![OutputGrid.png]()
-![OutputColorMap.png]()
+![OutputGrid.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/OutputGrid.png)
+![OutputColorMap.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/OutputColorMap.png)
 
 
 ### Scripts
