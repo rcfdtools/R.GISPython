@@ -112,46 +112,46 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 5. Indique el número de columna que será utilizada como variable numérica de análisis, p.ej, 11 que corresponde al valor de precipitación registrado cada mes para cada estación.
 
-![Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFieldName.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFieldName.png)
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFieldName.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFieldName.png)
 
 6. Indique si quiere representar en una gráfica de texto tipo barras, los valores discretos de todos los registros encontrados. Digite `Y`.
 
-![Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleGraphText.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleGraphText.png)
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleGraphText.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleGraphText.png)
 
 Luego de la visualización de la gráfica de texto podrá observar los estadísticos generales de la variable en estudio y el tamaño espacial del dominio obtenido a partir de las coordenadas de entrada en la serie de datos.
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleStatDomain.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleStatDomain.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleStatDomain.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleStatDomain.png)
 
 7. Indique la frecuencia temporal a analizar, p.ej, 2 para datos mensuales y el total de grillas a generar. 
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFrecuencyGrids.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFrecuencyGrids.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFrecuencyGrids.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleFrecuencyGrids.png)
 
 8. Indique el sistema de coordenadas a utilizar en la creación de los archivos temporales de nodos shapefile y en la creación de las grillas interpoladas. Para este ejercicio utilizaremos `07  WKID: 9377, MAGNA-SIRGAS / Origen-Nacional`.
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCRS.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCRS.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCRS.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCRS.png)
 
 9. Indique la resolución a utilizar en la creación de las grillas interpoladas de salida, p.ej, 100 metros para el CRS seleccionado.
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleResolution.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleResolution.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleResolution.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleResolution.png)
 
 10. Seleccione la rampa de color a utilizar en los mapas de color reescalados, p.ej, 13 para la rampa `Green Sea - Blue Sea - Purple - Red - Orange - Yellow` que contiene 512 colores discretos interpolados a partir de 18 colores de referencia.
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleColorRamp.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleColorRamp.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleColorRamp.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleColorRamp.png)
 
 13. Luego de definida la rampa de color, iniciará la creación de los archivos temporales en `/Temp` de estaciones para cada mes (o cada día dependiendo de la frecuencia seleccionada y los datos de entrada), la generación de las grillas interpoladas en `/OutputGrid` y el reescalamiento a grillas de representación en `/OutputColorMap`. 
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingGrids.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingGrids.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingGrids.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingGrids.png)
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingColorGrids.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingColorGrids.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingColorGrids.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleCreatingColorGrids.png)
 
 14. Revise el resumen de resultados y los estadísticos de valores máximos y mínimos en celdas.
 
-[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleSummary.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleSummary.png)
+[Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleSummary.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleSummary.png)
 
 15. En ArcScene de ArcGIS for Desktop, cargue y visualice las grillas de resultados.
 
-[ArcScene10.2.2OutputGrid.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/ArcScene10.2.2OutputGrid.png)
-[ArcScene10.2.2OutputColorMap.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/ArcScene10.2.2OutputColorMap.png)
+[ArcScene10.2.2OutputGrid.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/ArcScene10.2.2OutputGrid.png)
+[ArcScene10.2.2OutputColorMap.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/ArcScene10.2.2OutputColorMap.png)
 
 
 ### Ejecuciones
