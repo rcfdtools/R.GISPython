@@ -2,6 +2,7 @@
 # Description: CSV process file module.
 # Requirements: PyCharm 2021.3+, ArcGIS 10+, ArcGIS Pro 2.9.0
 # Tested in Python 2.7.5, 2.7.12, 3.7.11
+# Credits: r.cfdtools@gmail.com
 
 import numpy as np
 
