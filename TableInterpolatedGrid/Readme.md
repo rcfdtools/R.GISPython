@@ -88,10 +88,23 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 1. Descargar o clonar este microcontenido en `D:\R.GISPython\TableInterpolatedGrid\`
 
+![MicrosoftWindowsFolder.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/MicrosoftWindowsFolder.png)
+
 2. En PyCharm, configure los entornos virtuales para los intérpretes de Python para ArcGIS for Desktop y ArcGIS Pro.  
- 
+
 ![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3PythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3PythonInterpreter.png)
+
 ![Python3.7.11ArcGISPro2.9.0PyCharm2021.3PythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3PythonInterpreter.png)
+
+> Para la explicación del procedimiento general utilizaremos Python 3.7.11 de ArcGIS Pro 2.9.0.
+
+3. En PyCharm, abra y ejecute el script `TableInterpolatedGrid.py`, podrá observar un la cabecera resumen de ejecución, los requerimientos de ejecución y los valores definidos en las variables de entrada para el caso de estudio a evaluar, el archivo de entrada a procesar, el identificador del log de registro de ejecución, los atributos encontrados y el total de registros en el archivo CSV incluida la cabecera. Digite `Y` para continuar.
+
+> Antes de la ejecución, se recomienda cerrar las aplicaciones de ArcGIS for Desktop. El script puede ser ejecutado directamente desde un Notebook de ArcGIS Pro sin usar PyCharm y con la interfaz de usuario gráfica abierta.
+
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleIntro.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3ConsoleIntro.png)
+
+
 
 
 ### Ejecuciones
