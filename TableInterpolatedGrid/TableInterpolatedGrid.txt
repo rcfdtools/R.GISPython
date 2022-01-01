@@ -1,11 +1,9 @@
 Futuras actualizaciones
 	Log de ejecución detallado en formato Markdown.
-	Incluir múltiples métodos de selección. Usuario selecciona 1.
-	matplotlib graphs.
-	Fix: text plot is showing one more white space between [ ].
+	Incluir múltiples métodos de interpolación espacial. Usuario selecciona 1.
+	matplotlib graphs. List ready in csvstatistic()
 	Palette style generator. VBS reference code.
-	Plot color ramps with pandas. Read files as module does.
-	366 correspond to february 29 for leap years
+	Plot color ramps with pandas. Read files as module does. 
 
 
 # Install Rasterio over Python 3.10

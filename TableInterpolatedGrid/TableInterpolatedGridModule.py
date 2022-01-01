@@ -114,9 +114,9 @@ def csvspacialdomain(userFileName):
     printtitle('Spatial domain in the station records')
     fieldsLen = csvtotalfieldfound(userFileName)
     userFile = open (userFileName)  # Open only for reading
-    recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line #Read de header line
+    recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line # Read de header line
     recordLineArray = recordLine.split(',')
-    # Eval column number with CX Values
+    # Eval column number with CX and CY Values
     cxNum, cyNum = -1, -1
     for j in range(0, fieldsLen):
         if recordLineArray[j].upper() == 'CX':
@@ -142,17 +142,18 @@ def csvspacialdomain(userFileName):
             if float(recordLineArray[cxNum]) < cxMin: cxMin = float(recordLineArray[cxNum])
             if float(recordLineArray[cyNum]) > cyMax: cyMax = float(recordLineArray[cyNum])
             if float(recordLineArray[cyNum]) < cyMin: cyMin = float(recordLineArray[cyNum])
-    vSpatialDomainWidth = cxMax - cxMin
-    vSpatialDomaintHeigh = cyMax - cyMin
-    if vSpatialDomainWidth > vSpatialDomaintHeigh:
-        vGridCellSizeRecommended = vSpatialDomaintHeigh / 150  # Divide minor value into 150 pixels
+    spatialDomainWidth = cxMax - cxMin
+    spatialDomaintHeigh = cyMax - cyMin
+    numPixel = 150
+    if spatialDomainWidth > spatialDomaintHeigh:
+        vGridCellSizeRecommended = spatialDomaintHeigh / numPixel  # Divide minor value into 150 pixels
     else:
-        vGridCellSizeRecommended = vSpatialDomainWidth / 150  # Divide minor value into 150 pixels
-    print('CX max: %f  CX min: %f  Width: %f' % (cxMax, cxMin, vSpatialDomainWidth))
-    print('CY max: %f  CY min: %f  Heigh: %f' % (cyMax, cyMin, vSpatialDomaintHeigh))
-    print('Recommended grid size: ' + str(vGridCellSizeRecommended) + '\n')
+        vGridCellSizeRecommended = spatialDomainWidth / numPixel  # Divide minor value into 150 pixels
+    print('CX max: %f  CX min: %f  Width: %f' % (cxMax, cxMin, spatialDomainWidth))
+    print('CY max: %f  CY min: %f  Heigh: %f' % (cyMax, cyMin, spatialDomaintHeigh))
+    print('Recommended grid cell size: ' + str(vGridCellSizeRecommended) + '\n')
     userFile.close()
-    return (vSpatialDomainWidth, vSpatialDomaintHeigh, vGridCellSizeRecommended)
+    return (spatialDomainWidth, spatialDomaintHeigh, vGridCellSizeRecommended, numPixel)
 
 
 # Show records sample
@@ -238,6 +239,7 @@ def csvstatistic(userFileName, totalRecord, fieldNumberEval):
     varMax = -1e-99
     varMin = 1e99
     varCount = 0
+    varXPlot, varYPlot = [], [] 
     for i in range(0, totalRecord):
         recordLine = userFile.readline().rstrip('\n')  # strip remove jump line
         recordLineArray = recordLine.split(',')
@@ -252,6 +254,9 @@ def csvstatistic(userFileName, totalRecord, fieldNumberEval):
             # Eval Minimum
             if float(recordLineArray[fieldNumberEval-1]) < varMin:
                 varMin = float(recordLineArray[fieldNumberEval-1])      
+            # Plot vars array
+            varXPlot.append(i+1)
+            varYPlot.append(recordLineArray[fieldNumberEval-1])
     varAverage = varSum/varCount
     varNulls = totalRecord-varCount
     print('Registers:', totalRecord,
@@ -261,7 +266,7 @@ def csvstatistic(userFileName, totalRecord, fieldNumberEval):
           '\nMin:', varMin,
           '\nSum:', varSum,
           '\nAvg:', varAverage, '\n')
-    return (totalRecord, varCount, varNulls, varMax, varMin, varSum, varAverage)
+    return (totalRecord, varCount, varNulls, varMax, varMin, varSum, varAverage, varXPlot, varYPlot)
     userFile.close()
 
 
@@ -302,7 +307,7 @@ def colormapstyle(folderColorMapStyle):
 # varMaxVal: Max val into all data set
 # valOpt: Value to scale respect max val
 def graphtxt(userFileName, totalRecord, fieldNumberEval):
-    optionAswer = optionyesno('Print all records in source file')
+    optionAswer = optionyesno('Print all records in source file as text graph')
     if optionAswer.lower() == 'y':
         printtitle('Graph text format in field # ' + str(fieldNumberEval))
         userFile = open(userFileName)
@@ -328,7 +333,7 @@ def graphtxt(userFileName, totalRecord, fieldNumberEval):
                 barCharMaxChar = 50
                 barFactorAmpVar = 100
                 barValue = ((int(valOpt*barFactorAmpVar)) * barCharMaxChar) / (int(varMax*barFactorAmpVar))
-                barCharMaxCharLess = (barCharMaxChar - barValue)
+                barCharMaxCharLess = (barCharMaxChar - int(barValue))
                 barValuePorc = valOpt * 100 / varMax
                 barValuePrintA = barChar * int(barValue)
                 barValuePrintB = ' ' * int(barCharMaxCharLess)
@@ -346,6 +351,6 @@ def graphtxtonevalue(varMax, valOpt):
     barCharMaxChar = 50
     barFactorAmpVar = 100
     barValue = ((int(valOpt*barFactorAmpVar)) * barCharMaxChar) / (int(varMax*barFactorAmpVar))
-    barCharMaxCharLess = (barCharMaxChar - barValue)
+    barCharMaxCharLess = (barCharMaxChar - int(barValue))
     barValuePorc = str(round((valOpt * 100) / varMax, 2))
     print('[' + (barValue*barChar) + (barCharMaxCharLess*' ') + ']' + str(valOpt) + ' of ' + str(varMax) + ' ('+barValuePorc+'%)')

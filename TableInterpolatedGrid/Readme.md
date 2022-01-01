@@ -42,11 +42,7 @@ Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo
 
 > Actualmente el script no dispone de representación segmentada (slices) para de una serie diaria elegir el juliano inicial y final. 
  
-> El usuario puede incluir manualmente en el módulo `TableInterpolatedGridModule.py` dentro del arreglo `coordSystem`, nuevos o diferentes sistemas a los predeterminados.
-
 > Tenga en cuenta que la resolución espacial definida para la interpolación de grillas se define a partir del sistema de unidades, p.ej, para los sistemas MAGNA que contienen sistema proyectado, el valor de entrada se define en metros y para el CRS WGS84 el valor de entrada se define en grados decimales. 
-
-> Las rampas de colores en formato .clr incluidas en la carpeta `ColorMapStyle` han sido creadas por r.cfdtools.
 
  
 ### Ruta de ejecución
@@ -85,6 +81,7 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 > En representaciones diarias, el juliano 366 corresponde al día 29 de febrero para años bisiestos. 
 
+
 ### Ejecuciones
 
 #### Ejecución en ArcGIS for Desktop sobre PyCharm
@@ -96,19 +93,58 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 ![Python3.7.11ArcGISPro2.9.0.png]()
 
+
 ### Scripts
 
-#### Script [TableInterpolatedGrid.py]()
+#### Script [TableInterpolatedGrid.py](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/TableInterpolatedGrid.py)
 
 '''
 
 '''
 
-#### Script [TableInterpolatedGridModule.py]()
+#### Script [TableInterpolatedGridModule.py](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/TableInterpolatedGridModule.py)
 
 '''
 
 '''
+
+#### Funciones asociadas al módulo 
+
+| Función                | Descripción                                                                                                                                                                             |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| systemprompt()         | Prompt para identificación de líneas de consola que requieren acción de usuario, se identifica como {R}.                                                                                |
+| printtitle()           | Impresión de títulos con estilo de líneas superior, inferior o ambos. Permite impresión tabulada.                                                                                       |
+| optionrange()          | Validación de opción de entrada de usuario para valores enteros dentro de un rango específico de valores.                                                                               |
+| optionrangefloat()     | Validación de opción de entrada de usuario para valores flotantes dentro de un rango específico de valores.                                                                             |
+| optionyesno()          | Validación de opción de entrada de usuario para valores respuestas con Sí (Y) o Nó (N).                                                                                                 |
+| csvtotalfieldfound(()  | A partir de la ruta de localización del archivo .csv, cuenta el número de atributos o columnas disponibles.                                                                             |
+| csvtotalrecordfound(() | A partir de la ruta de localización del archivo .csv, cuenta el número de registros incluida la cabecera de columna.                                                                    |
+| csvspacialdomain()     | A partir de los registros contenidos en el archivo de entrada, evalúa el tamaño del dominio espacial de los datos.                                                                      |
+| csvsamplerecord()      | A partir de los registros contenidos en el archivo de entrada y un número de registros indicado por el usuario, imprime una muestra de los datos de entrada incluida la cabecera.       |
+| datafrecuency()        | Frecuencias disponibles para análisis para selección de usuario: Diaria o Mensual. El usuario puede elegir el número de grillas a generar a partir del tipo de frecuencia seleccionada. |
+| crscoordsystem()       | Sistemas de referencia de coordenadas predeterminados para la referenciación espacial de los archivos de forma temporales y las grillas interpoladas.                                   |
+| crscoordsystem()       | Sistemas de referencia de coordenadas predeterminados para la referenciación espacial de los archivos de forma temporales y las grillas interpoladas.                                   |
+| csvheader()            | Lista los nombres de los atributos disponibles en el archivo de entrada y solicita al usuario el atributo a utilizar en el análisis correspondiente a la variable a interpolar.         |
+| csvstatistic()         | Para la variable especificada en `csvheader()` calcula los siguientes estadísticos: Registros, Conteo no nulos, Conteo nulos, Máximo, Mínimo, Suma y Promedio.                          |
+| colormapstyle()        | Lista de estilos de rampa de color seleccionables por el usuario para la representación de las grillas re-escaladas.                                                                    |
+| graphtxt()             | Grafica e imprime como texto en la consola de ejecución, todos los valores discretos encontrados de la variable a analizar.                                                             |
+| graphtxtonevalue(()    | Grafica e imprime como texto en la consola de ejecución, un valor definido respecto a un valor máximo establecido.                                                                      |
+
+> La función `optionrange()` valida la entrada numérica y en caso de contener valores decimales, válida la parte entera como entrada de usuario. 
+
+> Para las funciones `optionrange()`, `optionrangefloat()` y `optionyesno()`, en caso de que la opción ingresada no pueda ser validada o esté fuera de rango, se solicita nuevamente el valor hasta que se ingrese un valor válido.
+ 
+> La función `optionyesno()` válida que la entrada sea una cadena de texto y evalúa si se ingresa en mayúsculas o minúsculas la opción solicitada. En Python 2 sobre ArcGIS for Desktop 10+, es necesario ingresar la respuesta entre comillas, p.ej, 'Y', 'y', 'N' o 'n'.
+
+> La función `csvspacialdomain()` identifica el número de columna donde se encuentran los valores CX o longitudes y CY o latitudes; calcula el tamaño horizontal y vertical del dominio espacial y divide la menor dimensión entre 150 celdas o pixeles para sugerir el tamaño de pixel a utilizar en las interpolaciones espaciales.
+
+> El script no presenta en la función `datafrecuency()` una opción específica para series de datos anuales, sin embargo, utilizando la frecuencia `Díaria` a partir de Julianos, se pueden generar interpolaciones hasta 366 años. Los valores de la columna `Var` o la columna numérica a representar, deberán corresponder a datos escalados a nivel anual.   
+
+> En caso de que el usuario requiera un CRS diferente a los predeterminados en `crscoordsystem()`, en el arreglo `coordSystem` se pueden agregar nuevos sistemas o modificar los existentes. Los parámetros de entrada del CRS pueden ser obtenidos a través de un archivo .prj asociado a un archivo de formas shapefile previamente georeferenciado.
+
+> La función `csvstatistic()` además de calcular los estadísticos generales, almacena en listas, el número de registro y los valores discretos de la variable seleccionada para su posterior graficación con `matplotlib`. 
+
+> Las rampas de colores en formato .clr incluidas en la carpeta `ColorMapStyle` han sido creadas por r.cfdtools.
 
 
 ### Referencias
