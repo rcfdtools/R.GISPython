@@ -150,6 +150,14 @@ Luego de la visualización de la gráfica de texto podrá observar los estadíst
 
 15. En ArcScene de ArcGIS for Desktop, cargue y visualice las grillas de resultados.
 
+En las opciones de configuración de la escena para `Scene Layers` establezca la exageración vertical en 250, para cada grilla defina las alturas base a partir de los valores discretos de cada pixel en la propia imagen y en la resolución de salida establezca el valor de la resolución utilizada en la creación de las grillas.
+
+![ArcScene10.2.2VerticalExaggeration.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/ArcScene10.2.2VerticalExaggeration.png)
+
+![ArcScene10.2.2BaseHeights.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/ArcScene10.2.2BaseHeights.png)
+
+![ArcScene10.2.2RasterSurfaceResolution.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/ArcScene10.2.2RasterSurfaceResolution.png)
+
 ![ArcScene10.2.2OutputGrid.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/ArcScene10.2.2OutputGrid.png)
 ![ArcScene10.2.2OutputColorMap.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/ArcScene10.2.2OutputColorMap.png)
 
