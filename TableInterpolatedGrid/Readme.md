@@ -84,6 +84,15 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 > En representaciones diarias, el juliano 366 corresponde al día 29 de febrero para años bisiestos. 
 
+### Procedimiento general
+
+1. Descargar o clonar este microcontenido en `D:\R.GISPython\TableInterpolatedGrid\`
+
+2. En PyCharm, configure los entornos virtuales para los intérpretes de Python para ArcGIS for Desktop y ArcGIS Pro.  
+ 
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3PythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3PythonInterpreter.png)
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3PythonInterpreter.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/Python3.7.11ArcGISPro2.9.0PyCharm2021.3PythonInterpreter.png)
+
 
 ### Ejecuciones
 
