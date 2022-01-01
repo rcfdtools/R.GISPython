@@ -7,6 +7,7 @@
 import arcpy
 from arcpy import env
 from arcpy.sa import *
+import sys
 import os.path
 import shutil
 import time
@@ -57,13 +58,15 @@ print('\nValid table format file: comma separated values .csv'
 # Preprocessing variables
 rtg.printtitle('Study case & File data summary')
 dTime = datetime.today()  # Get timezone naive now
-logFileNumber = int(dTime.timestamp()*100)
+#logFileNumber = int(dTime.timestamp()) # Compatible with Python 3
+logFileNumber = int(time.mktime(dTime.timetuple())) # Compatible with Python 2 & 3
 print('\nStudy case: ' + studyCase +
       '\nInput file: ' + fileCSVIn +
       '\nLog file #: ' + str(logFileNumber))
 fieldsCSV = rtg.csvtotalfieldfound(fileCSVIn)
 totalRecords = rtg.csvtotalrecordfound(fileCSVIn)
-input('\n' + rtg.systemprompt() + 'Attention - Close all the ArcGIS for Desktop applications and press Enter >> ')
+print('\n' + rtg.systemprompt() + 'Attention - If you are using ArcGIS for Desktop with Python 2, all the options may be enter using quotes...')
+input('\n' + rtg.systemprompt() + "Attention - Close all your ArcGIS for Desktop applications and type 'Y' to continue >> ")
 rtg.csvsamplerecord(fileCSVIn, totalRecords+1)
 fieldNumberEval = rtg.csvheader(fileCSVIn, totalRecords, fieldsCSV)
 print('\n')
@@ -196,8 +199,9 @@ print('\nGrids created on: ' + outputPath +
       '\nMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
       '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
       '\nDay or Month with maximum value: ' + str(dayMonthMax) +
-      '\nManual PDF print as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
+      '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
       '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
+from datetime import datetime
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
 logExecutionFle.close()
-vExit = input('\n%s Press Enter to exit...' % (rtg.systemprompt()))
+vExit = input("\n%s Type 'Y' to exit..." % (rtg.systemprompt()))

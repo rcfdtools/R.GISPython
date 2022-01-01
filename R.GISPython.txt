@@ -10,6 +10,7 @@ https://docs.github.com/en/communities/documenting-your-project-with-wikis/addin
 PEP 8 -- Style Guide for Python Code >>> https://www.python.org/dev/peps/pep-0008/
 
 Pending
+	> Para la actualización de librerías existentes o la instalación de librerías adicionales, se recomienda la creación y uso de ambientes virtuales para no modificar las versiones originales de Python sobre ArcMAP y QGIS.
 	Tema 2 - Procesamiento de tablas geocodificadas
 		Actualización de elevaciones en el catálogo nacional de estaciones hidrometeorológicas del IDEAM - Colombia
 		Creación de capas geográficas en formato shapefile a partir de tablas geocodificadas

@@ -24,6 +24,8 @@ Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo
 * [Sistema operativo Microsoft Windows](https://www.microsoft.com/en-us/windows?r=1)
 * [matplotlib](https://matplotlib.org/)
 
+> Para la actualización de librerías existentes o la instalación de librerías adicionales, se recomienda la creación y uso de ambientes virtuales para no modificar las versiones originales de Python sobre ArcMAP y QGIS.
+
 
 ### Funcionalidades
 
@@ -38,7 +40,7 @@ Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo
 * Definición de la resolución de salida de los mapas a interpolar. El valor se ingresa en función de las unidades del CRS seleccionado. El script hace una recomendación del tamaño de pixel para la interpolación.
 * Selección de la rampa de colores (128, 256, 512, 1024 valores discretos únicos de color) a utilizar en la representación.
 * Interpolación espacial masiva de grillas a partir de la escala temporal definida teniendo en cuenta los parámetros definidos previamente.
-* Conversión de grillas principales a grillas de representación por simbología única. 
+* Remuestreo de grillas principales a grillas de representación por simbología única utilizando algebra de mapas. 
 
 > Actualmente el script no dispone de representación segmentada (slices) para de una serie diaria elegir el juliano inicial y final. 
  
@@ -86,12 +88,18 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 #### Ejecución en ArcGIS for Desktop sobre PyCharm
 
-![Python3.7.11ArcGISPro2.9.0.png]()
+![Python2.7.5ArcGISDesktop10.2.2PyCharm2021.3.png]()
 
 
 #### Ejecución en ArcGIS Pro sobre PyCharm
 
-![Python3.7.11ArcGISPro2.9.0.png]()
+![Python3.7.11ArcGISPro2.9.0PyCharm2021.3.png]()
+
+
+#### Carpetas de resultados
+
+![OutputGrid.png]()
+![OutputColorMap.png]()
 
 
 ### Scripts
@@ -152,7 +160,7 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 * https://desktop.arcgis.com/en/arcmap/10.3/analyze/arcpy-functions/checkoutextension.htm
 * https://stackoverflow.com/questions/7852855/in-python-how-do-you-convert-a-datetime-object-to-seconds
 * https://stackoverflow.com/questions/34165941/how-to-display-tiff-file-in-color
-
+* https://www.codegrepper.com/code-examples/python/python+2.7+datetime+to+timestamp
 
 
 ### Autores

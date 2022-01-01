@@ -1,20 +1,37 @@
 # R.GISPython
 
-import pandas as pd
 import numpy as np
 import sys
 
-# Print
-import matplotlib.pyplot as plt
-img = plt.imread('D:\R.GISPython\TableInterpolatedGrid\OutputGrid\GRDM010.tif')
-plt.imshow(img)
-plt.show()
+# Time stamp Python 2 - Sample 1
+# https://www.codegrepper.com/code-examples/python/python+2.7+datetime+to+timestamp
+import time
+from datetime import datetime
+d = datetime(2022, 1, 1, 11, 30)
+print('Unix time: ' + str(int(time.mktime(d.timetuple())*100)))
 
+# Time stamp Python 2 - Sample 2
+import time
+from datetime import datetime
+dTime = datetime.today()
+print('Unix time: ' + str(int(time.mktime(dTime.timetuple())*100)))
 
+'''
+# Time stamp Python 3
 from datetime import datetime
 dTime = datetime.today()  # Get timezone naive now
 secondsInt = int(dTime.timestamp()*100)
 print('Time stamp: '+ str(secondsInt))
+'''
+
+'''
+# Print an image
+import pandas as pd
+import matplotlib.pyplot as plt
+img = plt.imread('D:\R.GISPython\TableInterpolatedGrid\OutputGrid\GRDM010.tif')
+plt.imshow(img)
+plt.show()
+'''
 
 '''
 # Multidimensional array basic operations with print in a file

@@ -1,6 +1,7 @@
-# r.cfdtools@gmail.com
-# Tested in Python 2.7.12
-# CSV process file module
+# Module name: TableInterpolatedGridModule.py
+# Description: CSV process file module.
+# Requirements: PyCharm 2021.3+, ArcGIS 10+, ArcGIS Pro 2.9.0
+# Tested in Python 2.7.5, 2.7.12, 3.7.11
 
 import numpy as np
 
@@ -13,20 +14,20 @@ def systemprompt():
 def printtitle(titleText, titleType = 'both', showTab = False):
     # titleType: Top, Bottom, both
     nc = '-'
-    nVal = len(titleText)
+    valLen = len(titleText)
     tabTxt = ''
     if showTab:
         tabTxt = '\t'
     if titleType == 'both':
-        print(tabTxt + nc * nVal)
+        print(tabTxt + nc * valLen)
         print(tabTxt + titleText)
-        print(tabTxt + nc * nVal)
+        print(tabTxt + nc * valLen)
     elif titleType == 'Top':
-        print(tabTxt + nc * nVal)
+        print(tabTxt + nc * valLen)
         print(tabTxt + titleText)
     else:
         print(tabTxt + titleText)
-        print(tabTxt + nc * nVal)
+        print(tabTxt + nc * valLen)
 
 # Range options for integers or list values
 def optionrange(txtMsg, minOpt, maxOpt):
@@ -42,7 +43,7 @@ def optionrange(txtMsg, minOpt, maxOpt):
                 else:
                     print('%sAttention, value out of range (%d-%d).' % (systemprompt(), minOpt, maxOpt))
             except:
-                #print('%s Attention, invalid value. Enter an integer value.' %(systemprompt()))
+                #print('%s Attention, ivalLenid value. Enter an integer value.' %(systemprompt()))
                 vExcept = 0
     return valueUser
 
@@ -62,7 +63,7 @@ def optionrangefloat(txtMsg, minOpt, maxOpt):
                 else:
                     print('%sAttention, value out of range (%d-%d).' % (systemprompt(), minOpt, maxOpt))
             except:
-                #  print('%s Atention, invalid value. Enter an integer value.' %(systemprompt()))
+                #  print('%s Atention, ivalLenid value. Enter an integer value.' %(systemprompt()))
                 vExcept = 0
     return valueUser
 
@@ -71,13 +72,13 @@ def optionrangefloat(txtMsg, minOpt, maxOpt):
 def optionyesno(txtMsg):
     valOpt = 0
     while valOpt == 0:
-        valueUser = input('%s%s (Y/N, Python 2 with quotes) >> ' % (systemprompt(), txtMsg))
+        valueUser = input('%s%s (Y/N) >> ' % (systemprompt(), txtMsg))
         if type(valueUser) == str:
             valueUserlow = valueUser.lower()
             if valueUserlow == 'y' or valueUserlow == 'n': 
                 valOpt = 1
             else:
-                print('Option %s invalid. Try again.\n' % (valueUser))
+                print('Option %s ivalLenid. Try again.\n' % (valueUser))
     print('Entry option was %s.' % (valueUser))
     return valueUser.lower()
 
@@ -121,10 +122,10 @@ def csvspacialdomain(userFileName):
     for j in range(0, fieldsLen):
         if recordLineArray[j].upper() == 'CX':
             cxNum = j
-            print('CX field number:', (cxNum+1))
+            print('CX field number: ' + str(cxNum+1))
         elif recordLineArray[j].upper() == 'CY':
             cyNum = j
-            print('CY field number:', (cyNum+1))
+            print('CY field number: ' + str(cyNum+1))
     if cxNum == -1 or cyNum == -1:
         print('Alert: Cy or CY fiends not found')
     totalRecord = len(open(userFileName).readlines())
@@ -151,7 +152,8 @@ def csvspacialdomain(userFileName):
         vGridCellSizeRecommended = spatialDomainWidth / numPixel  # Divide minor value into 150 pixels
     print('CX max: %f  CX min: %f  Width: %f' % (cxMax, cxMin, spatialDomainWidth))
     print('CY max: %f  CY min: %f  Heigh: %f' % (cyMax, cyMin, spatialDomaintHeigh))
-    print('Recommended grid cell size: ' + str(vGridCellSizeRecommended) + '\n')
+    print('Recommended grid cell size: ' + str(vGridCellSizeRecommended))
+    print('(Using as reference 150 pixels in the shortest horizontal or vertical spatial length)\n')
     userFile.close()
     return (spatialDomainWidth, spatialDomaintHeigh, vGridCellSizeRecommended, numPixel)
 
@@ -167,7 +169,7 @@ def csvsamplerecord(userFileName, totalRecord):
     for j in range(0, csvNumRecordSample):
         recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line
         recordLineArray = recordLine.split(',')
-        print('('+(str(j+1).zfill(5))+')' + str(recordLineArray))
+        print((str(j+1).zfill(6))+' ' + str(recordLineArray))
     userFile.close()
 
 
@@ -177,7 +179,7 @@ def datafrecuency():
         (1, 366, 'Dayly', 'Julian'),
         (2, 12, 'Monthly', 'Month')])
     dataFrecuencyCount = len(dataFrecuency)
-    print('Frecuencies:', dataFrecuencyCount)
+    print('Frecuencies: ' + str(dataFrecuencyCount))
     printtitle('ID, Max. val, Frequency field required')
     for j in range(0, dataFrecuencyCount):
         print(str((dataFrecuency[j, 0]).zfill(2)) + '  ' + str((dataFrecuency[j, 1].zfill(4))) + '  ' + dataFrecuency[j, 2] + '  ' + dataFrecuency[j, 3])
@@ -198,7 +200,7 @@ def crscoordsystem():
         (6, 'WKID: 3114, MAGNA Colombia Origen Oeste oeste', 'PROJCS["MAGNA_Colombia_Oeste_Oeste",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",1000000.0],PARAMETER["False_Northing",1000000.0],PARAMETER["Central_Meridian",-80.07750791666666],PARAMETER["Scale_Factor",1.0],PARAMETER["Latitude_Of_Origin",4.596200416666666],UNIT["Meter",1.0]],VERTCS["WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PARAMETER["Vertical_Shift",0.0],PARAMETER["Direction",1.0],UNIT["Meter",1.0]]'),
         (7, 'WKID: 9377, MAGNA-SIRGAS / Origen-Nacional', 'PROJCS["MAGNA_Colombia_Origen_Unico",GEOGCS["GCS_MAGNA",DATUM["D_MAGNA",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",5000000.0],PARAMETER["False_Northing",2000000.0],PARAMETER["Central_Meridian",-73.0],PARAMETER["Scale_Factor",0.9992],PARAMETER["Latitude_Of_Origin",4.0],UNIT["Meter",1.0]]')])
     coordSystemCount = len(coordSystem)
-    print('\nCoordinate Systems:', coordSystemCount)
+    print('\nCoordinate systems: ' + str(coordSystemCount))
     printtitle('ID, Coordinate system')
     for j in range(0, coordSystemCount):
         print(str((coordSystem[j, 0])).zfill(2) + '  ' + (coordSystem[j, 1].zfill(4)))
@@ -219,7 +221,7 @@ def csvheader(userFileName, totalRecord, fieldsLen):
     print('\nHeaders in data file:')
     printtitle('#, Field name')
     for k in range(0, fieldsLen):
-        print('('+(str(k+1).zfill(2))+')', recordLineArray[k])
+        print('('+(str(k+1).zfill(2))+') ' + recordLineArray[k])
     fieldNumberEval = optionrange('Field number to eval', 1, fieldsLen)
     vFieldEvalStr = recordLineArray[fieldNumberEval-1]
     userFile.close()
@@ -259,13 +261,13 @@ def csvstatistic(userFileName, totalRecord, fieldNumberEval):
             varYPlot.append(recordLineArray[fieldNumberEval-1])
     varAverage = varSum/varCount
     varNulls = totalRecord-varCount
-    print('Registers:', totalRecord,
-          '\nCount:', varCount, '(not null)',
-          '\nNulls:', varNulls,
-          '\nMax:', varMax,
-          '\nMin:', varMin,
-          '\nSum:', varSum,
-          '\nAvg:', varAverage, '\n')
+    print('Registers: ' + str(totalRecord) +
+          '\nCount: ' + str( varCount) + ' (not null)' +
+          '\nNulls: ' + str(varNulls) +
+          '\nMax: ' + str(varMax) +
+          '\nMin: ' + str(varMin) +
+          '\nSum: ' + str(varSum) +
+          '\nAvg: ' + str(varAverage) + '\n')
     return (totalRecord, varCount, varNulls, varMax, varMin, varSum, varAverage, varXPlot, varYPlot)
     userFile.close()
 
@@ -290,7 +292,7 @@ def colormapstyle(folderColorMapStyle):
         (13, 512, 'Green Sea - Blue Sea - Purple - Red - Orange - Yellow (x18)'),
         (14, 1024, 'Dark Pink - Mercury - Lime - Green (x13)')])
     colorMapStyleCount = len(colorMapStyleArray)
-    print('\nTotal Color Map Styles:', colorMapStyleCount)
+    print('\nTotal Color Map Styles: ' + str(colorMapStyleCount))
     printtitle('ID, Colors, Color map style name')
     for j in range(0, colorMapStyleCount):
         print(str((colorMapStyleArray[j, 0]).zfill(2)) + ' ' + str((colorMapStyleArray[j, 1].zfill(4))) + ' ' + colorMapStyleArray[j, 2])
@@ -319,7 +321,7 @@ def graphtxt(userFileName, totalRecord, fieldNumberEval):
             if recordLineArray[fieldNumberEval-1] != '\n' and recordLineArray[fieldNumberEval-1] != '':
                 if float(recordLineArray[fieldNumberEval-1]) > varMax:
                     varMax = float(recordLineArray[fieldNumberEval-1])
-        print('Max value: ', varMax)
+        print('Max value: ' + str(varMax))
         userFile.close()
         userFile = open(userFileName)
         recordLine = userFile.readline().rstrip('\n')
