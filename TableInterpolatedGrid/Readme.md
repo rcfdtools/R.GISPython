@@ -14,7 +14,7 @@ Para representar correctamente la serie temporal de la variable en estudio y pod
 
 ### Caso de estudio
 
-Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo solar a nivel diario medio y mensual) en diferentes zonas de Colombia - Suramérica a partir de datos escalados utilizando las series de datos del IDEAM.  
+Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo solar a nivel diario medio y mensual) en diferentes zonas de Colombia - Suramérica a partir de datos escalados utilizando las series de datos del [IDEAM](http://www.ideam.gov.co/).  
 
 
 ### Requerimientos
@@ -32,15 +32,15 @@ Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo
 
 * Evaluación preliminar del archivo de entrada identificando el número de atributos y registros de datos.
 * Previsualización de datos de entrada a partir del número de registros indicado por el usuario.
-* Selección de variable numérico a representar. 
+* Selección de variable numérica a representar. 
 * Representación en grafica de texto mediante barras horizontales con % de referencia de cada valor discreto respecto al valor máximo encontrado.
 * Estadísticos generales (conteo, no nulos, nulos, máximo, mínimo, sumatoria, promedio) de la variable seleccionada para el análisis.
 * Evaluación de tamaño espacial del dominio a representar.
 * Selección del tipo de frecuencia (diaria o mensual) a analizar. Diarios se evalúan en julianos de 1 a 366 y mensuales de 1 a 12. El usuario puede decidir si genera toda la serie temporal o una fracción (p.ej, para una serie de datos diarios, el usuario puede elegir solo generar los datos del primer trimestre correspondiente a los julianos entre el día 1 y 90 para años bisiestos)
 * Selección del sistema de proyección de coordenadas - CRS. Se han incorporado en el módulo `TableInterpolatedGridModule.py` dentro del arreglo `coordSystem`, diferentes sistemas predeterminados.
-* Definición de la resolución de salida de los mapas a interpolar. El valor se ingresa en función de las unidades del CRS seleccionado. El script hace una recomendación del tamaño de pixel para la interpolación.
-* Selección de la rampa de colores (128, 256, 512, 1024 valores discretos únicos de color) a utilizar en la representación.
-* Interpolación espacial masiva de grillas a partir de la escala temporal definida teniendo en cuenta los parámetros definidos previamente.
+* Definición de la resolución de salida de los mapas a interpolar. El valor se ingresa en función de las unidades del CRS seleccionado. El script hace una recomendación del tamaño de pixel para la interpolación y visualización a partir de 150 pixeles o celdas en la menor dimensión horizontal o vertical.
+* Selección de rampa de colores (128, 256, 512, 1024 valores discretos únicos de color) a utilizar en la representación.
+* Interpolación espacial masiva de grillas a partir de la escala temporal definida, teniendo en cuenta los parámetros definidos previamente.
 * Reescalamiento de grillas principales a grillas de representación por simbología única utilizando algebra de mapas. 
 
 > Actualmente el script no dispone de representación segmentada (slices) para de una serie diaria elegir el juliano inicial y final. 
@@ -50,7 +50,7 @@ Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo
  
 ### Ruta de ejecución
 
-Para el desarrollo de este microcontenido se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\HydroGeoZone\` utilizando la siguiente estructura de directorios. 
+Para el desarrollo de este microcontenido se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\TableInterpolatedGrid\` utilizando la siguiente estructura de directorios. 
 
 | Directorio                                                                                         | Descripción                                                                                                              |
 |----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -64,12 +64,12 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 | [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid/Screenshot) | Capturas de pantalla con resultados de ejecución.                                                                        |
 | /Temp                                                                                              | Directorio donde se localizan los archivos de forma temporales generados para la creación de las grillas interpoladas.   |
 
-> Los directorios `/OutputColorMap`, `/OutputGrid`, `/Temp` se crea automáticamente en la unidad local y no visibles en el repositorio de GitHub debido al tamaño de los archivos generados. 
+> Los directorios `/OutputColorMap`, `/OutputGrid`, `/Temp` se crean automáticamente en la unidad local y no son visibles en el repositorio de GitHub debido al tamaño de los archivos generados. 
 
 
 ### Estructura de datos de entrada
 
-Para la correcta ejecución del script se requiere que los archivos de texto separados por comas utilicen la siguiente estructura:
+Para la correcta ejecución del script se requiere que los archivos de texto separados por comas utilicen al menos la siguiente estructura:
 
 | Campo  | Descripción                      | Aplica diarios | Aplica mensuales |
 |--------|----------------------------------|----------------|------------------|
@@ -80,7 +80,7 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 | Var    | Variable númerica a representar  | ✅              | ✅               |
 
 
-> En un mismo archivo de entrada pueden existir múltiples columnas `Var` registrando diferentes variables meteorológicas, para lo cual el usuario podrá elegir la variable de entrada a analizar a partir de la lista de atributos encontrados.
+> En un mismo archivo de entrada pueden existir múltiples columnas `Var` (VTemp, VPrec, VEvap...) registrando diferentes variables meteorológicas, para lo cual el usuario podrá elegir la variable de entrada a analizar a partir de la lista de atributos encontrados.
 
 > En representaciones diarias, el juliano 366 corresponde al día 29 de febrero para años bisiestos. 
 
