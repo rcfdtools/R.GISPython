@@ -1,4 +1,4 @@
-## Interpolación y representación espacial de datos meteorológicos con simbología de rampa única
+## Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única
 Keywords: `ArcGIS for Desktop` `ArcGIS Pro`
 
 A partir de series de datos diarias o mensuales contenidas en registros discretos dentro de archivos de texto separados por comas o CSV, interpolar y representar espacialmente datos hidrometeorológicos usando re-escalamiento a rampa única de color.
