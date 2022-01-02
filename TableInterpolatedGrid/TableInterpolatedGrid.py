@@ -78,10 +78,10 @@ minVal = StatisticCSV[4]
 spatialDomainCSV = rtg.csvspacialdomain(fileCSVIn)
 gidCellSizeRecommended = spatialDomainCSV[2]
 fieldEvalStr = fieldNumberEval[1]
-dataFrecuency = rtg.datafrecuency()
-frecuencyFieldOpt = dataFrecuency[1]
-frecuencyMaxVal = int(dataFrecuency[0])
-numGrid = rtg.optionrange('Total grids to create ', 1, frecuencyMaxVal)
+dataFrequency = rtg.datafrequency()
+frequencyFieldOpt = dataFrequency[1]
+frequencyMaxVal = int(dataFrequency[0])
+numGrid = rtg.optionrange('Total grids to create ', 1, frequencyMaxVal)
 userCRS = rtg.crscoordsystem()
 gridResolution = rtg.optionrangefloat(('Output grid resolution for the coordinate system selected (%f recommended for %s pixels)' % (gidCellSizeRecommended, str(spatialDomainCSV[3]))), 0, 10000)
 colorMapFileArray = rtg.colormapstyle(colorMapStyleFolder)
@@ -124,7 +124,7 @@ while incV <= numGrid:
     arcpy.MakeXYEventLayer_management(fileCSVIn, 'CX', 'CY', eventLyr, userCRS, '')
 
     # Process: Select records from Julian day number
-    frequencyFieldOptTxt = '\"'+frecuencyFieldOpt+'\" ='
+    frequencyFieldOptTxt = '\"'+frequencyFieldOpt+'\" ='
     arcpy.Select_analysis(eventLyr, shapefileTemp, frequencyFieldOptTxt + incVStr)
 
     # Process: IDW - Inverse Distance Weight Intepolation
@@ -167,7 +167,7 @@ while incV <= numGrid:
 
 
 # Grid color map using integer scale
-incV=1; maxValPixelValueStr = str(maxValPixelValue); minValStr = str(minVal); numColorStr = str(numColor); slopeRampDataStr = str(slopeRampData);
+incV = 1; maxValPixelValueStr = str(maxValPixelValue); minValStr = str(minVal); numColorStr = str(numColor); slopeRampDataStr = str(slopeRampData);
 print('\n')
 rtg.printtitle('Creating ' + str(numGridStr) + ' grid color scaled files ('+(str(numColor)) + ' colors)')
 print('\nAll database values'

@@ -99,7 +99,7 @@ def csvtotalfieldfound(userFileName):
 # Total records founded
 # userFileName: Complete File name to process
 def csvtotalrecordfound(userFileName):
-    userFile = open (userFileName)  # Open only for reading
+    userFile = open(userFileName)  # Open only for reading
     totalRecord = len(open(userFileName).readlines())
     if totalRecord == 0:
         print('Records: 0')
@@ -115,7 +115,7 @@ def csvtotalrecordfound(userFileName):
 def csvspacialdomain(userFileName):
     printtitle('Spatial domain in the station records')
     fieldsLen = csvtotalfieldfound(userFileName)
-    userFile = open (userFileName)  # Open only for reading
+    userFile = open(userFileName)  # Open only for reading
     recordLine = userFile.readline().rstrip('\n')  # rstrip remove jump line # Read de header line
     recordLineArray = recordLine.split(',')
     # Eval column number with CX and CY Values
@@ -175,19 +175,19 @@ def csvsamplerecord(userFileName, totalRecord):
 
 
 # Daily or montly data
-def datafrecuency():
-    dataFrecuency = np.array([
+def datafrequency():
+    dataFrequencyArray = np.array([
         (1, 366, 'Dayly', 'Julian'),
         (2, 12, 'Monthly', 'Month')])
-    dataFrecuencyCount = len(dataFrecuency)
-    print('Frecuencies: ' + str(dataFrecuencyCount))
+    dataFrequencyArrayCount = len(dataFrequencyArray)
+    print('Frequencies: ' + str(dataFrequencyArrayCount))
     printtitle('ID, Max. val, Frequency field required')
-    for j in range(0, dataFrecuencyCount):
-        print(str((dataFrecuency[j, 0]).zfill(2)) + '  ' + str((dataFrecuency[j, 1].zfill(4))) + '  ' + dataFrecuency[j, 2] + '  ' + dataFrecuency[j, 3])
-    dataFrecuencyOpt = optionrange('Frequency to use', 1, (dataFrecuencyCount))
-    frecuencyMaxVal = dataFrecuency[(dataFrecuencyOpt-1), 1]
-    frecuencyField = dataFrecuency[(dataFrecuencyOpt-1), 3]
-    return (frecuencyMaxVal, frecuencyField)
+    for j in range(0, dataFrequencyArrayCount):
+        print(str((dataFrequencyArray[j, 0]).zfill(2)) + '  ' + str((dataFrequencyArray[j, 1].zfill(4))) + '  ' + dataFrequencyArray[j, 2] + '  ' + dataFrequencyArray[j, 3])
+    dataFrequencyArrayOpt = optionrange('Frequency to use', 1, (dataFrequencyArrayCount))
+    frequencyMaxVal = dataFrequencyArray[(dataFrequencyArrayOpt-1), 1]
+    frequencyField = dataFrequencyArray[(dataFrequencyArrayOpt-1), 3]
+    return (frequencyMaxVal, frequencyField)
 
 
 # CRS - Coordinate reference system
