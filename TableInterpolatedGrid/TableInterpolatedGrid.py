@@ -229,7 +229,7 @@ print('\nGrids created on: ' + outputPath +
       '\nMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
       '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
       '\nDay or Month with maximum value: ' + str(dayMonthMax) +
-      '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
+      '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + 'PlotBar.pdf' +
       '\nValue data plot: '+urlGitHub+'/Graph/'+str(logFileNumber)+'.png' +
       '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
 from datetime import datetime

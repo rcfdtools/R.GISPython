@@ -188,7 +188,7 @@ En las opciones de configuración de la escena para `Scene Layers` establezca la
 
 [Log de resultados](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/PDF/1641141207.pdf)
 
-![Value data plot](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207.png)
+![Value data plot](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207PlotBar.png)
 ![FileGRDM001.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM001.png)
 ![FileGRDM002.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM002.png)
 ![FileGRDM003.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM003.png)
