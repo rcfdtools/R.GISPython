@@ -174,6 +174,7 @@ while incV <= numGrid:
     plt.xlabel('CX pixels')
     plt.ylabel('CY pixels')
     plt.title(str(logFileNumber) + 'GridSampleGRDM' + incVStr.zfill(3) + '.png')
+    plt.imshow(gridImg[:, :, 0], cmap=plt.cm.coolwarm)  # cmap=plt.cm.Spectral or cmap=plt.cm.hot
     plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png', dpi=300)
     if gridSampleScreenShow:
         plt.show()
@@ -229,8 +230,8 @@ print('\nGrids created on: ' + outputPath +
       '\nMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
       '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
       '\nDay or Month with maximum value: ' + str(dayMonthMax) +
-      '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + 'PlotBar.pdf' +
-      '\nValue data plot: '+urlGitHub+'/Graph/'+str(logFileNumber)+'.png' +
+      '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
+      '\nValue data plot: '+urlGitHub+'/Graph/'+str(logFileNumber)+'PlotBar.png' +
       '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
 from datetime import datetime
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')

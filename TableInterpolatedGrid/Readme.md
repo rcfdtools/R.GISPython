@@ -186,21 +186,23 @@ En las opciones de configuración de la escena para `Scene Layers` establezca la
 
 #### Ejemplo de previsualización de log de resultados, grillas de salida y gráfica de muestreo de valores mensuales
 
-[Log de resultados](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/PDF/1641141207.pdf)
+[Log de resultados](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/PDF/1641142485.pdf)
 
-![Value data plot](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207PlotBar.png)
-![FileGRDM001.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM001.png)
-![FileGRDM002.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM002.png)
-![FileGRDM003.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM003.png)
-![FileGRDM004.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM004.png)
-![FileGRDM005.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM005.png)
-![FileGRDM006.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM006.png)
-![FileGRDM007.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM007.png)
-![FileGRDM008.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM008.png)
-![FileGRDM009.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM009.png)
-![FileGRDM010.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM010.png)
-![FileGRDM011.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM011.png)
-![FileGRDM012.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM012.png)
+Grillas principales de salida sin remuestreo de rampa de color
+
+![Value data plot](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485PlotBar.png)
+![FileGRDM001.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM001.png)
+![FileGRDM002.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM002.png)
+![FileGRDM003.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM003.png)
+![FileGRDM004.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM004.png)
+![FileGRDM005.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM005.png)
+![FileGRDM006.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM006.png)
+![FileGRDM007.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM007.png)
+![FileGRDM008.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM008.png)
+![FileGRDM009.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM009.png)
+![FileGRDM010.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM010.png)
+![FileGRDM011.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM011.png)
+![FileGRDM012.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641142485GRDM012.png)
 
 
 ### Scripts
