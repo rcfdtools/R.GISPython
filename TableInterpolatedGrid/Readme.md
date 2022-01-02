@@ -2,7 +2,7 @@
 
 
 ## Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única
-Keywords: `ArcGIS for Desktop` `ArcGIS Pro` `arcpy` `env` `workspace` `sys` `os` `shutil` `rmtree` `mkdir()` `time` `datetime` `warnings` `read()` `write()` `matplotlib` `numpy` `MakeXYEventLayer_management()` `Select_analysis()` `Idw()` `GetRasterProperties_management()` `gp.RasterCalculator_sa()` `AddColormap_management()` readline() rstrip() split() close() len()
+Keywords: `ArcGIS for Desktop` `ArcGIS Pro` `arcpy` `env` `workspace` `sys` `os` `shutil` `rmtree` `mkdir()` `time` `datetime` `warnings` `read()` `write()` `matplotlib` `numpy` `MakeXYEventLayer_management()` `Select_analysis()` `Idw()` `GetRasterProperties_management()` `gp.RasterCalculator_sa()` `AddColormap_management()` `readline()` `rstrip()` `split()` `close()` `len()`
 
 A partir de series de datos diarias o mensuales contenidas en registros discretos dentro de archivos de texto separados por comas o CSV, interpolar y representar espacialmente datos hidrometeorológicos usando re-escalamiento a rampa única de color.
 
