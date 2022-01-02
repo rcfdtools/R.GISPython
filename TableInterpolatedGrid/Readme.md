@@ -258,12 +258,13 @@ En las opciones de configuración de la escena para `Scene Layers` establezca la
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                                             |
-|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20171123 | Versión inicial sobre Python 2 solo compatible con ArcGIS for Desktop.                                                                                  |
-| v.20180124 | Versión con módulo y funciones.                                                                                                                         |
-| v.20211231 | Actualización para compatibilidad con Python 3 y ArcGIS Pro. Optimización de script. Log de registro.                                                   |
-| v.20220101 | Actualización de documentación, optimización de print con concatenación usando + para visualización idéntica en consola para versiones 2 y 3 de Python. |
+| Versión    | Descripción                                                                                                                                                       |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v.20171123 | Versión inicial sobre Python 2 solo compatible con ArcGIS for Desktop.                                                                                            |
+| v.20180124 | Versión con módulo y funciones.                                                                                                                                   |
+| v.20211231 | Actualización para compatibilidad con Python 3 y ArcGIS Pro. Optimización de script. Log de registro.                                                             |
+| v.20220101 | Actualización de documentación, optimización de print con concatenación usando + para visualización idéntica en consola para versiones 2 y 3 de Python.           |
+| v.20220102 | Inclusión de gráfica de barras para todos los datos encontrados con publicación y direccionamiento a GitHub en carpeta `/Graph` usando el código de registro Log. |
 
 
 ### Licencia, cláusulas y condiciones de uso

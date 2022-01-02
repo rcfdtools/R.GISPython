@@ -76,16 +76,6 @@ print('\n')
 StatisticCSV = rtg.csvstatistic(fileCSVIn, totalRecords, fieldNumberEval[0])
 maxVal = StatisticCSV[3]
 minVal = StatisticCSV[4]
-pltFig = matplotlib.pyplot.gcf()
-pltFig.set_size_inches(16, 6)
-plt.grid(color='0.95')
-plt.bar(StatisticCSV[7], StatisticCSV[8], color='k')
-plt.xlabel('Record #')
-plt.ylabel('Var')
-plt.title('Current values over the CSV file for the selected Var\nLog #:'+str(logFileNumber))
-plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'.png', dpi=300)
-plt.show()
-print('Plot graph: '+urlGitHub+str(logFileNumber)+'.png')
 spatialDomainCSV = rtg.csvspacialdomain(fileCSVIn)
 gidCellSizeRecommended = spatialDomainCSV[2]
 fieldEvalStr = fieldNumberEval[1]
@@ -199,6 +189,17 @@ while incV <= numGrid:
     print('File color map ' + gridDayNFileName + ' - Ok...')
     incV += 1
 
+# General plot
+pltFig = matplotlib.pyplot.gcf()
+pltFig.set_size_inches(12, 6)
+plt.grid(color='0.95')
+plt.bar(StatisticCSV[7], StatisticCSV[8], color='k')
+plt.xlabel('Record #')
+plt.ylabel('Var')
+plt.title('Current values over the CSV file for the selected Var\nLog #: '+str(logFileNumber))
+plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'.png', dpi=300)
+plt.show()
+print()
 
 # Show final process resume
 timeEnd = time.time()
@@ -211,6 +212,7 @@ print('\nGrids created on: ' + outputPath +
       '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
       '\nDay or Month with maximum value: ' + str(dayMonthMax) +
       '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
+      '\nValue data plot: '+urlGitHub+str(logFileNumber)+'.png' +
       '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
 from datetime import datetime
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
