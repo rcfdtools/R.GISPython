@@ -33,6 +33,7 @@ urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolate
 timeStart = time.time()
 os.system('color 0E')
 arcpy.env.overwriteOutput = True
+gridSampleScreenShow = False
 
 # Header
 rtg.printtitle('Spatial interpolation and representation of meteorological data in a unique symbology ramp', 'both', False)
@@ -172,9 +173,10 @@ while incV <= numGrid:
     plt.imshow(gridImg)
     plt.xlabel('CX pixels')
     plt.ylabel('CY pixels')
-    plt.title(str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png')
+    plt.title(str(logFileNumber) + 'GridSampleGRDM' + incVStr.zfill(3) + '.png')
     plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png', dpi=300)
-    plt.show()
+    if gridSampleScreenShow:
+        plt.show()
     print(urlGitHub + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png')
     incV += 1
 
@@ -209,7 +211,7 @@ plt.bar(StatisticCSV[7], StatisticCSV[8], color='k')
 plt.xlabel('Record #')
 plt.ylabel('Var')
 plt.title('Current values over the CSV file for the selected Var\nLog #: '+str(logFileNumber))
-plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'.png', dpi=300)
+plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'PlotBar.png', dpi=300)
 plt.show()
 print()
 
