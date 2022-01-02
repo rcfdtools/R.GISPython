@@ -259,7 +259,7 @@ def csvstatistic(userFileName, totalRecord, fieldNumberEval):
                 varMin = float(recordLineArray[fieldNumberEval-1])      
             # Plot vars array
             varXPlot.append(i+1)
-            varYPlot.append(recordLineArray[fieldNumberEval-1])
+            varYPlot.append(float(recordLineArray[fieldNumberEval-1]))
     varAverage = varSum/varCount
     varNulls = totalRecord-varCount
     print('Registers: ' + str(totalRecord) +

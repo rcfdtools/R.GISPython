@@ -242,6 +242,7 @@ En las opciones de configuración de la escena para `Scene Layers` establezca la
 * https://stackoverflow.com/questions/7852855/in-python-how-do-you-convert-a-datetime-object-to-seconds
 * https://stackoverflow.com/questions/34165941/how-to-display-tiff-file-in-color
 * https://www.codegrepper.com/code-examples/python/python+2.7+datetime+to+timestamp
+* https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
 
 
 ### Autores

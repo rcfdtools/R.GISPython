@@ -20,7 +20,7 @@ import TableInterpolatedGridModule as rtg
 # Local variables
 studyCase = 'Estudio de la precipitación diaria media en el Departamento del Cesar - Colombia - Suramérica'
 warnings.filterwarnings('ignore')
-absolutePath = r'D:/R.GISPython/TableInterpolatedGrid/'
+absolutePath = r'D:/R.GISPython/TableInterpolatedGrid/' # .'/' for relative path
 env.workspace = absolutePath + 'OutputGrid'
 outputPath = absolutePath+'OutputGrid/'
 outputPathColorMap = absolutePath+'OutputColorMap/'
@@ -29,6 +29,7 @@ fileCSVIn = absolutePath+'Data/Sample3PrecipitationAverageMonthly.csv'
 shapefileTemp = outputTemp+'TempShapefile.shp'
 colorMapStyleFolder = absolutePath+'ColorMapStyle/'
 logExecutionFle = open('TableInterpolatedGridLog.csv', 'a')
+urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/'
 timeStart = time.time()
 os.system('color 0E')
 arcpy.env.overwriteOutput = True
@@ -75,6 +76,16 @@ print('\n')
 StatisticCSV = rtg.csvstatistic(fileCSVIn, totalRecords, fieldNumberEval[0])
 maxVal = StatisticCSV[3]
 minVal = StatisticCSV[4]
+pltFig = matplotlib.pyplot.gcf()
+pltFig.set_size_inches(16, 6)
+plt.grid(color='0.95')
+plt.bar(StatisticCSV[7], StatisticCSV[8], color='k')
+plt.xlabel('Record #')
+plt.ylabel('Var')
+plt.title('Current values over the CSV file for the selected Var\nLog #:'+str(logFileNumber))
+plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'.png', dpi=300)
+plt.show()
+print('Plot graph: '+urlGitHub+str(logFileNumber)+'.png')
 spatialDomainCSV = rtg.csvspacialdomain(fileCSVIn)
 gidCellSizeRecommended = spatialDomainCSV[2]
 fieldEvalStr = fieldNumberEval[1]

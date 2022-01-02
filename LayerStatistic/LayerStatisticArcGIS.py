@@ -85,7 +85,7 @@ for fila in cursor:
     cont+=1
 print('Conteo: ' + str(cont) + '\nPromedio: '+str(averageValue / cont))
 print('Generando gráfica de barras....')
-plt.bar(listaCampoEtiqueta, listaCampoEvaluar, color = 'darkGray')
+plt.bar(listaCampoEtiqueta, listaCampoEvaluar, color='darkGray')
 plt.title('Valores encontrados sin filtro')
 plt.xlabel('Index')
 plt.ylabel(fieldEval)
