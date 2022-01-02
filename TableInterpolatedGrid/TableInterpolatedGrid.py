@@ -29,7 +29,7 @@ fileCSVIn = absolutePath+'Data/Sample3PrecipitationAverageMonthly.csv'
 shapefileTemp = outputTemp+'TempShapefile.shp'
 colorMapStyleFolder = absolutePath+'ColorMapStyle/'
 logExecutionFle = open('TableInterpolatedGridLog.csv', 'a')
-urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/'
+urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid'
 timeStart = time.time()
 os.system('color 0E')
 arcpy.env.overwriteOutput = True
@@ -164,6 +164,18 @@ while incV <= numGrid:
     if valMinAux < minValPixelValue:
         minValPixelValue = valMinAux
         dayMonthMin = incV
+
+    # Plot and save each grid sample
+    gridImg = plt.imread(gridDayNTiff)
+    pltFig = matplotlib.pyplot.gcf()
+    pltFig.set_size_inches(6, 6)
+    plt.imshow(gridImg)
+    plt.xlabel('CX pixels')
+    plt.ylabel('CY pixels')
+    plt.title(str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png')
+    plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png', dpi=300)
+    plt.show()
+    print(urlGitHub + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png')
     incV += 1
 
 
@@ -212,7 +224,7 @@ print('\nGrids created on: ' + outputPath +
       '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
       '\nDay or Month with maximum value: ' + str(dayMonthMax) +
       '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
-      '\nValue data plot: '+urlGitHub+str(logFileNumber)+'.png' +
+      '\nValue data plot: '+urlGitHub+'/Graph/'+str(logFileNumber)+'.png' +
       '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
 from datetime import datetime
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
