@@ -403,6 +403,7 @@ while incV <= numGrid:
     plt.ylabel('CY pixels')
     plt.title(str(logFileNumber) + 'GridSampleGRDM' + incVStr.zfill(3) + '.png')
     plt.imshow(gridImg[:, :, 0], cmap=plt.cm.coolwarm)  # cmap=plt.cm.Spectral or cmap=plt.cm.hot
+    plt.colorbar()
     plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png', dpi=gridSampleResolution)
     if gridSampleScreenShow:
         plt.show()
@@ -441,6 +442,7 @@ while incV <= numGrid:
     plt.ylabel('CY pixels')
     plt.title(str(logFileNumber) + 'GridSampleGRDM' + incVStr.zfill(3) + 'ColorMap.png')
     plt.imshow(gridImg[:, :, 0], cmap=plt.cm.coolwarm)  # cmap=plt.cm.Spectral or cmap=plt.cm.hot
+    plt.colorbar()
     plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + 'ColorMap.png', dpi=gridSampleResolution)
     if gridSampleScreenShow:
         plt.show()
@@ -480,7 +482,6 @@ from datetime import datetime
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
 logExecutionFle.close()
 vExit = input("\n%s Type 'Y' to exit >> " % (rtg.systemprompt()))
-
 ```
 
 #### Script [TableInterpolatedGridModule.py](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/TableInterpolatedGridModule.py)
