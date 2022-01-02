@@ -17,7 +17,7 @@ Para representar correctamente la serie temporal de la variable en estudio y pod
 
 ### Caso de estudio
 
-Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo solar a nivel diario medio y mensual) en diferentes zonas de Colombia - Suramérica a partir de datos escalados utilizando las series de datos del [IDEAM](http://www.ideam.gov.co/).  
+Estudio de variables hidrometeorológicos (precipitación, evaporación y brillo solar a nivel diario medio y mensual) en diferentes zonas de Colombia - Suramérica a partir de datos escalados utilizando series procesadas a partir de datos registrados por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia.
 
 
 ### Requerimientos
