@@ -184,6 +184,25 @@ En las opciones de configuración de la escena para `Scene Layers` establezca la
 ![OutputColorMap.png](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Screenshot/OutputColorMap.png)
 
 
+#### Ejemplo de previsualización de log de resultados grillas de salida y gráfica de muestreo de valores mensuales
+
+[Log de resultados](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/PDF/1641141207.pdf)
+
+![Value data plot](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207.png)
+![FileGRDM001.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM001.png)
+![FileGRDM002.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM002.png)
+![FileGRDM003.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM003.png)
+![FileGRDM004.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM004.png)
+![FileGRDM005.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM005.png)
+![FileGRDM006.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM006.png)
+![FileGRDM007.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM007.png)
+![FileGRDM008.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM008.png)
+![FileGRDM009.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM009.png)
+![FileGRDM010.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM010.png)
+![FileGRDM011.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM011.png)
+![FileGRDM012.tif](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/Graph/1641141207GRDM012.png)
+
+
 ### Scripts
 
 #### Script [TableInterpolatedGrid.py](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/TableInterpolatedGrid.py)
@@ -601,6 +620,7 @@ def graphtxtonevalue(varMax, valOpt):
 * https://stackoverflow.com/questions/34165941/how-to-display-tiff-file-in-color
 * https://www.codegrepper.com/code-examples/python/python+2.7+datetime+to+timestamp
 * https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
+* https://www.tutorialspoint.com/how-to-clear-the-memory-completely-of-all-matplotlib-plots
 
 
 ### Autores

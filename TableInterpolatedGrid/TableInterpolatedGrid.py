@@ -177,6 +177,7 @@ while incV <= numGrid:
     plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png', dpi=300)
     if gridSampleScreenShow:
         plt.show()
+    plt.close()
     print(urlGitHub + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png')
     incV += 1
 
@@ -203,6 +204,7 @@ while incV <= numGrid:
     print('File color map ' + gridDayNFileName + ' - Ok...')
     incV += 1
 
+
 # General plot
 pltFig = matplotlib.pyplot.gcf()
 pltFig.set_size_inches(12, 6)
@@ -212,8 +214,10 @@ plt.xlabel('Record #')
 plt.ylabel('Var')
 plt.title('Current values over the CSV file for the selected Var\nLog #: '+str(logFileNumber))
 plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'PlotBar.png', dpi=300)
-plt.show()
-print()
+if gridSampleScreenShow:
+    plt.show()
+plt.close()
+
 
 # Show final process resume
 timeEnd = time.time()
@@ -231,4 +235,4 @@ print('\nGrids created on: ' + outputPath +
 from datetime import datetime
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
 logExecutionFle.close()
-vExit = input("\n%s Type 'Y' to exit..." % (rtg.systemprompt()))
+vExit = input("\n%s Type 'Y' to exit >> " % (rtg.systemprompt()))
