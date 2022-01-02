@@ -261,6 +261,7 @@ timeStart = time.time()
 os.system('color 0E')
 arcpy.env.overwriteOutput = True
 gridSampleScreenShow = False
+gridSampleResolution = 96  # dpi
 
 # Header
 rtg.printtitle('Spatial interpolation and representation of meteorological data in a unique symbology ramp', 'both', False)
@@ -401,7 +402,8 @@ while incV <= numGrid:
     plt.xlabel('CX pixels')
     plt.ylabel('CY pixels')
     plt.title(str(logFileNumber) + 'GridSampleGRDM' + incVStr.zfill(3) + '.png')
-    plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png', dpi=300)
+    plt.imshow(gridImg[:, :, 0], cmap=plt.cm.coolwarm)  # cmap=plt.cm.Spectral or cmap=plt.cm.hot
+    plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + '.png', dpi=gridSampleResolution)
     if gridSampleScreenShow:
         plt.show()
     plt.close()
@@ -429,6 +431,21 @@ while incV <= numGrid:
     arcpy.gp.RasterCalculator_sa(vAlgebraMapClc, gridDayNTiffTarget)
     arcpy.AddColormap_management(gridDayNTiffTarget, '', colorMapFile)
     print('File color map ' + gridDayNFileName + ' - Ok...')
+
+    # Plot and save each color map grid sample
+    gridImg = plt.imread(gridDayNTiffTarget)
+    pltFig = matplotlib.pyplot.gcf()
+    pltFig.set_size_inches(6, 6)
+    plt.imshow(gridImg)
+    plt.xlabel('CX pixels')
+    plt.ylabel('CY pixels')
+    plt.title(str(logFileNumber) + 'GridSampleGRDM' + incVStr.zfill(3) + 'ColorMap.png')
+    plt.imshow(gridImg[:, :, 0], cmap=plt.cm.coolwarm)  # cmap=plt.cm.Spectral or cmap=plt.cm.hot
+    plt.savefig(absolutePath + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + 'ColorMap.png', dpi=gridSampleResolution)
+    if gridSampleScreenShow:
+        plt.show()
+    plt.close()
+    print(urlGitHub + '/Graph/' + str(logFileNumber) + 'GRDM' + incVStr.zfill(3) + 'ColorMap.png')
     incV += 1
 
 
@@ -440,7 +457,7 @@ plt.bar(StatisticCSV[7], StatisticCSV[8], color='k')
 plt.xlabel('Record #')
 plt.ylabel('Var')
 plt.title('Current values over the CSV file for the selected Var\nLog #: '+str(logFileNumber))
-plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'PlotBar.png', dpi=300)
+plt.savefig(absolutePath+'/Graph/'+str(logFileNumber)+'PlotBar.png', dpi=gridSampleResolution)
 if gridSampleScreenShow:
     plt.show()
 plt.close()
@@ -456,13 +473,14 @@ print('\nGrids created on: ' + outputPath +
       '\nMaximum pixel value all grids: ' + str(round(maxValPixelValue, 4)) +
       '\nArcScene Z Scale conversion: ' + str(round((maxValPixelValue/colorMapFileColors), 6)) +
       '\nDay or Month with maximum value: ' + str(dayMonthMax) +
-      '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + 'PlotBar.pdf' +
-      '\nValue data plot: '+urlGitHub+'/Graph/'+str(logFileNumber)+'.png' +
+      '\nManual print PDF as: ' + absolutePath+ '/PDF/' + str(logFileNumber) + '.pdf' +
+      '\nValue data plot: '+urlGitHub+'/Graph/'+str(logFileNumber)+'PlotBar.png' +
       '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
 from datetime import datetime
 logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
 logExecutionFle.close()
 vExit = input("\n%s Type 'Y' to exit >> " % (rtg.systemprompt()))
+
 ```
 
 #### Script [TableInterpolatedGridModule.py](https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid/TableInterpolatedGridModule.py)
