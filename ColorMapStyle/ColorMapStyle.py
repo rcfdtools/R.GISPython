@@ -4,9 +4,12 @@ def colorrgb(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
 # Variables
-printCutOnScreen = False
-numColor = 1024
-baseRGBColors = [[0, 55, 175],
+filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
+numColor = 512
+styleNumber = 13
+fileName = filePath+'/Output/ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)+'.clr'
+fileColorName = open(fileName, 'w+')
+baseRGBColors = [[0, 55, 75],
                  [0, 31, 89],
                  [0, 45, 116],
                  [20, 17, 87],
@@ -29,7 +32,7 @@ baseRGBColors = [[0, 55, 175],
 cutRamp = len(baseRGBColors)-1
 discreteCutValue = int(numColor / (cutRamp))
 moduleEval = numColor%cutRamp
-
+printCutOnScreen = False
 
 # Header
 print('\nColors: ' + str(numColor) +
@@ -59,9 +62,14 @@ while i < cutRamp:
         print('Green color from ' + str(greenColorFrom) + ' To ' + str(greenColorTo) + ' with ' + str(greenColorJump) + ' variation')
         print('Blue color from ' + str(blueColorFrom) + ' To ' + str(blueColorTo) + ' with ' + str(blueColorJump) + ' variation')
     for j in range(1, discreteCutValue+1):
-        printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorRampValue)).zfill(3) + ' ' + str(int(greenColorRampValue)).zfill(3) + ' ' + str(int(blueColorRampValue)).zfill(3)
+        if iAux == numColor-1:
+            printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorTo)).zfill(3) + ' ' + str(int(greenColorTo)).zfill(3) + ' ' + str(int(blueColorTo)).zfill(3)
+        else:
+            printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorRampValue)).zfill(3) + ' ' + str(
+                int(greenColorRampValue)).zfill(3) + ' ' + str(int(blueColorRampValue)).zfill(3)
         printSample = ' ■■■■■■■■■■■'
         print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
+        fileColorName.write(printTxt + '\n')
         if redColorFrom < redColorTo:
             redColorRampValue += redColorJump
             if redColorRampValue > redColorTo:
@@ -88,7 +96,14 @@ while i < cutRamp:
                 blueColorRampValue = blueColorFrom
         iAux += 1
     if moduleEval >= 1 and iAux < numColor:
-        printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorRampValue)).zfill(3) + ' ' + str(int(greenColorRampValue)).zfill(3) + ' ' + str(int(blueColorRampValue)).zfill(3) + ' cut'
-        print(printTxt)
+        if iAux == numColor-1:
+            printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorTo)).zfill(3) + ' ' + str(int(greenColorTo)).zfill(3) + ' ' + str(int(blueColorTo)).zfill(3)
+        else:
+            printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorRampValue)).zfill(3) + ' ' + str(
+                int(greenColorRampValue)).zfill(3) + ' ' + str(int(blueColorRampValue)).zfill(3)
+        printSample = ' ■■■■■■■■■■■'
+        print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
+        fileColorName.write(printTxt + '\n')
         iAux += 1
     i += 1
+fileColorName.close()

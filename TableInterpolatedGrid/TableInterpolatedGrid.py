@@ -28,7 +28,7 @@ outputTemp = absolutePath+'Temp/'
 fileCSVIn = absolutePath+'Data/Sample3PrecipitationAverageMonthly.csv'
 shapefileTemp = outputTemp+'TempShapefile.shp'
 colorMapStyleFolder = absolutePath+'ColorMapStyle/'
-logExecutionFle = open('TableInterpolatedGridLog.csv', 'a')
+logExecutionFile = open('TableInterpolatedGridLog.csv', 'a')
 urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/TableInterpolatedGrid'
 timeStart = time.time()
 os.system('color 0E')
@@ -252,6 +252,6 @@ print('\nGrids created on: ' + outputPath +
       '\nValue data plot: '+urlGitHub+'/Graph/'+str(logFileNumber)+'PlotBar.png' +
       '\nProcess accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')
 from datetime import datetime
-logExecutionFle.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
-logExecutionFle.close()
+logExecutionFile.write(str(logFileNumber) + ',' + str(datetime.now()) + ',' + fileCSVIn + ',"' + str(studyCase) + '"\n')
+logExecutionFile.close()
 vExit = input("\n%s Type 'Y' to exit >> " % (rtg.systemprompt()))

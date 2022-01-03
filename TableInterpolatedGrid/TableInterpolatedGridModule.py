@@ -299,8 +299,8 @@ def colormapstyle(folderColorMapStyle):
         print(str((colorMapStyleArray[j, 0]).zfill(2)) + ' ' + str((colorMapStyleArray[j, 1].zfill(4))) + ' ' + colorMapStyleArray[j, 2])
     colorMapFileOpt = optionrange('Ramp color number', 0, (colorMapStyleCount-1))
     colorMapFileColors = colorMapStyleArray[colorMapFileOpt, 1]
-    colorMapFile = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'_v'+str(colorMapFileOpt)+'.clr'
-    colorMapFilePrev = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'_v'+str(colorMapFileOpt)+'.jpg'
+    colorMapFile = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'s'+str(colorMapFileOpt)+'.clr'
+    colorMapFilePrev = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'s'+str(colorMapFileOpt)+'.jpg'
     print('\nColor map file:', colorMapFile)
     print('Color map sample:', colorMapFilePrev)
     return (colorMapFile, colorMapFilePrev, colorMapFileColors)
