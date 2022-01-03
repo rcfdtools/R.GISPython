@@ -1,44 +1,32 @@
 
+# Libraries
+import ColorMapStyleValue as cmsv
+from datetime import datetime
+
 # Python rgb color changing text function
 def colorrgb(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
 # Variables
+baseRGBColors = cmsv.ColorMapArcGISs13  # Style values from ColorMapStyleValue.py
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 numColor = 512
 styleNumber = 13
 fileName = filePath+'/Output/ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)+'.clr'
+urlGitHub = ''
 fileColorName = open(fileName, 'w+')
-baseRGBColors = [[0, 55, 75],
-                 [0, 31, 89],
-                 [0, 45, 116],
-                 [20, 17, 87],
-                 [38, 116, 109],
-                 [80, 21, 124],
-                 [111, 29, 144],
-                 [137, 37, 112],
-                 [169, 40, 88],
-                 [216, 52, 61],
-                 [254, 78, 38],
-                 [38, 116, 109],
-                 [254, 107, 75],
-                 [255, 139, 84],
-                 [255, 170, 124],
-                 [255, 201, 124],
-                 [254, 216, 167],
-                 [253, 228, 167],
-                 [253, 241, 208],
-                 [255, 252, 219]]
 cutRamp = len(baseRGBColors)-1
 discreteCutValue = int(numColor / (cutRamp))
-moduleEval = numColor%cutRamp
+moduleEval = numColor % cutRamp
 printCutOnScreen = False
 
 # Header
-print('\nColors: ' + str(numColor) +
+print('\nDate: ' + str(datetime.utcnow()) +
+      '\nColors: ' + str(numColor) +
       '\nCuts: ' + str(cutRamp) +
-      '\nModule: ' + str(numColor%cutRamp) +
-      '\nColors per cut: '+ str(discreteCutValue) + '\n')
+      '\nModule operator: ' + str(numColor%cutRamp) +
+      '\nColors per cut: '+ str(discreteCutValue) +
+      '\nOutput file: '+ str(fileName) + '\n')
 
 # Calculation
 i = 0
