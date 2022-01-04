@@ -8,7 +8,7 @@
 * Name: ColorMap12
 * RGB Color values: 20
 * Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow
-* Deep (.clr): 
+* Deep color file (.clr): 
 [512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s12.clr)
 [1024, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.clr)
 [2048.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s12.clr)
