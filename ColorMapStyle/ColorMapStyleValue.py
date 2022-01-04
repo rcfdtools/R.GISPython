@@ -44,7 +44,7 @@ ColorMap5 = [[97, 169, 220],
              [254, 205, 130]]
 
 # Style 6
-# Name: Laser print
+# Name: ColorMap6 - Laser print
 # RGB Color values: 7
 # Colors: Orange - Light BLue - Magenta - Dark Blue - Yellow - Green - Red
 # Deep: 256, 512, 1024

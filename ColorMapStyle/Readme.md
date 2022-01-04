@@ -84,6 +84,24 @@
 ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s5.png)
 
 
+### Style 6
+
+* Name: ColorMap6 - Laser print
+* RGB Color values: 7
+* Colors: Orange - Light BLue - Magenta - Dark Blue - Yellow - Green - Red
+* Deep color file (.clr):
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s6.clr)
+[512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s6.clr)
+[1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s6.clr)
+* Log de ejecución (.pdf): 
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s6.pdf)
+[512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s6.pdf)
+[1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s6.pdf)
+
+![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s6.png)
+![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s6.png)
+
+
 ### Style 12
 
 * Name: ColorMap12
