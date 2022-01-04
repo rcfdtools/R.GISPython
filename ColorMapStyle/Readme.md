@@ -7,14 +7,14 @@
 
 * Name:
 * Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow
-* Deep: 
-[ColorMapArcGIS512s12.clr, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s12.clr)
-[ColorMapArcGIS1024s12, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.clr)
-[ColorMapArcGIS2048s12](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s12.clr)
-* Log de ejecución: 
-[ColorMapArcGIS512s12.pdf, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s12.pdf)
-[ColorMapArcGIS1024s12.pdf, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.pdf)
-[ColorMapArcGIS2048s12.pdf, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s12.pdf)
+* Deep .clr: 
+[512  ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s12.clr)
+[1024  ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.clr)
+[2048  ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s12.clr)
+* Log de ejecución .pdf: 
+[512  ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s12.pdf)
+[1024  ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.pdf)
+[2048  ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s12.pdf)
 
 Previsualización
 
