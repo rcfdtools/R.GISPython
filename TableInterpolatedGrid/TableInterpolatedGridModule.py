@@ -289,7 +289,7 @@ def colormapstyle(folderColorMapStyle):
         (9, 256, 'Lila - Khaki - Blue (x15)'),
         (10, 256, 'Lila - Khaki - Blue (x13)'),
         (11, 256, 'Yellow - Pink - Green - Blue'),
-        (12, 256, 'Gray - Aquamarina - Sea Blue'),
+        (12, 256, 'Gray - Aquamarine - Sea Blue'),
         (13, 512, 'Green Sea - Blue Sea - Purple - Red - Orange - Yellow (x20)'),
         (14, 1024, 'Dark Pink - Mercury - Lime - Green (x13)')])
     colorMapStyleCount = len(colorMapStyleArray)

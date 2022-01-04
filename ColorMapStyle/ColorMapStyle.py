@@ -33,11 +33,14 @@ def printtitle(titleText, titleType = 'both', showTab = False):
         print(tabTxt + titleText)
         print(tabTxt + nc * valLen)
 
+def printfloat(n, decimals=3):
+    print(f"{n:.{decimals}f}")
+
 # Variables
-baseRGBColors = cmsv.ColorMap13  # Style values from ColorMapStyleValue.py
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
-numColor = 1024
-styleNumber = 13
+baseRGBColors = cmsv.ColorMap12  # Style values from ColorMapStyleValue.py
+styleNumber = 12
+numColor = 2048
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
 urlGitHub = 'https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle'
@@ -47,11 +50,12 @@ discreteCutValue = int(numColor/cutRamp)
 moduleEval = numColor % cutRamp
 xVal, yVal, pyRBG = [], [], []
 printCutOnScreen = False
+printPyRGBOnScreen = True
 
 # Header
 printtitle('Color ramp style generator', 'both', False)
 print('\nExecution date & time: ' + str(datetime.now()) +
-      '\nScript compatibility: Python 2, Python 3'
+      '\nScript compatibility: Python 3'
       '\nPython version: ' + str(sys.version) +
       '\nPython path: ' + str(sys.path[0:5]) +
       '\nmatplotlib version: ' + str(matplotlib.__version__) +
@@ -67,7 +71,7 @@ print('\nReference style #: ' + str(styleNumber) +
       '\nModule operator: ' + str(numColor % cutRamp) +
       '\nColors per cut: ' + str(discreteCutValue) +
       '\nOutput file: ' + str(fileNameOutput) +
-      '\nGitHub: ' + urlGitHub + '/Output/' + str(fileName) + '.clr\n' +
+      '\nGitHub: ' + urlGitHub + '/Output/' + str(fileName) + '.clr' +
       '\nGitHub sample: ' + urlGitHub + '/Output/' + str(fileName) + '.png\n')
 
 printtitle('Reference RGB color values')
@@ -130,7 +134,8 @@ while i < cutRamp:
                 blueColorRampValue -= blueColorJump
                 if blueColorRampValue > blueColorFrom:
                     blueColorRampValue = blueColorFrom
-            pyRBG.append((redColorRampValue/255.00000001, greenColorRampValue/255.00000001, blueColorRampValue/255.00000001))
+            pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
+                          abs(blueColorRampValue / 255.00000001)))
             iAux += 1
     if moduleEval >= 1 and iAux < numColor:
         if iAux == numColor-1:
@@ -141,7 +146,8 @@ while i < cutRamp:
         printSample = ' ■■■■■■■■■■■'
         print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
         fileColorName.write(printTxt + '\n')
-        pyRBG.append((redColorRampValue/255.00000001, greenColorRampValue/255.00000001, blueColorRampValue/255.00000001))
+        pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
+                      abs(blueColorRampValue / 255.00000001)))
         iAux += 1
     i += 1
 fileColorName.close()
@@ -149,8 +155,13 @@ print('\n')
 
 # Matplotlib sample
 printtitle('Matplotlib color style sample')
-
-print('\n' + str(pyRBG))
+if printPyRGBOnScreen:
+    print('\nPython value conversion')
+    print('#    pyR   pyG   pyB')
+    iAux = 1
+    for i in pyRBG:
+        print(str(iAux).zfill(4) + ' ' + (f'{round(i[0],3):.3f}') + ' ' + str(f'{round(i[1],3):.3f}') + ' ' + str(f'{round(i[2],3):.3f}'))
+        iAux += 1
 for i in range(1,numColor+1):
     xVal.append(-i)
     yVal.append(1)
