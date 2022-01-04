@@ -34,7 +34,7 @@ ColorMap4 = [[97, 169, 220],
              [83, 193, 177]]
 
 # Style 5
-# Name: Pantone 4
+# Name: ColorMap5 - Pantone 4
 # RGB Color values: 4
 # Colors: Blue - Red - Green - Yellow
 # Deep: 256, 512
