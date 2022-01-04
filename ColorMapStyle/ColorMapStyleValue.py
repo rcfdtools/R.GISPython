@@ -17,7 +17,7 @@ ColorMap2 = [[0, 0, 0],
               [255, 255, 255]]
 
 # Style 3
-# Name: Pantone 2
+# Name: ColorMap3 - Pantone 2
 # RGB Color values: 2
 # Colors: Blue - Red
 # Deep: 128, 256
