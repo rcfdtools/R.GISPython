@@ -3,6 +3,23 @@
 
 ## Rampas disponibles
 
+
+### Style 1
+
+* Name: ColorMap1 - Grayscale
+* RGB Color values: 2
+* Colors: White - Black
+* Deep color file (.clr): 
+[128, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS128s1.clr)
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s1.clr)
+* Log de ejecución (.pdf): 
+[128, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS128s1.pdf)
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s1.pdf)
+
+![128](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s1.png)
+![256](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s1.png)
+
+
 ### Style 12
 
 * Name: ColorMap12

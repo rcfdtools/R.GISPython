@@ -38,9 +38,9 @@ def printfloat(n, decimals=3):
 
 # Variables
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
-baseRGBColors = cmsv.ColorMap12  # Style values from ColorMapStyleValue.py
-styleNumber = 12
-numColor = 512
+baseRGBColors = cmsv.ColorMap1  # Style values from ColorMapStyleValue.py
+styleNumber = 1
+numColor = 256
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
 urlGitHub = 'https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle'
