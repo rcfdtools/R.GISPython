@@ -140,7 +140,7 @@ ColorMap11 = [[174, 176, 145],
              [199, 67, 151]]
 
 # Style 12 (x20)
-# Name:
+# Name: ColorMap12
 # Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow
 # Deep: 512, 1024, 2048
 ColorMap12 = [[164, 203, 194],
