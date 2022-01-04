@@ -37,8 +37,8 @@ def printfloat(n, decimals=3):
     print(f"{n:.{decimals}f}")
 
 # Variables
-baseRGBColors = cmsv.ColorMap3  # User change ✅. Style values from ColorMapStyleValue.py
-styleNumber = 3  # User change ✅
+baseRGBColors = cmsv.ColorMap4  # User change ✅. Style values from ColorMapStyleValue.py
+styleNumber = 4  # User change ✅
 numColor = 256  # User change ✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)

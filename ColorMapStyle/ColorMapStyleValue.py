@@ -25,7 +25,7 @@ ColorMap3 = [[97, 169, 220],
              [211, 108, 118]]
 
 # Style 4
-# Name: Pantone 3
+# Name: ColorMap4 - Pantone 3
 # RGB Color values: 3
 # Colors: Blue - Red - Green
 # Deep: 128, 256
