@@ -896,6 +896,7 @@ def graphtxtonevalue(varMax, valOpt):
 * https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
 * https://www.tutorialspoint.com/how-to-clear-the-memory-completely-of-all-matplotlib-plots
 * https://matplotlib.org/stable/gallery/shapes_and_collections/ellipse_collection.html#sphx-glr-gallery-shapes-and-collections-ellipse-collection-py
+* https://matplotlib.org/stable/tutorials/colors/colormaps.html
 
 
 ### Autores
