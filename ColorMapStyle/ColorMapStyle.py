@@ -40,7 +40,7 @@ def printfloat(n, decimals=3):
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 baseRGBColors = cmsv.ColorMap12  # Style values from ColorMapStyleValue.py
 styleNumber = 12
-numColor = 2048
+numColor = 512
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
 urlGitHub = 'https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle'
@@ -49,6 +49,7 @@ cutRamp = len(baseRGBColors)-1
 discreteCutValue = int(numColor/cutRamp)
 moduleEval = numColor % cutRamp
 xVal, yVal, pyRBG = [], [], []
+rgbSampleResolution = 96
 printCutOnScreen = False
 printPyRGBOnScreen = True
 
@@ -166,11 +167,12 @@ for i in range(1,numColor+1):
     xVal.append(-i)
     yVal.append(1)
 matplotlib.rcParams.update({'font.size': 8})
-plt.figure(figsize=(4, 6), dpi=100 )
+plt.figure(figsize=(5, 6), dpi=rgbSampleResolution)
 plt.box(False)
 plt.xticks([])
-plt.title(fileName+'.clr')
+plt.title(fileName+'.clr' + '\n' + urlGitHub)
 plt.tight_layout(pad=1.5)
+plt.yticks([0, -numColor/4, -numColor/2, -numColor*3/4, -numColor])
 plt.barh(xVal, yVal, color=pyRBG, height=1, align='center')
 plt.savefig(filePath+'/Output/'+fileName+'.png')
 plt.show()
