@@ -102,7 +102,7 @@ ColorMap9 = [[174, 104, 157],
               [124, 199, 57]]
 
 # Style 10
-# Name: HKS Color
+# Name: ColorMap10 - HKS Color
 # RGB Color values: 15
 # Colors: Green to yellow to red
 # Deep: 256, 512, 1024
@@ -123,7 +123,7 @@ ColorMap10 = [[174, 176, 145],
              [248, 127, 119]]
 
 # Style 11
-# Name: HKS Colors Extend
+# Name: ColorMap11 - HKS Colors Extend
 # RGB Color values: 22
 # Colors: Green to yellow to red to purple
 # Deep: 256, 512, 1024, 2048
