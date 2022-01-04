@@ -102,6 +102,25 @@
 ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s6.png)
 
 
+### Style 7
+
+* Name: ColorMap7
+* RGB Color values: 7
+* Colors: Yellow - Pink - Green - Blue
+* Deep color file (.clr):
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s7.clr)
+[512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s7.clr)
+[1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s7.clr)
+* Log de ejecución (.pdf): 
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s7.pdf)
+[512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s7.pdf)
+[1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s7.pdf)
+
+![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s7.png)
+![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s7.png)
+
+
+
 ### Style 12
 
 * Name: ColorMap12
