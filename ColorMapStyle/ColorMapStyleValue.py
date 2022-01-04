@@ -9,7 +9,7 @@ ColorMap1 = [[255, 255, 255],
               [0, 0, 0]]
 
 # Style 2
-# Name: Grayscale invert
+# Name: ColorMap2 - Grayscale invert
 # RGB Color values: 2
 # Colors: Black - White
 # Deep: 128, 256
