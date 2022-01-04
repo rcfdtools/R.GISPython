@@ -1,27 +1,31 @@
 # Color map style arrays
 
-# Style 1 (x2)
+# Style 1
+# RGB Color values: 2
 # Name: Grayscale
 # Colors: White - Black
 # Deep: 256
 ColorMap1 = [[255, 255, 255],
               [0, 0, 0]]
 
-# Style 2 (x2)
+# Style 2
+# RGB Color values: 2
 # Name: Grayscale invert
 # Colors: Black - White
 # Deep: 256
 ColorMap2 = [[0, 0, 0],
               [255, 255, 255]]
 
-# Style 3 (x2)
+# Style 3
+# RGB Color values: 2
 # Name: Pantone 2
 # Colors: Blue - Red
 # Deep: 256
 ColorMap3 = [[97, 169, 220],
              [211, 108, 118]]
 
-# Style 4 (x3)
+# Style 4
+# RGB Color values: 3
 # Name: Pantone 3
 # Colors: Blue - Red - Green
 # Deep: 256
@@ -29,7 +33,8 @@ ColorMap4 = [[97, 169, 220],
              [211, 108, 118],
              [83, 193, 177]]
 
-# Style 5 (x4)
+# Style 5
+# RGB Color values: 4
 # Name: Pantone 4
 # Colors: Blue - Red - Green - Yellow
 # Deep: 256, 512
@@ -38,7 +43,8 @@ ColorMap5 = [[97, 169, 220],
              [83, 193, 177],
              [254, 205, 130]]
 
-# Style 6 (x7)
+# Style 6
+# RGB Color values: 7
 # Name: Laser print
 # Colors: Orange - Light BLue - Magenta - Dark Blue - Yellow - Green - Red
 # Deep: 256, 512, 1024
@@ -50,7 +56,8 @@ ColorMap6 = [[245, 134, 52],
              [0, 168, 89],
              [237, 50, 55]]
 
-# Style 7 (x7)
+# Style 7
+# RGB Color values: 7
 # Name:
 # Colors: Yellow - Pink - Green - Blue
 # Deep: 256, 512, 1024
@@ -62,8 +69,9 @@ ColorMap7 = [[204, 204, 0],
              [0, 102, 204],
              [0, 0, 255]]
 
-# Style 8 (x7)
-# Name:
+# Style 8
+# RGB Color values: 7
+# Name: ColorMap9
 # Colors: Gray - Aquamarine - Sea Blue
 # Deep: 256, 512, 1024
 ColorMap8 = [[224, 224, 224],
@@ -74,8 +82,9 @@ ColorMap8 = [[224, 224, 224],
              [0, 102, 102],
              [0, 76, 153]]
 
-# Style 9 (x13)
-# Name:
+# Style 9
+# RGB Color values: 13
+# Name: ColorMap9
 # Colors: Dark Pink - Mercury - Lime - Green
 # Deep: 256, 512, 1024
 ColorMap9 = [[174, 104, 157],
@@ -92,8 +101,9 @@ ColorMap9 = [[174, 104, 157],
               [170, 216, 47],
               [124, 199, 57]]
 
-# Style 10 (x15)
-# Name: HKS Colors
+# Style 10
+# RGB Color values: 15
+# Name: HKS Color
 # Colors: Green to yellow to red
 # Deep: 256, 512, 1024
 ColorMap10 = [[174, 176, 145],
@@ -112,7 +122,8 @@ ColorMap10 = [[174, 176, 145],
              [255, 155, 129],
              [248, 127, 119]]
 
-# Style 11 (x22)
+# Style 11
+# RGB Color values: 22
 # Name: HKS Colors Extend
 # Colors: Green to yellow to red to purple
 # Deep: 256, 512, 1024, 2048
@@ -139,7 +150,8 @@ ColorMap11 = [[174, 176, 145],
              [211, 73, 143],
              [199, 67, 151]]
 
-# Style 12 (x20)
+# Style 12
+# RGB Color values: 20
 # Name: ColorMap12
 # Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow
 # Deep: 512, 1024, 2048
