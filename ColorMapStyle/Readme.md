@@ -12,3 +12,4 @@
 * https://matplotlib.org/stable/tutorials/colors/colors.html
 * https://stackoverflow.com/questions/14908576/how-to-remove-frame-from-matplotlib-pyplot-figure-vs-matplotlib-figure-frame
 * https://stackoverflow.com/questions/4042192/reduce-left-and-right-margins-in-matplotlib-plot
+* https://stackoverflow.com/questions/3899980/how-to-change-the-font-size-on-a-matplotlib-plot

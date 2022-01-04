@@ -243,6 +243,7 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 * https://packaging.python.org/en/latest/tutorials/installing-packages/
 * https://matplotlib.org/stable/gallery/color/named_colors.html
+* https://stackoverflow.com/questions/3899980/how-to-change-the-font-size-on-a-matplotlib-plot
 
 
 ### Autores

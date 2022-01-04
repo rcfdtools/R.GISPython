@@ -154,6 +154,7 @@ print('\n' + str(pyRBG))
 for i in range(1,numColor+1):
     xVal.append(-i)
     yVal.append(1)
+matplotlib.rcParams.update({'font.size': 8})
 plt.figure(figsize=(4, 6), dpi=100 )
 plt.box(False)
 plt.xticks([])
