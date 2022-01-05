@@ -1,7 +1,7 @@
 ## Color ramp style generator - Reference style # 11
 ![ColorMapArcGIS256s11.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s11.png)
 
-* Execution date & time: 2022-01-05 11:01:13.795574
+* Execution date & time: 2022-01-05 11:04:25.168260
 * Script compatibility: Python 3
 * Python version: 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]
 * Python path: ['D:\\R.GISPython\\ColorMapStyle', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Python310\\python310.zip', 'C:\\Python310\\DLLs']
