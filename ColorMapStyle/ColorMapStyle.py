@@ -46,7 +46,7 @@ def printlog(txtPrint, onScreen=True):
 # Variables
 baseRGBColors = cmsv.ColorMap11  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
 styleNumber = 11  # ✅✅✅ User can change ✅✅✅
-numColor = 2048  # ✅✅✅ User can change ✅✅✅
+numColor = 256  # ✅✅✅ User can change ✅✅✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
@@ -58,11 +58,11 @@ discreteCutValue = int(numColor/cutRamp)
 moduleEval = numColor % cutRamp
 xVal, yVal, pyRBG = [], [], []
 rgbSampleResolution = 96
-printCutOnScreen = False
-printPyRGBOnScreen = True
+printCutOnScreen = False  # Only for code review and not for print
+printPyRGBOnScreen = False
 
 # Header
-printlog('## Color ramp style generator')
+printlog('## Color ramp style generator - Reference style #: ' + str(styleNumber))
 printlog('\n* Execution date & time: ' + str(datetime.now()) +
          '\n* Script compatibility: Python 3'
          '\n* Python version: ' + str(sys.version) +
@@ -84,7 +84,7 @@ printlog('\n* Reference style #: ' + str(styleNumber) +
          '\n* GitHub sample: ' + urlGitHub + '/Output/' + str(fileName) + '.png\n')
 
 printlog('### Reference RGB color values\n')
-printlog('| R | G | B |')
+printlog('| R   | G   | B   |')
 tableseparatormarkdown(3)
 for i in baseRGBColors:
     printlog('| '+ str(i[0]).zfill(3) + ' | ' + str(i[0]).zfill(3) + ' | ' + str(i[0]).zfill(3) + ' |')
@@ -93,7 +93,9 @@ printlog('\n')
 # Calculation
 i = 0
 iAux = 0
-printtitle('#    R   G   B   Sample')
+printlog('| #    | R    | G   | B   | Cut |', False)
+print('| #    | R    | G   | B   | Sample          |')
+tableseparatormarkdown(5)
 while i < cutRamp:
     redColorFrom = baseRGBColors[i][0]
     redColorTo = baseRGBColors[i+1][0]
@@ -107,19 +109,20 @@ while i < cutRamp:
     blueColorTo = baseRGBColors[i+1][2]
     blueColorJump = abs((blueColorFrom-blueColorTo)/discreteCutValue)
     blueColorRampValue = blueColorFrom
-    if printCutOnScreen:
+    if printCutOnScreen: # Only for code review and not for print
         print('Red color from ' + str(redColorFrom) + ' To ' + str(redColorTo) + ' with ' + str(redColorJump) + ' variation')
         print('Green color from ' + str(greenColorFrom) + ' To ' + str(greenColorTo) + ' with ' + str(greenColorJump) + ' variation')
         print('Blue color from ' + str(blueColorFrom) + ' To ' + str(blueColorTo) + ' with ' + str(blueColorJump) + ' variation')
     for j in range(1, discreteCutValue+1):
         if iAux < numColor:
             if iAux == numColor-1:
-                printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorTo)).zfill(3) + ' ' + str(int(greenColorTo)).zfill(3) + ' ' + str(int(blueColorTo)).zfill(3)
+                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(int(greenColorTo)).zfill(3) + ' | ' + str(int(blueColorTo)).zfill(3) + ' |'
             else:
-                printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorRampValue)).zfill(3) + ' ' + str(
-                    int(greenColorRampValue)).zfill(3) + ' ' + str(int(blueColorRampValue)).zfill(3)
+                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(
+                    int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
             printSample = ' ■■■■■■■■■■■'
-            print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
+            print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + ' |')
+            printlog(printTxt, False)
             fileColorName.write(printTxt + '\n')
             if redColorFrom < redColorTo:
                 redColorRampValue += redColorJump
@@ -149,13 +152,15 @@ while i < cutRamp:
                           abs(blueColorRampValue / 255.00000001)))
             iAux += 1
     if moduleEval >= 1 and iAux < numColor:
-        if iAux == numColor-1:
-            printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorTo)).zfill(3) + ' ' + str(int(greenColorTo)).zfill(3) + ' ' + str(int(blueColorTo)).zfill(3)
+        if iAux == numColor - 1:
+            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(
+                int(greenColorTo)).zfill(3) + ' | ' + str(int(blueColorTo)).zfill(3) + ' |'
         else:
-            printTxt = str(iAux).zfill(4) + ' ' + str(int(redColorRampValue)).zfill(3) + ' ' + str(
-                int(greenColorRampValue)).zfill(3) + ' ' + str(int(blueColorRampValue)).zfill(3)
+            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(
+                int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
         printSample = ' ■■■■■■■■■■■'
-        print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
+        print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut |')
+        printlog(printTxt, False)
         fileColorName.write(printTxt + '\n')
         pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
                       abs(blueColorRampValue / 255.00000001)))
