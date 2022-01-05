@@ -46,7 +46,7 @@ def printlog(txtPrint, onScreen=True):
 # Variables
 baseRGBColors = cmsv.ColorMap13  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
 styleNumber = 13  # ✅✅✅ User can change ✅✅✅
-numColor = 512  # ✅✅✅ User can change ✅✅✅
+numColor = 16000  # ✅✅✅ User can change ✅✅✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
@@ -90,7 +90,7 @@ printlog('| #    | R   | G   | B   |')
 tableseparatormarkdown(4)
 iAux = 0
 for i in baseRGBColors:
-    printlog('| ' + str(iAux).zfill(4) + ' | ' + str(i[0]).zfill(3) + ' | ' + str(i[1]).zfill(3) + ' | ' + str(i[2]).zfill(3) + ' |')
+    printlog('| ' + str(iAux) + ' | ' + str(i[0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
     iAux += 1
 printlog('\n')
 
@@ -122,13 +122,14 @@ while i < cutRamp:
         if iAux < numColor:
             if iAux == numColor-1:
                 printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorTo)) + ' | ' + str(int(greenColorTo)) + ' | ' + str(int(blueColorTo)) + ' |'
+                printTxtMd = str(iAux) + ' ' + str(int(redColorTo)) + ' ' + str(int(greenColorTo)) + ' ' + str(int(blueColorTo))
             else:
-                printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(
-                    int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
+                printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
+                printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
             printSample = ' ■■■■■■■■■■■'
             print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
             printlog(printTxt, False)
-            fileColorName.write(printTxt + '\n')
+            fileColorName.write(printTxtMd + '\n')
             if redColorFrom < redColorTo:
                 redColorRampValue += redColorJump
                 if redColorRampValue > redColorTo:
@@ -158,15 +159,17 @@ while i < cutRamp:
             iAux += 1
     if moduleEval >= 1 and iAux < numColor:
         if iAux == numColor - 1:
-            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorTo)) + ' | ' + str(
-                int(greenColorTo)) + ' | ' + str(int(blueColorTo)) + ' |'
+            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorTo)) + ' | ' + str(int(greenColorTo)) + ' | ' + str(
+                int(blueColorTo)) + ' |'
+            printTxtMd = str(iAux) + ' ' + str(int(redColorTo)) + ' ' + str(int(greenColorTo)) + ' ' + str(
+                int(blueColorTo))
         else:
-            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(
-                int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
+            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
+            printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
         printSample = ' ■■■■■■■■■■■'
         print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
         printlog(printTxt + str(i+1) + ' cut |', False)
-        fileColorName.write(printTxt + '\n')
+        fileColorName.write(printTxtMd + '\n')
         pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
                       abs(blueColorRampValue / 255.00000001)))
         iAux += 1
@@ -182,7 +185,7 @@ if printPyRGBOnScreen:
     tableseparatormarkdown(n=4)
     iAux = 0
     for i in pyRBG:
-        printlog('| ' + str(iAux).zfill(4) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
+        printlog('| ' + str(iAux) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
         iAux += 1
 for i in range(1,numColor+1):
     xVal.append(-i)
