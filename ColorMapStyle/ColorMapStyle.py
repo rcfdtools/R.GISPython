@@ -59,10 +59,12 @@ moduleEval = numColor % cutRamp
 xVal, yVal, pyRBG = [], [], []
 rgbSampleResolution = 96
 printCutOnScreen = False  # Only for code review and not for print
-printPyRGBOnScreen = False
+printPyRGBOnScreen = True
+printPlotOnScreen = False
 
 # Header
 printlog('## Color ramp style generator - Reference style #: ' + str(styleNumber))
+printlog('![' + str(fileName) + '.png](' + urlGitHub + '/Output/' + str(fileName) + '.png)', False)
 printlog('\n* Execution date & time: ' + str(datetime.now()) +
          '\n* Script compatibility: Python 3'
          '\n* Python version: ' + str(sys.version) +
@@ -87,7 +89,7 @@ printlog('### Reference RGB color values\n')
 printlog('| R   | G   | B   |')
 tableseparatormarkdown(3)
 for i in baseRGBColors:
-    printlog('| '+ str(i[0]).zfill(3) + ' | ' + str(i[0]).zfill(3) + ' | ' + str(i[0]).zfill(3) + ' |')
+    printlog('| '+ str(i[0]).zfill(3) + ' | ' + str(i[1]).zfill(3) + ' | ' + str(i[2]).zfill(3) + ' |')
 printlog('\n')
 
 # Calculation
@@ -95,7 +97,7 @@ printlog('### Generated RGB color values table\n')
 i = 0
 iAux = 0
 printlog('| #    | R    | G   | B   | Cut |', False)
-print('| #    | R    | G   | B   | Sample          |')
+print('| #    | R    | G   | B   | Sample')
 tableseparatormarkdown(5)
 while i < cutRamp:
     redColorFrom = baseRGBColors[i][0]
@@ -122,7 +124,7 @@ while i < cutRamp:
                 printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(
                     int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
             printSample = ' ■■■■■■■■■■■'
-            print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + ' |')
+            print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
             printlog(printTxt, False)
             fileColorName.write(printTxt + '\n')
             if redColorFrom < redColorTo:
@@ -160,7 +162,7 @@ while i < cutRamp:
             printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(
                 int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
         printSample = ' ■■■■■■■■■■■'
-        print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut |')
+        print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
         printlog(printTxt + str(i+1) + ' cut |', False)
         fileColorName.write(printTxt + '\n')
         pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
@@ -171,13 +173,14 @@ fileColorName.close()
 print('\n')
 
 # Matplotlib sample
-printtitle('Matplotlib color style sample')
+printlog('### Matplotlib color style sample')
 if printPyRGBOnScreen:
-    print('\nPython value conversion')
-    print('#    pyR   pyG   pyB')
+    printlog('\nPython value conversion')
+    printlog('| #    | pyR   | pyG   | pyB   |')
+    tableseparatormarkdown(n=4)
     iAux = 1
     for i in pyRBG:
-        print(str(iAux).zfill(4) + ' ' + (f'{round(i[0],3):.3f}') + ' ' + str(f'{round(i[1],3):.3f}') + ' ' + str(f'{round(i[2],3):.3f}'))
+        print('| ' + str(iAux).zfill(4) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
         iAux += 1
 for i in range(1,numColor+1):
     xVal.append(-i)
@@ -191,5 +194,5 @@ plt.tight_layout(pad=1.5)
 plt.yticks([0, -numColor/4, -numColor/2, -numColor*3/4, -numColor])
 plt.barh(xVal, yVal, color=pyRBG, height=1, align='center')
 plt.savefig(filePath+'/Output/'+fileName+'.png')
-plt.show()
+if printPlotOnScreen: plt.show()
 fileLog.close()
