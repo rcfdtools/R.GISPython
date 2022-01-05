@@ -46,7 +46,7 @@ def printlog(txtPrint, onScreen=True):
 # Variables
 baseRGBColors = cmsv.ColorMap1  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
 styleNumber = 1  # ✅✅✅ User can change ✅✅✅
-numColor = 256  # ✅✅✅ User can change ✅✅✅
+numColor = 128  # ✅✅✅ User can change ✅✅✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
