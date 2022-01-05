@@ -182,7 +182,7 @@ if printPyRGBOnScreen:
     tableseparatormarkdown(n=4)
     iAux = 1
     for i in pyRBG:
-        print('| ' + str(iAux).zfill(4) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
+        printlog('| ' + str(iAux).zfill(4) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
         iAux += 1
 for i in range(1,numColor+1):
     xVal.append(-i)
