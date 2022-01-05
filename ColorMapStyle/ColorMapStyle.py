@@ -60,7 +60,7 @@ xVal, yVal, pyRBG = [], [], []
 rgbSampleResolution = 96
 printCutOnScreen = False  # Only for code review and not for print
 printPyRGBOnScreen = True
-printPlotOnScreen = False
+printPlotOnScreen = True
 
 # Header
 printlog('## Color ramp style generator - Reference style #: ' + str(styleNumber))
