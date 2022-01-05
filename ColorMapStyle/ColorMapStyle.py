@@ -63,7 +63,7 @@ printPyRGBOnScreen = True
 printPlotOnScreen = True
 
 # Header
-printlog('## Color ramp style generator - Reference style #: ' + str(styleNumber))
+printlog('## Color ramp style generator - Reference style # ' + str(styleNumber))
 printlog('![' + str(fileName) + '.png](' + urlGitHub + '/Output/' + str(fileName) + '.png)', False)
 printlog('\n* Execution date & time: ' + str(datetime.now()) +
          '\n* Script compatibility: Python 3'
