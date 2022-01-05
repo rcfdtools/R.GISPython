@@ -91,6 +91,7 @@ for i in baseRGBColors:
 printlog('\n')
 
 # Calculation
+printlog('### Generated RGB color values table\n')
 i = 0
 iAux = 0
 printlog('| #    | R    | G   | B   | Cut |', False)
@@ -160,7 +161,7 @@ while i < cutRamp:
                 int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
         printSample = ' ■■■■■■■■■■■'
         print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut |')
-        printlog(printTxt, False)
+        printlog(printTxt + str(i+1) + ' cut |', False)
         fileColorName.write(printTxt + '\n')
         pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
                       abs(blueColorRampValue / 255.00000001)))
