@@ -214,6 +214,26 @@
 ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.png)
 
 
+### Style 13
+
+* Name: ColorMap13
+* RGB Color values: 42
+* Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow - Green to yellow to red to purple
+* Deep color file (.clr): 
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s13.clr)
+[512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s13.clr)
+[1024, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s13.clr)
+[2048.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s13.clr)
+* Log de ejecución (.md): 
+[256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s13.md)
+[512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s13.md)
+[1024, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s13.md)
+[2048.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s13.md)
+
+![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s13.png)
+![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS1024s13.png)
+
+
 ### References
 
 * https://matplotlib.org/stable/gallery/axes_grid1/simple_colorbar.html
