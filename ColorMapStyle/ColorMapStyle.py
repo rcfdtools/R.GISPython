@@ -46,7 +46,7 @@ def printlog(txtPrint, onScreen=True):
 # Variables
 baseRGBColors = cmsv.ColorMap13  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
 styleNumber = 13  # ✅✅✅ User can change ✅✅✅
-numColor = 2048  # ✅✅✅ User can change ✅✅✅
+numColor = 512  # ✅✅✅ User can change ✅✅✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
@@ -121,10 +121,10 @@ while i < cutRamp:
     for j in range(1, discreteCutValue+1):
         if iAux < numColor:
             if iAux == numColor-1:
-                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(int(greenColorTo)).zfill(3) + ' | ' + str(int(blueColorTo)).zfill(3) + ' |'
+                printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorTo)) + ' | ' + str(int(greenColorTo)) + ' | ' + str(int(blueColorTo)) + ' |'
             else:
-                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(
-                    int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
+                printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(
+                    int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
             printSample = ' ■■■■■■■■■■■'
             print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
             printlog(printTxt, False)
@@ -158,11 +158,11 @@ while i < cutRamp:
             iAux += 1
     if moduleEval >= 1 and iAux < numColor:
         if iAux == numColor - 1:
-            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(
-                int(greenColorTo)).zfill(3) + ' | ' + str(int(blueColorTo)).zfill(3) + ' |'
+            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorTo)) + ' | ' + str(
+                int(greenColorTo)) + ' | ' + str(int(blueColorTo)) + ' |'
         else:
-            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(
-                int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
+            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(
+                int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
         printSample = ' ■■■■■■■■■■■'
         print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
         printlog(printTxt + str(i+1) + ' cut |', False)
