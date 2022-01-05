@@ -215,7 +215,7 @@ pivotTable.to_csv('./PivotTable/CategoryPivot'+currentDateTxt+'.csv')
 print('Table >> '+urlGraphPivotTable+'/PivotTable/CategoryPivot'+currentDateTxt+'.csv')
 print('\n')
 # Technology
-pivotTable=stationTable.pivot_table(index=technologyName, columns=stateActiveName, values=categoryName, aggfunc='count')
+pivotTable = stationTable.pivot_table(index=technologyName, columns=stateActiveName, values=categoryName, aggfunc='count')
 print(pivotTable)
 pivotTable.plot(kind='bar', xlabel='Technology', ylabel='Stations', title=graphTitlePrefix+'Stations by Technology - Date: '+str(currentDate)+'\n'+mySignature, figsize=(8,8), fontsize=11, alpha=graphTransparency, rot=0, stacked=True )
 plt.savefig('./Graph/TechnologyPivot'+currentDateTxt+'.png')
