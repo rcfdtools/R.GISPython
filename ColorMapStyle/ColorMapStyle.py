@@ -180,7 +180,7 @@ if printPyRGBOnScreen:
     printlog('\nPython value conversion')
     printlog('| #    | pyR   | pyG   | pyB   |')
     tableseparatormarkdown(n=4)
-    iAux = 1
+    iAux = 0
     for i in pyRBG:
         printlog('| ' + str(iAux).zfill(4) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
         iAux += 1
