@@ -1,3 +1,37 @@
+## Color ramp style generator - Reference style # 1
+![ColorMapArcGIS128s1.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s1.png)
+* Execution date & time: 2022-01-05 11:17:33.534781
+* Script compatibility: Python 3
+* Python version: 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]
+* Python path: ['D:\\R.GISPython\\ColorMapStyle', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Python310\\python310.zip', 'C:\\Python310\\DLLs']
+* matplotlib version: 3.5.0
+* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle
+* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License
+* Credits: r.cfdtools@gmail.com
+
+### General parameters
+
+* Reference style #: 1
+* Colors: 128
+* Cuts: 1
+* Module operator: 0
+* Colors per cut: 128
+* Output file: D:/R.GISPython/ColorMapStyle/Output/ColorMapArcGIS128s1.clr
+* GitHub: https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s1.clr
+* GitHub sample: https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s1.png
+
+### Reference RGB with 2 color values
+
+| #    | R   | G   | B   |
+|---|---|---|---|
+| 0000 | 255 | 255 | 255 |
+| 0001 | 000 | 000 | 000 |
+
+
+### Generated RGB color values table
+
+| #    | R    | G   | B   | Cut |
+|---|---|---|---|---|
 | 0000 |  255 | 255 | 255 |
 | 0001 |  253 | 253 | 253 |
 | 0002 |  251 | 251 | 251 |
@@ -126,3 +160,8 @@
 | 0125 |  005 | 005 | 005 |
 | 0126 |  003 | 003 | 003 |
 | 0127 |  000 | 000 | 000 |
+### Matplotlib color style sample
+
+Python value conversion
+| #    | pyR   | pyG   | pyB   |
+|---|---|---|---|
