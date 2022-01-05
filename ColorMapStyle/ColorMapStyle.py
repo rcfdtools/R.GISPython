@@ -85,7 +85,7 @@ printlog('\n* Reference style #: ' + str(styleNumber) +
          '\n* GitHub: ' + urlGitHub + '/Output/' + str(fileName) + '.clr' +
          '\n* GitHub sample: ' + urlGitHub + '/Output/' + str(fileName) + '.png\n')
 
-printlog('### Reference RGB color values\n')
+printlog('### Reference RGB with ' + str(len(baseRGBColors)) + ' color values\n')
 printlog('| #    | R   | G   | B   |')
 tableseparatormarkdown(4)
 iAux = 0
