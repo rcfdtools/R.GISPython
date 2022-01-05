@@ -64,7 +64,8 @@ printPlotOnScreen = True
 
 # Header
 printlog('## Color ramp style generator - Reference style # ' + str(styleNumber))
-printlog('![' + str(fileName) + '.png](' + urlGitHub + '/Output/' + str(fileName) + '.png)', False)
+printlog('![' + str(fileName) + '.png](' + urlGitHub + '/Output/' + str(fileName) + '.png)', True)
+printlog('![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s11.png)', True)
 printlog('\n* Execution date & time: ' + str(datetime.now()) +
          '\n* Script compatibility: Python 3'
          '\n* Python version: ' + str(sys.version) +

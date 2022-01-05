@@ -1,7 +1,8 @@
 ## Color ramp style generator - Reference style # 11
-![ColorMapArcGIS256s11.png](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s11.png)
+![ColorMapArcGIS256s11.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s11.png)
+![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s11.png)
 
-* Execution date & time: 2022-01-05 10:54:57.554813
+* Execution date & time: 2022-01-05 11:00:23.139395
 * Script compatibility: Python 3
 * Python version: 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]
 * Python path: ['D:\\R.GISPython\\ColorMapStyle', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Python310\\python310.zip', 'C:\\Python310\\DLLs']
@@ -18,8 +19,8 @@
 * Module operator: 4
 * Colors per cut: 12
 * Output file: D:/R.GISPython/ColorMapStyle/Output/ColorMapArcGIS256s11.clr
-* GitHub: https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s11.clr
-* GitHub sample: https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s11.png
+* GitHub: https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s11.clr
+* GitHub sample: https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s11.png
 
 ### Reference RGB color values
 
