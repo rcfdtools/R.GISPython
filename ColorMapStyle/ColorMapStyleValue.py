@@ -154,7 +154,7 @@ ColorMap11 = [[174, 176, 145],
 # Name: ColorMap12
 # RGB Color values: 20
 # Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow
-# Deep: 512, 1024, 2048
+# Deep: 256, 512, 1024, 2048
 ColorMap12 = [[164, 203, 194],
               [38, 116, 109],
               [0, 55, 75],
