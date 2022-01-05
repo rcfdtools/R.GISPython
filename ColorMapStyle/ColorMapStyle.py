@@ -33,16 +33,24 @@ def printtitle(titleText, titleType = 'both', showTab = False):
         print(tabTxt + titleText)
         print(tabTxt + nc * valLen)
 
-def printfloat(n, decimals=3):
-    print(f"{n:.{decimals}f}")
+# Markdown header separator table function
+def tableseparatormarkdown(n=2):
+    lineSep = '|---'
+    printlog(lineSep * n + '|', True)
+
+# Print and or show log in screen
+def printlog(txtPrint, onScreen=True):
+    if onScreen: print(txtPrint)
+    fileLog.write(txtPrint + '\n')
 
 # Variables
-baseRGBColors = cmsv.ColorMap11  # ✅✅✅ User can change ✅✅✅. Style values from ColorMapStyleValue.py
+baseRGBColors = cmsv.ColorMap11  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
 styleNumber = 11  # ✅✅✅ User can change ✅✅✅
 numColor = 2048  # ✅✅✅ User can change ✅✅✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
+fileLog = open(filePath+'/Output/'+fileName+'.md', 'w+')
 urlGitHub = 'https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle'
 fileColorName = open(fileNameOutput, 'w+')
 cutRamp = len(baseRGBColors)-1
@@ -54,31 +62,33 @@ printCutOnScreen = False
 printPyRGBOnScreen = True
 
 # Header
-printtitle('Color ramp style generator', 'both', False)
-print('\nExecution date & time: ' + str(datetime.now()) +
-      '\nScript compatibility: Python 3'
-      '\nPython version: ' + str(sys.version) +
-      '\nPython path: ' + str(sys.path[0:5]) +
-      '\nmatplotlib version: ' + str(matplotlib.__version__) +
-      '\nRepository: https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle'
-      '\nLicense and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License'
-      '\nCredits: r.cfdtools@gmail.com\n')
+printlog('## Color ramp style generator')
+printlog('\n* Execution date & time: ' + str(datetime.now()) +
+         '\n* Script compatibility: Python 3'
+         '\n* Python version: ' + str(sys.version) +
+         '\n* Python path: ' + str(sys.path[0:5]) +
+         '\n* matplotlib version: ' + str(matplotlib.__version__) +
+         '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle'
+         '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License'
+         '\n* Credits: r.cfdtools@gmail.com\n')
 
 # Parameters
-printtitle('General parameters', 'both', False)
-print('\nReference style #: ' + str(styleNumber) +
-      '\nColors: ' + str(numColor) +
-      '\nCuts: ' + str(cutRamp) +
-      '\nModule operator: ' + str(numColor % cutRamp) +
-      '\nColors per cut: ' + str(discreteCutValue) +
-      '\nOutput file: ' + str(fileNameOutput) +
-      '\nGitHub: ' + urlGitHub + '/Output/' + str(fileName) + '.clr' +
-      '\nGitHub sample: ' + urlGitHub + '/Output/' + str(fileName) + '.png\n')
+printlog('### General parameters')
+printlog('\n* Reference style #: ' + str(styleNumber) +
+         '\n* Colors: ' + str(numColor) +
+         '\n* Cuts: ' + str(cutRamp) +
+         '\n* Module operator: ' + str(numColor % cutRamp) +
+         '\n* Colors per cut: ' + str(discreteCutValue) +
+         '\n* Output file: ' + str(fileNameOutput) +
+         '\n* GitHub: ' + urlGitHub + '/Output/' + str(fileName) + '.clr' +
+         '\n* GitHub sample: ' + urlGitHub + '/Output/' + str(fileName) + '.png\n')
 
-printtitle('Reference RGB color values')
+printlog('### Reference RGB color values\n')
+printlog('| R | G | B |')
+tableseparatormarkdown(3)
 for i in baseRGBColors:
-    print(i)
-print('\n')
+    printlog('| '+ str(i[0]).zfill(3) + ' | ' + str(i[0]).zfill(3) + ' | ' + str(i[0]).zfill(3) + ' |')
+printlog('\n')
 
 # Calculation
 i = 0
@@ -176,4 +186,4 @@ plt.yticks([0, -numColor/4, -numColor/2, -numColor*3/4, -numColor])
 plt.barh(xVal, yVal, color=pyRBG, height=1, align='center')
 plt.savefig(filePath+'/Output/'+fileName+'.png')
 plt.show()
-
+fileLog.close()

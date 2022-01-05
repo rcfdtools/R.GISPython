@@ -104,3 +104,8 @@ src = rasterio.open("D:\R.GISPython\TableInterpolatedGrid\OutputGrid\GRDM039.tif
 pyplot.imshow(src.read(1), cmap='pink')
 #<matplotlib.image.AxesImage object at 0x...>
 pyplot.show()
+
+
+Imprimir con relleno de ceros como cadena de texto
+def printfloat(n, decimals=3):
+    print(f"{n:.{decimals}f}")
