@@ -65,7 +65,7 @@ printPlotOnScreen = True
 # Header
 printlog('## Color ramp style generator - Reference style # ' + str(styleNumber))
 printlog('![' + str(fileName) + '.png](' + urlGitHub + '/Output/' + str(fileName) + '.png)', True)
-printlog('\n* Execution date & time: ' + str(datetime.now()) +
+printlog('* Execution date & time: ' + str(datetime.now()) +
          '\n* Script compatibility: Python 3'
          '\n* Python version: ' + str(sys.version) +
          '\n* Python path: ' + str(sys.path[0:5]) +
@@ -86,10 +86,12 @@ printlog('\n* Reference style #: ' + str(styleNumber) +
          '\n* GitHub sample: ' + urlGitHub + '/Output/' + str(fileName) + '.png\n')
 
 printlog('### Reference RGB color values\n')
-printlog('| R   | G   | B   |')
-tableseparatormarkdown(3)
+printlog('| #    | R   | G   | B   |')
+tableseparatormarkdown(4)
+iAux = 0
 for i in baseRGBColors:
-    printlog('| '+ str(i[0]).zfill(3) + ' | ' + str(i[1]).zfill(3) + ' | ' + str(i[2]).zfill(3) + ' |')
+    printlog('| ' + str(iAux).zfill(4) + ' | ' + str(i[0]).zfill(3) + ' | ' + str(i[1]).zfill(3) + ' | ' + str(i[2]).zfill(3) + ' |')
+    iAux += 1
 printlog('\n')
 
 # Calculation
