@@ -16,8 +16,9 @@
 [128, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS128s1.md)
 [256.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s1.md)
 
-![128](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s1.png)
-![256](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s1.png)
+| Sample ramp                                                                                               | Sample map                                                                                                |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s1.png)) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs1Map.png) |
 
 
 ### Style 2
@@ -32,8 +33,9 @@
 [128, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS128s2.md)
 [256.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s2.md)
 
-![128](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s2.png)
-![256](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s2.png)
+| Sample ramp                                                                                               | Sample map                                                                                                |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s2.png)) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs2Map.png) |
 
 
 ### Style 3
@@ -48,8 +50,9 @@
 [128, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS128s3.md)
 [256.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s3.md)
 
-![128](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s3.png)
-![256](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s3.png)
+| Sample ramp                                                                                               | Sample map                                                                                                |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s3.png)) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs3Map.png) |
 
 
 ### Style 4
@@ -64,8 +67,9 @@
 [128, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS128s4.md)
 [256.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s4.md)
 
-![128](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s4.png)
-![256](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s4.png)
+| Sample ramp                                                                                               | Sample map                                                                                               |
+|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS128s4.png)) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs4Map.png) |
 
 
 ### Style 5
@@ -80,8 +84,9 @@
 [256, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS256s5.md)
 [512.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s5.md)
 
-![256](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s5.png)
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s5.png)
+| Sample ramp                                                                                               | Sample map                                                                                                |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s5.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs5Map.png) |
 
 
 ### Style 6
@@ -98,8 +103,9 @@
 [512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s6.md)
 [1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s6.md)
 
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s6.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s6.png)
+| Sample ramp                                                                                               | Sample map                                                                                                |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s6.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs6Map.png) |
 
 
 ### Style 7
@@ -116,8 +122,9 @@
 [512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s7.md)
 [1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s7.md)
 
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s7.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s7.png)
+| Sample ramp                                                                                               | Sample map                                                                                               |
+|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s7.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs7Map.png) |
 
 
 ### Style 8
@@ -134,8 +141,9 @@
 [512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s8.md)
 [1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s8.md)
 
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s8.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s8.png)
+| Sample ramp                                                                                               | Sample map                                                                                                |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s8.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs8Map.png) |
 
 
 ### Style 9
@@ -152,9 +160,9 @@
 [512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s9.md)
 [1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s9.md)
 
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s9.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s9.png)
-
+| Sample ramp                                                                                               | Sample map                                                                                                 |
+|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s9.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs9Map.png) |
 
 ### Style 10
 
@@ -170,9 +178,9 @@
 [512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s10.md)
 [1024.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s10.md)
 
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s10.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s10.png)
-
+| Sample ramp                                                                                               | Sample map                                                                                                 |
+|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s10.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs10Map.png) |
 
 ### Style 11
 
@@ -190,8 +198,9 @@
 [1024, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s11.md)
 [2048.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s11.md)
 
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s11.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS1024s11.png)
+| Sample ramp                                                                                               | Sample map                                                                                                 |
+|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s11.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs11Map.png) |
 
 
 ### Style 12
@@ -210,9 +219,9 @@
 [1024, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.md)
 [2048.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s12.md)
 
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s12.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS1024s12.png)
-
+| Sample ramp                                                                                               | Sample map                                                                                                 |
+|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s12.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs12Map.png) |
 
 ### Style 13
 
@@ -229,9 +238,6 @@
 [512, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS512s13.md)
 [1024, ](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS1024s13.md)
 [2048.](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output/ColorMapArcGIS2048s13.md)
-
-![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s13.png)
-![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs13Map.png)
 
 | Sample ramp                                                                                              | Sample map                                                                                                 |
 |----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
