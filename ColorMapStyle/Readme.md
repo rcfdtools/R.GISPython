@@ -102,7 +102,26 @@ numColor = 256
 ![PyCharmColorMapStyleRun4.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleRun4.png)
 
 
-s## Rampas disponibles
+### Asociación de rampa de color y visualización en ArcGIS for Desktop y ArcGIS Pro
+
+1. Utilizando el procedimiento anterior, para el estilo 13 cree una rampa de 16 mil colores, obtendrá en `\Output` un archivo denimonado `ColorMapArcGIS16000s13.clr`.
+
+2. Copie el archivo ColorMapArcGIS16000s13.clr en la carpeta `\Data` y renombre con el nombre que tiene la grilla de precipitación PrecipitacionKDE.clr.
+
+3. En ArcGIS for Desktop, agregue la capa denominada `Country.shp` correspondiente al límite de Colombia - Suramérica y establezca el borde en color blanco, grosor 3 y sin relleno; agregue la grilla de precipitación y guarde el mapa como `ColorMapStyle.mxd` en la carpeta `\Map`.
+
+> Una vez cargada la grilla de precipitación al mapa, podrá observar que automáticamente se representa con el estilo de color creado y asociado.
+
+> El sistema de referencia de coordenadas - CRS contenido en la capa geográfica `Country.shp` corresponde a MAGNA Colombia para la franja Bogotá o WKID 3116.
+
+![ArcGISDesktop10.2.2ColorMapStyle.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/ArcGISDesktop10.2.2ColorMapStyle.png)
+
+4. En ArcGIS Pro, cree un proyecto nuevo y nómbrelo en la carpeta `\Map` como `ColorMapStyle`, agregue la capa denominada `Country.shp` correspondiente al límite de Colombia - Suramérica y establezca el borde en color blanco, grosor 3 y sin relleno, y agregue la grilla de precipitación.
+
+![ArcGISPro2.9.0ColorMapStyle.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/ArcGISPro2.9.0ColorMapStyle.png)
+
+
+## Rampas disponibles
 
 ### Style 1
 
