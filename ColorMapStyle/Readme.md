@@ -1,7 +1,7 @@
 ## Generador de rampas de color para representación de grillas en ArcGIS
 Keywords: `ArcGIS` `Python 3` `matplotlib` `sys` `datetime` `open()` `write()` `close()` `abs()` `append()` `range()` `zfill()`
 
-Las rampas de color son utilizadas para representar los valores de las celdas o pixeles contenidos dentro de una grilla o mapa raster. Esri ArcGIS for Desktop y ArcGIS Pro disponen de múltiples estilos de representación y a partir de la versión Desktop 10.6, estos estilos pueden ser creados por el usuario a través del administrador de estilos disponible en el menú Personalización; sin embargo, la creación de estilos en versiones anteriores y el reescalamiento y representación de grillas interpolas de resultados en una serie temporal, requieren de la creación manual de archivos .clr que luego pueden ser asociados a cada grilla de salida, perimitiendo de esta forma representar un mismo valor de celda en diferentes grillas con un mismo color. El propósito principal de este microcontenido, es crear estilos personalizados que luego serán utilizados en las actividades relacionadas con [Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid).
+Las rampas de color son utilizadas para representar los valores de celdas o pixeles contenidos dentro de una grilla o mapa raster. Esri ArcGIS for Desktop y ArcGIS Pro, dispone de múltiples estilos de representación y a partir de la versión Desktop 10.6, estos estilos pueden ser creados por el usuario a través del administrador de estilos disponible en el menú Personalización; sin embargo, la creación de estilos en versiones anteriores y el reescalamiento y representación de grillas interpolas de resultados en una serie temporal, requieren de la creación manual de archivos .clr que luego pueden ser asociados a cada grilla de salida, perimitiendo de esta forma representar un mismo valor de celda en diferentes grillas con un mismo color. El propósito principal de este microcontenido, es crear estilos personalizados que luego serán utilizados en las actividades relacionadas con [Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid).
 
 
 ### Caso de estudio
@@ -41,14 +41,14 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 | [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output)         | Directorio de salida con rampas de color .clr, previsualización en .png y registro de ejecución .md.  |
 | [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Screenshot) | Capturas de pantalla con resultados de ejecución.                                                     |
 
-> EL directorio `/Output` contiene mapas ejemplo para cada rampa de color generada usando la grilla de precipitación mensual media multianual. Para la representación se generaron y utilizaron archivos .clr con 16000 colores. 
+> El directorio `/Output` contiene mapas ejemplo para cada rampa de color generada usando la grilla de precipitación mensual media multianual. Para la representación se generaron y utilizaron archivos .clr con 16000 colores. 
 
 
 ### Procedimiento para la obtención de la grilla de precipitación media
 
 1. Descargar HidroSIG 4.0 y la Base de datos de Colombia, [clic aquí](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/descargas.html).
 
-![HidroSIG4.0Descarga](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/ScreenshotHidroSIG4.0Descarga.png) 
+![HidroSIG4.0Descarga](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Descarga.png) 
 
 
 
