@@ -365,7 +365,430 @@ numColor = 256
 | ![512](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS512s13.png) | ![1024](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGISs13Map.png)  |
 
 
-### References
+### Scripts
+
+#### Script [ColorMapStyle.py](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/ColorMapStyle.py)
+
+```
+# -*- coding: UTF-8 -*-
+# Script name: ColorMapStyle.py, ColorMapStyleValue.py
+# Description: Color ramp style generator
+# Requirements: Python 3+
+
+# Libraries
+import ColorMapStyleValue as cmsv
+import sys
+from datetime import datetime
+import matplotlib
+import matplotlib.pyplot as plt
+
+# Python rgb color changing text function
+def colorrgb(r, g, b, text):
+    return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
+
+# Markdown header separator table function
+def tableseparatormarkdown(n=2):
+    lineSep = '|---'
+    printlog(lineSep * n + '|', True)
+
+# Print and or show log in screen
+def printlog(txtPrint, onScreen=True):
+    if onScreen: print(txtPrint)
+    fileLog.write(txtPrint + '\n')
+
+# Variables
+baseRGBColors = cmsv.ColorMap13  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
+styleNumber = 13  # ✅✅✅ User can change ✅✅✅
+numColor = 256  # ✅✅✅ User can change ✅✅✅
+filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
+fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
+fileNameOutput = filePath+'/Output/'+fileName+'.clr'
+fileLog = open(filePath+'/Output/'+fileName+'.md', 'w+')
+urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle'
+fileColorName = open(fileNameOutput, 'w+')
+cutRamp = len(baseRGBColors)-1
+discreteCutValue = int(numColor/cutRamp)
+moduleEval = numColor % cutRamp
+xVal, yVal, pyRBG = [], [], []
+rgbSampleResolution = 96
+printCutOnScreen = False  # Only for code review and not for print
+printPyRGBOnScreen = True
+printPlotOnScreen = True
+
+# Header
+printlog('## Color ramp style generator - Reference style # ' + str(styleNumber))
+printlog('![' + str(fileName) + '.png](' + urlGitHub + '/Output/' + str(fileName) + '.png)', True)
+printlog('* Execution date & time: ' + str(datetime.now()) +
+         '\n* Script compatibility: Python 3'
+         '\n* Python version: ' + str(sys.version) +
+         '\n* Python path: ' + str(sys.path[0:5]) +
+         '\n* matplotlib version: ' + str(matplotlib.__version__) +
+         '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle'
+         '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License'
+         '\n* Credits: r.cfdtools@gmail.com\n')
+
+# Parameters
+printlog('### General parameters')
+printlog('\n* Reference style #: ' + str(styleNumber) +
+         '\n* Colors: ' + str(numColor) +
+         '\n* Cuts: ' + str(cutRamp) +
+         '\n* Module operator: ' + str(numColor % cutRamp) +
+         '\n* Colors per cut: ' + str(discreteCutValue) +
+         '\n* Output file: ' + str(fileNameOutput) +
+         '\n* GitHub: ' + urlGitHub + '/Output/' + str(fileName) + '.clr' +
+         '\n* GitHub sample: ' + urlGitHub + '/Output/' + str(fileName) + '.png\n')
+
+printlog('### Reference RGB with ' + str(len(baseRGBColors)) + ' color values\n')
+printlog('| #    | R   | G   | B   |')
+tableseparatormarkdown(4)
+iAux = 0
+for i in baseRGBColors:
+    printlog('| ' + str(iAux) + ' | ' + str(i[0]) + ' | ' + str(i[1]) + ' | ' + str(i[2]) + ' |')
+    iAux += 1
+printlog('\n')
+
+# Calculation
+printlog('### Generated RGB color values table\n')
+i = 0
+iAux = 0
+printlog('| #    | R    | G   | B   | Cut |', False)
+print('| #    | R    | G   | B   | Sample')
+tableseparatormarkdown(5)
+while i < cutRamp:
+    redColorFrom = baseRGBColors[i][0]
+    redColorTo = baseRGBColors[i+1][0]
+    redColorJump = abs((redColorFrom-redColorTo)/discreteCutValue)
+    redColorRampValue = redColorFrom
+    greenColorFrom = baseRGBColors[i][1]
+    greenColorTo = baseRGBColors[i+1][1]
+    greenColorJump = abs((greenColorFrom-greenColorTo)/discreteCutValue)
+    greenColorRampValue = greenColorFrom
+    blueColorFrom = baseRGBColors[i][2]
+    blueColorTo = baseRGBColors[i+1][2]
+    blueColorJump = abs((blueColorFrom-blueColorTo)/discreteCutValue)
+    blueColorRampValue = blueColorFrom
+    if printCutOnScreen: # Only for code review and not for print
+        print('Red color from ' + str(redColorFrom) + ' To ' + str(redColorTo) + ' with ' + str(redColorJump) + ' variation')
+        print('Green color from ' + str(greenColorFrom) + ' To ' + str(greenColorTo) + ' with ' + str(greenColorJump) + ' variation')
+        print('Blue color from ' + str(blueColorFrom) + ' To ' + str(blueColorTo) + ' with ' + str(blueColorJump) + ' variation')
+    for j in range(1, discreteCutValue+1):
+        if iAux < numColor:
+            if iAux == numColor-1:
+                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(int(greenColorTo)).zfill(3) + ' | ' + str(int(blueColorTo)).zfill(3) + ' |'
+                printTxtMd = str(iAux) + ' ' + str(int(redColorTo)) + ' ' + str(int(greenColorTo)) + ' ' + str(int(blueColorTo))
+            else:
+                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
+                printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
+            printSample = ' ■■■■■■■■■■■'
+            print(colorrgb(0,0,0, printTxt) + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
+            printlog(printTxt, False)
+            fileColorName.write(printTxtMd + '\n')
+            if redColorFrom < redColorTo:
+                redColorRampValue += redColorJump
+                if redColorRampValue > redColorTo:
+                    redColorRampValue = redColorTo
+            else:
+                redColorRampValue -= redColorJump
+                if redColorRampValue > redColorFrom:
+                    redColorRampValue = redColorFrom
+            if greenColorFrom < greenColorTo:
+                greenColorRampValue += greenColorJump
+                if greenColorRampValue > greenColorTo:
+                    greenColorRampValue = greenColorTo
+            else:
+                greenColorRampValue -= greenColorJump
+                if greenColorRampValue > greenColorFrom:
+                    greenColorRampValue = greenColorFrom
+            if blueColorFrom < blueColorTo:
+                blueColorRampValue += blueColorJump
+                if blueColorRampValue > blueColorTo:
+                    blueColorRampValue = blueColorTo
+            else:
+                blueColorRampValue -= blueColorJump
+                if blueColorRampValue > blueColorFrom:
+                    blueColorRampValue = blueColorFrom
+            pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
+                          abs(blueColorRampValue / 255.00000001)))
+            iAux += 1
+    if moduleEval >= 1 and iAux < numColor:
+        if iAux == numColor - 1:
+            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(int(greenColorTo)).zfill(3) + ' | ' + str(
+                int(blueColorTo)).zfill(3) + ' |'
+            printTxtMd = str(iAux) + ' ' + str(int(redColorTo)) + ' ' + str(int(greenColorTo)) + ' ' + str(
+                int(blueColorTo))
+        else:
+            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
+            printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
+        printSample = ' ■■■■■■■■■■■'
+        print(colorrgb(0,0,0, printTxt) + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
+        printlog(printTxt + str(i+1) + ' cut |', False)
+        fileColorName.write(printTxtMd + '\n')
+        pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
+                      abs(blueColorRampValue / 255.00000001)))
+        iAux += 1
+    i += 1
+fileColorName.close()
+print('\n')
+
+# Matplotlib sample
+printlog(colorrgb(0,0,0,'### Matplotlib color style sample'))
+if printPyRGBOnScreen:
+    printlog(colorrgb(0,0,0,'\nPython value conversion'))
+    printlog(colorrgb(0,0,0,'| #    | pyR   | pyG   | pyB   |'))
+    tableseparatormarkdown(n=4)
+    iAux = 0
+    for i in pyRBG:
+        # printlog('| ' + str(iAux) + ' | ' + str(round(i[0],3)) + ' | ' + str(round(i[1],3)) + ' | ' + str(round(i[2],3)) + ' |')  # Python 2 y 3
+        printlog(colorrgb(0,0,0, '| ' + str(iAux) + ' | ' + (f'{round(i[0], 3):.3f}') + ' | ' + str(f'{round(i[1], 3):.3f}') + ' | ' + str(f'{round(i[2], 3):.3f}') + ' |'))  # Python 3
+        iAux += 1
+for i in range(1,numColor+1):
+    xVal.append(-i)
+    yVal.append(1)
+matplotlib.rcParams.update({'font.size': 8})
+plt.figure(figsize=(5, 6), dpi=rgbSampleResolution)
+plt.box(False)
+plt.xticks([])
+plt.title(fileName+'.clr' + '\n' + urlGitHub)
+plt.tight_layout(pad=1.5)
+plt.yticks([0, -numColor/4, -numColor/2, -numColor*3/4, -numColor])
+plt.barh(xVal, yVal, color=pyRBG, height=1, align='center')
+plt.savefig(filePath+'/Output/'+fileName+'.png')
+if printPlotOnScreen: plt.show()
+fileLog.close()
+```
+
+#### Script [ColorMapStyleValue.py](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/ColorMapStyleValue.py)
+
+```
+# Color map style arrays
+
+# Style 1
+# Name: ColorMap1 - Grayscale
+# RGB Color values: 2
+# Colors: White - Black
+# Deep: 128, 256
+ColorMap1 = [[255, 255, 255],
+              [0, 0, 0]]
+
+# Style 2
+# Name: ColorMap2 - Grayscale invert
+# RGB Color values: 2
+# Colors: Black - White
+# Deep: 128, 256
+ColorMap2 = [[0, 0, 0],
+              [255, 255, 255]]
+
+# Style 3
+# Name: ColorMap3 - Pantone 2
+# RGB Color values: 2
+# Colors: Blue - Red
+# Deep: 128, 256
+ColorMap3 = [[97, 169, 220],
+             [211, 108, 118]]
+
+# Style 4
+# Name: ColorMap4 - Pantone 3
+# RGB Color values: 3
+# Colors: Blue - Red - Green
+# Deep: 128, 256
+ColorMap4 = [[97, 169, 220],
+             [211, 108, 118],
+             [83, 193, 177]]
+
+# Style 5
+# Name: ColorMap5 - Pantone 4
+# RGB Color values: 4
+# Colors: Blue - Red - Green - Yellow
+# Deep: 256, 512
+ColorMap5 = [[97, 169, 220],
+             [211, 108, 118],
+             [83, 193, 177],
+             [254, 205, 130]]
+
+# Style 6
+# Name: ColorMap6 - Laser print
+# RGB Color values: 7
+# Colors: Orange - Light BLue - Magenta - Dark Blue - Yellow - Green - Red
+# Deep: 256, 512, 1024
+ColorMap6 = [[245, 134, 52],
+             [0, 175, 239],
+             [236, 38, 143],
+             [62, 64, 149],
+             [255, 242, 18],
+             [0, 168, 89],
+             [237, 50, 55]]
+
+# Style 7
+# Name: ColorMap7
+# RGB Color values: 7
+# Colors: Yellow - Pink - Green - Blue
+# Deep: 256, 512, 1024
+ColorMap7 = [[204, 204, 0],
+             [255, 128, 128],
+             [0, 255, 128],
+             [64, 128, 128],
+             [64, 64, 128],
+             [0, 102, 204],
+             [0, 0, 255]]
+
+# Style 8
+# Name: ColorMap8
+# RGB Color values: 7
+# Colors: Gray - Aquamarine - Sea Blue
+# Deep: 256, 512, 1024
+ColorMap8 = [[224, 224, 224],
+             [229, 255, 204],
+             [153, 255, 204],
+             [51, 255, 255],
+             [0, 204, 204],
+             [0, 102, 102],
+             [0, 76, 153]]
+
+# Style 9
+# Name: ColorMap9
+# RGB Color values: 13
+# Colors: Dark Pink - Mercury - Lime - Green
+# Deep: 256, 512, 1024
+ColorMap9 = [[174, 104, 157],
+              [201, 183, 205],
+              [233, 97, 141],
+              [215, 95, 144],
+              [242, 113, 126],
+              [246, 151, 89],
+              [246, 196, 70],
+              [247, 192, 113],
+              [239, 226, 0],
+              [204, 209, 55],
+              [214, 223, 70],
+              [170, 216, 47],
+              [124, 199, 57]]
+
+# Style 10
+# Name: ColorMap10 - HKS Color
+# RGB Color values: 15
+# Colors: Green to yellow to red
+# Deep: 256, 512, 1024
+ColorMap10 = [[174, 176, 145],
+             [163, 187, 152],
+             [152, 205, 151],
+             [164, 216, 142],
+             [175, 217, 133],
+             [185, 227, 136],
+             [247, 235, 168],
+             [241, 236, 124],
+             [249, 238, 104],
+             [248, 224, 104],
+             [255, 217, 111],
+             [255, 186, 116],
+             [255, 160, 112],
+             [255, 155, 129],
+             [248, 127, 119]]
+
+# Style 11
+# Name: ColorMap11 - HKS Colors Extend
+# RGB Color values: 22
+# Colors: Green to yellow to red to purple
+# Deep: 256, 512, 1024, 2048
+ColorMap11 = [[174, 176, 145],
+             [163, 187, 152],
+             [152, 205, 151],
+             [164, 216, 142],
+             [175, 217, 133],
+             [185, 227, 136],
+             [247, 235, 168],
+             [241, 236, 124],
+             [249, 238, 104],
+             [248, 224, 104],
+             [255, 217, 111],
+             [255, 186, 116],
+             [255, 160, 112],
+             [255, 155, 129],
+             [248, 127, 119],
+             [236, 123, 125],
+             [244, 106, 126],
+             [245, 96, 116],
+             [226, 79, 120],
+             [208, 82, 132],
+             [211, 73, 143],
+             [199, 67, 151]]
+
+# Style 12
+# Name: ColorMap12
+# RGB Color values: 20
+# Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow
+# Deep: 256, 512, 1024, 2048
+ColorMap12 = [[164, 203, 194],
+              [38, 116, 109],
+              [0, 55, 75],
+              [0, 31, 89],
+              [0, 45, 116],
+              [20, 17, 87],
+              [80, 21, 124],
+              [111, 29, 144],
+              [137, 37, 112],
+              [169, 40, 88],
+              [216, 52, 61],
+              [254, 78, 38],
+              [254, 107, 75],
+              [255, 139, 84],
+              [255, 170, 124],
+              [255, 201, 124],
+              [254, 216, 167],
+              [253, 228, 167],
+              [253, 241, 208],
+              [255, 252, 219]]
+
+# Style 13
+# Name: ColorMap13
+# RGB Color values: 42
+# Colors: Green Sea - Blue Sea - Purple - Red - Orange - Yellow - Green to yellow to red to purple
+# Deep: 256, 512, 1024, 2048
+ColorMap13 = [[164, 203, 194],
+              [38, 116, 109],
+              [0, 55, 75],
+              [0, 31, 89],
+              [0, 45, 116],
+              [20, 17, 87],
+              [80, 21, 124],
+              [111, 29, 144],
+              [137, 37, 112],
+              [169, 40, 88],
+              [216, 52, 61],
+              [254, 78, 38],
+              [254, 107, 75],
+              [255, 139, 84],
+              [255, 170, 124],
+              [255, 201, 124],
+              [254, 216, 167],
+              [253, 228, 167],
+              [253, 241, 208],
+              [255, 252, 219],
+              [174, 176, 145],
+              [163, 187, 152],
+              [152, 205, 151],
+              [164, 216, 142],
+              [175, 217, 133],
+              [185, 227, 136],
+              [247, 235, 168],
+              [241, 236, 124],
+              [249, 238, 104],
+              [248, 224, 104],
+              [255, 217, 111],
+              [255, 186, 116],
+              [255, 160, 112],
+              [255, 155, 129],
+              [248, 127, 119],
+              [236, 123, 125],
+              [244, 106, 126],
+              [245, 96, 116],
+              [226, 79, 120],
+              [208, 82, 132],
+              [211, 73, 143],
+              [199, 67, 151]]
+```
+
+
+### Referencias
 
 * https://desktop.arcgis.com/en/arcmap/latest/map/styles-and-symbols/working-with-color.htm
 * https://desktop.arcgis.com/en/arcmap/latest/map/styles-and-symbols/working-with-color-ramps.htm
@@ -380,3 +803,34 @@ numColor = 256
 * https://stackoverflow.com/questions/3899980/how-to-change-the-font-size-on-a-matplotlib-plot
 * https://es.stackoverflow.com/questions/334170/es-posible-agregar-ceros-a-la-derecha
 * https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-analyst/kernel-density.htm
+
+
+### Autores
+
+* Creado por [r.cfdtools](r.cfdtools@gmail.com) (32h).
+
+
+### Compatibilidad
+
+* ArcGIS for Desktop 10 o superior.
+* ArcGIS Pro.
+* Python 3.
+
+
+### Control de versiones
+
+| Versión    | Descripción                                                             |
+|------------|-------------------------------------------------------------------------|
+| v.20220106 | Versión inicial sobre Python 3. |
+
+
+
+### Licencia, cláusulas y condiciones de uso
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+
+
+| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
+|------------------------|---------------------------------------------------------|-----------------------------|
+
+_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
