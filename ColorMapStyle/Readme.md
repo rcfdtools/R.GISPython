@@ -83,9 +83,9 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 3. En PyCharm, abra el script `ColorMapStyle.py` y modifique las líneas de código asociadas al arreglo definido en la definición de estilos realizada en el archivo `ColorMapStyleValue.py`, p.ej, para generar o actualizar la rampa de color 13, defina `baseRGBColors = cmsv.ColorMap13` con `styleNumber = 13` y 
 
 ```
-baseRGBColors = cmsv.ColorMap13  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
-styleNumber = 13  # ✅✅✅ User can change ✅✅✅
-numColor = 1024  # ✅✅✅ User can change ✅✅✅
+baseRGBColors = cmsv.ColorMap13
+styleNumber = 13
+numColor = 1024
 ```
 
 
