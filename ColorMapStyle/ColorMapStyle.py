@@ -27,7 +27,7 @@ def printlog(txtPrint, onScreen=True):
 # Variables
 baseRGBColors = cmsv.ColorMap13  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
 styleNumber = 13  # ✅✅✅ User can change ✅✅✅
-numColor = 1024  # ✅✅✅ User can change ✅✅✅
+numColor = 256  # ✅✅✅ User can change ✅✅✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
@@ -108,7 +108,7 @@ while i < cutRamp:
                 printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
                 printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
             printSample = ' ■■■■■■■■■■■'
-            print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
+            print(colorrgb(0,0,0, printTxt) + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
             printlog(printTxt, False)
             fileColorName.write(printTxtMd + '\n')
             if redColorFrom < redColorTo:
@@ -148,7 +148,7 @@ while i < cutRamp:
             printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
             printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
         printSample = ' ■■■■■■■■■■■'
-        print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
+        print(colorrgb(0,0,0, printTxt) + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
         printlog(printTxt + str(i+1) + ' cut |', False)
         fileColorName.write(printTxtMd + '\n')
         pyRBG.append((abs(redColorRampValue / 255.00000001), abs(greenColorRampValue / 255.00000001),
@@ -159,15 +159,15 @@ fileColorName.close()
 print('\n')
 
 # Matplotlib sample
-printlog('### Matplotlib color style sample')
+printlog(colorrgb(0,0,0,'### Matplotlib color style sample'))
 if printPyRGBOnScreen:
-    printlog('\nPython value conversion')
-    printlog('| #    | pyR   | pyG   | pyB   |')
+    printlog(colorrgb(0,0,0,'\nPython value conversion'))
+    printlog(colorrgb(0,0,0,'| #    | pyR   | pyG   | pyB   |'))
     tableseparatormarkdown(n=4)
     iAux = 0
     for i in pyRBG:
         # printlog('| ' + str(iAux) + ' | ' + str(round(i[0],3)) + ' | ' + str(round(i[1],3)) + ' | ' + str(round(i[2],3)) + ' |')  # Python 2 y 3
-        printlog('| ' + str(iAux) + ' | ' + (f'{round(i[0], 3):.3f}') + ' | ' + str(f'{round(i[1], 3):.3f}') + ' | ' + str(f'{round(i[2], 3):.3f}') + ' |')  # Python 3
+        printlog(colorrgb(0,0,0, '| ' + str(iAux) + ' | ' + (f'{round(i[0], 3):.3f}') + ' | ' + str(f'{round(i[1], 3):.3f}') + ' | ' + str(f'{round(i[2], 3):.3f}') + ' |'))  # Python 3
         iAux += 1
 for i in range(1,numColor+1):
     xVal.append(-i)

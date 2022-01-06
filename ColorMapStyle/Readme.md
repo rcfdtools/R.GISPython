@@ -70,7 +70,7 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 
 ### Procedimiento para la generación de rampas utilizando el script 
 
-1. Utilizando GitHub, clone el presente directorio o manualmente realice la descarga los script en Python y cree la estructura de directorio recomendada en `D:\R.GISPython\ColorMapStyle`.
+1. Utilizando GitHub, clone el presente directorio o manualmente realice la descarga los scripts en Python y cree la estructura de directorios recomendada en `D:\R.GISPython\ColorMapStyle`.
 
 ![MicrosoftWindowsFolder.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/MicrosoftWindowsFolder.png)
 
@@ -80,16 +80,29 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 
 > En caso de que quiera crear un nuevo estilo, al final de este script, agregue un nuevo arreglo continuando con el número consecutivo de la secuencia definida, p.ej, `ColorMap14 = []`.
 
-3. En PyCharm, abra el script `ColorMapStyle.py` y modifique las líneas de código asociadas al arreglo definido en la definición de estilos realizada en el archivo `ColorMapStyleValue.py`, p.ej, para generar o actualizar la rampa de color 13, defina `baseRGBColors = cmsv.ColorMap13` con `styleNumber = 13` y 
+3. En PyCharm, abra el script `ColorMapStyle.py` y modifique las líneas de código asociadas al arreglo definido en la definición de estilos realizada en el archivo `ColorMapStyleValue.py`, p.ej, para generar o actualizar la rampa de color 13, defina `baseRGBColors = cmsv.ColorMap13` con `styleNumber = 13` y establezca el número total de valores discretos que contendrá el archivo de color .clr, p.ej, 256. 
 
 ```
 baseRGBColors = cmsv.ColorMap13
 styleNumber = 13
-numColor = 1024
+numColor = 256
 ```
 
+![PyCharmColorMapStyleParameter.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleParameter.png)
 
-## Rampas disponibles
+4. Ejecute el script, verifique los resultados detallados en la consola de ejecución y los archivos generados. Para los parámetros establecidos en el ejemplo, automáticamente se crearán en la carpeta `\Output` los siguientes archivos:
+
+* [ColorMapArcGIS256s13.clr](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.clr): Archivo de rampa de color no codificado.
+* [ColorMapArcGIS256s13.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.png): Previsualización de la rampa de color.
+* [ColorMapArcGIS256s13.md](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.md): Registro detallado de ejecución en formato Markdown.
+
+![PyCharmColorMapStyleRun1.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleRun1.png)
+![PyCharmColorMapStyleRun2.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleRun2.png)
+![PyCharmColorMapStyleRun3.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleRun3.png)
+![PyCharmColorMapStyleRun4.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleRun4.png)
+
+
+s## Rampas disponibles
 
 ### Style 1
 
