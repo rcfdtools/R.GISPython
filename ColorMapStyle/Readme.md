@@ -108,7 +108,7 @@ numColor = 256
 
 ### Asociación de rampa de color y visualización en ArcGIS for Desktop y ArcGIS Pro
 
-1. Utilizando el procedimiento anterior, para el estilo 13 cree una rampa de 16 mil colores, obtendrá en `\Output` un archivo denimonado `[ColorMapArcGIS16000s13.clr](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS16000s13.clr)`.
+1. Utilizando el procedimiento anterior, para el estilo 13 cree una rampa de 16 mil colores, obtendrá en `\Output` un archivo denimonado [ColorMapArcGIS16000s13.clr](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS16000s13.clr).
 
 2. Copie el archivo ColorMapArcGIS16000s13.clr en la carpeta `\Data` y renombre con el nombre que tiene la grilla de precipitación PrecipitacionKDE.clr.
 
