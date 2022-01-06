@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # Script name: ColorMapStyle.py, ColorMapStyleValue.py
 # Description: Color ramp style generator
-# Requirements: PyCharm 2021.3+, ArcGIS 10+, ArcGIS Pro 2.9.0
+# Requirements: Python 3+
 
 # Libraries
 import ColorMapStyleValue as cmsv
@@ -14,25 +14,6 @@ import matplotlib.pyplot as plt
 def colorrgb(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
-# Print titles
-def printtitle(titleText, titleType = 'both', showTab = False):
-    # titleType: Top, Bottom, both
-    nc = '-'
-    valLen = len(titleText)
-    tabTxt = ''
-    if showTab:
-        tabTxt = '\t'
-    if titleType == 'both':
-        print(tabTxt + nc * valLen)
-        print(tabTxt + titleText)
-        print(tabTxt + nc * valLen)
-    elif titleType == 'Top':
-        print(tabTxt + nc * valLen)
-        print(tabTxt + titleText)
-    else:
-        print(tabTxt + titleText)
-        print(tabTxt + nc * valLen)
-
 # Markdown header separator table function
 def tableseparatormarkdown(n=2):
     lineSep = '|---'
@@ -44,9 +25,9 @@ def printlog(txtPrint, onScreen=True):
     fileLog.write(txtPrint + '\n')
 
 # Variables
-baseRGBColors = cmsv.ColorMap1  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
-styleNumber = 1  # ✅✅✅ User can change ✅✅✅
-numColor = 16000  # ✅✅✅ User can change ✅✅✅
+baseRGBColors = cmsv.ColorMap13  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
+styleNumber = 13  # ✅✅✅ User can change ✅✅✅
+numColor = 1024  # ✅✅✅ User can change ✅✅✅
 filePath = r'D:/R.GISPython/ColorMapStyle'  # r'.' for relative path
 fileName = 'ColorMapArcGIS'+str(numColor)+'s'+str(styleNumber)
 fileNameOutput = filePath+'/Output/'+fileName+'.clr'
@@ -121,10 +102,10 @@ while i < cutRamp:
     for j in range(1, discreteCutValue+1):
         if iAux < numColor:
             if iAux == numColor-1:
-                printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorTo)) + ' | ' + str(int(greenColorTo)) + ' | ' + str(int(blueColorTo)) + ' |'
+                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(int(greenColorTo)).zfill(3) + ' | ' + str(int(blueColorTo)).zfill(3) + ' |'
                 printTxtMd = str(iAux) + ' ' + str(int(redColorTo)) + ' ' + str(int(greenColorTo)) + ' ' + str(int(blueColorTo))
             else:
-                printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
+                printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
                 printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
             printSample = ' ■■■■■■■■■■■'
             print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample))
@@ -159,12 +140,12 @@ while i < cutRamp:
             iAux += 1
     if moduleEval >= 1 and iAux < numColor:
         if iAux == numColor - 1:
-            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorTo)) + ' | ' + str(int(greenColorTo)) + ' | ' + str(
-                int(blueColorTo)) + ' |'
+            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorTo)).zfill(3) + ' | ' + str(int(greenColorTo)).zfill(3) + ' | ' + str(
+                int(blueColorTo)).zfill(3) + ' |'
             printTxtMd = str(iAux) + ' ' + str(int(redColorTo)) + ' ' + str(int(greenColorTo)) + ' ' + str(
                 int(blueColorTo))
         else:
-            printTxt = '| ' + str(iAux) + ' |  ' + str(int(redColorRampValue)) + ' | ' + str(int(greenColorRampValue)) + ' | ' + str(int(blueColorRampValue)) + ' |'
+            printTxt = '| ' + str(iAux).zfill(4) + ' |  ' + str(int(redColorRampValue)).zfill(3) + ' | ' + str(int(greenColorRampValue)).zfill(3) + ' | ' + str(int(blueColorRampValue)).zfill(3) + ' |'
             printTxtMd = str(iAux) + ' ' + str(int(redColorRampValue)) + ' ' + str(int(greenColorRampValue)) + ' ' + str(int(blueColorRampValue))
         printSample = ' ■■■■■■■■■■■'
         print(printTxt + colorrgb(int(redColorRampValue), int(greenColorRampValue), int(blueColorRampValue), printSample) + str(i+1) + ' cut')
@@ -185,7 +166,8 @@ if printPyRGBOnScreen:
     tableseparatormarkdown(n=4)
     iAux = 0
     for i in pyRBG:
-        printlog('| ' + str(iAux) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
+        # printlog('| ' + str(iAux) + ' | ' + str(round(i[0],3)) + ' | ' + str(round(i[1],3)) + ' | ' + str(round(i[2],3)) + ' |')  # Python 2 y 3
+        printlog('| ' + str(iAux) + ' | ' + (f'{round(i[0], 3):.3f}') + ' | ' + str(f'{round(i[1], 3):.3f}') + ' | ' + str(f'{round(i[2], 3):.3f}') + ' |')  # Python 3
         iAux += 1
 for i in range(1,numColor+1):
     xVal.append(-i)

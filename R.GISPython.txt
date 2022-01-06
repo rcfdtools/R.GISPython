@@ -109,3 +109,7 @@ pyplot.show()
 Imprimir con relleno de ceros como cadena de texto
 def printfloat(n, decimals=3):
     print(f"{n:.{decimals}f}")
+
+Imprimir con relleno de ceros en flotantes como cadena de texto
+printlog('| ' + str(iAux) + ' | ' + (f'{round(i[0],3):.3f}') + ' | ' + str(f'{round(i[1],3):.3f}') + ' | ' + str(f'{round(i[2],3):.3f}') + ' |')
+        iAux += 1

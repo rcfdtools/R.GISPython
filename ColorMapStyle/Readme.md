@@ -1,8 +1,59 @@
 ## Generador de rampas de color para representación de grillas en ArcGIS
+Keywords: `ArcGIS` `Python 3` `matplotlib` `sys` `datetime` `open()` `write()` `close()` `abs()` `append()` `range()` `zfill()`
+
+Las rampas de color son utilizadas para representar los valores de las celdas o pixeles contenidos dentro de una grilla o mapa raster. Esri ArcGIS for Desktop y ArcGIS Pro disponen de múltiples estilos de representación y a partir de la versión Desktop 10.6, estos estilos pueden ser creados por el usuario a través del administrador de estilos disponible en el menú Personalización; sin embargo, la creación de estilos en versiones anteriores y el reescalamiento y representación de grillas interpolas de resultados en una serie temporal, requieren de la creación manual de archivos .clr que luego pueden ser asociados a cada grilla de salida, perimitiendo de esta forma representar un mismo valor de celda en diferentes grillas con un mismo color. El propósito principal de este microcontenido, es crear estilos personalizados que luego serán utilizados en las actividades relacionadas con [Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid).
+
+
+### Caso de estudio
+
+Representar manualmente en múltiples estilos de color personalizados el mapa de precipitación media multianual de Colombia Suramérica, disponible en la base de datos [HidroSIG](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/hidrosig-4-0.html) creada por la [Facultad de Minas de la Universidad Nacional de Colombia - Sede Medellín](https://minas.medellin.unal.edu.co/).
+
+
+### Requerimientos
+
+* [Python 3+](https://www.python.org/) 
+* [Sistema operativo Microsoft Windows](https://www.microsoft.com/en-us/windows?r=1)
+* [matplotlib](https://matplotlib.org/)
+
+
+### Funcionalidades
+
+* Generación de archivos de rampa de color .clr a partir de arreglos de colores definidos por el usuario en formato RGB.
+* Definición del número de colores discretos que contendrá la rampa, p.ej, 128, 256, 512, 1024, 2048.
+* Archivo `ColorMapStyleValue.py` independiente con múltiples estilos de color de referencia personalizados. 
+* Conversión de valores RGB a valores escalados de representación en Python entre 0 y 1.
+* Generación y exportación a formato PNG de gráfica de rampa de color usando matplotlib.
+* Generación de registro de ejecución detallado en formado Markdown.
+* Visualización de rampa de colores en formato texto sobre la consola de ejecución.
+
+> Dependiendo de la combinación de los colores de referencia y eel número de colores discretos, es posible que algunos valores discretos RGB se repitan, p.ej, en una rampa de color de blanco a negro solo pueden existir 255 colores discretos y sin en la definición de generación del archivo .clr se han definido 512 colores, por cada color se crearan dos registros con los mismos valores. 
+
+ 
+### Ruta de ejecución
+
+Para el desarrollo de este microcontenido se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\ColorMapStyle` utilizando la siguiente estructura de directorios. 
+
+| Directorio                                                                                 | Descripción                                                                                           |
+|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Data)             | Directorio de datos del caso de estudio.                                                              |
+| [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Map)               | Directorio con mapas para visualización en ArcGIS for Desktop y ArcGIS Pro.                           |
+| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Old)               | Directorio con versiones antiguas del script.                                                         |
+| [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output)         | Directorio de salida con rampas de color .clr, previsualización en .png y registro de ejecución .md.  |
+| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Screenshot) | Capturas de pantalla con resultados de ejecución.                                                     |
+
+> EL directorio `/Output` contiene mapas ejemplo para cada rampa de color generada usando la grilla de precipitación mensual media multianual. Para la representación se generaron y utilizaron archivos .clr con 16000 colores. 
+
+
+### Procedimiento para la obtención de la grilla de precipitación media
+
+1. Descargar HidroSIG 4.0 y la Base de datos de Colombia, [clic aquí](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/descargas.html).
+
+![HidroSIG4.0Descarga](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/ScreenshotHidroSIG4.0Descarga.png) 
+
+
 
 
 ## Rampas disponibles
-
 
 ### Style 1
 
@@ -246,6 +297,8 @@
 
 ### References
 
+* https://desktop.arcgis.com/en/arcmap/latest/map/styles-and-symbols/working-with-color.htm
+* https://desktop.arcgis.com/en/arcmap/latest/map/styles-and-symbols/working-with-color-ramps.htm
 * https://matplotlib.org/stable/gallery/axes_grid1/simple_colorbar.html
 * https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal
 * http://www.zonums.com/online/color_ramp/

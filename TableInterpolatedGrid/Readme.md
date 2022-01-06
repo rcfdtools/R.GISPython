@@ -1,6 +1,3 @@
-
-
-
 ## Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única
 Keywords: `ArcGIS for Desktop` `ArcGIS Pro` `arcpy` `env` `workspace` `sys` `os` `shutil` `rmtree` `mkdir()` `time` `datetime` `warnings` `read()` `write()` `matplotlib` `numpy` `MakeXYEventLayer_management()` `Select_analysis()` `Idw()` `GetRasterProperties_management()` `gp.RasterCalculator_sa()` `AddColormap_management()` `readline()` `rstrip()` `split()` `close()` `len()`
 
