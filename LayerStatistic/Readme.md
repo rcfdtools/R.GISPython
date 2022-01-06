@@ -49,18 +49,18 @@ Estudio de localización y valores de precipitación de las estaciones hidromete
 
 | Estadístico | Descripción                                                                                                                                                    | Desktop | Pro  |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|------|
-| SUM         | Adds the total value for the specified field.                                                                                                                  | ✅       | ✅    |
-| MEAN        | Calculates the average for the specified field.                                                                                                                | ✅       | ✅    |
-| MIN         | Finds the smallest value for all records of the specified field.                                                                                               | ✅       | ✅    |
-| MAX         | Finds the largest value for all records of the specified field.                                                                                                | ✅       | ✅    |
-| RANGE       | Finds the range of values (MAX minus MIN) for the specified field.                                                                                             | ✅       | ✅    |
-| STD         | Finds the standard deviation on values in the specified field.                                                                                                 | ✅       | ✅    |
-| COUNT       | Finds the number of values included in statistical calculations. This counts each value except null values. To determine the number of null values in a field  | ✅       | ✅    |
-| FIRST       | Finds the first record in the Input Table and uses its specified field value.                                                                                  | ✅       | ✅    |
-| LAST        | Finds the last record in the Input Table and uses its specified field value.                                                                                   | ✅       | ✅    |
-| MEDIAN      | The median for all records of the specified field will be calculated.                                                                                          | ⛔       | ✅    |
-| VARIANCE    | The variance for all records of the specified field will be calculated.                                                                                        | ⛔       | ✅    |
-| UNIQUE      | The number of unique values of the specified field will be counted.                                                                                            | ⛔       | ✅    |
+| SUM         | Adds the total value for the specified field.                                                                                                                  | ✓       | ✓    |
+| MEAN        | Calculates the average for the specified field.                                                                                                                | ✓       | ✓    |
+| MIN         | Finds the smallest value for all records of the specified field.                                                                                               | ✓       | ✓    |
+| MAX         | Finds the largest value for all records of the specified field.                                                                                                | ✓       | ✓    |
+| RANGE       | Finds the range of values (MAX minus MIN) for the specified field.                                                                                             | ✓       | ✓    |
+| STD         | Finds the standard deviation on values in the specified field.                                                                                                 | ✓       | ✓    |
+| COUNT       | Finds the number of values included in statistical calculations. This counts each value except null values. To determine the number of null values in a field  | ✓       | ✓    |
+| FIRST       | Finds the first record in the Input Table and uses its specified field value.                                                                                  | ✓       | ✓    |
+| LAST        | Finds the last record in the Input Table and uses its specified field value.                                                                                   | ✓       | ✓    |
+| MEDIAN      | The median for all records of the specified field will be calculated.                                                                                          | ✕       | ✓    |
+| VARIANCE    | The variance for all records of the specified field will be calculated.                                                                                        | ✕       | ✓    |
+| UNIQUE      | The number of unique values of the specified field will be counted.                                                                                            | ✕       | ✓    |
 
 > Atención: para la ejecución correcta de los sripts se recomienda cerrar sus aplicativos GIS. Para garantizar la compatibilidad con la versión Desktop de ArcGIS, no se han incluido los estadísticos `MEDIAN`, `VARIANCE` y `UNIQUE`.
 
