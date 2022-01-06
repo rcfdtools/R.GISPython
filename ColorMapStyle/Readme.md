@@ -3,12 +3,12 @@ Keywords: `ArcGIS` `Python 3` `matplotlib` `sys` `datetime` `open()` `write()` `
 
 ![ColorMapStyle.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/ColorMapStyle.png)
 
-Las rampas de color son utilizadas para representar los valores de celdas o pixeles contenidos dentro de una grilla o mapa raster. Esri ArcGIS for Desktop y ArcGIS Pro, dispone de múltiples estilos de representación y a partir de la versión Desktop 10.6, estos estilos pueden ser creados por el usuario a través del administrador de estilos disponible en el menú Personalización; sin embargo, la creación de estilos en versiones anteriores y el reescalamiento y representación de grillas interpolas de resultados en una serie temporal, requieren de la creación manual de archivos .clr que luego pueden ser asociados a cada grilla de salida, perimitiendo de esta forma representar un mismo valor de celda en diferentes grillas con un mismo color. El propósito principal de este microcontenido, es crear estilos personalizados que luego serán utilizados en las actividades relacionadas con [Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid).
+Las rampas de color son utilizadas para representar los valores de celdas o pixeles contenidos dentro de una grilla o mapa raster. Esri ArcGIS for Desktop y ArcGIS Pro, disponen de múltiples estilos de representación y a partir de la versión Desktop 10.6, estos estilos pueden ser creados por el usuario a través del administrador de estilos disponible en el menú Personalización; sin embargo, la creación de estilos en versiones anteriores y el reescalamiento y representación de grillas interpolas de resultados en una serie temporal, requieren de la creación manual de archivos .clr que luego pueden ser asociados a cada grilla de salida, perimitiendo de esta forma representar un mismo valor de celda en diferentes grillas con un mismo color. El propósito principal de este microcontenido, es crear estilos personalizados que luego serán utilizados en las actividades relacionadas con la [Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid).
 
 
 ### Caso de estudio
 
-Representar manualmente en múltiples estilos de color personalizados el mapa de precipitación media multianual de Colombia Suramérica, disponible en la base de datos [HidroSIG](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/hidrosig-4-0.html) creada por la [Facultad de Minas de la Universidad Nacional de Colombia - Sede Medellín](https://minas.medellin.unal.edu.co/).
+Representar manualmente en múltiples estilos de color personalizados el mapa de precipitación media multianual de Colombia Suramérica, disponible en la base de datos [HidroSIG 4.0](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/hidrosig-4-0.html) creada por la [Facultad de Minas de la Universidad Nacional de Colombia - Sede Medellín](https://minas.medellin.unal.edu.co/).
 
 
 ### Requerimientos
@@ -22,44 +22,44 @@ Representar manualmente en múltiples estilos de color personalizados el mapa de
 ### Funcionalidades
 
 * Generación de archivos de rampa de color .clr a partir de arreglos de colores definidos por el usuario en formato RGB.
-* Definición del número de colores discretos que contendrá la rampa, p.ej, 128, 256, 512, 1024, 2048.
+* Definición del número de colores discretos que contendrá la rampa de salida, p.ej, 128, 256, 512, 1024, 2048.
 * Archivo `ColorMapStyleValue.py` independiente con múltiples estilos de color de referencia personalizados. 
-* Conversión de valores RGB a valores escalados de representación en Python entre 0 y 1.
+* Conversión de valores RGB a valores escalados entre 0 y 1 para representación en Python.
 * Generación y exportación a formato PNG de gráfica de rampa de color usando matplotlib.
 * Generación de registro de ejecución detallado en formado Markdown.
 * Visualización de rampa de colores en formato texto sobre la consola de ejecución.
 
-> Dependiendo de la combinación de los colores de referencia y eel número de colores discretos, es posible que algunos valores discretos RGB se repitan, p.ej, en una rampa de color de blanco a negro solo pueden existir 255 colores discretos y sin en la definición de generación del archivo .clr se han definido 512 colores, por cada color se crearan dos registros con los mismos valores. 
+> Dependiendo de la combinación de los colores de referencia y del número de colores discretos, es posible que algunos valores RGB se repitan, p.ej, en una rampa de color de blanco a negro solo pueden existir 255 colores discretos y sin en la definición de generación del archivo .clr se han definido 512 colores, por cada color se crearan dos registros con diferente índice. 
 
  
 ### Ruta de ejecución
 
 Para el desarrollo de este microcontenido se recomienda que los scripts y demás archivos requeridos se alojen en `D:\R.GISPython\ColorMapStyle` utilizando la siguiente estructura de directorios. 
 
-| Directorio                                                                                 | Descripción                                                                                           |
-|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Data)             | Directorio de datos del caso de estudio.                                                              |
-| [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Map)               | Directorio con mapas para visualización en ArcGIS for Desktop y ArcGIS Pro.                           |
-| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Old)               | Directorio con versiones antiguas del script.                                                         |
-| [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output)         | Directorio de salida con rampas de color .clr, previsualización en .png y registro de ejecución .md.  |
-| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Screenshot) | Capturas de pantalla con resultados de ejecución.                                                     |
+| Directorio                                                                                 | Descripción                                                                                          |
+|--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Data)             | Directorio de datos del caso de estudio.                                                             |
+| [/Map](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Map)               | Directorio con mapas de representación en ArcGIS for Desktop y ArcGIS Pro.                           |
+| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Old)               | Directorio con versiones antiguas del script.                                                        |
+| [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Output)         | Directorio de salida con rampas de color .clr, previsualización en .png y registro de ejecución .md. |
+| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle/Screenshot) | Capturas de pantalla con resultados de ejecución.                                                    |
 
 > El directorio `/Output` contiene mapas ejemplo para cada rampa de color generada usando la grilla de precipitación mensual media multianual. Para la representación se generaron y utilizaron archivos .clr con 16000 colores. 
 
 
 ### Procedimiento para la obtención de la grilla de precipitación media
 
-1. Descargar e instale HidroSIG 4.0 y descomprima la Base de datos de Colombia, [clic aquí](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/descargas.html).
+1. Descargue e instale HidroSIG 4.0 y descomprima la Base de datos de Colombia, [clic aquí](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/descargas.html).
 
 ![HidroSIG4.0Descarga.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Descarga.png) 
 
-> HidroSIG 4.0 requiere de la instalación de de MapWindow GIS 4.6.
+> HidroSIG 4.0 requiere de la instalación de MapWindow GIS 4.6.
 
 2. En MapWindow GIS, clic en el menú _HidroSIG_ - _Base de Datos_ - _Conectar / Desconectar_, seleccione el proveedor _BD SQLite_ y defina la fuente de datos correspondiente al archivo _Colombia.db_.
 
 ![HidroSIG4.0Conectar.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Conectar.png) 
 
-3. En MapWindow GIS, clic en el menú _HidroSIG_ - _Base de Datos_ - Explorar datos. En el panel derecho, expanda Conexiones - Data y de _doble clic_ sobre _Precipitación KDE_, correspondiente a la precipitación analizada mediante el núcleo de estimación de densidad. Luego de dar _doble clic_ el mapa será cargado automáticamente en el visor de MapWindow GIS.
+3. En MapWindow GIS, clic en el menú _HidroSIG_ - _Base de Datos_ - Explorar datos. En el panel derecho, expanda Conexiones - Data y de _doble clic_ sobre _Precipitación KDE_, correspondiente a la precipitación analizada mediante el núcleo de estimación de densidad. Luego de dar _doble clic_ el mapa será cargado automáticamente al visor de MapWindow GIS.
 
 ![HidroSIG4.0Visualizar.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Visualizar.png)
 
@@ -67,12 +67,12 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 
 ![HidroSIG4.0Exportar.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Exportar.png)
 
-> Complementaria a la grilla de precipitación KDE, se ha incluido en la carpeta `/Datos`, una capa vectorial en formato Shapefile (Country.shp) con el límite de Colombia - Suramérica, el cual ha sido creado a partir de la Subzonas Hidrográficas - SZH realizada por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia y es utilizado para ejemplificar el límite de la zona de estudio. Más información acerca de las SZH en [Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone).
+> Complementaria a la grilla de precipitación KDE, se ha incluido en la carpeta `/Datos`, una capa vectorial en formato Shapefile (Country.shp) con el límite de Colombia - Suramérica, el cual ha sido creado a partir de la delimitación de Subzonas Hidrográficas - SZH realizada por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia y es utilizado para ejemplificar el límite de la zona de estudio. Más información acerca de las SZH en [Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone).
 
 
 ### Procedimiento para la generación de rampas utilizando el script 
 
-1. Utilizando GitHub, clone el presente directorio o manualmente realice la descarga los scripts en Python y cree la estructura de directorios recomendada en `D:\R.GISPython\ColorMapStyle`.
+1. Utilizando GitHub, clone el presente repositorio o manualmente realice la descarga los scripts en Python y cree la estructura de directorios recomendada en `D:\R.GISPython\ColorMapStyle`.
 
 ![MicrosoftWindowsFolder.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/MicrosoftWindowsFolder.png)
 
@@ -82,7 +82,7 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 
 > En caso de que quiera crear un nuevo estilo, al final de este script, agregue un nuevo arreglo continuando con el número consecutivo de la secuencia definida, p.ej, `ColorMap14 = []`.
 
-3. En PyCharm, abra el script `ColorMapStyle.py` y modifique las líneas de código asociadas al arreglo definido en la definición de estilos realizada en el archivo `ColorMapStyleValue.py`, p.ej, para generar o actualizar la rampa de color 13, defina `baseRGBColors = cmsv.ColorMap13` con `styleNumber = 13` y establezca el número total de valores discretos que contendrá el archivo de color .clr, p.ej, 256. 
+3. En PyCharm, abra el script `ColorMapStyle.py` y modifique las líneas de código asociadas al arreglo definido en la definición de estilos realizada en el archivo `ColorMapStyleValue.py`. Por ejemplo, para generar o actualizar la rampa de color 13, defina `baseRGBColors = cmsv.ColorMap13` con `styleNumber = 13` y establezca el número total de valores discretos que contendrá el archivo de color `.clr`, p.ej, 256. 
 
 ```
 baseRGBColors = cmsv.ColorMap13
@@ -94,9 +94,11 @@ numColor = 256
 
 4. Ejecute el script, verifique los resultados detallados en la consola de ejecución y los archivos generados. Para los parámetros establecidos en el ejemplo, automáticamente se crearán en la carpeta `\Output` los siguientes archivos:
 
-* [ColorMapArcGIS256s13.clr](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.clr): Archivo de rampa de color no codificado.
-* [ColorMapArcGIS256s13.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.png): Previsualización de la rampa de color.
-* [ColorMapArcGIS256s13.md](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.md): Registro detallado de ejecución en formato Markdown.
+| Archivo | Descripción |
+|---|---|
+| [ColorMapArcGIS256s13.clr](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.clr) | Archivo de rampa de color no codificado. |
+| [ColorMapArcGIS256s13.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.png) | Previsualización de la rampa de color. |
+| [ColorMapArcGIS256s13.md](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Output/ColorMapArcGIS256s13.md) | Registro detallado de ejecución en formato Markdown. |
 
 ![PyCharmColorMapStyleRun1.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleRun1.png)
 ![PyCharmColorMapStyleRun2.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleRun2.png)
