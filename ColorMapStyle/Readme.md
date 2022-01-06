@@ -11,6 +11,7 @@ Representar manualmente en múltiples estilos de color personalizados el mapa de
 
 ### Requerimientos
 
+* [PyCharm 2021.3 Community Edition](https://www.jetbrains.com/pycharm/download/#section=windows)
 * [Python 3+](https://www.python.org/) 
 * [Sistema operativo Microsoft Windows](https://www.microsoft.com/en-us/windows?r=1)
 * [matplotlib](https://matplotlib.org/)
@@ -46,11 +47,46 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 
 ### Procedimiento para la obtención de la grilla de precipitación media
 
-1. Descargar HidroSIG 4.0 y la Base de datos de Colombia, [clic aquí](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/descargas.html).
+1. Descargar e instale HidroSIG 4.0 y descomprima la Base de datos de Colombia, [clic aquí](https://minas.medellin.unal.edu.co/departamentos/geocienciasymedioambiente/hidrosig/es/descargas.html).
 
-![HidroSIG4.0Descarga](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Descarga.png) 
+![HidroSIG4.0Descarga.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Descarga.png) 
+
+> HidroSIG 4.0 requiere de la instalación de de MapWindow GIS 4.6.
+
+2. En MapWindow GIS, clic en el menú _HidroSIG_ - _Base de Datos_ - _Conectar / Desconectar_, seleccione el proveedor _BD SQLite_ y defina la fuente de datos correspondiente al archivo _Colombia.db_.
+
+![HidroSIG4.0Conectar.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Conectar.png) 
+
+3. En MapWindow GIS, clic en el menú _HidroSIG_ - _Base de Datos_ - Explorar datos. En el panel derecho, expanda Conexiones - Data y de _doble clic_ sobre _Precipitación KDE_, correspondiente a la precipitación analizada mediante el núcleo de estimación de densidad. Luego de dar _doble clic_ el mapa será cargado automáticamente en el visor de MapWindow GIS.
+
+![HidroSIG4.0Visualizar.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Visualizar.png)
+
+4. Exporte la grilla utilizando el botón _Exportar_ que se encuentra en la esquina inferior derecha del Explorador de bases de datos, nombre como `PrecipitacionKDE.asc` en la carpeta `D:\R.GISPython\ColorMapStyle\Data`. La grilla será exportada en formato Ascii (.asc) y sin sistema de proyección de coordenadas embebido.
+
+![HidroSIG4.0Exportar.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/HidroSIG4.0Exportar.png)
+
+> Complementaria a la grilla de precipitación KDE, se ha incluido en la carpeta `/Datos`, una capa vectorial en formato Shapefile (Country.shp) con el límite de Colombia - Suramérica, el cual ha sido creado a partir de la Subzonas Hidrográficas - SZH realizada por el [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http://www.ideam.gov.co/) de Colombia y es utilizado para ejemplificar el límite de la zona de estudio. Más información acerca de las SZH en [Zonificación hidrográfica de Colombia - Análisis de forma y densidad usando Python](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone).
 
 
+### Procedimiento para la generación de rampas utilizando el script 
+
+1. Utilizando GitHub, clone el presente directorio o manualmente realice la descarga los script en Python y cree la estructura de directorio recomendada en `D:\R.GISPython\ColorMapStyle`.
+
+![MicrosoftWindowsFolder.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/MicrosoftWindowsFolder.png)
+
+2. En PyCharm, abra y explore el archivo de definición de rampas de color denominado `ColorMapStyleValue.py`, encontrará múltiples estilos predefinidos. 
+
+![PyCharmColorMapStyleValue.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/PyCharmColorMapStyleValue.png)
+
+> En caso de que quiera crear un nuevo estilo, al final de este script, agregue un nuevo arreglo continuando con el número consecutivo de la secuencia definida, p.ej, `ColorMap14 = []`.
+
+3. En PyCharm, abra el script `ColorMapStyle.py` y modifique las líneas de código asociadas al arreglo definido en la definición de estilos realizada en el archivo `ColorMapStyleValue.py`, p.ej, para generar o actualizar la rampa de color 13, defina `baseRGBColors = cmsv.ColorMap13` con `styleNumber = 13` y 
+
+```
+baseRGBColors = cmsv.ColorMap13  # ✅✅✅ User can change ✅✅✅ - Style values from ColorMapStyleValue.py
+styleNumber = 13  # ✅✅✅ User can change ✅✅✅
+numColor = 1024  # ✅✅✅ User can change ✅✅✅
+```
 
 
 ## Rampas disponibles
@@ -309,3 +345,4 @@ Para el desarrollo de este microcontenido se recomienda que los scripts y demás
 * https://stackoverflow.com/questions/4042192/reduce-left-and-right-margins-in-matplotlib-plot
 * https://stackoverflow.com/questions/3899980/how-to-change-the-font-size-on-a-matplotlib-plot
 * https://es.stackoverflow.com/questions/334170/es-posible-agregar-ceros-a-la-derecha
+* https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-analyst/kernel-density.htm
