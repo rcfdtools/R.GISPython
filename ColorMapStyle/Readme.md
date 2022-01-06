@@ -1,4 +1,4 @@
-## Generador de rampas de color para representación de grillas en ArcGIS
+## Generador de rampas de color para representación de grillas en ArcGIS for Desktop y ArcGIS Pro
 Keywords: `ArcGIS` `Python 3` `matplotlib` `sys` `datetime` `open()` `write()` `close()` `abs()` `append()` `range()` `zfill()`
 
 ![ColorMapStyle.png](https://github.com/rcfdtools/R.GISPython/blob/main/ColorMapStyle/Screenshot/ColorMapStyle.png)
