@@ -74,11 +74,11 @@ Para la correcta ejecución del script se requiere que los archivos de texto sep
 
 | Campo  | Descripción                      | Aplica diarios | Aplica mensuales |
 |--------|----------------------------------|----------------|------------------|
-| Julian | Número de día del año de 1 a 366 | ✅              | ⛔               |
-| Month  | Mes del año de 1 a 12            | ⛔              | ✅               |
-| CX     | Coordenada en x o este           | ✅              | ✅               |
-| CY     | Coordenada en y o noerte         | ✅              | ✅               |
-| Var    | Variable númerica a representar  | ✅              | ✅               |
+| Julian | Número de día del año de 1 a 366 | ✓              | ✕               |
+| Month  | Mes del año de 1 a 12            | ✕              | ✓               |
+| CX     | Coordenada en x o este           | ✓              | ✓               |
+| CY     | Coordenada en y o noerte         | ✓              | ✓               |
+| Var    | Variable númerica a representar  | ✓              | ✓               |
 
 
 > En un mismo archivo de entrada pueden existir múltiples columnas `Var` (VTemp, VPrec, VEvap...) registrando diferentes variables meteorológicas, para lo cual el usuario podrá elegir la variable de entrada a analizar a partir de la lista de atributos encontrados.
