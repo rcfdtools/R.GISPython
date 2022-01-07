@@ -941,7 +941,7 @@ def graphtxtonevalue(varMax, valOpt):
 | v.20211231  | Actualización para compatibilidad con Python 3 y ArcGIS Pro. Optimización de script. Log de registro.                                                                                                                                                                                                               |
 | v.20220101  | Actualización de documentación, optimización de print con concatenación usando + para visualización idéntica en consola para versiones 2 y 3 de Python.                                                                                                                                                             |
 | v.20220102  | Inclusión de gráfica de barras para todos los datos encontrados con publicación y direccionamiento a GitHub en carpeta `/Graph` usando el código de registro Log. Generación, almacenamiento y publicación de gráfica de serie de datos y previsualización de grillas con `matplotlib` para la variable en estudio. |
-| v.20220107  | Actualización de módulo TableInterpolatedGridModule.py con nueva versión de estilos generados en https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle                                                                                                                                                   |
+| v.20220107  | Actualización de módulo `TableInterpolatedGridModule.py` con nueva versión de estilos generados en https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle                                                                                                                                                   |
 
 
 ### Licencia, cláusulas y condiciones de uso
