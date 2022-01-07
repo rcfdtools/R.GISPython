@@ -407,7 +407,7 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\LayerListField\LayerListFieldArc
 R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
 
 
-| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
+| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic)     |
 |------------------------|---------------------------------------------------------|-----------------------------|
 
 _¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
