@@ -277,30 +277,55 @@ def csvstatistic(userFileName, totalRecord, fieldNumberEval):
 # folderColorMapStyle: Complete folder color map styles path
 def colormapstyle(folderColorMapStyle):
     colorMapStyleArray = np.array([
-        (0, 256, 'Grayscale'),
-        (1, 256, 'White - Magenta'),
-        (2, 256, 'White - Red'),
-        (3, 256, 'Cyan - Red'),
-        (4, 256, 'Green - Magenta'),
-        (5, 256, 'Magenta - Green'),
-        (6, 256, 'Purple - Green - Yellow'),
-        (7, 256, 'Green - Light Green - Pink - Dark Pink - Purple (x5)'),
-        (8, 256, 'Green - Light Green - Pink - Dark Pink - Purple (x8)'),
-        (9, 256, 'Lila - Khaki - Blue (x15)'),
-        (10, 256, 'Lila - Khaki - Blue (x13)'),
-        (11, 256, 'Yellow - Pink - Green - Blue'),
-        (12, 256, 'Gray - Aquamarine - Sea Blue'),
-        (13, 512, 'Green Sea - Blue Sea - Purple - Red - Orange - Yellow (x20)'),
-        (14, 1024, 'Dark Pink - Mercury - Lime - Green (x13)')])
+        (0, 1, 128, 'ColorMap1 - Grayscale: White - Black'),
+        (1, 1, 256, 'ColorMap1 - Grayscale: White - Black'),
+        (2, 2, 128, 'ColorMap2 - Grayscale invert: Black - White'),
+        (3, 2, 256, 'ColorMap2 - Grayscale invert: Black - White'),
+        (4, 3, 128, 'ColorMap3 - Pantone 2: Red - Green'),
+        (5, 3, 256, 'ColorMap3 - Pantone 2: Red - Green'),
+        (6, 4, 128, 'ColorMap4 - Pantone 3: Blue - Red - Green'),
+        (7, 4, 256, 'ColorMap4 - Pantone 3: Blue - Red - Green'),
+        (8, 5, 256, 'ColorMap5 - Pantone 4: Blue - Red - Green - Yellow'),
+        (9, 5, 512, 'ColorMap5 - Pantone 4: Blue - Red - Green - Yellow'),
+        (10, 6, 256, 'ColorMap6 - Laser print: Orange - Light BLue - Magenta - Dark Blue - Yellow - Green - Red'),
+        (11, 6, 512, 'ColorMap6 - Laser print: Orange - Light BLue - Magenta - Dark Blue - Yellow - Green - Red'),
+        (12, 6, 1024, 'ColorMap6 - Laser print: Orange - Light BLue - Magenta - Dark Blue - Yellow - Green - Red'),
+        (13, 7, 256, 'ColorMap7: Yellow - Pink - Green - Blue'),
+        (14, 7, 512, 'ColorMap7: Yellow - Pink - Green - Blue'),
+        (15, 7, 1024, 'ColorMap7: Yellow - Pink - Green - Blue'),
+        (16, 8, 256, 'ColorMap8: Gray - Aquamarine - Sea Blue'),
+        (17, 8, 512, 'ColorMap8: Gray - Aquamarine - Sea Blue'),
+        (18, 8, 1024, 'ColorMap8: Gray - Aquamarine - Sea Blue'),
+        (19, 9, 256, 'ColorMap9: Dark Pink - Mercury - Lime - Green'),
+        (20, 9, 512, 'ColorMap9: Dark Pink - Mercury - Lime - Green'),
+        (21, 9, 1024, 'ColorMap9: Dark Pink - Mercury - Lime - Green'),
+        (22, 10, 256, 'ColorMap10 - HKS Color: Green - Yellow - Red'),
+        (23, 10, 512, 'ColorMap10 - HKS Color: Green - Yellow - Red'),
+        (24, 10, 1024, 'ColorMap10 - HKS Color: Green - Yellow - Red'),
+        (25, 11, 256, 'ColorMap11 - HKS Colors Extend: Green - Yellow - Red - Purple'),
+        (26, 11, 512, 'ColorMap11 - HKS Colors Extend: Green - Yellow - Red - Purple'),
+        (27, 11, 1024, 'ColorMap11 - HKS Colors Extend: Green - Yellow - Red - Purple'),
+        (28, 11, 2048, 'ColorMap11 - HKS Colors Extend: Green - Yellow - Red - Purple'),
+        (29, 12, 256, 'ColorMap12: Green Sea - Blue Sea - Purple - Red - Orange - Yellow'),
+        (30, 12, 512, 'ColorMap12: Green Sea - Blue Sea - Purple - Red - Orange - Yellow'),
+        (31, 12, 1024, 'ColorMap12: Green Sea - Blue Sea - Purple - Red - Orange - Yellow'),
+        (32, 12, 2048, 'ColorMap12: Green Sea - Blue Sea - Purple - Red - Orange - Yellow'),
+        (33, 13, 256, 'ColorMap13: Green Sea - Blue Sea - Purple - Red - Orange - Yellow - Green - Yellow - Red - Purple'),
+        (34, 13, 512, 'ColorMap13: Green Sea - Blue Sea - Purple - Red - Orange - Yellow - Green - Yellow - Red - Purple'),
+        (35, 13, 1024, 'ColorMap13: Green Sea - Blue Sea - Purple - Red - Orange - Yellow - Green - Yellow - Red - Purple'),
+        (36, 13, 2048, 'ColorMap13: Green Sea - Blue Sea - Purple - Red - Orange - Yellow - Green - Yellow - Red - Purple')])
     colorMapStyleCount = len(colorMapStyleArray)
     print('\nTotal Color Map Styles: ' + str(colorMapStyleCount))
-    printtitle('ID, Colors, Color map style name')
+    printtitle('#, Id, Colors, Color map style name')
     for j in range(0, colorMapStyleCount):
-        print(str((colorMapStyleArray[j, 0]).zfill(2)) + ' ' + str((colorMapStyleArray[j, 1].zfill(4))) + ' ' + colorMapStyleArray[j, 2])
+        print(str((colorMapStyleArray[j, 0]).zfill(2)) + ' ' + str((colorMapStyleArray[j, 1]).zfill(2)) + ' ' + str((colorMapStyleArray[j, 2].zfill(4))) + ' ' + colorMapStyleArray[j, 3])
     colorMapFileOpt = optionrange('Ramp color number', 0, (colorMapStyleCount-1))
-    colorMapFileColors = colorMapStyleArray[colorMapFileOpt, 1]
-    colorMapFile = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'s'+str(colorMapFileOpt)+'.clr'
-    colorMapFilePrev = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'s'+str(colorMapFileOpt)+'.jpg'
+    for k in range(0, colorMapStyleCount):
+        if str(colorMapFileOpt) == str(colorMapStyleArray[k, 0]):
+            colorMapFileId = colorMapStyleArray[colorMapFileOpt, 1]
+            colorMapFileColors = colorMapStyleArray[colorMapFileOpt, 2]
+    colorMapFile = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'s'+str(colorMapFileId)+'.clr'
+    colorMapFilePrev = folderColorMapStyle+'ColorMapArcGIS'+colorMapFileColors+'s'+str(colorMapFileId)+'.png'
     print('\nColor map file:', colorMapFile)
     print('Color map sample:', colorMapFilePrev)
     return (colorMapFile, colorMapFilePrev, colorMapFileColors)
