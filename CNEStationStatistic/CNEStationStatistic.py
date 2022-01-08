@@ -290,7 +290,7 @@ print('Table >> '+urlGraphPivotTable+'/PivotTable/InstallationYearPivot'+current
 print('\n')
 
 # Geospatial array
-geoArray=stationTable[[latitudeName,longitudeName,elevationName]]
+geoArray = stationTable[[latitudeName,longitudeName,elevationName]]
 SeparatorTitle(39)
 print('Geospatial array sample with '+str(sampleRecord)+' records')
 SeparatorTitle(39)

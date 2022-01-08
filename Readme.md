@@ -1,6 +1,6 @@
 <div align="center">
   <br>
-  <img alt="R.HydroTools" src="https://github.com/rcfdtools/R.GISPython/blob/main/.Icons/R.GISPython.svg" width="300px">
+  <img alt="R.GISPython" src="https://github.com/rcfdtools/R.GISPython/blob/main/.Icons/R.GISPython.svg" width="300px">
   <br><b>Algoritmos y programación GIS para análisis de datos espaciales usando Python</b> by r.cfdtools@gmail.com<br><br>  
 </div>
 
