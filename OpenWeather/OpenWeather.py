@@ -15,7 +15,7 @@ from datetime import date
 # Markdown header separator table function
 def tableseparatormarkdown(n=2):
     lineSep = '|---'
-    printmd(lineSep * n + '|', False)
+    printmd(lineSep * n + '|', True)
 
 # Print in CSV format
 def printcsv(txtPrint, onScreen=True):
@@ -70,6 +70,7 @@ daysBefore = 1  # Max to 4 days, current day count like a part of 5 days in open
 printDetail = False
 showHistorical = False  # True for use the timemachine. False for get the current forecast
 showYesterday = True
+updateCNEFile = False
 
 # General pandas and matplotlib settings
 pd.set_option('display.max_rows', None)
@@ -79,17 +80,20 @@ pd.set_option('display.max_colwidth', 0)
 mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_warning
 
 # Downloading and reading the CNE file
-fileDownloadText = 'File downloaded and updated = No'
-fileRequest = requests.get(urlFileCNE)
 currentDate = date.today()
 currentDateTxt = str(currentDate.year).zfill(4)+str(currentDate.month).zfill(2)+str(currentDate.day).zfill(2)
 fileSaveCNE = filePath+'/Data/'+fileNameCNE+'_'+currentDateTxt+fileExtensionCNE
 fileOutputCNEWeather = open(filePath+'/Output/'+fileNameCNE+'_OWM_'+currentDateTxt+'.csv', 'w+')
 fileOutputMarkdown = open(filePath+'/Output/'+fileNameCNE+'_OWM_'+currentDateTxt+'.md', 'w+')
-if fileRequest:
-    if os.path.isfile(fileSaveCNE) == False:
-        open(fileSaveCNE, 'wb').write(fileRequest.content)
-        fileDownloadText = 'File downloaded and updated = Yes'
+if updateCNEFile:
+    fileRequest = requests.get(urlFileCNE)
+    if fileRequest:
+        if os.path.isfile(fileSaveCNE) == False:
+            open(fileSaveCNE, 'wb').write(fileRequest.content)
+            fileDownloadText = 'File downloaded and updated: Yes'
+else:
+    open(fileSaveCNE)
+    fileDownloadText = 'File downloaded and updated: No'
 stationTableCNE = pd.read_excel(fileSaveCNE, index_col=0, sheet_name='CNE')
 pd.set_option('display.max_rows', stationTableCNE.shape[0]+1)  # Show all the records
 pd.set_option('display.max_columns', None)  # Show all the records
@@ -100,38 +104,41 @@ if unitSys == 'metric':
     unitVal = unitValMetric
 else:
     unitVal = unitValImperial
-print('\n ### Unit system (%s)\n' %(unitSys))
-print('| Parameter | Unit | openweathermap name |')
+printmd('\n ### Unit system (%s)\n' %(unitSys))
+printmd('| Parameter | Unit | openweathermap name |')
 tableseparatormarkdown(3)
 for i in unitVal:
-    print('| %s | %s | %s |' % (i[0],i[1],i[2]))
-print('\n> mi: Miles unit for imperial system')
-print('\n> DN: Dimensionless numbers')
+    printmd('| %s | %s | %s |' % (i[0],i[1],i[2]))
+printmd('\n> mi: Miles unit for imperial system')
+printmd('\n> DN: Dimensionless numbers')
 
 
 # Show CNE records and weather values
 timeStampVal = int(currentDateTime.replace(tzinfo=timezone.utc).timestamp())
-print('\nWeather values for each CNE starion from https://openweathermap.org\n')
-print('Current date time: ' + str(currentDateTime))
-print('Unix time to eval: ' + str(timeStampVal))
-print('Show historical: ' + str(showHistorical))
-print('Show yesterday: ' + str(showYesterday))
 if showYesterday: timeStampVal -= 86400 * daysBefore
 #numStationsCNE = stationTableCNE.shape[0]
 numStationsCNE = 3
-print('\n## Estaciones encontradas\n')
-print('Stations: %i\nAttributes: %i' %(numStationsCNE, stationTableCNE.shape[1]))
+printmd('\n### Weather values for each CNE station from https://openweathermap.org')
+printmd('\n* Current date time: ' + str(currentDateTime) +
+        '\n* Unix time to eval: ' + str(timeStampVal) +
+        '\n* Show historical: ' + str(showHistorical) +
+        '\n* Show yesterday: ' + str(showYesterday) +
+        '\n* Days before: ' + str(daysBefore) +
+        '\n* ' + str(fileDownloadText) +
+        '\n* Stations: ' + str(numStationsCNE) +
+        '\n* Attributes: ' + str(stationTableCNE.shape[1]))
 geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE]]
 printcsv(
     'station,name,lat,lon,timezone,date,time,clouds,dewpoint,feelslike,humidity,pressure,rain,temp,uvi,visibility,winddeg,windgust,windspeed,julian',
     False)
 for i in range(1, numStationsCNE):
-    print('\n%s Getting values for station %s: %s' % (str(i).zfill(5), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
+    printmd('\n#### %s Getting values for station %s: %s' % (str(i).zfill(5), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
     if showHistorical:
         url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, unitSys, apiKey)
     else:
         url = 'https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&&units=%s&appid=%s' % (latDD, lonDD, unitSys, apiKey)
-    print('URL: ' + url)
+    printmd('\nURL: ' + url +
+            'Station in: [Google Maps](https://www.google.com/maps/@' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + ',11z), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
     response = requests.get(url)
     data = json.loads(response.text)
     '''
