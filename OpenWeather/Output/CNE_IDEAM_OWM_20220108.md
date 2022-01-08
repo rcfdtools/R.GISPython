@@ -21,8 +21,8 @@
 
 ### Weather values for each CNE station from https://openweathermap.org
 
-* Current date time: 2022-01-08 13:31:22.756803
-* Unix time to eval: 1641562282
+* Current date time: 2022-01-08 13:33:24.625007
+* Unix time to eval: 1641562404
 * Show historical: False
 * Show yesterday: True
 * Days before: 1
@@ -32,7 +32,8 @@
 
 #### 00001 Getting values for station 000052057100: RUMICHACA - AUT [52057100] 
 
-URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396Station in: [Google Maps](https://www.google.com/maps/@0.81378611,-77.66197778,11z), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778).
+* URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
+* Station in: [Google Maps](https://www.google.com/maps/@0.81378611,-77.66197778,11z), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778).
 
 | station | name | lat | lon | timezone | date | time | clouds | dewpoint | feelslike | humidity | pressure | rain | temp | uvi | visibility | winddeg | windgust | windspeed | julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -87,7 +88,8 @@ URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917
 
 #### 00002 Getting values for station 000052055170: LA JOSEFINA - AUT [52055170]
 
-URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396Station in: [Google Maps](https://www.google.com/maps/@0.93030556,-77.49119444,11z), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.93030556&lon=-77.49119444).
+* URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
+* Station in: [Google Maps](https://www.google.com/maps/@0.93030556,-77.49119444,11z), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.93030556&lon=-77.49119444).
 
 | station | name | lat | lon | timezone | date | time | clouds | dewpoint | feelslike | humidity | pressure | rain | temp | uvi | visibility | winddeg | windgust | windspeed | julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
