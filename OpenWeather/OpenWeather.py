@@ -90,10 +90,10 @@ if updateCNEFile:
     if fileRequest:
         if os.path.isfile(fileSaveCNE) == False:
             open(fileSaveCNE, 'wb').write(fileRequest.content)
-            fileDownloadText = 'File downloaded and updated: Yes'
+            fileDownloadText = 'CNE IDEAM file downloaded and updated: Yes'
 else:
     open(fileSaveCNE)
-    fileDownloadText = 'File downloaded and updated: No'
+    fileDownloadText = 'CNE IDEAM file downloaded and updated: No'
 stationTableCNE = pd.read_excel(fileSaveCNE, index_col=0, sheet_name='CNE')
 pd.set_option('display.max_rows', stationTableCNE.shape[0]+1)  # Show all the records
 pd.set_option('display.max_columns', None)  # Show all the records
@@ -138,7 +138,7 @@ for i in range(1, numStationsCNE+1):
     else:
         url = 'https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&&units=%s&appid=%s' % (latDD, lonDD, unitSys, apiKey)
     printmd('\n* URL: ' + url +
-            '\n* Station in: [Google Maps](https://www.google.com/maps/@' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + ',11z), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
+            '\n* Station in: [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
     response = requests.get(url)
     data = json.loads(response.text)
     '''
