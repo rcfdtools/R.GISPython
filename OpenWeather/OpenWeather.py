@@ -131,8 +131,8 @@ geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, long
 printcsv(
     'station,name,lat,lon,timezone,date,time,clouds,dewpoint,feelslike,humidity,pressure,rain,temp,uvi,visibility,winddeg,windgust,windspeed,julian',
     False)
-for i in range(1, numStationsCNE):
-    printmd('\n#### %s Getting values for station %s: %s' % (str(i).zfill(5), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
+for i in range(1, numStationsCNE+1):
+    printmd('\n#### %s - Getting values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
     if showHistorical:
         url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, unitSys, apiKey)
     else:
