@@ -21,8 +21,8 @@
 
 ### Weather values for each CNE station from https://openweathermap.org
 
-* Current date time: 2022-01-08 13:42:20.859897
-* Unix time to eval: 1641562940
+* Current date time: 2022-01-08 13:50:39.006443
+* Unix time to eval: 1641563439
 * Show historical: False
 * Show yesterday: True
 * Days before: 1
@@ -30,7 +30,9 @@
 * Stations: 3
 * Attributes: 20
 
-#### 1 - Getting values for station 000052057100: RUMICHACA - AUT [52057100] 
+> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.
+
+#### 1 - Open Weather values for station 000052057100: RUMICHACA - AUT [52057100] 
 
 * URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
 * Station in: [Google Maps](http://maps.google.com/maps?q=0.81378611,-77.66197778), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778).
@@ -86,7 +88,7 @@
 | 52057100 | "RUMICHACA - AUT [52057100] " | 0.813786 | -77.661978 | America/Bogota | 2022/01/10 | 16:00:00 | 96.000000 | 9.290000 | 15.060000 | 71.000000 | 1017.000000 | 0.12 | 15.590000 | 10.990000 | 10000.000000 | 262.000000 | 1.790000 | 2.100000 | 16 |
 | 52057100 | "RUMICHACA - AUT [52057100] " | 0.813786 | -77.661978 | America/Bogota | 2022/01/10 | 17:00:00 | 97.000000 | 9.930000 | 15.820000 | 71.000000 | 1015.000000 | 0.19 | 16.280000 | 11.890000 | 10000.000000 | 274.000000 | 2.160000 | 2.380000 | 17 |
 
-#### 2 - Getting values for station 000052055170: LA JOSEFINA - AUT [52055170]
+#### 2 - Open Weather values for station 000052055170: LA JOSEFINA - AUT [52055170]
 
 * URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
 * Station in: [Google Maps](http://maps.google.com/maps?q=0.93030556,-77.49119444), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.93030556&lon=-77.49119444).
@@ -142,7 +144,7 @@
 | 52055170 | "LA JOSEFINA - AUT [52055170]" | 0.930306 | -77.491194 | America/Bogota | 2022/01/10 | 16:00:00 | 96.000000 | 9.290000 | 15.060000 | 71.000000 | 1017.000000 | 0.12 | 15.590000 | 10.990000 | 10000.000000 | 262.000000 | 1.790000 | 2.100000 | 16 |
 | 52055170 | "LA JOSEFINA - AUT [52055170]" | 0.930306 | -77.491194 | America/Bogota | 2022/01/10 | 17:00:00 | 97.000000 | 9.930000 | 15.820000 | 71.000000 | 1015.000000 | 0.19 | 16.280000 | 11.890000 | 10000.000000 | 274.000000 | 2.160000 | 2.380000 | 17 |
 
-#### 3 - Getting values for station 000052055220: EL PARAISO - AUT [52055220]
+#### 3 - Open Weather values for station 000052055220: EL PARAISO - AUT [52055220]
 
 * URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
 * Station in: [Google Maps](http://maps.google.com/maps?q=1.07061111,-77.63688889), [Openstreet Map](https://www.openstreetmap.org/query?lat=1.07061111&lon=-77.63688889).

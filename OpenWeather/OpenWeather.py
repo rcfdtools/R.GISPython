@@ -65,6 +65,16 @@ stationCodeCNE = 'CODIGO'
 stationNameCNE = 'nombre'
 latitudeCNE = 'latitud'
 longitudeCNE = 'longitud'
+elevationNameCNE = 'altitud'
+categoryNameCNE = 'CATEGORIA'
+technologyNameCNE = 'TECNOLOGIA'
+stateActiveNameCNE = 'ESTADO'
+installationDateCNE = 'FECHA_INSTALACION'
+geoStateNameCNE = 'DEPARTAMENTO'
+geoOperativeAreaNameCNE = 'AREA_OPERATIVA'
+geoHydroAreaNameCNE = 'AREA_HIDROGRAFICA'
+geoHydroZoneNameCNE = 'ZONA_HIDROGRAFICA'
+geoHydroSubZoneNameCNE = 'SUBZONA_HIDROGRAFICA'
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
 daysBefore = 1  # Max to 4 days, current day count like a part of 5 days in openweather
 printDetail = False
@@ -127,12 +137,13 @@ printmd('\n* Current date time: ' + str(currentDateTime) +
         '\n* ' + str(fileDownloadText) +
         '\n* Stations: ' + str(numStationsCNE) +
         '\n* Attributes: ' + str(stationTableCNE.shape[1]))
+printmd('\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
 geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE]]
 printcsv(
     'station,name,lat,lon,timezone,date,time,clouds,dewpoint,feelslike,humidity,pressure,rain,temp,uvi,visibility,winddeg,windgust,windspeed,julian',
     False)
 for i in range(1, numStationsCNE+1):
-    printmd('\n#### %s - Getting values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
+    printmd('\n#### %s - Open Weather values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
     if showHistorical:
         url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, unitSys, apiKey)
     else:
