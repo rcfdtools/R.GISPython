@@ -1,8 +1,8 @@
 
 ### Weather values for each IDEAM CNE station from https://openweathermap.org
 
-* Current date time: 2022-01-09 11:25:36.204797
-* Unix time to eval: 1641641136
+* Current date time: 2022-01-09 11:27:28.503253
+* Unix time to eval: 1641641248
 * Show historical: False
 * Show yesterday: True
 * Days before: 1
@@ -82,6 +82,7 @@
 #### 1 - Open Weather values for station 000052057100: RUMICHACA - AUT [52057100] 
 
 Station in: [Google Maps](http://maps.google.com/maps?q=0.81378611,-77.66197778), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778).
+None
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -137,6 +138,7 @@ Station in: [Google Maps](http://maps.google.com/maps?q=0.81378611,-77.66197778)
 #### 2 - Open Weather values for station 000052055170: LA JOSEFINA - AUT [52055170]
 
 Station in: [Google Maps](http://maps.google.com/maps?q=0.93030556,-77.49119444), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.93030556&lon=-77.49119444).
+None
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -192,6 +194,7 @@ Station in: [Google Maps](http://maps.google.com/maps?q=0.93030556,-77.49119444)
 #### 3 - Open Weather values for station 000052055220: EL PARAISO - AUT [52055220]
 
 Station in: [Google Maps](http://maps.google.com/maps?q=1.07061111,-77.63688889), [Openstreet Map](https://www.openstreetmap.org/query?lat=1.07061111&lon=-77.63688889).
+None
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
