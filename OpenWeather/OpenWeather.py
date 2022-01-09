@@ -87,6 +87,8 @@ csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM,
     ('Winddeg', 'N/A', 'wind_deg', 'Wind direction, degrees (meteorological)'),
     ('Windgust', 'N/A', 'wind_gust', 'Wind gust'),
     ('Windspeed', 'N/A', 'wind_speed', 'Wind speed'),
+    ('OWMid', 'N/A', 'id', 'Weather identification over OWM'),
+    ('OWMmain', 'N/A', 'id', 'Weather identification over OWM'),
     ('Julian', 'N/A', 'N/A', 'Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid)')]
 apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # For r.cfdtools@gmail.com
 latDD = 5.027451  # Set latitude in decimals degrees using period
@@ -115,7 +117,7 @@ geoHydroZoneNameCNE = 'ZONA_HIDROGRAFICA'
 geoHydroSubZoneNameCNE = 'SUBZONA_HIDROGRAFICA'
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
 daysBefore = 1  # Max to 4 days, current day count like a part of 5 days in openweather
-printDetail = False  # Print JSON dictionary on screen
+printDetail = True  # Print JSON dictionary on screen
 showHistorical = False  # True for use the timemachine. False for get the current forecast
 showYesterday = True
 updateCNEFile = False
@@ -196,8 +198,8 @@ for i in range(1, numStationsCNE+1):
         url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, unitSys, apiKey)
     else:
         url = 'https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&&units=%s&appid=%s' % (latDD, lonDD, unitSys, apiKey)
-    print('\n* URL: ' + url)
-    printmd('\n* Station in: [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
+    print('\nURL: ' + url)
+    printmd('\nStation in: [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
     response = requests.get(url)
     data = json.loads(response.text)
     '''
@@ -205,12 +207,16 @@ for i in range(1, numStationsCNE+1):
     print('\nPrimary keys:')
     for i in data:
         print('  '+str(i))
-    if printDetail:
-        print('\nCurrent data:')
-        pprint(data)  # General print
-    print('\nGet values')
-    print('Temperature at same today time: ' + str(data['current']['temp']))
     '''
+    # Print API JSON dictionary
+    if printDetail:
+        print('\nCurrent API JSON data:')
+        print('```')
+        pprint(data)
+        print('```')
+    #print('\nGet values')
+    #print('Temperature at same today time: ' + str(data['current']['temp']))
+
     # CSV conversion
     hourly = data['hourly']
     printmd('\n| Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |', True)

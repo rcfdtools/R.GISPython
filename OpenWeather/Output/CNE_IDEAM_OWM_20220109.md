@@ -1,8 +1,8 @@
 
 ### Weather values for each IDEAM CNE station from https://openweathermap.org
 
-* Current date time: 2022-01-09 11:15:49.365305
-* Unix time to eval: 1641640549
+* Current date time: 2022-01-09 11:25:36.204797
+* Unix time to eval: 1641641136
 * Show historical: False
 * Show yesterday: True
 * Days before: 1
@@ -68,6 +68,8 @@
 | Winddeg | N/A | wind_deg | Wind direction, degrees (meteorological) |
 | Windgust | N/A | wind_gust | Wind gust |
 | Windspeed | N/A | wind_speed | Wind speed |
+| OWMid | N/A | id | Weather identification over OWM |
+| OWMmain | N/A | id | Weather identification over OWM |
 | Julian | N/A | N/A | Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid) |
 
 > Some definitions are taken from https://openweathermap.org/
@@ -79,7 +81,7 @@
 
 #### 1 - Open Weather values for station 000052057100: RUMICHACA - AUT [52057100] 
 
-* Station in: [Google Maps](http://maps.google.com/maps?q=0.81378611,-77.66197778), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778).
+Station in: [Google Maps](http://maps.google.com/maps?q=0.81378611,-77.66197778), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778).
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -134,7 +136,7 @@
 
 #### 2 - Open Weather values for station 000052055170: LA JOSEFINA - AUT [52055170]
 
-* Station in: [Google Maps](http://maps.google.com/maps?q=0.93030556,-77.49119444), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.93030556&lon=-77.49119444).
+Station in: [Google Maps](http://maps.google.com/maps?q=0.93030556,-77.49119444), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.93030556&lon=-77.49119444).
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -189,7 +191,7 @@
 
 #### 3 - Open Weather values for station 000052055220: EL PARAISO - AUT [52055220]
 
-* Station in: [Google Maps](http://maps.google.com/maps?q=1.07061111,-77.63688889), [Openstreet Map](https://www.openstreetmap.org/query?lat=1.07061111&lon=-77.63688889).
+Station in: [Google Maps](http://maps.google.com/maps?q=1.07061111,-77.63688889), [Openstreet Map](https://www.openstreetmap.org/query?lat=1.07061111&lon=-77.63688889).
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
