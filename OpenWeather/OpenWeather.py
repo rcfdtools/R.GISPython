@@ -211,10 +211,10 @@ for i in range(1, numStationsCNE+1):
     # Print API JSON dictionary
     if printDetail:
         printmd('\nCurrent API JSON data:')
-        print('\n```')
+        printmd('\n```')
         printmd(str(data), True)
         #printmd(str(pprint(data)), True)  # Print with format
-        print('\n```')
+        printmd('\n```')
     #print('\nGet values')
     #print('Temperature at same today time: ' + str(data['current']['temp']))
 
