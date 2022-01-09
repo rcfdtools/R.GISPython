@@ -223,7 +223,7 @@ for i in range(1, numStationsCNE+1):
     # CSV conversion
     hourly = data['hourly']
     printmd('\n| Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | OWMid | OWMmain | OWMdesc | OWMicon | Julian |', True)
-    tableseparatormarkdown(32)
+    tableseparatormarkdown(36)
     for entry in hourly:
         if 'rain' in entry:
             rain = entry['rain']['1h']
