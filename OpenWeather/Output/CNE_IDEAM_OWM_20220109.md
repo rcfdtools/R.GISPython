@@ -1,8 +1,8 @@
 
 ### Weather values for each IDEAM CNE station from https://openweathermap.org
 
-* Current date time: 2022-01-09 11:27:28.503253
-* Unix time to eval: 1641641248
+* Current date time: 2022-01-09 11:28:30.297178
+* Unix time to eval: 1641641310
 * Show historical: False
 * Show yesterday: True
 * Days before: 1
