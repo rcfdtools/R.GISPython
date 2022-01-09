@@ -1,8 +1,8 @@
 
 ### Weather values for each IDEAM CNE station from https://openweathermap.org
 
-* Current date time: 2022-01-09 11:14:31.434317
-* Unix time to eval: 1641640471
+* Current date time: 2022-01-09 11:15:49.365305
+* Unix time to eval: 1641640549
 * Show historical: False
 * Show yesterday: True
 * Days before: 1
@@ -79,8 +79,6 @@
 
 #### 1 - Open Weather values for station 000052057100: RUMICHACA - AUT [52057100] 
 
-* URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
-
 * Station in: [Google Maps](http://maps.google.com/maps?q=0.81378611,-77.66197778), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778).
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
@@ -136,8 +134,6 @@
 
 #### 2 - Open Weather values for station 000052055170: LA JOSEFINA - AUT [52055170]
 
-* URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
-
 * Station in: [Google Maps](http://maps.google.com/maps?q=0.93030556,-77.49119444), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.93030556&lon=-77.49119444).
 
 | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |
@@ -192,8 +188,6 @@
 | 52055170 | "LA JOSEFINA - AUT [52055170]" | 0.930306 | -77.491194 | 2450.000000 | Climática Principal | Automática con Telemetría | Activa | 2005-12-10 00:00:00 | NaT | Nariño | Contadero | Guaitara | Area Operativa 07 - Nariño-Putumayo | Pacifico | Patía | Río Guáitara | America/Bogota | 2022-01-11 15:00:00 | 79.000000 | 9.480000 | 15.120000 | 71.000000 | 1017.000000 | 0.19 | 15.650000 | 6.270000 | 10000.000000 | 257.000000 | 1.470000 | 1.360000 | 15 |
 
 #### 3 - Open Weather values for station 000052055220: EL PARAISO - AUT [52055220]
-
-* URL: https://api.openweathermap.org/data/2.5/onecall?lat=5.027451&lon=-73.996917&&units=metric&appid=b53cede1d6b83b6a7800cf923dfe9396
 
 * Station in: [Google Maps](http://maps.google.com/maps?q=1.07061111,-77.63688889), [Openstreet Map](https://www.openstreetmap.org/query?lat=1.07061111&lon=-77.63688889).
 

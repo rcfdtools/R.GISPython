@@ -196,7 +196,7 @@ for i in range(1, numStationsCNE+1):
         url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, unitSys, apiKey)
     else:
         url = 'https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&&units=%s&appid=%s' % (latDD, lonDD, unitSys, apiKey)
-    printmd('\n* URL: ' + url, False)
+    print('\n* URL: ' + url)
     printmd('\n* Station in: [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
     response = requests.get(url)
     data = json.loads(response.text)
