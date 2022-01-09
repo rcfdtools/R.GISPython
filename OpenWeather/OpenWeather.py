@@ -31,6 +31,7 @@ def printmd(txtPrint, onScreen=True):
 currentDateTime = datetime.now()  # datetime.utcnow()
 unitValMetric = [  # Parameter, unit, openweathermap name.
     ('Temperature', '°C', 'temp'),
+    ('Dew Point', '°C', 'dew_point'),
     ('Feels like', '°C', 'feels_like'),
     ('Clouds', '%', 'clouds'),
     ('Humidity', '%', 'humidity'),
@@ -43,6 +44,7 @@ unitValMetric = [  # Parameter, unit, openweathermap name.
     ('UV Index','DN', 'uvi')]
 unitValImperial = [
     ('Temperature', '°F', 'temp'),
+    ('Dew Point', '°F', 'dew_point'),
     ('Feels like', '°F', 'feels_like'),
     ('Clouds', '%', 'clouds'),
     ('Humidity', '%', 'humidity'),
@@ -53,6 +55,39 @@ unitValImperial = [
     ('Rain','mm', 'rain'),
     ('visibility','m', 'visibility'),
     ('UV Index','DN', 'uvi')]
+csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM, OpenWeather.
+    ('Station', 'CODIGO', 'N/A', 'Station code'),
+    ('Statname', 'nombre', 'N/A', 'Station name'),
+    ('Latitue', 'latitud', 'lat', 'Geolocalitation latitude degrees'),
+    ('Longitude', 'longitud' ,'lon', 'Geolocalitation longitude degrees'),
+    ('Elevation', 'altitud', 'N/A', 'Elevation over the sea level'),
+    ('Caterory', 'CATEGORIA', 'N/A', 'Station category: pluviometric, limnimetric, pluviograph, limnigraph, ordinary climatology, principal climatology, special meteorologic, soil meteorological, main synoptic, secundary synotic, radiosonde, mareographic'),
+    ('Technology', 'TECNOLOGIA', 'N/A', 'Main technology: conventional, automatic assisted with telemetry, automatic not assisted with telemetry'),
+    ('Status', 'ESTADO', 'N/A', 'Functional status: active, suspended, under maintenance'),
+    ('InstDate', 'FECHA_INSTALACION', 'N/A', 'Installation date'),
+    ('SuspDate', 'FECHA_SUSPENSION', 'N/A', 'Suspension date'),
+    ('State', 'DEPARTAMENTO', 'N/A', 'Geopolitical location state'),
+    ('County', 'MUNICIPIO', 'N/A', 'Geopolitical location county'),
+    ('Stream', 'CORRIENTE', 'N/A', 'Stream point or near stream'),
+    ('Operator', 'AREA_OPERATIVA', 'N/A', 'Gouvernament operator'),
+    ('AHName', 'AREA_HIDROGRAFICA', 'N/A', 'AH - Hydrographic area. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone)'),
+    ('SZName', 'ZONA_HIDROGRAFICA', 'N/A', 'ZH - Hydrographic zone. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone)'),
+    ('SZHName', 'SUBZONA_HIDROGRAFICA', 'N/A', 'SZH - Hydrographic subzone. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone)'),
+    ('Timezone', 'N/A', 'timezone', 'Global time zone'),
+    ('Datetime', 'N/A', 'N/A', 'Date and time of the weather values'),
+    ('Clouds', 'N/A', 'clouds', 'Cloudiness'),
+    ('Dewpoint', 'N/A', 'dew_point', 'Atmospheric temperature (varying according to pressure and humidity) below which water droplets begin to condense and dew can form.'),
+    ('Feelslike', 'N/A', 'feels_like', 'Temperature. This temperature parameter accounts for the human perception of weather'),
+    ('Humidity', 'N/A', 'humidity', 'Humidity'),
+    ('Pressure', 'N/A', 'pressure', 'Atmospheric pressure on the sea level'),
+    ('Rain', 'N/A', 'rain', 'Rain volume for last hour'),
+    ('Temp', 'N/A', 'temp', 'Temperature'),
+    ('UVI', 'N/A', 'uvi', 'Current UV index'),
+    ('Visibility', 'N/A', 'visibility', 'Average visibility'),
+    ('Winddeg', 'N/A', 'wind_deg', 'Wind direction, degrees (meteorological)'),
+    ('Windgust', 'N/A', 'wind_gust', 'Wind gust'),
+    ('Windspeed', 'N/A', 'wind_speed', 'Wind speed'),
+    ('Julian', 'N/A', 'N/A', 'Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid)')]
 apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # For r.cfdtools@gmail.com
 latDD = 5.027451  # Set latitude in decimals degrees using period
 lonDD = -73.996917  # Set longitude in decimals degrees using period
@@ -68,19 +103,23 @@ longitudeCNE = 'longitud'
 elevationNameCNE = 'altitud'
 categoryNameCNE = 'CATEGORIA'
 technologyNameCNE = 'TECNOLOGIA'
-stateActiveNameCNE = 'ESTADO'
+statusNameCNE = 'ESTADO'
 installationDateCNE = 'FECHA_INSTALACION'
+suspensionDateCNE = 'FECHA_SUSPENSION'
 geoStateNameCNE = 'DEPARTAMENTO'
+geoCountyNameCNE = 'MUNICIPIO'
+geoStreamNameCNE = 'CORRIENTE'
 geoOperativeAreaNameCNE = 'AREA_OPERATIVA'
 geoHydroAreaNameCNE = 'AREA_HIDROGRAFICA'
 geoHydroZoneNameCNE = 'ZONA_HIDROGRAFICA'
 geoHydroSubZoneNameCNE = 'SUBZONA_HIDROGRAFICA'
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
 daysBefore = 1  # Max to 4 days, current day count like a part of 5 days in openweather
-printDetail = False
+printDetail = False  # Print JSON dictionary on screen
 showHistorical = False  # True for use the timemachine. False for get the current forecast
 showYesterday = True
 updateCNEFile = False
+
 
 # General pandas and matplotlib settings
 pd.set_option('display.max_rows', None)
@@ -108,21 +147,6 @@ stationTableCNE = pd.read_excel(fileSaveCNE, index_col=0, sheet_name='CNE')
 pd.set_option('display.max_rows', stationTableCNE.shape[0]+1)  # Show all the records
 pd.set_option('display.max_columns', None)  # Show all the records
 
-# Print units system
-unitVal = ''
-if unitSys == 'metric':
-    unitVal = unitValMetric
-else:
-    unitVal = unitValImperial
-printmd('\n ### Unit system (%s)\n' %(unitSys))
-printmd('| Parameter | Unit | openweathermap name |')
-tableseparatormarkdown(3)
-for i in unitVal:
-    printmd('| %s | %s | %s |' % (i[0],i[1],i[2]))
-printmd('\n> mi: Miles unit for imperial system')
-printmd('\n> DN: Dimensionless numbers')
-
-
 # Show CNE records and weather values
 timeStampVal = int(currentDateTime.replace(tzinfo=timezone.utc).timestamp())
 if showYesterday: timeStampVal -= 86400 * daysBefore
@@ -138,10 +162,34 @@ printmd('\n* Current date time: ' + str(currentDateTime) +
         '\n* Stations: ' + str(numStationsCNE) +
         '\n* Attributes: ' + str(stationTableCNE.shape[1]))
 printmd('\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
-geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE]]
+
+# Print units system
+###unitVal = ''
+if unitSys == 'metric':
+    unitVal = unitValMetric
+else:
+    unitVal = unitValImperial
+printmd('\n ### Unit system (%s)\n' %(unitSys))
+printmd('| Parameter | Unit | openweathermap name |')
+tableseparatormarkdown(3)
+for i in unitVal:
+    printmd('| %s | %s | %s |' % (i[0],i[1],i[2]))
+printmd('\n> mi: Miles unit for imperial system')
+printmd('\n> DN: Dimensionless numbers')
+
+# Print CSV parameters
+printmd('\n ### File parameters over the generated comma separated values - CSV\n')
+printmd('| r.cfdtools | IDEAM | OpenWeather | Description |')
+tableseparatormarkdown(4)
+for i in csvParameters:
+    printmd('| %s | %s | %s | %s |' % (i[0],i[1],i[2],i[3]))
+printmd('\n> Some definitions are taken from https://openweathermap.org/')
+printmd('\n> N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API')
+
+
+geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE, elevationNameCNE, categoryNameCNE, technologyNameCNE, statusNameCNE, installationDateCNE, suspensionDateCNE, geoStateNameCNE, geoCountyNameCNE, geoStreamNameCNE, geoOperativeAreaNameCNE, geoHydroAreaNameCNE, geoHydroZoneNameCNE, geoHydroSubZoneNameCNE]]
 printcsv(
-    'station,name,lat,lon,timezone,date,time,clouds,dewpoint,feelslike,humidity,pressure,rain,temp,uvi,visibility,winddeg,windgust,windspeed,julian',
-    False)
+    'Station,Statname,Latitue,Longitude,Elevation,Caterory,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,Julian', False)
 for i in range(1, numStationsCNE+1):
     printmd('\n#### %s - Open Weather values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
     if showHistorical:
@@ -165,20 +213,24 @@ for i in range(1, numStationsCNE+1):
     '''
     # CSV conversion
     hourly = data['hourly']
-    printmd('\n| station | name | lat | lon | timezone | date | time | clouds | dewpoint | feelslike | humidity | pressure | rain | temp | uvi | visibility | winddeg | windgust | windspeed | julian |', True)
-    tableseparatormarkdown(20)
+    printmd('\n| Station | Statname | Latitue | Longitude | Elevation | Caterory | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |', True)
+    tableseparatormarkdown(32)
     for entry in hourly:
         if 'rain' in entry:
             rain = entry['rain']['1h']
         else:
             rain = ''
-        txtPrintCSV = '%s,"%s",%f,%f,%s,%s,%f,%f,%f,%f,%f,%s,%f,%f,%f,%f,%f,%f,%s' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y/%m/%d,%H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
+        if 'wind_gust' in entry:
+            wind_gust = entry['wind_gust']
+        else:
+            wind_gust = ''
+        txtPrintCSV = '%s,"%s",%f,%f,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f,%f,%f,%s,%f,%f,%f,%f,%f,%f,%s' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
         printcsv(txtPrintCSV, False)
-        txtPrintMd = '| %s | "%s" | %f | %f | %s | %s | %f | %f | %f | %f | %f | %s | %f | %f | %f | %f | %f | %f | %s |' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y/%m/%d | %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
+        txtPrintMd = '| %s | "%s" | %f | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %f | %f | %f | %f | %f | %s | %f | %f | %f | %f | %f | %f | %s |' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
         printmd(txtPrintMd, True)
 
 # References
-# https://openweathermap.org/guide
+# https://openweathermap.org
 # https://towardsdatascience.com/develop-your-weather-application-with-python-in-less-than-10-lines-6d092c6dcbc9
 # https://www.tutorialspoint.com/How-to-convert-Python-date-to-Unix-timeStamp
 # https://www.youtube.com/watch?v=9N6a-VLBa2I
@@ -187,3 +239,5 @@ for i in range(1, numStationsCNE+1):
 # https://stackoverflow.com/questions/3682748/converting-unix-timestamp-string-to-readable-date
 # https://stackoverflow.com/questions/3327946/how-can-i-get-the-current-time-now-in-utc
 # https://pynative.com/python-check-if-key-exists-in-json-and-iterate-the-json-array/
+# https://www.epa.gov/sites/default/files/documents/uviguide.pdf
+# https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
