@@ -155,8 +155,8 @@ pd.set_option('display.max_columns', None)  # Show all the records
 # Show CNE records and weather values
 timeStampVal = int(currentDateTime.replace(tzinfo=timezone.utc).timestamp())
 if showYesterday: timeStampVal -= 86400 * daysBefore
-#numStationsCNE = stationTableCNE.shape[0]
-numStationsCNE = 3
+numStationsCNE = stationTableCNE.shape[0]
+#numStationsCNE = 3
 printmd('\n### Weather values for each IDEAM CNE station from OWM https://openweathermap.org')
 printmd('\n* Current date time: ' + str(currentDateTime) +
         '\n* Unix time to eval: ' + str(timeStampVal) +
