@@ -58,10 +58,10 @@ unitValImperial = [
 csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM, OpenWeather.
     ('Station', 'CODIGO', 'N/A', 'Station code'),
     ('Statname', 'nombre', 'N/A', 'Station name'),
-    ('Latitue', 'latitud', 'lat', 'Geolocalitation latitude degrees'),
+    ('Latitude', 'latitud', 'lat', 'Geolocalitation latitude degrees'),
     ('Longitude', 'longitud' ,'lon', 'Geolocalitation longitude degrees'),
     ('Elevation', 'altitud', 'N/A', 'Elevation over the sea level'),
-    ('Caterory', 'CATEGORIA', 'N/A', 'Station category: pluviometric, limnimetric, pluviograph, limnigraph, ordinary climatology, principal climatology, special meteorologic, soil meteorological, main synoptic, secundary synotic, radiosonde, mareographic'),
+    ('Category', 'CATEGORIA', 'N/A', 'Station category: pluviometric, limnimetric, pluviograph, limnigraph, ordinary climatology, principal climatology, special meteorologic, soil meteorological, main synoptic, secundary synotic, radiosonde, mareographic'),
     ('Technology', 'TECNOLOGIA', 'N/A', 'Main technology: conventional, automatic assisted with telemetry, automatic not assisted with telemetry'),
     ('Status', 'ESTADO', 'N/A', 'Functional status: active, suspended, under maintenance'),
     ('InstDate', 'FECHA_INSTALACION', 'N/A', 'Installation date'),
@@ -152,7 +152,7 @@ timeStampVal = int(currentDateTime.replace(tzinfo=timezone.utc).timestamp())
 if showYesterday: timeStampVal -= 86400 * daysBefore
 #numStationsCNE = stationTableCNE.shape[0]
 numStationsCNE = 3
-printmd('\n### Weather values for each CNE station from https://openweathermap.org')
+printmd('\n### Weather values for each IDEAM CNE station from https://openweathermap.org')
 printmd('\n* Current date time: ' + str(currentDateTime) +
         '\n* Unix time to eval: ' + str(timeStampVal) +
         '\n* Show historical: ' + str(showHistorical) +
@@ -164,7 +164,6 @@ printmd('\n* Current date time: ' + str(currentDateTime) +
 printmd('\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
 
 # Print units system
-###unitVal = ''
 if unitSys == 'metric':
     unitVal = unitValMetric
 else:
@@ -186,10 +185,11 @@ for i in csvParameters:
 printmd('\n> Some definitions are taken from https://openweathermap.org/')
 printmd('\n> N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API')
 
-
+# Print and export CNE stations and weather parameters
+printmd('\n ### CNE stations and weather parameters\n')
 geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE, elevationNameCNE, categoryNameCNE, technologyNameCNE, statusNameCNE, installationDateCNE, suspensionDateCNE, geoStateNameCNE, geoCountyNameCNE, geoStreamNameCNE, geoOperativeAreaNameCNE, geoHydroAreaNameCNE, geoHydroZoneNameCNE, geoHydroSubZoneNameCNE]]
 printcsv(
-    'Station,Statname,Latitue,Longitude,Elevation,Caterory,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,Julian', False)
+    'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,Julian', False)
 for i in range(1, numStationsCNE+1):
     printmd('\n#### %s - Open Weather values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
     if showHistorical:
@@ -213,7 +213,7 @@ for i in range(1, numStationsCNE+1):
     '''
     # CSV conversion
     hourly = data['hourly']
-    printmd('\n| Station | Statname | Latitue | Longitude | Elevation | Caterory | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |', True)
+    printmd('\n| Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | Julian |', True)
     tableseparatormarkdown(32)
     for entry in hourly:
         if 'rain' in entry:
