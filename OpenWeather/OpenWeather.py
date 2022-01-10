@@ -124,7 +124,7 @@ printDetail = True  # Print JSON dictionary on screen
 showHistorical = False  # True for use the timemachine. False for get the current forecast
 showYesterday = True
 updateCNEFile = False
-
+requestOWMData = False
 
 # General pandas and matplotlib settings
 pd.set_option('display.max_rows', None)
@@ -203,43 +203,42 @@ for i in range(1, numStationsCNE+1):
         url = 'https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&&units=%s&appid=%s' % (latDD, lonDD, unitSys, apiKey)
     print('\nURL: ' + url)
     printmd('\nLocation in [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
-    response = requests.get(url)
-    data = json.loads(response.text)
-    '''
-    print('Type: ' + str(type(data)))
-    print('\nPrimary keys:')
-    for i in data:
-        print('  '+str(i))
-    '''
-    # Print API JSON data dictionary
-    if printDetail:
-        printmd('\nJSON data from API OWM:')
-        printmd('\n```')
-        printmd(str(data), True)
-        #pprint(data)  # Print with format but not into Markdown file
-        printmd('\n```')
-    #print('\nGet values')
-    #print('Temperature at same today time: ' + str(data['current']['temp']))
+    if requestOWMData:
+        response = requests.get(url)
+        data = json.loads(response.text)
+        # Print API JSON data dictionary
+        if printDetail:
+            print('\nType: ' + str(type(data)))
+            print('\nPrimary keys:')
+            for i in data:
+                print('  ' + str(i))
+            printmd('\nJSON data from API OWM:')
+            printmd('\n```')
+            printmd(str(data), True)
+            #pprint(data)  # Print with format but not into Markdown file
+            printmd('\n```')
+        #print('\nGet values')
+        #print('Temperature at same today time: ' + str(data['current']['temp']))
 
-    # CSV conversion
-    hourly = data['hourly']
-    printmd('\n| Weather | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | OWMid | OWMmain | OWMdesc | OWMicon | Julian |', True)
-    tableseparatormarkdown(37)
-    for entry in hourly:
-        if 'rain' in entry:
-            rain = entry['rain']['1h']
-        else:
-            rain = ''
-        if 'wind_gust' in entry:
-            wind_gust = entry['wind_gust']
-        else:
-            wind_gust = ''
-        weather = entry['weather'][0]
-        txtPrintCSV = '%s,"%s",%f,%f,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f,%f,%f,%s,%f,%f,%f,%f,%f,%f,%i,%s,%s,%s,%s' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
-        printcsv(txtPrintCSV, False)
-        iconShow = '!['+weather['icon']+'.png]('+urlIcon+weather['icon']+'.png)'
-        txtPrintMd = '| %s | %s | "%s" | %f | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %f | %f | %f | %f | %f | %s | %f | %f | %f | %f | %f | %f | %s | %s | %s | %s | %s |' % (iconShow, str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
-        printmd(txtPrintMd, True)
+        # CSV conversion
+        hourly = data['hourly']
+        printmd('\n| Weather | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | OWMid | OWMmain | OWMdesc | OWMicon | Julian |', True)
+        tableseparatormarkdown(37)
+        for entry in hourly:
+            if 'rain' in entry:
+                rain = entry['rain']['1h']
+            else:
+                rain = ''
+            if 'wind_gust' in entry:
+                wind_gust = entry['wind_gust']
+            else:
+                wind_gust = ''
+            weather = entry['weather'][0]
+            txtPrintCSV = '%s,"%s",%f,%f,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f,%f,%f,%s,%f,%f,%f,%f,%f,%f,%i,%s,%s,%s,%s' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
+            printcsv(txtPrintCSV, False)
+            iconShow = '!['+weather['icon']+'.png]('+urlIcon+weather['icon']+'.png)'
+            txtPrintMd = '| %s | %s | "%s" | %f | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %f | %f | %f | %f | %f | %s | %f | %f | %f | %f | %f | %f | %s | %s | %s | %s | %s |' % (iconShow, str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], entry['wind_gust'], entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
+            printmd(txtPrintMd, True)
 
 # References
 # https://openweathermap.org
