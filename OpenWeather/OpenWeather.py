@@ -20,7 +20,7 @@ def tableseparatormarkdown(n=2):
 # Print in CSV format
 def printcsv(txtPrint, onScreen=True):
     if onScreen: print(txtPrint)
-    fileOutputCNEWeather.write(txtPrint + '\n')
+    fileOutputCSV.write(txtPrint + '\n')
 
 # Print in Markdown format
 def printmd(txtPrint, onScreen=True):
@@ -117,6 +117,7 @@ geoHydroZoneNameCNE = 'ZONA_HIDROGRAFICA'
 geoHydroSubZoneNameCNE = 'SUBZONA_HIDROGRAFICA'
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
 urlIcon = 'http://openweathermap.org/img/w/'
+urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/'
 daysBefore = 1  # Max to 4 days, current day count like a part of 5 days in openweather
 printDetail = True  # Print JSON dictionary on screen
 showHistorical = False  # True for use the timemachine. False for get the current forecast
@@ -135,7 +136,8 @@ mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_w
 currentDate = date.today()
 currentDateTxt = str(currentDate.year).zfill(4)+str(currentDate.month).zfill(2)+str(currentDate.day).zfill(2)
 fileSaveCNE = filePath+'/Data/'+fileNameCNE+'_'+currentDateTxt+fileExtensionCNE
-fileOutputCNEWeather = open(filePath+'/Output/'+fileNameCNE+'_OWM_'+currentDateTxt+'.csv', 'w+')
+fileCSV = fileNameCNE+'_OWM_'+currentDateTxt+'.csv'
+fileOutputCSV = open(filePath+'/Output/'+fileCSV, 'w+')
 if updateCNEFile:
     fileRequest = requests.get(urlFileCNE)
     if fileRequest:
@@ -164,10 +166,12 @@ geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, long
 printcsv(
     'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Julian', False)
 for i in range(1, numStationsCNE+1):
-    fileOutputMarkdownName = filePath + '/Output/' + fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
+    fileNameMd = fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
+    fileGitHub = urlGitHub + fileNameMd
+    fileOutputMarkdownName = filePath + '/Output/' + fileNameMd
     fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
-    printmd('\n### Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org')
-    printmd('\n#### General parameters' +
+    printmd('\n## Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org')
+    printmd('\n### General parameters' +
             '\n\n* Current date time: ' + str(currentDateTime) +
             '\n* Unix time to eval: ' + str(timeStampVal) +
             '\n* Show historical: ' + str(showHistorical) +
@@ -181,7 +185,9 @@ for i in range(1, numStationsCNE+1):
             '\n* ' + str(fileDownloadText) +
             '\n* CNE IDEAM file: ' + str(fileSaveCNE) +
             '\n* CNE IDEAM stations: ' + str(numStationsCNE) +
-            '\n* CNE IDEAM attributes: ' + str(stationTableCNE.shape[1]))
+            '\n* CNE IDEAM attributes: ' + str(stationTableCNE.shape[1]) +
+            '\n* Output log file: ' + fileGitHub +
+            '\n* General csv file: ' + urlGitHub + 'Output/' + fileCSV )
     printmd('\n\n#### Station parameters\n'
             '\n| Parameter | Value |' +
             '\n|---|---|' +
@@ -201,13 +207,11 @@ for i in range(1, numStationsCNE+1):
             '\n| Operator | ' + str(geoArrayCNE[geoOperativeAreaNameCNE][i]) + ' |'
             '\n| AH - Hydrographic area | ' + str(geoArrayCNE[geoHydroAreaNameCNE][i]) + ' |'
             '\n| ZH - Hydrographic zone | ' + str(geoArrayCNE[geoHydroZoneNameCNE][i]) + ' |'
-            '\n| SZH - Hydrographic subzone | ' + str(geoArrayCNE[geoHydroSubZoneNameCNE][i]) + ' |'
-            '\n\nOutput file' + str(fileOutputMarkdownName))
+            '\n| SZH - Hydrographic subzone | ' + str(geoArrayCNE[geoHydroSubZoneNameCNE][i]) + ' |')
     printmd(
         '\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
 
     # Print units system
-    printmd('\n### General parameters')
     printmd('\n#### Unit system (%s)\n' % (unitSys))
     printmd('| Parameter | Unit | openweathermap name |')
     tableseparatormarkdown(3)

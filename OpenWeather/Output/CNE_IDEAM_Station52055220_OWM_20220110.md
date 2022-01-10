@@ -1,10 +1,10 @@
 
-### Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org
+## Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org
 
-#### General parameters
+### General parameters
 
-* Current date time: 2022-01-10 15:09:05.885298
-* Unix time to eval: 1641740945
+* Current date time: 2022-01-10 15:19:28.274065
+* Unix time to eval: 1641741568
 * Show historical: False
 * Show yesterday: True
 * Show OWM API detail: True
@@ -17,6 +17,8 @@
 * CNE IDEAM file: D:/R.GISPython/OpenWeather/Data/CNE_IDEAM_20220110.xls
 * CNE IDEAM stations: 10
 * CNE IDEAM attributes: 19
+* Output log file: https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_Station52055220_OWM_20220110.md
+* General csv file: https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/Output/CNE_IDEAM_OWM_20220110.csv
 
 
 #### Station parameters
@@ -41,11 +43,7 @@
 | ZH - Hydrographic zone | Patía |
 | SZH - Hydrographic subzone | Río Guáitara |
 
-Output fileD:/R.GISPython/OpenWeather/Output/CNE_IDEAM_Station52055220_OWM_20220110.md
-
 > For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.
-
-### General parameters
 
 #### Unit system (metric)
 
