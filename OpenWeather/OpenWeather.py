@@ -186,8 +186,8 @@ for i in range(1, numStationsCNE+1):
             '\n* CNE IDEAM file: ' + str(fileSaveCNE) +
             '\n* CNE IDEAM stations: ' + str(numStationsCNE) +
             '\n* CNE IDEAM attributes: ' + str(stationTableCNE.shape[1]) +
-            '\n* [Output log file](' + fileGitHub + ')' +
-            '\n* [General csv file]( ' + urlGitHub + fileCSV + ')' )
+            '\n* Related files: [Markdown, ](' + fileGitHub + ')' +
+            '\n* [CSV]( ' + urlGitHub + fileCSV + ')' )
     printmd('\n\n#### Station parameters\n'
             '\n| Parameter | Value |' +
             '\n|---|---|' +
@@ -208,6 +208,9 @@ for i in range(1, numStationsCNE+1):
             '\n| AH - Hydrographic area | ' + str(geoArrayCNE[geoHydroAreaNameCNE][i]) + ' |'
             '\n| ZH - Hydrographic zone | ' + str(geoArrayCNE[geoHydroZoneNameCNE][i]) + ' |'
             '\n| SZH - Hydrographic subzone | ' + str(geoArrayCNE[geoHydroSubZoneNameCNE][i]) + ' |')
+    printmd('\nLocation in [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
+        geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
+        geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
     printmd(
         '\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
 
@@ -237,7 +240,6 @@ for i in range(1, numStationsCNE+1):
     else:
         url = 'https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], unitSys, apiKey)
     print('\nURL: ' + url)
-    printmd('\nLocation in [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat='+ str(geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
     if requestOWMData:
         response = requests.get(url)
         data = json.loads(response.text)

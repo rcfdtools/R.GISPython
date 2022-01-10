@@ -3,8 +3,8 @@
 
 ### General parameters
 
-* Current date time: 2022-01-10 15:22:03.536984
-* Unix time to eval: 1641741723
+* Current date time: 2022-01-10 15:58:02.934326
+* Unix time to eval: 1641743882
 * Show historical: False
 * Show yesterday: True
 * Show OWM API detail: True
@@ -17,8 +17,8 @@
 * CNE IDEAM file: D:/R.GISPython/OpenWeather/Data/CNE_IDEAM_20220110.xls
 * CNE IDEAM stations: 10
 * CNE IDEAM attributes: 19
-* [Output log file](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_Station44135030_OWM_20220110.md)
-* [General csv file]( https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_OWM_20220110.csv)
+* Related files: [Markdown, ](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_Station44135030_OWM_20220110.md)
+* [CSV]( https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_OWM_20220110.csv)
 
 
 #### Station parameters
@@ -42,6 +42,8 @@
 | AH - Hydrographic area | Amazonas |
 | ZH - Hydrographic zone | Yarí |
 | SZH - Hydrographic subzone | Río Mesay |
+
+Location in [Google Maps](http://maps.google.com/maps?q=-0.07416667,-72.45138889), [Openstreet Map](https://www.openstreetmap.org/query?lat=-0.07416667&lon=-72.45138889).
 
 > For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.
 
@@ -112,5 +114,3 @@
 > N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API
 
 ### 7 - Open Weather values for station 000044135030: CHIRIBIQUETE - AUT [44135030]
-
-Location in [Google Maps](http://maps.google.com/maps?q=-0.07416667,-72.45138889), [Openstreet Map](https://www.openstreetmap.org/query?lat=-0.07416667&lon=-72.45138889).
