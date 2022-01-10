@@ -166,7 +166,7 @@ geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, long
 printcsv(
     'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Julian', False)
 for i in range(1, numStationsCNE+1):
-    fileOutputMarkdownName = filePath + '/Output/' + fileNameCNE + '_' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
+    fileOutputMarkdownName = filePath + '/Output/' + fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
     fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
     printmd('\n### Weather values for each IDEAM CNE station from OWM https://openweathermap.org')
     printmd('\n* Current date time: ' + str(currentDateTime) +
