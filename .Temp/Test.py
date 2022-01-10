@@ -12,6 +12,9 @@ else:
     print('x = %i not founded' % (x))
 
 
+statusFilter = ['Activa', 'En Mantenimiento']
+print(statusFilter[0])
+
 # Time stamp Python 2 - Sample 1
 # https://www.codegrepper.com/code-examples/python/python+2.7+datetime+to+timestamp
 import time

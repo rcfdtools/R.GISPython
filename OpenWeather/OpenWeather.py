@@ -92,7 +92,7 @@ csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM,
     ('OWMdesc', 'N/A', 'description', 'Weather condition within the group. [More info.](https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2)'),
     ('OWMicon', 'N/A', 'icon', 'Weather icon id. [More info.](https://openweathermap.org/weather-conditions#How-to-get-icon-URL)'),
     ('Julian', 'N/A', 'N/A', 'Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid)')]
-apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # Your API key code here
+apiKey = ''  # Your API key code here
 excludeVal = 'minutely,alerts'  # current,minutely,hourly,daily,alerts
 unitSys = 'metric'  # '' for default, 'metric' or 'imperial'
 urlFileCNE = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
@@ -124,12 +124,13 @@ showHistorical = True  # True for use the timemachine. False for get the current
 showYesterday = True
 updateCNEFile = False
 updateCNEFile = False
-requestOWMData = True
+requestOWMData = False
 
 # General filter variables related with the currente CNE IDEAM metadata file
-statusFilter = ['Activa', 'En Mantenimiento']  # Activa, En Mantenimiento, Suspendida
-categoryFilter = ['Sinóptica Principal', 'Sinóptica Secundaria', 'Radio Sonda', 'Mareográfica']  # Pluviométrica, Limnimétrica, Limnigráfica, Climática Ordinaria, Climática Principal, Pluviográfica, Meteorológica Especial, Agrometeorológica, Sinóptica Principal, Radio Sonda,
-categoryFilter = ['Sinóptica Secundaria']  # 'Sinóptica Principal', 'Sinóptica Secundaria', 'Radio Sonda', 'Mareográfica'
+# May you consider that for free OWM accounts, you can only get 1000 API responses every day.
+statusFilter = ['All', 'Activa', 'En Mantenimiento']  # 'All' at the first position or Activa, En Mantenimiento, Suspendida
+categoryFilter = ['Agrometeorológica']  # 'All' at the first position or Pluviométrica, Limnimétrica, Limnigráfica, Climática Ordinaria, Climática Principal, Pluviográfica, Meteorológica Especial, Agrometeorológica, Sinóptica Principal, Radio Sonda, Mareográfica, Sinóptica Secundaria.
+
 
 # General pandas and matplotlib settings
 pd.set_option('display.max_rows', None)
@@ -171,14 +172,14 @@ geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, long
 printcsv(
     'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Julian', False)
 for i in range(1, numStationsCNE+1):
-    if geoArrayCNE[statusNameCNE][i] in statusFilter and geoArrayCNE[categoryNameCNE][i] in categoryFilter:
+    if (geoArrayCNE[statusNameCNE][i] in statusFilter or statusFilter[0] == 'All') and (geoArrayCNE[categoryNameCNE][i] in categoryFilter or categoryFilter[0] == 'All'):
         fileNameMd = fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
         fileGitHub = urlGitHub + fileNameMd
         fileOutputMarkdownName = filePath + '/Output/' + fileNameMd
         fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
-        printmd('\n## Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org - ' + str(geoArrayCNE[stationNameCNE][i]))
+        printmd('\n## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ' + str(geoArrayCNE[stationNameCNE][i]))
         printmd('\n### General parameters' +
-                '\n\n* Current date time: ' + str(currentDateTime) +
+                '\n\n* Weather date time: ' + str(currentDateTime) +
                 '\n* Unix time to eval: ' + str(timeStampVal) +
                 '\n* Show historical: ' + str(showHistorical) +
                 '\n* Show yesterday: ' + str(showYesterday) +
@@ -186,7 +187,7 @@ for i in range(1, numStationsCNE+1):
                 '\n* Request OWM data: ' + str(requestOWMData) +
                 '\n* Days before: ' + str(daysBefore) +
                 '\n* Unit system: ' + unitSys +
-                '\n* Icons from: ' + urlIcon +
+                '\n* Icons source: ' + urlIcon +
                 '\n* CNE IDEAM source: ' + urlFileCNE +
                 '\n* ' + str(fileDownloadText) +
                 '\n* CNE IDEAM file: ' + str(fileSaveCNE) +
@@ -240,7 +241,7 @@ for i in range(1, numStationsCNE+1):
             '\n> N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API')
 
         # Print API URL data
-        printmd('\n### %s - Open Weather values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
+        printmd('\n### (CNE Index %s) Open Weather values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
         if showHistorical:
             url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, unitSys, apiKey)
         else:
@@ -282,6 +283,10 @@ for i in range(1, numStationsCNE+1):
                 iconShow = '!['+weather['icon']+'.png]('+urlIcon+weather['icon']+'.png)'
                 txtPrintMd = '| %s | %s | "%s" | %f | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %f | %f | %f | %f | %f | %s | %f | %f | %f | %f | %s | %f | %i | %s | %s | %s | %s |' % (iconShow, str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], wind_gust, entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
                 printmd(txtPrintMd, True)
+
+# Plot hourly values
+
+
 
 # References
 # https://openweathermap.org
