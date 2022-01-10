@@ -92,7 +92,7 @@ csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM,
     ('OWMdesc', 'N/A', 'description', 'Weather condition within the group. [More info.](https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2)'),
     ('OWMicon', 'N/A', 'icon', 'Weather icon id. [More info.](https://openweathermap.org/weather-conditions#How-to-get-icon-URL)'),
     ('Julian', 'N/A', 'N/A', 'Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid)')]
-apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # For r.cfdtools@gmail.com
+apiKey = '000000000000000000'  # Your API key code here
 latDD = 5.027451  # Set latitude in decimals degrees using period
 lonDD = -73.996917  # Set longitude in decimals degrees using period
 excludeVal = 'minutely,alerts'  # current,minutely,hourly,daily,alerts
