@@ -1,33 +1,47 @@
 
 ### Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org
 
-* Current date time: 2022-01-10 14:48:36.461590
-* Unix time to eval: 1641739716
+#### General parameters
+
+* Current date time: 2022-01-10 15:09:05.885298
+* Unix time to eval: 1641740945
 * Show historical: False
 * Show yesterday: True
+* Show OWM API detail: True
+* Request OWM data: False
 * Days before: 1
+* Unit system: metric
+* Icons from: http://openweathermap.org/img/w/
+* CNE IDEAM source: http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls
 * CNE IDEAM file downloaded and updated: No
 * CNE IDEAM file: D:/R.GISPython/OpenWeather/Data/CNE_IDEAM_20220110.xls
 * CNE IDEAM stations: 10
 * CNE IDEAM attributes: 19
-* Current station: 44037040 - EL ROSARIO - AUT [44037040]
-* Latitude, °: 1.72525
-* Longitude, °: 1.72525
-* Longitude, °: -75.66638889
-* Elevation, m: 600
-* Category: Limnigráfica
-* Technology: Automática con Telemetría
-* Status: Activa
-* Installation date: 1964-08-15 00:00:00
-* Suspension date: NaT
-* State: Caquetá
-* County: Florencia (Caquetá)
-* Stream: CarañO
-* Operator: Area Operativa 04 - Huila-Caquetá
-* AH - Hydrographic area: Amazonas
-* ZH - Hydrographic zone: Caquetá
-* SZH - Hydrographic subzone: Río Orteguaza
-* Output file: D:/R.GISPython/OpenWeather/Output/CNE_IDEAM_Station44037040_OWM_20220110.md
+
+
+#### Station parameters
+
+| Parameter | Value |
+|---|---|
+| Code | 44037040 |
+| Name | EL ROSARIO - AUT [44037040] |
+| Latitude, ° | 1.72525 |
+| Longitude, ° | -75.66638889 |
+| Elevation, m | 600 |
+| Category | Limnigráfica |
+| Technology | Automática con Telemetría |
+| Status | Activa |
+| Installation date | 1964-08-15 00:00:00 |
+| Suspension date | NaT |
+| State | Caquetá |
+| County | Florencia (Caquetá) |
+| Stream | CarañO |
+| Operator | Area Operativa 04 - Huila-Caquetá |
+| AH - Hydrographic area | Amazonas |
+| ZH - Hydrographic zone | Caquetá |
+| SZH - Hydrographic subzone | Río Orteguaza |
+
+Output fileD:/R.GISPython/OpenWeather/Output/CNE_IDEAM_Station44037040_OWM_20220110.md
 
 > For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.
 
