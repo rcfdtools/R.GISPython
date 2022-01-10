@@ -138,7 +138,6 @@ currentDate = date.today()
 currentDateTxt = str(currentDate.year).zfill(4)+str(currentDate.month).zfill(2)+str(currentDate.day).zfill(2)
 fileSaveCNE = filePath+'/Data/'+fileNameCNE+'_'+currentDateTxt+fileExtensionCNE
 fileOutputCNEWeather = open(filePath+'/Output/'+fileNameCNE+'_OWM_'+currentDateTxt+'.csv', 'w+')
-fileOutputMarkdown = open(filePath+'/Output/'+fileNameCNE+'_OWM_'+currentDateTxt+'.md', 'w+')
 if updateCNEFile:
     fileRequest = requests.get(urlFileCNE)
     if fileRequest:
@@ -155,47 +154,54 @@ pd.set_option('display.max_columns', None)  # Show all the records
 # Show CNE records and weather values
 timeStampVal = int(currentDateTime.replace(tzinfo=timezone.utc).timestamp())
 if showYesterday: timeStampVal -= 86400 * daysBefore
-numStationsCNE = stationTableCNE.shape[0]
-#numStationsCNE = 3
-printmd('\n### Weather values for each IDEAM CNE station from OWM https://openweathermap.org')
-printmd('\n* Current date time: ' + str(currentDateTime) +
-        '\n* Unix time to eval: ' + str(timeStampVal) +
-        '\n* Show historical: ' + str(showHistorical) +
-        '\n* Show yesterday: ' + str(showYesterday) +
-        '\n* Days before: ' + str(daysBefore) +
-        '\n* ' + str(fileDownloadText) +
-        '\n* Stations: ' + str(numStationsCNE) +
-        '\n* Attributes: ' + str(stationTableCNE.shape[1]))
-printmd('\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
-
-# Print units system
+#numStationsCNE = stationTableCNE.shape[0]
+numStationsCNE = 10
 if unitSys == 'metric':
     unitVal = unitValMetric
 else:
     unitVal = unitValImperial
-printmd('\n ### Unit system (%s)\n' %(unitSys))
-printmd('| Parameter | Unit | openweathermap name |')
-tableseparatormarkdown(3)
-for i in unitVal:
-    printmd('| %s | %s | %s |' % (i[0],i[1],i[2]))
-printmd('\n> mi: Miles unit for imperial system')
-printmd('\n> DN: Dimensionless numbers')
-
-# Print CSV parameters
-printmd('\n ### File parameters over the generated comma separated values - CSV\n')
-printmd('| r.cfdtools | CNE IDEAM | OpenWeather | Description |')
-tableseparatormarkdown(4)
-for i in csvParameters:
-    printmd('| %s | %s | %s | %s |' % (i[0],i[1],i[2],i[3]))
-printmd('\n> Some definitions are taken from https://openweathermap.org/')
-printmd('\n> N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API')
 
 # Print and export CNE stations and weather parameters
-printmd('\n ### CNE stations and weather parameters\n')
 geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE, elevationNameCNE, categoryNameCNE, technologyNameCNE, statusNameCNE, installationDateCNE, suspensionDateCNE, geoStateNameCNE, geoCountyNameCNE, geoStreamNameCNE, geoOperativeAreaNameCNE, geoHydroAreaNameCNE, geoHydroZoneNameCNE, geoHydroSubZoneNameCNE]]
 printcsv(
     'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Julian', False)
 for i in range(1, numStationsCNE+1):
+    fileOutputMarkdownName = filePath + '/Output/' + fileNameCNE + '_' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
+    fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
+    printmd('\n### Weather values for each IDEAM CNE station from OWM https://openweathermap.org')
+    printmd('\n* Current date time: ' + str(currentDateTime) +
+            '\n* Unix time to eval: ' + str(timeStampVal) +
+            '\n* Show historical: ' + str(showHistorical) +
+            '\n* Show yesterday: ' + str(showYesterday) +
+            '\n* Days before: ' + str(daysBefore) +
+            '\n* ' + str(fileDownloadText) +
+            '\n* Total stations: ' + str(numStationsCNE) +
+            '\n* CNE attributes: ' + str(stationTableCNE.shape[1]) +
+            '\n* Current station: ' + str(geoArrayCNE[stationCodeCNE][i]) +
+            '\n* Output file: ' + str(fileOutputMarkdownName))
+    printmd(
+        '\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
+    printmd('\n### CNE stations and weather parameters\n')
+    # Print units system
+    printmd('\n### Unit system (%s)\n' % (unitSys))
+    printmd('| Parameter | Unit | openweathermap name |')
+    tableseparatormarkdown(3)
+    for ii in unitVal:
+        printmd('| %s | %s | %s |' % (ii[0], ii[1], ii[2]))
+    printmd('\n> mi: Miles unit for imperial system')
+    printmd('\n> DN: Dimensionless numbers')
+
+    # Print CSV parameters
+    printmd('\n### File parameters over the generated comma separated values - CSV\n')
+    printmd('| r.cfdtools | CNE IDEAM | OpenWeather | Description |')
+    tableseparatormarkdown(4)
+    for jj in csvParameters:
+        printmd('| %s | %s | %s | %s |' % (jj[0], jj[1], jj[2], jj[3]))
+    printmd('\n> Some definitions are taken from https://openweathermap.org/')
+    printmd(
+        '\n> N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API')
+
+    # Print API URL
     printmd('\n#### %s - Open Weather values for station %s: %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]).zfill(12), str(geoArrayCNE[stationNameCNE][i])))
     if showHistorical:
         url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, unitSys, apiKey)
