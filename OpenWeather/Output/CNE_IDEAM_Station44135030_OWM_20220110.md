@@ -3,8 +3,8 @@
 
 ### General parameters
 
-* Current date time: 2022-01-10 15:58:02.934326
-* Unix time to eval: 1641743882
+* Current date time: 2022-01-10 15:59:56.129073
+* Unix time to eval: 1641743996
 * Show historical: False
 * Show yesterday: True
 * Show OWM API detail: True
@@ -21,7 +21,8 @@
 * [CSV]( https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_OWM_20220110.csv)
 
 
-#### Station parameters
+#### Station parameters ([Google Maps](http://maps.google.com/maps?q=-0.07416667,-72.45138889), [Openstreet Map](https://www.openstreetmap.org/query?lat=-0.07416667&lon=-72.45138889)
+
 
 | Parameter | Value |
 |---|---|
@@ -42,8 +43,6 @@
 | AH - Hydrographic area | Amazonas |
 | ZH - Hydrographic zone | Yarí |
 | SZH - Hydrographic subzone | Río Mesay |
-
-Location in [Google Maps](http://maps.google.com/maps?q=-0.07416667,-72.45138889), [Openstreet Map](https://www.openstreetmap.org/query?lat=-0.07416667&lon=-72.45138889).
 
 > For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.
 

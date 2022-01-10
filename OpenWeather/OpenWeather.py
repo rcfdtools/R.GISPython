@@ -188,8 +188,10 @@ for i in range(1, numStationsCNE+1):
             '\n* CNE IDEAM attributes: ' + str(stationTableCNE.shape[1]) +
             '\n* Related files: [Markdown, ](' + fileGitHub + ')' +
             '\n* [CSV]( ' + urlGitHub + fileCSV + ')' )
-    printmd('\n\n#### Station parameters\n'
-            '\n| Parameter | Value |' +
+    printmd('\n\n#### Station parameters ([Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
+        geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
+        geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ')\n')
+    printmd('\n| Parameter | Value |' +
             '\n|---|---|' +
             '\n| Code | ' + str(geoArrayCNE[stationCodeCNE][i]) + ' |'
             '\n| Name | ' + str(geoArrayCNE[stationNameCNE][i]) + ' |'
@@ -208,9 +210,6 @@ for i in range(1, numStationsCNE+1):
             '\n| AH - Hydrographic area | ' + str(geoArrayCNE[geoHydroAreaNameCNE][i]) + ' |'
             '\n| ZH - Hydrographic zone | ' + str(geoArrayCNE[geoHydroZoneNameCNE][i]) + ' |'
             '\n| SZH - Hydrographic subzone | ' + str(geoArrayCNE[geoHydroSubZoneNameCNE][i]) + ' |')
-    printmd('\nLocation in [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
-        geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
-        geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ').')
     printmd(
         '\n> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.')
 
