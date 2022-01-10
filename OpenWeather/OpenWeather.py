@@ -211,9 +211,9 @@ for i in range(1, numStationsCNE+1):
     for i in data:
         print('  '+str(i))
     '''
-    # Print API JSON dictionary
+    # Print API JSON data dictionary
     if printDetail:
-        printmd('\nAPI JSON data from OWM:')
+        printmd('\nJSON data from API OWM:')
         printmd('\n```')
         printmd(str(data), True)
         #pprint(data)  # Print with format but not into Markdown file
