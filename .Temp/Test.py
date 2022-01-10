@@ -3,6 +3,15 @@
 import numpy as np
 import sys
 
+# Not or for logic test
+# Regular expression could look like if x == 1 or x==3.... :
+x = 3
+if x in (1,2,3,4):
+    print('x = %i founded' % (x))
+else:
+    print('x = %i not founded' % (x))
+
+
 # Time stamp Python 2 - Sample 1
 # https://www.codegrepper.com/code-examples/python/python+2.7+datetime+to+timestamp
 import time
