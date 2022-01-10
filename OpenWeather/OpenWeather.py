@@ -188,7 +188,7 @@ for i in range(1, numStationsCNE+1):
             '\n* CNE IDEAM attributes: ' + str(stationTableCNE.shape[1]) +
             '\n* Related files: [Station Markdown, ](' + fileGitHub + ')' + '[General CSV]( ' + urlGitHub + fileCSV + ')' )
     printmd('\n\n#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
-        geoArrayCNE[longitudeCNE][i]) + '), [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
+        geoArrayCNE[longitudeCNE][i]) + ') or [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
         geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ')\n')
     printmd('\n| Parameter | Value |' +
             '\n|---|---|' +

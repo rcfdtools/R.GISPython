@@ -3,8 +3,8 @@
 
 ### General parameters
 
-* Current date time: 2022-01-10 16:01:52.214301
-* Unix time to eval: 1641744112
+* Current date time: 2022-01-10 16:02:24.747544
+* Unix time to eval: 1641744144
 * Show historical: False
 * Show yesterday: True
 * Show OWM API detail: True
@@ -20,7 +20,7 @@
 * Related files: [Station Markdown, ](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_Station44135020_OWM_20220110.md)[General CSV]( https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_OWM_20220110.csv)
 
 
-#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=-1.35166667,-70.80375), [Openstreet Map](https://www.openstreetmap.org/query?lat=-1.35166667&lon=-70.80375)
+#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=-1.35166667,-70.80375) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-1.35166667&lon=-70.80375)
 
 
 | Parameter | Value |
