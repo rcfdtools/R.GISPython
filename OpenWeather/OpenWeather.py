@@ -170,7 +170,7 @@ for i in range(1, numStationsCNE+1):
     fileGitHub = urlGitHub + fileNameMd
     fileOutputMarkdownName = filePath + '/Output/' + fileNameMd
     fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
-    printmd('\n## Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org')
+    printmd('\n## Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org for ' + str(geoArrayCNE[stationNameCNE][i]))
     printmd('\n### General parameters' +
             '\n\n* Current date time: ' + str(currentDateTime) +
             '\n* Unix time to eval: ' + str(timeStampVal) +
