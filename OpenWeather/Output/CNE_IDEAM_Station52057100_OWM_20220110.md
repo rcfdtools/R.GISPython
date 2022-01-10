@@ -3,8 +3,8 @@
 
 ### General parameters
 
-* Current date time: 2022-01-10 15:59:56.129073
-* Unix time to eval: 1641743996
+* Current date time: 2022-01-10 16:00:46.017100
+* Unix time to eval: 1641744046
 * Show historical: False
 * Show yesterday: True
 * Show OWM API detail: True
@@ -17,8 +17,7 @@
 * CNE IDEAM file: D:/R.GISPython/OpenWeather/Data/CNE_IDEAM_20220110.xls
 * CNE IDEAM stations: 10
 * CNE IDEAM attributes: 19
-* Related files: [Markdown, ](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_Station52057100_OWM_20220110.md)
-* [CSV]( https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_OWM_20220110.csv)
+* Related files: [Markdown, ](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_Station52057100_OWM_20220110.md)[CSV]( https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_OWM_20220110.csv)
 
 
 #### Station parameters ([Google Maps](http://maps.google.com/maps?q=0.81378611,-77.66197778), [Openstreet Map](https://www.openstreetmap.org/query?lat=0.81378611&lon=-77.66197778)
