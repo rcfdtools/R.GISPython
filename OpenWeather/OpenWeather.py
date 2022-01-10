@@ -186,8 +186,8 @@ for i in range(1, numStationsCNE+1):
             '\n* CNE IDEAM file: ' + str(fileSaveCNE) +
             '\n* CNE IDEAM stations: ' + str(numStationsCNE) +
             '\n* CNE IDEAM attributes: ' + str(stationTableCNE.shape[1]) +
-            '\n* Output log file: ' + fileGitHub +
-            '\n* General csv file: ' + urlGitHub + 'Output/' + fileCSV )
+            '\n* [Output log file](' + fileGitHub + ')' +
+            '\n* [General csv file]( ' + urlGitHub + fileCSV + ')' )
     printmd('\n\n#### Station parameters\n'
             '\n| Parameter | Value |' +
             '\n|---|---|' +
