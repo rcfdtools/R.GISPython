@@ -1,10 +1,10 @@
 
-## Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org for EL PEPINO - AUT [44015070]
+## Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org - EL PEPINO - AUT [44015070]
 
 ### General parameters
 
-* Current date time: 2022-01-10 16:03:20.042423
-* Unix time to eval: 1641744200
+* Current date time: 2022-01-10 16:04:16.468735
+* Unix time to eval: 1641744256
 * Show historical: False
 * Show yesterday: True
 * Show OWM API detail: True
