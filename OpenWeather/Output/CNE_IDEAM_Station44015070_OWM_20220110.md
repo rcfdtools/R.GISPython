@@ -1,23 +1,39 @@
 
-### Weather values for each IDEAM CNE station from OWM https://openweathermap.org
+### Weather values for the IDEAM national station catalog - CNE from OWM https://openweathermap.org
 
-* Current date time: 2022-01-10 14:23:37.495046
-* Unix time to eval: 1641738217
+* Current date time: 2022-01-10 14:48:36.461590
+* Unix time to eval: 1641739716
 * Show historical: False
 * Show yesterday: True
 * Days before: 1
 * CNE IDEAM file downloaded and updated: No
-* Total stations: 10
-* CNE attributes: 19
-* Current station: 44015070
+* CNE IDEAM file: D:/R.GISPython/OpenWeather/Data/CNE_IDEAM_20220110.xls
+* CNE IDEAM stations: 10
+* CNE IDEAM attributes: 19
+* Current station: 44015070 - EL PEPINO - AUT [44015070]
+* Latitude, °: 1.08288889
+* Longitude, °: 1.08288889
+* Longitude, °: -76.66711111
+* Elevation, m: 760
+* Category: Climática Principal
+* Technology: Automática con Telemetría
+* Status: Activa
+* Installation date: 2005-11-11 00:00:00
+* Suspension date: NaT
+* State: Putumayo
+* County: Mocoa
+* Stream: Guaitara
+* Operator: Area Operativa 07 - Nariño-Putumayo
+* AH - Hydrographic area: Amazonas
+* ZH - Hydrographic zone: Caquetá
+* SZH - Hydrographic subzone: Alto Caqueta
 * Output file: D:/R.GISPython/OpenWeather/Output/CNE_IDEAM_Station44015070_OWM_20220110.md
 
 > For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.
 
-### CNE stations and weather parameters
+### General parameters
 
-
-### Unit system (metric)
+#### Unit system (metric)
 
 | Parameter | Unit | openweathermap name |
 |---|---|---|
@@ -38,14 +54,14 @@
 
 > DN: Dimensionless numbers
 
-### File parameters over the generated comma separated values - CSV
+#### File parameters over the generated comma separated values - CSV
 
 | r.cfdtools | CNE IDEAM | OpenWeather | Description |
 |---|---|---|---|
 | Station | CODIGO | N/A | Station code |
 | Statname | nombre | N/A | Station name |
-| Latitude | latitud | lat | Geolocalitation latitude degrees |
-| Longitude | longitud | lon | Geolocalitation longitude degrees |
+| Latitude | latitud | lat | Geolocalization latitude degrees |
+| Longitude | longitud | lon | Geolocalization longitude degrees |
 | Elevation | altitud | N/A | Elevation over the sea level |
 | Category | CATEGORIA | N/A | Station category: pluviometric, limnimetric, pluviograph, limnigraph, ordinary climatology, principal climatology, special meteorologic, soil meteorological, main synoptic, secundary synotic, radiosonde, mareographic |
 | Technology | TECNOLOGIA | N/A | Main technology: conventional, automatic assisted with telemetry, automatic not assisted with telemetry |
@@ -83,6 +99,6 @@
 
 > N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API
 
-#### 4 - Open Weather values for station 000044015070: EL PEPINO - AUT [44015070]
+### 4 - Open Weather values for station 000044015070: EL PEPINO - AUT [44015070]
 
 Location in [Google Maps](http://maps.google.com/maps?q=1.08288889,-76.66711111), [Openstreet Map](https://www.openstreetmap.org/query?lat=1.08288889&lon=-76.66711111).
