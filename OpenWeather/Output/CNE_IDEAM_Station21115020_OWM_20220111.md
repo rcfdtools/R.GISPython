@@ -3,8 +3,8 @@
 
 ### General parameters
 
-* Weather date time: 2022-01-11 09:24:18.871685
-* Unix time to eval: 1641806658
+* Weather date time: 2022-01-11 09:29:39.144637
+* Unix time to eval: 1641806979
 * Show historical: True
 * Show OWM API detail: True
 * Request OWM data: False
@@ -12,8 +12,8 @@
 * Unit system: metric
 * Icons source: http://openweathermap.org/img/w/
 * CNE IDEAM source: http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls
-* CNE IDEAM file downloaded and updated: No
 * CNE IDEAM file: D:/R.GISPython/OpenWeather/Data/CNE_IDEAM_20220111.xls
+* CNE IDEAM file downloaded and updated: No
 * CNE IDEAM stations: 4494
 * CNE IDEAM attributes: 20
 * CNE IDEAM station code filter: ['All']
@@ -121,4 +121,4 @@
 
 > N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API
 
-### (CNE Index 2014) Open Weather values for station 21115020: AEROPUERTO BENITO SALAS [21115020]
+### (CNE index 2014) Open Weather values for station 21115020 - AEROPUERTO BENITO SALAS [21115020]
