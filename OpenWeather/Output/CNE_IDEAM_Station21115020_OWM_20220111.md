@@ -3,8 +3,8 @@
 
 ### General parameters
 
-* Weather date time: 2022-01-11 09:29:39.144637
-* Unix time to eval: 1641806979
+* Weather date time: 2022-01-11 09:36:01.215096
+* Unix time to eval: 1641807361
 * Show historical: True
 * Show OWM API detail: True
 * Request OWM data: False
