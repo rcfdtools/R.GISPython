@@ -14,7 +14,7 @@ Análisis de datos climatológicos históricos en la ciudad de Bogotá - Colombi
 
 > El script de descarga y procesamiento también permite la realización de descarga de datos pronóstico a partir de la fecha y hora actual de ejecución más una ventana de tiempo que puede estar al rededor de 1 semana dependiendo de la localización consultada y los datos disponibles.  
 
-> A partir del archivo CSV generado por el script principal de este microcontenido, podrá realizar la Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única utilizando las herramientas disponibles en este repositorio. Modificar en el archivo .csv que integra los registros discretos obtenidos de OWM el nombre de la columna `Hour` a un pseudo juliano como `Julian`, de esta forma la herramienta de interpolación podrá generar 24 grillas (a nivel horario) con la representación espacial de cualquiera de las variables climatológicas obtenidas. [Más información](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid).
+> A partir del archivo CSV generado por el script principal de este microcontenido, podrá realizar la Interpolación y representación espacial de series de datos meteorológicos con simbología de rampa única utilizando las herramientas disponibles en este repositorio. Modificar en el archivo .csv que integra los registros discretos obtenidos de OWM, el nombre de la columna `Hour` a un pseudo juliano como `Julian`, de esta forma la herramienta de interpolación podrá generar 24 grillas (a nivel horario) con la representación espacial de cualquiera de las variables climatológicas obtenidas. [Más información](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid).
 
 ### Funcionalidades incorporadas
 
