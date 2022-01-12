@@ -1,6 +1,8 @@
 ## Obtención y análisis de datos climatológicos utilizando la API de openweathermap.org y el  Catálogo nacional de estaciones hidrometeorológicas - CNE del IDEAM - Colombia
 Keywords: `openweathermap` `forecast` `historical` `pandas` `matplotlib` `API`
 
+![OpenWeather.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/OpenWeather.png)
+
 A partir de la localización geográfica de estaciones hidrometeorológicas y utilizando la interfaz de programación de aplicaciones - API del portal openweathermap.org, obtener datos históricos o datos de pronóstico para las variables climatológicas: temperatura, sensación térmica, punto de rocío, nubosidad, humedad, presión atmosférica, dirección del viento, velocidad del viento, velocidad de ráfagas de viento, precipitación, visibilidad e índice ultravioleta - UVI.
 
 ### Caso de estudio
