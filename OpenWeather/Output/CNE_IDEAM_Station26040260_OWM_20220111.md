@@ -1,0 +1,173 @@
+
+## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - TORIBIO ALERTAS [26040260] - Historical
+
+### General parameters
+
+* Weather date time: 2022-01-11 19:42:05.608768
+* Unix time to eval: 1641843725
+* Show historical: True
+* Show OWM API detail: True
+* Request OWM data: True
+* Days before: 1
+* Unit system: metric
+* Icons source: http://openweathermap.org/img/w/
+* CNE IDEAM source: http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls
+* CNE IDEAM file: D:/R.GISPython/OpenWeather/Data/CNE_IDEAM_20220111.xls
+* CNE IDEAM file downloaded and updated: No
+* CNE IDEAM stations: 4494
+* CNE IDEAM attributes: 20
+* CNE IDEAM station code filter: ['All', 26055120, 1508500053]
+* CNE IDEAM category filter: ['Climática Principal']
+* CNE IDEAM technology filter: ['All', 'Automática sin Telemetría']
+* CNE IDEAM status filter: ['All', 'Activa', 'En Mantenimiento']
+* CNE IDEAM state filter: ['All']
+* CNE IDEAM county filter: ['All']
+* CNE IDEAM stream filter: ['All']
+* CNE IDEAM operator filter: ['All']
+* CNE IDEAM hydro area filter: ['All']
+* CNE IDEAM hydro zone filter: ['All']
+* CNE IDEAM hydro subzone filter: ['All']
+* Related files: [Station Markdown, ](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_Station26040260_OWM_20220111.md)[General CSV]( https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/CNE_IDEAM_OWM_20220111.csv)
+
+
+#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=2.95236111,-76.26222222) or [Openstreet Map](https://www.openstreetmap.org/query?lat=2.95236111&lon=-76.26222222)
+
+
+| Parameter | Value |
+|---|---|
+| Code | 26040260 |
+| Name | TORIBIO ALERTAS [26040260] |
+| Latitude, ° | 2.95236111 |
+| Longitude, ° | -76.26222222 |
+| Elevation, m | 1774 |
+| Category | Climática Principal |
+| Technology | Convencional |
+| Status | Activa |
+| Installation date | 1980-02-15 00:00:00 |
+| Suspension date | NaT |
+| State | Cauca |
+| County | Toribío |
+| Stream | 0 |
+| Operator | Area Operativa 09 - Cauca-Valle-Caldas |
+| AH - Hydrographic area | Magdalena Cauca |
+| ZH - Hydrographic zone | Cauca |
+| SZH - Hydrographic subzone | Río Palo |
+
+> For `Show historical`, `True` means that we are getting weather historic values with the `Time Machine` option from the openweathermap server, `False` means that we are getting the `Forecast` weather values.
+
+#### Unit system (metric)
+
+| Parameter | Unit | openweathermap name |
+|---|---|---|
+| Temperature | °C | temp |
+| Dew Point | °C | dew_point |
+| Feels like | °C | feels_like |
+| Clouds | % | clouds |
+| Humidity | % | humidity |
+| Pressure | hPa | pressure |
+| Wind Direction | ° | wind_deg |
+| Wind Speed | m/s | wind_speed |
+| Wind Gust | m/s | wind_gust |
+| Rain | mm | rain |
+| Visibility | m | visibility |
+| UV Index | DN | uvi |
+
+> mi: Miles unit for imperial system
+
+> DN: Dimensionless numbers
+
+#### File parameters over the generated comma separated values - CSV
+
+| r.cfdtools | CNE IDEAM | OpenWeather | Description |
+|---|---|---|---|
+| Station | CODIGO | N/A | Station code |
+| Statname | nombre | N/A | Station name |
+| Latitude | latitud | lat | Geolocalization latitude degrees |
+| Longitude | longitud | lon | Geolocalization longitude degrees |
+| Elevation | altitud | N/A | Elevation over the sea level |
+| Category | CATEGORIA | N/A | Station category: pluviometric, limnimetric, pluviograph, limnigraph, ordinary climatology, principal climatology, special meteorologic, soil meteorological, main synoptic, secundary synotic, radiosonde, mareographic |
+| Technology | TECNOLOGIA | N/A | Main technology: conventional, automatic assisted with telemetry, automatic not assisted with telemetry |
+| Status | ESTADO | N/A | Functional status: active, suspended, under maintenance |
+| InstDate | FECHA_INSTALACION | N/A | Installation date |
+| SuspDate | FECHA_SUSPENSION | N/A | Suspension date |
+| State | DEPARTAMENTO | N/A | Geopolitical location state |
+| County | MUNICIPIO | N/A | Geopolitical location county |
+| Stream | CORRIENTE | N/A | Stream point or near stream |
+| Operator | AREA_OPERATIVA | N/A | Gouvernament operator |
+| AHName | AREA_HIDROGRAFICA | N/A | AH - Hydrographic area. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone) |
+| SZName | ZONA_HIDROGRAFICA | N/A | ZH - Hydrographic zone. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone) |
+| SZHName | SUBZONA_HIDROGRAFICA | N/A | SZH - Hydrographic subzone. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone) |
+| Timezone | N/A | timezone | Global time zone |
+| Datetime | N/A | N/A | Date and time of the weather values |
+| Clouds | N/A | clouds | Cloudiness |
+| Dewpoint | N/A | dew_point | Atmospheric temperature (varying according to pressure and humidity) below which water droplets begin to condense and dew can form. |
+| Feelslike | N/A | feels_like | Temperature. This temperature parameter accounts for the human perception of weather |
+| Humidity | N/A | humidity | Humidity |
+| Pressure | N/A | pressure | Atmospheric pressure on the sea level |
+| Rain | N/A | rain | Rain volume for last hour |
+| Temp | N/A | temp | Temperature |
+| UVI | N/A | uvi | Current UV index |
+| Visibility | N/A | visibility | Average visibility |
+| Winddeg | N/A | wind_deg | Wind direction, degrees (meteorological) |
+| Windgust | N/A | wind_gust | Wind gust |
+| Windspeed | N/A | wind_speed | Wind speed |
+| OWMid | N/A | id | Weather identification over OWM |
+| OWMmain | N/A | main | Group of weather parameters (Rain, Snow, Extreme etc.) |
+| OWMdesc | N/A | description | Weather condition within the group. [More info.](https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2) |
+| OWMicon | N/A | icon | Weather icon id. [More info.](https://openweathermap.org/weather-conditions#How-to-get-icon-URL) |
+| Hour | N/A | N/A | Hour can be used like a Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid) |
+
+> Some definitions are taken from https://openweathermap.org/
+
+> N/A: Does not apply. Some parameters become from the IDEAM CNE file or from the openweathermap dictionary API
+
+### (CNE index 2024) Open Weather values for station 26040260 - TORIBIO ALERTAS [26040260]
+
+JSON data from API OWM:
+
+```
+{'lat': 2.9524, 'lon': -76.2622, 'timezone': 'America/Bogota', 'timezone_offset': -18000, 'current': {'dt': 1641843725, 'sunrise': 1641813213, 'sunset': 1641856272, 'temp': 21.94, 'feels_like': 22.57, 'pressure': 1014, 'humidity': 91, 'dew_point': 20.4, 'uvi': 5.87, 'clouds': 95, 'visibility': 2926, 'wind_speed': 1.53, 'wind_deg': 307, 'wind_gust': 1.33, 'weather': [{'id': 501, 'main': 'Rain', 'description': 'moderate rain', 'icon': '10d'}], 'rain': {'1h': 1.22}}, 'hourly': [{'dt': 1641772800, 'temp': 18.94, 'feels_like': 19.45, 'pressure': 1016, 'humidity': 98, 'dew_point': 18.62, 'uvi': 0, 'clouds': 77, 'visibility': 2675, 'wind_speed': 0.59, 'wind_deg': 166, 'wind_gust': 1.04, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.74}}, {'dt': 1641776400, 'temp': 16.94, 'feels_like': 17.22, 'pressure': 1017, 'humidity': 97, 'dew_point': 16.46, 'uvi': 0, 'clouds': 95, 'visibility': 1750, 'wind_speed': 0.51, 'wind_deg': 152, 'wind_gust': 1, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.52}}, {'dt': 1641780000, 'temp': 16.94, 'feels_like': 17.22, 'pressure': 1019, 'humidity': 97, 'dew_point': 16.46, 'uvi': 0, 'clouds': 97, 'visibility': 1967, 'wind_speed': 0.34, 'wind_deg': 161, 'wind_gust': 0.86, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.49}}, {'dt': 1641783600, 'temp': 16.94, 'feels_like': 17.25, 'pressure': 1019, 'humidity': 98, 'dew_point': 16.62, 'uvi': 0, 'clouds': 98, 'visibility': 1672, 'wind_speed': 0.27, 'wind_deg': 173, 'wind_gust': 0.72, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.31}}, {'dt': 1641787200, 'temp': 16.94, 'feels_like': 17.25, 'pressure': 1018, 'humidity': 98, 'dew_point': 16.62, 'uvi': 0, 'clouds': 99, 'visibility': 1836, 'wind_speed': 0.27, 'wind_deg': 229, 'wind_gust': 0.57, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.36}}, {'dt': 1641790800, 'temp': 15.94, 'feels_like': 16.15, 'pressure': 1018, 'humidity': 98, 'dew_point': 15.62, 'uvi': 0, 'clouds': 99, 'visibility': 1992, 'wind_speed': 0.19, 'wind_deg': 190, 'wind_gust': 0.42, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.26}}, {'dt': 1641794400, 'temp': 15.94, 'feels_like': 16.15, 'pressure': 1017, 'humidity': 98, 'dew_point': 15.62, 'uvi': 0, 'clouds': 93, 'visibility': 4696, 'wind_speed': 0.28, 'wind_deg': 232, 'wind_gust': 0.41, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.27}}, {'dt': 1641798000, 'temp': 14.94, 'feels_like': 15.07, 'pressure': 1017, 'humidity': 99, 'dew_point': 14.78, 'uvi': 0, 'clouds': 100, 'visibility': 10000, 'wind_speed': 0.46, 'wind_deg': 265, 'wind_gust': 0.65, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.42}}, {'dt': 1641801600, 'temp': 14.94, 'feels_like': 15.07, 'pressure': 1016, 'humidity': 99, 'dew_point': 14.78, 'uvi': 0, 'clouds': 100, 'visibility': 1192, 'wind_speed': 0.31, 'wind_deg': 275, 'wind_gust': 0.76, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.33}}, {'dt': 1641805200, 'temp': 14.94, 'feels_like': 15, 'pressure': 1016, 'humidity': 96, 'dew_point': 14.31, 'uvi': 0, 'clouds': 100, 'visibility': 1165, 'wind_speed': 0.97, 'wind_deg': 288, 'wind_gust': 1.16, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.34}}, {'dt': 1641808800, 'temp': 13.94, 'feels_like': 13.97, 'pressure': 1017, 'humidity': 99, 'dew_point': 13.79, 'uvi': 0, 'clouds': 100, 'visibility': 1158, 'wind_speed': 0.54, 'wind_deg': 313, 'wind_gust': 0.9, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.79}}, {'dt': 1641812400, 'temp': 13.94, 'feels_like': 13.97, 'pressure': 1017, 'humidity': 99, 'dew_point': 13.79, 'uvi': 0, 'clouds': 100, 'visibility': 1111, 'wind_speed': 0.67, 'wind_deg': 319, 'wind_gust': 1.14, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10n'}], 'rain': {'1h': 0.42}}, {'dt': 1641816000, 'temp': 14.94, 'feels_like': 15.07, 'pressure': 1018, 'humidity': 99, 'dew_point': 14.78, 'uvi': 0.37, 'clouds': 100, 'visibility': 924, 'wind_speed': 0.78, 'wind_deg': 302, 'wind_gust': 1.35, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10d'}], 'rain': {'1h': 0.19}}, {'dt': 1641819600, 'temp': 15.94, 'feels_like': 16.12, 'pressure': 1019, 'humidity': 97, 'dew_point': 15.46, 'uvi': 1.49, 'clouds': 100, 'visibility': 1265, 'wind_speed': 0.52, 'wind_deg': 324, 'wind_gust': 1.02, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10d'}], 'rain': {'1h': 0.3}}, {'dt': 1641823200, 'temp': 16.94, 'feels_like': 17.09, 'pressure': 1020, 'humidity': 92, 'dew_point': 15.63, 'uvi': 3.77, 'clouds': 100, 'visibility': 1367, 'wind_speed': 0.48, 'wind_deg': 334, 'wind_gust': 0.92, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10d'}], 'rain': {'1h': 0.26}}, {'dt': 1641826800, 'temp': 18.94, 'feels_like': 19.06, 'pressure': 1019, 'humidity': 83, 'dew_point': 15.99, 'uvi': 6.55, 'clouds': 100, 'visibility': 10000, 'wind_speed': 1.46, 'wind_deg': 312, 'wind_gust': 1.01, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10d'}], 'rain': {'1h': 0.23}}, {'dt': 1641830400, 'temp': 19.94, 'feels_like': 20.08, 'pressure': 1018, 'humidity': 80, 'dew_point': 16.39, 'uvi': 11.58, 'clouds': 99, 'visibility': 10000, 'wind_speed': 1.93, 'wind_deg': 308, 'wind_gust': 1.42, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10d'}], 'rain': {'1h': 0.42}}, {'dt': 1641834000, 'temp': 20.94, 'feels_like': 21.23, 'pressure': 1017, 'humidity': 82, 'dew_point': 17.75, 'uvi': 12.92, 'clouds': 99, 'visibility': 10000, 'wind_speed': 1.96, 'wind_deg': 304, 'wind_gust': 1.39, 'weather': [{'id': 500, 'main': 'Rain', 'description': 'light rain', 'icon': '10d'}], 'rain': {'1h': 0.77}}, {'dt': 1641837600, 'temp': 20.94, 'feels_like': 21.31, 'pressure': 1016, 'humidity': 85, 'dew_point': 18.32, 'uvi': 12.01, 'clouds': 73, 'visibility': 9194, 'wind_speed': 1.94, 'wind_deg': 304, 'wind_gust': 1.37, 'weather': [{'id': 501, 'main': 'Rain', 'description': 'moderate rain', 'icon': '10d'}], 'rain': {'1h': 1.02}}, {'dt': 1641841200, 'temp': 21.94, 'feels_like': 22.49, 'pressure': 1015, 'humidity': 88, 'dew_point': 19.86, 'uvi': 9.66, 'clouds': 90, 'visibility': 2975, 'wind_speed': 1.82, 'wind_deg': 300, 'wind_gust': 1.55, 'weather': [{'id': 501, 'main': 'Rain', 'description': 'moderate rain', 'icon': '10d'}], 'rain': {'1h': 1.17}}, {'dt': 1641844800, 'temp': 21.94, 'feels_like': 22.57, 'pressure': 1014, 'humidity': 91, 'dew_point': 20.4, 'uvi': 5.87, 'clouds': 95, 'visibility': 2926, 'wind_speed': 1.53, 'wind_deg': 307, 'wind_gust': 1.33, 'weather': [{'id': 501, 'main': 'Rain', 'description': 'moderate rain', 'icon': '10d'}], 'rain': {'1h': 1.22}}, {'dt': 1641848400, 'temp': 17.94, 'feels_like': 18.17, 'pressure': 1014, 'humidity': 91, 'dew_point': 16.45, 'uvi': 2.57, 'clouds': 96, 'visibility': 2865, 'wind_speed': 1.2, 'wind_deg': 311, 'wind_gust': 1.15, 'weather': [{'id': 501, 'main': 'Rain', 'description': 'moderate rain', 'icon': '10d'}], 'rain': {'1h': 1.09}}, {'dt': 1641852000, 'temp': 15.94, 'feels_like': 16.07, 'pressure': 1015, 'humidity': 95, 'dew_point': 15.14, 'uvi': 0.63, 'clouds': 97, 'visibility': 7341, 'wind_speed': 1.07, 'wind_deg': 310, 'wind_gust': 1.32, 'weather': [{'id': 501, 'main': 'Rain', 'description': 'moderate rain', 'icon': '10d'}], 'rain': {'1h': 1.15}}, {'dt': 1641855600, 'temp': 13.94, 'feels_like': 13.92, 'pressure': 1016, 'humidity': 97, 'dew_point': 13.47, 'uvi': 0, 'clouds': 95, 'visibility': 1284, 'wind_speed': 0.32, 'wind_deg': 359, 'wind_gust': 1.02, 'weather': [{'id': 501, 'main': 'Rain', 'description': 'moderate rain', 'icon': '10d'}], 'rain': {'1h': 1.14}}]}
+
+```
+
+| Weather | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | OWMid | OWMmain | OWMdesc | OWMicon | Hour |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 00:00:00 | 77.000000 | 18.620000 | 19.450000 | 98.000000 | 1016.000000 | 0.74 | 18.940000 | 0.000000 | 2675.000000 | 166.000000 | 1.04 | 0.590000 | 500 | Rain | light rain | 10n | 00 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 01:00:00 | 95.000000 | 16.460000 | 17.220000 | 97.000000 | 1017.000000 | 0.52 | 16.940000 | 0.000000 | 1750.000000 | 152.000000 | 1 | 0.510000 | 500 | Rain | light rain | 10n | 01 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 02:00:00 | 97.000000 | 16.460000 | 17.220000 | 97.000000 | 1019.000000 | 0.49 | 16.940000 | 0.000000 | 1967.000000 | 161.000000 | 0.86 | 0.340000 | 500 | Rain | light rain | 10n | 02 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 03:00:00 | 98.000000 | 16.620000 | 17.250000 | 98.000000 | 1019.000000 | 0.31 | 16.940000 | 0.000000 | 1672.000000 | 173.000000 | 0.72 | 0.270000 | 500 | Rain | light rain | 10n | 03 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 04:00:00 | 99.000000 | 16.620000 | 17.250000 | 98.000000 | 1018.000000 | 0.36 | 16.940000 | 0.000000 | 1836.000000 | 229.000000 | 0.57 | 0.270000 | 500 | Rain | light rain | 10n | 04 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 05:00:00 | 99.000000 | 15.620000 | 16.150000 | 98.000000 | 1018.000000 | 0.26 | 15.940000 | 0.000000 | 1992.000000 | 190.000000 | 0.42 | 0.190000 | 500 | Rain | light rain | 10n | 05 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 06:00:00 | 93.000000 | 15.620000 | 16.150000 | 98.000000 | 1017.000000 | 0.27 | 15.940000 | 0.000000 | 4696.000000 | 232.000000 | 0.41 | 0.280000 | 500 | Rain | light rain | 10n | 06 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 07:00:00 | 100.000000 | 14.780000 | 15.070000 | 99.000000 | 1017.000000 | 0.42 | 14.940000 | 0.000000 | 10000.000000 | 265.000000 | 0.65 | 0.460000 | 500 | Rain | light rain | 10n | 07 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 08:00:00 | 100.000000 | 14.780000 | 15.070000 | 99.000000 | 1016.000000 | 0.33 | 14.940000 | 0.000000 | 1192.000000 | 275.000000 | 0.76 | 0.310000 | 500 | Rain | light rain | 10n | 08 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 09:00:00 | 100.000000 | 14.310000 | 15.000000 | 96.000000 | 1016.000000 | 0.34 | 14.940000 | 0.000000 | 1165.000000 | 288.000000 | 1.16 | 0.970000 | 500 | Rain | light rain | 10n | 09 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 10:00:00 | 100.000000 | 13.790000 | 13.970000 | 99.000000 | 1017.000000 | 0.79 | 13.940000 | 0.000000 | 1158.000000 | 313.000000 | 0.9 | 0.540000 | 500 | Rain | light rain | 10n | 10 |
+| ![10n.png](http://openweathermap.org/img/w/10n.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 11:00:00 | 100.000000 | 13.790000 | 13.970000 | 99.000000 | 1017.000000 | 0.42 | 13.940000 | 0.000000 | 1111.000000 | 319.000000 | 1.14 | 0.670000 | 500 | Rain | light rain | 10n | 11 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 12:00:00 | 100.000000 | 14.780000 | 15.070000 | 99.000000 | 1018.000000 | 0.19 | 14.940000 | 0.370000 | 924.000000 | 302.000000 | 1.35 | 0.780000 | 500 | Rain | light rain | 10d | 12 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 13:00:00 | 100.000000 | 15.460000 | 16.120000 | 97.000000 | 1019.000000 | 0.3 | 15.940000 | 1.490000 | 1265.000000 | 324.000000 | 1.02 | 0.520000 | 500 | Rain | light rain | 10d | 13 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 14:00:00 | 100.000000 | 15.630000 | 17.090000 | 92.000000 | 1020.000000 | 0.26 | 16.940000 | 3.770000 | 1367.000000 | 334.000000 | 0.92 | 0.480000 | 500 | Rain | light rain | 10d | 14 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 15:00:00 | 100.000000 | 15.990000 | 19.060000 | 83.000000 | 1019.000000 | 0.23 | 18.940000 | 6.550000 | 10000.000000 | 312.000000 | 1.01 | 1.460000 | 500 | Rain | light rain | 10d | 15 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 16:00:00 | 99.000000 | 16.390000 | 20.080000 | 80.000000 | 1018.000000 | 0.42 | 19.940000 | 11.580000 | 10000.000000 | 308.000000 | 1.42 | 1.930000 | 500 | Rain | light rain | 10d | 16 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 17:00:00 | 99.000000 | 17.750000 | 21.230000 | 82.000000 | 1017.000000 | 0.77 | 20.940000 | 12.920000 | 10000.000000 | 304.000000 | 1.39 | 1.960000 | 500 | Rain | light rain | 10d | 17 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 18:00:00 | 73.000000 | 18.320000 | 21.310000 | 85.000000 | 1016.000000 | 1.02 | 20.940000 | 12.010000 | 9194.000000 | 304.000000 | 1.37 | 1.940000 | 501 | Rain | moderate rain | 10d | 18 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 19:00:00 | 90.000000 | 19.860000 | 22.490000 | 88.000000 | 1015.000000 | 1.17 | 21.940000 | 9.660000 | 2975.000000 | 300.000000 | 1.55 | 1.820000 | 501 | Rain | moderate rain | 10d | 19 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 20:00:00 | 95.000000 | 20.400000 | 22.570000 | 91.000000 | 1014.000000 | 1.22 | 21.940000 | 5.870000 | 2926.000000 | 307.000000 | 1.33 | 1.530000 | 501 | Rain | moderate rain | 10d | 20 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 21:00:00 | 96.000000 | 16.450000 | 18.170000 | 91.000000 | 1014.000000 | 1.09 | 17.940000 | 2.570000 | 2865.000000 | 311.000000 | 1.15 | 1.200000 | 501 | Rain | moderate rain | 10d | 21 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 22:00:00 | 97.000000 | 15.140000 | 16.070000 | 95.000000 | 1015.000000 | 1.15 | 15.940000 | 0.630000 | 7341.000000 | 310.000000 | 1.32 | 1.070000 | 501 | Rain | moderate rain | 10d | 22 |
+| ![10d.png](http://openweathermap.org/img/w/10d.png) | 26040260 | "TORIBIO ALERTAS [26040260]" | 2.952361 | -76.262222 | 1774.000000 | Climática Principal | Convencional | Activa | 1980-02-15 00:00:00 | NaT | Cauca | Toribío | 0 | Area Operativa 09 - Cauca-Valle-Caldas | Magdalena Cauca | Cauca | Río Palo | America/Bogota | 2022-01-10 23:00:00 | 95.000000 | 13.470000 | 13.920000 | 97.000000 | 1016.000000 | 1.14 | 13.940000 | 0.000000 | 1284.000000 | 359.000000 | 1.02 | 0.320000 | 501 | Rain | moderate rain | 10d | 23 |
+
+
+### Weather plots
+
+![CNE_IDEAM_Station26040260_OWM_Clouds_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Clouds_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Dewpoint_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Dewpoint_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Feelslike_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Feelslike_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Humidity_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Humidity_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Pressure_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Pressure_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Rain_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Rain_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Temp_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Temp_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_UVI_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_UVI_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Visibility_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Visibility_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Windgust_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Windgust_20220111.png)
+![CNE_IDEAM_Station26040260_OWM_Windspeed_20220111.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_Station26040260_OWM_Windspeed_20220111.png)

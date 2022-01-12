@@ -29,7 +29,7 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = '***************'  # Your API key code here
+apiKey = '**********************'  # Your API key code here
 currentDateTime = datetime.now()  # datetime.utcnow()
 unitValMetric = [  # Parameter, unit, openweathermap name.
     ('Temperature', '°C', 'temp'),
@@ -139,10 +139,10 @@ requestOWMData = True
 # General filter variables related with the currente CNE IDEAM metadata file
 # May you consider that for free OWM accounts, you can only get 1000 API responses every day.
 # More information: https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic
-stationCodeFilter = ['All']  # 'All' at the first position or your required values.
-categoryFilter = ['Sinóptica Secundaria']  # 'All' at the first position or 'Pluviométrica', 'Limnimétrica', 'Limnigráfica', 'Climática Ordinaria', 'Climática Principal', 'Pluviográfica', 'Meteorológica Especial', 'Agrometeorológica', 'Sinóptica Principal', 'Radio Sonda', 'Mareográfica', 'Sinóptica Secundaria'.
+stationCodeFilter = ['All', 26055120, 1508500053]  # 'All' at the first position or your required values.
+categoryFilter = ['Climática Principal']  # 'All' at the first position or 'Pluviométrica', 'Limnimétrica', 'Limnigráfica', 'Climática Ordinaria', 'Climática Principal', 'Pluviográfica', 'Meteorológica Especial', 'Agrometeorológica', 'Sinóptica Principal', 'Radio Sonda', 'Mareográfica', 'Sinóptica Secundaria'.
 technologyFilter = ['All', 'Automática sin Telemetría']  # 'All' at the first position or your required values or 'Automática con Telemetría', 'Automática sin Telemetría', 'Convencional'
-statusFilter = ['Activa', 'En Mantenimiento']  # 'All' at the first position or 'Activa', 'En Mantenimiento', 'Suspendida'
+statusFilter = ['All', 'Activa', 'En Mantenimiento']  # 'All' at the first position or 'Activa', 'En Mantenimiento', 'Suspendida'
 geoStateFilter = ['All']  # 'All' at the first position or your required values or e.g. 'Cundinamarca', 'Boyacá', 'Cesar'...
 geoCountyFilter = ['All']  # 'All' at the first position or your required values.
 geoStreamFilter = ['All']  # 'All' at the first position or your required values.
@@ -309,7 +309,8 @@ for i in range(1, numStationsCNE+1):
                 else:
                     wind_gust = ''
                 weather = entry['weather'][0]
-                txtPrintCSV = '%s,"%s",%f,%f,%f,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f,%f,%f,%s,%f,%f,%f,%f,%s,%f,%i,%s,%s,%s,%s' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], wind_gust, entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
+                csvHeader = 'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Hour'
+                txtPrintCSV = '%s,"%s",%f,%f,%f,"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s",%s,%s,%f,%f,%f,%f,%f,%s,%f,%f,%f,%f,%s,%f,%i,%s,%s,%s,%s' % (str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], wind_gust, entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
                 #txtPrintCSV = '%s' % (str(geoArrayCNE[stationCodeCNE][i]))
                 printcsv(txtPrintCSV, False)
                 iconShow = '!['+weather['icon']+'.png]('+urlIcon+weather['icon']+'.png)'
