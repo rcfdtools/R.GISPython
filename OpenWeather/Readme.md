@@ -17,17 +17,17 @@ Análisis de datos climatológicos históricos en la ciudad de Bogotá - Colombi
 ### Funcionalidades incorporadas
 
 * Descarga directa del archivo del catálogo nacional de estaciones. Si en la fecha actual ya ha sido descargado el archivo, el script realizará únicamente su procesamiento.
-* Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls` y los nombre de los atributos del modelo de datos del catálogo.
+* Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls` y los nombre de los atributos del catálogo de objetos del catálogo.
 * Definición de filtros de procesamiento de estaciones por: código de estación, categoría, tecnología, estado, departamento, municipio, corriente, área operativa, área hidrográfica, zona hidrográfica y subzona hidrográfica. 
 * Para datos históricos (máximo 5 días incluida la fecha de ejecución actual), el usuario puede definir el número de días previos a la fecha actual sobre el cual se realizará la obtención y análisis de los datos climatológicos disponibles en OWM.
 * Procesamiento automático de diccionario JSON obtenido mediante la API de OWM a formato de texto separado por comas - CSV. Todos los datos discretos obtenidos para las localizaciones definidas a partir de las estaciones son procesados a escala horaria y volcados a un archivo único en `/Output`.
-* Generación automática de archivos de reporte detallados en formato Markdown para cada estación procesada de acuerdo a los filtros definidos.
+* Generación automática de archivos de reporte detallados en formato Markdown para cada estación procesada de acuerdo a los filtros definidos. [Ver archivos.](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Output)
 * Impresión detallada de datos y metadatos de cada estación procesada.
 * Impresión detallada de tabla de datos climáticos por estación con iconografía oficial de OWM.
 * Hipervinculación activa en reporte para visualización de localización de estación en Google Maps y OpenStreet Map.
 * Definición del sistema de unidades para la obtención de datos de OWM e impresión de tabla detallada de referencia del sistema de unidades utilizado.
 * Impresión detallada del catálogo de objetos del archivo CSV generado.
-* Generación masiva de gráficas de análisis para las estaciones procesadas y para cada tipo de dato climatológicos obtenido. Gráficas embebidas dentro del documento principal de cada estación.
+* Generación masiva de gráficas de análisis para las estaciones procesadas y para cada tipo de dato climatológicos obtenido. Gráficas embebidas dentro del documento principal de cada estación. [Ver archivos.](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Graph)
  
 > En caso de que requiera analizar una versión antigua del archivo del catálogo nacional de estaciones, podrá cargar el archivo en cualquier repositorio de uso personal, redireccionar el script a la url del archivo y ejecutar el script. Tener en cuenta que las fechas presentadas en los análisis, corresponderán a la fecha del sistema operativo. Opcionalmente podrá crear una copia del archivo a analizar y modificar la fecha incluida en el nombre del archivo a la fecha actual en formato aaaammdd.
 
@@ -45,7 +45,7 @@ Análisis de datos climatológicos históricos en la ciudad de Bogotá - Colombi
 * PyCharm 2021.3+ for Anaconda.
 * Sistema operativo Microsoft Windows.
 
-> La API Key requerida puede ser libre o comercial. Para cuentas de usuario por descarga libre, el número de consultas únicas por día no debe exceder de 1000.  
+> La API Key requerida puede ser libre o comercial. Para cuentas de usuario por descarga libre, el número de consultas únicas por día no debe exceder de 1000. Para proyectos de investigación académica, los estudiantes pueden solicitar sin costo a OWM una API key extendida que permitirá un mayor número de consultas diarias.  
 
 
 ### Parámetros y sistema de unidades disponibles
