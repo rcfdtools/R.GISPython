@@ -131,14 +131,32 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 
 ### Ejecución en PyCharm usando Python 3.10.0
 
+
 #### Ejecución script principal
 
-![]()
+![PyCharm2021.3OpenWeather1.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/PyCharm2021.3OpenWeather1.png)
+![PyCharm2021.3OpenWeather2.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/PyCharm2021.3OpenWeather2.png)
+![PyCharm2021.3OpenWeather3.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/PyCharm2021.3OpenWeather3.png)
+![PyCharm2021.3OpenWeather4.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/PyCharm2021.3OpenWeather4.png)
+![PyCharm2021.3OpenWeather5.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/PyCharm2021.3OpenWeather5.png)
+
 
 #### Ejecución script generación masiva de gráficas de análisis
 
+![PyCharm2021.3OpenWeatherPlot1.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/PyCharm2021.3OpenWeatherPlot1.png)
+![PyCharm2021.3OpenWeatherPlot2.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/PyCharm2021.3OpenWeatherPlot2.png)
 
-#### Carpeta de resultados
+
+#### Resultados
+
+![GitHubMarkdownOutputSample1.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/GitHubMarkdownOutputSample1.png)
+![GitHubMarkdownOutputSample2.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/GitHubMarkdownOutputSample2.png)
+![GitHubMarkdownOutputSample3.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/GitHubMarkdownOutputSample3.png)
+![NotepadMarkdownOutputSample.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/NotepadMarkdownOutputSample.png)
+![WindowsExplorerGraph.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/WindowsExplorerGraph.png)
+![WindowsExplorerOutput.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Screenshot/WindowsExplorerOutput.png)
+
+
 
 
 ### Scripts
