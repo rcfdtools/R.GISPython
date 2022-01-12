@@ -34,7 +34,7 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = '******************'  # Your OWM API key code here
+apiKey = '********************'  # Your OWM API key code here
 studyCase = 'Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica'
 currentDateTime = datetime.now()  # datetime.utcnow()
 timeStart = time.time()
@@ -127,7 +127,7 @@ urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather'
 daysBefore = 1  # Max to 4 days, current day or 0 count like a part of the 5 days in openweather
 printDetail = True  # Print JSON dictionary on screen and Markdown files
 showHistorical = True  # True for use the timemachine. False for get the current forecast
-updateCNEFile = False  # Download the IDEAM CNE file
+updateCNEFile = True  # Download the IDEAM CNE file
 requestOWMData = True  # Get API responses
 
 # General filter variables related with the currente CNE IDEAM metadata file
@@ -136,7 +136,7 @@ requestOWMData = True  # Get API responses
 stationCodeFilter = ['All', 26055120, 1508500053]  # 'All' at the first position or your required values.
 categoryFilter = ['All']  # 'All' at the first position or 'Pluviométrica', 'Limnimétrica', 'Limnigráfica', 'Climática Ordinaria', 'Climática Principal', 'Pluviográfica', 'Meteorológica Especial', 'Agrometeorológica', 'Sinóptica Principal', 'Radio Sonda', 'Mareográfica', 'Sinóptica Secundaria'.
 technologyFilter = ['All', 'Automática sin Telemetría']  # 'All' at the first position or your required values or 'Automática con Telemetría', 'Automática sin Telemetría', 'Convencional'
-statusFilter = ['Activa', 'En Mantenimiento']  # 'All' at the first position or 'Activa', 'En Mantenimiento', 'Suspendida'
+statusFilter = ['All', 'Activa', 'En Mantenimiento']  # 'All' at the first position or 'Activa', 'En Mantenimiento', 'Suspendida'
 geoStateFilter = ['Bogotá']  # 'All' at the first position or your required values or e.g. 'Cundinamarca', 'Boyacá', 'Cesar'...
 geoCountyFilter = ['All']  # 'All' at the first position or your required values.
 geoStreamFilter = ['All']  # 'All' at the first position or your required values.

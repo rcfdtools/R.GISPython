@@ -6,7 +6,9 @@
 # Libraries
 import pandas as pd
 import numpy as np
+import sys
 from datetime import date
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
@@ -41,23 +43,29 @@ plotParameters = [  # Parameter, metric system unit, imperial system unit
                   ('Windspeed', 'm/s', 'm/s'),]
 unitSys = 'metric'  # '' for default, 'metric' or 'imperial'
 showGraphScreen = False
+dataFrameCSV = pd.read_csv(filePath+'/Output/'+fileCSV, encoding='ISO-8859-1')
 
 # Collection data analysis from CSV file
-dataFrameCSV = pd.read_csv(filePath+'/Output/'+fileCSV, encoding='ISO-8859-1')
+print('\n## Plot weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ')
+print('\n* Python version: ' + str(sys.version) +
+      '\n* Python path: ' + str(sys.path[0:5]) +
+      '\n* matplotlib version: ' + str(matplotlib.__version__) +
+      '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather' +
+      '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
+      '\n* Credits: r.cfdtools@gmail.com')
 print('\n### Collection data analysis\n'
       '\n* Dataframe type: '+str(type(dataFrameCSV)),
       '\n* Records: ' + str(dataFrameCSV.shape[0]) +
       '\n* Attributes: ' + str(dataFrameCSV.shape[1]))
-print('\n#### General CSV information\n')
+print('\n### General CSV information\n')
 print(dataFrameCSV.info())
-print('\n')
-print('\n### Plot hourly graph')
+print('\n### Plot hourly graph\n')
 stationList = dataFrameCSV['Station'].unique()
 for i in stationList:
     for parameter in plotParameters:
         dataFrameCSVFilter = dataFrameCSV[dataFrameCSV['Station'] == i]
         plotFile = filePath + '/Graph/' + fileNameCNE + '_Station' + str(i) + '_OWM_' + parameter[0] + '_' + currentDateTxt + '.png'
-        print('Hourly graph - ' + str(i) + ': ' + plotFile)
+        print('* Hourly graph - ' + str(i) + ': ' + plotFile)
         mainArray = dataFrameCSVFilter[
             ['Station', 'Statname', 'Clouds', 'Dewpoint', 'Feelslike', 'Humidity', 'Pressure', 'Rain', 'Temp', 'UVI', 'Visibility', 'Windgust', 'Windspeed', 'Hour', 'Datetime']]
         #print(dataFrameCSVFilter['Datetime'])
