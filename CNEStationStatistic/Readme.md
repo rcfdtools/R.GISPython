@@ -130,12 +130,6 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 > Para los archivos generados u obtenidos a través de la ejecución del script, se conserva el registro de versiones a partir de la fecha de ejecución utilizando el formato aaaammdd.
 
 
-### Scripts
-
-* Script principal [CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
-* Script diccionario [CNEStationDictionary.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py)
-
-
 ### Arreglos de datos para clasificación de estaciones por pisos térmicos
 
 
@@ -226,7 +220,7 @@ Configuración avanzada.
 
 ### Scripts
 
-#### Script [CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
+#### Script principal [CNEStationStatistic.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationStatistic.py)
 
 ```
 # -*- coding: UTF-8 -*-
@@ -618,7 +612,7 @@ for i in CNEStationDictionary.stationTechnologyDictEs:
     print(i[0]+': '+i[1]+'\n')
 ```
 
-#### Script [CNEStationDictionary.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py)
+#### Script diccionario [CNEStationDictionary.py](https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic/CNEStationDictionary.py)
 
 ```
 # -*- coding: UTF-8 -*-

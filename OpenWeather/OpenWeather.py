@@ -34,7 +34,7 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = '********************'  # Your OWM API key code here
+apiKey = '*******************************'  # Your OWM API key code here
 studyCase = 'Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica'
 currentDateTime = datetime.now()  # datetime.utcnow()
 timeStart = time.time()

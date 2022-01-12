@@ -1,4 +1,4 @@
-## Obtención de datos climatológicos utilizando la API de openweathermap.org y el  Catálogo nacional de estaciones hidrometeorológicas - CNE del IDEAM - Colombia
+## Obtención y análisis de datos climatológicos utilizando la API de openweathermap.org y el  Catálogo nacional de estaciones hidrometeorológicas - CNE del IDEAM - Colombia
 Keywords: `openweathermap` `forecast` `historical` `pandas` `matplotlib` `API`
 
 A partir de la localización geográfica de estaciones hidrometeorológicas y utilizando la interfaz de programación de aplicaciones - API del portal openweathermap.org, obtener datos históricos o datos de pronóstico para las variables climatológicas: temperatura, sensación térmica, punto de rocío, nubosidad, humedad, presión atmosférica, dirección del viento, velocidad del viento, velocidad de ráfagas de viento, precipitación, visibilidad e índice ultravioleta - UVI.
@@ -33,10 +33,11 @@ Análisis de datos climatológicos históricos en la ciudad de Bogotá - Colombi
 
 > Mediante la inclusión del parámetro 'All' al inicio del arreglo de filtrado para cada uno de los filtros disponibles, el script identifica que se requiere de todos los datos disponibles, por lo que no es necesario eliminar las demás entradas ya definidas. 
 
+> Para localizaciones diferentes a las obtenidas a través del CNE, puede crear un archivo .xls con diferentes estaciones virtuales y con la misma estructura de datos. El archivo deberá identificarse con el mismo nombre del catálogo agregando al final la fecha de procesamiento. 
 
 ### Requerimientos
 
-* API Key de https://openweathermap.org
+* API key de [OWM](https://openweathermap.org)
 * Python 3.10.0+ como instalación independiente o standalone.
 * Matplotlib 3.5.0
 * PyCharm 2021.3+ for Anaconda.
@@ -117,19 +118,46 @@ Análisis de datos climatológicos históricos en la ciudad de Bogotá - Colombi
 
 Para la ejecución correcta del script, es necesario clonar, descargar o crear la estructura de directorios definida en la siguiente tabla en el directorio `D:\R.GISPython\OpenWeather`.
 
-| Directorio                                                                               | Descripción                                                                                                                                                                                                                      |
-|------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Data)             | Directorio de descarga del archivo CNE_IDEAM.xls con registro de versiones.                                                                                                                                                      |
-| [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Graph)           | Directorio para volcado de gráficas en formato [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) (Portable Network Graphic) .png. Para cada ejecución se crea un nuevo grupo de imágenes con registro de versiones. |
-| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Old)               | Directorio con versiones antiguas de los script.                                                                                                                                                                                 |
-| [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Output)         | Directorio de volcado de archivos detallados por estación en formato Markdown y archivo único CSV.                                                                                                                               |
-| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Screenshot) | Capturas de pantalla de ejecución y configuración.                                                                                                                                                                               |
+| Directorio                                                                               | Descripción                                                                                                                                                                                                                                           |
+|------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [/Data](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Data)             | Directorio de descarga del archivo CNE_IDEAM.xls con registro de versiones.                                                                                                                                                                           |
+| [/Graph](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Graph)           | Directorio para volcado de gráficas en formato [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) (Portable Network Graphic) .png. Para cada ejecución por fecha y estación se crea un nuevo grupo de imágenes con registro de versiones. |
+| [/Old](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Old)               | Directorio con versiones antiguas de los script.                                                                                                                                                                                                      |
+| [/Output](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Output)         | Directorio de volcado de archivos detallados por estación en formato Markdown y archivo único CSV.                                                                                                                                                    |
+| [/Screenshot](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather/Screenshot) | Capturas de pantalla de ejecución y configuración.                                                                                                                                                                                                    |
 
 > Para los archivos generados u obtenidos a través de la ejecución del script, se conserva el registro de versiones a partir de la fecha de ejecución utilizando el formato aaaammdd.
 
 
+### Ejecución en PyCharm usando Python 3.10.0
 
-### References
+#### Ejecución script principal
+
+![]()
+
+#### Ejecución script generación masiva de gráficas de análisis
+
+
+#### Carpeta de resultados
+
+
+### Scripts
+
+#### Script principal [OpenWeather.py](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/OpenWeather.py)
+
+```
+
+```
+
+#### Script para generación masiva de gráficas de análisis OpenWeatherPlot.py](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/OpenWeatherPlot.py) 
+
+```
+
+```
+
+
+### Referencias
+
 * https://openweathermap.org
 * https://towardsdatascience.com/develop-your-weather-application-with-python-in-less-than-10-lines-6d092c6dcbc9
 * https://www.tutorialspoint.com/How-to-convert-Python-date-to-Unix-timeStamp
@@ -145,3 +173,31 @@ Para la ejecución correcta del script, es necesario clonar, descargar o crear l
 * https://stackoverflow.com/questions/48668580/filter-csv-with-pandas
 * https://www.pythonprogramming.in/customize-grid-color-and-style.html
 * https://gitanswer.com/pixmap-error-python-pytorch-forecasting-909130815
+
+
+### Autores
+
+* Creado por r.cfdtools@gmail.com (40 horas)
+
+
+### Compatibilidad
+
+* Compatible con Python 3, librerías requeridas indicadas en la cabecera del archivo .py. 
+
+
+### Control de versiones
+
+| Versión    | Descripción                                                                                                |
+|------------|------------------------------------------------------------------------------------------------------------|
+| v.20220112 | Versión inicial con volcado de datos obtenidos en archivo CSV y generación masiva de gráficas de análisis. |
+
+
+### Licencia, cláusulas y condiciones de uso
+
+R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+
+
+| [Actividad anterior]() | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()  |
+|------------------------|---------------------------------------------------------|--------------------------|
+
+_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
