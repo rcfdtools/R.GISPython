@@ -46,10 +46,10 @@ print('\n### Collection data analysis\n'
       '\n* Dataframe type: '+str(type(dataFrameCSV)),
       '\n* Records: ' + str(dataFrameCSV.shape[0]) +
       '\n* Attributes: ' + str(dataFrameCSV.shape[1]))
-print('\n\n#### General CSV information\n')
+print('\n#### General CSV information\n')
 print(dataFrameCSV.info())
 print('\n')
-print('\n\n## Plot hourly graph')
+print('\n### Plot hourly graph')
 stationList = dataFrameCSV['Station'].unique()
 for i in stationList:
     for parameter in plotParameters:

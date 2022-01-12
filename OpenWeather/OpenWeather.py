@@ -34,7 +34,8 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = '*******************'  # Your OWM API key code here
+apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # Your OWM API key code here
+studyCase = 'Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica'
 currentDateTime = datetime.now()  # datetime.utcnow()
 timeStart = time.time()
 unitValMetric = [  # Parameter, unit, openweathermap name.
@@ -209,7 +210,8 @@ for i in range(1, numStationsCNE+1):
         fileOutputMarkdownName = filePath + '/Output/' + fileNameMd
         fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
         printmd('\n## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ' + str(geoArrayCNE[stationNameCNE][i]) + ' - ' + callType)
-        printmd('\n### GitHub repository and system information\n' +
+        printmd('\nStudy case: ' + studyCase +
+                '\n\n### GitHub repository and system information\n' +
                 '\n* Python version: ' + str(sys.version) +
                 '\n* Python path: ' + str(sys.path[0:5]) +
                 '\n* matplotlib version: ' + str(matplotlib.__version__) +
