@@ -19,7 +19,7 @@ Análisis de datos climatológicos históricos en la ciudad de Bogotá - Colombi
 ### Funcionalidades incorporadas
 
 * Descarga directa del archivo del catálogo nacional de estaciones. Si en la fecha actual ya ha sido descargado el archivo, el script realizará únicamente su procesamiento.
-* Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls` y los nombre de los atributos del catálogo de objetos del catálogo.
+* Configuración inicial modificable por el usuario para definir ruta de descarga `urlFile = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls` y los nombre de los atributos del catálogo de objetos.
 * Definición de filtros de procesamiento de estaciones por: código de estación, categoría, tecnología, estado, departamento, municipio, corriente, área operativa, área hidrográfica, zona hidrográfica y subzona hidrográfica. 
 * Para datos históricos (máximo 5 días incluida la fecha de ejecución actual), el usuario puede definir el número de días previos a la fecha actual sobre el cual se realizará la obtención y análisis de los datos climatológicos disponibles en OWM.
 * Procesamiento automático de diccionario JSON obtenido mediante la API de OWM a formato de texto separado por comas - CSV. Todos los datos discretos obtenidos para las localizaciones definidas a partir de las estaciones son procesados a escala horaria y volcados a un archivo único en `/Output`.
