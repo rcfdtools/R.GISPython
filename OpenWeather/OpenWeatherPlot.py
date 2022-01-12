@@ -1,5 +1,7 @@
 # -*- coding: UTF-8 -*-
-# https://openweathermap.org/
+# Script name: OpenWeatherPlot.py
+# Description: Plot weather values for the IDEAM National Station Catalog - CNE from OWM
+# Requirements: Python 3.10.0, matplotlib 3.5.0
 
 # Libraries
 import pandas as pd

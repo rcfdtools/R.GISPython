@@ -34,36 +34,23 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = '*********************'  # Your OWM API key code here
+apiKey = '******************'  # Your OWM API key code here
 studyCase = 'Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica'
 currentDateTime = datetime.now()  # datetime.utcnow()
 timeStart = time.time()
-unitValMetric = [  # Parameter, unit, openweathermap name.
-    ('Temperature', '°C', 'temp'),
-    ('Dew Point', '°C', 'dew_point'),
-    ('Feels like', '°C', 'feels_like'),
-    ('Clouds', '%', 'clouds'),
-    ('Humidity', '%', 'humidity'),
-    ('Pressure', 'hPa', 'pressure'),
-    ('Wind Direction', '°', 'wind_deg'),
-    ('Wind Speed', 'm/s', 'wind_speed'),
-    ('Wind Gust', 'm/s', 'wind_gust'),
-    ('Rain', 'mm', 'rain'),
-    ('Visibility','m', 'visibility'),
-    ('UV Index','DN', 'uvi')]
-unitValImperial = [
-    ('Temperature', '°F', 'temp'),
-    ('Dew Point', '°F', 'dew_point'),
-    ('Feels like', '°F', 'feels_like'),
-    ('Clouds', '%', 'clouds'),
-    ('Humidity', '%', 'humidity'),
-    ('Pressure', 'hPa', 'pressure'),
-    ('Wind Direction', '°', 'wind_deg'),
-    ('Wind Speed', 'mi/h', 'wind_speed'),
-    ('Wind Gust', 'mi/h', 'wind_gust'),
-    ('Rain','mm', 'rain'),
-    ('visibility','m', 'visibility'),
-    ('UV Index','DN', 'uvi')]
+unitVal = [  # Parameter, unit metric system, unit imperial system, openweathermap name.
+    ('Temperature', '°C', '°F', 'temp'),
+    ('Dew Point', '°C', '°F', 'dew_point'),
+    ('Feels like', '°C', '°F', 'feels_like'),
+    ('Clouds', '%', '%', 'clouds'),
+    ('Humidity', '%', '%', 'humidity'),
+    ('Pressure', 'hPa', 'hPa', 'pressure'),
+    ('Wind Direction', '°', '°', 'wind_deg'),
+    ('Wind Speed', 'm/s', 'mi/h', 'wind_speed'),
+    ('Wind Gust', 'm/s', 'mi/h', 'wind_gust'),
+    ('Rain', 'mm', 'mm', 'rain'),
+    ('Visibility','m', 'm', 'visibility'),
+    ('UV Index','DN', 'DN', 'uvi')]
 csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM, OpenWeather.
     ('Station', 'CODIGO', 'N/A', 'Station code'),
     ('Statname', 'nombre', 'N/A', 'Station name'),
@@ -189,10 +176,6 @@ pd.set_option('display.max_columns', None)  # Show all the records
 timeStampVal = int(currentDateTime.replace(tzinfo=timezone.utc).timestamp())
 timeStampVal -= 86400 * daysBefore
 numStationsCNE = stationTableCNE.shape[0]  # numStationsCNE = 10
-if unitSys == 'metric':
-    unitVal = unitValMetric
-else:
-    unitVal = unitValImperial
 if showHistorical:
     callType = 'Historical'
 else:
@@ -273,10 +256,10 @@ for i in range(1, numStationsCNE+1):
 
         # Print units system
         printmd('\n#### Unit system (%s)\n' % (unitSys))
-        printmd('| Parameter | Unit | openweathermap name |')
-        tableseparatormarkdown(3)
+        printmd('| Parameter | Unit metric system | Unit imperial system | openweathermap name |')
+        tableseparatormarkdown(4)
         for ii in unitVal:
-            printmd('| %s | %s | %s |' % (ii[0], ii[1], ii[2]))
+            printmd('| %s | %s | %s | %s |' % (ii[0], ii[1], ii[2], ii[3]))
         printmd('\n> mi: Miles unit for imperial system')
         printmd('\n> DN: Dimensionless numbers')
 
