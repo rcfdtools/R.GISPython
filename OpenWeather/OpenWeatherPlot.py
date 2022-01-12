@@ -14,7 +14,8 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', 0)
 mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_warning
-
+mpl.rc('font', size=8)
+mpl.rc('axes', titlesize=8)
 
 # Variables
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
@@ -63,7 +64,7 @@ for i in stationList:
         else:
             ylabelvar = parameter[0] + ', ' + parameter[2]
         plotTitle = 'Station ' + str(i)
-        plotLine = mainArray.plot.line(xlabel='Hour', ylabel=ylabelvar ,  x='Hour', y=parameter[0],title=plotTitle, figsize=(6, 5), c='k', grid=False, marker=".", markersize=8, alpha=graphTransparency)
+        plotLine = mainArray.plot.line(xlabel='Hour', ylabel=ylabelvar ,  x='Hour', y=parameter[0],title=plotTitle, figsize=(5, 4), c='k', grid=False, marker=".", markersize=8, alpha=graphTransparency)
         plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
         plt.yticks(rotation=0)
         plt.xticks(rotation=90)
