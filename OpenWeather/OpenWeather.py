@@ -34,7 +34,7 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # Your OWM API key code here
+apiKey = '*********************'  # Your OWM API key code here
 studyCase = 'Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica'
 currentDateTime = datetime.now()  # datetime.utcnow()
 timeStart = time.time()
@@ -219,12 +219,12 @@ for i in range(1, numStationsCNE+1):
                 '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
                 '\n* Credits: r.cfdtools@gmail.com' +
                 '\n\n### General parameters\n' +
-                '\n* Weather date time: ' + str(currentDateTime) +
+                '\n* Current date time: ' + str(currentDateTime) +
                 '\n* Unix time to eval: ' + str(timeStampVal) +
+                '\n* Days before (for historical data): ' + str(daysBefore) +
                 '\n* Show historical: ' + str(showHistorical) +
                 '\n* Show OWM API detail: ' + str(printDetail) +
                 '\n* Request OWM data: ' + str(requestOWMData) +
-                '\n* Days before: ' + str(daysBefore) +
                 '\n* Unit system: ' + unitSys +
                 '\n* Icons source: ' + urlIcon +
                 '\n* CNE IDEAM source: ' + urlFileCNE +
@@ -244,6 +244,8 @@ for i in range(1, numStationsCNE+1):
                 '\n* CNE IDEAM hydro zone filter: ' + str(geoHydroZoneFilter) +
                 '\n* CNE IDEAM hydro subzone filter: ' + str(geoHydroSubZoneFilter) +
                 '\n* Related files: [Station Markdown, ](' + fileGitHub + ')' + '[General CSV]( ' + urlGitHub + '/Output/' + fileCSV + ')' )
+        printmd('\n> For historical data, the weather information obtain with the OWM API, correspond to the `Current date time` reported less the number of day define in `Days before (for historical data)`. ')
+        printmd('\n> For forecast data, the weather information obtain with the OWM API, correspond to the `Current date time` reported and some further days. ')
         printmd('\n#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
             geoArrayCNE[longitudeCNE][i]) + ') or [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
             geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ')')
