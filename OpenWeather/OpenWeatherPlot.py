@@ -16,6 +16,7 @@ pd.set_option('display.max_colwidth', 0)
 mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_warning
 mpl.rc('font', size=8)
 mpl.rc('axes', titlesize=8)
+mpl.use("Agg")  # Prevent the error: Fail to create pixmap with Tk_GetPixmap in TkImgPhotoInstanceSetSize
 
 # Variables
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
@@ -72,3 +73,4 @@ for i in stationList:
         plt.xticks(np.arange(0, 24, 1.0))
         plt.savefig(plotFile)
         if showGraphScreen == True: plt.show()
+        plt.close('all')

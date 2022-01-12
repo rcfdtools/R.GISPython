@@ -1,17 +1,22 @@
 # -*- coding: UTF-8 -*-
-# https://openweathermap.org/
+# Script name: OpenWeather.py
+# Description: Weather values for the IDEAM National Station Catalog - CNE from OWM
+# Requirements: Python 3.10.0, matplotlib 3.5.0
+# API data from https://openweathermap.org/
 
 # Libraries
-#import keyword
 import os
 import requests
 import json
+import time
+import sys
 import pandas as pd
 from pprint import pprint
 from datetime import timezone
 from datetime import datetime
-import matplotlib as mpl
 from datetime import date
+import matplotlib
+import matplotlib as mpl
 
 # Markdown header separator table function
 def tableseparatormarkdown(n=2):
@@ -29,8 +34,9 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = '**********************'  # Your API key code here
+apiKey = '*******************'  # Your OWM API key code here
 currentDateTime = datetime.now()  # datetime.utcnow()
+timeStart = time.time()
 unitValMetric = [  # Parameter, unit, openweathermap name.
     ('Temperature', '°C', 'temp'),
     ('Dew Point', '°C', 'dew_point'),
@@ -131,26 +137,25 @@ filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
 urlIcon = 'http://openweathermap.org/img/w/'
 urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather'
 daysBefore = 1  # Max to 4 days, current day or 0 count like a part of the 5 days in openweather
-printDetail = True  # Print JSON dictionary on screen
+printDetail = True  # Print JSON dictionary on screen and Markdown files
 showHistorical = True  # True for use the timemachine. False for get the current forecast
-updateCNEFile = False
-requestOWMData = True
+updateCNEFile = False  # Download the IDEAM CNE file
+requestOWMData = True  # Get API responses
 
 # General filter variables related with the currente CNE IDEAM metadata file
 # May you consider that for free OWM accounts, you can only get 1000 API responses every day.
 # More information: https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic
 stationCodeFilter = ['All', 26055120, 1508500053]  # 'All' at the first position or your required values.
-categoryFilter = ['Climática Principal']  # 'All' at the first position or 'Pluviométrica', 'Limnimétrica', 'Limnigráfica', 'Climática Ordinaria', 'Climática Principal', 'Pluviográfica', 'Meteorológica Especial', 'Agrometeorológica', 'Sinóptica Principal', 'Radio Sonda', 'Mareográfica', 'Sinóptica Secundaria'.
+categoryFilter = ['All']  # 'All' at the first position or 'Pluviométrica', 'Limnimétrica', 'Limnigráfica', 'Climática Ordinaria', 'Climática Principal', 'Pluviográfica', 'Meteorológica Especial', 'Agrometeorológica', 'Sinóptica Principal', 'Radio Sonda', 'Mareográfica', 'Sinóptica Secundaria'.
 technologyFilter = ['All', 'Automática sin Telemetría']  # 'All' at the first position or your required values or 'Automática con Telemetría', 'Automática sin Telemetría', 'Convencional'
-statusFilter = ['All', 'Activa', 'En Mantenimiento']  # 'All' at the first position or 'Activa', 'En Mantenimiento', 'Suspendida'
-geoStateFilter = ['All']  # 'All' at the first position or your required values or e.g. 'Cundinamarca', 'Boyacá', 'Cesar'...
+statusFilter = ['Activa', 'En Mantenimiento']  # 'All' at the first position or 'Activa', 'En Mantenimiento', 'Suspendida'
+geoStateFilter = ['Bogotá']  # 'All' at the first position or your required values or e.g. 'Cundinamarca', 'Boyacá', 'Cesar'...
 geoCountyFilter = ['All']  # 'All' at the first position or your required values.
 geoStreamFilter = ['All']  # 'All' at the first position or your required values.
 geoOperativeAreaFilter = ['All']  # 'All' at the first position or your required values.
 geoHydroAreaFilter = ['All']  # 'All' at the first position or your required values or e.g. 'Amazonas', 'Caribe', 'Magdalena Cauca', 'Orinoco', 'Pacifico'
 geoHydroZoneFilter = ['All']  # 'All' at the first position or your required values.
 geoHydroSubZoneFilter = ['All']  # 'All' at the first position or your required values.
-
 
 # General pandas and matplotlib settings
 pd.set_option('display.max_rows', None)
@@ -165,6 +170,7 @@ currentDateTxt = str(currentDate.year).zfill(4)+str(currentDate.month).zfill(2)+
 fileSaveCNE = filePath+'/Data/'+fileNameCNE+'_'+currentDateTxt+fileExtensionCNE
 fileCSV = fileNameCNE+'_OWM_'+currentDateTxt+'.csv'
 fileOutputCSV = open(filePath+'/Output/'+fileCSV, 'w+')
+fileDownloadText = 'CNE IDEAM file downloaded and updated: No'
 if updateCNEFile:
     fileRequest = requests.get(urlFileCNE)
     if fileRequest:
@@ -195,6 +201,7 @@ else:
 geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE, elevationNameCNE, categoryNameCNE, technologyNameCNE, statusNameCNE, installationDateCNE, suspensionDateCNE, geoStateNameCNE, geoCountyNameCNE, geoStreamNameCNE, geoOperativeAreaNameCNE, geoHydroAreaNameCNE, geoHydroZoneNameCNE, geoHydroSubZoneNameCNE]]
 csvHeader = 'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Hour'
 printcsv(csvHeader, False)
+countStationsEval = 0
 for i in range(1, numStationsCNE+1):
     if (geoArrayCNE[stationCodeCNE][i] in stationCodeFilter or stationCodeFilter[0] == 'All') and (geoArrayCNE[categoryNameCNE][i] in categoryFilter or categoryFilter[0] == 'All') and (geoArrayCNE[technologyNameCNE][i] in technologyFilter or technologyFilter[0] == 'All') and (geoArrayCNE[statusNameCNE][i] in statusFilter or statusFilter[0] == 'All') and (geoArrayCNE[geoStateNameCNE][i] in geoStateFilter or geoStateFilter[0] == 'All') and (geoArrayCNE[geoCountyNameCNE][i] in geoCountyFilter or geoCountyFilter[0] == 'All') and (geoArrayCNE[geoStreamNameCNE][i] in geoStreamFilter or geoStreamFilter[0] == 'All') and (geoArrayCNE[geoOperativeAreaNameCNE][i] in geoOperativeAreaFilter or geoOperativeAreaFilter[0] == 'All') and (geoArrayCNE[geoHydroAreaNameCNE][i] in geoHydroAreaFilter or geoHydroAreaFilter[0] == 'All') and (geoArrayCNE[geoHydroZoneNameCNE][i] in geoHydroZoneFilter or geoHydroZoneFilter[0] == 'All') and (geoArrayCNE[geoHydroSubZoneNameCNE][i] in geoHydroSubZoneFilter or geoHydroSubZoneFilter[0] == 'All'):
         fileNameMd = fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
@@ -202,8 +209,15 @@ for i in range(1, numStationsCNE+1):
         fileOutputMarkdownName = filePath + '/Output/' + fileNameMd
         fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
         printmd('\n## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ' + str(geoArrayCNE[stationNameCNE][i]) + ' - ' + callType)
-        printmd('\n### General parameters' +
-                '\n\n* Weather date time: ' + str(currentDateTime) +
+        printmd('\n### GitHub repository and system information\n' +
+                '\n* Python version: ' + str(sys.version) +
+                '\n* Python path: ' + str(sys.path[0:5]) +
+                '\n* matplotlib version: ' + str(matplotlib.__version__) +
+                '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather' +
+                '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
+                '\n* Credits: r.cfdtools@gmail.com' +
+                '\n\n### General parameters\n' +
+                '\n* Weather date time: ' + str(currentDateTime) +
                 '\n* Unix time to eval: ' + str(timeStampVal) +
                 '\n* Show historical: ' + str(showHistorical) +
                 '\n* Show OWM API detail: ' + str(printDetail) +
@@ -228,9 +242,9 @@ for i in range(1, numStationsCNE+1):
                 '\n* CNE IDEAM hydro zone filter: ' + str(geoHydroZoneFilter) +
                 '\n* CNE IDEAM hydro subzone filter: ' + str(geoHydroSubZoneFilter) +
                 '\n* Related files: [Station Markdown, ](' + fileGitHub + ')' + '[General CSV]( ' + urlGitHub + '/Output/' + fileCSV + ')' )
-        printmd('\n\n#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
+        printmd('\n#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
             geoArrayCNE[longitudeCNE][i]) + ') or [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
-            geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ')\n')
+            geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ')')
         printmd('\n| Parameter | Value |' +
                 '\n|---|---|' +
                 '\n| Code | ' + str(geoArrayCNE[stationCodeCNE][i]) + ' |'
@@ -323,6 +337,11 @@ for i in range(1, numStationsCNE+1):
                 plotName = fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) + '_OWM_' + parameter[0] + '_' + currentDateTxt + '.png'
                 plotFile = urlGitHub + '/Graph/' + plotName
                 printmd('![' + str(plotName) + '](' + str(plotFile) + ')')
-
+        countStationsEval += 1
 fileOutputCSV.close()
+timeEnd = time.time()
 
+print('\n### Summary\n' +
+      '\n* Stations filtered and processed: ' + str(countStationsEval) +
+      '\n* Percentage stations (' + str(countStationsEval) + '/' + str(numStationsCNE) + '): ' + str(round(countStationsEval/numStationsCNE*100, 2)) + '%'
+      '\n* Process accomplished (dt = ' + str(round(timeEnd - timeStart, 1)) + 'sec or ' + str(round((timeEnd - timeStart)/60, 1)) + 'min)')

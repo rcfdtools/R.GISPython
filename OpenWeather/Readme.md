@@ -16,3 +16,4 @@
 * https://stackoverflow.com/questions/19699367/for-line-in-results-in-unicodedecodeerror-utf-8-codec-cant-decode-byte
 * https://stackoverflow.com/questions/48668580/filter-csv-with-pandas
 * https://www.pythonprogramming.in/customize-grid-color-and-style.html
+* https://gitanswer.com/pixmap-error-python-pytorch-forecasting-909130815
