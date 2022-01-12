@@ -42,7 +42,7 @@ Separador(43)
 for i in csvFilesExcelSheets:
     #filePath = r'./Datos/'+i+'.csv' # r para prevenir saltos de línea \n
     filePath = absolutePath+'/Datos/'+i+'.csv' # r para prevenir saltos de línea \n
-    dataFrame = pd.read_csv(filePath,index_col=0)
+    dataFrame = pd.read_csv(filePath, index_col=0)
     dataFrame.head() # Primera línea corresponde a cabecera de columnas
     print('\nArchivo: '+filePath)
     print(dataFrame)

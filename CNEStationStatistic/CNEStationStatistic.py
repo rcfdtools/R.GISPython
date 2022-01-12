@@ -38,8 +38,17 @@ geoOperativeAreaName = 'AREA_OPERATIVA'
 geoHydroAreaName = 'AREA_HIDROGRAFICA'
 geoHydroZoneName = 'ZONA_HIDROGRAFICA'
 geoHydroSubZoneName = 'SUBZONA_HIDROGRAFICA'
-thermalLevelRefConv = [[1000,'Cálido, 24°C+, <= 1000 meters'],[2000,'Templado, 18°C+, <= 2000 meters'],[3000,'Frío, 12°C+, <= 3000 meters'],[4000,'Páramo, 0°C, <= 4000 meters'],[99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
-thermalLevelRefCaldas = [[800,'Cálido, T>=24°C, <=800meter'],[1800,'Templado, 24°C>T>18°C, <=1800meter'],[2800,'Frío, 18°C>T>12°C, <=2800meter'],[3700,'Muy Frío, 12°C>T>6°C, <=3700meter'],[4700,'Extremadamente Frio, 6°C>T>0°C, <=4700meter'],[99999,'Nival, T<0°C, >4700meter']] # Elevation value in meters
+thermalLevelRefConv = [[1000,'Cálido, 24°C+, <= 1000 meters'],
+                       [2000,'Templado, 18°C+, <= 2000 meters'],
+                       [3000,'Frío, 12°C+, <= 3000 meters'],
+                       [4000,'Páramo, 0°C, <= 4000 meters'],
+                       [99999,'Glacial, 0°C-, > 4000 meters']] # Elevation value in meters
+thermalLevelRefCaldas = [[800,'Cálido, T>=24°C, <=800meter'],
+                         [1800,'Templado, 24°C>T>18°C, <=1800meter'],
+                         [2800,'Frío, 18°C>T>12°C, <=2800meter'],
+                         [3700,'Muy Frío, 12°C>T>6°C, <=3700meter'],
+                         [4700,'Extremadamente Frio, 6°C>T>0°C, <=4700meter'],
+                         [99999,'Nival, T<0°C, >4700meter']] # Elevation value in meters
 graphTitlePrefix='CNE IDEAM Colombia -  '
 mySignature = 'By https://github.com/rcfdtools/R.GISPython' # Signature for print in graphs header
 urlGraphPivotTable = 'https://github.com/rcfdtools/R.GISPython/blob/main/CNEStationStatistic' # URL path for print in graphs

@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 # https://openweathermap.org/
 
 # Libraries
@@ -28,6 +29,7 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
+apiKey = '***************'  # Your API key code here
 currentDateTime = datetime.now()  # datetime.utcnow()
 unitValMetric = [  # Parameter, unit, openweathermap name.
     ('Temperature', '°C', 'temp'),
@@ -91,8 +93,19 @@ csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM,
     ('OWMmain', 'N/A', 'main', 'Group of weather parameters (Rain, Snow, Extreme etc.)'),
     ('OWMdesc', 'N/A', 'description', 'Weather condition within the group. [More info.](https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2)'),
     ('OWMicon', 'N/A', 'icon', 'Weather icon id. [More info.](https://openweathermap.org/weather-conditions#How-to-get-icon-URL)'),
-    ('Julian', 'N/A', 'N/A', 'Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid)')]
-apiKey = '******************************'  # Your API key code here
+    ('Hour', 'N/A', 'N/A', 'Hour can be used like a Pseudo julian value for spatial intepolation. [More info.](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid)')]
+plotParameters = [  # Parameter, metric system unit, imperial system unit
+                  ('Clouds', '%', '%'),
+                  ('Dewpoint', '°C', '°F'),
+                  ('Feelslike', '°C', '°F'),
+                  ('Humidity', '%', '%'),
+                  ('Pressure', 'hPa', 'hPa'),
+                  ('Rain', 'mm', 'mm'),
+                  ('Temp', '°C', '°F'),
+                  ('UVI', 'DN', 'DN'),
+                  ('Visibility', 'm', 'm'),
+                  ('Windgust', 'm/s', 'm/s'),
+                  ('Windspeed', 'm/s', 'm/s'),]
 unitSys = 'metric'  # '' for default, 'metric' or 'imperial'
 urlFileCNE = 'http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls'
 fileNameCNE = 'CNE_IDEAM'
@@ -116,12 +129,12 @@ geoHydroZoneNameCNE = 'ZONA_HIDROGRAFICA'
 geoHydroSubZoneNameCNE = 'SUBZONA_HIDROGRAFICA'
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
 urlIcon = 'http://openweathermap.org/img/w/'
-urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Output/'
+urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather'
 daysBefore = 1  # Max to 4 days, current day or 0 count like a part of the 5 days in openweather
 printDetail = True  # Print JSON dictionary on screen
 showHistorical = True  # True for use the timemachine. False for get the current forecast
 updateCNEFile = False
-requestOWMData = False
+requestOWMData = True
 
 # General filter variables related with the currente CNE IDEAM metadata file
 # May you consider that for free OWM accounts, you can only get 1000 API responses every day.
@@ -180,12 +193,12 @@ else:
 
 # Print and export CNE stations and weather parameters
 geoArrayCNE = stationTableCNE[[stationCodeCNE, stationNameCNE, latitudeCNE, longitudeCNE, elevationNameCNE, categoryNameCNE, technologyNameCNE, statusNameCNE, installationDateCNE, suspensionDateCNE, geoStateNameCNE, geoCountyNameCNE, geoStreamNameCNE, geoOperativeAreaNameCNE, geoHydroAreaNameCNE, geoHydroZoneNameCNE, geoHydroSubZoneNameCNE]]
-printcsv(
-    'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Julian', False)
+csvHeader = 'Station,Statname,Latitude,Longitude,Elevation,Category,Technology,Status,InstDate,SuspDate,State,County,Stream,Operator,AHName,SZName,SZHName,Timezone,Datetime,Clouds,Dewpoint,Feelslike,Humidity,Pressure,Rain,Temp,UVI,Visibility,Winddeg,Windgust,Windspeed,OWMid,OWMmain,OWMdesc,OWMicon,Hour'
+printcsv(csvHeader, False)
 for i in range(1, numStationsCNE+1):
     if (geoArrayCNE[stationCodeCNE][i] in stationCodeFilter or stationCodeFilter[0] == 'All') and (geoArrayCNE[categoryNameCNE][i] in categoryFilter or categoryFilter[0] == 'All') and (geoArrayCNE[technologyNameCNE][i] in technologyFilter or technologyFilter[0] == 'All') and (geoArrayCNE[statusNameCNE][i] in statusFilter or statusFilter[0] == 'All') and (geoArrayCNE[geoStateNameCNE][i] in geoStateFilter or geoStateFilter[0] == 'All') and (geoArrayCNE[geoCountyNameCNE][i] in geoCountyFilter or geoCountyFilter[0] == 'All') and (geoArrayCNE[geoStreamNameCNE][i] in geoStreamFilter or geoStreamFilter[0] == 'All') and (geoArrayCNE[geoOperativeAreaNameCNE][i] in geoOperativeAreaFilter or geoOperativeAreaFilter[0] == 'All') and (geoArrayCNE[geoHydroAreaNameCNE][i] in geoHydroAreaFilter or geoHydroAreaFilter[0] == 'All') and (geoArrayCNE[geoHydroZoneNameCNE][i] in geoHydroZoneFilter or geoHydroZoneFilter[0] == 'All') and (geoArrayCNE[geoHydroSubZoneNameCNE][i] in geoHydroSubZoneFilter or geoHydroSubZoneFilter[0] == 'All'):
         fileNameMd = fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) +'_OWM_' + currentDateTxt + '.md'
-        fileGitHub = urlGitHub + fileNameMd
+        fileGitHub = urlGitHub + '/Output/' + fileNameMd
         fileOutputMarkdownName = filePath + '/Output/' + fileNameMd
         fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
         printmd('\n## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ' + str(geoArrayCNE[stationNameCNE][i]) + ' - ' + callType)
@@ -214,7 +227,7 @@ for i in range(1, numStationsCNE+1):
                 '\n* CNE IDEAM hydro area filter: ' + str(geoHydroAreaFilter) +
                 '\n* CNE IDEAM hydro zone filter: ' + str(geoHydroZoneFilter) +
                 '\n* CNE IDEAM hydro subzone filter: ' + str(geoHydroSubZoneFilter) +
-                '\n* Related files: [Station Markdown, ](' + fileGitHub + ')' + '[General CSV]( ' + urlGitHub + fileCSV + ')' )
+                '\n* Related files: [Station Markdown, ](' + fileGitHub + ')' + '[General CSV]( ' + urlGitHub + '/Output/' + fileCSV + ')' )
         printmd('\n\n#### Station parameters and location over [Google Maps](http://maps.google.com/maps?q=' + str(geoArrayCNE[latitudeCNE][i]) + ',' + str(
             geoArrayCNE[longitudeCNE][i]) + ') or [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(
             geoArrayCNE[latitudeCNE][i]) + '&lon=' + str(geoArrayCNE[longitudeCNE][i]) + ')\n')
@@ -284,7 +297,7 @@ for i in range(1, numStationsCNE+1):
 
             # CSV conversion
             hourly = data['hourly']
-            printmd('\n| Weather | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | OWMid | OWMmain | OWMdesc | OWMicon | Julian |', True)
+            printmd('\n| Weather | Station | Statname | Latitude | Longitude | Elevation | Category | Technology | Status | InstDate | SuspDate | State | County | Stream | Operator | AHName | SZName | SZHName | Timezone | Datetime | Clouds | Dewpoint | Feelslike | Humidity | Pressure | Rain | Temp | UVI | Visibility | Winddeg | Windgust | Windspeed | OWMid | OWMmain | OWMdesc | OWMicon | Hour |', True)
             tableseparatormarkdown(37)
             for entry in hourly:
                 if 'rain' in entry:
@@ -303,19 +316,12 @@ for i in range(1, numStationsCNE+1):
                 txtPrintMd = '| %s | %s | "%s" | %f | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %f | %f | %f | %f | %f | %s | %f | %f | %f | %f | %s | %f | %i | %s | %s | %s | %s |' % (iconShow, str(geoArrayCNE[stationCodeCNE][i]), geoArrayCNE[stationNameCNE][i], geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], geoArrayCNE[elevationNameCNE][i], geoArrayCNE[categoryNameCNE][i], geoArrayCNE[technologyNameCNE][i], geoArrayCNE[statusNameCNE][i], geoArrayCNE[installationDateCNE][i], geoArrayCNE[suspensionDateCNE][i], geoArrayCNE[geoStateNameCNE][i], geoArrayCNE[geoCountyNameCNE][i], geoArrayCNE[geoStreamNameCNE][i], geoArrayCNE[geoOperativeAreaNameCNE][i], geoArrayCNE[geoHydroAreaNameCNE][i], geoArrayCNE[geoHydroZoneNameCNE][i], geoArrayCNE[geoHydroSubZoneNameCNE][i], data['timezone'], datetime.utcfromtimestamp(entry['dt']).strftime('%Y-%m-%d %H:%M:%S'), entry['clouds'], entry['dew_point'], entry['feels_like'], entry['humidity'], entry['pressure'], rain, entry['temp'], entry['uvi'], entry['visibility'], entry['wind_deg'], wind_gust, entry['wind_speed'], weather['id'] , weather['main'], weather['description'], weather['icon'], datetime.utcfromtimestamp(entry['dt']).strftime('%H'))
                 printmd(txtPrintMd, True)
 
-# Plot hourly values
+            # Graph list
+            printmd('\n\n### Weather plots\n')
+            for parameter in plotParameters:
+                plotName = fileNameCNE + '_Station' + str(geoArrayCNE[stationCodeCNE][i]) + '_OWM_' + parameter[0] + '_' + currentDateTxt + '.png'
+                plotFile = urlGitHub + '/Graph/' + plotName
+                printmd('![' + str(plotName) + '](' + str(plotFile) + ')')
 
+fileOutputCSV.close()
 
-
-# References
-# https://openweathermap.org
-# https://towardsdatascience.com/develop-your-weather-application-with-python-in-less-than-10-lines-6d092c6dcbc9
-# https://www.tutorialspoint.com/How-to-convert-Python-date-to-Unix-timeStamp
-# https://www.youtube.com/watch?v=9N6a-VLBa2I
-# https://realpython.com/python-json/
-# https://knasmueller.net/using-the-open-weather-map-api-with-python
-# https://stackoverflow.com/questions/3682748/converting-unix-timestamp-string-to-readable-date
-# https://stackoverflow.com/questions/3327946/how-can-i-get-the-current-time-now-in-utc
-# https://pynative.com/python-check-if-key-exists-in-json-and-iterate-the-json-array/
-# https://www.epa.gov/sites/default/files/documents/uviguide.pdf
-# https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon
