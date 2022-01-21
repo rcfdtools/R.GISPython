@@ -38,6 +38,9 @@ El [Instituto de Hidrología, Meteorología y Estudios Ambientales - IDEAM](http
 * Python 3.10.0+ como instalación independiente o standalone.
 * PyCharm 2021.3+ for Anaconda.
 * Sistema operativo Microsoft Windows.
+* Xlrd 2.0.1.
+* Matplotlib 3.5.1.
+* Pandas 1.3.5.
 
 
 ### Atributos que componen el catálogo nacional de estaciones
