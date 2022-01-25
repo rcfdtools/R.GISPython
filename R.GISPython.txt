@@ -12,7 +12,7 @@ https://docs.github.com/en/communities/documenting-your-project-with-wikis/addin
 PEP 8 -- Style Guide for Python Code >>> https://www.python.org/dev/peps/pep-0008/
 
 Pending
-	> Para la actualización de librerías existentes o la instalación de librerías adicionales, se recomienda la creación y uso de ambientes virtuales para no modificar las versiones originales de Python sobre ArcMAP y QGIS.
+	
 	Tema 1
 		Crear video usando imagenes tif t matplotlib. Usar imagenes de https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid
 	Tema 2 - Procesamiento de tablas geocodificadas
