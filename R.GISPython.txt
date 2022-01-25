@@ -26,23 +26,6 @@ Pending
 		NetCDF sample with ERA data https://xarray.pydata.org/en/stable/index.html
 		Seaborn, Plotly, Geoplotlib, Gleam, Ggplot, Bokeh and Missingo. 
 
-Python interpreters and names
-
-	Python 3.7 ArcGIS Pro 2.9
-	C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe
-	
-	Python 3.10 Standalone
-	C:\Python310\python.exe
-	
-	Python 3.9 QGIS 3.22.1
-	C:\Program Files\QGIS 3.22.1\apps\Python39\python.exe
-
-	Python 3.8 Standalone
-	C:\Python381\python.exe
-	
-	Python 2.7 QGIS 2.18.28
-	C:\Program Files\QGIS 2.18\bin\python.exe
-
 Repair syncing problems with VCS - Version control system
 	1. Close PyCharm
 	2. From the directory project delete .idea and .git folders.
