@@ -11,7 +11,7 @@ Clone local directory D:\R.GISPython.wiki
 https://docs.github.com/en/communities/documenting-your-project-with-wikis/adding-or-editing-wiki-pages
 PEP 8 -- Style Guide for Python Code >>> https://www.python.org/dev/peps/pep-0008/
 
-Python 2.7.14 QGIS 2.18.28 >>> C:\Program Files\QGIS 2.18\bin\python.exe (Do no setup over PyCharm)
+Python 2.7.14 QGIS 2.18.28 >>> C:\Program Files\QGIS 2.18\bin\python.exe (Do no setup over PyCharm because is not callable)
 
 Pending
 	
