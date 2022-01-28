@@ -35,17 +35,25 @@ print('Type: %s' %(type(dataFrameCSV)))
 print('Shape: %s' %(str(dataFrameCSV.shape)))
 print('Records sample\n %s' %(str(dataFrameCSV.head())))
 #sns.relplot(x='Longitude', y='Latitude', col='SZName', hue='Elevation', data=dataFrameCSV)
+# Plot vars with geographic location
+sns.set_style('white')  # darkgrid, whitegrid, dark, white, ticks
 if showPlot:
     for i in plotCombo:
         # sns.relplot(x=i[0], y=i[1], hue=i[2], col=i[3], palette=i[4], data=dataFrameCSV)
         sns.relplot(x=i[0], y=i[1], hue=i[2], palette=i[4], data=dataFrameCSV)
         plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
     plt.show()
+# Plot confidence vars
+yVar = [['Clouds - Confidence', dataFrameCSV.Clouds],
+        ['Dew point - Confidence', dataFrameCSV.Dewpoint],
+        ['Temperature - Confidence', dataFrameCSV.Temp],
+        ['Feels like - Confidence', dataFrameCSV.Feelslike]
+for i in yVar:
+    sns.lineplot(dataFrameCSV.Hour, i)
+    plt.title('Title')
+    plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
+    plt.show()
 
-sns.set_style('dark')
-sns.lineplot(dataFrameCSV.Hour, dataFrameCSV.Humidity)
-plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
-plt.show()
 
 # References
 # Introduction to Seaborn | How seaborn Python works with matplotlib along with seaborn and pandas
