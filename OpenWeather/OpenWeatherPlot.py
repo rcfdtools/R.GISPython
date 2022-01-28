@@ -8,7 +8,6 @@ import pandas as pd
 import numpy as np
 import sys
 from datetime import date
-import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
@@ -49,7 +48,7 @@ dataFrameCSV = pd.read_csv(filePath+'/Output/'+fileCSV, encoding='ISO-8859-1')
 print('\n## Plot weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ')
 print('\n* Python version: ' + str(sys.version) +
       '\n* Python path: ' + str(sys.path[0:5]) +
-      '\n* matplotlib version: ' + str(matplotlib.__version__) +
+      '\n* matplotlib version: ' + str(mpl.__version__) +
       '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather' +
       '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
       '\n* Credits: r.cfdtools@gmail.com')
