@@ -49,7 +49,7 @@ plotConfidence = [['Clouds - Confidence', dataFrameCSV.Clouds],
                   ['Winddeg - Confidence', dataFrameCSV.Winddeg],
                   ['Windgust - Confidence', dataFrameCSV.Windgust],
                   ['Windspeed - Confidence', dataFrameCSV.Windspeed]]
-showPlot = False
+showPlot = True
 
 print(fileCSV)
 print(dataFrameCSV.info())
@@ -60,7 +60,7 @@ print('Records sample\n %s' %(str(dataFrameCSV.head())))
 # Plot vars with geographic location
 sns.set_style('white')  # darkgrid, whitegrid, dark, white, ticks
 #sns.set(rc={'figure.figsize': (6, 6)})
-'''
+#'''
 for i in plotXY:
     # sns.relplot(x=i[0], y=i[1], hue=i[2], col=i[3], palette=i[4], data=dataFrameCSV)
     #sns.relplot(x=i[0], y=i[1], hue=i[2], col='Hour', palette=i[4], col_wrap=4, height=5, aspect=8/8, data=dataFrameCSV)
@@ -76,7 +76,7 @@ for i in plotConfidence:
     plt.xticks(np.arange(0, 24, 1.0))
     plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
     if showPlot: plt.show()
-'''
+#'''
 
 sns.kdeplot(x=dataFrameCSV.Latitude, y=dataFrameCSV.Longitude, shade=True, cbar=True)
 showPlot: plt.show()
