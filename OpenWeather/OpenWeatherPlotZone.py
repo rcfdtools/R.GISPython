@@ -16,8 +16,16 @@ mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_w
 mpl.rc('font', size=10)
 mpl.rc('axes', titlesize=10)
 
+# Print in Markdown format
+def printmd(txtPrint, onScreen=True):
+    if onScreen: print(txtPrint)
+    fileOutputMarkdown.write(txtPrint + '\n')
+
 # Variables
 dataFrameCSV = pd.read_csv(ows.filePath+'/Output/'+ows.fileCSV, encoding='ISO-8859-1')
+fileNameMd = ows.fileNameCNE + '_OWM_Zonal_' + ows.currentDateTxt + '.md'
+fileOutputMarkdownName = ows.filePath + '/Output/' + fileNameMd
+fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
 #dataFrameCSV['HourA'] = dataFrameCSV.Datetime.dt.hour
 #dataFrameCSV.dropna(inplace=True)
 plotXY = ( # x, y, hue, col, palette
@@ -101,8 +109,8 @@ for i in ows.plotParameters:
             plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
             plt.savefig(plotFile)
             if showPlot: plt.show()
-            print('\n#### ' + xlabel + ' vs. ' + ylabel)
-            print('![%s](%s)' %(plotName, plotFileGitHub))
+            printmd('\n#### ' + xlabel + ' vs. ' + ylabel)
+            printmd('![%s](%s)' %(plotName, plotFileGitHub))
             #print('Plotting ' + plotName)
         jAux += 1
     iAux += 1
