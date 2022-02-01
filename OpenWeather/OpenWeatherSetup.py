@@ -12,15 +12,16 @@ currentDateTxt = str(currentDate.year).zfill(4)+str(currentDate.month).zfill(2)+
 fileCSV = fileNameCNE+'_OWM_'+currentDateTxt+'.csv'
 unitSys = 'metric'  # '' for default, 'metric' or 'imperial'
 plotParameters = [  # Parameter, metric system units, imperial system units
-                  ('Clouds', '%', '%'),
-                  ('Dewpoint', '°C', '°F'),
-                  ('Feelslike', '°C', '°F'),
-                  ('Humidity', '%', '%'),
-                  ('Pressure', 'hPa', 'hPa'),
-                  ('Rain', 'mm', 'mm'),
-                  ('Temp', '°C', '°F'),
-                  ('UVI', 'DN', 'DN'),
-                  ('Visibility', 'm', 'm'),
-                  ('Winddeg', '°', '°'),
-                  ('Windgust', 'm/s', 'm/s'),
-                  ('Windspeed', 'm/s', 'm/s'),]
+                  ('Clouds', '%', '%', 'light:k'),
+                  ('Dewpoint', '°C', '°F', 'viridis_r'),
+                  ('Feelslike', '°C', '°F', 'viridis_r'),
+                  ('Humidity', '%', '%', 'light:b'),
+                  ('Pressure', 'hPa', 'hPa', 'light:k'),
+                  ('Rain', 'mm', 'mm', 'Blues'),
+                  ('Temp', '°C', '°F', 'viridis_r'),
+                  ('UVI', 'DN', 'DN', 'viridis_r'),
+                  ('Visibility', 'm', 'm', 'light:k'),
+                  ('Winddeg', '°', '°', 'Spectral'),
+                  ('Windgust', 'm/s', 'm/s', 'YlOrBr'),
+                  ('Windspeed', 'm/s', 'm/s', 'YlOrBr'),]
+

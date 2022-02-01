@@ -4,13 +4,12 @@
 # Requirements: Python 3.10.0, matplotlib 3.5.0
 
 # Libraries
-import pandas as pd
-import numpy as np
-import sys
-from datetime import date
-import matplotlib.pyplot as plt
-import matplotlib as mpl
 import OpenWeatherSetup as ows
+import sys
+import numpy as np
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 # General pandas and matplotlib settings
 pd.set_option('display.max_rows', None)
@@ -18,9 +17,9 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', 0)
 mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_warning
-mpl.rc('font', size=8)
-mpl.rc('axes', titlesize=8)
-mpl.use("Agg")  # Prevent the error: Fail to create pixmap with Tk_GetPixmap in TkImgPhotoInstanceSetSize
+mpl.rc('font', size=10)
+mpl.rc('axes', titlesize=10)
+mpl.use("Agg")  # Prevent the error: Fail to create pixmap with Tk_GetPixmap in TkImgPhotoInstanceSetSize. Don't use with seaborn
 
 # Variables
 graphTransparency = 0.75 # Save color for paper print versions, 1 for full color. Doesn't apply for pie charts

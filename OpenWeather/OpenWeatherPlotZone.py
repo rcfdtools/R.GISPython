@@ -1,20 +1,10 @@
 # This script is use for plot the scatter plot graph from all the stations
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
-import pandas as pd
-from datetime import date
-import OpenWeatherSetup as ows
 
-# General pandas and matplotlib settings
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.width', None)
-pd.set_option('display.max_colwidth', 0)
-mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_warning
-mpl.rc('font', size=10)
-mpl.rc('axes', titlesize=10)
+# Libraries
+import OpenWeatherSetup as ows
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Print in Markdown format
 def printmd(txtPrint, onScreen=True):
@@ -28,19 +18,6 @@ fileOutputMarkdownName = ows.filePath + '/Output/' + fileNameMd
 fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
 #dataFrameCSV['HourA'] = dataFrameCSV.Datetime.dt.hour
 #dataFrameCSV.dropna(inplace=True)
-plotXY = ( # x, y, hue, col, palette
-            ['Longitude', 'Latitude', 'Clouds', 'Status', 'light:k'],
-            ['Longitude', 'Latitude', 'Dewpoint', 'Status', 'viridis_r'],
-            ['Longitude', 'Latitude', 'Temp', 'Status', 'viridis_r'],
-            ['Longitude', 'Latitude', 'Feelslike', 'Status', 'viridis_r'],
-            ['Longitude', 'Latitude', 'Humidity', 'Status', 'light:b'],
-            ['Longitude', 'Latitude', 'Pressure', 'Status', 'light:k'],
-            ['Longitude', 'Latitude', 'Rain', 'Status', 'Blues'],
-            ['Longitude', 'Latitude', 'UVI', 'Status', 'viridis_r'],
-            ['Longitude', 'Latitude', 'Visibility', 'Status', 'light:k'],
-            ['Longitude', 'Latitude', 'Winddeg', 'Status', 'Spectral'],
-            ['Longitude', 'Latitude', 'Windgust', 'Status', 'YlOrBr'],
-            ['Longitude', 'Latitude', 'Windspeed', 'Status', 'YlOrBr'])
 plotConfidence = [['Clouds - Confidence', 'Clouds'],
                   ['Dew point - Confidence', 'Dewpoint'],
                   ['Temperature - Confidence', 'Temp'],
@@ -56,24 +33,35 @@ plotConfidence = [['Clouds - Confidence', 'Clouds'],
 plotConfidenceHue = ['Category', 'Technology', 'State', 'County', 'Operator', 'AHName', 'SZName', 'SZHName']
 showPlot = False
 
-print(ows.fileCSV)
-print(dataFrameCSV.info())
-print('Type: %s' %(type(dataFrameCSV)))
-print('Shape: %s' %(str(dataFrameCSV.shape)))
-print('Records sample\n %s' %(str(dataFrameCSV.head())))
-#sns.relplot(x='Longitude', y='Latitude', col='SZName', hue='Elevation', data=dataFrameCSV)
+printmd(ows.fileCSV)
+printmd(str(dataFrameCSV.info()))
+printmd('Type: %s' %(type(dataFrameCSV)))
+printmd('Shape: %s' %(str(dataFrameCSV.shape)))
+printmd('Records sample\n %s' %(str(dataFrameCSV.head())))
+
 # Plot vars with geographic location
 sns.set_style('white')  # darkgrid, whitegrid, dark, white, ticks
 #sns.set(rc={'figure.figsize': (6, 6)})
-'''
-for i in plotXY:
+printmd('\n### Rel plots Latitude vs. Longitude Maps')
+for i in ows.plotParameters:
+    if ows.unitSys == 'metric':
+        units = i[0] + ' (' + i[1] + ')'
+    else:
+        units = i[0] + ' (' + i[2] + ')'
+    plotName = ows.fileNameCNE + '_RelPlotMap_OWM_' + i[0] + '_' + ows.currentDateTxt + '.png'
+    plotFile = ows.filePath + '/Graph/' + plotName
+    plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
     # sns.relplot(x=i[0], y=i[1], hue=i[2], col=i[3], palette=i[4], data=dataFrameCSV)
     #sns.relplot(x=i[0], y=i[1], hue=i[2], col='Hour', palette=i[4], col_wrap=4, height=5, aspect=8/8, data=dataFrameCSV)
-    sns.relplot(x=i[0], y=i[1], hue=i[2], col='Hour', palette=i[4], col_wrap=4, height=2, data=dataFrameCSV)
+    sns.relplot(x='Longitude', y='Latitude', hue=i[0], col='Hour', palette=i[3], col_wrap=4, height=2, data=dataFrameCSV)
     #plt.title('Stations Map for ' + i[2])
     #plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
+    plt.savefig(plotFile)
     if showPlot: plt.show()
+    printmd('\n#### Map - ' + units )
+    printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
+'''
 # Plot confidence vars
 for i in plotConfidence:
     for h in plotConfidenceHue:
@@ -83,19 +71,23 @@ for i in plotConfidence:
         plt.xticks(np.arange(0, 24, 1.0))
         #plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
         if showPlot: plt.show()
-'''
+
 
 #sns.relplot(x='Temp', y='Humidity', hue='Humidity', col='Hour', palette='viridis_r', col_wrap=4, height=2, data=dataFrameCSV)
 
 #sns.kdeplot(x=dataFrameCSV.Latitude, y=dataFrameCSV.Longitude, shade=True, cbar=True)
 #showPlot: plt.show()
+'''
 
 # JointPlots
 iAux, jAux = 0, 0 # Variables for not repeat previous pair plots, p.ej, Temp vs. Clouds is the same as Clouds vs. Temp.
-print('\n### Joint plots')
+printmd('\n### Joint plots')
 for i in ows.plotParameters:
     for j in ows.plotParameters:
         if i != j and jAux >= iAux:
+            plotName = ows.fileNameCNE + '_JointPlot_OWM_' + i[0] + '_' + j[0] + '_' + ows.currentDateTxt + '.png'
+            plotFile = ows.filePath + '/Graph/' + plotName
+            plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
             if ows.unitSys == 'metric':
                 xlabel = i[0] + ' (' + i[1] + ')'
                 ylabel = j[0] + ' (' + j[1] + ')'
@@ -104,9 +96,6 @@ for i in ows.plotParameters:
                 ylabel = j[0] + ' (' + j[2] + ')'
             g = sns.jointplot(data=dataFrameCSV, x=i[0], y=j[0], hue='Hour', palette='autumn', height=8, space=0, ratio=5)
             g.set_axis_labels(xlabel=xlabel, ylabel=ylabel, fontsize=11)
-            plotName = ows.fileNameCNE + '_JointPlot_OWM_' + i[0] + '_' + j[0] + '_' + ows.currentDateTxt + '.png'
-            plotFile = ows.filePath + '/Graph/' + plotName
-            plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
             plt.savefig(plotFile)
             if showPlot: plt.show()
             printmd('\n#### ' + xlabel + ' vs. ' + ylabel)
