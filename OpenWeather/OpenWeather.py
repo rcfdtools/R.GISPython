@@ -173,7 +173,7 @@ for i in range(1, numStationsCNE+1):
         fileGitHub = ows.urlGitHub + '/Output/' + fileNameMd
         fileOutputMarkdownName = ows.filePath + '/Output/' + fileNameMd
         fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
-        printmd('\n## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ' + str(geoArrayCNE[stationNameCNE][i]) + ' - ' + callType)
+        printmd('\n## ' + ows.mainTitle + ' - ' + str(geoArrayCNE[stationNameCNE][i]) + ' - ' + callType)
         printmd('\nStudy case: ' + ows.studyCase +
                 '\n\n### GitHub repository and system information\n' +
                 '\n* Python version: ' + str(sys.version) +

@@ -1,16 +1,11 @@
-CNE_IDEAM_OWM_20220201.csv
-None
-Type: <class 'pandas.core.frame.DataFrame'>
-Shape: (1608, 36)
-Records sample
-     Station                       Statname  ...  OWMicon  Hour
-0  21206920  VILLA TERESA - AUT [21206920]  ...      10n     0
-1  21206920  VILLA TERESA - AUT [21206920]  ...      10n     1
-2  21206920  VILLA TERESA - AUT [21206920]  ...      04n     2
-3  21206920  VILLA TERESA - AUT [21206920]  ...      10n     3
-4  21206920  VILLA TERESA - AUT [21206920]  ...      04n     4
 
-[5 rows x 36 columns]
+## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org
+
+* Study case: Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica
+* File: CNE_IDEAM_OWM_20220201.csv
+* Type: <class 'pandas.core.frame.DataFrame'>
+* Shape: (1608, 36)
+
 
 ### Rel plots Latitude vs. Longitude Maps
 
@@ -49,6 +44,7 @@ Records sample
 
 #### Map - Windspeed (m/s)
 ![CNE_IDEAM_RelPlotMap_OWM_Windspeed_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Windspeed_20220201.png)
+
 
 ### Joint plots
 

@@ -3,6 +3,7 @@
 from datetime import date
 
 # General variables
+mainTitle = 'Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org'
 studyCase = 'Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica'
 filePath = r'D:/R.GISPython/OpenWeather'  # r'.' for relative path
 urlGitHub = 'https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather'

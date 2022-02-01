@@ -27,7 +27,7 @@ showGraphScreen = False
 dataFrameCSV = pd.read_csv(ows.filePath+'/Output/'+ows.fileCSV, encoding='ISO-8859-1')
 
 # Collection data analysis from CSV file
-print('\n## Plot weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - ')
+print('\n## ' + ows.mainTitle)
 print('\n* Python version: ' + str(sys.version) +
       '\n* Python path: ' + str(sys.path[0:5]) +
       '\n* matplotlib version: ' + str(mpl.__version__) +

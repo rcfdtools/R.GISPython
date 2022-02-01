@@ -4,7 +4,18 @@
 import OpenWeatherSetup as ows
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import seaborn as sns
+
+# General pandas and matplotlib settings
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', 0)
+mpl.rc('figure', max_open_warning = 0) # Don't show the python figure.max_open_warning
+mpl.rc('font', size=10)
+mpl.rc('axes', titlesize=10)
+sns.set_style('white')  # darkgrid, whitegrid, dark, white, ticks
 
 # Print in Markdown format
 def printmd(txtPrint, onScreen=True):
@@ -33,16 +44,18 @@ plotConfidence = [['Clouds - Confidence', 'Clouds'],
 plotConfidenceHue = ['Category', 'Technology', 'State', 'County', 'Operator', 'AHName', 'SZName', 'SZHName']
 showPlot = False
 
-printmd(ows.fileCSV)
-printmd(str(dataFrameCSV.info()))
-printmd('Type: %s' %(type(dataFrameCSV)))
-printmd('Shape: %s' %(str(dataFrameCSV.shape)))
-printmd('Records sample\n %s' %(str(dataFrameCSV.head())))
+# General information
+printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
+        '\n\n* Study case: ' + ows.studyCase +
+        '\n* File: ' + ows.fileCSV +
+        '\n* Type: ' + str(type(dataFrameCSV)) +
+        '\n* Shape: ' + str(dataFrameCSV.shape))
+#print('\nDataframe info: '+ str(dataFrameCSV.info()))
+#print('\nRecords sample\n %s' %(str(dataFrameCSV.head())))
 
 # Plot vars with geographic location
-sns.set_style('white')  # darkgrid, whitegrid, dark, white, ticks
 #sns.set(rc={'figure.figsize': (6, 6)})
-printmd('\n### Rel plots Latitude vs. Longitude Maps')
+printmd('\n\n### Rel plots Latitude vs. Longitude Maps')
 for i in ows.plotParameters:
     if ows.unitSys == 'metric':
         units = i[0] + ' (' + i[1] + ')'
@@ -81,7 +94,7 @@ for i in plotConfidence:
 
 # JointPlots
 iAux, jAux = 0, 0 # Variables for not repeat previous pair plots, p.ej, Temp vs. Clouds is the same as Clouds vs. Temp.
-printmd('\n### Joint plots')
+printmd('\n\n### Joint plots')
 for i in ows.plotParameters:
     for j in ows.plotParameters:
         if i != j and jAux >= iAux:
