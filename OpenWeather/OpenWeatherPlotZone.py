@@ -46,8 +46,8 @@ showPlot = False
 
 # General information
 printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
-        '\n\n* Study case: ' + ows.studyCase +
-        '\n* File: ' + ows.fileCSV +
+        '\n\nStudy case: ' + ows.studyCase +
+        '\n\n* File: ' + ows.fileCSV +
         '\n* Type: ' + str(type(dataFrameCSV)) +
         '\n* Shape: ' + str(dataFrameCSV.shape))
 #print('\nDataframe info: '+ str(dataFrameCSV.info()))
@@ -55,7 +55,8 @@ printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
 
 # Plot vars with geographic location
 #sns.set(rc={'figure.figsize': (6, 6)})
-printmd('\n\n### Rel plots Latitude vs. Longitude Maps')
+printmd('\n\n### Latitude vs. Longitude Maps (relational plot)'
+        '\n\nThis maps show the hourly spatial distribution for each collected weather variable from the OWM.\n')
 for i in ows.plotParameters:
     if ows.unitSys == 'metric':
         units = i[0] + ' (' + i[1] + ')'
@@ -71,7 +72,7 @@ for i in ows.plotParameters:
     #plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
     plt.savefig(plotFile)
     if showPlot: plt.show()
-    printmd('\n#### Map - ' + units )
+    printmd('\n#### ' + units + ' - Map')
     printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
 '''
@@ -94,7 +95,8 @@ for i in plotConfidence:
 
 # JointPlots
 iAux, jAux = 0, 0 # Variables for not repeat previous pair plots, p.ej, Temp vs. Clouds is the same as Clouds vs. Temp.
-printmd('\n\n### Joint plots')
+printmd('\n\n### Joint plots'
+        '\n\nThis plots show the relation between the weather variables with hourly distribution from the collected data from the OWM.\n')
 for i in ows.plotParameters:
     for j in ows.plotParameters:
         if i != j and jAux >= iAux:

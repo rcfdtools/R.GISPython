@@ -1,52 +1,59 @@
 
-## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org
+## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - Zonal Analysis
 
-* Study case: Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica
+Study case: Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica
+
 * File: CNE_IDEAM_OWM_20220201.csv
 * Type: <class 'pandas.core.frame.DataFrame'>
 * Shape: (1608, 36)
 
 
-### Rel plots Latitude vs. Longitude Maps
+### Latitude vs. Longitude Maps (relational plot)
 
-#### Map - Clouds (%)
+This maps show the hourly spatial distribution for each collected weather variable from the OWM.
+
+
+#### Clouds (%) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Clouds_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Clouds_20220201.png)
 
-#### Map - Dewpoint (°C)
+#### Dewpoint (°C) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Dewpoint_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Dewpoint_20220201.png)
 
-#### Map - Feelslike (°C)
+#### Feelslike (°C) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Feelslike_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Feelslike_20220201.png)
 
-#### Map - Humidity (%)
+#### Humidity (%) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Humidity_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Humidity_20220201.png)
 
-#### Map - Pressure (hPa)
+#### Pressure (hPa) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Pressure_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Pressure_20220201.png)
 
-#### Map - Rain (mm)
+#### Rain (mm) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Rain_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Rain_20220201.png)
 
-#### Map - Temp (°C)
+#### Temp (°C) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Temp_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Temp_20220201.png)
 
-#### Map - UVI (DN)
+#### UVI (DN) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_UVI_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_UVI_20220201.png)
 
-#### Map - Visibility (m)
+#### Visibility (m) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Visibility_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Visibility_20220201.png)
 
-#### Map - Winddeg (°)
+#### Winddeg (°) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Winddeg_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Winddeg_20220201.png)
 
-#### Map - Windgust (m/s)
+#### Windgust (m/s) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Windgust_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Windgust_20220201.png)
 
-#### Map - Windspeed (m/s)
+#### Windspeed (m/s) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Windspeed_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Windspeed_20220201.png)
 
 
 ### Joint plots
+
+This plots show the relation between the weather variables with hourly distribution from the collected data from the OWM.
+
 
 #### Clouds (%) vs. Dewpoint (°C)
 ![CNE_IDEAM_JointPlot_OWM_Clouds_Dewpoint_20220201.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Dewpoint_20220201.png)
