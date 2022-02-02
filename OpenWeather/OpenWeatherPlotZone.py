@@ -3,6 +3,7 @@
 # Libraries
 import OpenWeatherSetup as ows
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
@@ -29,20 +30,7 @@ fileOutputMarkdownName = ows.filePath + '/Output/' + fileNameMd
 fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
 #dataFrameCSV['HourA'] = dataFrameCSV.Datetime.dt.hour
 #dataFrameCSV.dropna(inplace=True)
-plotConfidence = [['Clouds - Confidence', 'Clouds'],
-                  ['Dew point - Confidence', 'Dewpoint'],
-                  ['Temperature - Confidence', 'Temp'],
-                  ['Feels like - Confidence', 'Feelslike'],
-                  ['Humidity - Confidence', 'Humidity'],
-                  ['Pressure - Confidence', 'Pressure'],
-                  ['Rain - Confidence', 'Rain'],
-                  ['UVI - Confidence', 'UVI'],
-                  ['Visibility - Confidence', 'Visibility'],
-                  ['Winddeg - Confidence', 'Winddeg'],
-                  ['Windgust - Confidence', 'Windgust'],
-                  ['Windspeed - Confidence', 'Windspeed']]
-plotConfidenceHue = ['Category', 'Technology', 'State', 'County', 'Operator', 'AHName', 'SZName', 'SZHName']
-showPlot = False
+showPlot = False # Show on screen
 
 # General information
 printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
@@ -50,9 +38,10 @@ printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
         '\n\n* File: ' + ows.fileCSV +
         '\n* Type: ' + str(type(dataFrameCSV)) +
         '\n* Shape: ' + str(dataFrameCSV.shape))
-#print('\nDataframe info: '+ str(dataFrameCSV.info()))
+print('\nDataframe info: '+ str(dataFrameCSV.info()))
 #print('\nRecords sample\n %s' %(str(dataFrameCSV.head())))
 
+#'''
 # Plot vars with geographic location
 #sns.set(rc={'figure.figsize': (6, 6)})
 printmd('\n\n### Latitude vs. Longitude Maps (relational plot)'
@@ -74,25 +63,41 @@ for i in ows.plotParameters:
     if showPlot: plt.show()
     printmd('\n#### ' + units + ' - Map')
     printmd('![%s](%s)' % (plotName, plotFileGitHub))
+#'''
 
-'''
-# Plot confidence vars
-for i in plotConfidence:
-    for h in plotConfidenceHue:
-        #sns.lineplot(x=dataFrameCSV.Hour, y=i[1], data=dataFrameCSV, hue=h)
-        sns.relplot(data=dataFrameCSV, x='Hour', y=i[1], col='Status', hue=h, kind='line')
-        #plt.title(i[0])
+# Plot confidence analysis
+printmd('\n\n### Confidence analysis categorized'
+        '\n\nThis graphs show the confidence analysis for each collected weather variable from the OWM categorized by the CNE descriptors.\n')
+for i in ows.plotParameters:
+    for j in ows.plotConfidenceHue:
+        plotName = ows.fileNameCNE + '_RelPlotHue_OWM_' + i[0] + '_' + j + '_' + ows.currentDateTxt + '.png'
+        plotFile = ows.filePath + '/Graph/' + plotName
+        plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
+        if ows.unitSys == 'metric':
+            yLabel = i[0] + ' (' + i[1] + ')'
+            units = i[0] + ' (' + i[1] + ')' + ' by ' + j
+        else:
+            yLabel = i[0] + ' (' + i[2] + ')'
+            units = i[0] + ' (' + i[2] + ')' + ' by ' + j
+        #g = sns.lineplot(data=dataFrameCSV, x=dataFrameCSV.Hour, y=i[0], hue=j)
+        #g = sns.relplot(data=dataFrameCSV, x='Hour', y=i[0], col='Status', hue=j, kind='line')
+        g = sns.relplot(data=dataFrameCSV, x='Hour', y=i[0], hue=j, kind='line', height=8, palette='autumn')
+        #plt.title('Confidence analysis')
+        g.set_axis_labels(ylabel=yLabel, fontsize=11)
         plt.xticks(np.arange(0, 24, 1.0))
-        #plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
+        plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
+        plt.savefig(plotFile)
         if showPlot: plt.show()
+        printmd('\n#### ' + units + ' - Confidence analysis')
+        printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
 
 #sns.relplot(x='Temp', y='Humidity', hue='Humidity', col='Hour', palette='viridis_r', col_wrap=4, height=2, data=dataFrameCSV)
 
 #sns.kdeplot(x=dataFrameCSV.Latitude, y=dataFrameCSV.Longitude, shade=True, cbar=True)
 #showPlot: plt.show()
-'''
 
+#'''
 # JointPlots
 iAux, jAux = 0, 0 # Variables for not repeat previous pair plots, p.ej, Temp vs. Clouds is the same as Clouds vs. Temp.
 printmd('\n\n### Joint plots'
@@ -104,22 +109,22 @@ for i in ows.plotParameters:
             plotFile = ows.filePath + '/Graph/' + plotName
             plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
             if ows.unitSys == 'metric':
-                xlabel = i[0] + ' (' + i[1] + ')'
-                ylabel = j[0] + ' (' + j[1] + ')'
+                xLabel = i[0] + ' (' + i[1] + ')'
+                yLabel = j[0] + ' (' + j[1] + ')'
             else:
-                xlabel = i[0] + ' (' + i[2] + ')'
-                ylabel = j[0] + ' (' + j[2] + ')'
+                xLabel = i[0] + ' (' + i[2] + ')'
+                yLabel = j[0] + ' (' + j[2] + ')'
             g = sns.jointplot(data=dataFrameCSV, x=i[0], y=j[0], hue='Hour', palette='autumn', height=8, space=0, ratio=5)
-            g.set_axis_labels(xlabel=xlabel, ylabel=ylabel, fontsize=11)
+            g.set_axis_labels(xlabel=xLabel, ylabel=yLabel, fontsize=11)
             plt.savefig(plotFile)
             if showPlot: plt.show()
-            printmd('\n#### ' + xlabel + ' vs. ' + ylabel)
+            printmd('\n#### ' + xLabel + ' vs. ' + yLabel)
             printmd('![%s](%s)' %(plotName, plotFileGitHub))
             #print('Plotting ' + plotName)
         jAux += 1
     iAux += 1
     jAux = 0
-
+#'''
 
 print('\n{R} Process completed.')
 # References

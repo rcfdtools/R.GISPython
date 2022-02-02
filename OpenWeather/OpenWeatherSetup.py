@@ -25,4 +25,13 @@ plotParameters = [  # Parameter, metric system units, imperial system units
                   ('Winddeg', '°', '°', 'Spectral'),
                   ('Windgust', 'm/s', 'm/s', 'YlOrBr'),
                   ('Windspeed', 'm/s', 'm/s', 'YlOrBr'),]
-
+plotConfidenceHue = ['Category',
+                     'Technology',
+                     'Status',
+                     'State',
+                     'County',
+                     'Stream',
+                     'Operator',
+                     'AHName',
+                     'SZName',
+                     'SZHName']
