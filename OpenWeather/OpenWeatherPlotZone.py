@@ -34,7 +34,7 @@ showPlot = False # Show on screen
 
 # General information
 printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
-        '\n\n*Study case*: ' + ows.studyCase +
+        '\n\n_Study case_: ' + ows.studyCase +
         '\n\n* File: ' + ows.fileCSV +
         '\n* Type: ' + str(type(dataFrameCSV)) +
         '\n* Shape: ' + str(dataFrameCSV.shape))
