@@ -12,10 +12,7 @@ import time
 import sys
 import pandas as pd
 from pprint import pprint
-from datetime import timezone
 from datetime import datetime
-from datetime import date
-import matplotlib
 import matplotlib as mpl
 import OpenWeatherSetup as ows
 
@@ -173,7 +170,7 @@ for i in range(1, numStationsCNE+1):
                 '\n\n### GitHub repository and system information\n' +
                 '\n* Python version: ' + str(sys.version) +
                 '\n* Python path: ' + str(sys.path[0:5]) +
-                '\n* matplotlib version: ' + str(matplotlib.__version__) +
+                '\n* matplotlib version: ' + str(mpl.__version__) +
                 '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather' +
                 '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
                 '\n* Credits: r.cfdtools@gmail.com' +

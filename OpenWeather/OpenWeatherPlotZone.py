@@ -5,7 +5,6 @@ import OpenWeatherSetup as ows
 import sys
 import pandas as pd
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
@@ -44,7 +43,8 @@ printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis - ' + callType +
         '\n\n### GitHub repository and system information\n' +
         '\n* Python version: ' + str(sys.version) +
         '\n* Python path: ' + str(sys.path[0:5]) +
-        '\n* matplotlib version: ' + str(matplotlib.__version__) +
+        '\n* matplotlib version: ' + str(mpl.__version__) +
+        '\n* seaborn version: ' + str(sns.__version__) +
         '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather' +
         '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
         '\n* Credits: r.cfdtools@gmail.com' +
@@ -71,7 +71,8 @@ for i in stationName:
     valid = True
     for k in range(1, records):
         if i == geoArrayCNE['Station'][k] and valid:
-            printmd('| %s | %s | %f | %f |  %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (str(i), geoArrayCNE['Statname'][k], geoArrayCNE['Latitude'][k], geoArrayCNE['Longitude'][k], geoArrayCNE['Elevation'][k], geoArrayCNE['Category'][k], geoArrayCNE['Technology'][k], geoArrayCNE['Status'][k], geoArrayCNE['State'][k], geoArrayCNE['County'][k], geoArrayCNE['Stream'][k], geoArrayCNE['Operator'][k], geoArrayCNE['AHName'][k], geoArrayCNE['SZName'][k], geoArrayCNE['SZHName'][k]))
+            fileNameMd = ows.fileNameCNE + '_Station' + str(i) + '_OWM_' + ows.currentDateTxt + '.md'
+            printmd('| [%s](%s) | %s | %f | %f |  %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (str(i), fileNameMd, geoArrayCNE['Statname'][k], geoArrayCNE['Latitude'][k], geoArrayCNE['Longitude'][k], geoArrayCNE['Elevation'][k], geoArrayCNE['Category'][k], geoArrayCNE['Technology'][k], geoArrayCNE['Status'][k], geoArrayCNE['State'][k], geoArrayCNE['County'][k], geoArrayCNE['Stream'][k], geoArrayCNE['Operator'][k], geoArrayCNE['AHName'][k], geoArrayCNE['SZName'][k], geoArrayCNE['SZHName'][k]))
             valid = False
 
 # Plot vars with geographic location
