@@ -32,7 +32,7 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # Your OWM API key code here
+apiKey = '**************************'  # Your OWM API key code here
 timeStart = time.time()
 unitVal = [  # Parameter, unit metric system, unit imperial system, openweathermap name.
     ('Temperature', '°C', '°F', 'temp'),
