@@ -1,7 +1,7 @@
 
 ## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - Zonal Analysis
 
-Study case: Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica
+*Study case*: Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica
 
 * File: CNE_IDEAM_OWM_20220203.csv
 * Type: <class 'pandas.core.frame.DataFrame'>
@@ -10,7 +10,7 @@ Study case: Weather evaluation from historical openweathermap data for the CNE I
 
 ### Station list for the study case
 
-The below table, show the station list used for the zonal analysis for the current study case.
+The below table show the station list used for the zonal analysis display in this report for the current study case.
 
 | Station | Latitude° | Longitude°| Category | Technology | Status | State | County | Stream | Operator | AHName | SZName | SZHName |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
