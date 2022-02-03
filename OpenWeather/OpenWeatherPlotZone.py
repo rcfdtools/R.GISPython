@@ -150,19 +150,11 @@ for i in ows.plotParameters:
         printmd('\n#### ' + units + ' - Confidence analysis')
         printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
+print('\n{R} Process completed.')
+printmd('\n\n_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_')
+
 # Test
 #sns.relplot(x='Temp', y='Humidity', hue='Humidity', col='Hour', palette='viridis_r', col_wrap=4, height=2, data=dataFrameCSV)
 
 #sns.kdeplot(x=dataFrameCSV.Latitude, y=dataFrameCSV.Longitude, shade=True, cbar=True)
 #showPlot: plt.show()
-
-
-print('\n{R} Process completed.')
-# References
-# Introduction to Seaborn | How seaborn Python works with matplotlib along with seaborn and pandas
-# https://www.youtube.com/watch?v=vaf4ir8eT38
-# https://seaborn.pydata.org/tutorial/color_palettes.html
-# Seaborn Color Palette Basics | Using named and custom color palettes in Python seaborn
-# https://www.youtube.com/watch?v=2wRHBodrWuY
-# sns.lineplot >> https://www.youtube.com/watch?v=CMRVEKf9jWA
-# https://stackoverflow.com/questions/31594549/how-to-change-the-figure-size-of-a-seaborn-axes-or-figure-level-plot

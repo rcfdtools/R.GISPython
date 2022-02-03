@@ -613,6 +613,13 @@ for i in stationList:
 * https://stackoverflow.com/questions/48668580/filter-csv-with-pandas
 * https://www.pythonprogramming.in/customize-grid-color-and-style.html
 * https://gitanswer.com/pixmap-error-python-pytorch-forecasting-909130815
+* Introduction to Seaborn | How seaborn Python works with matplotlib along with seaborn and pandas
+* https://www.youtube.com/watch?v=vaf4ir8eT38
+* https://seaborn.pydata.org/tutorial/color_palettes.html
+* Seaborn Color Palette Basics | Using named and custom color palettes in Python seaborn
+* https://www.youtube.com/watch?v=2wRHBodrWuY
+* sns.lineplot >> https://www.youtube.com/watch?v=CMRVEKf9jWA
+* https://stackoverflow.com/questions/31594549/how-to-change-the-figure-size-of-a-seaborn-axes-or-figure-level-plot
 
 
 ### Autores
