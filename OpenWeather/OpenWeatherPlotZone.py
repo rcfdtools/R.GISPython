@@ -42,17 +42,17 @@ print('\nDataframe info: '+ str(dataFrameCSV.info()))
 #print('\nRecords sample\n %s' %(str(dataFrameCSV.head())))
 
 # Station list
-stationName = dataFrameCSV['Statname'].unique()
-geoArrayCNE = dataFrameCSV[['Statname', 'Latitude', 'Longitude', 'Category', 'Technology', 'Status', 'State', 'County', 'Stream', 'Operator', 'AHName', 'SZName', 'SZHName']]
+stationName = dataFrameCSV['Station'].unique()
+geoArrayCNE = dataFrameCSV[['Station', 'Statname', 'Latitude', 'Longitude', 'Category', 'Technology', 'Status', 'State', 'County', 'Stream', 'Operator', 'AHName', 'SZName', 'SZHName']]
 records = len(geoArrayCNE)
 printmd('\n\n### Station list for the study case'
-        '\n\nThis table show the unique station list from the collected data using the IDEAM CNE catalog for the study case.\n')
+        '\n\nThe below table show the station list used for the zonal analysis display in this report for the current study case.\n')
 printmd('| Station | Latitude° | Longitude°| Category | Technology | Status | State | County | Stream | Operator | AHName | SZName | SZHName |')
 printmd('|---|---|---|---|---|---|---|---|---|---|---|---|---|')
 for i in stationName:
     valid = True
     for k in range(1, records):
-        if i == geoArrayCNE['Statname'][k] and valid:
+        if i == geoArrayCNE['Station'][k] and valid:
             printmd('| %s | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (str(i), geoArrayCNE['Latitude'][k], geoArrayCNE['Longitude'][k], geoArrayCNE['Category'][k], geoArrayCNE['Technology'][k], geoArrayCNE['Status'][k], geoArrayCNE['State'][k], geoArrayCNE['County'][k], geoArrayCNE['Stream'][k], geoArrayCNE['Operator'][k], geoArrayCNE['AHName'][k], geoArrayCNE['SZName'][k], geoArrayCNE['SZHName'][k]))
             valid = False
 
