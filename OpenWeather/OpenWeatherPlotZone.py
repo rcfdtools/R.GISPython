@@ -34,7 +34,7 @@ showPlot = False # Show on screen
 
 # General information
 printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
-        '\n\n**Study case**: ' + ows.studyCase +
+        '\n\nStudy case: ' + ows.studyCase +
         '\n\n* File: ' + ows.fileCSV +
         '\n* Type: ' + str(type(dataFrameCSV)) +
         '\n* Shape: ' + str(dataFrameCSV.shape))
@@ -43,24 +43,24 @@ print('\nDataframe info: '+ str(dataFrameCSV.info()))
 
 # Station list
 stationName = dataFrameCSV['Station'].unique()
-geoArrayCNE = dataFrameCSV[['Station', 'Statname', 'Latitude', 'Longitude', 'Category', 'Technology', 'Status', 'State', 'County', 'Stream', 'Operator', 'AHName', 'SZName', 'SZHName']]
+geoArrayCNE = dataFrameCSV[['Station', 'Statname', 'Latitude', 'Longitude', 'Elevation', 'Category', 'Technology', 'Status', 'State', 'County', 'Stream', 'Operator', 'AHName', 'SZName', 'SZHName']]
 records = len(geoArrayCNE)
-printmd('\n\n### Station list for the study case'
+printmd('\n\n### Stations or locations list'
         '\n\nThe below table show the station list used for the zonal analysis display in this report for the current study case.\n')
-printmd('| Station | Latitude° | Longitude°| Category | Technology | Status | State | County | Stream | Operator | AHName | SZName | SZHName |')
-printmd('|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+printmd('| Station | Statname | Latitude° | Longitude°|  Elevation| Category | Technology | Status | State | County | Stream | Operator | AHName | SZName | SZHName |')
+printmd('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
 for i in stationName:
     valid = True
     for k in range(1, records):
         if i == geoArrayCNE['Station'][k] and valid:
-            printmd('| %s | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (str(i), geoArrayCNE['Latitude'][k], geoArrayCNE['Longitude'][k], geoArrayCNE['Category'][k], geoArrayCNE['Technology'][k], geoArrayCNE['Status'][k], geoArrayCNE['State'][k], geoArrayCNE['County'][k], geoArrayCNE['Stream'][k], geoArrayCNE['Operator'][k], geoArrayCNE['AHName'][k], geoArrayCNE['SZName'][k], geoArrayCNE['SZHName'][k]))
+            printmd('| %s | %s | %f | %f |  %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (str(i), geoArrayCNE['Statname'][k], geoArrayCNE['Latitude'][k], geoArrayCNE['Longitude'][k], geoArrayCNE['Elevation'][k], geoArrayCNE['Category'][k], geoArrayCNE['Technology'][k], geoArrayCNE['Status'][k], geoArrayCNE['State'][k], geoArrayCNE['County'][k], geoArrayCNE['Stream'][k], geoArrayCNE['Operator'][k], geoArrayCNE['AHName'][k], geoArrayCNE['SZName'][k], geoArrayCNE['SZHName'][k]))
             valid = False
 
-'''
+#'''
 # Plot vars with geographic location
 #sns.set(rc={'figure.figsize': (6, 6)})
 printmd('\n\n### Latitude vs. Longitude Maps (relational plot)'
-        '\n\nThis maps show the hourly spatial distribution for each collected weather variable from the OWM.\n')
+        '\n\nThis maps show the hourly spatial distribution for each collected weather variable from the OWM.')
 for i in ows.plotParameters:
     if ows.unitSys == 'metric':
         units = i[0] + ' (' + i[1] + ')'
@@ -81,7 +81,7 @@ for i in ows.plotParameters:
 
 # Plot confidence analysis
 printmd('\n\n### Confidence analysis categorized'
-        '\n\nThis graphs show the confidence analysis for each collected weather variable from the OWM categorized by the CNE descriptors.\n')
+        '\n\nThis graphs show the confidence analysis for each collected weather variable from the OWM categorized by the CNE descriptors.')
 for i in ows.plotParameters:
     for j in ows.plotConfidenceHue:
         plotName = ows.fileNameCNE + '_RelPlotHue_OWM_' + i[0] + '_' + j + '_' + ows.currentDateTxt + '.png'
@@ -105,16 +105,10 @@ for i in ows.plotParameters:
         printmd('\n#### ' + units + ' - Confidence analysis')
         printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
-
-#sns.relplot(x='Temp', y='Humidity', hue='Humidity', col='Hour', palette='viridis_r', col_wrap=4, height=2, data=dataFrameCSV)
-
-#sns.kdeplot(x=dataFrameCSV.Latitude, y=dataFrameCSV.Longitude, shade=True, cbar=True)
-#showPlot: plt.show()
-
 # JointPlots
 iAux, jAux = 0, 0 # Variables for not repeat previous pair plots, p.ej, Temp vs. Clouds is the same as Clouds vs. Temp.
 printmd('\n\n### Joint plots'
-        '\n\nThis plots show the relation between the weather variables with hourly distribution from the collected data from the OWM.\n')
+        '\n\nThis plots show the relation between the weather variables with hourly distribution from the collected data from the OWM.')
 for i in ows.plotParameters:
     for j in ows.plotParameters:
         if i != j and jAux >= iAux:
@@ -138,6 +132,13 @@ for i in ows.plotParameters:
     iAux += 1
     jAux = 0
 #'''
+
+# Test
+#sns.relplot(x='Temp', y='Humidity', hue='Humidity', col='Hour', palette='viridis_r', col_wrap=4, height=2, data=dataFrameCSV)
+
+#sns.kdeplot(x=dataFrameCSV.Latitude, y=dataFrameCSV.Longitude, shade=True, cbar=True)
+#showPlot: plt.show()
+
 
 print('\n{R} Process completed.')
 # References
