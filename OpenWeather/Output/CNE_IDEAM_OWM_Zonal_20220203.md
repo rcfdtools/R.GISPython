@@ -1,8 +1,23 @@
 
-## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - Zonal Analysis
+## Weather values for the IDEAM National Station Catalog - CNE from OWM https://openweathermap.org - Zonal Analysis - Historical
 
 Study case: Weather evaluation from historical openweathermap data for the CNE IDEAM network stations in Bogotá - Colombia - Suramérica
 
+### GitHub repository and system information
+
+* Python version: 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)]
+* Python path: ['D:\\R.GISPython\\OpenWeather', 'D:\\R.GISPython', 'D:\\R.GISPython.wiki', 'C:\\Python310\\python310.zip', 'C:\\Python310\\DLLs']
+* matplotlib version: 3.5.1
+* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather
+* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License
+* Credits: r.cfdtools@gmail.com
+
+### General parameters
+
+* Current date time: 2022-02-03 15:11:08.776607
+* Unix time to eval: 1643814668
+* Days before (for historical data): 1
+* Show historical: True
 * File: CNE_IDEAM_OWM_20220203.csv
 * Type: <class 'pandas.core.frame.DataFrame'>
 * Shape: (1608, 36)
@@ -10,7 +25,7 @@ Study case: Weather evaluation from historical openweathermap data for the CNE I
 
 ### Stations or locations list
 
-The below table show the station list used for the zonal analysis display in this report for the current study case.
+The below table show the station or location list used for the zonal analysis display in this report for the current study case.
 
 | Station | Statname | Latitude° | Longitude°|  Elevation| Category | Technology | Status | State | County | Stream | Operator | AHName | SZName | SZHName |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -87,7 +102,6 @@ The below table show the station list used for the zonal analysis display in thi
 
 This maps show the hourly spatial distribution for each collected weather variable from the OWM.
 
-
 #### Clouds (%) - Map
 ![CNE_IDEAM_RelPlotMap_OWM_Clouds_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Clouds_20220203.png)
 
@@ -125,10 +139,212 @@ This maps show the hourly spatial distribution for each collected weather variab
 ![CNE_IDEAM_RelPlotMap_OWM_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotMap_OWM_Windspeed_20220203.png)
 
 
+### Joint plots
+
+This plots show the relation between the weather variables with hourly distribution from the collected data from the OWM.
+
+#### Clouds (%) vs. Dewpoint (°C)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Dewpoint_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Dewpoint_20220203.png)
+
+#### Clouds (%) vs. Feelslike (°C)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Feelslike_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Feelslike_20220203.png)
+
+#### Clouds (%) vs. Humidity (%)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Humidity_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Humidity_20220203.png)
+
+#### Clouds (%) vs. Pressure (hPa)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Pressure_20220203.png)
+
+#### Clouds (%) vs. Rain (mm)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Rain_20220203.png)
+
+#### Clouds (%) vs. Temp (°C)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Temp_20220203.png)
+
+#### Clouds (%) vs. UVI (DN)
+![CNE_IDEAM_JointPlot_OWM_Clouds_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_UVI_20220203.png)
+
+#### Clouds (%) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Visibility_20220203.png)
+
+#### Clouds (%) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Winddeg_20220203.png)
+
+#### Clouds (%) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Windgust_20220203.png)
+
+#### Clouds (%) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Clouds_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Windspeed_20220203.png)
+
+#### Dewpoint (°C) vs. Feelslike (°C)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Feelslike_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Feelslike_20220203.png)
+
+#### Dewpoint (°C) vs. Humidity (%)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Humidity_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Humidity_20220203.png)
+
+#### Dewpoint (°C) vs. Pressure (hPa)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Pressure_20220203.png)
+
+#### Dewpoint (°C) vs. Rain (mm)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Rain_20220203.png)
+
+#### Dewpoint (°C) vs. Temp (°C)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Temp_20220203.png)
+
+#### Dewpoint (°C) vs. UVI (DN)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_UVI_20220203.png)
+
+#### Dewpoint (°C) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Visibility_20220203.png)
+
+#### Dewpoint (°C) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Winddeg_20220203.png)
+
+#### Dewpoint (°C) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Windgust_20220203.png)
+
+#### Dewpoint (°C) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Dewpoint_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Windspeed_20220203.png)
+
+#### Feelslike (°C) vs. Humidity (%)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Humidity_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Humidity_20220203.png)
+
+#### Feelslike (°C) vs. Pressure (hPa)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Pressure_20220203.png)
+
+#### Feelslike (°C) vs. Rain (mm)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Rain_20220203.png)
+
+#### Feelslike (°C) vs. Temp (°C)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Temp_20220203.png)
+
+#### Feelslike (°C) vs. UVI (DN)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_UVI_20220203.png)
+
+#### Feelslike (°C) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Visibility_20220203.png)
+
+#### Feelslike (°C) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Winddeg_20220203.png)
+
+#### Feelslike (°C) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Windgust_20220203.png)
+
+#### Feelslike (°C) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Feelslike_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Windspeed_20220203.png)
+
+#### Humidity (%) vs. Pressure (hPa)
+![CNE_IDEAM_JointPlot_OWM_Humidity_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Pressure_20220203.png)
+
+#### Humidity (%) vs. Rain (mm)
+![CNE_IDEAM_JointPlot_OWM_Humidity_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Rain_20220203.png)
+
+#### Humidity (%) vs. Temp (°C)
+![CNE_IDEAM_JointPlot_OWM_Humidity_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Temp_20220203.png)
+
+#### Humidity (%) vs. UVI (DN)
+![CNE_IDEAM_JointPlot_OWM_Humidity_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_UVI_20220203.png)
+
+#### Humidity (%) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_Humidity_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Visibility_20220203.png)
+
+#### Humidity (%) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Humidity_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Winddeg_20220203.png)
+
+#### Humidity (%) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Humidity_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Windgust_20220203.png)
+
+#### Humidity (%) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Humidity_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Windspeed_20220203.png)
+
+#### Pressure (hPa) vs. Rain (mm)
+![CNE_IDEAM_JointPlot_OWM_Pressure_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Rain_20220203.png)
+
+#### Pressure (hPa) vs. Temp (°C)
+![CNE_IDEAM_JointPlot_OWM_Pressure_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Temp_20220203.png)
+
+#### Pressure (hPa) vs. UVI (DN)
+![CNE_IDEAM_JointPlot_OWM_Pressure_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_UVI_20220203.png)
+
+#### Pressure (hPa) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_Pressure_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Visibility_20220203.png)
+
+#### Pressure (hPa) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Pressure_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Winddeg_20220203.png)
+
+#### Pressure (hPa) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Pressure_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Windgust_20220203.png)
+
+#### Pressure (hPa) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Pressure_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Windspeed_20220203.png)
+
+#### Rain (mm) vs. Temp (°C)
+![CNE_IDEAM_JointPlot_OWM_Rain_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Temp_20220203.png)
+
+#### Rain (mm) vs. UVI (DN)
+![CNE_IDEAM_JointPlot_OWM_Rain_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_UVI_20220203.png)
+
+#### Rain (mm) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_Rain_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Visibility_20220203.png)
+
+#### Rain (mm) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Rain_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Winddeg_20220203.png)
+
+#### Rain (mm) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Rain_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Windgust_20220203.png)
+
+#### Rain (mm) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Rain_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Windspeed_20220203.png)
+
+#### Temp (°C) vs. UVI (DN)
+![CNE_IDEAM_JointPlot_OWM_Temp_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_UVI_20220203.png)
+
+#### Temp (°C) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_Temp_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Visibility_20220203.png)
+
+#### Temp (°C) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Temp_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Winddeg_20220203.png)
+
+#### Temp (°C) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Temp_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Windgust_20220203.png)
+
+#### Temp (°C) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Temp_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Windspeed_20220203.png)
+
+#### UVI (DN) vs. Visibility (m)
+![CNE_IDEAM_JointPlot_OWM_UVI_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Visibility_20220203.png)
+
+#### UVI (DN) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_UVI_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Winddeg_20220203.png)
+
+#### UVI (DN) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_UVI_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Windgust_20220203.png)
+
+#### UVI (DN) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_UVI_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Windspeed_20220203.png)
+
+#### Visibility (m) vs. Winddeg (°)
+![CNE_IDEAM_JointPlot_OWM_Visibility_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Visibility_Winddeg_20220203.png)
+
+#### Visibility (m) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Visibility_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Visibility_Windgust_20220203.png)
+
+#### Visibility (m) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Visibility_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Visibility_Windspeed_20220203.png)
+
+#### Winddeg (°) vs. Windgust (m/s)
+![CNE_IDEAM_JointPlot_OWM_Winddeg_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Winddeg_Windgust_20220203.png)
+
+#### Winddeg (°) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Winddeg_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Winddeg_Windspeed_20220203.png)
+
+#### Windgust (m/s) vs. Windspeed (m/s)
+![CNE_IDEAM_JointPlot_OWM_Windgust_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Windgust_Windspeed_20220203.png)
+
+
 ### Confidence analysis categorized
 
 This graphs show the confidence analysis for each collected weather variable from the OWM categorized by the CNE descriptors.
-
 
 #### Clouds (%) by Category - Confidence analysis
 ![CNE_IDEAM_RelPlotHue_OWM_Clouds_Category_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotHue_OWM_Clouds_Category_20220203.png)
@@ -489,207 +705,3 @@ This graphs show the confidence analysis for each collected weather variable fro
 
 #### Windspeed (m/s) by SZHName - Confidence analysis
 ![CNE_IDEAM_RelPlotHue_OWM_Windspeed_SZHName_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_RelPlotHue_OWM_Windspeed_SZHName_20220203.png)
-
-
-### Joint plots
-
-This plots show the relation between the weather variables with hourly distribution from the collected data from the OWM.
-
-
-#### Clouds (%) vs. Dewpoint (°C)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Dewpoint_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Dewpoint_20220203.png)
-
-#### Clouds (%) vs. Feelslike (°C)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Feelslike_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Feelslike_20220203.png)
-
-#### Clouds (%) vs. Humidity (%)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Humidity_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Humidity_20220203.png)
-
-#### Clouds (%) vs. Pressure (hPa)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Pressure_20220203.png)
-
-#### Clouds (%) vs. Rain (mm)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Rain_20220203.png)
-
-#### Clouds (%) vs. Temp (°C)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Temp_20220203.png)
-
-#### Clouds (%) vs. UVI (DN)
-![CNE_IDEAM_JointPlot_OWM_Clouds_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_UVI_20220203.png)
-
-#### Clouds (%) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Visibility_20220203.png)
-
-#### Clouds (%) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Winddeg_20220203.png)
-
-#### Clouds (%) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Windgust_20220203.png)
-
-#### Clouds (%) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Clouds_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Clouds_Windspeed_20220203.png)
-
-#### Dewpoint (°C) vs. Feelslike (°C)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Feelslike_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Feelslike_20220203.png)
-
-#### Dewpoint (°C) vs. Humidity (%)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Humidity_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Humidity_20220203.png)
-
-#### Dewpoint (°C) vs. Pressure (hPa)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Pressure_20220203.png)
-
-#### Dewpoint (°C) vs. Rain (mm)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Rain_20220203.png)
-
-#### Dewpoint (°C) vs. Temp (°C)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Temp_20220203.png)
-
-#### Dewpoint (°C) vs. UVI (DN)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_UVI_20220203.png)
-
-#### Dewpoint (°C) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Visibility_20220203.png)
-
-#### Dewpoint (°C) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Winddeg_20220203.png)
-
-#### Dewpoint (°C) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Windgust_20220203.png)
-
-#### Dewpoint (°C) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Dewpoint_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Dewpoint_Windspeed_20220203.png)
-
-#### Feelslike (°C) vs. Humidity (%)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Humidity_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Humidity_20220203.png)
-
-#### Feelslike (°C) vs. Pressure (hPa)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Pressure_20220203.png)
-
-#### Feelslike (°C) vs. Rain (mm)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Rain_20220203.png)
-
-#### Feelslike (°C) vs. Temp (°C)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Temp_20220203.png)
-
-#### Feelslike (°C) vs. UVI (DN)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_UVI_20220203.png)
-
-#### Feelslike (°C) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Visibility_20220203.png)
-
-#### Feelslike (°C) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Winddeg_20220203.png)
-
-#### Feelslike (°C) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Windgust_20220203.png)
-
-#### Feelslike (°C) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Feelslike_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Feelslike_Windspeed_20220203.png)
-
-#### Humidity (%) vs. Pressure (hPa)
-![CNE_IDEAM_JointPlot_OWM_Humidity_Pressure_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Pressure_20220203.png)
-
-#### Humidity (%) vs. Rain (mm)
-![CNE_IDEAM_JointPlot_OWM_Humidity_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Rain_20220203.png)
-
-#### Humidity (%) vs. Temp (°C)
-![CNE_IDEAM_JointPlot_OWM_Humidity_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Temp_20220203.png)
-
-#### Humidity (%) vs. UVI (DN)
-![CNE_IDEAM_JointPlot_OWM_Humidity_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_UVI_20220203.png)
-
-#### Humidity (%) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_Humidity_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Visibility_20220203.png)
-
-#### Humidity (%) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Humidity_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Winddeg_20220203.png)
-
-#### Humidity (%) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Humidity_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Windgust_20220203.png)
-
-#### Humidity (%) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Humidity_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Humidity_Windspeed_20220203.png)
-
-#### Pressure (hPa) vs. Rain (mm)
-![CNE_IDEAM_JointPlot_OWM_Pressure_Rain_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Rain_20220203.png)
-
-#### Pressure (hPa) vs. Temp (°C)
-![CNE_IDEAM_JointPlot_OWM_Pressure_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Temp_20220203.png)
-
-#### Pressure (hPa) vs. UVI (DN)
-![CNE_IDEAM_JointPlot_OWM_Pressure_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_UVI_20220203.png)
-
-#### Pressure (hPa) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_Pressure_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Visibility_20220203.png)
-
-#### Pressure (hPa) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Pressure_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Winddeg_20220203.png)
-
-#### Pressure (hPa) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Pressure_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Windgust_20220203.png)
-
-#### Pressure (hPa) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Pressure_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Pressure_Windspeed_20220203.png)
-
-#### Rain (mm) vs. Temp (°C)
-![CNE_IDEAM_JointPlot_OWM_Rain_Temp_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Temp_20220203.png)
-
-#### Rain (mm) vs. UVI (DN)
-![CNE_IDEAM_JointPlot_OWM_Rain_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_UVI_20220203.png)
-
-#### Rain (mm) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_Rain_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Visibility_20220203.png)
-
-#### Rain (mm) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Rain_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Winddeg_20220203.png)
-
-#### Rain (mm) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Rain_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Windgust_20220203.png)
-
-#### Rain (mm) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Rain_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Rain_Windspeed_20220203.png)
-
-#### Temp (°C) vs. UVI (DN)
-![CNE_IDEAM_JointPlot_OWM_Temp_UVI_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_UVI_20220203.png)
-
-#### Temp (°C) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_Temp_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Visibility_20220203.png)
-
-#### Temp (°C) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Temp_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Winddeg_20220203.png)
-
-#### Temp (°C) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Temp_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Windgust_20220203.png)
-
-#### Temp (°C) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Temp_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Temp_Windspeed_20220203.png)
-
-#### UVI (DN) vs. Visibility (m)
-![CNE_IDEAM_JointPlot_OWM_UVI_Visibility_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Visibility_20220203.png)
-
-#### UVI (DN) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_UVI_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Winddeg_20220203.png)
-
-#### UVI (DN) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_UVI_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Windgust_20220203.png)
-
-#### UVI (DN) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_UVI_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_UVI_Windspeed_20220203.png)
-
-#### Visibility (m) vs. Winddeg (°)
-![CNE_IDEAM_JointPlot_OWM_Visibility_Winddeg_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Visibility_Winddeg_20220203.png)
-
-#### Visibility (m) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Visibility_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Visibility_Windgust_20220203.png)
-
-#### Visibility (m) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Visibility_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Visibility_Windspeed_20220203.png)
-
-#### Winddeg (°) vs. Windgust (m/s)
-![CNE_IDEAM_JointPlot_OWM_Winddeg_Windgust_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Winddeg_Windgust_20220203.png)
-
-#### Winddeg (°) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Winddeg_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Winddeg_Windspeed_20220203.png)
-
-#### Windgust (m/s) vs. Windspeed (m/s)
-![CNE_IDEAM_JointPlot_OWM_Windgust_Windspeed_20220203.png](https://github.com/rcfdtools/R.GISPython/blob/main/OpenWeather/Graph/CNE_IDEAM_JointPlot_OWM_Windgust_Windspeed_20220203.png)

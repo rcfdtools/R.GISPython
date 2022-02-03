@@ -2,8 +2,10 @@
 
 # Libraries
 import OpenWeatherSetup as ows
+import sys
 import pandas as pd
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
@@ -33,12 +35,28 @@ fileOutputMarkdown = open(fileOutputMarkdownName, 'w+')
 showPlot = False # Show on screen
 
 # General information
-printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
+if ows.showHistorical:
+    callType = 'Historical'
+else:
+    callType = 'Forecast'
+printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis - ' + callType +
         '\n\nStudy case: ' + ows.studyCase +
-        '\n\n* File: ' + ows.fileCSV +
+        '\n\n### GitHub repository and system information\n' +
+        '\n* Python version: ' + str(sys.version) +
+        '\n* Python path: ' + str(sys.path[0:5]) +
+        '\n* matplotlib version: ' + str(matplotlib.__version__) +
+        '\n* Repository: https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather' +
+        '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
+        '\n* Credits: r.cfdtools@gmail.com' +
+        '\n\n### General parameters\n' +
+        '\n* Current date time: ' + str(ows.currentDateTime) +
+        '\n* Unix time to eval: ' + str(ows.timeStampVal) +
+        '\n* Days before (for historical data): ' + str(ows.daysBefore) +
+        '\n* Show historical: ' + str(ows.showHistorical) +
+        '\n* File: ' + ows.fileCSV +
         '\n* Type: ' + str(type(dataFrameCSV)) +
         '\n* Shape: ' + str(dataFrameCSV.shape))
-print('\nDataframe info: '+ str(dataFrameCSV.info()))
+print('\n\nDataframe info:\n'+ str(dataFrameCSV.info()))
 #print('\nRecords sample\n %s' %(str(dataFrameCSV.head())))
 
 # Station list
@@ -46,7 +64,7 @@ stationName = dataFrameCSV['Station'].unique()
 geoArrayCNE = dataFrameCSV[['Station', 'Statname', 'Latitude', 'Longitude', 'Elevation', 'Category', 'Technology', 'Status', 'State', 'County', 'Stream', 'Operator', 'AHName', 'SZName', 'SZHName']]
 records = len(geoArrayCNE)
 printmd('\n\n### Stations or locations list'
-        '\n\nThe below table show the station list used for the zonal analysis display in this report for the current study case.\n')
+        '\n\nThe below table show the station or location list used for the zonal analysis display in this report for the current study case.\n')
 printmd('| Station | Statname | Latitude° | Longitude°|  Elevation| Category | Technology | Status | State | County | Stream | Operator | AHName | SZName | SZHName |')
 printmd('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
 for i in stationName:
@@ -56,7 +74,6 @@ for i in stationName:
             printmd('| %s | %s | %f | %f |  %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (str(i), geoArrayCNE['Statname'][k], geoArrayCNE['Latitude'][k], geoArrayCNE['Longitude'][k], geoArrayCNE['Elevation'][k], geoArrayCNE['Category'][k], geoArrayCNE['Technology'][k], geoArrayCNE['Status'][k], geoArrayCNE['State'][k], geoArrayCNE['County'][k], geoArrayCNE['Stream'][k], geoArrayCNE['Operator'][k], geoArrayCNE['AHName'][k], geoArrayCNE['SZName'][k], geoArrayCNE['SZHName'][k]))
             valid = False
 
-#'''
 # Plot vars with geographic location
 #sns.set(rc={'figure.figsize': (6, 6)})
 printmd('\n\n### Latitude vs. Longitude Maps (relational plot)'
@@ -78,32 +95,6 @@ for i in ows.plotParameters:
     if showPlot: plt.show()
     printmd('\n#### ' + units + ' - Map')
     printmd('![%s](%s)' % (plotName, plotFileGitHub))
-
-# Plot confidence analysis
-printmd('\n\n### Confidence analysis categorized'
-        '\n\nThis graphs show the confidence analysis for each collected weather variable from the OWM categorized by the CNE descriptors.')
-for i in ows.plotParameters:
-    for j in ows.plotConfidenceHue:
-        plotName = ows.fileNameCNE + '_RelPlotHue_OWM_' + i[0] + '_' + j + '_' + ows.currentDateTxt + '.png'
-        plotFile = ows.filePath + '/Graph/' + plotName
-        plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
-        if ows.unitSys == 'metric':
-            yLabel = i[0] + ' (' + i[1] + ')'
-            units = i[0] + ' (' + i[1] + ')' + ' by ' + j
-        else:
-            yLabel = i[0] + ' (' + i[2] + ')'
-            units = i[0] + ' (' + i[2] + ')' + ' by ' + j
-        #g = sns.lineplot(data=dataFrameCSV, x=dataFrameCSV.Hour, y=i[0], hue=j)
-        #g = sns.relplot(data=dataFrameCSV, x='Hour', y=i[0], col='Status', hue=j, kind='line')
-        g = sns.relplot(data=dataFrameCSV, x='Hour', y=i[0], hue=j, kind='line', height=8, palette='autumn')
-        #plt.title('Confidence analysis')
-        g.set_axis_labels(ylabel=yLabel, fontsize=11)
-        plt.xticks(np.arange(0, 24, 1.0))
-        plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
-        plt.savefig(plotFile)
-        if showPlot: plt.show()
-        printmd('\n#### ' + units + ' - Confidence analysis')
-        printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
 # JointPlots
 iAux, jAux = 0, 0 # Variables for not repeat previous pair plots, p.ej, Temp vs. Clouds is the same as Clouds vs. Temp.
@@ -131,7 +122,32 @@ for i in ows.plotParameters:
         jAux += 1
     iAux += 1
     jAux = 0
-#'''
+
+# Plot confidence analysis
+printmd('\n\n### Confidence analysis categorized'
+        '\n\nThis graphs show the confidence analysis for each collected weather variable from the OWM categorized by the CNE descriptors.')
+for i in ows.plotParameters:
+    for j in ows.plotConfidenceHue:
+        plotName = ows.fileNameCNE + '_RelPlotHue_OWM_' + i[0] + '_' + j + '_' + ows.currentDateTxt + '.png'
+        plotFile = ows.filePath + '/Graph/' + plotName
+        plotFileGitHub = ows.urlGitHub + '/Graph/' + plotName
+        if ows.unitSys == 'metric':
+            yLabel = i[0] + ' (' + i[1] + ')'
+            units = i[0] + ' (' + i[1] + ')' + ' by ' + j
+        else:
+            yLabel = i[0] + ' (' + i[2] + ')'
+            units = i[0] + ' (' + i[2] + ')' + ' by ' + j
+        #g = sns.lineplot(data=dataFrameCSV, x=dataFrameCSV.Hour, y=i[0], hue=j)
+        #g = sns.relplot(data=dataFrameCSV, x='Hour', y=i[0], col='Status', hue=j, kind='line')
+        g = sns.relplot(data=dataFrameCSV, x='Hour', y=i[0], hue=j, kind='line', height=8, palette='autumn')
+        #plt.title('Confidence analysis')
+        g.set_axis_labels(ylabel=yLabel, fontsize=11)
+        plt.xticks(np.arange(0, 24, 1.0))
+        plt.grid(color='lightgray', linestyle='-', linewidth=0.25)
+        plt.savefig(plotFile)
+        if showPlot: plt.show()
+        printmd('\n#### ' + units + ' - Confidence analysis')
+        printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
 # Test
 #sns.relplot(x='Temp', y='Humidity', hue='Humidity', col='Hour', palette='viridis_r', col_wrap=4, height=2, data=dataFrameCSV)

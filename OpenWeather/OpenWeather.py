@@ -35,8 +35,7 @@ def printmd(txtPrint, onScreen=True):
     fileOutputMarkdown.write(txtPrint + '\n')
 
 # Variables
-apiKey = '***********************'  # Your OWM API key code here
-currentDateTime = datetime.now()  # datetime.utcnow()
+apiKey = 'b53cede1d6b83b6a7800cf923dfe9396'  # Your OWM API key code here
 timeStart = time.time()
 unitVal = [  # Parameter, unit metric system, unit imperial system, openweathermap name.
     ('Temperature', '°C', '°F', 'temp'),
@@ -108,9 +107,7 @@ geoHydroAreaNameCNE = 'AREA_HIDROGRAFICA'
 geoHydroZoneNameCNE = 'ZONA_HIDROGRAFICA'
 geoHydroSubZoneNameCNE = 'SUBZONA_HIDROGRAFICA'
 urlIcon = 'http://openweathermap.org/img/w/'
-daysBefore = 1  # Max to 4 days, current day or 0 count like a part of the 5 days in openweather, only for historical data.
 printDetail = True  # Print JSON dictionary on screen and Markdown files
-showHistorical = True  # True for use the timemachine. False for get the current forecast
 updateCNEFile = True  # Download the IDEAM CNE file
 requestOWMData = True  # Get API responses
 
@@ -154,10 +151,8 @@ pd.set_option('display.max_rows', stationTableCNE.shape[0]+1)  # Show all the re
 pd.set_option('display.max_columns', None)  # Show all the records
 
 # Show CNE records and weather values
-timeStampVal = int(currentDateTime.replace(tzinfo=timezone.utc).timestamp())
-timeStampVal -= 86400 * daysBefore
 numStationsCNE = stationTableCNE.shape[0]  # numStationsCNE = 10
-if showHistorical:
+if ows.showHistorical:
     callType = 'Historical'
 else:
     callType = 'Forecast'
@@ -183,10 +178,10 @@ for i in range(1, numStationsCNE+1):
                 '\n* License and conditions: https://github.com/rcfdtools/R.GISPython/wiki/License' +
                 '\n* Credits: r.cfdtools@gmail.com' +
                 '\n\n### General parameters\n' +
-                '\n* Current date time: ' + str(currentDateTime) +
-                '\n* Unix time to eval: ' + str(timeStampVal) +
-                '\n* Days before (for historical data): ' + str(daysBefore) +
-                '\n* Show historical: ' + str(showHistorical) +
+                '\n* Current date time: ' + str(ows.currentDateTime) +
+                '\n* Unix time to eval: ' + str(ows.timeStampVal) +
+                '\n* Days before (for historical data): ' + str(ows.daysBefore) +
+                '\n* Show historical: ' + str(ows.showHistorical) +
                 '\n* Show OWM API detail: ' + str(printDetail) +
                 '\n* Request OWM data: ' + str(requestOWMData) +
                 '\n* Unit system: ' + ows.unitSys +
@@ -256,8 +251,8 @@ for i in range(1, numStationsCNE+1):
 
         # Print API URL data
         printmd('\n### (CNE index %s) Open Weather values for station %s - %s' % (str(i), str(geoArrayCNE[stationCodeCNE][i]), str(geoArrayCNE[stationNameCNE][i])))
-        if showHistorical:
-            url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], timeStampVal, ows.unitSys, apiKey)
+        if ows.showHistorical:
+            url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%f&lon=%f&dt=%i&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], ows.timeStampVal, ows.unitSys, apiKey)
         else:
             url = 'https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&&units=%s&appid=%s' % (geoArrayCNE[latitudeCNE][i], geoArrayCNE[longitudeCNE][i], ows.unitSys, apiKey)
         print('\nURL: ' + url)

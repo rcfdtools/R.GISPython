@@ -65,3 +65,5 @@ for i in stationList:
         plt.savefig(plotFile)
         if showGraphScreen == True: plt.show()
         plt.close('all')
+
+
