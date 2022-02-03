@@ -41,7 +41,22 @@ printmd('\n## ' + ows.mainTitle + ' - Zonal Analysis'
 print('\nDataframe info: '+ str(dataFrameCSV.info()))
 #print('\nRecords sample\n %s' %(str(dataFrameCSV.head())))
 
-#'''
+# Station list
+stationName = dataFrameCSV['Statname'].unique()
+geoArrayCNE = dataFrameCSV[['Statname', 'Latitude', 'Longitude', 'Category', 'Technology', 'Status', 'State', 'County', 'Stream', 'Operator', 'AHName', 'SZName', 'SZHName']]
+records = len(geoArrayCNE)
+printmd('\n\n### Station list for the study case'
+        '\n\nThis table show the unique station list from the collected data using the IDEAM CNE catalog for the study case.\n')
+printmd('| Station | Latitude° | Longitude°| Category | Technology | Status | State | County | Stream | Operator | AHName | SZName | SZHName |')
+printmd('|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+for i in stationName:
+    valid = True
+    for k in range(1, records):
+        if i == geoArrayCNE['Statname'][k] and valid:
+            printmd('| %s | %f | %f | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (str(i), geoArrayCNE['Latitude'][k], geoArrayCNE['Longitude'][k], geoArrayCNE['Category'][k], geoArrayCNE['Technology'][k], geoArrayCNE['Status'][k], geoArrayCNE['State'][k], geoArrayCNE['County'][k], geoArrayCNE['Stream'][k], geoArrayCNE['Operator'][k], geoArrayCNE['AHName'][k], geoArrayCNE['SZName'][k], geoArrayCNE['SZHName'][k]))
+            valid = False
+
+'''
 # Plot vars with geographic location
 #sns.set(rc={'figure.figsize': (6, 6)})
 printmd('\n\n### Latitude vs. Longitude Maps (relational plot)'
@@ -63,7 +78,6 @@ for i in ows.plotParameters:
     if showPlot: plt.show()
     printmd('\n#### ' + units + ' - Map')
     printmd('![%s](%s)' % (plotName, plotFileGitHub))
-#'''
 
 # Plot confidence analysis
 printmd('\n\n### Confidence analysis categorized'
@@ -97,7 +111,6 @@ for i in ows.plotParameters:
 #sns.kdeplot(x=dataFrameCSV.Latitude, y=dataFrameCSV.Longitude, shade=True, cbar=True)
 #showPlot: plt.show()
 
-#'''
 # JointPlots
 iAux, jAux = 0, 0 # Variables for not repeat previous pair plots, p.ej, Temp vs. Clouds is the same as Clouds vs. Temp.
 printmd('\n\n### Joint plots'

@@ -54,8 +54,8 @@ unitVal = [  # Parameter, unit metric system, unit imperial system, openweatherm
 csvParameters = [  # Parameter names for the output CSV file: r.cfdtools, IDEAM, OpenWeather.
     ('Station', 'CODIGO', 'N/A', 'Station code'),
     ('Statname', 'nombre', 'N/A', 'Station name'),
-    ('Latitude', 'latitud', 'lat', 'Geolocalization latitude degrees'),
-    ('Longitude', 'longitud' ,'lon', 'Geolocalization longitude degrees'),
+    ('Latitude', 'latitud', 'lat', 'Geolocation latitude degrees'),
+    ('Longitude', 'longitud' ,'lon', 'Geolocation longitude degrees'),
     ('Elevation', 'altitud', 'N/A', 'Elevation over the sea level'),
     ('Category', 'CATEGORIA', 'N/A', 'Station category: pluviometric, limnimetric, pluviograph, limnigraph, ordinary climatology, principal climatology, special meteorologic, soil meteorological, main synoptic, secundary synotic, radiosonde, mareographic'),
     ('Technology', 'TECNOLOGIA', 'N/A', 'Main technology: conventional, automatic assisted with telemetry, automatic not assisted with telemetry'),
