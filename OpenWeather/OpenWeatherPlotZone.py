@@ -151,7 +151,7 @@ for i in ows.plotParameters:
         printmd('![%s](%s)' % (plotName, plotFileGitHub))
 
 print('\n{R} Process completed.')
-printmd('\n\n_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_')
+printmd('\n\n_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una estrella!_')
 
 # Test
 #sns.relplot(x='Temp', y='Humidity', hue='Humidity', col='Hour', palette='viridis_r', col_wrap=4, height=2, data=dataFrameCSV)
