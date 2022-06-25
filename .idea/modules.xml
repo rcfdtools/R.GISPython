@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/R.GISPython.iml" filepath="$PROJECT_DIR$/.idea/R.GISPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/../R.GISPython.wiki/.idea/R.GISPython.wiki.iml" filepath="$PROJECT_DIR$/../R.GISPython.wiki/.idea/R.GISPython.wiki.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../R.LTWB/.idea/R.LTWB.iml" filepath="$PROJECT_DIR$/../R.LTWB/.idea/R.LTWB.iml" />
     </modules>
   </component>
 </project>

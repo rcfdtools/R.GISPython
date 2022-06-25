@@ -11,5 +11,6 @@
     <orderEntry type="jdk" jdkName="Python 3.10.2 Standalone" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
+    <orderEntry type="module" module-name="R.LTWB" />
   </component>
 </module>
