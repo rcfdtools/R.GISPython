@@ -1,7 +1,7 @@
 # Ignore files for push...
 
 # General exclusions
-.gitignore
+# .gitignore
 .idea/
 venv/
 
