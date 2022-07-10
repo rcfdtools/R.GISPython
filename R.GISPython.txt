@@ -26,6 +26,7 @@ Pending
 		Seaborn, Plotly, Geoplotlib, Gleam, Ggplot, Bokeh and Missingo. 
 
 Repair syncing problems with VCS - Version control system
+Sync issues can be
 	1. Close PyCharm
 	2. From the directory project delete .idea and .git folders.
 	3. Open Pycharm and reopen the project in a new windows.
