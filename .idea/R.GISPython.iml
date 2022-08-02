@@ -12,5 +12,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
     <orderEntry type="module" module-name="R.LTWB" />
+    <orderEntry type="module" module-name="R.LTWB.wiki" />
+    <orderEntry type="module" module-name="R.HydroTools" />
+    <orderEntry type="module" module-name="R.HydroTools.wiki" />
+    <orderEntry type="module" module-name="R.TeachingResearchGuide" />
+    <orderEntry type="module" module-name="R.TeachingResearchGuide.wiki" />
   </component>
 </module>

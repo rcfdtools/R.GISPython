@@ -2,6 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../R.HydroTools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../R.HydroTools.wiki" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../R.LTWB" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../R.LTWB.wiki" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../R.TeachingResearchGuide" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../R.TeachingResearchGuide.wiki" vcs="Git" />
   </component>
 </project>

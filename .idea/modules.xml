@@ -4,7 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/R.GISPython.iml" filepath="$PROJECT_DIR$/.idea/R.GISPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/../R.GISPython.wiki/.idea/R.GISPython.wiki.iml" filepath="$PROJECT_DIR$/../R.GISPython.wiki/.idea/R.GISPython.wiki.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../R.HydroTools/.idea/R.HydroTools.iml" filepath="$PROJECT_DIR$/../R.HydroTools/.idea/R.HydroTools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../R.HydroTools.wiki/.idea/R.HydroTools.wiki.iml" filepath="$PROJECT_DIR$/../R.HydroTools.wiki/.idea/R.HydroTools.wiki.iml" />
       <module fileurl="file://$PROJECT_DIR$/../R.LTWB/.idea/R.LTWB.iml" filepath="$PROJECT_DIR$/../R.LTWB/.idea/R.LTWB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../R.LTWB.wiki/.idea/R.LTWB.wiki.iml" filepath="$PROJECT_DIR$/../R.LTWB.wiki/.idea/R.LTWB.wiki.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../R.TeachingResearchGuide/.idea/R.TeachingResearchGuide.iml" filepath="$PROJECT_DIR$/../R.TeachingResearchGuide/.idea/R.TeachingResearchGuide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../R.TeachingResearchGuide.wiki/.idea/R.TeachingResearchGuide.wiki.iml" filepath="$PROJECT_DIR$/../R.TeachingResearchGuide.wiki/.idea/R.TeachingResearchGuide.wiki.iml" />
     </modules>
   </component>
 </project>
