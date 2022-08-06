@@ -246,11 +246,6 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 * https://stackoverflow.com/questions/3899980/how-to-change-the-font-size-on-a-matplotlib-plot
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
-
-
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
@@ -258,17 +253,17 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                                                        |
-|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211201 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.                                                            |
-| v.20211208 | Inclusión de propiedades de estilo en gráfica de resultados. Inclusión de condicional para la inclusión o no del título de la gráfica, no recomendado en Python 2. |
+| Versión    | Descripción                                                                                                                                                        | Autor                                     | Horas |
+|------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.                                                            | [rcfdtools](https://github.com/rcfdtools) |   6   |
+| 2021.12.08 | Inclusión de propiedades de estilo en gráfica de resultados. Inclusión de condicional para la inclusión o no del título de la gráfica, no recomendado en Python 2. | [rcfdtools](https://github.com/rcfdtools) |   2   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) |
-|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScriptFunction) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/9) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) |
+|------------------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
