@@ -635,7 +635,7 @@ for i in stationList:
 | 2022.01.15 | Volcado de resultados a reporte Markdown.                                                                  | [rcfdtools](https://github.com/rcfdtools) |   8   |
 | 2022.01.14 | Incorporación de gráficas.                                                                                 | [rcfdtools](https://github.com/rcfdtools) |   8   |
 | 2022.01.13 | Incorporación de tablas dinámicas.                                                                         | [rcfdtools](https://github.com/rcfdtools) |   8   |
-| 2022.01.12 | Versión inicial con volcado de datos obtenidos en archivo CSV y generación masiva de gráficas de análisis. | [rcfdtools](https://github.com/rcfdtools) |  16   |
+| 2022.01.12 | Versión inicial con volcado de datos obtenidos en archivo CSV y generación masiva de gráficas de análisis. | [rcfdtools](https://github.com/rcfdtools) |   8   |
 
 
 ### Licencia, cláusulas y condiciones de uso
