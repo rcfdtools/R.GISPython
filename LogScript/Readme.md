@@ -150,7 +150,7 @@ print('\nArchivo log: '+ str(fileLog))
 | # -*- coding: UTF-8 -*-                                                                                                                                                  | Permite definir la codificación de texto utilizada en el script.                                                                                                                                                                                                                                                                                                                                                                                             |
 | import sys                                                                                                                                                               | Importación de librería de systema _sys_.                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | import matplotlib <br> import matplotlib.pyplot as plt                                                                                                                   | Importación de librería general y objeto pyplot, requeridos para impresión en pantalla de la versión utilizada y la graficación.                                                                                                                                                                                                                                                                                                                             |
-| from datetime import datetime                                                                                                                                            | Importación de librería para manejo de fechas y horas del sistema, permite  realizar la impresión de fecha y hora de inicio de ejecución.                                                                                                                                                                                                                                                                                                                    
+| from datetime import datetime                                                                                                                                            | Importación de librería para manejo de fechas y horas del sistema, permite  realizar la impresión de fecha y hora de inicio de ejecución.                                                                                                                                                                                                                                                                                                                    |
 | sys.version                                                                                                                                                              | Muestra la versión actual de Python desde la que se está ejecutando el script.                                                                                                                                                                                                                                                                                                                                                                               |
 | \n                                                                                                                                                                       | Agrega un salto de línea en impresiones en pantalla.                                                                                                                                                                                                                                                                                                                                                                                                         |
 | print                                                                                                                                                                    | Permite realizar la impresión de un resultado en la consola. En las versiones de Python 2.x, todo aquello que aparezca después del print será impreso en pantalla, incluso los paréntesis sí existen concatenaciones con comas. En las versiones de Python 3.x, solo se imprimirá aquello que esté entre paréntesis. Nótese que es posible realizar cálculos adicionales en la impresión `(TcGiandotti*60)` e incluso concatenar resultados usando coma o +. |
@@ -209,11 +209,6 @@ Ejecución en PyCharm usando Python 3.10.0
 * https://www.programiz.com/python-programming/datetime/current-datetime
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
-
-
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
@@ -221,17 +216,17 @@ Ejecución en PyCharm usando Python 3.10.0
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                                                        |
-|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211201 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.                                                            |
-| v.20211210 | Inclusión de propiedades de estilo en gráfica de resultados. Inclusión de condicional para la inclusión o no del título de la gráfica, no recomendado en Python 2. |
+| Versión    | Descripción                                                                                                                                                        | Autor                                     | Horas |
+|------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.                                                            | [rcfdtools](https://github.com/rcfdtools) |   6   |
+| 2021.12.10 | Inclusión de propiedades de estilo en gráfica de resultados. Inclusión de condicional para la inclusión o no del título de la gráfica, no recomendado en Python 2. | [rcfdtools](https://github.com/rcfdtools) |   2   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic) |
-|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/ErrorExceptionControl)  | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/11) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/PandasBasic)    |
+|-------------------------------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------|

@@ -220,11 +220,6 @@ Ejecución en consola CMD Python 3.10.0 Standalone.
 * https://docs.python.org/3/library/exceptions.html
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
-
-
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
