@@ -622,11 +622,6 @@ for i in stationList:
 * https://stackoverflow.com/questions/31594549/how-to-change-the-figure-size-of-a-seaborn-axes-or-figure-level-plot
 
 
-### Autores
-
-* Creado por r.cfdtools@gmail.com (48 horas)
-
-
 ### Compatibilidad
 
 * Compatible con Python 3, librerías requeridas indicadas en la cabecera del archivo .py. 
@@ -634,17 +629,20 @@ for i in stationList:
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                |
-|------------|------------------------------------------------------------------------------------------------------------|
-| v.20220112 | Versión inicial con volcado de datos obtenidos en archivo CSV y generación masiva de gráficas de análisis. |
+| Versión    | Descripción                                                                                                | Autor                                     | Horas |
+|------------|:-----------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2022.01.16 | Volcado de resultados a reporte Markdown.                                                                  | [rcfdtools](https://github.com/rcfdtools) |   8   |
+| 2022.01.15 | Volcado de resultados a reporte Markdown.                                                                  | [rcfdtools](https://github.com/rcfdtools) |   8   |
+| 2022.01.14 | Incorporación de gráficas.                                                                                 | [rcfdtools](https://github.com/rcfdtools) |   8   |
+| 2022.01.13 | Incorporación de tablas dinámicas.                                                                         | [rcfdtools](https://github.com/rcfdtools) |   8   |
+| 2022.01.12 | Versión inicial con volcado de datos obtenidos en archivo CSV y generación masiva de gráficas de análisis. | [rcfdtools](https://github.com/rcfdtools) |  16   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle)  |
-|------------------------|---------------------------------------------------------|--------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/14) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle) |
+|------------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------|
