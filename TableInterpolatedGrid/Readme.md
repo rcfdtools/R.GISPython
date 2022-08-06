@@ -921,11 +921,6 @@ def graphtxtonevalue(varMax, valOpt):
 * https://matplotlib.org/stable/tutorials/colors/colormaps.html
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (80h).
-
-
 ### Compatibilidad
 
 * Compatible con ArcGIS for Desktop 10 o superior.
@@ -934,22 +929,21 @@ def graphtxtonevalue(varMax, valOpt):
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                                                                                                                                                                                                                                         |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20171123  | Versión inicial sobre Python 2 solo compatible con ArcGIS for Desktop.                                                                                                                                                                                                                                              |
-| v.20180124  | Versión con módulo y funciones.                                                                                                                                                                                                                                                                                     |
-| v.20211231  | Actualización para compatibilidad con Python 3 y ArcGIS Pro. Optimización de script. Log de registro.                                                                                                                                                                                                               |
-| v.20220101  | Actualización de documentación, optimización de print con concatenación usando + para visualización idéntica en consola para versiones 2 y 3 de Python.                                                                                                                                                             |
-| v.20220102  | Inclusión de gráfica de barras para todos los datos encontrados con publicación y direccionamiento a GitHub en carpeta `/Graph` usando el código de registro Log. Generación, almacenamiento y publicación de gráfica de serie de datos y previsualización de grillas con `matplotlib` para la variable en estudio. |
-| v.20220107  | Actualización de módulo `TableInterpolatedGridModule.py` con nueva versión de estilos generados en https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle                                                                                                                                                   |
+| Versión     | Descripción                                                                                                                                                                                                                                                                                                         | Autor                                     | Horas |
+|-------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| v.20220107  | Actualización de módulo `TableInterpolatedGridModule.py` con nueva versión de estilos generados en https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle                                                                                                                                                 | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| v.20220102  | Inclusión de gráfica de barras para todos los datos encontrados con publicación y direccionamiento a GitHub en carpeta `/Graph` usando el código de registro Log. Generación, almacenamiento y publicación de gráfica de serie de datos y previsualización de grillas con `matplotlib` para la variable en estudio. | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| v.20220101  | Actualización de documentación, optimización de print con concatenación usando + para visualización idéntica en consola para versiones 2 y 3 de Python.                                                                                                                                                             | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| v.20211231  | Actualización para compatibilidad con Python 3 y ArcGIS Pro. Optimización de script. Log de registro.                                                                                                                                                                                                               | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| v.20180124  | Versión con módulo y funciones.                                                                                                                                                                                                                                                                                     | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| v.20171123  | Versión inicial sobre Python 2 solo compatible con ArcGIS for Desktop.                                                                                                                                                                                                                                              | [rcfdtools](https://github.com/rcfdtools) |  12   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField)     |
-|------------------------|---------------------------------------------------------|-----------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/ColorMapStyle) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/16) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField) |
+|------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------|
