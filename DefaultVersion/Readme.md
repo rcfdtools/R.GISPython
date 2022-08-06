@@ -121,6 +121,7 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 | 2021.12.01 | Versión inicial.                                                                  | [rcfdtools](https://github.com/rcfdtools) |  4.5  |
 | 2021.12.04 | Asociación de intérpretes de Python en PyCharm para QGIS 3.22.1 y ArcGIS Pro 2.9. | [rcfdtools](https://github.com/rcfdtools) |  1.5  |
 
+
 ### Licencia, cláusulas y condiciones de uso
 
 _R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
