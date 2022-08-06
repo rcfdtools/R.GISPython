@@ -743,11 +743,6 @@ fileLog.close()
 * [ESRI - Python, NumPy, and MatPlotlib en ArcGIS 10.6](https://desktop.arcgis.com/en/arcmap/10.6/get-started/installation-guide/python-requirement.htm)
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (48h).
-
-
 ### Compatibilidad
 
 * Compatible con ArcGIS for Desktop 10.6 o superior.
@@ -756,23 +751,23 @@ fileLog.close()
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                                                                                                                                                                                                           |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211228  | Versión inicial.                                                                                                                                                                                                                                                                      |
-| v.20211229  | Optimización de script. Inclusión de rutas de datos de entrada y salida en archivo Markdown de resultados. Exportación automática de gráficas de matriz de dispersión con nombramiento independiente para análisis a partir de todos los subtipos de drenaje o solo para permanentes. |
+| Versión    | Descripción                                                                                                                                                                                                                                                                           | Autor                                     | Horas |
+|------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.31 | Documentación.                                                                                                                                                                                                                                                                        | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| 2021.12.30 | Documentación.                                                                                                                                                                                                                                                                        | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| 2021.12.29 | Optimización de script. Inclusión de rutas de datos de entrada y salida en archivo Markdown de resultados. Exportación automática de gráficas de matriz de dispersión con nombramiento independiente para análisis a partir de todos los subtipos de drenaje o solo para permanentes. | [rcfdtools](https://github.com/rcfdtools) |  12   |
+| 2021.12.28 | Versión inicial.                                                                                                                                                                                                                                                                      | [rcfdtools](https://github.com/rcfdtools) |  12   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente]()     |
-|------------------------|---------------------------------------------------------|-----------------------------|
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/19) | [Siguiente]() |
+|-------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------|---------------|
 
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
-
-Notas a pie
 [^1]: http://www.ideam.gov.co/web/agua/zonificacion-hidrografica
 [^2]: http://documentacion.ideam.gov.co/openbiblio/bvirtual/022655/MEMORIASMAPAZONIFICACIONHIDROGRAFICA.pdf
 [^3]: http://geoservicios.ideam.gov.co/geonetwork/srv/eng/catalog.search#/metadata/7696695f-ae9c-4780-a6d0-d3cd1808819a
