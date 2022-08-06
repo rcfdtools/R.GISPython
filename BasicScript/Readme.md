@@ -199,11 +199,6 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 * https://stackoverflow.com/questions/42163470/how-to-execute-a-py-file-from-a-ipynb-file-on-the-jupyter-notebook
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
-
-
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
@@ -211,18 +206,17 @@ En el menú _Analysis_ dar clic en el ícono de opciones de Python y seleccionar
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                             |
-|-------------|---------------------------------------------------------------------------------------------------------|
-| v.20211201  | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python. |
-| v.20211203  | Ejecución usando ArcGIS Pro 2.9.                                                                        |
+| Versión    | Descripción                                                                                             | Autor                                     | Horas |
+|------------|:--------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python. | [rcfdtools](https://github.com/rcfdtools) |   5   |
+| 2021.12.03 | Ejecución usando ArcGIS Pro 2.9.                                                                        | [rcfdtools](https://github.com/rcfdtools) |   1   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculatoR) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript) |
-|---------------------------------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonAsCalculatoR) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/6) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript) |
+|-----------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
