@@ -383,11 +383,6 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\LayerListField\LayerListFieldArc
 * https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/geometry.html 
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (24h).
-
-
 ### Compatibilidad
 
 * Compatible con ArcGIS for Desktop, ArcGIS Pro y QGIS 3+.
@@ -395,19 +390,18 @@ En un Notebook ejecutar `%run -i D:\R.GISPython\LayerListField\LayerListFieldArc
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                                        |
-|-------------|--------------------------------------------------------------------------------------------------------------------|
-| v.20211219  | Versión inicial.                                                                                                   |
-| v.20211220  | Versión con incorporación de gráficas tipo pastel, validación de codificación de texto según la versión de Python. |
-| v.20211222 | Cambio de nombre de directorio de proyecto _GISListLayerField_ a _LayerListField_.                                 |
+| Versión    | Descripción                                                                                                        | Autor                                     | Horas |
+|------------|:-------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.22 | Cambio de nombre de directorio de proyecto _GISListLayerField_ a _LayerListField_.                                 | [rcfdtools](https://github.com/rcfdtools) |   2   |
+| 2021.12.20 | Versión con incorporación de gráficas tipo pastel, validación de codificación de texto según la versión de Python. | [rcfdtools](https://github.com/rcfdtools) |  11   |
+| 2021.12.19 | Versión inicial.                                                                                                   | [rcfdtools](https://github.com/rcfdtools) |  11   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic)     |
-|------------------------|---------------------------------------------------------|-----------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/17) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/LayerStatistic) |
+|--------------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------|
