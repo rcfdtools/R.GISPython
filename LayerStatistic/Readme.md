@@ -387,11 +387,6 @@ print(layer.featureCount())
 * https://docs.qgis.org/2.18/en/docs/user_manual/plugins/python_console.html
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (24h).
-
-
 ### Compatibilidad
 
 * Compatible con ArcGIS for Desktop, ArcGIS Pro y QGIS 3+.
@@ -400,21 +395,20 @@ print(layer.featureCount())
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                                                            |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211220  | Versión inicial.                                                                                                                       |
-| v.20211221  | Documentación y pruebas funcionales en ArcGIS Pro. Inclusión de rutas absolutas para compatibilidad con Jupyter y ArcGIS Pro Notebook. |
-| v.20211222  | Inclusión de gráficas de análisis con matplotlib. Inclusión de impresión de datos discretos con y sin filtrado.                        |
+| Versión    | Descripción                                                                                                                            | Autor                                     | Horas |
+|------------|:---------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.22 | Inclusión de gráficas de análisis con matplotlib. Inclusión de impresión de datos discretos con y sin filtrado.                        | [rcfdtools](https://github.com/rcfdtools) |   6   |
+| 2021.12.21 | Documentación y pruebas funcionales en ArcGIS Pro. Inclusión de rutas absolutas para compatibilidad con Jupyter y ArcGIS Pro Notebook. | [rcfdtools](https://github.com/rcfdtools) |   6   |
+| 2021.12.20 | Versión inicial.                                                                                                                       | [rcfdtools](https://github.com/rcfdtools) |  12   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone)     |
-|------------------------|---------------------------------------------------------|-----------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LayerListField) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/18) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HydroGeoZone) |
+|-------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
 
 [^1]: https://pro.arcgis.com/en/pro-app/2.8/tool-reference/analysis/summary-statistics.htm
