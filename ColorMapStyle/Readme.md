@@ -807,11 +807,6 @@ ColorMap13 = [[164, 203, 194],
 * https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-analyst/kernel-density.htm
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (32h).
-
-
 ### Compatibilidad
 
 * ArcGIS for Desktop 10 o superior.
@@ -821,18 +816,19 @@ ColorMap13 = [[164, 203, 194],
 
 ### Control de versiones
 
-| Versión    | Descripción                                                             |
-|------------|-------------------------------------------------------------------------|
-| v.20220106 | Versión inicial sobre Python 3. |
-
+| Versión    | Descripción                           | Autor                                     | Horas |
+|------------|:--------------------------------------|-------------------------------------------|:-----:|
+| 2022.01.09 | Documentación y ejemplos.             | [rcfdtools](https://github.com/rcfdtools) |   8   |
+| 2022.01.08 | Optimización de código.               | [rcfdtools](https://github.com/rcfdtools) |   8   |
+| 2022.01.07 | Incorporación nuevas rampas de color. | [rcfdtools](https://github.com/rcfdtools) |   8   |
+| 2022.01.06 | Versión inicial sobre Python 3.       | [rcfdtools](https://github.com/rcfdtools) |   8   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio, dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid)     |
-|------------------------|---------------------------------------------------------|-----------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/OpenWeather) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/15) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/TableInterpolatedGrid) |
+|------------------------------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------------|

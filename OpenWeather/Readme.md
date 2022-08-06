@@ -631,6 +631,7 @@ for i in stationList:
 
 | Versión    | Descripción                                                                                                | Autor                                     | Horas |
 |------------|:-----------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2022.01.17 | Volcado de resultados a reporte Markdown.                                                                  | [rcfdtools](https://github.com/rcfdtools) |   8   |
 | 2022.01.16 | Volcado de resultados a reporte Markdown.                                                                  | [rcfdtools](https://github.com/rcfdtools) |   8   |
 | 2022.01.15 | Volcado de resultados a reporte Markdown.                                                                  | [rcfdtools](https://github.com/rcfdtools) |   8   |
 | 2022.01.14 | Incorporación de gráficas.                                                                                 | [rcfdtools](https://github.com/rcfdtools) |   8   |
