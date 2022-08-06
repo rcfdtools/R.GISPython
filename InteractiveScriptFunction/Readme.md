@@ -208,11 +208,6 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 * https://www.youtube.com/watch?v=B9BRuhqEb2Q
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (8h).
-
-
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python a excepción de la impresión de líneas de separación de títulos desde el CMD para versiones de Python 2.
@@ -220,18 +215,17 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                                                     |
-|-------------|-----------------------------------------------------------------------------------------------------------------|
-| v.20211201  | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.         |
-| v.20211207 | Inclusión de condicional para impresión tabulada o en formato de tabla de texto sin usar librerías adicionales. |
+| Versión    | Descripción                                                                                                     | Autor                                     | Horas |
+|------------|:----------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.         | [rcfdtools](https://github.com/rcfdtools) |   7   |
+| 2021.12.07 | Inclusión de condicional para impresión tabulada o en formato de tabla de texto sin usar librerías adicionales. | [rcfdtools](https://github.com/rcfdtools) |   1   |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript)) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) |
-|----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/InteractiveScript) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/8) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/InstallPackageGraph) |
+|----------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
