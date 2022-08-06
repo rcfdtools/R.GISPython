@@ -373,11 +373,6 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 * [Set X Axis Values in Matplotlib](https://www.delftstack.com/howto/matplotlib/set-x-axis-values-matplotlib/)
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (13h).
-
-
 ### Compatibilidad
 
 * Compatible con Python 3, librerías requeridas indicadas en la cabecera del archivo .py. 
@@ -385,18 +380,18 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 ### Control de versiones
 
-| Versión    | Descripción                                                                                                                                                                                                                                          |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| v.20211216 | Versión inicial con visualización de dataframes.                                                                                                                                                                                                     |
-| v.20211217 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                                                                                                              |
-| v.20211218 | Inclusión de rutas absolutas `absolutePath = r'D:/R.GISPython/PandasBasic'` y llamado `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook. Rutas relativas previas pueden ser activadas ingresando '.' en absolutePath.  |
+| Versión    | Descripción                                                                                                                                                                                                                                          | Autor                                     | Horas |
+|------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.16 | Versión inicial con visualización de dataframes.                                                                                                                                                                                                     | [rcfdtools](https://github.com/rcfdtools) |   9   |
+| 2021.12.17 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                                                                                                              | [rcfdtools](https://github.com/rcfdtools) |  2.5  |
+| 2021.12.18 | Inclusión de rutas absolutas `absolutePath = r'D:/R.GISPython/PandasBasic'` y llamado `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook. Rutas relativas previas pueden ser activadas ingresando '.' en absolutePath.  | [rcfdtools](https://github.com/rcfdtools) |  1.5  |
 
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic) |
-|----------------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/LogScript)     | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/12) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/CNEStationStatistic) |
+|------------------------------------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
