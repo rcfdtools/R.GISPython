@@ -99,8 +99,8 @@ En cuanto a QGIS (p.ej, la versión 3.22.1), dar clic en el botón Python para i
 
 | Versión    | Descripción                                                              | Autor                                     | Horas |
 |------------|:-------------------------------------------------------------------------|-------------------------------------------|:-----:|
-| 2021.12.01 | Versión inicial.                                                         | [rcfdtools](https://github.com/rcfdtools) |   5   |
 | 2021.12.04 | Inclusión de verificación de versión y ruta asociada en ArcGIS Pro 2.9.  | [rcfdtools](https://github.com/rcfdtools) |   1   |
+| 2021.12.01 | Versión inicial.                                                         | [rcfdtools](https://github.com/rcfdtools) |   5   |
 
 
 ### Licencia, cláusulas y condiciones de uso

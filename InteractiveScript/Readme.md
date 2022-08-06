@@ -226,8 +226,8 @@ Para ejecutar desde QGIS, abrir la consola de Python, luego el editor de texto y
 
 | Versión    | Descripción                                                                                             | Autor                                     | Horas |
 |------------|:--------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
-| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python. | [rcfdtools](https://github.com/rcfdtools) |   5   |
 | 2021.12.05 | Ejecución usando ArcGIS Pro 2.9.                                                                        | [rcfdtools](https://github.com/rcfdtools) |   1   |
+| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python. | [rcfdtools](https://github.com/rcfdtools) |   5   |
 
 
 ### Licencia, cláusulas y condiciones de uso

@@ -382,9 +382,9 @@ Para ejecución desde Jupyter o desde ArcGIS Pro Notebook utilizar `%run -i D:\R
 
 | Versión    | Descripción                                                                                                                                                                                                                                          | Autor                                     | Horas |
 |------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
-| 2021.12.16 | Versión inicial con visualización de dataframes.                                                                                                                                                                                                     | [rcfdtools](https://github.com/rcfdtools) |   9   |
-| 2021.12.17 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                                                                                                              | [rcfdtools](https://github.com/rcfdtools) |  2.5  |
 | 2021.12.18 | Inclusión de rutas absolutas `absolutePath = r'D:/R.GISPython/PandasBasic'` y llamado `absolutePath+'/Graph` para ejecución desde Jupyter o desde ArcGIS Pro Notebook. Rutas relativas previas pueden ser activadas ingresando '.' en absolutePath.  | [rcfdtools](https://github.com/rcfdtools) |  1.5  |
+| 2021.12.17 | Inclusión de gráficas de visualización de dataframes usando pandas y gráfica ejemplo usando matplotlib.                                                                                                                                              | [rcfdtools](https://github.com/rcfdtools) |  2.5  |
+| 2021.12.16 | Versión inicial con visualización de dataframes.                                                                                                                                                                                                     | [rcfdtools](https://github.com/rcfdtools) |   9   |
 
 
 ### Licencia, cláusulas y condiciones de uso

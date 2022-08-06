@@ -217,8 +217,8 @@ Ejecución en consola CMD Python 3.10.0 Standalone con ingreso incorrecto de dat
 
 | Versión    | Descripción                                                                                                     | Autor                                     | Horas |
 |------------|:----------------------------------------------------------------------------------------------------------------|-------------------------------------------|:-----:|
-| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.         | [rcfdtools](https://github.com/rcfdtools) |   7   |
 | 2021.12.07 | Inclusión de condicional para impresión tabulada o en formato de tabla de texto sin usar librerías adicionales. | [rcfdtools](https://github.com/rcfdtools) |   1   |
+| 2021.12.01 | Versión inicial con incorporación de librería _sys_ para impresión en pantalla de la versión de Python.         | [rcfdtools](https://github.com/rcfdtools) |   7   |
 
 
 ### Licencia, cláusulas y condiciones de uso
