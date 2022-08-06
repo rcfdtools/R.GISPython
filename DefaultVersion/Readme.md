@@ -1,7 +1,6 @@
 ## Definir la versión por defecto de Python en el OS y configurar PyCharm
 Keywords: `PyCharm` `Python Interpreter` `Windows Environmental Variables` `os` 
 
-
 Definir una versión por defecto de Python en el CMD de Microsoft Windows, le permitirá lanzar este intérprete de comandos desde cualquier directorio de su sistema operativo y sin tener que ingresar la ruta completa del ejecutable Python.exe. La configuración de intérpretes en PyCharm, le permitirá ejecutar scripts de un proyecto utilizando una versión predefinida de Python. 
 
 ![DefaultVersion.png](https://github.com/rcfdtools/R.GISPython/blob/main/DefaultVersion/Screenshot/DefaultVersion.png)
@@ -110,11 +109,6 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 * https://epjmorris.wordpress.com/2020/09/16/configuring-pycharm-for-use-with-arcgis-pro-and-arcmap/
 
 
-### Autores
-
-* Creado por [r.cfdtools](r.cfdtools@gmail.com) (6h).
-
-
 ### Compatibilidad
 
 * Compatible con cualquier versión de Python.
@@ -122,17 +116,16 @@ También podrá asociar el intérprete de Python 3.7.11 integrado a ArcGIS Pro 2
 
 ### Control de versiones
 
-| Versión     | Descripción                                                                       |
-|-------------|-----------------------------------------------------------------------------------|
-| v.20211201  | Versión inicial.                                                                  |
-| v.20211204 | Asociación de intérpretes de Python en PyCharm para QGIS 3.22.1 y ArcGIS Pro 2.9. |
+| Versión    | Descripción                                                                       | Autor                                     | Horas |
+|------------|:----------------------------------------------------------------------------------|-------------------------------------------|:-----:|
+| 2021.12.01 | Versión inicial.                                                                  | [rcfdtools](https://github.com/rcfdtools) |  4.5  |
+| 2021.12.04 | Asociación de intérpretes de Python en PyCharm para QGIS 3.22.1 y ArcGIS Pro 2.9. | [rcfdtools](https://github.com/rcfdtools) |  1.5  |
 
 ### Licencia, cláusulas y condiciones de uso
 
-R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License).
+_R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cláusulas, condiciones de uso y como referenciar los contenidos publicados en este repositorio dando [clic aquí](https://github.com/rcfdtools/R.GISPython/wiki/License)._
 
+_¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Actividad anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion) | [Inicio](https://github.com/rcfdtools/R.GISPython/wiki)   | [Actividad siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) |
-|----------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-
-_¡Encontraste útil este microcontenido!, apoya su difusión marcando este repositorio con una ⭐_
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/3) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) |
+|------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
