@@ -61,9 +61,9 @@ Dependiendo de la versión de Python instalada, dispondrá de algunas librerías
 
 ### Control de versiones
 
-| Versión    | Descripción       | Autor                                     | Horas |
-|------------|:------------------|-------------------------------------------|:-----:|
-| 2021.12.04 | Versión inicial.  | [rcfdtools](https://github.com/rcfdtools) |   3   |
+| Versión    | Descripción      | Autor                                     | Horas |
+|------------|:-----------------|-------------------------------------------|:-----:|
+| 2021.12.04 | Versión inicial  | [rcfdtools](https://github.com/rcfdtools) |   3   |
 
 
 ### Licencia, cláusulas y condiciones de uso
