@@ -9,7 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.refs" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/dictionaries" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 2.7" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
     <orderEntry type="module" module-name="R.LTWB" />
