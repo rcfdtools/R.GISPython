@@ -128,5 +128,5 @@ _R.GISPython es de uso libre para fines académicos, conoce nuestra licencia, cl
 
 _¡Encontraste útil este repositorio!, apoya su difusión marcando este repositorio con una ⭐ o síguenos dando clic en el botón Follow de [rcfdtools](https://github.com/rcfdtools) en GitHub._
 
-| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda](https://github.com/rcfdtools/R.GISPython/discussions/3) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) |
+| [Anterior](https://github.com/rcfdtools/R.GISPython/tree/main/PythonVersion) | [:house: Inicio](https://github.com/rcfdtools/R.GISPython/wiki) | [:beginner: Ayuda / Colabora](https://github.com/rcfdtools/R.GISPython/discussions/3) | [Siguiente](https://github.com/rcfdtools/R.GISPython/tree/main/HelpModulesKeywords) |
 |------------------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
