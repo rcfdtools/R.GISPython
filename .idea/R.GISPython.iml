@@ -17,6 +17,5 @@
     <orderEntry type="module" module-name="R.HydroTools" />
     <orderEntry type="module" module-name="R.HydroTools.wiki" />
     <orderEntry type="module" module-name="R.TeachingResearchGuide" />
-    <orderEntry type="module" module-name="R.TeachingResearchGuide.wiki" />
   </component>
 </module>
