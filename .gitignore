@@ -17,6 +17,9 @@ HydroGeoZone/Output/DrenajeSencilloFiltro.*
 TableInterpolatedGrid/OutputColorMap/
 TableInterpolatedGrid/OutputGrid/
 
+# Exlcusion for large files
+UnpivotTable/*.csv
+
 
 # Some samples
 # http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files
