@@ -2,6 +2,7 @@
 # Name: UnpivotTable.py
 # Description: unpivot a multiple column table in a series tables
 # Requirements: Python 3+, pandas
+# https://github.com/rcfdtools/R.GISPython/tree/main/UnpivotTable
 
 # Libraries
 import pandas as pd
