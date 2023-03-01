@@ -9,9 +9,9 @@ import pandas as pd
 
 # General variables
 pivot_table = 'df_prec_ANA_20230216.csv'  # Current IDEAM records file with multiple columns
-date_field = 'Date' # Date name column
+date_field = 'Date' # Date name
 var_name = 'Codigo' # Code name for columns headers
-value_name = 'Valor' # Values name column
+value_name = 'Valor' # Values name
 
 # Procedure
 df = pd.read_csv(pivot_table, low_memory=False, parse_dates=[date_field], dayfirst=True) # Check your right day position in the date field
