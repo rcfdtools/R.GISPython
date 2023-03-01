@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # Name: UnpivotTable.py
-# Description: unpivot a multiple column table in a series tables
+# Description: unpivot a multiple column table into a table with multiple records
 # Requirements: Python 3+, pandas
 # https://github.com/rcfdtools/R.GISPython/tree/main/UnpivotTable
 
@@ -8,10 +8,10 @@
 import pandas as pd
 
 # General variables
-pivot_table = 'df_prec_ANA_20230216.csv'  # Current IDEAM records file
-date_field = 'Date'
-var_name = 'Codigo'
-value_name = 'Valor'
+pivot_table = 'df_prec_ANA_20230216.csv'  # Current IDEAM records file with multiple columns
+date_field = 'Date' # Date name column
+var_name = 'Codigo' # Code name for columns headers
+value_name = 'Valor' # Values name column
 
 # Procedure
 df = pd.read_csv(pivot_table, low_memory=False, parse_dates=[date_field], dayfirst=True) # Check your right day position in the date field
