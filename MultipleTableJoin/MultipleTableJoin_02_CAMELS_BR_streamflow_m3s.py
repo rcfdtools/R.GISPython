@@ -14,7 +14,7 @@ import shutil
 # General parameters
 input_path = 'Input/' # Your local input file folder
 output_path = 'Output/' # Your local output temporal folder
-join_file = 'Joined_streamflow_m3s.csv' # Joined file name
+join_file = 'camels_br_streamflow_m3s.csv' # Joined file name
 format_file = '*.txt'
 column_separator = ' ' # Separator used in the input files
 year_column = 'year'
@@ -32,7 +32,7 @@ table_files = glob.glob(input_path + format_file)
 for i in table_files:
     print('Processing %s' %i[len_input_path:9999])
     df = pd.read_csv(i, sep=column_separator)
-    df['Station'] = i[len_input_path:len_input_path+gauge_id_digits]
+    df['gauge_id'] = i[len_input_path:len_input_path+gauge_id_digits]
     df['date'] = pd.to_datetime(df[[year_column, month_column, day_column]])
     df.to_csv(output_path + i[len_input_path:9999], encoding='utf-8', index=False)
 table_files = glob.glob(output_path + format_file)
