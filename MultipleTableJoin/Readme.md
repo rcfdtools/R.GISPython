@@ -1,7 +1,7 @@
-# Join multiple separated tables into a unique unpivot table
+## Join multiple separated tables into a unique unpivot table
 
 
-## [CAMELS-BR](https://zenodo.org/record/3964745)
+### [CAMELS-BR](https://zenodo.org/record/3964745)
 
 Reference: Vinícius B. P. Chagas, Pedro L. B. Chaffe, Nans Addor, Fernando M. Fan, Ayan S. Fleischmann, Rodrigo C. D. Paiva, & Vinícius A. Siqueira. (2020). CAMELS-BR: Hydrometeorological time series and landscape attributes for 897 catchments in Brazil - link to files. (1.1) [Data set]. Zenodo.
 
@@ -82,7 +82,7 @@ print('\nJoined file: %s\n' % joined_file)
 ```
 
 
-### Specifications
+#### Specifications
 
 * `input_path` & `temp_path`: user can define the input and the temporal processing folder.
 * `stations_file`: [Stations.csv](Stations.csv) contains a list of the stations to be joined. The parameter `process_all = False` has to be established in False, otherwise, all the files founded in the Input folder will be joined. 
@@ -94,7 +94,7 @@ print('\nJoined file: %s\n' % joined_file)
 
 
 
-## ANA Brasil
+### ANA Brasil
 
 
 ## References
