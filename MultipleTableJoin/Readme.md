@@ -1,13 +1,13 @@
 ## Join multiple separated tables into a unique unpivot table
 
 
-### [CAMELS-BR](https://zenodo.org/record/3964745)
+### CAMELS-BR
 
-Reference: Vinícius B. P. Chagas, Pedro L. B. Chaffe, Nans Addor, Fernando M. Fan, Ayan S. Fleischmann, Rodrigo C. D. Paiva, & Vinícius A. Siqueira. (2020). CAMELS-BR: Hydrometeorological time series and landscape attributes for 897 catchments in Brazil - link to files. (1.1) [Data set]. Zenodo.
+Reference: Vinícius B. P. Chagas, Pedro L. B. Chaffe, Nans Addor, Fernando M. Fan, Ayan S. Fleischmann, Rodrigo C. D. Paiva, & Vinícius A. Siqueira. (2020). CAMELS-BR: Hydrometeorological time series and landscape attributes for 897 catchments in Brazil - link to files. (1.1) [Data set]. Zenodo. https://zenodo.org/record/3964745
 
 * Script [MultipleTableJoin_CAMELS_BR.py](MultipleTableJoin_CAMELS_BR.py)  
 * [Local CAMELS-BR dataset.](CAMELS_BR/Source)  
-* [Local joined files Amazonas Basin.](CAMELS_BR/Joined)
+* [Local joined files Amazon Basin.](CAMELS_BR/Joined)
 
 ```
 # -*- coding: UTF-8 -*-
@@ -89,7 +89,7 @@ print('\nJoined file: %s\n' % joined_file)
 * `camels_br_type`: user have to specify the kind of file to process, e.g.: _streamflow_m3s, _streamflow_mm, _simulated_streamflow, _precipitation_chirps, _precipitation_mswep, _precipitation_cpc, _evapotransp_gleam, _evapotransp_mgb, _potential_evapotransp_gleam, _temperature_min, _temperature_mean, _temperature_max.
 * `process_all`: all the files contained in the Input folder will be joined if this parameter is `True`, with `False` only the stations includes in Stations.csv will be joined.   
 
-> For this example, Stations.csv contains all the Amazonas basin stations.
+> For this example, Stations.csv contains all the Amazon basin stations.
 
 
 
