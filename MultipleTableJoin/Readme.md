@@ -1,6 +1,6 @@
 ## Join multiple separated tables into a unique unpivot table
 
-Isolated time-serie file parameters, has to be joined in a unique table if you want to use dynamic ArcGIS maps related with gauge stations or basin polygons.  
+Isolated time-serie file parameters, has to be joined in a unique table if you want to use dynamic ArcGIS map views, related with gauge stations or basin polygons.  
 
 ### CAMELS-BR
 
