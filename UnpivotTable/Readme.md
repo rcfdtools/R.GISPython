@@ -13,7 +13,8 @@ The size of the transformed unpivot file, could be much more heavy than the orig
 # Name: UnpivotTable.py
 # Description: unpivot a multiple column table into a table with multiple records
 # Requirements: Python 3+, pandas
-# https://github.com/rcfdtools/R.GISPython/tree/main/UnpivotTable
+# Repository: https://github.com/rcfdtools/R.GISPython/tree/main/UnpivotTable
+# License: https://github.com/rcfdtools/R.GISPython/wiki/License
 
 # Libraries
 import pandas as pd
