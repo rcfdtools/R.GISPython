@@ -5,7 +5,9 @@
 
 Reference: Vinícius B. P. Chagas, Pedro L. B. Chaffe, Nans Addor, Fernando M. Fan, Ayan S. Fleischmann, Rodrigo C. D. Paiva, & Vinícius A. Siqueira. (2020). CAMELS-BR: Hydrometeorological time series and landscape attributes for 897 catchments in Brazil - link to files. (1.1) [Data set]. Zenodo.
 
-Script by [rcfdtools](https://github.com/rcfdtools): [MultipleTableJoin_CAMELS_BR.py](MultipleTableJoin_CAMELS_BR.py)
+Script: [MultipleTableJoin_CAMELS_BR.py](MultipleTableJoin_CAMELS_BR.py)  
+[Local CAMELS-BR dataset.](CAMELS_BR/Source)  
+[Local joined files Amazonas Basin.](CAMELS_BR/Joined)
 
 ```
 # -*- coding: UTF-8 -*-
@@ -88,6 +90,8 @@ print('\nJoined file: %s\n' % joined_file)
 * `process_all`: all the files contained in the Input folder will be joined if this parameter is `True`, with `False` only the stations includes in Stations.csv will be joined.   
 
 > For this example, Stations.csv contains all the Amazonas basin stations.
+
+
 
 
 ## ANA Brasil
