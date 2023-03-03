@@ -23,7 +23,7 @@ def processing_file(file):
 input_path = 'Input/'  # Your local input file folder
 output_path = 'Temp/'  # Your local output temporal folder
 stations_file = 'Stations.csv'  # File with the stations list to process. If the list contains repeated values, transformed files is posted only one time in the temporal output folder.
-camels_br_type = '_evapotransp_mgb'  # _streamflow_m3s, _streamflow_mm, _simulated_streamflow, _precipitation_chirps, _precipitation_mswep, _precipitation_cpc, _evapotransp_gleam, _evapotransp_mgb
+camels_br_type = '_potential_evapotransp_gleam'  # _streamflow_m3s, _streamflow_mm, _simulated_streamflow, _precipitation_chirps, _precipitation_mswep, _precipitation_cpc, _evapotransp_gleam, _evapotransp_mgb, _potential_evapotransp_gleam
 format_file = '.txt'  # CAMELS-BR use .txt files
 joined_file = 'camels_br' + camels_br_type + '.csv'  # Joined file name to import in ArcGIS
 column_separator = ' '  # Separator used in the CAMELS-BR files
