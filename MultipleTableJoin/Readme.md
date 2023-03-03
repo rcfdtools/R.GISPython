@@ -5,7 +5,7 @@
 
 Reference: Vinícius B. P. Chagas, Pedro L. B. Chaffe, Nans Addor, Fernando M. Fan, Ayan S. Fleischmann, Rodrigo C. D. Paiva, & Vinícius A. Siqueira. (2020). CAMELS-BR: Hydrometeorological time series and landscape attributes for 897 catchments in Brazil - link to files. (1.1) [Data set]. Zenodo.
 
-Script: [MultipleTableJoin_CAMELS_BR.py](MultipleTableJoin_CAMELS_BR.py)
+Script by [rcfdtools](https://github.com/rcfdtools): [MultipleTableJoin_CAMELS_BR.py](MultipleTableJoin_CAMELS_BR.py)
 
 ```
 # -*- coding: UTF-8 -*-
