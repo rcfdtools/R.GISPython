@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # Name: MultipleTableJoin_CAMELS_BR.py
-# Description: this script join multiple separated tables in a unique unpivot table.
+# Description: this script join multiple separated tables into a unique unpivot table.
 # Repository: https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin
 # License: https://github.com/rcfdtools/R.GISPython/wiki/License
 # Requirements: Python 3+, Pandas,
@@ -17,13 +17,13 @@ def processing_file(file):
     df = pd.read_csv(file, sep=column_separator)
     df[station_id] = file[len_input_path:len_input_path + gauge_id_digits]
     df['date'] = pd.to_datetime(df[[year_column, month_column, day_column]])
-    df.to_csv(output_path + file[len_input_path:9999], encoding='utf-8', index=False)
+    df.to_csv(temp_path + file[len_input_path:9999], encoding='utf-8', index=False)
 
 # General parameters
 input_path = 'Input/'  # Your local input file folder
-output_path = 'Temp/'  # Your local output temporal folder
+temp_path = 'Temp/'  # Your local output temporal folder
 stations_file = 'Stations.csv'  # File with the stations list to process. If the list contains repeated values, transformed files is posted only one time in the temporal output folder.
-camels_br_type = '_temperature_max'  # _streamflow_m3s, _streamflow_mm, _simulated_streamflow, _precipitation_chirps, _precipitation_mswep, _precipitation_cpc, _evapotransp_gleam, _evapotransp_mgb, _potential_evapotransp_gleam, _temperature_min, _temperature_mean, _temperature_max
+camels_br_type = '_streamflow_m3s'  # _streamflow_m3s, _streamflow_mm, _simulated_streamflow, _precipitation_chirps, _precipitation_mswep, _precipitation_cpc, _evapotransp_gleam, _evapotransp_mgb, _potential_evapotransp_gleam, _temperature_min, _temperature_mean, _temperature_max
 format_file = '.txt'  # CAMELS-BR use .txt files
 joined_file = 'camels_br' + camels_br_type + '.csv'  # Joined file name to import in ArcGIS
 column_separator = ' '  # Separator used in the CAMELS-BR files
@@ -35,8 +35,8 @@ gauge_id_digits = 8  # For CAMELS-BR, the gauge ID is the first eight digits of 
 process_all = False  # Process all the stations. True ignore the file Stations.csv. False process only the list included in Stations.csv
 
 # Procedure
-shutil.rmtree(output_path)
-os.mkdir(output_path, 0o666)
+shutil.rmtree(temp_path)
+os.mkdir(temp_path, 0o666)
 len_input_path = len(input_path)
 if os.path.isfile(joined_file):
     os.remove(joined_file)
@@ -60,10 +60,10 @@ else:
     for i in table_files:
         processing_file(i)
 print('Process acomplished...')
-table_files = glob.glob(output_path + '*' + format_file)
+table_files = glob.glob(temp_path + '*' + format_file)
 df = pd.concat(map(pd.read_csv, table_files), ignore_index=True)
 df.to_csv(joined_file, encoding='utf-8', index=False)
-shutil.rmtree(output_path)
-os.mkdir(output_path, 0o666)
+shutil.rmtree(temp_path)
+os.mkdir(temp_path, 0o666)
 print('\nJoined dataframe sample\n', df)
 print('\nJoined file: %s\n' % joined_file)
