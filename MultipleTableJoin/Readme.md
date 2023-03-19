@@ -104,4 +104,6 @@ print('\nJoined file: %s\n' % joined_file)
 * https://essd.copernicus.org/articles/12/2075/2020/
 * https://www.ufrgs.br/samewater/2020/12/02/camels-br/
 * https://zenodo.org/record/3964745
+* https://www.skytowner.com/explore/replacing_values_with_nans_in_pandas_dataframe
+* https://sparkbyexamples.com/pandas/pandas-replace-by-examples/
 
