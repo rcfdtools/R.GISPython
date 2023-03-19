@@ -29,7 +29,6 @@ stations_file = 'ANA_BR/Stations.csv'  # File with the stations list to process.
 ana_br_type = 'precipitation'  # No required for ANA-BR
 format_file = '.txt'  # CAMELS-BR use .txt files
 joined_file = 'ana_br' + '_' + ana_br_type + '.csv'  # Joined file name to import in ArcGIS
-column_separator = ' '  # Separator used Stations.csv list
 year_column = 'year'
 month_column = 'month'
 day_column = 'day'
@@ -47,7 +46,7 @@ if os.path.isfile(joined_file):
 print('Processing all files contained in the %s folder: %s' % (input_path, process_all))
 founded = 0
 if not process_all:
-    df_stations = pd.read_csv(stations_file, sep=column_separator)  # Station list to process
+    df_stations = pd.read_csv(stations_file, dtype={station_id: str})  # Station list to process
     n_stations = len(df_stations)
     print('Stations list: %s\nStations to process: %d\n\nStarting...' % (stations_file, n_stations))
     for j in range(len(df_stations)):
