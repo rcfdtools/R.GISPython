@@ -20,9 +20,9 @@ def processing_file(file):
     df.to_csv(temp_path + file[len_input_path:9999], encoding='utf-8', index=False)
 
 # General parameters
-input_path = 'Input/'  # Your local input file folder
+input_path = 'CAMELS_BR/Source/Input'  # Your local input file folder
 temp_path = 'Temp/'  # Your local output temporal folder
-stations_file = 'Stations.csv'  # File with the stations list to process. If the list contains repeated values, transformed files is posted only one time in the temporal output folder.
+stations_file = 'CAMELS_BR/Stations.csv'  # File with the stations list to process. If the list contains repeated values, transformed files is posted only one time in the temporal output folder.
 camels_br_type = '_streamflow_m3s'  # _streamflow_m3s, _streamflow_mm, _simulated_streamflow, _precipitation_chirps, _precipitation_mswep, _precipitation_cpc, _evapotransp_gleam, _evapotransp_mgb, _potential_evapotransp_gleam, _temperature_min, _temperature_mean, _temperature_max
 format_file = '.txt'  # CAMELS-BR use .txt files
 joined_file = 'camels_br' + camels_br_type + '.csv'  # Joined file name to import in ArcGIS
@@ -59,7 +59,6 @@ else:
     print('Files founded: %d\n\nStarting...' % len(table_files))
     for i in table_files:
         processing_file(i)
-print('Process acomplished...')
 table_files = glob.glob(temp_path + '*' + format_file)
 df = pd.concat(map(pd.read_csv, table_files), ignore_index=True)
 df.to_csv(joined_file, encoding='utf-8', index=False)
@@ -67,3 +66,4 @@ shutil.rmtree(temp_path)
 os.mkdir(temp_path, 0o666)
 print('\nJoined dataframe sample\n', df)
 print('\nJoined file: %s\n' % joined_file)
+print('Process accomplished...')

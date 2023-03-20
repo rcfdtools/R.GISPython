@@ -23,17 +23,17 @@ def processing_file(file):
     df.to_csv(temp_path + file[len_input_path:9999], encoding='utf-8', index=False)
 
 # General parameters
-input_path = 'ANA_BR/Source/Precipitation/'  # Your local input file folder
+input_path = 'ANA_BR/Source/Level/'  # Your local input file folder
 temp_path = 'Temp/'  # Your local output temporal folder
 stations_file = 'ANA_BR/Stations.csv'  # File with the stations list to process. If the list contains repeated values, transformed files is posted only one time in the temporal output folder. Use quites for the first station, e.g. "00049000"
-ana_br_type = 'precipitation'  # No required for ANA-BR
+ana_br_type = 'level'  # ANA options: precipitation, discharge, level
 format_file = '.txt'  # CAMELS-BR use .txt files
 joined_file = 'ana_br' + '_' + ana_br_type + '.csv'  # Joined file name to import in ArcGIS
 year_column = 'year'
 month_column = 'month'
 day_column = 'day'
 station_id = 'codigo'
-replace_value = -1.0  # For ANA-BR, -1.0 values correspond to nan values for precipitation.
+replace_value = -9999.0  # For ANA-BR, -1.0 values correspond to nan values for precipitation & discharge and -9999.0 for level values.
 gauge_id_digits = 8  # For ANA-BR, the gauge ID is the first eight digits of the file name
 process_all = True  # Process all the stations. True ignore the file Stations.csv. False process only the list included in Stations.csv
 
@@ -62,7 +62,6 @@ else:
     print('Files founded: %d\n\nStarting...' % len(table_files))
     for i in table_files:
         processing_file(i)
-print('Process acomplished...')
 table_files = glob.glob(temp_path + '*' + format_file)
 df = pd.concat(map(pd.read_csv, table_files), ignore_index=True)
 print('\n')
@@ -74,3 +73,4 @@ shutil.rmtree(temp_path)
 os.mkdir(temp_path, 0o666)
 print('\nJoined dataframe sample\n', df)
 print('\nJoined file: %s\n' % joined_file)
+print('Process accomplished...')
