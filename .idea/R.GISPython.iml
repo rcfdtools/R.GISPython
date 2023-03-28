@@ -8,8 +8,9 @@
       <excludeFolder url="file://$MODULE_DIR$/TableInterpolatedGrid/OutputGrid" />
       <excludeFolder url="file://$MODULE_DIR$/.refs" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/dictionaries" />
+      <excludeFolder url="file://$MODULE_DIR$/.venvPython311" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (R.GISPython)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
     <orderEntry type="module" module-name="R.LTWB" />
