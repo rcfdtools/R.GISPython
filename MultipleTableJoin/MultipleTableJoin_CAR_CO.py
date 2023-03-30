@@ -11,8 +11,8 @@ import pandas as pd
 # General parameters
 input_path = 'D:/R.GISPython/MultipleTableJoin/CAR_CO/Source/'
 output_path = 'D:/R.GISPython/MultipleTableJoin/CAR_CO/Joined/'
-parameter_value = 'CD_PTPM_M'  # More info https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin/CAR_CO
-excel_file = '5de950006fde6.xlsx'
+parameter_value = 'Q_MN_M'  # More info https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin/CAR_CO
+excel_file = '5bae91ce32989.xlsx'
 clean_file = 'Clean_'+excel_file
 pivot_file = 'Pivot_'+parameter_value+'.csv'
 unpivot_file = 'Unpivot_'+parameter_value+'.csv'
@@ -28,7 +28,7 @@ value_name = 'Value'
 run_clean = True  # Execute the clean Excel process
 run_pivot_dataset = True  # Execute the pivot dataset creation
 run_unpivot_dataset = True  # Execute the unpivot dataset creation
-year_to_integer = True  # Convert Year values to integer
+year_to_integer = False  # Convert Year values to integer
 
 book = load_workbook(input_path+excel_file)
 catalog = book['Catalogo']
