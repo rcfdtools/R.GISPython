@@ -7,46 +7,37 @@ import openpyxl
 from openpyxl import Workbook, load_workbook
 import pandas as pd
 
-def remove(sheet, row):
-    # iterate the row object
-    for cell in row:
-        # check the value of each cell in
-        # the row, if any of the value is not
-        # None return without removing the row
-        if cell.value != None:
-            return
-    # get the row number from the first cell
-    # and remove the row
-    sheet.delete_rows(row[0].row, 1)
 
 # General parameters
-path = 'D:/R.GISPython/MultipleTableJoin/CAR_CO/Source/'
-excel_file = '5de94fdc2fabb.xlsx'
+input_path = 'D:/R.GISPython/MultipleTableJoin/CAR_CO/Source/'
+output_path = 'D:/R.GISPython/MultipleTableJoin/CAR_CO/Joined/'
+parameter_value = 'CD_PTPM_M'  # More info https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin/CAR_CO
+excel_file = '5de950006fde6.xlsx'
 clean_file = 'Clean_'+excel_file
-pivot_dataframe_file = 'PivotDataframe_'+excel_file+'.csv'
-unpivot_dataframe_file = 'UnpivotDataframe_'+excel_file+'.csv'
+pivot_file = 'Pivot_'+parameter_value+'.csv'
+unpivot_file = 'Unpivot_'+parameter_value+'.csv'
 head_rows = 15  # Header rows to delete
+index_name = 'Id'
+parameter_name = 'Label'
+station_code = 'Code'
 year_name = 'Year'
 month_name = 'Month'
 day_name = 'Day'
 date_name = 'Date'
 value_name = 'Value'
-index_name = 'Id'
-station_code = 'Code'
-parameter_name = 'Label'
-parameter_value = 'PTPM_TT_M'  # PTPM_TT_M for Monthly total precipitation using the IDEAM labels
-run_clean = False  # Execute the clean Excel process
-run_pivot_dataset = False  # Execute the pivot dataset creation
+run_clean = True  # Execute the clean Excel process
+run_pivot_dataset = True  # Execute the pivot dataset creation
 run_unpivot_dataset = True  # Execute the unpivot dataset creation
+year_to_integer = True  # Convert Year values to integer
 
-book = load_workbook(path+excel_file)
+book = load_workbook(input_path+excel_file)
 catalog = book['Catalogo']
 book.remove(catalog)
 sheets = book.sheetnames
 
 # Clean headers and intermediate columns
 if run_clean:
-    print('\nRunning the cleaning process...')
+    print('\nRunning the cleaning process\n'+ 40 * '-')
     for i in sheets:
         print('Processing: %s' %i)
         sheet = book[i]
@@ -56,34 +47,37 @@ if run_clean:
             sheet.unmerge_cells(range_string=str(merge))
         #sheet.delete_rows(idx=1)  # Delete an specific row
         sheet.delete_rows(1,head_rows)
-        print('\tDeleting headers...')
-        print('\tDeleting white columns...')
+        print('\tDeleting headers')
+        print('\tDeleting white columns')
         sheet.delete_cols(2)
         for j in range(2,15):  # Delete intermediate columns
             sheet.delete_cols(j)
         print('\tRows: %d' % len(sheet['A']))
-    book.save(path+clean_file)
+    book.save(output_path+clean_file)
+
 
 # Pivot dataset creation
 if run_pivot_dataset:
-    print('\n\nRunning the pivot dataframe creation...')
-    xl = pd.ExcelFile(path+clean_file)
+    print('\n\nRunning the pivot dataframe creation\n'+ 40 * '-')
+    xl = pd.ExcelFile(output_path+clean_file)
     sheets = xl.sheet_names
     df = pd.DataFrame()
     for i in sheets:
         print('Processing: %s' % i)
-        df1 = pd.read_excel(path+clean_file, low_memory=False, sheet_name=i, header=None, names=[year_name, '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'])
+        df1 = pd.read_excel(output_path+clean_file, sheet_name=i, header=None, names=[year_name, '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'])
         df1[station_code] = i
         df1[parameter_name] = parameter_value
         df = pd.concat([df, df1])
-    df = df.astype({year_name : int})
+    if year_to_integer:
+        df = df.astype({year_name : int})
     print(df)
-    df.to_csv(path+pivot_dataframe_file, encoding='utf-8', index=False)
+    df.to_csv(output_path+pivot_file, encoding='utf-8', index=False)
+
 
 # Unpivot dataset creation
 if run_unpivot_dataset:
-    print('\n\nRunning the unpivot dataframe creation...')
-    df = pd.read_csv(path+pivot_dataframe_file, low_memory=False)
+    print('\n\nRunning the unpivot dataframe creation\n'+ 40 * '-')
+    df = pd.read_csv(output_path+pivot_file, low_memory=False)
     print(df.info(), '\n')
     print(df.dtypes, '\n')
     print(df, '\n')
@@ -93,7 +87,11 @@ if run_unpivot_dataset:
     df_unpivot.index.name = index_name
     df_unpivot = df_unpivot[[parameter_name, station_code, year_name, month_name, day_name, date_name, value_name]]
     print(df_unpivot, '\n')
-    df_unpivot.to_csv(path+unpivot_dataframe_file)
+    df_unpivot.to_csv(output_path+unpivot_file)
+
+print('\nClean file: %s' % output_path+clean_file,
+      '\nPivot file: %s' % output_path+pivot_file,
+      '\nUnpivot file: %s' % output_path+unpivot_file)
 
 
 # Refs
