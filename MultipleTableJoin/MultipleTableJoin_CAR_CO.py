@@ -20,7 +20,7 @@ def remove(sheet, row):
     sheet.delete_rows(row[0].row, 1)
 
 # General parameters
-path = 'W:/Descargas/'
+path = 'D:/R.GISPython/MultipleTableJoin/CAR_CO/Source/'
 excel_file = '5de94fdc2fabb.xlsx'
 clean_file = 'Clean_'+excel_file
 pivot_dataframe_file = 'PivotDataframe_'+excel_file+'.csv'
