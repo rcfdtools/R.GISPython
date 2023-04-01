@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 # Name: MultipleTableJoin_ANA_BR.py
 # Description: this script join multiple separated tables into a unique unpivot table.
+# Source dataset: https://www.ufrgs.br/hge/ana-data-acquisition/
 # Repository: https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin
 # License: https://github.com/rcfdtools/R.GISPython/wiki/License
 # Requirements: Python 3+, Pandas,
@@ -33,7 +34,7 @@ year_column = 'year'
 month_column = 'month'
 day_column = 'day'
 station_id = 'codigo'
-replace_value = -9999.0  # For ANA-BR, -1.0 values correspond to nan values for precipitation & discharge and -9999.0 for level values.
+    replace_value = -9999.0  # For ANA-BR, -1.0 values correspond to nan values for precipitation & discharge and -9999.0 for level values.
 gauge_id_digits = 8  # For ANA-BR, the gauge ID is the first eight digits of the file name
 process_all = True  # Process all the stations. True ignore the file Stations.csv. False process only the list included in Stations.csv
 

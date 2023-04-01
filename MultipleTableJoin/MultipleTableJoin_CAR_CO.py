@@ -1,7 +1,12 @@
 # -*- coding: UTF-8 -*-
-# Create a dataset file from monthly CAR - Cundinamarca - Colombia from Excel records
-# Data from https://www.car.gov.co/vercontenido/2524
+# Name: MultipleTableJoin_CAR_CO.py
+# Description: this script create a dataset file from monthly CAR - Cundinamarca - Colombia Excel records
+# Source dataset: https://www.car.gov.co/vercontenido/2524
 # Disclaimer: this script version do not create the records marks file and the wind directions file
+# Repository: https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin
+# License: https://github.com/rcfdtools/R.GISPython/wiki/License
+# Requirements: Python 3+, Pandas, openpyxl
+
 
 # Libraries
 import openpyxl
@@ -56,7 +61,6 @@ if run_clean:
         for merge in list(sheet.merged_cells):
             print('\tUnmerging %s' % merge)
             sheet.unmerge_cells(range_string=str(merge))
-        #sheet.delete_rows(idx=1)  # Delete an specific row
         sheet.delete_rows(1,head_rows)
         print('\tDeleting headers')
         print('\tDeleting white columns')
@@ -117,12 +121,3 @@ print('\nClean file: %s' % output_path + clean_file,
           '\nJoined file: %s' % output_path + joined_file)
 
 # Refs
-# https://blog.aspose.com/cells/insert-and-delete-rows-and-columns-in-excel-using-python/
-# https://www.youtube.com/watch?v=718edSNvKLA
-# https://stackoverflow.com/questions/23527887/getting-sheet-names-from-openpyxl
-# https://www.geeksforgeeks.org/how-to-delete-one-or-more-rows-in-excel-using-openpyxl/
-# https://www.codespeedy.com/delete-rows-of-a-sheet-using-openpyxl/
-# https://stackoverflow.com/questions/69891944/unmerge-every-cell-in-an-excel-worksheet-using-openpyxl
-# https://stackoverflow.com/questions/40166714/replace-specific-values-in-openpyxl
-# https://stackoverflow.com/questions/17977540/pandas-looking-up-the-list-of-sheets-in-an-excel-file
-# https://practicaldatascience.co.uk/data-science/how-to-reorder-pandas-dataframe-columns

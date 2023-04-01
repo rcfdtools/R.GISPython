@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 # Name: MultipleTableJoin_CAMELS_BR.py
 # Description: this script join multiple separated tables into a unique unpivot table.
+# Source dataset: https://zenodo.org/record/3964745
 # Repository: https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin
 # License: https://github.com/rcfdtools/R.GISPython/wiki/License
 # Requirements: Python 3+, Pandas,
