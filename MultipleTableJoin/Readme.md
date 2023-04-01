@@ -11,7 +11,7 @@ Dataset reference: Vinícius B. P. Chagas, Pedro L. B. Chaffe, Nans Addor, Ferna
 
 * Script [MultipleTableJoin_CAMELS_BR.py](MultipleTableJoin_CAMELS_BR.py)  
 * [Local source CAMELS-BR dataset.](CAMELS_BR/Source)  
-* [Local joined files Amazon Basin.](CAMELS_BR/Joined)
+* [Local joined files for Amazon Basin.](CAMELS_BR/Joined)
 
 ```
 # -*- coding: UTF-8 -*-
@@ -99,11 +99,11 @@ print('Process accomplished...')
 
 ### ANA Brasil
 
-A ferramenta ANA Data Acquisition realiza o download automático de várias estações pluviométricas e fluviométricas disponibilizados pela Agência Nacional de Águas (ANA)
+A ferramenta ANA Data Acquisition realiza o download automático de várias estações pluviométricas e fluviométricas disponibilizados pela Agência Nacional de Águas (ANA). https://www.ufrgs.br/hge/ana-data-acquisition/
 
 * Script [MultipleTableJoin_ANA_BR.py](MultipleTableJoin_ANA_BR.py)  
 * [Local source ANA-BR dataset.](ANA_BR/Source)  
-* [Local joined files Amazon & Orinoco Basin.](ANA_BR/Joined)
+* [Local joined files for Amazon & Orinoco Basin.](ANA_BR/Joined)
 
 ```
 # -*- coding: UTF-8 -*-
