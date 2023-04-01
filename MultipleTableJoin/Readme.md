@@ -3,7 +3,7 @@
 Isolated time-series file parameters, has to be joined in a unique table if you want to use dynamic ArcGIS map views related with gauge stations or basin polygons.  
 
 
-### CAMELS-BR [:hook:](CAMELS_BR)
+### CAMELS-BR [:hook:](CAMELS_BR)[^1]
 
 Catchment Attributes and Meteorology for Large-sample Studies - Brazil
 
@@ -97,7 +97,7 @@ print('Process accomplished...')
 > For this example, Stations.csv contains all the Amazon basin stations.
 
 
-### ANA Brasil [:hook:](ANA_BR)
+### ANA Brasil [:hook:](ANA_BR)[^2]
 
 A ferramenta ANA Data Acquisition realiza o download automático de várias estações pluviométricas e fluviométricas disponibilizados pela Agência Nacional de Águas (ANA). https://www.ufrgs.br/hge/ana-data-acquisition/
 
@@ -197,7 +197,8 @@ print('Process accomplished...')
 > For this example, Stations.csv only contains a sample, the first station has to be between quotes for set the codes as string.
 
 
-### CAR-CO [:hook:](CAR_CO)
+### CAR-CO [:hook:](CAR_CO)[^3]
+
 
 Corporación Autónoma Regional de Cundinamarca Colombia - https://www.car.gov.co/vercontenido/2524
 
@@ -354,7 +355,6 @@ print('\nClean file: %s' % output_path + clean_file,
 * https://stackoverflow.com/questions/19350806/how-to-convert-columns-into-one-datetime-column-in-pandas
 * https://essd.copernicus.org/articles/12/2075/2020/
 * https://www.ufrgs.br/samewater/2020/12/02/camels-br/
-* https://zenodo.org/record/3964745
 * https://www.skytowner.com/explore/replacing_values_with_nans_in_pandas_dataframe
 * https://sparkbyexamples.com/pandas/pandas-replace-by-examples/
 * https://blog.aspose.com/cells/insert-and-delete-rows-and-columns-in-excel-using-python/
@@ -366,3 +366,7 @@ print('\nClean file: %s' % output_path + clean_file,
 * https://stackoverflow.com/questions/40166714/replace-specific-values-in-openpyxl
 * https://stackoverflow.com/questions/17977540/pandas-looking-up-the-list-of-sheets-in-an-excel-file
 * https://practicaldatascience.co.uk/data-science/how-to-reorder-pandas-dataframe-columns
+
+[^1]: https://zenodo.org/record/3964745
+[^2]: https://www.ufrgs.br/hge/ana-data-acquisition/
+[^3]: https://www.car.gov.co/vercontenido/2524
