@@ -4,8 +4,8 @@
 # .gitignore
 .idea/
 venv/
-.venvPython311/
 .venvPython310/
+.venvPython311/
 
 # Exclusion for D:\R.GISPython\HydroGeoZone
 # Excluded because the files sizes are more than 100MB
