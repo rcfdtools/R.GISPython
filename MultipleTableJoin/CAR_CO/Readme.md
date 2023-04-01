@@ -2,12 +2,12 @@
 
 Datos tomados de: https://www.car.gov.co/vercontenido/2524
 
-En el enlace podrá encontrar y descargar información referente a la ubicación de las estaciones de monitoreo y los datos de registros históricos de cada estación a escala mensual, si requiere datos a escala diaria enviar su solicitud al correo electrónico sau@car.gov.co
+En esta colección de datos podrá encontrar y descargar información referente a la ubicación de las estaciones de monitoreo y los datos de registros históricos de cada estación a escala mensual. Los datos a escala diaria pueden ser solicitados directamente a esta entidad gubernamental a través del correo electrónico sau@car.gov.co
 
-En la siguiente lista encontrará los nombres de archivos y la etiqueta IDEAM - Colombia asociada a cada parámetro. Etiquetas con * corresponden a códigos homologados a partir de etiqueta IDEAM no identificada. Glosario variables IDEAM tomado de http://dhime.ideam.gov.co/atencionciudadano/
+En la siguiente lista encontrará los nombres de archivos y la etiqueta IDEAM - Colombia asociada a cada parámetro. Etiquetas con * corresponden a códigos homologados a partir de etiqueta IDEAM no identificada. Glosario de variables IDEAM tomado de http://dhime.ideam.gov.co/atencionciudadano/
 
 * Radiación Solar - 5de94b62cd765.xlsx - RSAG_MEDIA_M
-* Punto de Rocio - 5bae959b13a41.xlsx - TPR_CAL_MEDIA_M
+* Punto de Rocío - 5bae959b13a41.xlsx - TPR_CAL_MEDIA_M
 * Temperatura Máxima - 5de94d7aec108.xlsx - TAMX2_MX_M *
 * Temperatura Media - 5de94dc22445f.xlsx - TAMX2_MEDIA_M *
 * Temperatura Mínima - 5de95a48c9681.xlsx - TAMX2_MN_M *
@@ -25,4 +25,3 @@ En la siguiente lista encontrará los nombres de archivos y la etiqueta IDEAM - 
 * Caudales Medios Mensuales - 5bae92275ec7e.xlsx - Q_MEDIA_M
 * Caudales Máximos Absolutos Mensuales - 5bae909d581a8.xlsx - Q_MX_M
 * Brillo Solar, Totales Mensuales - 5de9516e5ce45.xlsx - BSHG_TT_M
-

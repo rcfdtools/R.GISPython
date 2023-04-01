@@ -120,4 +120,3 @@ print('\nClean file: %s' % output_path + clean_file,
           '\nUnpivot file: %s' % output_path + unpivot_file,
           '\nJoined file: %s' % output_path + joined_file)
 
-# Refs
