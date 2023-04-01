@@ -98,7 +98,7 @@ print('Process accomplished...')
 ```
 
 
-#### Specifications
+#### Parameters & specifications
 
 * `input_path` & `temp_path`: user can define the input and the temporal processing folder.
 * `stations_file`: [Stations.csv](CAMELS_BR/Stations.csv) contains a list of the stations to be joined. The parameter `process_all = False` has to be established in False, otherwise, all the files founded in the Input folder will be joined. 
@@ -197,7 +197,7 @@ print('Process accomplished...')
 ```
 
 
-#### Specifications
+#### Parameters & specifications
 
 * `input_path` & `temp_path`: user can define the input and the temporal processing folder.
 * `stations_file`: [Stations.csv](ANA_BR/Stations.csv) contains a list of the stations to be joined. The parameter `process_all = False` has to be established in False, otherwise, all the files founded in the Input folder will be joined. 
@@ -346,7 +346,7 @@ print('\nClean file: %s' % output_path + clean_file,
 ```
 
 
-#### Specifications
+#### Parameters & specifications
 
 * `input_path` & `output_path`: user can define the input and the output processing folder.
 * `parameter_value`: specific IDEAM - Colombia [label parameter to process](https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin/CAR_CO). 
