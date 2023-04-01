@@ -90,7 +90,7 @@ print('Process accomplished...')
 #### Specifications
 
 * `input_path` & `temp_path`: user can define the input and the temporal processing folder.
-* `stations_file`: [Stations.csv](Stations.csv) contains a list of the stations to be joined. The parameter `process_all = False` has to be established in False, otherwise, all the files founded in the Input folder will be joined. 
+* `stations_file`: [Stations.csv](CAMELS_BR/Stations.csv) contains a list of the stations to be joined. The parameter `process_all = False` has to be established in False, otherwise, all the files founded in the Input folder will be joined. 
 * `camels_br_type`: user have to specify the kind of file to process, e.g.: _streamflow_m3s, _streamflow_mm, _simulated_streamflow, _precipitation_chirps, _precipitation_mswep, _precipitation_cpc, _evapotransp_gleam, _evapotransp_mgb, _potential_evapotransp_gleam, _temperature_min, _temperature_mean, _temperature_max.
 * `process_all`: all the files contained in the Input folder will be joined if this parameter is `True`, with `False` only the stations includes in Stations.csv will be joined.   
 
@@ -189,7 +189,7 @@ print('Process accomplished...')
 #### Specifications
 
 * `input_path` & `temp_path`: user can define the input and the temporal processing folder.
-* `stations_file`: [Stations.csv](Stations.csv) contains a list of the stations to be joined. The parameter `process_all = False` has to be established in False, otherwise, all the files founded in the Input folder will be joined. 
+* `stations_file`: [Stations.csv](ANA_BR/Stations.csv) contains a list of the stations to be joined. The parameter `process_all = False` has to be established in False, otherwise, all the files founded in the Input folder will be joined. 
 * `ana_br_type`: user have to specify the kind of file to process, e.g.: precipitation, discharge, level.
 * `replace_value`: for ANA-BR, -1.0 values correspond to nan values for precipitation & discharge and -9999.0 for level values. User may to set the right value for replace as Nan. 
 * `process_all`: all the files contained in the Input folder will be joined if this parameter is `True`, with `False` only the stations includes in Stations.csv will be joined.   
