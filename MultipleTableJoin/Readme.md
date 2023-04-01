@@ -3,7 +3,7 @@
 Isolated time-series file parameters, has to be joined in a unique table if you want to use dynamic ArcGIS map views related with gauge stations or basin polygons.  
 
 
-### CAMELS-BR
+### CAMELS-BR [:hook:](CAMELS_BR/Readme.md)
 
 Catchment Attributes and Meteorology for Large-sample Studies - Brazil
 
@@ -97,7 +97,7 @@ print('Process accomplished...')
 > For this example, Stations.csv contains all the Amazon basin stations.
 
 
-### ANA Brasil
+### ANA Brasil [:hook:](ANA_BR/Readme.md)
 
 A ferramenta ANA Data Acquisition realiza o download automático de várias estações pluviométricas e fluviométricas disponibilizados pela Agência Nacional de Águas (ANA). https://www.ufrgs.br/hge/ana-data-acquisition/
 
@@ -197,11 +197,11 @@ print('Process accomplished...')
 > For this example, Stations.csv only contains a sample, the first station has to be between quotes for set the codes as string.
 
 
-### CAR-CO
+### CAR-CO [:hook:](CAR_CO/Readme.md)
 
 Corporación Autónoma Regional de Cundinamarca Colombia - https://www.car.gov.co/vercontenido/2524
 
-This data collection, contains the active station list and the monthly historical record datasets. 
+This data collection, contains the active station list and the monthly historical record datasets for active and suspended stations. 
 
 * Script [MultipleTableJoin_CAR_CO.py](MultipleTableJoin_CAR_CO.py)  
 * [Local source CAR_CO dataset.](CAR_CO/Source)  
