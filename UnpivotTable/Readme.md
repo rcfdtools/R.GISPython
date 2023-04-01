@@ -1,11 +1,11 @@
-# Unpivot a multiple column table into a table with multiple records
-Keywords: `Unpivot` `Python`
+# Unpivot a multiple column table into a table with stacked records
+Keywords: `Unpivot` `Python` `Stack`
 
 > Over ArcGIS or a .dbf file, the maximum number of columns are 256. 
 > 
 > An extensive Pandas dataframe with more than 256 attributes, could be truncated if directly is converted into a GIS table.
 
-The size of the transformed unpivot file, could be much more heavy than the original pivot file. 
+The size of the transformed unpivot file, could be much bigger than the original pivot file. 
 
 [UnpivotTable.py](UnpivotTable.py)
 
