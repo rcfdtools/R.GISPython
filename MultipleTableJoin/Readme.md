@@ -1,4 +1,4 @@
-## Join multiple separated tables into a unique unpivot table dataset
+## Join multiple separate tables into a unique unpivot table dataset
 
 Isolated time-series file parameters, has to be joined in a unique table if you want to use dynamic ArcGIS map views related with gauge stations or basin polygons.  
 
