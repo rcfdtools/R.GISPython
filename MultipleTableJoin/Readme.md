@@ -1,9 +1,22 @@
-## Join multiple separate tables into a unique unpivot table dataset
+## Join multiple separate tables into a unique unpivot table dataset  
+Keywords: `ETL` `Dataset` `CAMELS-BR` `ANA-BR` `CAR-CO` `Python`
 
-Isolated time-series file parameters, has to be joined in a unique table if you want to use dynamic ArcGIS map views related with gauge stations or basin polygons.  
+Isolated time-series file parameters, has to be joined in a unique table if you want to use dynamic ArcGIS map views related with gauge stations or basin polygons through an ETL process.  
+
+Accord with IBM, an ETL, which stands for extract, transform and load, is a data integration process that combines data from multiple data sources into a single, consistent data store that is loaded into a data warehouse or other target system.[^1]
+
+As the databases grew in popularity in the 1970s, ETL was introduced as a process for integrating and loading data for computation and analysis, eventually becoming the primary method to process data for data warehousing projects.
+
+ETL provides the foundation for data analytics and machine learning workstreams. Through a series of business rules, ETL cleanses and organizes data in a way which addresses specific business intelligence needs, like monthly reporting, but it can also tackle more advanced analytics, which can improve back-end processes or end user experiences. ETL is often used by an organization to: 
+
+* Extract data from legacy systems
+* Cleanse the data to improve data quality and establish consistency
+* Load data into a target database
 
 
-### CAMELS-BR [:hook:](CAMELS_BR)[^1]
+
+
+### CAMELS-BR [:hook:](CAMELS_BR)[^2]
 
 Catchment Attributes and Meteorology for Large-sample Studies - Brazil
 
@@ -97,7 +110,7 @@ print('Process accomplished...')
 > For this example, Stations.csv contains all the Amazon basin stations.
 
 
-### ANA Brasil [:hook:](ANA_BR)[^2]
+### ANA Brasil [:hook:](ANA_BR)[^3]
 
 A ferramenta ANA Data Acquisition realiza o download automático de várias estações pluviométricas e fluviométricas disponibilizados pela Agência Nacional de Águas (ANA). https://www.ufrgs.br/hge/ana-data-acquisition/
 
@@ -197,7 +210,7 @@ print('Process accomplished...')
 > For this example, Stations.csv only contains a sample, the first station has to be between quotes for set the codes as string.
 
 
-### CAR-CO [:hook:](CAR_CO)[^3]
+### CAR-CO [:hook:](CAR_CO)[^4]
 
 
 Corporación Autónoma Regional de Cundinamarca Colombia - https://www.car.gov.co/vercontenido/2524
@@ -367,6 +380,8 @@ print('\nClean file: %s' % output_path + clean_file,
 * https://stackoverflow.com/questions/17977540/pandas-looking-up-the-list-of-sheets-in-an-excel-file
 * https://practicaldatascience.co.uk/data-science/how-to-reorder-pandas-dataframe-columns
 
-[^1]: https://zenodo.org/record/3964745
-[^2]: https://www.ufrgs.br/hge/ana-data-acquisition/
-[^3]: https://www.car.gov.co/vercontenido/2524
+
+[^1]: https://www.ibm.com/topics/etl
+[^2]: https://zenodo.org/record/3964745
+[^3]: https://www.ufrgs.br/hge/ana-data-acquisition/
+[^4]: https://www.car.gov.co/vercontenido/2524
