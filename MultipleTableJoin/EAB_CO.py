@@ -104,6 +104,7 @@ df1.drop(['Latitud_x', 'Longitud_x'], inplace=True, axis=1)
 df1.rename(columns={'Latitud_y':'Latitud','Longitud_y':'Longitud'}, inplace=True)
 print('\nData types \n',df1.dtypes)
 print(df1)
+df1.to_csv(output_path+table_name, index=False, encoding='utf-8')
 
 
 
