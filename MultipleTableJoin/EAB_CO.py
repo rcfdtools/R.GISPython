@@ -28,7 +28,11 @@ database = 'SIH_20210502'
 username = 'sa'
 password = '123456'
 output_path = 'EAB_CO/'
-extract_montly_values = False  # Extract or update
+locations_table = 'eab_sih_estaciones_update_locations.csv'  # Attributes has to be: cod_elemento,Latitud,Longitud
+paramenters_table = 'eab_sih_parametro_homologa_IDEAM.csv'  # Homologate parameters from EAB to IDEAM, attributes has to be: IdParametro,Etiqueta,EtiquetaIDEAM,DescripcionSerieEAB,DescripcionSerieIDEAM,Frecuencia
+update_locations = True  # Update locations with locations_table
+update_parameters = True  # Update parameters with IDEAM values
+extract_monthly_values = False  # Extract or update
 
 # Connector
 engine = create_engine(
@@ -46,9 +50,9 @@ sql = "SELECT Distinct TABLE_NAME FROM information_schema.TABLES"
 table_export(sql, table_name)
 
 # Retrieve monthly records
-if extract_montly_values:
+table_name = 'eab_sih_monthly_records.csv'
+if extract_monthly_values:
       print('\nExtracting or updating monthly values from: %s\%s' % (server, database))
-      table_name = 'eab_sih_monthly_records.csv'
       sql = "SELECT CAST(estaciones.cod_ideam AS varchar) as CodigoEstacion" \
             " ,elementos.nombre + ' [' + TRIM(Str(estaciones.cod_ideam)) + ']' as NombreEstacion" \
             " ,elementos.latitud as Latitud" \
@@ -95,18 +99,44 @@ if extract_montly_values:
       table_export(sql, table_name)
 
 # Update stations locations
-table_name = 'eab_sih_monthly_records.csv'  # Attributes has to be cod_elemento,Latitud,Longitud
-locations_table = 'eab_sih_estaciones_update_locations.csv'
-df1 = pd.read_csv(output_path+table_name)
-df2 = pd.read_csv(output_path+locations_table)
-df1 = df1.merge(df2, on='cod_elemento', how='left')
-df1.drop(['Latitud_x', 'Longitud_x'], inplace=True, axis=1)
-df1.rename(columns={'Latitud_y':'Latitud','Longitud_y':'Longitud'}, inplace=True)
-print('\nData types \n',df1.dtypes)
-print(df1)
-df1.to_csv(output_path+table_name, index=False, encoding='utf-8')
+if update_locations:
+      df1 = pd.read_csv(output_path+table_name)  # Monthly values
+      df2 = pd.read_csv(output_path+locations_table)  # Updated stations locations table
+      df1 = df1.merge(df2, on='cod_elemento', how='left')
+      df1.drop(['Latitud_x', 'Longitud_x'], inplace=True, axis=1)
+      df1.rename(columns={'Latitud_y':'Latitud', 'Longitud_y':'Longitud'}, inplace=True)
+      new_cols = ['CodigoEstacion','NombreEstacion','Latitud','Longitud','Altitud','Categoria','Entidad','AreaOperativa',
+                  'Departamento','Municipio','FechaInstalacion','FechaSuspension','IdParametro','Etiqueta','DescripcionSerie',
+                  'Frecuencia','Fecha','Valor','Grado','Calificador','NivelAprobacion','cod_elemento','cod_eaab',
+                  'cod_parametro','unidad','cod_descriptor','nombre_descriptor','cod_flag','nroObs']  # Reordering columns
+      df1 = df1[new_cols]
+      print('\nData types \n',df1.dtypes)
+      print(df1)
+      df1.to_csv(output_path+table_name, index=False, encoding='utf-8')
+
+# Update stations parameters with IDEAM values
+if update_parameters:
+      df1 = pd.read_csv(output_path+table_name)  # Monthly values
+      df2 = pd.read_csv(output_path+paramenters_table)  # Parameters table with IDEAM values
+      df1 = df1.merge(df2, on='Etiqueta', how='left')
+      df1.drop(['IdParametro_x', 'Frecuencia_x', 'DescripcionSerie'], inplace=True, axis=1)
+      df1.rename(columns={'IdParametro_y':'IdParametro', 'Etiqueta':'EtiquetaEAB', 'EtiquetaIDEAM':'Etiqueta',
+                          'Frecuencia_y':'Frecuencia', 'DescripcionSerieIDEAM':'DescripcionSerie'}, inplace=True)
+      new_cols = ['CodigoEstacion','NombreEstacion','Latitud','Longitud','Altitud','Categoria','Entidad','AreaOperativa',
+                  'Departamento','Municipio','FechaInstalacion','FechaSuspension','IdParametro','Etiqueta','DescripcionSerie',
+                  'Frecuencia','Fecha','Valor','Grado','Calificador','NivelAprobacion','cod_elemento','cod_eaab',
+                  'cod_parametro','unidad','cod_descriptor','nombre_descriptor','cod_flag','nroObs', 'DescripcionSerieEAB']  # Reordering columns
+      df1 = df1[new_cols]
+      print('\nData types \n',df1.dtypes)
+      print(df1)
+      df1.to_csv(output_path+table_name, index=False, encoding='utf-8')
 
 
+# Update parameters with IDEAM values
+
+
+
+# df1['yday'] = pd.to_datetime(df1['Fecha']).dt.dayofyear  # Day of the year in daily series
 
 
 # References
@@ -116,3 +146,5 @@ df1.to_csv(output_path+table_name, index=False, encoding='utf-8')
 # https://stackoverflow.com/questions/10822635/get-the-number-of-rows-in-table-using-sqlalchemy
 # https://stackoverflow.com/questions/38152416/how-to-execute-update-query-with-sqlalchemy-sql-builder-in-python
 # https://www.statology.org/pandas-update-column-based-on-another-dataframe/
+# https://sparkbyexamples.com/pandas/pandas-change-position-of-a-column/
+# https://www.statology.org/pandas-get-day-of-year-from-date/
