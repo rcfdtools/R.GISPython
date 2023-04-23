@@ -125,7 +125,7 @@ if update_parameters:
       new_cols = ['CodigoEstacion','NombreEstacion','Latitud','Longitud','Altitud','Categoria','Entidad','AreaOperativa',
                   'Departamento','Municipio','FechaInstalacion','FechaSuspension','IdParametro','Etiqueta','DescripcionSerie',
                   'Frecuencia','Fecha','Valor','Grado','Calificador','NivelAprobacion','cod_elemento','cod_eaab',
-                  'cod_parametro','unidad','cod_descriptor','nombre_descriptor','cod_flag','nroObs', 'DescripcionSerieEAB']  # Reordering columns
+                  'cod_parametro','unidad','cod_descriptor','nombre_descriptor','cod_flag','nroObs', 'EtiquetaEAB', 'DescripcionSerieEAB']  # Reordering columns
       df1 = df1[new_cols]
       print('\nData types \n',df1.dtypes)
       print(df1)
