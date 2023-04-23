@@ -6,7 +6,7 @@
 # Repository: https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin
 # License: https://github.com/rcfdtools/R.GISPython/wiki/License
 # Requirements: Python 3+, Pandas, sqlalchemy
-# Notes: depending of the .csv generate file, at the end of every records are included the properties: cod_elemento, cod_eaab, cod_parametro, unidad,cod_descriptor, nombre_descriptor, cod_flag,nroObs
+# Notes: depending of the .csv generate file, at the end of every records are included the properties: cod_elemento, cod_eaab, cod_parametro, unidad,cod_descriptor, nombre_descriptor, cod_flag, nroObs, EtiquetaEAB, DescripcionSerieEAB
 
 # Libraries
 import pandas as pd
