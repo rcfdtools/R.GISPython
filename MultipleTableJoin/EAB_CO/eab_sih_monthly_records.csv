@@ -1,2 +1,2 @@
 CodigoEstacion,NombreEstacion,Latitud,Longitud,Altitud,Categoria,Entidad,AreaOperativa,Departamento,Municipio,FechaInstalacion,FechaSuspension,IdParametro,Etiqueta,DescripcionSerie,Frecuencia,Fecha,Valor,Grado,Calificador,NivelAprobacion,cod_elemento,cod_eaab,cod_parametro,unidad,cod_descriptor,nombre_descriptor,cod_flag,nroObs,EtiquetaEAB,DescripcionSerieEAB
-,,4.957877,-73.82955,2607.0,,EMPRESA DE ENERGIA ELECTRICA DE BOGOTA                      ,,CUNDINAMARCA                  ,GUATAVITA,1992-10-10,,AFLUENCIA,AFLMM,AFLUENCIAS MEDIAS MENSUALES (no homologado IDEAM),Mensual,1946-09-01,2.06,,,,102,,507,m3/seg,M,Media,,,AFLMM,AFLUENCIAS MEDIAS MENSUALES
+
