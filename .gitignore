@@ -1,4 +1,6 @@
 # Ignore files for push...
+# Excluded files over than 100MB
+# Large files in a GitHub free account has to be compress in 95MB files parts
 
 # General exclusions
 # .gitignore
@@ -8,8 +10,6 @@ venv/
 .venvPython311/
 
 # Exclusion for D:\R.GISPython\HydroGeoZone
-# Excluded because the files sizes are more than 100MB
-# Drenaje_Sencillo layer compress in 95MB files parts as DrenajeSencilloDownload.part1.rar to .part4
 # HydroGeoZone/Output/
 HydroGeoZone/Data/Drenaje_Sencillo.*
 HydroGeoZone/Output/DrenajeSencilloIntersect.*
@@ -22,7 +22,7 @@ TableInterpolatedGrid/OutputGrid/
 # Exlcusion for large files
 UnpivotTable/*.csv
 MultipleTableJoin/*.csv
-MultipleTableJoin/EAB_CO/eab_sih_monthly_records.csv
+MultipleTableJoin/EAB_CO/*.csv
 
 # Some samples
 # http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files
