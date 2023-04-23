@@ -22,7 +22,7 @@ TableInterpolatedGrid/OutputGrid/
 # Exlcusion for large files
 UnpivotTable/*.csv
 MultipleTableJoin/*.csv
-MultipleTableJoin/EAB_CO/*.csv
+MultipleTableJoin/EAB_CO/eab_sih_monthly_records.csv
 
 
 # Some samples
