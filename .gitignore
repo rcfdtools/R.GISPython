@@ -23,6 +23,7 @@ TableInterpolatedGrid/OutputGrid/
 UnpivotTable/*.csv
 MultipleTableJoin/*.csv
 MultipleTableJoin/EAB_CO/eab_sih_monthly_records.*
+MultipleTableJoin/EAB_CO/eab_sih_monthly_records.csv
 
 
 # Some samples
