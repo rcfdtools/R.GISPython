@@ -22,7 +22,7 @@ from datetime import datetime
 
 
 # General variables
-pivot_table_name = 'Pivot_PTPM_TT_M _only15.csv'  # <<<<< Pivot table name to process
+pivot_table_name = 'Pivot_PTPM_TT_M_only15.csv'  # <<<<< Pivot table name to process
 path_input = 'D:/R.GISPython/Impute/Input/'  # Current location from pivot tables
 station_file = path_input + pivot_table_name  # Current pivot IDEAM records file for a specified parameter
 path = 'D:/R.GISPython/Impute/Output/'  # Your local output path, use ../.datasets/IDEAM_Impute/ for relative path
