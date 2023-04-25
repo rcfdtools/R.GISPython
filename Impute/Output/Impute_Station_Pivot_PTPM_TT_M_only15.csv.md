@@ -1,6 +1,6 @@
 # Impute missing values in time series through statistical methods - Complementary report
 * Processed file: [D:/R.GISPython/Impute/Input/Pivot_PTPM_TT_M_only15.csv](../IDEAM_Outlier/Pivot_PTPM_TT_M_only15.csv)
-* Execution date: 2023-04-25 15:44:29.364219
+* Execution date: 2023-04-25 15:47:21.022103
 * Instructions & script: https://github.com/rcfdtools/R.LTWB/tree/main/Section03/Impute
 * License: https://github.com/rcfdtools/R.LTWB/blob/main/LICENSE.md
 * Credits: r.cfdtools@gmail.com

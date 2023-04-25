@@ -76,9 +76,10 @@ def plot_impute(df_org, df_imputed, method, file_name):
     column_headers = df.columns.values.tolist()
     if plot_stations:
         for station in column_headers:
-            ax2 = df_imputed[station].plot(color='black', legend=False, alpha=1, figsize=(fig_size, fig_size), linewidth=0.5, style='.-', markersize=3)
-            df_org[station].plot(ax=ax2, colormap=plot_colormap, alpha=1, legend=False, figsize=(fig_size, fig_size), linewidth=0.85, style='.-', markersize=3)
+            ax2 = df_imputed[station].plot(color='black', legend=True, alpha=1, figsize=(fig_size, fig_size), linewidth=0.5, style='.-', markersize=3)
+            df_org[station].plot(ax=ax2, colormap=plot_colormap, alpha=1, legend=True, figsize=(fig_size, fig_size), linewidth=0.85, style='.-', markersize=3)
             ax2.legend(['Imputed', 'Value']);
+            # plt.legend('', frameon=False)  # Remove legend
             plt.title('%s - Station %s' % (method, station))
             ax2.set_ylabel('Values in %s (%d recs.)' % (pivot_table_name, ideam_regs))
             plt.savefig(path + 'Graph/' + station + '_' + file_name + '.png')
@@ -300,3 +301,4 @@ print_log('\n> As you notice, some of the techniques showed above can`t fill com
 
 # References
 # https://www.geeksforgeeks.org/how-to-plot-a-time-series-in-matplotlib/
+# https://www.statology.org/remove-legend-matplotlib/
