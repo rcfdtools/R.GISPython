@@ -48,8 +48,8 @@ NIVEL,NVXA,NV_MX_M,NIVELES MAXIMOS ABSOLUTOS MENSUALES,Nivel máximo mensual,Men
 NIVEL,NVMD,NV_MEDIA_D,NIVELES MEDIOS DIARIOS,Nivel medio diario,Diario
 NIVEL,NVMM,NV_MEDIA_M,NIVELES MEDIOS MENSUALES,Nivel medio mensual,Mensual
 OTROS,NPD,NPD,Número de Partiículas Detectadas,Número de Partiículas Detectadas (no homologado IDEAM),Horaria
-PRECIPITACION,PTXF,PTPG_MX_TT_M,"PRECIPITACION MAXIMA, FECHA",Precipitación máxima mensual en un día,Mensual
-PRECIPITACION,PTX,PTPG_MX_M,"PRECIPITACION, MAX 24 HORAS",Precipitación máxima mensual en 1 hora,Mensual
+PRECIPITACION,PTXF,PTXF,"PRECIPITACION MAXIMA, FECHA","PRECIPITACION MAXIMA, FECHA (no homologado IDEAM)",Mensual
+PRECIPITACION,PTX,PTPG_MX_TT_M,"PRECIPITACION, MAX 24 HORAS",Precipitación máxima mensual en un día,Mensual
 PRECIPITACION,PTND,CD_PTPG_M,"PRECIPITACION, NRO DE DIAS",Cantidad de días con precipitación >= 0.1 mm,Mensual
 PRECIPITACION,PTTD,PTPG_TT_D,"PRECIPITACION, TOTAL DIARIO",Precipitación total diaria,Diario
 PRECIPITACION,PTTM,PTPM_TT_M,"PRECIPITACION, TOTAL MENSUAL",Precipitación total mensual,Mensual
@@ -65,7 +65,7 @@ PUNTO ROCIO,PRMM,TPR_CAL_MEDIA_M,"PUNTO ROCIO, MEDIA MENSUAL",Temperatura del pu
 RAD SOLAR,RSH,RSH,RADIACION SOLAR,RADIACION SOLAR (no homologado IDEAM),Horaria
 RAD SOLAR,RSD,RSAG_CON,RADIACION SOLAR DIARIA,Radiación solar global acumulada diaria,Diario
 RAD SOLAR,RSMM,RSMM,"RADIACION SOLAR, MEDIA MENSUAL","RADIACION SOLAR, MEDIA MENSUAL (no homologado IDEAM)",Mensual
-RAD SOLAR,RSTM,RSAG_MEDIA_M,"RADIACION SOLAR, TOTAL MENSUAL",Promedio mensual de la radiación global acumulada diaria,Mensual
+RAD SOLAR,RSTM,RSTM,"RADIACION SOLAR, TOTAL MENSUAL","RADIACION SOLAR, TOTAL MENSUAL (no homologado IDEAM)",Mensual
 OTROS,dBZ,dBZ,Reflectividad Radar,Reflectividad Radar (no homologado IDEAM),Horaria
 OTROS,SB,SB,SENSOR BATERIA,SENSOR BATERIA (no homologado IDEAM),Horaria
 OTROS,SABL,SABL,Señal de Amplitud de la banda laser,Señal de Amplitud de la banda laser (no homologado IDEAM),Horaria
