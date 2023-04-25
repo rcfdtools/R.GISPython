@@ -1,0 +1,6 @@
+sqlalchemy==1.4.47
+pandas
+matplotlib
+numpy
+missingno
+sklearn
