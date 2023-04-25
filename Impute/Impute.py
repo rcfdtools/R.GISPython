@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # Name: Impute.py
 # Description: impute missing values in time series through statistical methods
-# Requirements: Python 3+, pandas, tabulate, numpy, missingno, sklearn
+# Requirements: Python 3+, pandas, tabulate, numpy, missingno, scikit-learn
 # Attention: do not convert the .csv file into an Excel file because you would need process more than 1048576 records.
 
 
@@ -22,10 +22,10 @@ from datetime import datetime
 
 
 # General variables
-pivot_table_name = 'Outlier_IQR_Cap_Pivot_TMX_CON.csv'  # <<<<< Pivot table name to process
-path_input = 'D:/R.LTWB/.datasets/IDEAM_Outlier/'  # Current location from pivot tables
+pivot_table_name = 'Pivot_PTPM_TT_M _only15.csv'  # <<<<< Pivot table name to process
+path_input = 'D:/R.GISPython/Impute/Input/'  # Current location from pivot tables
 station_file = path_input + pivot_table_name  # Current pivot IDEAM records file for a specified parameter
-path = 'D:/R.LTWB/.datasets/IDEAM_Impute/'  # Your local output path, use ../.datasets/IDEAM_Impute/ for relative path
+path = 'D:/R.GISPython/Impute/Output/'  # Your local output path, use ../.datasets/IDEAM_Impute/ for relative path
 file_log_name = path + 'Impute_' + pivot_table_name + '.md'  # Markdown file log
 file_log = open(file_log_name, 'w+')   # w+ create the file if it doesn't exist
 station_file_log_name = path + 'Impute_Station_' + pivot_table_name + '.md'  # Markdown file log
@@ -40,8 +40,8 @@ plot_stations = True  # True: plot individual graphs for each station and update
 min_value = 0  # Minimum value for impute with Multivariate Imputation by Chained Equation - MICE from Scikit Learn. E.g.: 0 for rain, -inf for temperature.
 n_neighbors = 5  # Number of natural neighbors for Natural Neigborns - KNN & Multivariate Imputation by Chained Equation - MICE
 only_included = False  # True: let the user run this script only for the stations included in the station_include array. False: process all the stations but not the ones in the station_exclude array.
-station_exclude = ['28017140', '25027020', '25027410', '25027490', '25027330', '25027390', '25027630', '25027360', '25027320', '16067010', '25027420']  # Use ['station1', 'station2', '...',]
 station_include = ['15015020', '15060050', '15060070', '15060080', '15060150']  # Use ['station1', 'station2', '...',]
+station_exclude = ['28017140', '25027020', '25027410', '25027490', '25027330', '25027390', '25027630', '25027360', '25027320', '16067010', '25027420']  # Use ['station1', 'station2', '...',]
 
 
 # Function for print and show results in a file

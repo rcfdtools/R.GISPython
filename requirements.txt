@@ -3,4 +3,5 @@ pandas
 matplotlib
 numpy
 missingno
-sklearn
+tabulate
+scikit-learn
