@@ -56,8 +56,8 @@ def print_log(txt_print, on_screen=True, center_div=False):
 
 # Function for plot original and imputed series
 def plot_impute(df_org, df_imputed, method, file_name):
-    ax1 = df_imputed.plot(color='black', legend=False, alpha=1, figsize=(fig_size*2, fig_size+1), linewidth=0.5)
-    df_org.plot(ax=ax1, colormap=plot_colormap, alpha=fig_alpha, legend=False, figsize=(fig_size*2, fig_size+1), linewidth=0.85)
+    ax1 = df_imputed.plot(color='black', legend=False, alpha=1, figsize=(fig_size*2, fig_size+1), linewidth=0.5, style='.-', markersize=3)
+    df_org.plot(ax=ax1, colormap=plot_colormap, alpha=fig_alpha, legend=False, figsize=(fig_size*2, fig_size+1), linewidth=0.85, style='.-', markersize=3)
     plt.title('Impute with %s values for %d stations (%d missing & %d imputed)' % (method, df.shape[1], total_nulls, total_imputed))
     ax1.set_ylabel('Values in %s (%d recs.)' % (pivot_table_name, ideam_regs))
     plt.savefig(path + file_name + '.png')
