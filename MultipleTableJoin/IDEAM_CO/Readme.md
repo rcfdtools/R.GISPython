@@ -64,7 +64,7 @@ Atención: los datos obtenidos desde el portal www.datos.gov.co no utilizan la m
 
 Atributos tomados directamente de los archivos de texto separados por comas obtenidos y tipos descritos en el portal.
 
-| *Atributo         | API nombre        | Tipo         | Descripción                                                                                                                          |
+| Atributo         | API nombre        | Tipo         | Descripción                                                                                                                          |
 |:------------------|:------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------|
 | CodigoEstacion    | codigoestacion    | Texto simple | Al código del catálogo nacional de estaciones se le ha realizado un relleno de ceros a la izquierda para completar 10 dígitos        |
 | CodigoSensor      | codigosensor      | Texto simple | Código con relleno de ceros a izquierda para completar 4 dígitos                                                                     |
@@ -79,7 +79,7 @@ Atributos tomados directamente de los archivos de texto separados por comas obte
 | DescripcionSensor | descripcionsensor | Texto simple | Descripción del sensor. Corresponde al parámetro específico registrado                                                               |
 | UnidadMedida      | unidadmedida      | Número       | Unidad de medida                                                                                                                     |
 
-> * Los nombres de atributo son desplegados en los archivos de texto separados por comas .CSV 
+> Los nombres de atributo son desplegados en los archivos de texto separados por comas .CSV 
 
 Registros ejemplo para presión atmosférica 
 ```
