@@ -39,6 +39,7 @@ show_plot = False
 plot_stations = True  # True: plot individual graphs for each station and update the complementary report
 min_value = 0  # Minimum value for impute with Multivariate Imputation by Chained Equation - MICE from Scikit Learn. E.g.: 0 for rain, -inf for temperature.
 n_neighbors = 4  # Number of natural neighbors for Natural Neigborns - KNN & Multivariate Imputation by Chained Equation - MICE
+halflife = 3  # Number of values for the Exponential (Weighted) Moving Average - EWM
 only_included = False  # True: let the user run this script only for the stations included in the station_include array. False: process all the stations but not the ones in the station_exclude array.
 station_include = ['15015020', '15060050', '15060070', '15060080', '15060150']  # Use ['station1', 'station2', '...',]
 station_exclude = ['28017140', '25027020', '25027410', '25027490', '25027330', '25027390', '25027630', '25027360', '25027320', '16067010', '25027420']  # Use ['station1', 'station2', '...',]
@@ -219,7 +220,6 @@ print_log('General statistics table - Imputed file', center_div=True)
 print_log(df_impute.describe().T.to_markdown(), center_div=True)  # .T for transpose
 
 # Method 6 - Impute missing values with Exponential (Weighted) Moving Average - EWM
-halflife = 3
 df_impute = df.fillna(df.ewm(halflife=halflife).mean())
 df_isnull = pd.DataFrame(df_impute.isnull().sum(), columns=['Nulls'])
 total_imputed = total_nulls - df_isnull['Nulls'].sum()
