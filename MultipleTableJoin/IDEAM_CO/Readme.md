@@ -31,7 +31,7 @@ De acuerdo a la información disponible en el portal www.datos.gov.co, los datos
 5. Los datos presenten errores y/o inconsistencias estando incluso por fuera de los límites considerados normales, producto de fallas en los sensores de origen.
 6. El posterior uso e interpretación que se le dé para cualquier finalidad queda bajo la exclusiva responsabilidad del portador de los datos.
 7. Cualquier destino que se le dé a los datos exime al IDEAM de realizarles cualquier tipo de justificación o iniciarles proceso alguno de validación posterior, cuya fuente primaria deben ser los canales oficialmente dispuestos por la Entidad para el suministro de información oficial y validada.
-8. Por las razones expuestas anteriormente los datos dispuestos no podrán ser utilizados como evidencia jurídica ante entes de control acerca de la ocurrencia o no de fenómenos hidroclimatológicos o de soporte a cualquier tipo de situación o evento ocurrido como consecuencia de estos.
+8. Por las razones expuestas anteriormente los datos dispuestos no podrán ser utilizados como evidencia jurídica ante entes de control acerca de la ocurrencia o no de fenómenos hidro-climatológicos o de soporte a cualquier tipo de situación o evento ocurrido como consecuencia de estos.
 
 
 ### Fuentes de datos (actualizados mensualmente)
@@ -72,7 +72,7 @@ Atributos tomados directamente de los archivos de texto separados por comas obte
 | ValorObservado    |        | Valor observado o registrado                                                                                                         |
 | NombreEstacion    |        | Nombre de la estación, no incluye el código de la estación al final entre corchetes como en el catálogo nacional de estaciones - CNE |
 | Departamento      |        | Departamento de Colombia. Correspondiente al nivel de estado en otros países                                                         |
-| Municipio         |        | Municipio de Colombia. Correpondiente al nivel de condado en otros países                                                            |
+| Municipio         |        | Municipio de Colombia. Correspondiente al nivel de condado en otros países                                                           |
 | ZonaHidrografica  |        | Zona hidrográfica nacional establecida por el IDEAM - Colombia                                                                       |
 | Latitud           |        | Latitud en grados decimales                                                                                                          |
 | Longitud          |        | Longitud en grados decimales                                                                                                         |
