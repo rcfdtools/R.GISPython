@@ -1,4 +1,4 @@
-## Instituto de Hidrología, Meteorología y Estudios Ambientales - COLOMBIA, IDEAM-CO  
+## Instituto de Hidrología, Meteorología y Estudios Ambientales - Colombia, IDEAM-CO  
 
 El IDEAM es una institución pública de apoyo técnico y científico al Sistema Nacional Ambiental, que genera conocimiento, produce información confiable, consistente y oportuna, sobre el estado y las dinámicas de los recursos naturales y del medio ambiente, que facilite la definición y ajustes de las políticas ambientales y la toma de decisiones por parte de los sectores público, privado y la ciudadanía en general.[^1]
 
@@ -13,9 +13,9 @@ Información de la entidad
 | Orden                 | Entidad de orden nacional                                    |
 | Sector                | Ambiente y Desarrollo Sostenible                             |
 
-Información de los datos y licencia
+Información de los datos y licencia de uso
 
-| Elemento                       | Descipción              |
+| Elemento                       | Descripción             |
 |--------------------------------|-------------------------|
 | Idioma                         | Español                 |
 | Cobertura geográfica           | Nacional Colombia       |
@@ -26,10 +26,10 @@ Información de los datos y licencia
 
 De acuerdo a la información disponible en el portal www.datos.gov.co, los datos disponibles pueden ser libremente consumidos bajo las siguientes cláusulas:
 
-1. Los datos a visualizar o descargar a continuación no han sido validados por el IDEAM.
+1. Los datos a visualizar o descargar no han sido validados por el IDEAM.
 2. Los datos dispuestos son datos crudos instantáneos provenientes de los sensores de las estaciones automáticas de la red propia y/o producto de convenios inter-administrativos con terceras entidades.
 3. Los datos son puestos a disposición de la ciudadanía como mecanismo de transparencia y para proveer una herramienta de apoyo a la gestión del riesgo territorial y como datos abiertos en cumplimiento de la Ley 1712 de 2014 de Colombia.
-4. Es posible que los datos aquí dispuestos tengan cierto retraso en el tiempo debido a las frecuencias de envío de datos de los sensores y los medios de transmisión utilizados. 
+4. Es posible que los datos dispuestos tengan cierto retraso en el tiempo debido a las frecuencias de envío de datos de los sensores y los medios de transmisión utilizados. 
 5. Los datos presenten errores y/o inconsistencias estando incluso por fuera de los límites considerados normales, producto de fallas en los sensores de origen.
 6. El posterior uso e interpretación que se le dé para cualquier finalidad queda bajo la exclusiva responsabilidad del portador de los datos.
 7. Cualquier destino que se le dé a los datos exime al IDEAM de realizarles cualquier tipo de justificación o iniciarles proceso alguno de validación posterior, cuya fuente primaria deben ser los canales oficialmente dispuestos por la Entidad para el suministro de información oficial y validada.
@@ -38,7 +38,7 @@ De acuerdo a la información disponible en el portal www.datos.gov.co, los datos
 
 ### Fuentes de datos (actualizados mensualmente)
 
-A través del portal de datos abiertos de Colombia - Suramérica, se pueden obtener las colecciones de datos crudos o Datasets publicados por el IDEAM Colombia. En la siguiente tabla encontrará un listado de las principales variables disponibles:  
+A través del portal de datos abiertos de Colombia - Suramérica www.datos.gov.co, se pueden obtener las colecciones de datos crudos o Datasets publicados por el IDEAM Colombia. En la siguiente tabla encontrará un listado de las principales variables disponibles:  
 
 <div align="center">
 
@@ -61,7 +61,7 @@ A través del portal de datos abiertos de Colombia - Suramérica, se pueden obte
 
 ### Catálogo de objetos
 
-Atención: los datos obtenidos del portal www.datos.gov.co no utilizan la misma estructura de los datos obtenidos desde el portal http://dhime.ideam.gov.co/atencionciudadano/
+Atención: los datos obtenidos desde el portal www.datos.gov.co no utilizan la misma estructura de los datos obtenidos desde el portal http://dhime.ideam.gov.co/atencionciudadano/
 
 Atributos tomados directamente de los archivos de texto separados por comas obtenidos y tipos devueltos por Python / Pandas.
 
