@@ -8,7 +8,7 @@ Información de la entidad
 | Elemento              | Descripción                                                  |
 |-----------------------|--------------------------------------------------------------|
 | Nombre de la entidad  | Instituto de Hidrología, Meteorología y Estudios Ambientales |
-| Área o dependencia    | GESTION DE DATOS Y RED HIDROMETEOROLOGICA                    |
+| Área o dependencia    | Gestión de datos y red hidrometeorológica                    |
 | Localización          | Bogotá D.C. - Colombia - Suramérica                          |
 | Orden                 | Entidad de orden nacional                                    |
 | Sector                | Ambiente y Desarrollo Sostenible                             |
