@@ -40,6 +40,8 @@ De acuerdo a la información disponible en el portal www.datos.gov.co, los datos
 
 A través del portal de datos abiertos de Colombia - Suramérica, se pueden obtener las colecciones de datos crudos o Datasets publicados por el IDEAM Colombia. En la siguiente tabla encontrará un listado de las principales variables disponibles:  
 
+<div align="center">
+
 | Parámetro                                                                                                                                      | Periodo    |
 |------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | [Temperatura](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Datos-Hidrometeorol-gicos-Crudos-Red-de-Estaciones/sbwg-7ju4)          | Diaria     |
@@ -55,6 +57,7 @@ A través del portal de datos abiertos de Colombia - Suramérica, se pueden obte
 | [Nivel medio del mar mínimo](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar-M%C3%ADnimo/7z6g-yx9q)                    |            | 
 | [Nivel medio del mar máximo](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar-M%C3%A1ximo/uxy3-jchf)                    |            | 
 
+</div>
 
 ### Catálogo de objetos
 
