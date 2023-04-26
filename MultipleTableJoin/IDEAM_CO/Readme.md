@@ -1,6 +1,6 @@
 ## Instituto de Hidrología, Meteorología y Estudios Ambientales - COLOMBIA, IDEAM-CO  
 
-Información de la Entidad
+Información de la entidad
 
 | Elemento              | Descripción                                                  |
 |-----------------------|--------------------------------------------------------------|
@@ -21,7 +21,7 @@ Información de los datos y licencia
 | Enlace de la fuente o citación | http://www.ideam.gov.co |
 
 
-Los datos disponibles a través del portal www.datos.gov.co pueden ser libremente consumidos bajo las siguientes cláusulas disponibles en este portal:
+De acuerdo a la información disponible en el portal www.datos.gov.co, los datos disponibles a través del  pueden ser libremente consumidos bajo las siguientes cláusulas:
 
 1. Los datos a visualizar o descargar a continuación no han sido validados por el IDEAM.
 2. Los datos dispuestos son datos crudos instantáneos provenientes de los sensores de las estaciones automáticas de la red propia y/o producto de convenios inter-administrativos con terceras entidades.
