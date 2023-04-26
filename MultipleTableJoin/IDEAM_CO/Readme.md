@@ -62,24 +62,26 @@ A través del portal de datos abiertos de Colombia - Suramérica www.datos.gov.c
 
 Atención: los datos obtenidos desde el portal www.datos.gov.co no utilizan la misma estructura de los datos obtenidos desde el portal http://dhime.ideam.gov.co/atencionciudadano/
 
-Atributos tomados directamente de los archivos de texto separados por comas obtenidos y tipos devueltos por Python / Pandas.
+Atributos tomados directamente de los archivos de texto separados por comas obtenidos y tipos descritos en el portal.
 
-| Atributo          | Tipo   | Descripción                                                                                                                          |
-|-------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------|
-| CodigoEstacion    | Object | Al código del catálogo nacional de estaciones se le ha realizado un relleno de ceros a la izquierda para completar 10 dígitos        |
-| CodigoSensor      | Object | Código con relleno de ceros a izquierda para completar 4 dígitos                                                                     |
-| FechaObservacion  |        | Fecha y hora de la observación. Hora en formato de 12 horas, requiere AM/PM                                                          |
-| ValorObservado    |        | Valor observado o registrado                                                                                                         |
-| NombreEstacion    |        | Nombre de la estación, no incluye el código de la estación al final entre corchetes como en el catálogo nacional de estaciones - CNE |
-| Departamento      |        | Departamento de Colombia. Correspondiente al nivel de estado en otros países                                                         |
-| Municipio         |        | Municipio de Colombia. Correspondiente al nivel de condado en otros países                                                           |
-| ZonaHidrografica  |        | Zona hidrográfica nacional establecida por el IDEAM - Colombia                                                                       |
-| Latitud           |        | Latitud en grados decimales                                                                                                          |
-| Longitud          |        | Longitud en grados decimales                                                                                                         |
-| DescripcionSensor |        | Descripción del sensor. Corresponde al parámetro específico registrado                                                               |
-| UnidadMedida      |        | Unidad de medida                                                                                                                     |
+| Nombre atributo * | API nombre        | Tipo         | Descripción                                                                                                                          |
+|-------------------|-------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| CodigoEstacion    | codigoestacion    | Texto simple | Al código del catálogo nacional de estaciones se le ha realizado un relleno de ceros a la izquierda para completar 10 dígitos        |
+| CodigoSensor      | codigosensor      | Texto simple | Código con relleno de ceros a izquierda para completar 4 dígitos                                                                     |
+| FechaObservacion  | fechaobservacion  | Fecha y hora | Fecha y hora de la observación. Hora en formato de 12 horas, requiere AM/PM                                                          |
+| ValorObservado    | valorobservado    | Número       | Valor observado o registrado                                                                                                         |
+| NombreEstacion    | nombreestacion    | Texto simple | Nombre de la estación, no incluye el código de la estación al final entre corchetes como en el catálogo nacional de estaciones - CNE |
+| Departamento      | departamento      | Texto simple | Departamento de Colombia. Correspondiente al nivel de estado en otros países                                                         |
+| Municipio         | municipio         | Texto simple | Municipio de Colombia. Correspondiente al nivel de condado en otros países                                                           |
+| ZonaHidrografica  | zonahidrografica  | Texto simple | Zona hidrográfica nacional establecida por el IDEAM - Colombia                                                                       |
+| Latitud           | latitud           | Número       | Latitud en grados decimales                                                                                                          |
+| Longitud          | longitud          | Número       | Longitud en grados decimales                                                                                                         |
+| DescripcionSensor | descripcionsensor | Texto simple | Descripción del sensor. Corresponde al parámetro específico registrado                                                               |
+| UnidadMedida      | unidadmedida      | Número       | Unidad de medida                                                                                                                     |
 
-Registros ejemplo  
+> * Los nombres de atributo son desplegados en los archivos de texto separados por comas .CSV 
+
+Registros ejemplo para presión atmosférica 
 ```
 CodigoEstacion,CodigoSensor,FechaObservacion,ValorObservado,NombreEstacion,Departamento,Municipio,ZonaHidrografica,Latitud,Longitud,DescripcionSensor,UnidadMedida
 0036015020,0255,10/03/2017 06:00:00 AM,992.5,EL DIAMANTE - AUT,CASANARE,PAZ DE ARIPORO,META,5.816194444,-71.41983333,Presión Atmosferica (1h),HPa
