@@ -1,5 +1,8 @@
 ## Instituto de Hidrología, Meteorología y Estudios Ambientales - COLOMBIA, IDEAM-CO  
 
+El IDEAM es una institución pública de apoyo técnico y científico al Sistema Nacional Ambiental, que genera conocimiento, produce información confiable, consistente y oportuna, sobre el estado y las dinámicas de los recursos naturales y del medio ambiente, que facilite la definición y ajustes de las políticas ambientales y la toma de decisiones por parte de los sectores público, privado y la ciudadanía en general.[^1]
+
+
 Información de la entidad
 
 | Elemento              | Descripción                                                  |
@@ -86,3 +89,5 @@ CodigoEstacion,CodigoSensor,FechaObservacion,ValorObservado,NombreEstacion,Depar
 * http://ideam.gov.co/
 * http://www.ideam.gov.co/solicitud-de-informacion
 * http://dhime.ideam.gov.co/atencionciudadano/
+
+[^1]: http://www.ideam.gov.co/web/entidad/acerca-entidad
