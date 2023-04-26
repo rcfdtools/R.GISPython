@@ -2,18 +2,16 @@
 
 El IDEAM es una institución pública de apoyo técnico y científico al Sistema Nacional Ambiental, que genera conocimiento, produce información confiable, consistente y oportuna, sobre el estado y las dinámicas de los recursos naturales y del medio ambiente, que facilite la definición y ajustes de las políticas ambientales y la toma de decisiones por parte de los sectores público, privado y la ciudadanía en general.[^1]
 
+| Información          | Descripción                                                  |
+|----------------------|--------------------------------------------------------------|
+| Nombre de la entidad | Instituto de Hidrología, Meteorología y Estudios Ambientales |
+| Área o dependencia   | Gestión de datos y red hidrometeorológica                    |
+| Localización         | Bogotá D.C. - Colombia - Suramérica                          |
+| Orden                | Entidad de orden nacional                                    |
+| Sector               | Ambiente y Desarrollo Sostenible                             |
 
-Información de la entidad
 
-| Elemento              | Descripción                                                  |
-|-----------------------|--------------------------------------------------------------|
-| Nombre de la entidad  | Instituto de Hidrología, Meteorología y Estudios Ambientales |
-| Área o dependencia    | Gestión de datos y red hidrometeorológica                    |
-| Localización          | Bogotá D.C. - Colombia - Suramérica                          |
-| Orden                 | Entidad de orden nacional                                    |
-| Sector                | Ambiente y Desarrollo Sostenible                             |
-
-Información de los datos y licencia de uso
+### Información de los datos y licencia de uso
 
 | Elemento                       | Descripción             |
 |--------------------------------|-------------------------|
@@ -59,6 +57,7 @@ A través del portal de datos abiertos de Colombia - Suramérica www.datos.gov.c
 
 </div>
 
+
 ### Catálogo de objetos
 
 Atención: los datos obtenidos desde el portal www.datos.gov.co no utilizan la misma estructura de los datos obtenidos desde el portal http://dhime.ideam.gov.co/atencionciudadano/
@@ -86,6 +85,7 @@ CodigoEstacion,CodigoSensor,FechaObservacion,ValorObservado,NombreEstacion,Depar
 0036015020,0255,10/03/2017 06:00:00 AM,992.5,EL DIAMANTE - AUT,CASANARE,PAZ DE ARIPORO,META,5.816194444,-71.41983333,Presión Atmosferica (1h),HPa
 0021195190,0255,02/14/2014 05:00:00 AM,785.2,PASCA - AUT,CUNDINAMARCA,PASCA,ALTO MAGDALENA,4.310111111,-74.31175,Presión Atmosferica (1h),HPa
 ```
+
 
 ### Referencias
 
