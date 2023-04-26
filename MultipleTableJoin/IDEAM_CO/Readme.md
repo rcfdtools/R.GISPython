@@ -2,13 +2,13 @@
 
 El IDEAM es una institución pública de apoyo técnico y científico al Sistema Nacional Ambiental, que genera conocimiento, produce información confiable, consistente y oportuna, sobre el estado y las dinámicas de los recursos naturales y del medio ambiente, que facilite la definición y ajustes de las políticas ambientales y la toma de decisiones por parte de los sectores público, privado y la ciudadanía en general.[^1]
 
-| Información          | Descripción                                                  |
-|:---------------------|:-------------------------------------------------------------|
-| Nombre de la entidad | Instituto de Hidrología, Meteorología y Estudios Ambientales |
-| Área o dependencia   | Gestión de datos y red hidrometeorológica                    |
-| Localización         | Bogotá D.C. - Colombia - Suramérica                          |
-| Orden                | Entidad de orden nacional                                    |
-| Sector               | Ambiente y Desarrollo Sostenible                             |
+| Información        | Descripción                                                  |
+|:-------------------|:-------------------------------------------------------------|
+| Entidad            | Instituto de Hidrología, Meteorología y Estudios Ambientales |
+| Área o dependencia | Gestión de datos y red hidrometeorológica                    |
+| Localización       | Bogotá D.C. - Colombia - Suramérica                          |
+| Orden              | Entidad de orden nacional                                    |
+| Sector             | Ambiente y Desarrollo Sostenible                             |
 
 
 ### Información de los datos y licencia de uso
@@ -40,20 +40,20 @@ A través del portal de datos abiertos de Colombia - Suramérica www.datos.gov.c
 
 <div align="center">
 
-| Parámetro                                                                                                                                      | Periodo    |
-|:-----------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| [Temperatura](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Datos-Hidrometeorol-gicos-Crudos-Red-de-Estaciones/sbwg-7ju4)          | Diaria     |
-| [Precipitación](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Precipitaci-n/s54a-sgyg)                                             |            |
-| [Presión Atmosférica](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Presi-n-Atmosf-rica/62tk-nxj5)                                 | Horaria    |
-| [Velocidad Viento](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Velocidad-Viento/sgfv-3yp8)                                       | 10 minutos |
-| [Dirección del viento](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Direcci-n-Viento/kiw7-v9ta)                                   | 10 minutos |
-| [Humedad relativa del aire a 2 metros](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Humedad-del-Aire-2-metros/uext-mhny)          | Horaria    |
-| [Temperatura máxima del Aire a 2 metros](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Temperatura-M%C3%A1xima-del-Aire/ccvq-rp9s) |            |
-| [Temperatura mínima del aire a 2 metros](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Temperatura-M%C3%ADnima-del-Aire/afdg-3zpb) |            |
-| [Nivel máximo del río medido en una hora](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-M%C3%A1ximo/vfth-yucv)               | Horario    |
-| [Nivel mínimo del río](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-M%C3%ADnimo/pt9a-aamx)                                  |            |
-| [Nivel medio del mar mínimo](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar-M%C3%ADnimo/7z6g-yx9q)                    |            |
-| [Nivel medio del mar máximo](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar-M%C3%A1ximo/uxy3-jchf)                    |            |
+| Parámetro                                                                                                                                       | Periodo    |
+|:------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| [Temperatura](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Datos-Hidrometeorol-gicos-Crudos-Red-de-Estaciones/sbwg-7ju4)           | Diaria     |
+| [Precipitación](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Precipitaci-n/s54a-sgyg)                                              |            |
+| [Presión atmosférica](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Presi-n-Atmosf-rica/62tk-nxj5)                                  | Horaria    |
+| [Velocidad viento](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Velocidad-Viento/sgfv-3yp8)                                        | 10 minutos |
+| [Dirección del viento](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Direcci-n-Viento/kiw7-v9ta)                                    | 10 minutos |
+| [Humedad relativa del aire a 2 metros](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Humedad-del-Aire-2-metros/uext-mhny)           | Horaria    |
+| [Temperatura máxima del aire a 2 metros](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Temperatura-M%C3%A1xima-del-Aire/ccvq-rp9s) |            |
+| [Temperatura mínima del aire a 2 metros](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Temperatura-M%C3%ADnima-del-Aire/afdg-3zpb)  |            |
+| [Nivel máximo del río medido en una hora](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-M%C3%A1ximo/vfth-yucv)                | Horario    |
+| [Nivel mínimo río](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-M%C3%ADnimo/pt9a-aamx)                                   |            |
+| [Nivel medio del mar mínimo](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar-M%C3%ADnimo/7z6g-yx9q)                     |            |
+| [Nivel medio del mar máximo](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Nivel-del-Mar-M%C3%A1ximo/uxy3-jchf)                     |            |
 
 </div>
 
