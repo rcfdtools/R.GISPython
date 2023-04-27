@@ -19,6 +19,7 @@ longitude_name = 'Longitud'
 parameter_name = 'DescripcionSensor'
 unit_name = 'UnidadMedida'
 hdf5_convert = True
+hdf5_name = 'PresionAtmosferica'
 
 '''
 dtype = {station_code: 'str', sensor_code: 'str', value_name: 'float',
@@ -42,11 +43,13 @@ if hdf5_convert:
 df = vaex.open(out_path+'*.hdf5')
 print('Dataframe head\n ', df.head())
 print('\nDataframe tail\n ', df.tail())
+print('Dataframe types\n ', df.dtypes)
 quantile = df.percentile_approx(value_name, 25)
 print('\nFull percentile 25: %s\n' %quantile)
+group_res = df.groupby(by=df[station_code], agg={value_name+'_count': vaex.agg.count(value_name)})
+print('Count values \n ',group_res)
 group_res = df.groupby(by=df[station_code], agg={value_name+'_mean': vaex.agg.mean(value_name)})
-print('Group by \n ',group_res)
-print(df.dtypes)
+print('Mean values \n ',group_res)
 
 #counts_stations = df.count(binby=df.ValorObservado, limits=[-1000, 1000], shape=64)
 #print(counts_stations)

@@ -1,3 +1,4 @@
+vaex
 sqlalchemy==1.4.47
 pandas
 matplotlib
