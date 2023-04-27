@@ -4,8 +4,8 @@ import glob
 import vaex
 import matplotlib.pylab as plt
 
-input_path = 'I:/IDEAM_CO/csv_files/'
-out_path = 'I:/IDEAM_CO/hdf5_files/'
+input_path = 'D:/IDEAM_CO/csv_files/'
+out_path = 'D:/IDEAM_CO/hdf5_files/'
 station_code = 'CodigoEstacion'
 sensor_code = 'CodigoSensor'
 date_name = 'FechaObservacion'
@@ -18,7 +18,7 @@ latitude_name = 'Latitud'
 longitude_name = 'Longitud'
 parameter_name = 'DescripcionSensor'
 unit_name = 'UnidadMedida'
-hdf5_convert = True
+hdf5_convert = False
 hdf5_name = 'PresionAtmosferica'
 
 '''
@@ -37,7 +37,8 @@ if hdf5_convert:
         #for j, df in enumerate(vaex.from_csv(csv_file, chunk_size=5_000_000, dtype=dtype, parse_dates=[date_name], low_memory=False), 1):  # Parse dates increase the processing time to hours
         for j, df in enumerate(vaex.from_csv(csv_file, chunk_size=5_000_000, dtype=dtype, low_memory=False), 1):  # Parse dates increase the processing time to hours
             print('Exporting %d %s to hdf5 part %d' % (i, csv_file, j))
-            df.export_hdf5(f'I:/IDEAM_CO/hdf5_files/Precipitacion_{i:02}_{j:02}.hdf5')
+            #df.export_hdf5(f'I:/IDEAM_CO/hdf5_files/Precipitacion_{i:02}_{j:02}.hdf5')
+            df.export_hdf5(out_path+hdf5_name+'_'+str(i).zfill(2)+'_'+str(j).zfill(2)+'.hdf5')
 
 # Dataframe
 df = vaex.open(out_path+'*.hdf5')

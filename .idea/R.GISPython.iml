@@ -10,8 +10,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/dictionaries" />
       <excludeFolder url="file://$MODULE_DIR$/.venvPython311" />
       <excludeFolder url="file://$MODULE_DIR$/.venvPython310" />
+      <excludeFolder url="file://$MODULE_DIR$/.venvPython" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.11 (R.GISPython) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (R.GISPython)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
     <orderEntry type="module" module-name="R.LTWB" />
