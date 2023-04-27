@@ -26,7 +26,7 @@ def processing_file(file):
 # General parameters
 input_path = 'ANA_BR/Source/Level/'  # Your local input file folder
 temp_path = 'Temp/'  # Your local output temporal folder
-stations_file = 'ANA_BR/Stations.csv'  # File with the stations list to process. If the list contains repeated values, transformed files is posted only one time in the temporal output folder. Use quites for the first station, e.g. "00049000"
+stations_file = 'ANA_BR/Stations.csv'  # File with the stations list to process. If the list contains repeated values, transformed files is posted only one time in the temporal output folder. Use quotes for the first station, e.g. "00049000"
 ana_br_type = 'level'  # ANA options: precipitation, discharge, level
 format_file = '.txt'  # CAMELS-BR use .txt files
 joined_file = 'ana_br' + '_' + ana_br_type + '.csv'  # Joined file name to import in ArcGIS
