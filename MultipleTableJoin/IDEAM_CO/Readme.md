@@ -77,7 +77,7 @@ Atributos tomados directamente de los archivos de texto separados por comas obte
 | Latitud           | latitud           | Número       | Latitud en grados decimales                                                                                                          |
 | Longitud          | longitud          | Número       | Longitud en grados decimales                                                                                                         |
 | DescripcionSensor | descripcionsensor | Texto simple | Descripción del sensor. Corresponde al parámetro específico registrado                                                               |
-| UnidadMedida      | unidadmedida      | Número       | Unidad de medida                                                                                                                     |
+| UnidadMedida      | unidadmedida      | Texto simple       | Unidad de medida                                                                                                                     |
 
 > Los nombres de atributo son desplegados en los archivos de texto separados por comas .CSV 
 
