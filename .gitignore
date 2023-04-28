@@ -8,6 +8,7 @@
 venv/
 .venvPython310/
 .venvPython311/
+GISMobile/EAB_CO/GDB.gdb
 
 # Exclusion for D:\R.GISPython\HydroGeoZone
 # HydroGeoZone/Output/
@@ -23,6 +24,7 @@ TableInterpolatedGrid/OutputGrid/
 UnpivotTable/*.csv
 MultipleTableJoin/*.csv
 MultipleTableJoin/EAB_CO/eab_sih_monthly_records.csv
+
 
 
 # Some samples
