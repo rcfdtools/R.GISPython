@@ -8,8 +8,8 @@
 venv/
 .venvPython310/
 .venvPython311/
-GISMobile/EAB_CO/GDB.gdb
-GISMobile/EAB_CO/ArcGISPro
+GISMobile/GIS_EAB_CO/GDB.gdb
+GISMobile/GIS_EAB_CO/ArcGISPro
 
 
 # Exclusion for D:\R.GISPython\HydroGeoZone
