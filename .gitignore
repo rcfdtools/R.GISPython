@@ -9,6 +9,7 @@ venv/
 .venvPython310/
 .venvPython311/
 GISMobile/GIS_EAB_CO/GDB.gdb
+GISMobile/GIS_EAB_CO/GDB_Simple.gdb
 GISMobile/GIS_EAB_CO/ArcGISPro
 
 
