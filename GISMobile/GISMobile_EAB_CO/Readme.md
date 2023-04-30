@@ -7,14 +7,38 @@ En Colombia la Ley de Transparencia y Acceso a la Información, define los datos
 
 ### Sistema de proyección de coordenadas
 
+El establecimiento de las condiciones técnicas mínimas que deben tener los productos básicos de cartografía oficial, serán los definidos de conformidad con lo dispuesto por la Resolución 471 del 14 de mayo de 2020 y la posterior Resolución 529 del 05 de junio de 2020, emitidas por el Instituto Geográfico Agustín Codazzi - IGAC, o la norma que la modifique y sustituya, para ello y para garantizar la homogeneidad y continuidad en la representación de los elementos del territorio, así como facilitar los trabajos relacionados con la gestión de coordenadas en el país. En tal sentido, los proyectos, obras o actividades, sujetos al licenciamiento ambiental, deben ajustar su información geográfica a los lineamientos establecidos en la referida normatividad, para la evaluación y seguimiento de los estudios ambientales y/o presentación de los Informes de Cumplimiento Ambiental.
 
+El sistema de proyección cartográfico para Colombia, con un único origen, consiste en una proyección cartográfica Transversa de Mercator Secante, cuyos parámetros están establecidos en el literal i Sistema de Referencia del artículo 4 de la resolución 471 de 2020, los cuales pueden configurarse en software especializado para procesamiento de información geográfica.
+
+```
+MAGNA_Colombia_Origen_Unico
+Authority: Custom
+
+Projection: Transverse_Mercator
+False_Easting: 5000000.0
+False_Northing: 2000000.0
+Central_Meridian: -73.0
+Scale_Factor: 0.9992
+Latitude_Of_Origin: 4.0
+Linear Unit: Meter (1.0)
+
+Geographic Coordinate System: GCS_MAGNA
+Angular Unit: Degree (0.0174532925199433)
+Prime Meridian: Greenwich (0.0)
+Datum: D_MAGNA
+  Spheroid: GRS_1980
+    Semimajor Axis: 6378137.0
+    Semiminor Axis: 6356752.314140356
+    Inverse Flattening: 298.257222101
+```
 
 ### Datasets & Feature Class
 
 
 #### Dataset EAB
 
-| Feature class      | Descripción                                                                                                                                                                                       | Fuente de datos                                                                                                                                                                  | Licencia                                                                                 |
+| Feature class      | Descripción                                                                                                                                                                                       | Fuente                                                                                                                                                                           | Licencia                                                                                 |
 |:-------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|
 | eab_aduccion       | Aducciones sistema de abastecimiento de Bogotá D.C.                                                                                                                                               | [Empresa de Acueducto y Alcantarillado de Bogotá](www.acueducto.com.co) <br>Mapa de cuencas abastecedoras de la ciudad y la región                                               | [Ley 1712 de 2014](http://www.secretariasenado.gov.co/senado/basedoc/ley_1712_2014.html) |
 | eab_sih_estaciones | Red de estaciones Sistema de Información Hídrico - SIH Bogotá D.C. y zonas perimetrales                                                                                                           | [Empresa de Acueducto y Alcantarillado de Bogotá](www.acueducto.com.co)                                                                                                          | [Ley 1712 de 2014](http://www.secretariasenado.gov.co/senado/basedoc/ley_1712_2014.html) |
@@ -28,7 +52,7 @@ En Colombia la Ley de Transparencia y Acceso a la Información, define los datos
 
 #### Dataset General
 
-| Feature class                         | Descripción                                                                       | Fuente de descarga o datos                                                                                                                                                                       | Licencia                                                         |
+| Feature class                         | Descripción                                                                       | Fuente                                                                                                                                                                                           | Licencia                                                         |
 |:--------------------------------------|:----------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|
 | Via                                   | Red vial nacional orden 1 a 6, caminos, senderos, peatonales urbanas              | www.colombiaenmapas.gov.co <br>Base de datos vectorial básica de Colombia. Escala 1:100.000<br>Fecha: 01-04-2022<br>Dataset: Transporte_Terrestre                                                | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) |
 | Administrativo_R                      | Barrios, cabeceras municipales, caseríos, capitales, corregimientos, inspecciones | www.colombiaenmapas.gov.co <br>Base de datos vectorial básica de Colombia. Escala 1:100.000<br>Fecha: 01-04-2022<br>Dataset: Entidades_Territoriales_y_Unidades_Administrativas                  | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) |
