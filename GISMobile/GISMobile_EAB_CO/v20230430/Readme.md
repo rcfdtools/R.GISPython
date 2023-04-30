@@ -9,3 +9,4 @@ Información de versión, actualizaciones y corrección de errores
 * Eliminación de campos de atributos de identificación de llaves primarias heredadas
 * Optimiza de visualización de curvas de nivel
 * Actualización de campo principal de despliegue en previsualización de consulta
+* Eliminación de subdivisiones prediales de Bogotá y municipios sobre la zona de estudio 
