@@ -5,7 +5,7 @@ Sistema de información geográfico móvil a partir de datos públicos de la Emp
 En Colombia la Ley de Transparencia y Acceso a la Información, define los datos abiertos como “todos aquellos datos primarios o sin procesar, que se encuentran en formatos estándar e interoperables que facilitan su acceso y reutilización, los cuales están bajo la custodia de las entidades públicas o privadas que cumplen con funciones públicas y que son puestos a disposición de cualquier ciudadano, de forma libre y sin restricciones, con el fin de que terceros puedan reutilizarlos y crear servicios derivados de los mismos” (Ley 1712 de 2014. Literal J, artículo 6. Definiciones.)
 
 
-### Sistema de proyección de coordenadas
+### Sistema de proyección de coordenadas [^1]
 
 El establecimiento de las condiciones técnicas mínimas que deben tener los productos básicos de cartografía oficial, serán los definidos de conformidad con lo dispuesto por la Resolución 471 del 14 de mayo de 2020 y la posterior Resolución 529 del 05 de junio de 2020, emitidas por el Instituto Geográfico Agustín Codazzi - IGAC, o la norma que la modifique y sustituya, para ello y para garantizar la homogeneidad y continuidad en la representación de los elementos del territorio, así como facilitar los trabajos relacionados con la gestión de coordenadas en el país. En tal sentido, los proyectos, obras o actividades, sujetos al licenciamiento ambiental, deben ajustar su información geográfica a los lineamientos establecidos en la referida normatividad, para la evaluación y seguimiento de los estudios ambientales y/o presentación de los Informes de Cumplimiento Ambiental.
 
@@ -64,3 +64,5 @@ Datum: D_MAGNA
 | pnn_parques_nacional_natural_colombia | Parque Nacional Natural de Colombia                                               | www.colombiaenmapas.gov.co <br>Entidad: Parques Nacionales Naturales - PNN. Escala no indicada<br>Fecha: 01-01-2020                                                                              | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) |
 | Via                                   | Vías de Colombia                                                                  | www.colombiaenmapas.gov.co <br>Base de datos vectorial básica de Colombia. Escala 1:100.000<br>Fecha: 01-04-2022<br>Dataset: Transporte_Terrestre                                                | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) |
 
+
+[^1] Tomado o adaptado de: https://www.anla.gov.co/01_anla/entidad/subdirecciones-y-oficinas/instrumentos-permisos-y-tramites-ambientales/sistema-de-informacion-geografica
