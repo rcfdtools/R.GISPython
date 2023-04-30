@@ -1,7 +1,7 @@
 ## GIS Mobile
 
 <div align="center">
-  <img alt="GISMobile" src=".graph/QField_MapView.png" width="250px"><br>  
+  <img alt="GISMobile" src=".graph/QField_MapView.png" width="350px"><br>  
 </div>
 
 Sistemas de información geográficos móviles que no requieren de conexión a Internet para su navegación. 
