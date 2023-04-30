@@ -65,4 +65,4 @@ Datum: D_MAGNA
 | Via                                   | Vías de Colombia                                                                  | www.colombiaenmapas.gov.co <br>Base de datos vectorial básica de Colombia. Escala 1:100.000<br>Fecha: 01-04-2022<br>Dataset: Transporte_Terrestre                                                | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) |
 
 
-[^1] Tomado o adaptado de: https://www.anla.gov.co/01_anla/entidad/subdirecciones-y-oficinas/instrumentos-permisos-y-tramites-ambientales/sistema-de-informacion-geografica
+[^1]: Tomado o adaptado de: https://www.anla.gov.co/01_anla/entidad/subdirecciones-y-oficinas/instrumentos-permisos-y-tramites-ambientales/sistema-de-informacion-geografica
