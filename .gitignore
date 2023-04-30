@@ -8,7 +8,7 @@
 venv/
 .venvPython310/
 .venvPython311/
-# GISMobile/GISMobile_EAB_CO/GDB.gdb
+GISMobile/GISMobile_EAB_CO/GDB.gdb
 
 
 
