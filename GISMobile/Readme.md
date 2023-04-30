@@ -24,5 +24,7 @@ GIS Mobile utiliza bases de datos geográficas en formato File Geodatabase de ES
 4. Abra QField y de clic en el botón `Open local file`
 5. En la parte inferior derecha, de clic en el botón `+`, seleccione la opción `Import project from folder`
 6. Busque la carpeta creada y de clic en el botón `Use this folder`. De clic en el botón `Allow` para permitir que QFiel acceda a los archivos del directorio. En caso de que tenga una versión previa importada, de clic en la opción `IMPORT AND OVERWRITE`.
-7. Una vez finalizada la importación de clic en el archivo `GISMobilexxx.qgz` para abrir el mapa.
+7. Una vez finalizada la importación de clic en el archivo `GISMobilexxx.qgz` para abrir el mapa. Espere a que se cargue el mapa en su dispositivo.
+
+> Dependiendo del tipo de dispositivo móvil, la apertura del mapa podrá tardar algunos minutos, una vez cargado podrá navegar por el mapa de forma fluida.
 
