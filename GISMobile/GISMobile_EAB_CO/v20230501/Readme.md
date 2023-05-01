@@ -5,3 +5,6 @@ Información de versión, actualizaciones y corrección de errores
 * Optimización de rendimiento por conversión de Geodatabase a archivos de formas shapefile
 * Visualización de capas y rótulos con escala dinámica
 * Incorporación de rótulos multilínea detallados
+* Incorporación red de estaciones activas CAR Cundinamarca
+* Incorporación red de estaciones IDEAM - CNE 20
+* Incorporación polígono cota 3000 m.s.n.m o superior a partir del modelo NASA SRTM  

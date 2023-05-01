@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="es"><Esri><CreaDate>20230501</CreaDate><CreaTime>08342200</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.2\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\HillShade" Date="20230501" Time="083422">HillShade SRTM_3s.tif D:\R.GISPython\GISMobile\GISMobile_EAB_CO\dem\SRTM_3s_hillshade.tif 315 45 NO_SHADOWS 1</Process></lineage></DataProperties></Esri></metadata>
