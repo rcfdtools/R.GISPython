@@ -2,5 +2,6 @@
 
 Información de versión, actualizaciones y corrección de errores
 
-* Optimización de rendimiendo por conversión de Geodatabase a archivos de formas shapefile
-* Visualización de capas y rótulos por escala dinámica
+* Optimización de rendimiento por conversión de Geodatabase a archivos de formas shapefile
+* Visualización de capas y rótulos con escala dinámica
+* Incorporación de rótulos multilínea detallados
