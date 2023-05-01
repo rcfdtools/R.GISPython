@@ -1,9 +1,9 @@
 ## GIS Mobile EAB-CO
 
 <div align="center">
-  <img alt="GISMobile" src=".graph/QField_MapView.png" width="300px">
-  <img alt="GISMobile" src=".graph/QField_Layers.png" width="300px">
-  <img alt="GISMobile" src=".graph/QField_Atributes.png" width="300px">
+  <img alt="GISMobile" src="graph/QField_MapView.png" width="300px">
+  <img alt="GISMobile" src="graph/QField_Layers.png" width="300px">
+  <img alt="GISMobile" src="graph/QField_Atributes.png" width="300px">
 </div>
 
 Sistema de información geográfico móvil a partir de datos públicos de la Empresa de Acueducto y Alcantarillado de Bogotá D.C. - Colombia y otras fuentes.
