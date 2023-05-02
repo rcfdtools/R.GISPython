@@ -27,8 +27,12 @@ GIS Mobile utiliza bases de datos geográficas en formato File Geodatabase de ES
 7. Una vez finalizada la importación de clic en el archivo `GISMobilexxx.qgz` para abrir el mapa. Espere a que se cargue el mapa en su dispositivo.
 
 > Dependiendo del tipo de dispositivo móvil, la apertura del mapa podrá tardar algunos segundos, una vez cargado podrá navegar por el mapa de forma fluida.
->
-> [QField - Can't access local storage on iOS phone](https://github.com/opengisch/QField/discussions/3755)
+
+
+### Bugs & Fixes
+
+* [QField - Can't access local storage on iOS phone](https://github.com/opengisch/QField/discussions/3755)
+* [How to enable camera and take pictures for features in QFIELD?](https://gis.stackexchange.com/questions/287339/how-to-enable-camera-and-take-pictures-for-features-in-qfield)
 
 
 ### Descargos de responsabilidad
