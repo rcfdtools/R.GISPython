@@ -8,3 +8,4 @@ Información de versión, actualizaciones y corrección de errores
 * Incorporación red de estaciones activas CAR Cundinamarca
 * Incorporación red de estaciones IDEAM - CNE 2023.02.02
 * Incorporación polígono cota 3000 m.s.n.m o superior a partir del modelo NASA SRTM
+* Incorporación de capas para tracking sobre puntos, líneas o polígonos.
