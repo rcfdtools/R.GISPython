@@ -76,4 +76,33 @@ Datum: D_MAGNA
 | ideam_cne                             | Catálogo nacional de estaciones Colombia - CNE - IDEAM                            | [IDEAM - Instituto de Hidrología, Meteorología y Estudios Ambientales](http://www.ideam.gov.co/solicitud-de-informacion)<br>Versión: 2023.02.02                                                  | [Ley 1712 de 2014](http://www.secretariasenado.gov.co/senado/basedoc/ley_1712_2014.html) |
 
 
+### Modelos digitales de elevación - dem
+
+#### SRTM
+
+* SRTM_3s.tif: 
+
+#### DEM Alos Palsar 12.5m
+
+Imágenes utilizadas para creación de mosaico.
+
+* AP_26112_FBS_F0060_RT1.dem.tif
+* AP_26112_FBS_F0070_RT1.dem.tif
+* AP_26958_FBS_F0060_RT1.dem.tif
+* AP_26958_FBS_F0070_RT1.dem.tif
+* AP_26958_FBS_F0080_RT1.dem.tif
+* AP_26958_FBS_F0090_RT1.dem.tif
+* AP_27133_FBS_F0060_RT1.dem.tif
+* AP_27133_FBS_F0070_RT1.dem.tif
+* AP_27133_FBS_F0080_RT1.dem.tif
+* AP_27133_FBS_F0090_RT1.dem.tif
+* AP_27206_FBS_F0060_RT1.dem.tif
+* AP_27206_FBS_F0070_RT1.dem.tif
+* AP_27206_FBS_F0080_RT1.dem.tif
+* AP_27206_FBS_F0090_RT1.dem.tif
+* AP_27381_FBS_F0060_RT1.dem.tif
+* AP_27381_FBS_F0070_RT1.dem.tif
+* AP_27381_FBS_F0080_RT1.dem.tif
+* AP_27381_FBS_F0090_RT1.dem.tif
+
 [^1]: Tomado o adaptado de: https://www.anla.gov.co/01_anla/entidad/subdirecciones-y-oficinas/instrumentos-permisos-y-tramites-ambientales/sistema-de-informacion-geografica
