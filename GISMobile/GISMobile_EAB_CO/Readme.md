@@ -56,8 +56,8 @@ Datum: D_MAGNA
 | hdg_SubCuenca       | Subcuencas hidrográficas Bogotá D.C y zonas perimetrales                                                                                                                                         | [Empresa de Acueducto y Alcantarillado de Bogotá](www.acueducto.com.co) <br>[Datos abiertos Bogotá](https://datosabiertos.bogota.gov.co/dataset/subcuenca-bogota-d-c)            | [Ley 1712 de 2014](http://www.secretariasenado.gov.co/senado/basedoc/ley_1712_2014.html) |
 | hdg_SubZonaHidro    | Subzonificación hidrográfica Bogotá D.C y zonas perimetrales (Adaptado de: IDEAM, zonificación y codificación de unidades hidrográficas e hidrogeológicas de Colombia, Bogotá, D. C., Colombia). | [Empresa de Acueducto y Alcantarillado de Bogotá](www.acueducto.com.co) <br>[Datos abiertos Bogotá](https://datosabiertos.bogota.gov.co/dataset/subzona-hidrografica-bogota-d-c) | [Ley 1712 de 2014](http://www.secretariasenado.gov.co/senado/basedoc/ley_1712_2014.html) |
 | eab_ZonaEstudio     | Polígono envolvente (aferencia 5 km) sobre subzonas hidrográficas IDEAM con cobertura sobre  Bogotá D.C. y zonas perimetrales                                                                    | [rcfdtools](https://github.com/rcfdtools)                                                                                                                                        | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)                         |
-| SRTM_3s_3000        | Elevación 3000 m.s.n.m o superior. A partir del modelo digital de elevación SRTM. Suavizado cartográfico 1000m                                                                                   | [rcfdtools](https://github.com/rcfdtools)                                                                                                                                        | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)                         |
-| alospalsar_3000.shp | Elevación 3000 m.s.n.m o superior. A partir del modelo digital de elevación ALOS PALSAR. Suavizado cartográfico 100m                                                                          | [rcfdtools](https://github.com/rcfdtools)                                                                                                                                        | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)                         |
+| SRTM_3s_3000        | Elevación 3000 m.s.n.m o superior. A partir del modelo digital de elevación SRTM. Suavizado cartográfico 100m                                                                                    | [rcfdtools](https://github.com/rcfdtools)                                                                                                                                        | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)                         |
+| alospalsar_3000.shp | Elevación 3000 m.s.n.m o superior. A partir del modelo digital de elevación ALOS PALSAR. Suavizado cartográfico 100m                                                                             | [rcfdtools](https://github.com/rcfdtools)                                                                                                                                        | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)                         |
 
 
 #### Dataset General
@@ -79,11 +79,15 @@ Datum: D_MAGNA
 
 ### Modelos digitales de elevación - dem
 
-#### SRTM
 
-* SRTM_3s.tif: 
+#### Shuttle Radar Topography Mission (SRTM)
 
-#### DEM Alos Palsar 12.5m
+* SRTM_3s.tif: tomado de [hydrosheds](https://www.hydrosheds.org/hydrosheds-core-downloads)
+
+> Más información en https://www2.jpl.nasa.gov/srtm/
+
+
+#### ALOS Phased Array type L-band Synthetic Aperture Radar - ALOS PALSAR, Radiometric Terrain Correction (RTC) data coverage 12.5m
 
 Imágenes utilizadas para creación de mosaico.
 
@@ -105,5 +109,8 @@ Imágenes utilizadas para creación de mosaico.
 * AP_27381_FBS_F0070_RT1.dem.tif
 * AP_27381_FBS_F0080_RT1.dem.tif
 * AP_27381_FBS_F0090_RT1.dem.tif
+
+> Más información en https://asf.alaska.edu/data-sets/sar-data-sets/alos-palsar/
+
 
 [^1]: Tomado o adaptado de: https://www.anla.gov.co/01_anla/entidad/subdirecciones-y-oficinas/instrumentos-permisos-y-tramites-ambientales/sistema-de-informacion-geografica
