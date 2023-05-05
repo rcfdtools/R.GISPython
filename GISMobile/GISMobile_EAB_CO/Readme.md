@@ -87,7 +87,9 @@ Datum: D_MAGNA
 > Más información en https://www2.jpl.nasa.gov/srtm/
 
 
-#### ALOS Phased Array type L-band Synthetic Aperture Radar - ALOS PALSAR, Radiometric Terrain Correction (RTC) data coverage 12.5m
+#### ALOS PALSAR 12.5m
+
+ALOS Phased Array type L-band Synthetic Aperture Radar, Radiometric Terrain Correction (RTC) data coverage.
 
 Imágenes utilizadas para creación de mosaico.
 
