@@ -38,3 +38,8 @@ GIS Mobile utiliza bases de datos geográficas en formato File Geodatabase de ES
 ### Descargos de responsabilidad
 
 [rcfdtools](https://github.com/rcfdtools) no se responsabiliza por la información contenida en los mapas publicados, tenga en cuenta que puede contener imprecisiones en su localización y atributos disponibles. Consulte las fuentes originales citadas en cada mapa publicado. 
+
+
+### Referencias
+
+* https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
