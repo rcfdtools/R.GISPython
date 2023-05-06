@@ -6,3 +6,4 @@ numpy
 missingno
 tabulate
 scikit-learn
+exif
