@@ -9,7 +9,7 @@ Créditos: rcfdtools
     "coordinates": [-73.72457222222222, 4.634402777777777]
   }, 
   "properties": {
-    "name": "Campamento EAB. Estación climatológica Chuza Monterredondo"
+    "Name": "Campamento EAB. Estación climatológica Chuza Monterredondo"
   }
 }
 ```

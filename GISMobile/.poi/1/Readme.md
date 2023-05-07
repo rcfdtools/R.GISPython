@@ -9,7 +9,7 @@ Créditos: rcfdtools
     "coordinates": [-73.8198361111111, 4.712169444444444]
   }, 
   "properties": {
-    "name": "Antigua mina de caliza CEMEX"
+    "Name": "Antigua mina de caliza CEMEX"
   }
 }
 ```

@@ -9,7 +9,7 @@ Créditos: rcfdtools
     "coordinates": [-73.72825833333333, 4.537927777777778]
   }, 
   "properties": {
-    "name": "Tunel derivador Río Guatiquía a Embalse Chuza"
+    "Name": "Tunel derivador Río Guatiquía a Embalse Chuza"
   }
 }
 ```

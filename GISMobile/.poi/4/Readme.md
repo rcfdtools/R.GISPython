@@ -9,7 +9,7 @@ Créditos: rcfdtools
     "coordinates": [-73.72865555555556, 4.585705555555555]
   }, 
   "properties": {
-    "name": "Fraylejones"
+    "Name": "Fraylejones"
   }
 }
 ```

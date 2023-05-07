@@ -9,7 +9,7 @@ Créditos: rcfdtools
     "coordinates": [-73.79294444444444, 4.678047222222222]
   }, 
   "properties": {
-    "name": "Mirador Laguna Seca"
+    "Name": "Mirador Laguna Seca"
   }
 }
 ```

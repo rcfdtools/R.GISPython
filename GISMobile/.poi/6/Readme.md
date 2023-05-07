@@ -9,7 +9,7 @@ Créditos: rcfdtools
     "coordinates": [-73.74963611111112, 4.532322222222223]
   }, 
   "properties": {
-    "name": "Laguna Chingaza"
+    "Name": "Laguna Chingaza"
   }
 }
 ```

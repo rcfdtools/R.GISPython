@@ -9,7 +9,7 @@ Créditos: rcfdtools
     "coordinates": [-73.75708888888889, 4.5409]
   }, 
   "properties": {
-    "name": "Localización futura presa Río La Playa - Guatiquía"
+    "Name": "Localización futura presa Río La Playa - Guatiquía"
   }
 }
 ```
