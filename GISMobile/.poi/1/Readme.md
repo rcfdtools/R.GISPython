@@ -1,4 +1,5 @@
-## Antigua mina de caliza CEMEX (2023-05-03)<br>Créditos: rcfdtools
+## Antigua mina de caliza CEMEX (2023-05-03)
+Créditos: rcfdtools
 
 ![GISMobile.POI](PXL_20230503_141248486.jpg)
 ![GISMobile.POI](PXL_20230503_141401490.jpg)

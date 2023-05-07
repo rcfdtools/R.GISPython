@@ -71,7 +71,7 @@ for i in directories:
         poi_path = path+i+'/'+poi_file
         print('Processing: %s' %poi_path)
         df1 = pd.read_csv(poi_path)  # Esri shapefile does not support datetime fields with parse_dates=['Date']
-        readme_file.write('## %s (%s)<br>Créditos: %s\n\n' %(str(df1['Name'][0]), str(df1['Date'][0]), str(df1['Credit'][0])))
+        readme_file.write('## %s (%s)\nCréditos: %s\n\n' %(str(df1['Name'][0]), str(df1['Date'][0]), str(df1['Credit'][0])))
         df1['POI'] = i
         df1['Link'] = path_www+i
         df = pd.concat([df, df1], ignore_index=True)

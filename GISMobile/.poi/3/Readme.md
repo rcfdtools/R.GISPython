@@ -1,4 +1,5 @@
-## Campamento EAB. Estación climatológica Chuza Monterredondo (2023-05-03)<br>Créditos: rcfdtools
+## Campamento EAB. Estación climatológica Chuza Monterredondo (2023-05-03)
+Créditos: rcfdtools
 
 ![GISMobile.POI](PXL_20230503_155933043.jpg)
 ![GISMobile.POI](PXL_20230503_155938980.jpg)
