@@ -1,7 +1,7 @@
 ## Tunel derivador Río Guatiquía a Embalse Chuza (2023-05-03)
 Créditos: rcfdtools
 
-geojson {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-74.043193, 4.783243]}, "properties": {"Name": "xxx"}}
+```geojson<br>{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-74.043193, 4.783243]}, "properties": {"Name": "xxx"}}
 
 **File: 7/PXL_20230503_184309223.MP.jpg**. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 13:43:09
 <br>Coordinates & altitude: (4.532883333333333, -73.74623055555556, 3127.2)<br>Location over [Google Maps](http://maps.google.com/maps?q=4.532883333333333,-73.74623055555556) or [Openstreet Map](https://www.openstreetmap.org/query?lat=4.532883333333333&lon=-73.74623055555556)
