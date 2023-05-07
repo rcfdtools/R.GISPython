@@ -1,9 +1,11 @@
 # -*- coding: UTF-8 -*-
 
 import os
+import glob
 import pandas as pd
 import geopandas
 from exif import Image
+from pathlib import *
 
 def decimal_coords(coords, ref):
  decimal_degrees = coords[0] + coords[1] / 60 + coords[2] / 3600
@@ -35,6 +37,7 @@ path_www = 'https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/'
 poi_file = 'poi.csv'
 poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Link']
 exclude_folder = ['.shp', '.temp']
+picture_format = ['.jpg', '.png', '.tif']
 directories = [d for d in os.listdir(os.getcwd()) if os.path.isdir(d)]
 
 # Processing directories
@@ -44,16 +47,26 @@ df = pd.DataFrame()
 print('Directories:', directories)
 for i in directories:
     if i not in exclude_folder:
+        readme_file = open(path+i+'/'+'Readme.md', 'w+')   # w+ create the file if it doesn't exist
         poi_path = path+i+'/'+poi_file
         print('Processing: %s' %poi_path)
         df1 = pd.read_csv(poi_path)  # Esri shapefile does not support datetime fields with parse_dates=['Date']
         df1['POI'] = i
         df1['Link'] = path_www+i
         df = pd.concat([df, df1], ignore_index=True)
+        picture_path = path+i+'/'
+        picture_files = [x for x in Path(picture_path).iterdir() if x.is_file()]
+        for picture in picture_files:
+            picture_ext = os.path.splitext(picture)
+            if picture_ext[1] in picture_format:
+                filename_absolute = os.path.basename(picture)
+                print(filename_absolute)
+                readme_file.write('![GISMobile.POI]('+filename_absolute+')\n')
 df = df[poi_cols]  # Reordering cols
 print(df)
 df.to_csv(path+poi_file, encoding='utf-8', index=False)
 
+# Create POI shapefile
 gdf = geopandas.GeoDataFrame(df)
 gdf.set_geometry(
     geopandas.points_from_xy(gdf['Longitude'], gdf['Latitude']),
@@ -67,6 +80,8 @@ image_coordinates(img_path)
 
 # https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
 # https://stackoverflow.com/questions/141291/how-to-list-only-top-level-directories-in-python
+# https://stackoverflow.com/questions/14176166/list-only-files-in-a-directory
+# https://stackoverflow.com/questions/7336096/python-glob-without-the-whole-path-only-the-filename
 # https://www.geeksforgeeks.org/python-list-files-in-a-directory/
 # https://gis.stackexchange.com/questions/147156/making-shapefile-from-pandas-dataframe
 # https://python-geojson.readthedocs.io/en/latest/#geometrycollection
