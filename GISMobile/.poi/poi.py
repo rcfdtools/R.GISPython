@@ -63,7 +63,7 @@ def image_info(img_path):
 path = 'D:/R.GISPython/GISMobile/.poi/'
 path_www = 'https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/'
 poi_file = 'poi.csv'
-poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Link']
+poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Category', 'Link']
 exclude_folder = ['.shp', '.temp']
 picture_format = ['.jpg', '.png', '.tif']
 directories = [d for d in os.listdir(os.getcwd()) if os.path.isdir(d)]
