@@ -3,14 +3,14 @@ Créditos: rcfdtools
 
 ```geojson
 {
-"type": "Feature",
-"geometry": {
-"type": "Point", 
-"coordinates": [-74.043193, 4.783243]
-}, 
-"properties": {
-"Name": "xxx"
-}
+ "type": "Feature",
+ "geometry": {
+  "type": "Point", 
+  "coordinates": [-74.043193, 4.783243]
+ }, 
+ "properties": {
+  "Name": "xxx"
+ }
 }
 
 **File: 6/PXL_20230503_172836112.MOTION-02.ORIGINAL.jpg**. OS version: HDR+ 1.0.520435816zm. Date: 2023:05:03 12:28:36

@@ -3,14 +3,14 @@ Créditos: rcfdtools
 
 ```geojson
 {
-"type": "Feature",
-"geometry": {
-"type": "Point", 
-"coordinates": [-74.043193, 4.783243]
-}, 
-"properties": {
-"Name": "xxx"
-}
+ "type": "Feature",
+ "geometry": {
+  "type": "Point", 
+  "coordinates": [-74.043193, 4.783243]
+ }, 
+ "properties": {
+  "Name": "xxx"
+ }
 }
 
 **File: 7/PXL_20230503_184309223.MP.jpg**. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 13:43:09
