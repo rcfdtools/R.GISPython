@@ -1,10 +1,7 @@
 {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-74.043193, 4.783243]
-  },
-  "properties": {
-    "Place": "www.google.com"
-  }
+    "type": "MultiPoint",
+    "coordinates": [
+        [100.0, 0.0],
+        [101.0, 1.0]
+    ]
 }
