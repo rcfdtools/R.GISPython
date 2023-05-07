@@ -43,16 +43,21 @@ def image_info(img_path):
                       decimal_coords(img.gps_longitude,
                       img.gps_longitude_ref),
                       img.gps_altitude)
+            cx = decimal_coords(img.gps_longitude, img.gps_longitude_ref)
+            cy = decimal_coords(img.gps_latitude, img.gps_latitude_ref)
         except AttributeError:
             print('No Coordinates')
     else:
         print('The Image has no EXIF information')
-    info = f"File: {src.name}. OS Version: {img.get('software', 'Not Known')}. Date: {img.datetime_original}"
+    info = f"File: {src.name}. OS version: {img.get('software', 'Not Known')}. Date: {img.datetime_original}"
     print(info)
     readme_file.write(info+'\n')
     if coords:
+        map_location = ('Location over [Google Maps](http://maps.google.com/maps?q=' + str(
+            cx) + ',' + str(cy) + ') or [Openstreet Map](https://www.openstreetmap.org/query?lat=' + str(cx) + '&lon=' + str(cy) + ')')
         print(f"Coordinates:{coords}")
-        readme_file.write(f"<br>Coordinates and altitude: {coords}" + '\n')
+        readme_file.write(f"<br>Coordinates & altitude: {coords}" + '\n')
+        readme_file.write(map_location + '\n')
 
 # Variables
 path = 'D:/R.GISPython/GISMobile/.poi/'

@@ -1,43 +1,53 @@
 ## Antigua mina de caliza CEMEX (2023-05-03)
 Créditos: rcfdtools
 
-File: 1/PXL_20230503_141248486.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:12:48
-<br>Coordinates and altitude: (4.712488888888889, -73.81947777777778, 3732.0)
+File: 1/PXL_20230503_141248486.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:12:48
+<br>Coordinates & altitude: (4.712488888888889, -73.81947777777778, 3732.0)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.81947777777778,4.712488888888889) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.81947777777778&lon=4.712488888888889)
 ![GISMobile.POI](PXL_20230503_141248486.jpg)
 
-File: 1/PXL_20230503_141401490.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:01
-<br>Coordinates and altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+File: 1/PXL_20230503_141401490.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:01
+<br>Coordinates & altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.8198361111111,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.8198361111111&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_141401490.jpg)
 
-File: 1/PXL_20230503_141404104.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:04
-<br>Coordinates and altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+File: 1/PXL_20230503_141404104.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:04
+<br>Coordinates & altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.8198361111111,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.8198361111111&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_141404104.jpg)
 
-File: 1/PXL_20230503_141452560.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:52
-<br>Coordinates and altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+File: 1/PXL_20230503_141452560.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:52
+<br>Coordinates & altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.8198361111111,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.8198361111111&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_141452560.jpg)
 
-File: 1/PXL_20230503_141454219.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:54
-<br>Coordinates and altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+File: 1/PXL_20230503_141454219.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:54
+<br>Coordinates & altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.8198361111111,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.8198361111111&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_141454219.jpg)
 
-File: 1/PXL_20230503_141456741.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:56
-<br>Coordinates and altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+File: 1/PXL_20230503_141456741.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:56
+<br>Coordinates & altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.8198361111111,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.8198361111111&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_141456741.jpg)
 
-File: 1/PXL_20230503_141459242.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:59
-<br>Coordinates and altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+File: 1/PXL_20230503_141459242.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:14:59
+<br>Coordinates & altitude: (4.712169444444444, -73.8198361111111, 3733.41)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.8198361111111,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.8198361111111&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_141459242.jpg)
 
-File: 1/PXL_20230503_142135200.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:21:35
-<br>Coordinates and altitude: (4.712169444444444, -73.81983333333334, 3719.56)
+File: 1/PXL_20230503_142135200.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:21:35
+<br>Coordinates & altitude: (4.712169444444444, -73.81983333333334, 3719.56)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.81983333333334,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.81983333333334&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_142135200.jpg)
 
-File: 1/PXL_20230503_142138155.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:21:38
-<br>Coordinates and altitude: (4.712169444444444, -73.81983333333334, 3719.56)
+File: 1/PXL_20230503_142138155.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:21:38
+<br>Coordinates & altitude: (4.712169444444444, -73.81983333333334, 3719.56)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.81983333333334,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.81983333333334&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_142138155.jpg)
 
-File: 1/PXL_20230503_142141424.jpg. OS Version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:21:41
-<br>Coordinates and altitude: (4.712169444444444, -73.81983333333334, 3719.56)
+File: 1/PXL_20230503_142141424.jpg. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:21:41
+<br>Coordinates & altitude: (4.712169444444444, -73.81983333333334, 3719.56)
+Location over [Google Maps](http://maps.google.com/maps?q=-73.81983333333334,4.712169444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=-73.81983333333334&lon=4.712169444444444)
 ![GISMobile.POI](PXL_20230503_142141424.jpg)
 
