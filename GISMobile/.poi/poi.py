@@ -83,7 +83,7 @@ for i in directories:
         geojson = '```geojson\n{\n  "type": "Feature",\n  "geometry": {\n    "type": "Point", \n    "coordinates": ['+str(df1['Longitude'][0])+', '+str(df1['Latitude'][0])+']\n  }, \n  "properties": {\n    "Name": "'+df1['Name'][0]+'"\n  }\n}\n```\n\n'
         readme_file.write(geojson)
         df1['POI'] = i
-        df1['Link'] = path_www+i
+        df1['Link'] = path_www+i+'/Readme.md'
         df = pd.concat([df, df1], ignore_index=True)
         picture_path = path+i+'/'
         picture_files = [x for x in Path(picture_path).iterdir() if x.is_file()]
