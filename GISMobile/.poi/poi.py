@@ -1,4 +1,7 @@
+# -*- coding: UTF-8 -*-
 
+import os
+import pandas as pd
 from exif import Image
 
 def decimal_coords(coords, ref):
@@ -25,7 +28,31 @@ def image_coordinates(image_path):
     print(f"Image {src.name}, OS Version:{img.get('software', 'Not Known')} ------")
     print(f"Was taken: {img.datetime_original}, and has coordinates:{coords}")
 
+# Variables
+path = 'D:/R.GISPython/GISMobile/.poi/'
+poi_file = 'poi.csv'
+poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit']
+directories = [d for d in os.listdir(os.getcwd()) if os.path.isdir(d)]
+
+# Processing directories
+if os.path.isfile(path+poi_file):
+    os.remove(path+poi_file)
+df = pd.DataFrame()
+print('Directories:', directories)
+for i in directories:
+    poi_path = path+i+'/'+poi_file
+    print('Processing: %s' %poi_path)
+    df1 = pd.read_csv(poi_path)
+    df1['POI'] = i
+    df = pd.concat([df, df1], ignore_index=True)
+df = df[poi_cols]  # Reordering cols
+print(df)
+df.to_csv(path+poi_file, encoding='utf-8', index=False)
+
+
 img_path = '7/PXL_20230503_190031280.jpg'
 image_coordinates(img_path)
 
 # https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
+# https://stackoverflow.com/questions/141291/how-to-list-only-top-level-directories-in-python
+# https://www.geeksforgeeks.org/python-list-files-in-a-directory/

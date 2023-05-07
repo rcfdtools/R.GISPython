@@ -10,5 +10,5 @@ Información de versión, actualizaciones y corrección de errores
 * Incorporación de capas para tracking sobre puntos, líneas o polígonos
 * Incorporación polígono cota 3000 m.s.n.m o superior a partir del modelo NASA SRTM (disponible en carpeta `shp`, no visible en mapa)
 * Incorporación polígono cota 3000 m.s.n.m o superior a partir del modelo ALOS PALSAR
-* Se adicionó la conexión Laguna Chingaza a Río Guatiquía Lon -73.747503,  Lat 4.533868
+* Se adicionó la conexión Laguna Chingaza a Río Guatiquía 73.747503W, 4.533868N
 * Incorporación límite autoridades ambientales
