@@ -7,12 +7,4 @@
   "properties": {
     "Place": "Universidad Escuela Colombiana de Ingeniería Julio Garavito"
   }
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-74.053193, 4.783243]
-  },
-  "properties": {
-    "Place": "Test"
-  }
 }
