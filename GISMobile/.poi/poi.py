@@ -67,3 +67,4 @@ image_coordinates(img_path)
 # https://stackoverflow.com/questions/141291/how-to-list-only-top-level-directories-in-python
 # https://www.geeksforgeeks.org/python-list-files-in-a-directory/
 # https://gis.stackexchange.com/questions/147156/making-shapefile-from-pandas-dataframe
+# https://python-geojson.readthedocs.io/en/latest/#geometrycollection
