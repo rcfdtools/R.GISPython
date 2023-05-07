@@ -47,7 +47,9 @@ def image_info(img_path):
             print('No Coordinates')
     else:
         print('The Image has no EXIF information')
-    print(f"Image {src.name}, OS Version:{img.get('software', 'Not Known')} ------")
+    info = f"Image {src.name}, OS Version: {img.get('software', 'Not Known')}"
+    print(info)
+    readme_file.write(info+'\n\n')
     if coords:
         print(f"Was taken: {img.datetime_original}, and has coordinates:{coords}")
 
@@ -82,8 +84,8 @@ for i in directories:
             if picture_ext[1] in picture_format:
                 filename_absolute = os.path.basename(picture)
                 print(filename_absolute)
-                image_info(i+'/'+filename_absolute)
                 readme_file.write('![GISMobile.POI]('+filename_absolute+')\n')
+                image_info(i+'/'+filename_absolute)
 df = df[poi_cols]  # Reordering cols
 print(df)
 df.to_csv(path+poi_file, encoding='utf-8', index=False)
