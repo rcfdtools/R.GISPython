@@ -3,15 +3,16 @@ Créditos: rcfdtools
 
 ```geojson
 {
- "type": "Feature",
- "geometry": {
-  "type": "Point", 
-  "coordinates": [-74.043193, 4.783243]
- }, 
- "properties": {
-  "Name": "xxx"
- }
+  "type": "Feature",
+  "geometry": {
+    "type": "Point", 
+    "coordinates": [-74.043193, 4.783243]
+  }, 
+  "properties": {
+    "name": "xxx"
+  }
 }
+```
 
 **File: 6/PXL_20230503_172836112.MOTION-02.ORIGINAL.jpg**. OS version: HDR+ 1.0.520435816zm. Date: 2023:05:03 12:28:36
 <br>Coordinates & altitude: (4.5651472222222225, -73.73946388888889, 3483.93)<br>Location over [Google Maps](http://maps.google.com/maps?q=4.5651472222222225,-73.73946388888889) or [Openstreet Map](https://www.openstreetmap.org/query?lat=4.5651472222222225&lon=-73.73946388888889)
