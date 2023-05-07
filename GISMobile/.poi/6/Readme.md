@@ -1,4 +1,4 @@
-## Laguna Chingaza (2023-05-03) Créditos: rcfdtools
+## Laguna Chingaza (2023-05-03)<br>Créditos: rcfdtools
 
 ![GISMobile.POI](PXL_20230503_172836112.MOTION-02.ORIGINAL.jpg)
 ![GISMobile.POI](PXL_20230503_172845905.MOTION-02.ORIGINAL.jpg)

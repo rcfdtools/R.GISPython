@@ -1,4 +1,4 @@
-## Mirador Laguna Seca (2023-05-03) Créditos: rcfdtools
+## Mirador Laguna Seca (2023-05-03)<br>Créditos: rcfdtools
 
 ![GISMobile.POI](PXL_20230503_145311366.jpg)
 ![GISMobile.POI](PXL_20230503_145353316.jpg)
