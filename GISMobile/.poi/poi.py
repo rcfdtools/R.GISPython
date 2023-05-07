@@ -80,6 +80,8 @@ for i in directories:
         print('Processing: %s' %poi_path)
         df1 = pd.read_csv(poi_path)  # Esri shapefile does not support datetime fields with parse_dates=['Date']
         readme_file.write('## %s (%s)\nCréditos: %s\n\n' %(str(df1['Name'][0]), str(df1['Date'][0]), str(df1['Credit'][0])))
+        geojson = '```geojson {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-74.043193, 4.783243]}, "properties": {"Name": "xxx"}}'
+        readme_file.write(geojson+'\n\n')
         df1['POI'] = i
         df1['Link'] = path_www+i
         df = pd.concat([df, df1], ignore_index=True)

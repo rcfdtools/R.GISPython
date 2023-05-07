@@ -1,6 +1,8 @@
 ## Mirador Laguna Seca (2023-05-03)
 Créditos: rcfdtools
 
+```geojson {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-74.043193, 4.783243]}, "properties": {"Name": "xxx"}}
+
 **File: 2/PXL_20230503_145311366.jpg**. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:53:11
 <br>Coordinates & altitude: (4.678047222222222, -73.79294444444444, 3730.03)<br>Location over [Google Maps](http://maps.google.com/maps?q=4.678047222222222,-73.79294444444444) or [Openstreet Map](https://www.openstreetmap.org/query?lat=4.678047222222222&lon=-73.79294444444444)
 ![GISMobile.POI](PXL_20230503_145311366.jpg)
