@@ -1,7 +1,7 @@
 ## Antigua mina de caliza CEMEX (2023-05-03)
 Créditos: rcfdtools
 
-```geojson {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-74.043193, 4.783243]}, "properties": {"Name": "xxx"}}
+geojson {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-74.043193, 4.783243]}, "properties": {"Name": "xxx"}}
 
 **File: 1/PXL_20230503_141248486.jpg**. OS version: HDR+ 1.0.520435816zd. Date: 2023:05:03 09:12:48
 <br>Coordinates & altitude: (4.712488888888889, -73.81947777777778, 3732.0)<br>Location over [Google Maps](http://maps.google.com/maps?q=4.712488888888889,-73.81947777777778) or [Openstreet Map](https://www.openstreetmap.org/query?lat=4.712488888888889&lon=-73.81947777777778)
