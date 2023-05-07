@@ -49,7 +49,7 @@ def image_info(img_path):
             print('No Coordinates')
     else:
         print('The Image has no EXIF information')
-    info = f"File: {src.name}. OS version: {img.get('software', 'Not Known')}. Date: {img.datetime_original}"
+    info = f"**File: {src.name}**. OS version: {img.get('software', 'Not Known')}. Date: {img.datetime_original}"
     print(info)
     readme_file.write(info+'\n')
     if coords:
