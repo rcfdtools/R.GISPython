@@ -1,5 +1,5 @@
 ## Laguna Chingaza (2023-05-03)
-Créditos: rcfdtools<br>Categoría: Technical field visit
+* Créditos: rcfdtools<br>* Categoría: Technical field visit
 
 ```geojson
 {
