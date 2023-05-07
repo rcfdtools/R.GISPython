@@ -1,5 +1,6 @@
 ## Localización futura presa Río La Playa - Guatiquía (2023-05-03)
 Créditos: rcfdtools
+Categoría: Technical field visit
 
 ```geojson
 {

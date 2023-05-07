@@ -1,5 +1,6 @@
 ## Fraylejones (2023-05-03)
 Créditos: rcfdtools
+Categoría: Technical field visit
 
 ```geojson
 {
