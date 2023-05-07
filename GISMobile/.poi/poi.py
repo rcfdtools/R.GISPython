@@ -6,6 +6,7 @@ import pandas as pd
 import geopandas
 from exif import Image
 from pathlib import *
+from moviepy.editor import VideoFileClip
 
 def decimal_coords(coords, ref):
  decimal_degrees = coords[0] + coords[1] / 60 + coords[2] / 3600
@@ -110,6 +111,10 @@ gdf.to_file('.shp/poi.shp')
 img_path = '7/PXL_20230503_190031280.jpg'
 image_coordinates(img_path)
 
+# Convert .mp4 to .gif sample
+videoClip = (VideoFileClip('7/PXL_20230503_184310359.TS.mp4').resize(0.5))
+videoClip.write_gif('7/PXL_20230503_184310359.TS.gif')
+
 # https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
 # https://stackoverflow.com/questions/141291/how-to-list-only-top-level-directories-in-python
 # https://stackoverflow.com/questions/14176166/list-only-files-in-a-directory
@@ -117,3 +122,4 @@ image_coordinates(img_path)
 # https://www.geeksforgeeks.org/python-list-files-in-a-directory/
 # https://gis.stackexchange.com/questions/147156/making-shapefile-from-pandas-dataframe
 # https://python-geojson.readthedocs.io/en/latest/#geometrycollection
+# https://zulko.github.io/moviepy/
