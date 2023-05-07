@@ -52,7 +52,7 @@ def image_info(img_path):
     readme_file.write(info+'\n')
     if coords:
         print(f"Coordinates:{coords}")
-        readme_file.write(f"Coordinates and altitude: {coords}" + '\n')
+        readme_file.write(f"\nCoordinates and altitude: {coords}" + '\n')
 
 # Variables
 path = 'D:/R.GISPython/GISMobile/.poi/'
