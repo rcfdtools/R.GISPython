@@ -1,1 +1,10 @@
-{"coordinates": [-115.81, 37.24], "type": "Point"}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-74.043193, 4.783243]
+  },
+  "properties": {
+    "name": "Universidad Escuela Colombiana de Ingeniería Julio Garavito"
+  }
+}
