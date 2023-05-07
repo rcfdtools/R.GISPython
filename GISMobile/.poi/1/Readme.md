@@ -6,10 +6,10 @@ Créditos: rcfdtools
   "type": "Feature",
   "geometry": {
     "type": "Point", 
-    "coordinates": [-74.043193, 4.783243]
+    "coordinates": [-73.8198361111111, 4.712169444444444]
   }, 
   "properties": {
-    "name": "xxx"
+    "name": "Antigua mina de caliza CEMEX"
   }
 }
 ```

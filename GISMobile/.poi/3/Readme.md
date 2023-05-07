@@ -6,10 +6,10 @@ Créditos: rcfdtools
   "type": "Feature",
   "geometry": {
     "type": "Point", 
-    "coordinates": [-74.043193, 4.783243]
+    "coordinates": [-73.72457222222222, 4.634402777777777]
   }, 
   "properties": {
-    "name": "xxx"
+    "name": "Campamento EAB. Estación climatológica Chuza Monterredondo"
   }
 }
 ```

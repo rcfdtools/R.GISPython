@@ -6,10 +6,10 @@ Créditos: rcfdtools
   "type": "Feature",
   "geometry": {
     "type": "Point", 
-    "coordinates": [-74.043193, 4.783243]
+    "coordinates": [-73.72865555555556, 4.585705555555555]
   }, 
   "properties": {
-    "name": "xxx"
+    "name": "Fraylejones"
   }
 }
 ```

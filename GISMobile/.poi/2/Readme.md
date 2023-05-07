@@ -6,10 +6,10 @@ Créditos: rcfdtools
   "type": "Feature",
   "geometry": {
     "type": "Point", 
-    "coordinates": [-74.043193, 4.783243]
+    "coordinates": [-73.79294444444444, 4.678047222222222]
   }, 
   "properties": {
-    "name": "xxx"
+    "name": "Mirador Laguna Seca"
   }
 }
 ```

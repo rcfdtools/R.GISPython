@@ -6,10 +6,10 @@ Créditos: rcfdtools
   "type": "Feature",
   "geometry": {
     "type": "Point", 
-    "coordinates": [-74.043193, 4.783243]
+    "coordinates": [-73.74963611111112, 4.532322222222223]
   }, 
   "properties": {
-    "name": "xxx"
+    "name": "Laguna Chingaza"
   }
 }
 ```
