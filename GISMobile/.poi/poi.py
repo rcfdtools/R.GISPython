@@ -31,8 +31,9 @@ def image_coordinates(image_path):
 
 # Variables
 path = 'D:/R.GISPython/GISMobile/.poi/'
+path_www = 'https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/'
 poi_file = 'poi.csv'
-poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit']
+poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Link']
 exclude_folder = ['.shp', '.temp']
 directories = [d for d in os.listdir(os.getcwd()) if os.path.isdir(d)]
 
@@ -47,6 +48,7 @@ for i in directories:
         print('Processing: %s' %poi_path)
         df1 = pd.read_csv(poi_path)  # Esri shapefile does not support datetime fields with parse_dates=['Date']
         df1['POI'] = i
+        df1['Link'] = path_www+i
         df = pd.concat([df, df1], ignore_index=True)
 df = df[poi_cols]  # Reordering cols
 print(df)

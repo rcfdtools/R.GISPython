@@ -1,8 +1,8 @@
-POI,Latitude,Longitude,Altitude,Date,Name,Credit
-1,4.712169444444444,-73.8198361111111,3733.41,2023-05-03,Antigua mina de caliza CEMEX,https://github.com/rcfdtools
-2,4.678047222222222,-73.79294444444444,3730.03,2023-05-03,Mirador Laguna Seca,https://github.com/rcfdtools
-3,4.634402777777777,-73.72457222222222,3051.38,2023-05-03,Campamento EAB. Estación climatológica Chuza Monterredondo ,https://github.com/rcfdtools
-4,4.585705555555555,-73.72865555555556,3402.35,2023-05-03,Fraylejones ,https://github.com/rcfdtools
-5,4.5409,-73.75708888888889,3220.78,2023-05-03,Localización futura presa Río La Playa - Guatiquía ,https://github.com/rcfdtools
-6,4.532322222222223,-73.74963611111112,3234.2,2023-05-03,Laguna Chingaza ,https://github.com/rcfdtools
-7,4.537927777777778,-73.72825833333333,3074.0,2023-05-03,Tunel derivador Río Guatiquía a Embalse Chuza,https://github.com/rcfdtools
+POI,Latitude,Longitude,Altitude,Date,Name,Credit,Link
+1,4.712169444444444,-73.8198361111111,3733.41,2023-05-03,Antigua mina de caliza CEMEX,https://github.com/rcfdtools,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/1
+2,4.678047222222222,-73.79294444444444,3730.03,2023-05-03,Mirador Laguna Seca,https://github.com/rcfdtools,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/2
+3,4.634402777777777,-73.72457222222222,3051.38,2023-05-03,Campamento EAB. Estación climatológica Chuza Monterredondo ,https://github.com/rcfdtools,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/3
+4,4.585705555555555,-73.72865555555556,3402.35,2023-05-03,Fraylejones ,https://github.com/rcfdtools,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/4
+5,4.5409,-73.75708888888889,3220.78,2023-05-03,Localización futura presa Río La Playa - Guatiquía ,https://github.com/rcfdtools,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/5
+6,4.532322222222223,-73.74963611111112,3234.2,2023-05-03,Laguna Chingaza ,https://github.com/rcfdtools,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6
+7,4.537927777777778,-73.72825833333333,3074.0,2023-05-03,Tunel derivador Río Guatiquía a Embalse Chuza,https://github.com/rcfdtools,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7
