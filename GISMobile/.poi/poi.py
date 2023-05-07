@@ -112,7 +112,7 @@ img_path = '7/PXL_20230503_190031280.jpg'
 image_coordinates(img_path)
 
 # Convert .mp4 to .gif sample
-videoClip = (VideoFileClip('7/PXL_20230503_184310359.TS.mp4').resize(0.5))
+videoClip = VideoFileClip('7/PXL_20230503_184310359.TS.mp4').resize(0.25)
 videoClip.write_gif('7/PXL_20230503_184310359.TS.gif')
 
 # https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
