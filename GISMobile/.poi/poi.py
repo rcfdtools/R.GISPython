@@ -13,7 +13,7 @@ def decimal_coords(coords, ref):
      decimal_degrees = -decimal_degrees
  return decimal_degrees
 
-def image_coordinates(image_path):
+def image_coordinates(img_path):
     with open(img_path, 'rb') as src:
         img = Image(src)
     if img.has_exif:
@@ -30,6 +30,26 @@ def image_coordinates(image_path):
         print('The Image has no EXIF information')
     print(f"Image {src.name}, OS Version:{img.get('software', 'Not Known')} ------")
     print(f"Was taken: {img.datetime_original}, and has coordinates:{coords}")
+
+def image_info(img_path):
+    coords = ''
+    with open(img_path, 'rb') as src:
+        img = Image(src)
+    if img.has_exif:
+        try:
+            img.gps_longitude
+            coords = (decimal_coords(img.gps_latitude,
+                      img.gps_latitude_ref),
+                      decimal_coords(img.gps_longitude,
+                      img.gps_longitude_ref),
+                      img.gps_altitude)
+        except AttributeError:
+            print('No Coordinates')
+    else:
+        print('The Image has no EXIF information')
+    print(f"Image {src.name}, OS Version:{img.get('software', 'Not Known')} ------")
+    if coords:
+        print(f"Was taken: {img.datetime_original}, and has coordinates:{coords}")
 
 # Variables
 path = 'D:/R.GISPython/GISMobile/.poi/'
@@ -51,6 +71,7 @@ for i in directories:
         poi_path = path+i+'/'+poi_file
         print('Processing: %s' %poi_path)
         df1 = pd.read_csv(poi_path)  # Esri shapefile does not support datetime fields with parse_dates=['Date']
+        readme_file.write('## %s (%s) Créditos: %s\n\n' %(str(df1['Name'][0]), str(df1['Date'][0]), str(df1['Credit'][0])))
         df1['POI'] = i
         df1['Link'] = path_www+i
         df = pd.concat([df, df1], ignore_index=True)
@@ -61,6 +82,7 @@ for i in directories:
             if picture_ext[1] in picture_format:
                 filename_absolute = os.path.basename(picture)
                 print(filename_absolute)
+                image_info(i+'/'+filename_absolute)
                 readme_file.write('![GISMobile.POI]('+filename_absolute+')\n')
 df = df[poi_cols]  # Reordering cols
 print(df)
