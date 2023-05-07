@@ -12,3 +12,4 @@ Información de versión, actualizaciones y corrección de errores
 * Incorporación polígono cota 3000 m.s.n.m o superior a partir del modelo ALOS PALSAR
 * Se adicionó la conexión Laguna Chingaza a Río Guatiquía 73.747503W, 4.533868N
 * Incorporación límite autoridades ambientales
+* Inclusión de puntos de interés - POI con asociación a fotografías
