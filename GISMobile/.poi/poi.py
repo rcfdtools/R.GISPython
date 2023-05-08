@@ -6,6 +6,7 @@ import pandas as pd
 import geopandas
 from exif import Image
 from pathlib import *
+import tabulate  # required for print tables in Markdown using pandas
 from moviepy.editor import VideoFileClip
 
 def decimal_coords(coords, ref):
@@ -132,8 +133,14 @@ for i in range(0,len(df)):
             geojson_file_write.write('\n')
 geojson_file_write.write(']}}}\n\n```')
 geojson_file_write.write('\n\n### Estadísticas generales\n\n')
-category_count = df['Category'].value_counts()
-geojson_file_write.write(str(category_count))
+# Statistics
+df2 = df.groupby(['Category'])['POI'].agg('count').reset_index()
+df2.index.name = '#'
+geojson_file_write.write(df2.to_markdown())
+geojson_file_write.write('\n\n\n### POI\n\n')
+df.index.name = '#'
+geojson_file_write.write(df.to_markdown())
+
 
 # Picture properties sample
 img_path = '7/PXL_20230503_190031280.jpg'
