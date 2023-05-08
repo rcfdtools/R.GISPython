@@ -50,7 +50,18 @@ Localización de puntos de interés en GISMobile.
           "type": "Point",
           "properties": {"prop0": "value0"},
           "coordinates": [-25, 16]
-        }		
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-96, 16],
+              [-96, -58],
+              [-25, -58],
+              [-25, 16]
+            ]
+          ]
+        }  		
       ]
     }
   }
