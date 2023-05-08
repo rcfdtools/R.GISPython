@@ -64,7 +64,7 @@ def image_info(img_path):
 path = 'D:/R.GISPython/GISMobile/.poi/'
 path_www = 'https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/'
 poi_file = 'poi.csv'
-geojson_file = 'poi.md'
+geojson_file = 'Readme.md'
 poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Category', 'Link', 'geoJSON']
 exclude_folder = ['.shp', '.temp']
 picture_format = ['.jpg', '.png', '.tif']
@@ -114,6 +114,7 @@ if os.path.isfile(path+geojson_file):
     os.remove(path+geojson_file)
 geojson_file_write = open(path+geojson_file, 'w+')   # w+ create the file if it doesn't exist
 df = pd.read_csv(path+poi_file)
+geojson_file_write.write('## Puntos de interés - POI\n\nLocalización de puntos de interés en GISMobile.\n\n')
 geojson_file_write.write('```topojson\n{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [\n')
 print('Records: %i' %len(df))
 for i in range(0,len(df)):
