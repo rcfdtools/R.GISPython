@@ -33,6 +33,67 @@ Localización de puntos de interés en GISMobile.
       "geometries": [
         {
           "type": "Point",
+          "properties": {"prop0": "NE"},
+          "coordinates": [-96, 16]
+        },
+		{
+          "type": "Point",
+          "properties": {"prop0": "NW"},
+          "coordinates": [-96, -58]
+        },
+		{
+          "type": "Point",
+          "properties": {"prop0": "SW"},
+          "coordinates": [-25, -58]
+        },
+		{
+          "type": "Point",
+          "properties": {"prop0": "SE"},
+          "coordinates": [-25, 16]
+        }      		
+      ]
+    }
+  }
+}
+```
+
+
+
+### Polygon sample
+
+```
+longitud 96W, 25W
+latitud 16N, 58S
+```
+
+```geojson
+{
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [-96, 16],
+                [-96, -58],
+                [-25, -58],
+                [-25, 16]
+            ]
+        ]
+    }
+}
+```
+
+
+
+```topojson
+{
+  "type": "Topology",
+  "objects": {
+    "example": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
           "properties": {"prop0": "value0"},
           "coordinates": [-96, 16]
         },
@@ -62,64 +123,6 @@ Localización de puntos de interés en GISMobile.
             ]
           ]
         }  		
-      ]
-    }
-  }
-}
-```
-
-
-### Polygon sample
-
-```
-longitud 96W, 25W
-latitud 16N, 58S
-```
-
-```geojson
-{
-    "type": "Feature",
-    "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-            [
-                [-96, 16],
-                [-96, -58],
-                [-25, -58],
-                [-25, 16]
-            ]
-        ]
-    }
-}
-```
-
-```topojson
-{
-  "type": "Topology",
-  "objects": {
-    "example": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-96, 16]
-        },
-		{
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-96, -58]
-        },
-		{
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-25, -58]
-        },
-		{
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-25, 16]
-        }      		
       ]
     }
   }
