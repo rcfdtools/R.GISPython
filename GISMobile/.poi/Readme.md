@@ -82,9 +82,9 @@ latitud 16N, 58S
 }
 ```
 
-```topojson
+```geojson
 {
-  "type": "Topology",
+  "type": "FeatureCollection",
   "objects": {
     "example": {
       "type": "GeometryCollection",
