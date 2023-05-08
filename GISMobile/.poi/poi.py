@@ -97,7 +97,7 @@ for i in directories:
                 print(filename_absolute)
                 image_info(i+'/'+filename_absolute)
                 readme_file.write('![GISMobile.POI]('+filename_absolute+')\n\n')
-        readme_file.write('[:house:Ir a Inicio](../Readme.md)\n\n')
+        readme_file.write('| [:house: Inicio](../Readme.md) |\n|---|')
 df = df[poi_cols]  # Reordering cols
 print(df)
 df.to_csv(path+poi_file, encoding='utf-8', index=False)

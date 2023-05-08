@@ -21,5 +21,5 @@ Créditos: rcfdtools<br>Categoría: Technical field visit
 **File: 4/PXL_20230503_171654314.MOTION-02.ORIGINAL.jpg**. OS version: HDR+ 1.0.520435816zm. Date: 2023:05:03 12:16:54
 ![GISMobile.POI](PXL_20230503_171654314.MOTION-02.ORIGINAL.jpg)
 
-[:house:Ir a Inicio](../Readme.md)
-
+| [:house: Inicio](../Readme.md) |
+|---|
