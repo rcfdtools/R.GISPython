@@ -65,6 +65,8 @@ longitud 96W, 25W
 latitud 16N, 58S
 ```
 
+Polígono simple usando Feature
+
 ```geojson
 {
     "type": "Feature",
@@ -81,6 +83,8 @@ latitud 16N, 58S
     }
 }
 ```
+
+Polígono simple usando FeatureCollection
 
 ```geojson
 {
@@ -108,50 +112,34 @@ latitud 16N, 58S
 }
 ```
 
-
-```topojson
+```geojson
 {
-  "type": "Topology",
-  "objects": {
-    "example": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-96, 16]
-        },
-		{
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-96, -58]
-        },
-		{
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-25, -58]
-        },
-		{
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [-25, 16]
-        },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "ID": 0
+      },
+      "geometry": [ 
         {
           "type": "Polygon",
           "coordinates": [
             [
-              [-96, 16],
-              [-96, -58],
-              [-25, -58],
-              [-25, 16]
+              [-96,16],
+              [-96,-58],
+              [-25,-58],
+              [-25,16]
             ]
           ]
-        }  		
-      ]
+        }
+      ]  
     }
-  }
+  ]
 }
 ```
+
 
 
 ### Referencias
