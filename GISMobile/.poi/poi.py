@@ -97,6 +97,7 @@ for i in directories:
                 print(filename_absolute)
                 image_info(i+'/'+filename_absolute)
                 readme_file.write('![GISMobile.POI]('+filename_absolute+')\n\n')
+        readme_file.write('[:house:Home](../Readme.md)\n\n')
 df = df[poi_cols]  # Reordering cols
 print(df)
 df.to_csv(path+poi_file, encoding='utf-8', index=False)
@@ -114,7 +115,7 @@ if os.path.isfile(path+geojson_file):
     os.remove(path+geojson_file)
 geojson_file_write = open(path+geojson_file, 'w+')   # w+ create the file if it doesn't exist
 df = pd.read_csv(path+poi_file)
-geojson_file_write.write('## Puntos de interés - POI\n\n### Mapa localización de puntos de interés en GISMobile.\n\n')
+geojson_file_write.write('## Puntos de interés - POI\n\n### Mapa localización de puntos de interés en GISMobile\n\n')
 geojson_file_write.write('```topojson\n{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [\n')
 print('Records: %i' %len(df))
 for i in range(0,len(df)):

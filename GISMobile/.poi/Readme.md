@@ -1,6 +1,6 @@
 ## Puntos de interés - POI
 
-### Mapa localización de puntos de interés en GISMobile.
+### Mapa localización de puntos de interés en GISMobile
 
 ```topojson
 {"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [
