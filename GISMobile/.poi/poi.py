@@ -118,7 +118,7 @@ geojson_file_write.write('```topojson\n{"type": "Topology", "objects": {"example
 print('Records: %i' %len(df))
 for i in range(0,len(df)):
     if df.loc[i]['Longitude'] and df.loc[i]['Latitude']:
-        properties = ('"POI": "%s", "Name": "%s"' %(str(df.loc[i]['POI']), str(df.loc[i]['Name'])))
+        properties = ('"POI": "%s", "Category": "%s", "Name": "%s", "Date": "%s", "Credits": "%s"' %(str(df.loc[i]['POI']), str(df.loc[i]['Category']), str(df.loc[i]['Name']), str(df.loc[i]['Date']), str(df.loc[i]['Credit'])))
         #geojson_file_write.write('{"type": "Point","properties": {"POI": "'+str(df.loc[i]['POI'])+'"},"coordinates": ['+str(df.loc[i]['Longitude'])+','+str(df.loc[i]['Latitude'])+']}')
         geojson_file_write.write('{"type": "Point","properties": {'+properties+'},"coordinates": ['+str(df.loc[i]['Longitude'])+','+str(df.loc[i]['Latitude'])+']}')
         if i <= len(df)-2:
