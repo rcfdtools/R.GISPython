@@ -25,22 +25,17 @@ Localización de puntos de interés en GISMobile.
 ```
 
 ```geojson
-(
 {
   "type": "Feature",
   "geometry": {
     "type": "Point", 
     "coordinates": [-73.72825833333333, 4.537927777777778]
-  }
-},
-{
-  "type": "Feature",
+  },
   "geometry": {
     "type": "Point", 
     "coordinates": [-73.62825833333333, 4.537927777777778]
   }
 }
-)
 ```
 
 
