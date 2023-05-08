@@ -113,7 +113,7 @@ if os.path.isfile(path+geojson_file):
     os.remove(path+geojson_file)
 geojson_file_write = open(path+geojson_file, 'w+')   # w+ create the file if it doesn't exist
 df = pd.read_csv(path+poi_file)
-geojson_file_write.write('## Puntos de interés - POI\n\nLocalización de puntos de interés en GISMobile.\n\n')
+geojson_file_write.write('## Puntos de interés - POI\n\n### Mapa localización de puntos de interés en GISMobile.\n\n')
 geojson_file_write.write('```topojson\n{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [\n')
 print('Records: %i' %len(df))
 for i in range(0,len(df)):
@@ -130,7 +130,8 @@ for i in range(0,len(df)):
             geojson_file_write.write(',\n')
         else:
             geojson_file_write.write('\n')
-geojson_file_write.write(']}}}\n```')
+geojson_file_write.write(']}}}\n\n```')
+geojson_file_write.write('\n\n## Estadísticas generales\n\n')
 
 # Picture properties sample
 img_path = '7/PXL_20230503_190031280.jpg'

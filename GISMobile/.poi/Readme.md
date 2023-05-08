@@ -1,6 +1,6 @@
 ## Puntos de interés - POI
 
-Localización de puntos de interés en GISMobile.
+### Mapa localización de puntos de interés en GISMobile.
 
 ```topojson
 {"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [
@@ -12,4 +12,8 @@ Localización de puntos de interés en GISMobile.
 {"type": "Point","properties": {"POI": "6", "Category": "Technical field visit", "Name": "Laguna Chingaza", "Date": "2023-05-03", "Credits": "rcfdtools", "Link": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6/Readme.md"},"coordinates": [-73.74963611111112,4.532322222222223]},
 {"type": "Point","properties": {"POI": "7", "Category": "Technical field visit", "Name": "Tunel derivador Río Guatiquía a Embalse Chuza", "Date": "2023-05-03", "Credits": "rcfdtools", "Link": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md"},"coordinates": [-73.72825833333333,4.537927777777778]}
 ]}}}
+
 ```
+
+## Estadísticas generales
+
