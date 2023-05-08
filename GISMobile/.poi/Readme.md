@@ -133,7 +133,12 @@ Polígono simple usando FeatureCollection
               [-25,16]
             ]
           ]
-        }
+        },
+		{
+          "type": "Point",
+          "properties": {"prop0": "NE"},
+          "coordinates": [-25, 16]
+        }          
       ]  
     }
   ]
