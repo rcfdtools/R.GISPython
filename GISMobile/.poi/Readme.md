@@ -38,8 +38,13 @@ Localización de puntos de interés en GISMobile.
         {
           "type": "Point",
           "properties": {"prop0": "value0"},
-          "coordinates": [4000, 5000]
+          "coordinates": [-96, 16]
         },
+		{
+          "type": "Point",
+          "properties": {"prop0": "value0"},
+          "coordinates": [-96, -58]
+        }		
       ]
     }
   }
