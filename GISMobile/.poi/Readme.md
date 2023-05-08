@@ -33,7 +33,7 @@ Localización de puntos de interés en GISMobile.
   },
   "geometry": {
     "type": "Point", 
-    "coordinates": [-73.62825833333333, 4.537927777777778]
+    "coordinates": [-73.62825833333333, 4.737927777777778]
   }
 }
 ```
