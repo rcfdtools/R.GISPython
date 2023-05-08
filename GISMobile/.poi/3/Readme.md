@@ -65,5 +65,5 @@ Créditos: rcfdtools<br>Categoría: Technical field visit
 <br>Coordinates & altitude: (4.634694444444444, -73.72484722222222, 3474.67)<br>Location over [Google Maps](http://maps.google.com/maps?q=4.634694444444444,-73.72484722222222) or [Openstreet Map](https://www.openstreetmap.org/query?lat=4.634694444444444&lon=-73.72484722222222)
 ![GISMobile.POI](PXL_20230503_214442343.jpg)
 
-[:house:Home](../Readme.md)
+[:house:Ir a Inicio](../Readme.md)
 
