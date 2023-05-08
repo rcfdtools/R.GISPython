@@ -24,6 +24,34 @@ Localización de puntos de interés en GISMobile.
 }
 ```
 
+```geojson
+(
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point", 
+    "coordinates": [-73.72825833333333, 4.537927777777778]
+  }, 
+  "properties": {
+    "Name:": "Tunel derivador Río Guatiquía a Embalse Chuza",
+    "Localización:": "Chingaza" 
+  }
+},
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point", 
+    "coordinates": [-73.62825833333333, 4.537927777777778]
+  }, 
+  "properties": {
+    "Name:": "Tunel derivador Río Guatiquía a Embalse Chuza",
+    "Localización:": "Chingaza" 
+  }
+}
+)
+```
+
+
 ### Polygon sample
 
 ```
