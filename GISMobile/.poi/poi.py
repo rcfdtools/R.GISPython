@@ -64,7 +64,8 @@ def image_info(img_path):
 path = 'D:/R.GISPython/GISMobile/.poi/'
 path_www = 'https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/'
 poi_file = 'poi.csv'
-poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Category', 'Link']
+geojson_file = 'poi.md'
+poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Category', 'Link', 'geoJSON']
 exclude_folder = ['.shp', '.temp']
 picture_format = ['.jpg', '.png', '.tif']
 directories = [d for d in os.listdir(os.getcwd()) if os.path.isdir(d)]
@@ -85,6 +86,7 @@ for i in directories:
         readme_file.write(geojson)
         df1['POI'] = i
         df1['Link'] = path_www+i+'/Readme.md'
+        df1['geoJSON'] = '{"type": "Point","coordinates": ['+str(df1['Longitude'][0])+','+str(df1['Latitude'][0])+']}'
         df = pd.concat([df, df1], ignore_index=True)
         picture_path = path+i+'/'
         picture_files = [x for x in Path(picture_path).iterdir() if x.is_file()]
@@ -108,17 +110,22 @@ gdf.drop(['Latitude', 'Longitude'], axis=1, inplace=True)  # optional
 gdf.to_file('.shp/poi.shp')
 
 # Create POI geoJSON
-
-
-
+if os.path.isfile(path+geojson_file):
+    os.remove(path+geojson_file)
+geojson_file_write = open(path+geojson_file, 'w+')   # w+ create the file if it doesn't exist
+df = pd.read_csv(path+poi_file)
+geojson_file_write.write('```topojson\n{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [\n')
+for i in df:
+    geojson_file_write.write('test\n')
+geojson_file_write.write(']}}}\n```')
 
 # Picture properties sample
 img_path = '7/PXL_20230503_190031280.jpg'
 image_coordinates(img_path)
 
 # Convert .mp4 to .gif sample
-videoClip = VideoFileClip('7/PXL_20230503_184310359.TS.mp4').resize(0.25)
-videoClip.write_gif('7/PXL_20230503_184310359.TS.gif')
+#videoClip = VideoFileClip('7/PXL_20230503_184310359.TS.mp4').resize(0.25)
+#videoClip.write_gif('7/PXL_20230503_184310359.TS.gif')
 
 # https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
 # https://stackoverflow.com/questions/141291/how-to-list-only-top-level-directories-in-python
