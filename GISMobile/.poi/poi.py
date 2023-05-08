@@ -117,11 +117,12 @@ df = pd.read_csv(path+poi_file)
 geojson_file_write.write('```topojson\n{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [\n')
 print('Records: %i' %len(df))
 for i in range(0,len(df)):
-    geojson_file_write.write('{"type": "Point","coordinates": ['+str(df.loc[i]['Longitude'])+','+str(df.loc[i]['Latitude'])+']}')
-    if i <= len(df)-2:
-        geojson_file_write.write(',\n')
-    else:
-        geojson_file_write.write('\n')
+    if df.loc[i]['Longitude'] and df.loc[i]['Latitude']:
+        geojson_file_write.write('{"type": "Point","coordinates": ['+str(df.loc[i]['Longitude'])+','+str(df.loc[i]['Latitude'])+']}')
+        if i <= len(df)-2:
+            geojson_file_write.write(',\n')
+        else:
+            geojson_file_write.write('\n')
 geojson_file_write.write(']}}}\n```')
 
 # Picture properties sample
