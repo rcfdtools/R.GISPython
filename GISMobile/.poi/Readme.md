@@ -4,7 +4,8 @@ Localización de puntos de interés en GISMobile.
 
 ![GISMobile](7/PXL_20230503_184310359.TS.gif)
 
-```geojson					
+```geojson
+{					
 {
   "type": "Feature",
   "geometry": {
@@ -24,6 +25,7 @@ Localización de puntos de interés en GISMobile.
   "properties": {
     "Name": "Tunel derivador Río Guatiquía a Embalse Chuza"
   }
+}
 }
 ```
 
