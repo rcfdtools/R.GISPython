@@ -131,7 +131,9 @@ for i in range(0,len(df)):
         else:
             geojson_file_write.write('\n')
 geojson_file_write.write(']}}}\n\n```')
-geojson_file_write.write('\n\n## Estadísticas generales\n\n')
+geojson_file_write.write('\n\n### Estadísticas generales\n\n')
+category_count = df['Category'].value_counts()
+geojson_file_write.write(str(category_count))
 
 # Picture properties sample
 img_path = '7/PXL_20230503_190031280.jpg'
