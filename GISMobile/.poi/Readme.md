@@ -2,7 +2,8 @@
 
 Localización de puntos de interés en GISMobile.
 
-### Picture sample
+
+### GIF sample
 
 ![GISMobile](7/PXL_20230503_184310359.TS.gif)
 
@@ -25,6 +26,11 @@ Localización de puntos de interés en GISMobile.
 
 ### Polygon sample
 
+```
+longitud 96W, 25W
+latitud 16N, 58S
+```
+
 ```geojson
 {
     "type": "Feature",
@@ -41,5 +47,4 @@ Localización de puntos de interés en GISMobile.
     }
 }
 ```
-	longitud 96W, 25W
-	latitud 16N, 58S
+	
