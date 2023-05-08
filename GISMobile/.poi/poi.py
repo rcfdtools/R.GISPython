@@ -115,8 +115,13 @@ if os.path.isfile(path+geojson_file):
 geojson_file_write = open(path+geojson_file, 'w+')   # w+ create the file if it doesn't exist
 df = pd.read_csv(path+poi_file)
 geojson_file_write.write('```topojson\n{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [\n')
-for i in df:
-    geojson_file_write.write('test\n')
+print('Records: %i' %len(df))
+for i in range(0,len(df)):
+    geojson_file_write.write('{"type": "Point","coordinates": ['+str(df.loc[i]['Longitude'])+','+str(df.loc[i]['Latitude'])+']}')
+    if i <= len(df)-2:
+        geojson_file_write.write(',\n')
+    else:
+        geojson_file_write.write('\n')
 geojson_file_write.write(']}}}\n```')
 
 # Picture properties sample
