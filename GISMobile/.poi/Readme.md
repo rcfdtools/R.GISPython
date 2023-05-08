@@ -15,7 +15,7 @@ Localización de puntos de interés en GISMobile.
   "properties": {
     "Name": "Tunel derivador Río Guatiquía a Embalse Chuza"
   }
-},
+}
 }
 ```
 
