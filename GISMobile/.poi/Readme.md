@@ -112,6 +112,8 @@ Polígono simple usando FeatureCollection
 }
 ```
 
+Integración puntos y polígono (en prueba)
+
 ```geojson
 {
   "type": "FeatureCollection",
