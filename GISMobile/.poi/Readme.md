@@ -15,11 +15,17 @@
 
 ```
 
-### Estadísticas generales
+### Estadísticas generales por categoría
 
 |   # | Category              |   POI |
 |----:|:----------------------|------:|
 |   0 | Technical field visit |     7 |
+
+### Estadísticas generales por autor
+
+|   # | Credit    |   POI |
+|----:|:----------|------:|
+|   0 | rcfdtools |     7 |
 
 
 ### POI

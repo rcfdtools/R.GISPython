@@ -132,9 +132,12 @@ for i in range(0,len(df)):
         else:
             geojson_file_write.write('\n')
 geojson_file_write.write(']}}}\n\n```')
-geojson_file_write.write('\n\n### Estadísticas generales\n\n')
-# Statistics
+geojson_file_write.write('\n\n### Estadísticas generales por categoría\n\n')
 df2 = df.groupby(['Category'])['POI'].agg('count').reset_index()
+df2.index.name = '#'
+geojson_file_write.write(df2.to_markdown())
+geojson_file_write.write('\n\n\n### Estadísticas generales por autor\n\n')
+df2 = df.groupby(['Credit'])['POI'].agg('count').reset_index()
 df2.index.name = '#'
 geojson_file_write.write(df2.to_markdown())
 geojson_file_write.write('\n\n\n### POI\n\n')
