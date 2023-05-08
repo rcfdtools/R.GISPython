@@ -135,14 +135,14 @@ geojson_file_write.write(']}}}\n\n```')
 geojson_file_write.write('\n\n### Estadísticas generales por categoría\n\n')
 df2 = df.groupby(['Category'])['POI'].agg('count').reset_index()
 df2.index.name = '#'
-geojson_file_write.write(df2.to_markdown())
+geojson_file_write.write(df2.to_markdown(showindex=False))
 geojson_file_write.write('\n\n\n### Estadísticas generales por autor\n\n')
 df2 = df.groupby(['Credit'])['POI'].agg('count').reset_index()
 df2.index.name = '#'
-geojson_file_write.write(df2.to_markdown())
-geojson_file_write.write('\n\n\n### POI\n\n')
+geojson_file_write.write(df2.to_markdown(showindex=False))
+geojson_file_write.write('\n\n\n### POI list\n\n')
 df.index.name = '#'
-geojson_file_write.write(df.to_markdown())
+geojson_file_write.write(df.to_markdown(showindex=False))
 
 
 # Picture properties sample

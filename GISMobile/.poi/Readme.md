@@ -17,26 +17,26 @@
 
 ### Estadísticas generales por categoría
 
-|   # | Category              |   POI |
-|----:|:----------------------|------:|
-|   0 | Technical field visit |     7 |
+| Category              |   POI |
+|:----------------------|------:|
+| Technical field visit |     7 |
 
 
 ### Estadísticas generales por autor
 
-|   # | Credit    |   POI |
-|----:|:----------|------:|
-|   0 | rcfdtools |     7 |
+| Credit    |   POI |
+|:----------|------:|
+| rcfdtools |     7 |
 
 
-### POI
+### POI list
 
-|   # |   POI |   Latitude |   Longitude |   Altitude | Date       | Name                                                       | Credit    | Category              | Link                                                                          |
-|----:|------:|-----------:|------------:|-----------:|:-----------|:-----------------------------------------------------------|:----------|:----------------------|:------------------------------------------------------------------------------|
-|   0 |     1 |    4.71217 |    -73.8198 |    3733.41 | 2023-05-03 | Antigua mina de caliza CEMEX                               | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/1/Readme.md |
-|   1 |     2 |    4.67805 |    -73.7929 |    3730.03 | 2023-05-03 | Mirador Laguna Seca                                        | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/2/Readme.md |
-|   2 |     3 |    4.6344  |    -73.7246 |    3051.38 | 2023-05-03 | Campamento EAB. Estación climatológica Chuza Monterredondo | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/3/Readme.md |
-|   3 |     4 |    4.58571 |    -73.7287 |    3402.35 | 2023-05-03 | Fraylejones                                                | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/4/Readme.md |
-|   4 |     5 |    4.5409  |    -73.7571 |    3220.78 | 2023-05-03 | Localización futura presa Río La Playa - Guatiquía         | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/5/Readme.md |
-|   5 |     6 |    4.53232 |    -73.7496 |    3234.2  | 2023-05-03 | Laguna Chingaza                                            | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6/Readme.md |
-|   6 |     7 |    4.53793 |    -73.7283 |    3074    | 2023-05-03 | Tunel derivador Río Guatiquía a Embalse Chuza              | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md |
+|   POI |   Latitude |   Longitude |   Altitude | Date       | Name                                                       | Credit    | Category              | Link                                                                          |
+|------:|-----------:|------------:|-----------:|:-----------|:-----------------------------------------------------------|:----------|:----------------------|:------------------------------------------------------------------------------|
+|     1 |    4.71217 |    -73.8198 |    3733.41 | 2023-05-03 | Antigua mina de caliza CEMEX                               | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/1/Readme.md |
+|     2 |    4.67805 |    -73.7929 |    3730.03 | 2023-05-03 | Mirador Laguna Seca                                        | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/2/Readme.md |
+|     3 |    4.6344  |    -73.7246 |    3051.38 | 2023-05-03 | Campamento EAB. Estación climatológica Chuza Monterredondo | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/3/Readme.md |
+|     4 |    4.58571 |    -73.7287 |    3402.35 | 2023-05-03 | Fraylejones                                                | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/4/Readme.md |
+|     5 |    4.5409  |    -73.7571 |    3220.78 | 2023-05-03 | Localización futura presa Río La Playa - Guatiquía         | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/5/Readme.md |
+|     6 |    4.53232 |    -73.7496 |    3234.2  | 2023-05-03 | Laguna Chingaza                                            | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6/Readme.md |
+|     7 |    4.53793 |    -73.7283 |    3074    | 2023-05-03 | Tunel derivador Río Guatiquía a Embalse Chuza              | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md |
