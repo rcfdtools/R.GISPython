@@ -65,7 +65,7 @@ path = 'D:/R.GISPython/GISMobile/.poi/'
 path_www = 'https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/'
 poi_file = 'poi.csv'
 geojson_file = 'Readme.md'
-poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Category', 'Link', 'geoJSON']
+poi_cols = ['POI', 'Latitude', 'Longitude', 'Altitude', 'Date', 'Name', 'Credit', 'Category', 'Link']
 exclude_folder = ['.shp', '.temp']
 picture_format = ['.jpg', '.png', '.tif']
 directories = [d for d in os.listdir(os.getcwd()) if os.path.isdir(d)]
@@ -86,7 +86,6 @@ for i in directories:
         readme_file.write(geojson)
         df1['POI'] = i
         df1['Link'] = path_www+i+'/Readme.md'
-        df1['geoJSON'] = '{"type": "Point","coordinates": ['+str(df1['Longitude'][0])+','+str(df1['Latitude'][0])+']}'
         df = pd.concat([df, df1], ignore_index=True)
         picture_path = path+i+'/'
         picture_files = [x for x in Path(picture_path).iterdir() if x.is_file()]
