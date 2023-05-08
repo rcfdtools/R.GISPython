@@ -1,4 +1,4 @@
-## ## Puntos de interés - POI - Test samples
+## Puntos de interés - POI - Test samples
 
 Localización de puntos de interés en GISMobile  
 Pruebas funcionales
@@ -150,7 +150,7 @@ Integración puntos y polígono (en prueba)
 ```topojson
 {"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [
 {"type": "Point","properties": {"prop0": "NW"},"coordinates": [-96, 16]},
-{"type": "Point","properties": {"prop0": "SW"},"coordinates": [-96, -58]},
+{"type": "Point","properties": {"prop0": "SW"},"coordinates": [-96, -58]}
 ]}}}
 ```
 
