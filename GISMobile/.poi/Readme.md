@@ -44,18 +44,10 @@ Localización de puntos de interés en GISMobile.
           "type": "LineString",
           "properties": {"prop0": "value0", "prop1": 0},
           "arcs": [0]
-        },
-        {
-          "type": "Polygon",
-          "properties": {"prop0": "value0",
-            "prop1": {"this": "that"}
-          },
-          "arcs": [[1]]
         }
       ]
     }
-  },
-  "arcs": [[[4000, 0], [1999, 9999], [2000, -9999], [2000, 9999]],[[0, 0], [0, 9999], [2000, 0], [0, -9999], [-2000, 0]]]
+  }
 }
 ```
 
