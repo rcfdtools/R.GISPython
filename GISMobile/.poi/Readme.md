@@ -20,10 +20,10 @@ Localización de puntos de interés en GISMobile.
 
 ```geojson
 {
-    'type': 'Feature',
-    'geometry': {
-        'type': 'Polygon',
-        'coordinates': [
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
             [
                 [-121.353637, 40.584978],
                 [-121.284551, 40.584758],
