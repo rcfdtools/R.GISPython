@@ -107,6 +107,11 @@ gdf.set_geometry(
 gdf.drop(['Latitude', 'Longitude'], axis=1, inplace=True)  # optional
 gdf.to_file('.shp/poi.shp')
 
+# Create POI geoJSON
+
+
+
+
 # Picture properties sample
 img_path = '7/PXL_20230503_190031280.jpg'
 image_coordinates(img_path)

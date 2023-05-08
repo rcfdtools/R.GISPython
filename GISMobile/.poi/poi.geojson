@@ -1,7 +1,6 @@
-{
-    "type": "MultiPoint",
-    "coordinates": [
-        [-74.043193, 4.783243],
-        [-74.063193, 4.783243]
-    ]
-}
+```topojson
+{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [
+{"type": "Point","properties": {"prop0": "NW"},"coordinates": [-96, 16]},
+{"type": "Point","properties": {"prop0": "SW"},"coordinates": [-96, -58]}
+]}}}
+```
