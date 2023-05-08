@@ -33,22 +33,22 @@ Localización de puntos de interés en GISMobile.
       "geometries": [
         {
           "type": "Point",
-          "properties": {"prop0": "NE"},
+          "properties": {"prop0": "NW"},
           "coordinates": [-96, 16]
         },
 		{
           "type": "Point",
-          "properties": {"prop0": "NW"},
+          "properties": {"prop0": "SW"},
           "coordinates": [-96, -58]
         },
 		{
           "type": "Point",
-          "properties": {"prop0": "SW"},
+          "properties": {"prop0": "SE"},
           "coordinates": [-25, -58]
         },
 		{
           "type": "Point",
-          "properties": {"prop0": "SE"},
+          "properties": {"prop0": "NE"},
           "coordinates": [-25, 16]
         }      		
       ]
@@ -56,7 +56,6 @@ Localización de puntos de interés en GISMobile.
   }
 }
 ```
-
 
 
 ### Polygon sample
@@ -82,7 +81,6 @@ latitud 16N, 58S
     }
 }
 ```
-
 
 
 ```topojson
