@@ -82,6 +82,51 @@ latitud 16N, 58S
 }
 ```
 
+```topojson
+{
+  "type": "Topology",
+  "objects": {
+    "example": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
+          "properties": {"prop0": "value0"},
+          "coordinates": [-96, 16]
+        },
+		{
+          "type": "Point",
+          "properties": {"prop0": "value0"},
+          "coordinates": [-96, -58]
+        },
+		{
+          "type": "Point",
+          "properties": {"prop0": "value0"},
+          "coordinates": [-25, -58]
+        },
+		{
+          "type": "Point",
+          "properties": {"prop0": "value0"},
+          "coordinates": [-25, 16]
+        },
+        {
+        "type": "Polygon",
+        "coordinates": [
+                [
+                    [-96, 16],
+                    [-96, -58],
+                    [-25, -58],
+                    [-25, 16]
+                ]
+            ]
+        }        		
+      ]
+    }
+  }
+}
+```
+
+
 ### Referencias
 
 * https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams
