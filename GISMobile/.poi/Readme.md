@@ -147,8 +147,15 @@ Integración puntos y polígono (en prueba)
 }
 ```
 
+```topojson
+{"type": "Topology", "objects": {"example": {"type": "GeometryCollection","geometries": [
+{"type": "Point","properties": {"prop0": "NW"}, "coordinates": [-96, 16]},
+{"type": "Point","properties": {"prop0": "SW"},"coordinates": [-96, -58]}
+]}}}
+```
 
 
 ### Referencias
 
 * https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams
+* https://towardsdatascience.com/how-to-display-data-from-geojson-files-using-the-folium-python-library-f7284cb2a256
