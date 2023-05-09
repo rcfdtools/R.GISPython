@@ -6,3 +6,4 @@ POI,Latitude,Longitude,Altitude,Date,Name,Credit,Category,Link
 5,4.5409,-73.75708888888889,3220.78,2023-05-03,Localización futura presa Río La Playa - Guatiquía,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/5/Readme.md
 6,4.532322222222223,-73.74963611111112,3234.2,2023-05-03,Laguna Chingaza,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6/Readme.md
 7,4.537927777777778,-73.72825833333333,3074.0,2023-05-03,Tunel derivador Río Guatiquía a Embalse Chuza,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md
+8,9.559278,-73.458466,71.31,2013-07-03,Embalse Paujil,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/8/Readme.md

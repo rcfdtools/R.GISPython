@@ -10,7 +10,8 @@
 {"type": "Point","properties": {"POI": "4", "Category": "Technical field visit", "Name": "Fraylejones", "Date": "2023-05-03", "Credits": "rcfdtools", "URL": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/4/Readme.md"},"coordinates": [-73.72865555555556,4.585705555555555]},
 {"type": "Point","properties": {"POI": "5", "Category": "Technical field visit", "Name": "Localización futura presa Río La Playa - Guatiquía", "Date": "2023-05-03", "Credits": "rcfdtools", "URL": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/5/Readme.md"},"coordinates": [-73.75708888888889,4.5409]},
 {"type": "Point","properties": {"POI": "6", "Category": "Technical field visit", "Name": "Laguna Chingaza", "Date": "2023-05-03", "Credits": "rcfdtools", "URL": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6/Readme.md"},"coordinates": [-73.74963611111112,4.532322222222223]},
-{"type": "Point","properties": {"POI": "7", "Category": "Technical field visit", "Name": "Tunel derivador Río Guatiquía a Embalse Chuza", "Date": "2023-05-03", "Credits": "rcfdtools", "URL": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md"},"coordinates": [-73.72825833333333,4.537927777777778]}
+{"type": "Point","properties": {"POI": "7", "Category": "Technical field visit", "Name": "Tunel derivador Río Guatiquía a Embalse Chuza", "Date": "2023-05-03", "Credits": "rcfdtools", "URL": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md"},"coordinates": [-73.72825833333333,4.537927777777778]},
+{"type": "Point","properties": {"POI": "8", "Category": "Technical field visit", "Name": "Embalse Paujil", "Date": "2013-07-03", "Credits": "rcfdtools", "URL": "https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/8/Readme.md"},"coordinates": [-73.458466,9.559278]}
 ]}}}
 
 ```
@@ -19,14 +20,14 @@
 
 | Category              |   POI |
 |:----------------------|------:|
-| Technical field visit |     7 |
+| Technical field visit |     8 |
 
 
 ### Estadísticas generales por autor
 
 | Credit    |   POI |
 |:----------|------:|
-| rcfdtools |     7 |
+| rcfdtools |     8 |
 
 
 ### POI list
@@ -40,3 +41,4 @@
 |     5 |    4.5409  |    -73.7571 |    3220.78 | 2023-05-03 | Localización futura presa Río La Playa - Guatiquía         | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/5/Readme.md |
 |     6 |    4.53232 |    -73.7496 |    3234.2  | 2023-05-03 | Laguna Chingaza                                            | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6/Readme.md |
 |     7 |    4.53793 |    -73.7283 |    3074    | 2023-05-03 | Tunel derivador Río Guatiquía a Embalse Chuza              | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md |
+|     8 |    9.55928 |    -73.4585 |      71.31 | 2013-07-03 | Embalse Paujil                                             | rcfdtools | Technical field visit | https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/8/Readme.md |
