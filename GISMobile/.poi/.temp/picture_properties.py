@@ -59,7 +59,7 @@ def image_info(img_path):
 
 
 # Picture properties sample
-img_path = '../10/2013-07-03_16.10.30.jpg'
+img_path = '../11/2013-07-04_08.55.15.jpg'
 image_coordinates(img_path)
 
 # Convert .mp4 to .gif sample
