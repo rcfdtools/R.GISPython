@@ -1,4 +1,4 @@
-## Arroyo San Antonio - Erosión remontante (2013-07-03)
+## Arroyo San Antonio - Paso de vía en entrega Realineamiento #4 (2013-07-03)
 Créditos: rcfdtools<br>Categoría: Technical field visit
 
 ```geojson
@@ -6,10 +6,10 @@ Créditos: rcfdtools<br>Categoría: Technical field visit
   "type": "Feature",
   "geometry": {
     "type": "Point", 
-    "coordinates": [-73.4627698, 9.5332223]
+    "coordinates": [-73.5215662, 9.5384802]
   }, 
   "properties": {
-    "Name": "Arroyo San Antonio - Erosión remontante"
+    "Name": "Arroyo San Antonio - Paso de vía en entrega Realineamiento #4"
   }
 }
 ```
