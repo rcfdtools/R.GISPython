@@ -7,3 +7,4 @@ POI,Latitude,Longitude,Altitude,Date,Name,Credit,Category,Link
 6,4.532322222222223,-73.74963611111112,3234.2,2023-05-03,Laguna Chingaza,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/6/Readme.md
 7,4.537927777777778,-73.72825833333333,3074.0,2023-05-03,Tunel derivador Río Guatiquía a Embalse Chuza,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/7/Readme.md
 8,9.559278,-73.458466,71.31,2013-07-03,Embalse Paujil,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/8/Readme.md
+9,9.5532847,-73.4642336,70.18,2013-07-04,Paso de vía,rcfdtools,Technical field visit,https://github.com/rcfdtools/R.GISPython/tree/main/GISMobile/.poi/9/Readme.md

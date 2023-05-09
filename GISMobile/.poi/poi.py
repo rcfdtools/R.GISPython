@@ -7,7 +7,6 @@ import geopandas
 from exif import Image
 from pathlib import *
 import tabulate  # required for print tables in Markdown using pandas
-from moviepy.editor import VideoFileClip
 
 def decimal_coords(coords, ref):
  decimal_degrees = coords[0] + coords[1] / 60 + coords[2] / 3600
@@ -136,23 +135,14 @@ geojson_file_write.write(']}}}\n\n```')
 geojson_file_write.write('\n\n### Estadísticas generales por categoría\n\n')
 df2 = df.groupby(['Category'])['POI'].agg('count').reset_index()
 df2.index.name = '#'
-geojson_file_write.write(df2.to_markdown(showindex=False))
+geojson_file_write.write(df2.to_markdown(index=False))
 geojson_file_write.write('\n\n\n### Estadísticas generales por autor\n\n')
 df2 = df.groupby(['Credit'])['POI'].agg('count').reset_index()
 df2.index.name = '#'
-geojson_file_write.write(df2.to_markdown(showindex=False))
+geojson_file_write.write(df2.to_markdown(index=False))
 geojson_file_write.write('\n\n\n### POI list\n\n')
 df.index.name = '#'
-geojson_file_write.write(df.to_markdown(showindex=False))
-
-
-# Picture properties sample
-img_path = '7/PXL_20230503_190031280.jpg'
-image_coordinates(img_path)
-
-# Convert .mp4 to .gif sample
-#videoClip = VideoFileClip('7/PXL_20230503_184310359.TS.mp4').resize(0.25)
-#videoClip.write_gif('7/PXL_20230503_184310359.TS.gif')
+geojson_file_write.write(df.to_markdown(index=False))
 
 # https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
 # https://stackoverflow.com/questions/141291/how-to-list-only-top-level-directories-in-python
