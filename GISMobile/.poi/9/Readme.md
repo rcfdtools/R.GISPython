@@ -1,4 +1,4 @@
-## Paso de vía (2013-07-04)
+## Paso de vía Canal Paujil (2013-07-04)
 Créditos: rcfdtools<br>Categoría: Technical field visit
 
 ```geojson
@@ -9,7 +9,7 @@ Créditos: rcfdtools<br>Categoría: Technical field visit
     "coordinates": [-73.4642336, 9.5532847]
   }, 
   "properties": {
-    "Name": "Paso de vía"
+    "Name": "Paso de vía Canal Paujil"
   }
 }
 ```
