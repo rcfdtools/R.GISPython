@@ -3,9 +3,9 @@
 # Large files in a GitHub free account has to be compress in 95MB files parts
 
 # General exclusions
-# .gitignore
 .idea/
-venv/
+.git/
+.venv/
 .venvPython310/
 .venvPython311/
 GISMobile/GISMobile_EAB_CO/GDB.gdb
