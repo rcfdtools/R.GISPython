@@ -1,0 +1,13 @@
+<metadata xml:lang="es">
+	<Esri>
+		<CreaDate>20230714</CreaDate>
+		<CreaTime>14074200</CreaTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<SyncOnce>TRUE</SyncOnce>
+		<DataProperties>
+			<lineage>
+				<Process ToolSource="c:\program files\arcgis\server\ArcToolbox\Toolboxes\Data Management Tools.tbx\CopyFeatures" Date="20230714" Time="140742">CopyFeatures CNE_IDEAM \opt\CNE\CNE_IDEAM\CNE_IDEAM.shp # 0 0 0</Process>
+			</lineage>
+		</DataProperties>
+	</Esri>
+</metadata>
