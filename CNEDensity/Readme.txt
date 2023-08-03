@@ -2,18 +2,18 @@ es: Análisis de la distribución espacial de la red de estaciones hidroclimatol
 en: Spatial distribution analysis from the National Colombia stations catalog and their relevance in hydrologic studies
 
 ----------------------------------
-Preliminars
+Preliminary
 ----------------------------------
 1. Get the IDEAM CNE stations and other stations catalogs
 	http://dhime.ideam.gov.co/atencionciudadano/
 	http://www.ideam.gov.co/solicitud-de-informacion
 	http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls
 	http://bart.ideam.gov.co/cneideam/CNE_OE.xls
-2. Merge catalogs
-3. Update locations with an external manual locations table. Many current CNE locations are not accurate. updated_locations.csv
-4. Create station categories dictionary with abbreviations (category_dict.csv) and join with stations catalog
-5. Convert joined catalog into a shapefile. Longer attributes names has to be reduced to 10 characters
-6. Delete un updated attributes: OBJECTID, AREA_HIDROGRAFICA, ZONA_HIDROGRAFICA, SUBZONA_HIDROGRAFICA
+2. Delete not updated or not required attributes: OBJECTID, AREA_HIDROGRAFICA, ZONA_HIDROGRAFICA, SUBZONA_HIDROGRAFICA.....
+3. Concat catalogs
+4. Update locations with an external manual locations table. Many current CNE locations are not accurate. updated_locations.csv
+5. Create station categories dictionary with abbreviations (category_dict.csv) and join with stations catalog
+6. Convert joined catalog into a shapefile. Longer attributes names has to be reduced to 10 characters
 7. Create categories parametes dictionary (category_parameter_dict.csv). Required for the main study analysis
 
 ----------------------------------
