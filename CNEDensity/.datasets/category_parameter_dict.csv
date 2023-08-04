@@ -1,38 +1,38 @@
 Parameter,AM,CO,CP,LG,LM,MG,ME,PG,PM,RS,SP,SS
-Precipitaci髇,1,1,1,0,0,0,0,1,1,0,1,1
+Precipitaci贸n,1,1,1,0,0,0,0,1,1,0,1,1
 Temperatura del aire cerca al suelo,1,1,1,0,0,0,0,0,0,0,1,1
-Temperatura m醲ima del aire a 2 metros,1,1,1,0,0,0,0,0,0,0,0,0
-Temperatura m韓ima del aire a 2 metros,1,1,1,0,0,0,0,0,0,0,0,0
-Temperatura del aire en capa alta de atm髎fera,0,0,0,0,0,0,0,0,0,1,0,0
-Temperatura extrema del tanque de evaporaci髇,1,0,1,0,0,0,0,0,0,0,0,0
+Temperatura m谩xima del aire a 2 metros,1,1,1,0,0,0,0,0,0,0,0,0
+Temperatura m铆nima del aire a 2 metros,1,1,1,0,0,0,0,0,0,0,0,0
+Temperatura del aire en capa alta de atm贸sfera,0,0,0,0,0,0,0,0,0,1,0,0
+Temperatura extrema del tanque de evaporaci贸n,1,0,1,0,0,0,0,0,0,0,0,0
 Temperatura del suelo a varias profundidades,1,0,0,0,0,0,0,0,0,0,0,0
 Temperatura del agua,0,0,0,0,0,1,0,0,0,0,0,0
 Temperaturas extremas,0,0,0,0,0,0,0,0,0,0,1,0
-Evaporaci髇,1,1,1,0,0,0,0,0,0,0,0,0
+Evaporaci贸n,1,1,1,0,0,0,0,0,0,0,0,0
 Brillo solar,1,0,1,0,0,0,0,0,0,0,0,0
-Radiaci髇 solar,1,0,1,0,0,0,0,0,0,0,0,0
+Radiaci贸n solar,1,0,1,0,0,0,0,0,0,0,0,0
 Humedad del aire cerca al suelo,1,1,1,0,0,0,0,0,0,0,1,1
-Humedad relativa en capa alta de atm髎fera,0,0,0,0,0,0,0,0,0,1,0,0
-Humedad - Caracter韘ticas,0,0,0,0,0,0,0,0,0,0,1,0
-Viento - Direcci髇,1,0,1,0,0,0,0,0,0,0,1,1
+Humedad relativa en capa alta de atm贸sfera,0,0,0,0,0,0,0,0,0,1,0,0
+Humedad - Caracter铆sticas,0,0,0,0,0,0,0,0,0,0,1,0
+Viento - Direcci贸n,1,0,1,0,0,0,0,0,0,0,1,1
 Viento - Velocidad,1,0,1,0,0,0,0,0,0,0,1,1
 Viento - Recorrido,1,0,1,0,0,0,0,0,0,0,1,1
-Viento - Direcci髇 en capa alta de atm髎fera,0,0,0,0,0,0,0,0,0,1,0,0
-Viento - Velocidad en capa alta de atm髎fera,0,0,0,0,0,0,0,0,0,1,0,0
-Presi髇 en capa alta de atm髎fera,0,0,0,0,0,0,0,0,0,1,0,0
-Presi髇 atmosf閞ica cercana al suelo,0,0,0,0,0,0,0,0,0,0,1,1
+Viento - Direcci贸n en capa alta de atm贸sfera,0,0,0,0,0,0,0,0,0,1,0,0
+Viento - Velocidad en capa alta de atm贸sfera,0,0,0,0,0,0,0,0,0,1,0,0
+Presi贸n en capa alta de atm贸sfera,0,0,0,0,0,0,0,0,0,1,0,0
+Presi贸n atmosf茅rica cercana al suelo,0,0,0,0,0,0,0,0,0,0,1,1
 Nubosidad - Octas,1,0,1,0,0,0,0,0,0,0,1,1
 Nubosidad - Tipo,0,0,0,0,0,0,0,0,0,0,1,0
 Nubosidad - Altura de nubes,0,0,0,0,0,0,0,0,0,0,1,0
 Nubosidad - Capas significativas,0,0,0,0,0,0,0,0,0,0,1,0
 Visibilidad,0,0,0,0,0,0,0,0,0,0,1,1
-Nivel l醡ina agua,0,0,0,1,1,1,0,0,0,0,0,0
+Nivel l谩mina agua,0,0,0,1,1,1,0,0,0,0,0,0
 Heladas,0,0,0,0,0,0,1,0,0,0,0,0
-Secuencia fen髆enos atmosf閞icos,0,0,0,0,0,0,0,0,0,0,1,1
-Tiempo atmosf閞ico,0,0,0,0,0,0,0,0,0,0,0,1
+Secuencia fen贸menos atmosf茅ricos,0,0,0,0,0,0,0,0,0,0,1,1
+Tiempo atmosf茅rico,0,0,0,0,0,0,0,0,0,0,0,1
 Estado del suelo,0,0,0,0,0,0,0,0,0,0,0,1
 Salinidad agua marina,0,0,0,0,0,1,0,0,0,0,0,0
-Fen髆enos especiales,1,0,1,0,0,0,1,0,0,0,1,1
-Tanque evaporaci髇 (no siempre),0,1,1,0,0,0,0,0,0,0,0,0
-Heli骻rafo (no siempre),0,1,0,0,0,0,0,0,0,0,0,0
-Anen髆etro (no siempre),0,1,0,0,0,0,0,0,0,0,0,0
+Fen贸menos especiales,1,0,1,0,0,0,1,0,0,0,1,1
+Tanque evaporaci贸n (no siempre),0,1,1,0,0,0,0,0,0,0,0,0
+Heli贸grafo (no siempre),0,1,0,0,0,0,0,0,0,0,0,0
+Anen贸metro (no siempre),0,1,0,0,0,0,0,0,0,0,0,0

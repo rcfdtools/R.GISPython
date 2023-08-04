@@ -13,12 +13,16 @@ Preliminary
 3. Concat catalogs
 4. Update locations with an external manual locations table. Many current CNE locations are not accurate. update_locations.csv
 5. Create station categories dictionary with abbreviations (category_dict.csv) and join with stations catalog
-6. Convert joined catalog into a shapefile. Longer attributes names has to be reduced to 10 characters
-7. Create categories parametes dictionary (category_parameter_dict.csv). Required for the main study analysis
+6. Truncate long attributes names to 10 characters for dBase .dbf shapefile compatibility
+7. Convert joined catalog into a shapefile with CRS 4326
+
+8. Upgrade the stations elevations using a DEM file. ASTER GDEM v3
+9. Create categories parametes dictionary (category_parameter_dict.csv). Required for the main study analysis
 
 ----------------------------------
 Colombia hydrographic subzones
 ----------------------------------
+Check first the CRS 4686
 1. Get the Colombia hydrographic subzones. Zonificacion_hidrografica_2013.shp
 	http://bart.ideam.gov.co/cneideam/Capasgeo/Zonificacion_Hidrografica_2013.zip
 	http://geoservicios.ideam.gov.co/geonetwork?uuid=e3737d23-dceb-41e1-8680-2816fc1b0fc2
@@ -38,3 +42,6 @@ Research analysis
 References
 ----------------------------------
 https://www.includehelp.com/python/update-a-dataframe-value-from-another-dataframe.aspx
+https://gis.stackexchange.com/questions/441326/computing-zonal-statistics-with-rasterstats-in-python
+https://www.geeksforgeeks.org/python-get-last-n-characters-of-a-string/
+https://geopandas.org/en/stable/gallery/create_geopandas_from_pandas.html (also includes a plot representation)
