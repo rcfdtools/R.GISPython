@@ -4,13 +4,13 @@ en: Spatial distribution analysis from the National Colombia stations catalog an
 ----------------------------------
 Preliminary
 ----------------------------------
-1. Get the IDEAM CNE stations and other stations catalogs
+1. Get the IDEAM CNE stations and other stations catalogs (Microsoft Excel files)
 	http://dhime.ideam.gov.co/atencionciudadano/
 	http://www.ideam.gov.co/solicitud-de-informacion
 	http://bart.ideam.gov.co/cneideam/CNE_IDEAM.xls
 	http://bart.ideam.gov.co/cneideam/CNE_OE.xls
 2. Delete not updated or not required attributes: OBJECTID, AREA_HIDROGRAFICA, ZONA_HIDROGRAFICA, SUBZONA_HIDROGRAFICA.....
-3. Concat catalogs
+3. Concat catalogs into a dataframe
 4. Update locations with an external manual locations table. Many current CNE locations are not accurate. update_locations.csv
 5. Create station categories dictionary with abbreviations (category_dict.csv) and join with stations catalog
 6. Truncate long attributes names to 10 characters for dBase .dbf shapefile compatibility

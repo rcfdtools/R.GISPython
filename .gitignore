@@ -10,7 +10,7 @@
 .venvPython311/
 GISMobile/GISMobile_EAB_CO/GDB.gdb
 GISMobile/GISMobile_EAB_CO/dem/AlosPalsarZE*.tif*
-CNEDensity/**/*.tif
+CNEDensity/**/*.tif*
 
 
 # Exclusion for D:\R.GISPython\HydroGeoZone

@@ -9,6 +9,7 @@ import pandas as pd
 import rasterio
 #from rasterio.plot import show
 import geopandas as gpd
+from rasterstats import point_query
 
 # Functions
 def raster_value(raster_file, longitude, latitude):
@@ -22,6 +23,7 @@ excel_cne_oe_file = '../.datasets/CNE_OE.xls'
 locations_file = '../.datasets/update_locations.csv'  # Attributes has to be: CODIGO,latitud,longitud
 category_dict_file = '../.datasets/category_dict.csv'
 dem_file = '../.dem/ASTER/ASTGTMV003.tif'
+station_shapefile= '../.shp/CNE_Concat.shp'
 objectid_name= 'OBJECTID'
 code_name = 'CODIGO'
 name_name = 'nombre'
@@ -79,14 +81,29 @@ print('\nConcatenated dataframe\n%s\n%s' %(df_cne_concat, df_cne_concat.dtypes))
 count_stations = int(df_cne_concat.__len__())
 print('\nStations: %s' %count_stations)
 df_cne_concat.to_csv('../.datasets/CNE_Concat.csv')
-
 # Convert to a shapefile
 df_cne_concat[installation_date[:10]] = df_cne_concat[installation_date[:10]].astype(str)  # Shapefile doesn't  support datetime fields
 df_cne_concat[suspension_date[:10]] = df_cne_concat[suspension_date[:10]].astype(str)  # Shapefile doesn't  support datetime fields
 gdf = gpd.GeoDataFrame(df_cne_concat, geometry=gpd.points_from_xy(df_cne_concat[longitude_name[:10]], df_cne_concat[latitude_name[:10]]), crs="EPSG:4326")
-gdf.to_file('../.shp/CNE_Concat.shp')
+gdf.to_file(station_shapefile)
 print('\nGeo dataframe\n%s' % gdf)
 
+# Zonal statistics to get the stations elevations using a DEM
+# The shapefile and the DEM has to use the same CRS, e.g. 4326
+station_dem_value = point_query(station_shapefile, dem_file)
+print(station_dem_value)
+print('Points evaluated: %d' % len(station_dem_value))
+df_cne_concat['DEMValue'] = -9999  #
+for s in range(len(station_dem_value)):
+    if station_dem_value[s] is None:
+        df_cne_concat['DEMValue'][s] = df_cne_concat[elevation_name[:10]][s]
+    else:
+        df_cne_concat['DEMValue'][s] = station_dem_value[s]
+df_cne_concat.to_csv('../.datasets/CNE_Concat.csv')
+print('CNE with elevations from DEM\n%s' % df_cne_concat)
+
+
+#dem_stat.to_csv('../.datasets/CNE_DEM_Values.csv')
 
 # Stations elevation upgrade from ASTER GDEM v3 raster (obsolete)
 if update_elevations:
