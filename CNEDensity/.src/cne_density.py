@@ -20,6 +20,8 @@ excel_cne_ideam_file = '../.datasets/CNE_IDEAM.xls'
 excel_cne_oe_file = '../.datasets/CNE_OE.xls'
 locations_file = '../.datasets/update_locations.csv'  # Attributes has to be: CODIGO,latitud,longitud
 category_dict_file = '../.datasets/category_dict.csv'
+concat_station_file = '../.datasets/CNE_Concat.csv'
+intersect_station_file = '../.datasets/CNE_Concat_Intersect.csv'
 dem_file = '../.dem/ASTER/ASTGTMV003.tif'
 concat_station_shapefile = '../.shp/CNE_Concat.shp'
 intersect_station_shapefile = '../.shp/CNE_Concat_Intersect.shp'
@@ -50,7 +52,7 @@ converters = {category_name:str, code_name:str, latitude_name:float, longitude_n
 drop_columns = [objectid_name, technology_name, state_active_name, geo_state_name, geo_county_name, geo_operative_area_name, geo_hydro_area_name, geo_hydro_zone_name, remark_name, geo_hydro_subzone_name, stream_name, subnet_name]
 dem_round_pos = 0  # Decimal positions for elevations rounding
 update_locations = True  # Update locations with locations_file
-update_elevations = False  # Update elevations with a DEM raster. Attention: has to be run at least one time
+update_elevations = True  # Calculate elevations with a DEM raster, DEMValue in tables
 
 # Load and concatenate stations catalogs
 df_cne_ideam = pd.read_excel(excel_cne_ideam_file, parse_dates=parse_dates, converters=converters)
@@ -85,7 +87,7 @@ df_cne_concat.rename(columns = {code_name:code_name[:10], name_name:name_name[:1
 print('\nConcatenated dataframe\n%s\n%s' %(df_cne_concat, df_cne_concat.dtypes))
 count_stations = int(df_cne_concat.__len__())
 print('\nStations: %s' %count_stations)
-df_cne_concat.to_csv('../.datasets/CNE_Concat.csv')
+df_cne_concat.to_csv(concat_station_file)
 
 # Convert to a shapefile without DEM elevations
 df_cne_concat[installation_date[:10]] = df_cne_concat[installation_date[:10]].astype(str)  # Shapefile doesn't  support datetime fields
@@ -96,11 +98,11 @@ print('\nGeo dataframe\n%s' % gdf)
 
 # Zonal statistics to get the stations elevations using a DEM
 # Attention: the shapefile and the DEM has to use the same CRS, e.g. 4326
+df_cne_concat['DEMValue'] = -9999  # Set an initial value
 if update_elevations:
     station_dem_value = point_query(concat_station_shapefile, dem_file)
     print(station_dem_value)
     print('Points evaluated: %d' % len(station_dem_value))
-    df_cne_concat['DEMValue'] = -9999  # Set an initial value
     for s in range(len(station_dem_value)):
         if station_dem_value[s] is None:
             df_cne_concat['DEMValue'][s] = df_cne_concat[elevation_name[:10]][s]
@@ -108,12 +110,15 @@ if update_elevations:
             df_cne_concat['DEMValue'][s] = round(station_dem_value[s], dem_round_pos)
     df_cne_concat.to_csv('../.datasets/CNE_Concat.csv')
     print('CNE with elevations from DEM\n%s' % df_cne_concat)
-    # Convert to a shapefile with DEM elevations
-    df_cne_concat[installation_date[:10]] = df_cne_concat[installation_date[:10]].astype(str)  # Shapefile doesn't  support datetime fields
-    df_cne_concat[suspension_date[:10]] = df_cne_concat[suspension_date[:10]].astype(str)  # Shapefile doesn't  support datetime fields
-    gdf = gpd.GeoDataFrame(df_cne_concat, geometry=gpd.points_from_xy(df_cne_concat[longitude_name[:10]], df_cne_concat[latitude_name[:10]]), crs="EPSG:4326")
-    gdf.to_file(concat_station_shapefile)
-    print('\nGeo dataframe\n%s' % gdf)
+else:
+    df_cne_concat['DEMValue'] = df_cne_concat[elevation_name[:10]]
+df_cne_concat.to_csv(concat_station_file)
+# Convert to a shapefile with DEM elevations
+df_cne_concat[installation_date[:10]] = df_cne_concat[installation_date[:10]].astype(str)  # Shapefile doesn't  support datetime fields
+df_cne_concat[suspension_date[:10]] = df_cne_concat[suspension_date[:10]].astype(str)  # Shapefile doesn't  support datetime fields
+gdf = gpd.GeoDataFrame(df_cne_concat, geometry=gpd.points_from_xy(df_cne_concat[longitude_name[:10]], df_cne_concat[latitude_name[:10]]), crs="EPSG:4326")
+gdf.to_file(concat_station_shapefile)
+print('\nGeo dataframe\n%s' % gdf)
 
 # Intersect stations with hydro geo zones
 # The shapefile and the DEM has to use the same CRS, e.g. 4326
@@ -121,7 +126,6 @@ gdf_station = gpd.read_file(concat_station_shapefile)
 gdf_hydro_zone = gpd.read_file(hydro_zone_shapefile)
 gdf_intersection = gpd.overlay(gdf_station, gdf_hydro_zone, how='intersection')
 gdf_intersection.to_file(intersect_station_shapefile)
+pd.DataFrame(gdf_intersection.drop(columns='geometry')).to_csv(intersect_station_file)
 print('\nGeo dataframe with intersection\n%s' % gdf_intersection)
-
-
 
