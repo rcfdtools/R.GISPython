@@ -19,15 +19,23 @@ Preliminary
 9. Colombia hydrographic subzones (external and manual procedure, required only one time. Not included in Python script)
 	Get manually the Colombia hydrographic subzones Zonificacion_hidrografica_2013.shp. CRS 4686
 	Convert manually to CRS 4326 Zonificacion_hidrografica_2013_4326.shp
-	Calculate area Akm2 manually using QGIS and CRS 3857 WGS_1984_Web_Mercator_Auxiliary_Sphere
+	Calculate area Akm2_SZH manually using QGIS and CRS 3857 WGS_1984_Web_Mercator_Auxiliary_Sphere
 	(Optional) Dissolve subzones to zones and hydrographic areas
-10. Spatial intersection between stations catalog and hydrographic subzones as points using Python. New attributes: COD_AH, COD_ZH, COD_SZH, NOM_AH, NOM_ZH, NOM_SZH, Akm2
-9. Create categories parametes dictionary (category_parameter_dict.csv). Required for the main study analysis
+10. Spatial intersection between stations catalog and hydrographic subzones as points using Python. New attributes: COD_AH, COD_ZH, COD_SZH, NOM_AH, NOM_ZH, NOM_SZH, Akm2_SZH
+11. Create categories parametes dictionary (category_parameter_dict.csv). Required for the main study analysis
+
+Distance between stations from a TIN surface with the elevation value
+Coverage area from station with Thiessen Voronoi polygons
 
 
 ----------------------------------
 Research analysis
 ----------------------------------
+Stations per AH, ZH, SZH
+Stations per year (analysis with installation and suspension dates)
+Coverage area per station C = (Akm2 / n)
+Coverage radius per station r = √ ( C / π)
+Comparision between coverage radius and reference value from the World Meteorological Organization WMO. See https://github.com/rcfdtools/R.LTWB/tree/main/Section03/CNEStationElevation
 
 
 
