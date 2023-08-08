@@ -52,7 +52,7 @@ converters = {category_name:str, code_name:str, latitude_name:float, longitude_n
 drop_columns = [objectid_name, technology_name, state_active_name, geo_state_name, geo_county_name, geo_operative_area_name, geo_hydro_area_name, geo_hydro_zone_name, remark_name, geo_hydro_subzone_name, stream_name, subnet_name]
 dem_round_pos = 0  # Decimal positions for elevations rounding
 update_locations = True  # Update locations with locations_file
-update_elevations = True  # Calculate elevations with a DEM raster, DEMValue in tables
+update_elevations = False  # Calculate elevations with a DEM raster, DEMValue in tables
 
 # Load and concatenate stations catalogs
 df_cne_ideam = pd.read_excel(excel_cne_ideam_file, parse_dates=parse_dates, converters=converters)
@@ -77,13 +77,15 @@ df_cne_concat['CategId'] = ''
 # Set categories
 print('\nCategories dictionary\n%s\n%s' %(df_category_dict, df_category_dict.dtypes))
 df_cne_concat = df_cne_concat.set_index([category_name])
+df_cne_concat['CategName'] = df_cne_concat.index  # Move stations category to a new column before the category index change
 df_cne_concat.rename(columns = {'CODE':code_name}, inplace = True)
 df_cne_concat.update(df_category_dict.set_index([category_name]))
 df_cne_concat.reset_index()
 df_cne_concat = df_cne_concat.set_index([code_name])
+df_cne_concat.rename(columns = {'CategName':category_name}, inplace = True)
 
 # Truncate column names to 10 characters
-df_cne_concat.rename(columns = {code_name:code_name[:10], name_name:name_name[:10], installation_date:installation_date[:10], elevation_name:elevation_name[:10], latitude_name:latitude_name[:10], longitude_name:longitude_name[:10], suspension_date:suspension_date[:10], state_owned_name:state_owned_name[:10]}, inplace = True)  # Only for the required analysis columns
+df_cne_concat.rename(columns = {code_name:code_name[:10], name_name:name_name[:10], category_name:category_name[:10], installation_date:installation_date[:10], elevation_name:elevation_name[:10], latitude_name:latitude_name[:10], longitude_name:longitude_name[:10], suspension_date:suspension_date[:10], state_owned_name:state_owned_name[:10]}, inplace = True)  # Only for the required analysis columns
 print('\nConcatenated dataframe\n%s\n%s' %(df_cne_concat, df_cne_concat.dtypes))
 count_stations = int(df_cne_concat.__len__())
 print('\nStations: %s' %count_stations)
@@ -128,4 +130,17 @@ gdf_intersection = gpd.overlay(gdf_station, gdf_hydro_zone, how='intersection')
 gdf_intersection.to_file(intersect_station_shapefile)
 pd.DataFrame(gdf_intersection.drop(columns='geometry')).to_csv(intersect_station_file)
 print('\nGeo dataframe with intersection\n%s' % gdf_intersection)
+
+# Attributes summary
+df_cne_concat[installation_date[:10]] = df_cne_concat[installation_date[:10]].astype('datetime64[ns]')
+df_cne_concat[suspension_date[:10]] = df_cne_concat[suspension_date[:10]].astype('datetime64[ns]')
+print('\nProperties types\n%s' % df_cne_concat.dtypes)
+print('\nDataframe statistics\n%s' % df_cne_concat.describe())
+print('\nCategory counts\n%s' % df_cne_concat[category_name[:10]].value_counts())
+df_category = pd.DataFrame(df_cne_concat[category_name[:10]].value_counts(), index=None)
+#df_category.rename(columns = {category_name[:10]:'Count', df_category.columns[0]:category_name[:10]}, inplace = True)
+#df_category.rename(columns = {df_category.columns[1]:'Count', df_category.columns[0]:category_name[:10]}, inplace = True)
+print('\n%s' % df_category)
+
+df_category.to_csv('../.datasets/category_count.csv', header=True, index=True)
 

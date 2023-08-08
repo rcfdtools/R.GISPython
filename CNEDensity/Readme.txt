@@ -24,19 +24,21 @@ Preliminary
 10. Spatial intersection between stations catalog and hydrographic subzones as points using Python. New attributes: COD_AH, COD_ZH, COD_SZH, NOM_AH, NOM_ZH, NOM_SZH, Akm2_SZH
 11. Create categories parametes dictionary (category_parameter_dict.csv). Required for the main study analysis
 
-Distance between stations from a TIN surface with the elevation value
-Coverage area from station with Thiessen Voronoi polygons
-
 
 ----------------------------------
 Research analysis
 ----------------------------------
-Stations per AH, ZH, SZH
-Stations per year (analysis with installation and suspension dates)
+# stations per AH, ZH, SZH
+# stations per year (analysis with installation and suspension dates) 
 Coverage area per station C = (Akm2 / n)
 Coverage radius per station r = √ ( C / π)
 Comparision between coverage radius and reference value from the World Meteorological Organization WMO. See https://github.com/rcfdtools/R.LTWB/tree/main/Section03/CNEStationElevation
 
+
+Complementary analysis
+	Distance between stations from a TIN surface with the elevation value
+	Coverage area from station with Thiessen Voronoi polygons
+	Thermal level analysis (Caldas and conventional cuts)
 
 
 
@@ -48,3 +50,5 @@ https://gis.stackexchange.com/questions/441326/computing-zonal-statistics-with-r
 https://www.geeksforgeeks.org/python-get-last-n-characters-of-a-string/
 https://geopandas.org/en/stable/gallery/create_geopandas_from_pandas.html (also includes a plot representation)
 https://pygis.io/docs/e_vector_overlay.html
+https://www.geeksforgeeks.org/convert-the-column-type-from-string-to-datetime-format-in-pandas-dataframe/
+https://www.sharpsightlabs.com/blog/pandas-value_counts/#value-counts-parameters
