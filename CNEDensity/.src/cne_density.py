@@ -51,6 +51,7 @@ parse_dates = [installation_date, suspension_date]
 converters = {category_name:str, code_name:str, latitude_name:float, longitude_name:float, elevation_name:float}
 drop_columns = [objectid_name, technology_name, state_active_name, geo_state_name, geo_county_name, geo_operative_area_name, geo_hydro_area_name, geo_hydro_zone_name, remark_name, geo_hydro_subzone_name, stream_name, subnet_name]
 dem_round_pos = 0  # Decimal positions for elevations rounding
+pi_number = 3.1415926535897932384626433832795
 update_locations = True  # Update locations with locations_file
 update_elevations = False  # Calculate elevations with a DEM raster, DEMValue in tables
 
@@ -71,13 +72,14 @@ print(df_locations_file)
 if update_locations:
     df_cne_concat.update(df_locations_file.set_index([code_name]))
     df_cne_concat.reset_index()
-df_cne_concat['CODE'] = df_cne_concat.index  # Move stations code to a new column before the category index change
+df_cne_concat['CODE'] = df_cne_concat.index  # Copy stations code to a new column before the category index change
 df_cne_concat['CategId'] = ''
 
 # Set categories
 print('\nCategories dictionary\n%s\n%s' %(df_category_dict, df_category_dict.dtypes))
+df_cne_concat['WMORadkm'] = ''
 df_cne_concat = df_cne_concat.set_index([category_name])
-df_cne_concat['CategName'] = df_cne_concat.index  # Move stations category to a new column before the category index change
+df_cne_concat['CategName'] = df_cne_concat.index  # Copy stations category to a new column before the category index change
 df_cne_concat.rename(columns = {'CODE':code_name}, inplace = True)
 df_cne_concat.update(df_category_dict.set_index([category_name]))
 df_cne_concat.reset_index()
@@ -128,19 +130,29 @@ gdf_station = gpd.read_file(concat_station_shapefile)
 gdf_hydro_zone = gpd.read_file(hydro_zone_shapefile)
 gdf_intersection = gpd.overlay(gdf_station, gdf_hydro_zone, how='intersection')
 gdf_intersection.to_file(intersect_station_shapefile)
-pd.DataFrame(gdf_intersection.drop(columns='geometry')).to_csv(intersect_station_file)
+pd.DataFrame(gdf_intersection.drop(columns=['geometry']).to_csv(intersect_station_file, index=None))
+gdf_hydro_zone_areakm2 = gdf_hydro_zone['Akm2_SZH'].sum()
 print('\nGeo dataframe with intersection\n%s' % gdf_intersection)
 
-# Attributes summary
+# Category summary
 df_cne_concat[installation_date[:10]] = df_cne_concat[installation_date[:10]].astype('datetime64[ns]')
 df_cne_concat[suspension_date[:10]] = df_cne_concat[suspension_date[:10]].astype('datetime64[ns]')
 print('\nProperties types\n%s' % df_cne_concat.dtypes)
 print('\nDataframe statistics\n%s' % df_cne_concat.describe())
-print('\nCategory counts\n%s' % df_cne_concat[category_name[:10]].value_counts())
-df_category = pd.DataFrame(df_cne_concat[category_name[:10]].value_counts(), index=None)
-#df_category.rename(columns = {category_name[:10]:'Count', df_category.columns[0]:category_name[:10]}, inplace = True)
-#df_category.rename(columns = {df_category.columns[1]:'Count', df_category.columns[0]:category_name[:10]}, inplace = True)
+print('\nCategory analysis')
+df_category = pd.DataFrame(df_cne_concat[category_name[:10]].value_counts(ascending=False))
+df_category.to_csv('../.datasets/category_count.csv', header=None)
+df_category = pd.read_csv('../.datasets/category_count.csv')
+df_category.columns = [category_name[:10], 'Count']
+df_category['LandAkm2'] = gdf_hydro_zone_areakm2
+df_category['Coverkm2'] = gdf_hydro_zone_areakm2 / df_category['Count']
+df_category['Radiuskm'] = ((gdf_hydro_zone_areakm2 / df_category['Count'])/pi_number)**0.5
+df_category['WMORadkm'] = ''
+df_category = df_category.set_index([category_name[:10]])
+df_category['CategId'] = ''
+df_category.update(df_category_dict.set_index([category_name]))
+df_category['WMOCheckRd'] = '✓'
+df_category['WMOCheckRd'] = df_category['WMOCheckRd'].where(df_category['Radiuskm'] <= df_category['WMORadkm'], '✕')
+df_category.to_csv('../.datasets/category_count.csv', header=True)
 print('\n%s' % df_category)
-
-df_category.to_csv('../.datasets/category_count.csv', header=True, index=True)
-
+print('\n> The current analysis includes only the stations located over the land areas from the hydrographic subzones and tide metering stations could be displayed because not updated locations or because some maritim limits was traced with low tide levels.')

@@ -28,6 +28,7 @@ Preliminary
 ----------------------------------
 Research analysis
 ----------------------------------
+# stations per category with Coverage, radius and WMO reference evaluation.
 # stations per AH, ZH, SZH
 # stations per year (analysis with installation and suspension dates) 
 Coverage area per station C = (Akm2 / n)
