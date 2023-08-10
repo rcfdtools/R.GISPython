@@ -159,7 +159,7 @@ df_category['WMOCheckRd'] = df_category['WMOCheckRd'].where(df_category['Radiusk
 df_category.to_csv(df_category_file, header=True)
 print('\n%s' % df_category)
 
-# Hydrographic area (ha) & category summary
+# Hydrographic area (ah) & category summary
 print('\nHydrographic area & category analysis')
 ah_area_file = '../.datasets/ah_area.csv'
 df_ah_area = pd_hydro_zone.pivot_table(index=['NOM_AH'], values='Akm2_SZH', aggfunc='sum', sort=True)
@@ -190,6 +190,4 @@ df_ah_category = df_ah_category.reset_index(drop=False)
 df_ah_category = df_ah_category[['NOM_AH', 'CategId', category_name[:10], 'LandAkm2', 'Count', 'Coverkm2', 'Radiuskm', 'WMORadkm', 'WMOCheckRd']]
 df_ah_category.to_csv(ah_category_count_file, header=True, index=False)
 print('\n%s' % df_ah_category)
-
-
 print('\n> The current analysis includes only the stations located over the land areas from the hydrographic subzones and tide metering stations could be displayed because not updated locations or because some maritim limits was traced with low tide levels.')
