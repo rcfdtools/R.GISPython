@@ -154,8 +154,8 @@ df_category['WMORadkm'] = ''
 df_category = df_category.set_index([category_name[:10]])
 df_category['CategId'] = ''
 df_category.update(df_category_dict.set_index([category_name]))
-df_category['WMOCheckRd'] = '✓'
-df_category['WMOCheckRd'] = df_category['WMOCheckRd'].where(df_category['Radiuskm'] <= df_category['WMORadkm'], '✕')
+df_category['WMOCheckRd'] = '1'
+df_category['WMOCheckRd'] = df_category['WMOCheckRd'].where(df_category['Radiuskm'] <= df_category['WMORadkm'], '0')
 df_category.to_csv(df_category_file, header=True)
 print('\n%s' % df_category)
 
@@ -184,8 +184,8 @@ df_ah_category['CategId'] = ''
 df_ah_category['WMORadkm'] = ''
 df_ah_category.rename(columns = {'NOM_AH1':'NOM_AH'}, inplace = True)
 df_ah_category.update(df_category_dict.set_index([category_name]))
-df_ah_category['WMOCheckRd'] = '✓'
-df_ah_category['WMOCheckRd'] = df_ah_category['WMOCheckRd'].where(df_ah_category['Radiuskm'] <= df_ah_category['WMORadkm'], '✕')
+df_ah_category['WMOCheckRd'] = '1'
+df_ah_category['WMOCheckRd'] = df_ah_category['WMOCheckRd'].where(df_ah_category['Radiuskm'] <= df_ah_category['WMORadkm'], '0')
 df_ah_category = df_ah_category.reset_index(drop=False)
 df_ah_category = df_ah_category[['NOM_AH', 'CategId', category_name[:10], 'LandAkm2', 'Count', 'Coverkm2', 'Radiuskm', 'WMORadkm', 'WMOCheckRd']]
 df_ah_category.to_csv(ah_category_count_file, header=True, index=False)
