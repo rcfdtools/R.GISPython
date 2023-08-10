@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 # _name: cne_density.py
 # Description:
 # Requirements:
@@ -73,10 +74,10 @@ if update_locations:
     df_cne_concat.update(df_locations_file.set_index([code_name]))
     df_cne_concat.reset_index()
 df_cne_concat['CODE'] = df_cne_concat.index  # Copy stations code to a new column before the category index change
-df_cne_concat['CategId'] = ''
 
 # Set categories
 print('\nCategories dictionary\n%s\n%s' %(df_category_dict, df_category_dict.dtypes))
+df_cne_concat['CategId'] = ''
 df_cne_concat['WMORadkm'] = ''
 df_cne_concat = df_cne_concat.set_index([category_name])
 df_cne_concat['CategName'] = df_cne_concat.index  # Copy stations category to a new column before the category index change
@@ -132,6 +133,7 @@ gdf_intersection = gpd.overlay(gdf_station, gdf_hydro_zone, how='intersection')
 gdf_intersection.to_file(intersect_station_shapefile)
 pd.DataFrame(gdf_intersection.drop(columns=['geometry']).to_csv(intersect_station_file, index=None))
 gdf_hydro_zone_areakm2 = gdf_hydro_zone['Akm2_SZH'].sum()
+pd_hydro_zone = pd.DataFrame(gdf_hydro_zone.drop(columns=['geometry']))
 print('\nGeo dataframe with intersection\n%s' % gdf_intersection)
 
 # Category summary
@@ -139,20 +141,55 @@ df_cne_concat[installation_date[:10]] = df_cne_concat[installation_date[:10]].as
 df_cne_concat[suspension_date[:10]] = df_cne_concat[suspension_date[:10]].astype('datetime64[ns]')
 print('\nProperties types\n%s' % df_cne_concat.dtypes)
 print('\nDataframe statistics\n%s' % df_cne_concat.describe())
-print('\nCategory analysis')
+print('\nCategory analysis with all the stations')
+df_category_file = '../.datasets/category_count.csv'
 df_category = pd.DataFrame(df_cne_concat[category_name[:10]].value_counts(ascending=False))
-df_category.to_csv('../.datasets/category_count.csv', header=None)
-df_category = pd.read_csv('../.datasets/category_count.csv')
+df_category.to_csv(df_category_file, header=None)
+df_category = pd.read_csv(df_category_file)
 df_category.columns = [category_name[:10], 'Count']
 df_category['LandAkm2'] = gdf_hydro_zone_areakm2
 df_category['Coverkm2'] = gdf_hydro_zone_areakm2 / df_category['Count']
-df_category['Radiuskm'] = ((gdf_hydro_zone_areakm2 / df_category['Count'])/pi_number)**0.5
+df_category['Radiuskm'] = (df_category['Coverkm2']/pi_number)**0.5
 df_category['WMORadkm'] = ''
 df_category = df_category.set_index([category_name[:10]])
 df_category['CategId'] = ''
 df_category.update(df_category_dict.set_index([category_name]))
 df_category['WMOCheckRd'] = '✓'
 df_category['WMOCheckRd'] = df_category['WMOCheckRd'].where(df_category['Radiuskm'] <= df_category['WMORadkm'], '✕')
-df_category.to_csv('../.datasets/category_count.csv', header=True)
+df_category.to_csv(df_category_file, header=True)
 print('\n%s' % df_category)
+
+# Hydrographic area (ha) & category summary
+print('\nHydrographic area & category analysis')
+ah_area_file = '../.datasets/ah_area.csv'
+df_ah_area = pd_hydro_zone.pivot_table(index=['NOM_AH'], values='Akm2_SZH', aggfunc='sum', sort=True)
+df_ah_area.to_csv(ah_area_file, header=True)
+df_ah_area = pd.read_csv(ah_area_file)
+ah_category_count_file = '../.datasets/ah_category_count.csv'
+print('\nHydrographic áreas, km²\n%s' % df_ah_area)
+df_ah_category = pd.read_csv(intersect_station_file)
+df_ah_category = df_ah_category.pivot_table(index=['NOM_AH', category_name[:10]], aggfunc='size', sort=True)
+df_ah_category.to_csv(ah_category_count_file, header=True)
+df_ah_category = pd.read_csv(ah_category_count_file)
+df_ah_category.rename(columns = {'0':'Count'}, inplace = True)
+df_ah_category['Akm2_SZH'] = 0
+df_ah_category = df_ah_category.set_index(['NOM_AH'])
+df_ah_category.update(df_ah_area.set_index(['NOM_AH']))
+df_ah_category.rename(columns = {'Akm2_SZH':'LandAkm2'}, inplace = True)
+df_ah_category['Coverkm2'] = df_ah_category['LandAkm2'] / df_ah_category['Count']
+df_ah_category['Radiuskm'] = (df_ah_category['Coverkm2']/pi_number)**0.5
+df_ah_category['NOM_AH1'] = df_ah_category.index
+df_ah_category = df_ah_category.set_index([category_name[:10]])
+df_ah_category['CategId'] = ''
+df_ah_category['WMORadkm'] = ''
+df_ah_category.rename(columns = {'NOM_AH1':'NOM_AH'}, inplace = True)
+df_ah_category.update(df_category_dict.set_index([category_name]))
+df_ah_category['WMOCheckRd'] = '✓'
+df_ah_category['WMOCheckRd'] = df_ah_category['WMOCheckRd'].where(df_ah_category['Radiuskm'] <= df_ah_category['WMORadkm'], '✕')
+df_ah_category = df_ah_category.reset_index(drop=False)
+df_ah_category = df_ah_category[['NOM_AH', 'CategId', category_name[:10], 'LandAkm2', 'Count', 'Coverkm2', 'Radiuskm', 'WMORadkm', 'WMOCheckRd']]
+df_ah_category.to_csv(ah_category_count_file, header=True, index=False)
+print('\n%s' % df_ah_category)
+
+
 print('\n> The current analysis includes only the stations located over the land areas from the hydrographic subzones and tide metering stations could be displayed because not updated locations or because some maritim limits was traced with low tide levels.')

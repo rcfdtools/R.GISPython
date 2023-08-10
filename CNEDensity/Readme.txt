@@ -28,7 +28,7 @@ Preliminary
 ----------------------------------
 Research analysis
 ----------------------------------
-# stations per category with Coverage, radius and WMO reference evaluation.
+# stations per category with Coverage, radius and WMO reference evaluation
 # stations per AH, ZH, SZH
 # stations per year (analysis with installation and suspension dates) 
 Coverage area per station C = (Akm2 / n)
@@ -53,3 +53,4 @@ https://geopandas.org/en/stable/gallery/create_geopandas_from_pandas.html (also 
 https://pygis.io/docs/e_vector_overlay.html
 https://www.geeksforgeeks.org/convert-the-column-type-from-string-to-datetime-format-in-pandas-dataframe/
 https://www.sharpsightlabs.com/blog/pandas-value_counts/#value-counts-parameters
+https://stackoverflow.com/questions/13148429/how-to-change-the-order-of-dataframe-columns
