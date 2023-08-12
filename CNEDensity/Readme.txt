@@ -2,7 +2,7 @@ es: Análisis de la distribución espacial de la red de estaciones hidroclimatol
 en: Spatial distribution analysis from the National Colombia stations catalog and their relevance in hydrologic studies
 
 ----------------------------------
-Preliminary
+Ok. Preliminary
 ----------------------------------
 1. Get the IDEAM CNE stations and other stations catalogs (Microsoft Excel files)
 	http://dhime.ideam.gov.co/atencionciudadano/
@@ -28,9 +28,13 @@ Preliminary
 ----------------------------------
 Research analysis
 ----------------------------------
-# stations per category with Coverage, radius and WMO reference evaluation
-# stations per AH, ZH, SZH
+Ok. # stations per category with Coverage, radius and WMO reference evaluation
+Ok. # stations per AH (basic analysis)
+Ok. # stations per ZH (basic analysis)
+# stations per SZH
 # stations per year (analysis with installation and suspension dates) 
+
+
 Coverage area per station C = (Akm2 / n)
 Coverage radius per station r = √ ( C / π)
 Comparision between coverage radius and reference value from the World Meteorological Organization WMO. See https://github.com/rcfdtools/R.LTWB/tree/main/Section03/CNEStationElevation
