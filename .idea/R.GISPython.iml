@@ -13,7 +13,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.venvPython" />
       <excludeFolder url="file://$MODULE_DIR$/GISMobile/EAB_CO/GDB.gdb" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (R.GISPython)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="R.GISPython.wiki" />
     <orderEntry type="module" module-name="R.LTWB" />
