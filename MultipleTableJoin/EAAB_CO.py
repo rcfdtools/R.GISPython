@@ -1,12 +1,12 @@
 # -*- coding: UTF-8 -*-
-# Name: EAB_CO.py
-# Description: this script extract and transform the EAB SIH SQL Server database into record datasets tables
+# Name: EAAB_CO.py
+# Description: this script extract and transform the EAAB SIH SQL Server database into record datasets tables
 # Source dataset: www.acueducto.com.co
-# Disclaimer: records are under EAB license
+# Disclaimer: records are under EAAB license
 # Repository: https://github.com/rcfdtools/R.GISPython/tree/main/MultipleTableJoin
 # License: https://github.com/rcfdtools/R.GISPython/wiki/License
 # Requirements: Python 3+, Pandas, sqlalchemy
-# Notes: depending of the .csv generate file, at the end of every records are included the properties: cod_elemento, cod_eaab, cod_parametro, unidad,cod_descriptor, nombre_descriptor, cod_flag, nroObs, EtiquetaEAB, DescripcionSerieEAB
+# Notes: depending of the .csv generate file, at the end of every records are included the properties: cod_elemento, cod_eaab, cod_parametro, unidad,cod_descriptor, nombre_descriptor, cod_flag, nroObs, EtiquetaEAAB, DescripcionSerieEAAB
 
 # Libraries
 import pandas as pd
@@ -27,9 +27,9 @@ server = 'ADMIN'  # For instances use ADMIN\MSSQLSERVER where MSSQLSERVER is the
 database = 'SIH_20210502'
 username = 'sa'
 password = '123456'
-output_path = 'EAB_CO/'
-locations_table = 'eab_sih_estaciones_update_locations.csv'  # Attributes has to be: cod_elemento,Latitud,Longitud
-parameters_table = 'eab_sih_parametro_homologa_IDEAM.csv'  # Homologate parameters from EAB to IDEAM, attributes has to be: IdParametro,Etiqueta,EtiquetaIDEAM,DescripcionSerieEAB,DescripcionSerieIDEAM,Frecuencia
+output_path = 'EAAB_CO/'
+locations_table = 'eaab_sih_estaciones_update_locations.csv'  # Attributes has to be: cod_elemento,Latitud,Longitud
+parameters_table = 'eaab_sih_parametro_homologa_IDEAM.csv'  # Homologate parameters from EAAB to IDEAM, attributes has to be: IdParametro,Etiqueta,EtiquetaIDEAM,DescripcionSerieEAAB,DescripcionSerieIDEAM,Frecuencia
 update_locations = True  # Update locations with locations_table
 update_parameters = True  # Update parameters with IDEAM values
 extract_monthly_values = True  # Extract or update
@@ -45,12 +45,12 @@ engine = create_engine(
 
 # Retrieve table names
 print('DB Tables over: %s\%s' % (server, database))
-table_name = 'eab_sih_tables.csv'
+table_name = 'eaab_sih_tables.csv'
 sql = "SELECT Distinct TABLE_NAME FROM information_schema.TABLES"
 table_export(sql, table_name)
 
 # Retrieve monthly records
-table_name = 'eab_sih_monthly_records.csv'
+table_name = 'eaab_sih_monthly_records.csv'
 if extract_monthly_values:
       print('\nExtracting or updating monthly values from: %s\%s' % (server, database))
       sql = "SELECT CAST(estaciones.cod_ideam AS varchar) as CodigoEstacion" \
@@ -118,12 +118,12 @@ if extract_monthly_values:
             df2 = pd.read_csv(output_path+parameters_table)  # Parameters table with IDEAM values
             df1 = df1.merge(df2, on='Etiqueta', how='left')
             df1.drop(['IdParametro_x', 'Frecuencia_x', 'DescripcionSerie'], inplace=True, axis=1)
-            df1.rename(columns={'IdParametro_y':'IdParametro', 'Etiqueta':'EtiquetaEAB', 'EtiquetaIDEAM':'Etiqueta',
+            df1.rename(columns={'IdParametro_y':'IdParametro', 'Etiqueta':'EtiquetaEAAB', 'EtiquetaIDEAM':'Etiqueta',
                                 'Frecuencia_y':'Frecuencia', 'DescripcionSerieIDEAM':'DescripcionSerie'}, inplace=True)
             new_cols = ['CodigoEstacion','NombreEstacion','Latitud','Longitud','Altitud','Categoria','Entidad','AreaOperativa',
                         'Departamento','Municipio','FechaInstalacion','FechaSuspension','IdParametro','Etiqueta','DescripcionSerie',
                         'Frecuencia','Fecha','Valor','Grado','Calificador','NivelAprobacion','cod_elemento','cod_eaab',
-                        'cod_parametro','unidad','cod_descriptor','nombre_descriptor','cod_flag','nroObs', 'EtiquetaEAB', 'DescripcionSerieEAB']  # Reordering columns
+                        'cod_parametro','unidad','cod_descriptor','nombre_descriptor','cod_flag','nroObs', 'EtiquetaEAAB', 'DescripcionSerieEAAB']  # Reordering columns
             df1 = df1[new_cols]
             print('\nData types \n',df1.dtypes)
             print(df1)
