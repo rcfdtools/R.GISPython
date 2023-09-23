@@ -1,4 +1,4 @@
-﻿IdParametro,Etiqueta,EtiquetaIDEAM,DescripcionSerieEAB,DescripcionSerieIDEAM,Frecuencia
+﻿IdParametro,Etiqueta,EtiquetaIDEAM,DescripcionSerieEAAB,DescripcionSerieIDEAM,Frecuencia
 AFLUENCIA,AFLMD,AFLMD,AFLUENCIAS MEDIAS DIARIAS,AFLUENCIAS MEDIAS DIARIAS (no homologado IDEAM),Diario
 AFLUENCIA,AFLMM,AFLMM,AFLUENCIAS MEDIAS MENSUALES,AFLUENCIAS MEDIAS MENSUALES (no homologado IDEAM),Mensual
 NIEVE,AAN,AAN,Aumento de la altura de la nieve,Aumento de la altura de la nieve (no homologado IDEAM),Horaria
