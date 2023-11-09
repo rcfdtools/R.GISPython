@@ -23,12 +23,16 @@ def fTestKolmogorov(x, F_Dist):
     else:
         fit, operator = 'doesn’t fit', '<='
     print('* Kolmogorov-Smirnov test (Δo > Δ): %f %s %f (distribution %s the empirical curve)' % (deltao, operator, dFP['dFP'][0], fit))
-    vDeltaKolmogorovData = [station_name, F_Dist, delta]
+    vDeltaKolmogorovData = [station_name, F_Dist, delta, deltao]
     vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData
 
 
+#Función de distribución: Weibull (empírica)
+def fDistEmpWeibull(x):
+    x['P_E'] = x['index'] / (len(x[station_name])+1)
+
+
 # Función de distribución: Gumbel
-# Parameter calculation, Method of Moments
 def fDistGumbel(x):
     print('\nGumbel distribution')
     alph = math.sqrt(6) * x[station_name].std(ddof=ddof)/math.pi
@@ -37,19 +41,50 @@ def fDistGumbel(x):
     x['F_DGumbel'] = np.exp(-np.exp(-(x[station_name] - mu) / alph))
     fTestKolmogorov(x, 'F_DGumbel')
 
+# Función de distribución: Log-Gumbel
+def fDistLogGumbel(x):
+    print('\nLog Gumbel distribution')
+    alph = math.sqrt(6)*np.std(np.log(x[station_name]))/math.pi
+    mu = np.mean(np.log(x[station_name]))-0.57721*alph
+    print('* α: %f\n* μ: %f' % (alph, mu))
+    x['F_DLogGumbel'] = np.exp(-np.exp(-(np.log(x[station_name])-mu)/alph))
+    fTestKolmogorov(x, 'F_DLogGumbel')
+
+# Función de distribución: Normal
 def fDistNormal(x):
     print('\nNormal distribution')
     mu = x[station_name].mean()
     std = x[station_name].std(ddof=ddof)
     print('* μ: %f\n* σ: %f' % (mu, std))
     x['z_score'] = (x[station_name] - mu) / std
-    x['F_DNormal'] = norm.cdf(x['z_score'])
+    x['F_DNormal'] = norm.cdf(x['z_score'])  # Cumulative distribution function
     fTestKolmogorov(x, 'F_DNormal')
 
 
-#Función de distribución: Weibull (empírica)
-def fDistEmpWeibull(x):
-    x['P_E'] = x['index'] / (len(x[station_name])+1)
+# Función de distribución: Log-Pearson III
+def fDistLogPearsonIII(x):
+    n = len(x)
+    print('\nLog-Person III distribution')
+    # Bias to calculating the position parameter
+    CSG = n * np.sum((np.log(x[station_name]) - np.mean(np.log(x[station_name]))) ** 3) / ((n - 1) * (n - 2) * np.std(np.log(x[station_name])) ** 3)
+    # Position parameter
+    Xo = np.mean(np.log(x[station_name]))-2*np.std(np.log(x[station_name]))/CSG
+    # Form parameter
+    gam = 4 / CSG ** 2
+    # Scale Parameter
+    Beta = CSG * np.std(np.log(x[station_name]))/2
+    print('* Xo: %f\n* γ: %f\n* β: %f' % (Xo, gam, Beta))
+    # Cumulative Distribution Si se cumple con la condición: β > 0
+    Lga = gam * (gam + 1)
+    DNMR = []
+    DNMR.append(gam)
+    for i in range (1, n-1):
+        DNMR.append(Lga)
+        Lga = Lga * (gam + i + 1)
+    print('\nDNMR: %s' %DNMR)
+    Gy = []
+    LY = (np.log(x[station_name], np.exp(1)) - Xo) / Beta
+    #for i in range(1, n - 1):
 
 
 # General
@@ -58,7 +93,7 @@ station_file = input_path + '25020230.csv'
 station_name = Path(station_file).stem
 print('## Station: %s' %station_name)
 ddof = 1  # Standard deviation normalized
-vDeltaKolmogorov = pd.DataFrame(columns=['Station', 'Dp', 'Delta'])
+vDeltaKolmogorov = pd.DataFrame(columns=['Station', 'Dp', 'Delta', 'Deltao'])
 df = pd.read_csv(station_file, delimiter=',')
 df = df.dropna()
 df = df.sort_values(by=station_name)
@@ -66,8 +101,10 @@ df = df.reset_index(drop=True)
 df['index'] = df.index+1
 print('\nBasic stats\n* n: %d\n* mean: %f\n* std(%d): %f\n* min: %f\n* max: %f' % (df[station_name].count(), df[station_name].mean(), ddof, df[station_name].std(ddof=ddof), df[station_name].min(), df[station_name].max()))
 fDistEmpWeibull(df)
-fDistGumbel(df)
 fDistNormal(df)
+fDistGumbel(df)
+fDistLogGumbel(df)
+fDistLogPearsonIII(df)
 df = df.drop(columns=['z_score'])
 print('\n %s' % df)
 print('\nKolmogorov-Smirnov Δ values\n%s' % vDeltaKolmogorov)
