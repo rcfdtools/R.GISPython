@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 from scipy.stats import norm
+from scipy.stats import gamma
 
 #Prueba de bondad de ajuste usando el método de Kolmogorov-Smirnov usando una función
 def fTestKolmogorov(x, F_Dist):
@@ -65,6 +66,7 @@ def fDistNormal(x):
 def fDistLogPearsonIII(x):
     n = len(x)
     print('\nLog-Person III distribution')
+    #print(type(x))
     # Bias to calculating the position parameter
     CSG = n * np.sum((np.log(x[station_name]) - np.mean(np.log(x[station_name]))) ** 3) / ((n - 1) * (n - 2) * np.std(np.log(x[station_name])) ** 3)
     # Position parameter
@@ -81,10 +83,22 @@ def fDistLogPearsonIII(x):
     for i in range (1, n-1):
         DNMR.append(Lga)
         Lga = Lga * (gam + i + 1)
-    print('\nDNMR: %s' %DNMR)
-    Gy = []
-    LY = (np.log(x[station_name], np.exp(1)) - Xo) / Beta
-    #for i in range(1, n - 1):
+    print('* DNMR: %s' %DNMR)
+    #Gy = []
+    LY = []
+    LY = (np.log(x[station_name]) - Xo) / Beta
+    LY = LY.tolist()
+    print('* LY: %s' % LY)
+    #print(type(LY))
+    NMDR = []
+    for i in range(1, n):
+        for j in range(1, n-1):
+            NMDR.append(LY[i-1]**(gam+j))
+        if Xo > 0:
+            #Gy[i-1] = (np.exp(-LY[i-1]) * np.sum(NMDR / DNMR) / gamma(gam))
+            Gy = -LY
+    print('\n* NMDR:\n%s' %NMDR)
+    print('\nGy:\n%s' %Gy)
 
 
 # General
@@ -106,7 +120,7 @@ fDistGumbel(df)
 fDistLogGumbel(df)
 fDistLogPearsonIII(df)
 df = df.drop(columns=['z_score'])
-print('\n %s' % df)
+#print('\n %s' % df)
 print('\nKolmogorov-Smirnov Δ values\n%s' % vDeltaKolmogorov)
 
 #print(df.to_csv(index=False))
