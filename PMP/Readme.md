@@ -16,3 +16,5 @@
 * https://www.tutorialspoint.com/python_data_science/python_normal_distribution.htm
 * https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html
 * https://www.geeksforgeeks.org/how-to-print-an-entire-pandas-dataframe-in-python/
+* https://www.geeksforgeeks.org/select-row-with-maximum-and-minimum-value-in-pandas-dataframe/
+* https://www.geeksforgeeks.org/how-to-compare-two-columns-in-pandas/
