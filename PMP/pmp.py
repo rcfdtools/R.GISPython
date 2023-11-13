@@ -256,7 +256,7 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
-show_plot = False  # Show plot on screen
+show_plot = True  # Show plot on screen
 show_warnings = True  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 if not show_warnings: warnings.filterwarnings('ignore')
