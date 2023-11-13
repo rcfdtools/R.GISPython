@@ -198,25 +198,55 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
         #print('* %s (%s) >> Loc: %f, Scale: %f' % (p_dist_tag, p_dist, loc, scale))
         dfx[p_dist] = eval(p_dist).cdf(dfx[x], loc, scale)  # Cumulative distribution function
         shape, shape1, shape2, shape3 = '', '', '', ''
+        frozen_dist = eval(p_dist)(loc=loc, scale=scale)  # Frozen distribution
+        if low_extreme:
+            x_extreme = frozen_dist.ppf(1 / df_tr.tr)
+        else:
+            x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
+        df_tr[p_dist] = x_extreme
     elif n_parameter == 3:
         shape, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
         #print('* %s (%s) >> Shape: %f, Loc: %f, Scale: %f' % (p_dist_tag, p_dist, shape, loc, scale))
         dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, loc, scale)  # Cumulative distribution function
         shape1, shape2, shape3 = '', '', ''
+        frozen_dist = eval(p_dist)(shape, loc=loc, scale=scale)  # Frozen distribution
+        if low_extreme:
+            x_extreme = frozen_dist.ppf(1 / df_tr.tr)
+        else:
+            x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
+        df_tr[p_dist] = x_extreme
     elif n_parameter == 4:
         shape, shape1, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
         #print('* %s (%s) >> Shape: %f, Shape 1: %f, Loc: %f, Scale: %f' % (p_dist_tag, p_dist, shape, shape1, loc, scale))
         dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, shape1, loc, scale)  # Cumulative distribution function
         shape2, shape3 = '', ''
+        frozen_dist = eval(p_dist)(shape, shape1, loc=loc, scale=scale)  # Frozen distribution
+        if low_extreme:
+            x_extreme = frozen_dist.ppf(1 / df_tr.tr)
+        else:
+            x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
+        df_tr[p_dist] = x_extreme
     elif n_parameter == 5:
         shape, shape1, shape2, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
         #print('* %s (%s) >> Shape: %f, Shape 1: %f, Shape 2: %f, Loc: %f, Scale: %f' % (p_dist_tag, p_dist, shape, shape1, shape2, loc, scale))
         dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, shape1, shape2, loc, scale)  # Cumulative distribution function
         shape3 = ''
+        frozen_dist = eval(p_dist)(shape, shape1, shape2, loc=loc, scale=scale)  # Frozen distribution
+        if low_extreme:
+            x_extreme = frozen_dist.ppf(1 / df_tr.tr)
+        else:
+            x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
+        df_tr[p_dist] = x_extreme
     elif n_parameter == 6:
         shape, shape1, shape2, shape3, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
         #print('* %s (%s) >> Shape: %f, Shape 1: %f, Shape 2: %f, Shape 3: %f, Loc: %f, Scale: %f' % (p_dist_tag, p_dist, shape, shape1, shape2, shape3, loc, scale))
         dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, shape1, shape2, shape3, loc, scale)  # Cumulative distribution function
+        frozen_dist = eval(p_dist)(shape, shape1, shape2, shape3, loc=loc, scale=scale)  # Frozen distribution
+        if low_extreme:
+            x_extreme = frozen_dist.ppf(1 / df_tr.tr)
+        else:
+            x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
+        df_tr[p_dist] = x_extreme
     else:
         print('%s\n* Error: check the # parameters entered...')
     fTestKolmogorov(dfx, p_dist, loc, scale, shape, shape1, shape2, shape3)
@@ -226,12 +256,19 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
-show_plot = True  # Show plot on screen
+show_plot = False  # Show plot on screen
 show_warnings = True  # Show warnings on screen
+low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 if not show_warnings: warnings.filterwarnings('ignore')
 ddof = 1  # Standard deviation normalized
 x = 'Valor'  # Initial value column name to eval from .csv station file
 date = 'Fecha'  # Initial value column name from .csv station file
+# Periodos de retorno y probabilidades
+tr = [2, 2.33, 3, 5, 10, 15, 20, 25, 50, 75, 100, 200, 250, 500, 1000]  # Tr, return period in years
+df_tr = pd.DataFrame(tr, columns=['tr'])
+n_tr = len(df_tr)
+df_tr['prob_l'] = 1-1/df_tr.tr  # P≤, Probability less than, for high extreme values
+df_tr['prob_g'] = 1/df_tr.tr  # P≥, Probability greater than, for low extreme values
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'p_dist', 'delta', 'deltao', 'eval', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter', 'fit_method', 'label', 'active'])
 
@@ -240,6 +277,7 @@ input_path = 'station/'  # Your local input file folder
 station_file = input_path + '25020230.csv'
 station_name = Path(station_file).stem
 print('## Station: %s' %station_name)
+df_tr['station'] = station_name
 df = pd.read_csv(station_file, delimiter=',')
 df = df.dropna()
 df = df.sort_values(by=x)
@@ -292,5 +330,9 @@ plt.ylabel('CDF')
 plt.legend(loc='best', frameon=False)
 plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
 if show_plot: plt.show()
+
+print('\n\n### Estimate extreme values for specific return periods\n')
+
+print(df_tr)
 
 #print(df.to_csv(index=False))

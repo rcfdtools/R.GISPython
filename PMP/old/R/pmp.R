@@ -313,7 +313,7 @@ fDistNormalOn <<- T                             #Activar la Distribución Normal
 fDistGumbelOn <<- T                             #Activar la Distribución Gumbel, T-True or F-False
 fDistLogGumbelOn <<- T                          #Activar la Distribución LogGumbel, T-True or F-False
 fDistLogPearsonIIIOn <<- T                      #Activar la Distribución LogPearsonIII, T-True or F-False
-setwd("D:\\R.GISPython\\PMP\\R") #Directorio de trabajo  
+setwd("D:\\R.GISPython\\PMP\\old\\R") #Directorio de trabajo  
 library(readxl)                                 #Librería apaertura de archivos de Excel
 #Abrir el Libro de Excel indicando el rango de columnas a utilizar excluyendo la columna A del año
 vFile <- read_excel("25020230.xlsx", 
