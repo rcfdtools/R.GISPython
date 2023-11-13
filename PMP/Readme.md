@@ -18,3 +18,4 @@
 * https://www.geeksforgeeks.org/how-to-print-an-entire-pandas-dataframe-in-python/
 * https://www.geeksforgeeks.org/select-row-with-maximum-and-minimum-value-in-pandas-dataframe/
 * https://www.geeksforgeeks.org/how-to-compare-two-columns-in-pandas/
+* https://stackoverflow.com/questions/13091649/unique-plot-marker-for-each-plot
