@@ -200,9 +200,9 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
         shape, shape1, shape2, shape3 = '', '', '', ''
         frozen_dist = eval(p_dist)(loc=loc, scale=scale)  # Frozen distribution
         if low_extreme:
-            x_extreme = frozen_dist.ppf(1 / df_tr.tr)
+            x_extreme = frozen_dist.ppf(1.0 / df_tr.tr)
         else:
-            x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
+            x_extreme = frozen_dist.ppf(1.0 - 1.0 / df_tr.tr)
         df_tr[p_dist] = x_extreme
     elif n_parameter == 3:
         shape, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
@@ -256,7 +256,7 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
-show_plot = True  # Show plot on screen
+show_plot = False  # Show plot on screen
 show_warnings = True  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 if not show_warnings: warnings.filterwarnings('ignore')
