@@ -45,7 +45,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', False],
                   ['crystalball', 4, 'MLE', 'Crystalball', False],
                   ['gamma', 3, 'MLE', 'Gamma', True],
                   ['dgamma', 3, 'MLE', 'Double gamma', False],
-                  ['gengamma', 4, 'MLE', 'Generalized gamma', True],
+                  ['gengamma', 4, 'MLE', 'Generalized gamma', False],
                   ['invgamma', 3, 'MLE', 'Inverted gamma', False],
                   ['loggamma', 3, 'MLE', 'Log gamma', False],
                   ['expon', 2, 'MLE', 'Exponential', False],
@@ -256,8 +256,8 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
-parameter_name = 'rain'
-parameter_units = '($mm/d$)'
+parameter_name = 'flow'  # rain, flow
+parameter_units = '($m^3/s$)'  # ($mm/d$), ($m^3/s$)
 show_plot = True  # Show plot on screen
 show_warnings = True  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
@@ -266,7 +266,7 @@ ddof = 1  # Standard deviation normalized
 x = 'Valor'  # Initial value column name to eval from .csv station file
 date = 'Fecha'  # Initial value column name from .csv station file
 # Periodos de retorno y probabilidades
-tr = [2, 2.33, 5, 10, 15, 20, 25, 50, 75, 100, 200, 250, 500, 750, 1000, 5000]  # Tr, return period in years
+tr = [2, 2.33, 5, 10, 15, 20, 25, 50, 75, 100, 200, 250, 500, 750, 1000]  # Tr, return period in years
 df_tr = pd.DataFrame(tr, columns=['tr'])
 n_tr = len(df_tr)
 df_tr['prob_l'] = 1-1/df_tr.tr  # P≤, Probability less than, for high extreme values
@@ -277,7 +277,7 @@ df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter',
 
 # Execution
 input_path = 'station/'  # Your local input file folder
-station_file = input_path + '25020230.csv'
+station_file = input_path + 'pailitas.csv'
 station_name = Path(station_file).stem
 print('## Station: %s' %station_name)
 df_tr['station'] = station_name
@@ -298,7 +298,7 @@ date = 'date'  # New date column name
 print('\n### Basic stats\n\n* n: %d\n* mean: %f\n* std(%d): %f\n* min: %f\n* max: %f' % (df[x].count(), df[x].mean(), ddof, df[x].std(ddof=ddof), df[x].min(), df[x].max()))
 print('\n\n### Probability distributions')
 print('\nActive distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True')))
-print('\n> Gumbel and Lob-Gumbel probability distributions are not showed in the abobe table.')
+print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.')
 pdist_weibull(df)
 pdist_gumbel(df)
 pdist_loggumbel(df)
