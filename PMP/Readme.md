@@ -19,3 +19,6 @@
 * https://www.geeksforgeeks.org/select-row-with-maximum-and-minimum-value-in-pandas-dataframe/
 * https://www.geeksforgeeks.org/how-to-compare-two-columns-in-pandas/
 * https://stackoverflow.com/questions/13091649/unique-plot-marker-for-each-plot
+* https://hatarilabs.com/ih-en/statistical-analysis-of-precipitation-data-with-python
+* https://www.youtube.com/watch?v=GnC6wFkViGk
+* https://www.sciencedirect.com/science/article/pii/S0022169423005000

@@ -41,7 +41,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', False],
                   ['foldcauchy', 3, 'MLE', 'Fold Cauchy', False],
                   ['skewcauchy', 3, 'MLE', 'Skewed Cauchy', False],
                   ['wrapcauchy', 3, 'MLE', 'Wrapped  Cauchy', False],
-                  ['chi2', 3, 'MLE', 'Chi²', False],
+                  ['chi2', 3, 'MLE', 'Chi²', True],
                   ['crystalball', 4, 'MLE', 'Crystalball', False],
                   ['gamma', 3, 'MLE', 'Gamma', True],
                   ['dgamma', 3, 'MLE', 'Double gamma', False],
@@ -200,9 +200,9 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
         shape, shape1, shape2, shape3 = '', '', '', ''
         frozen_dist = eval(p_dist)(loc=loc, scale=scale)  # Frozen distribution
         if low_extreme:
-            x_extreme = frozen_dist.ppf(1.0 / df_tr.tr)
+            x_extreme = frozen_dist.ppf(1 / df_tr.tr)
         else:
-            x_extreme = frozen_dist.ppf(1.0 - 1.0 / df_tr.tr)
+            x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
         df_tr[p_dist] = x_extreme
     elif n_parameter == 3:
         shape, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
@@ -256,7 +256,9 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
-show_plot = False  # Show plot on screen
+parameter_name = 'rain'
+parameter_units = '($mm/d$)'
+show_plot = True  # Show plot on screen
 show_warnings = True  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 if not show_warnings: warnings.filterwarnings('ignore')
@@ -264,7 +266,7 @@ ddof = 1  # Standard deviation normalized
 x = 'Valor'  # Initial value column name to eval from .csv station file
 date = 'Fecha'  # Initial value column name from .csv station file
 # Periodos de retorno y probabilidades
-tr = [2, 2.33, 3, 5, 10, 15, 20, 25, 50, 75, 100, 200, 250, 500, 1000]  # Tr, return period in years
+tr = [2, 2.33, 5, 10, 15, 20, 25, 50, 75, 100, 200, 250, 500, 750, 1000, 5000]  # Tr, return period in years
 df_tr = pd.DataFrame(tr, columns=['tr'])
 n_tr = len(df_tr)
 df_tr['prob_l'] = 1-1/df_tr.tr  # P≤, Probability less than, for high extreme values
@@ -272,14 +274,20 @@ df_tr['prob_g'] = 1/df_tr.tr  # P≥, Probability greater than, for low extreme 
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'p_dist', 'delta', 'deltao', 'eval', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter', 'fit_method', 'label', 'active'])
 
+
 # Execution
 input_path = 'station/'  # Your local input file folder
 station_file = input_path + '25020230.csv'
 station_name = Path(station_file).stem
 print('## Station: %s' %station_name)
 df_tr['station'] = station_name
-df = pd.read_csv(station_file, delimiter=',')
+df = pd.read_csv(station_file, delimiter=',', index_col=0, parse_dates=True)
 df = df.dropna()
+# Plot x values
+plt.plot(df)
+plt.xlabel("Year")
+plt.ylabel(parameter_name + ' ' +  parameter_units)
+if show_plot: plt.show()
 df = df.sort_values(by=x)
 df = df.reset_index(drop=True)
 df['station'] = station_name
@@ -315,7 +323,7 @@ for i in range(0, len(vDeltaKolmogorov)):
     delta = vDeltaKolmogorov['delta'][i]
     plt.plot(df[x], df[dp], lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp, delta))
 plt.title("Cumulative distribution function CDF")
-plt.xlabel('Rain ($mm/d$)')
+plt.xlabel(parameter_name + ' ' + parameter_units)
 plt.ylabel('CDF')
 plt.legend(loc='best', frameon=False)
 plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
@@ -325,7 +333,7 @@ if show_plot: plt.show()
 plt.scatter(df[x], df['emp_weibull'], color='black', facecolors='black', s=14, label='Empirical')
 plt.plot(df[x], df[dp_best['p_dist'][0]], 'red', lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
 plt.title("Cumulative distribution function CDF - Best fit")
-plt.xlabel('Rain ($mm/d$)')
+plt.xlabel(parameter_name + ' ' + parameter_units)
 plt.ylabel('CDF')
 plt.legend(loc='best', frameon=False)
 plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)

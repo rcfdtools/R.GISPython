@@ -333,7 +333,7 @@ vMinXTr <<- c()                                 #Vector para almacenar mínimos 
 #fSerieSort(vStation)                              #Buscar la estacion en la tabla de entrada y ordenar la serie
 
 #Periodos de retorno y probabilidades
-Tr <- c(2, 2.33, 3, 3.33, 5, 10, 15, 20, 25, 
+Tr <- c(2, 2.33, 3, 5, 10, 15, 20, 25, 
         50, 75, 100, 200, 250, 500, 1000)       #Tr, Periodos de retorno en años
 nTr <- length(Tr)                               #Longitud de la serie a estudiar
 p <- 1-1/Tr                                     #P≤, Probabilidades menores que, para cada Tr
