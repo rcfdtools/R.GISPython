@@ -141,7 +141,7 @@ def fTestKolmogorov(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):  # 
         fit, operator = 'doesn’t fit', '<='
     eval = 'Δo %s Δ, %s' % (operator, fit)
     vDeltaKolmogorovData = [station_name, f_dist, delta, deltao, eval, loc, scale, shape, shape1, shape2, shape3]
-    vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData
+    vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the resoults as a new record
 
 def pdist_weibull(dfx):  # Probability distribution: Weibull (empírica)
     dfx['emp_weibull'] = dfx['oid'] / (len(dfx[x])+1)
