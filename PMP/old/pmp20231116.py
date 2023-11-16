@@ -8,7 +8,6 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 import matplotlib.pyplot as plt
-import tabulate  # required for print tables in Markdown using pandas
 
 
 # SciPy probability distributions libraries
@@ -255,15 +254,15 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 
 
 # General setup
-parameter_name = 'rain'  # rain, flow
-parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-show_plot = False  # Show plot on screen
-show_warnings = True  # Show warnings on screen
-low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
-if not show_warnings: warnings.filterwarnings('ignore')
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
+parameter_name = 'rain'  # rain, flow
+parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
+show_plot = True  # Show plot on screen
+show_warnings = True  # Show warnings on screen
+low_extreme = True  # Eval low extreme values, if False, evaluates high extreme values
+if not show_warnings: warnings.filterwarnings('ignore')
 ddof = 1  # Standard deviation normalized
 x = 'Valor'  # Initial value column name to eval from .csv station file
 date = 'Fecha'  # Initial value column name from .csv station file
@@ -275,8 +274,7 @@ df_tr['prob_l'] = 1-1/df_tr.tr  # P≤, Probability less than, for high extreme 
 df_tr['prob_g'] = 1/df_tr.tr  # P≥, Probability greater than, for low extreme values
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'p_dist', 'delta', 'deltao', 'eval', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter', 'fit_method', 'label', 'active'])
-df_l_pdist_scipy['reference'] = '[Help](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.'+df_l_pdist_scipy.p_dist+'.html)'
-df_l_pdist_scipy.index.name = 'id'
+
 
 # Execution
 input_path = 'station/'  # Your local input file folder
@@ -284,29 +282,23 @@ station_file = input_path + 'ideam_rain_25020230_ahoc.csv'
 station_name = Path(station_file).stem
 print('## Station: %s' %station_name)
 df_tr['station'] = station_name
-#df = pd.read_csv(station_file, delimiter=',', index_col=0, parse_dates=True)
-df = pd.read_csv(station_file, delimiter=',', parse_dates=True)
+df = pd.read_csv(station_file, delimiter=',', index_col=0, parse_dates=True)
+df = df.dropna()
 # Plot x values
-df = df.sort_values(by=date)
-plt.plot(df[date], df[x])
-plt.title('Data series for %s' % station_name)
-plt.xlabel('Year')
+plt.plot(df)
+plt.xlabel("Year")
 plt.ylabel(parameter_name + ' ' +  parameter_units)
 if show_plot: plt.show()
-df = df.dropna()
 df = df.sort_values(by=x)
 df = df.reset_index(drop=True)
-df.index.name = 'id'
 df['station'] = station_name
 df['oid'] = df.index+1
 df = df.rename(columns={x: 'x', date: 'date'})
-
-
 x = 'x'  # New value column name
 date = 'date'  # New date column name
 print('\n### Basic stats\n\n* n: %d\n* mean: %f\n* std(%d): %f\n* min: %f\n* max: %f' % (df[x].count(), df[x].mean(), ddof, df[x].std(ddof=ddof), df[x].min(), df[x].max()))
 print('\n\n### Probability distributions')
-print('\nActive distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
+print('\nActive distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True')))
 print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.')
 pdist_weibull(df)
 pdist_gumbel(df)
@@ -319,13 +311,11 @@ for i in l_pdist_scipy:
 vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
 vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
 vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
-vDeltaKolmogorov.index.name = 'id'
-print('\nCumulative distribution values - CDF (%d evalated, ordered by x ascend) \n\n%s' %(dp_evalated, df.to_markdown()))
-print('\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
+print('\nCumulative distribution values - CDF (%d evalated, ordered by x ascend) \n\n%s' %(dp_evalated, df))
+print('\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov)
 dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
 dp_best = dp_best.reset_index(drop=True)
-dp_best.index.name = 'id'
-print('\nBest fit for\n\n%s' %dp_best.to_markdown())
+print('\nBest fit for\n\n%s' %dp_best)
 
 # Plot empirical vs. all
 plt.scatter(df[x], df['emp_weibull'], color='black', facecolors='black', s=14, label='Empirical')
@@ -333,7 +323,7 @@ for i in range(0, len(vDeltaKolmogorov)):
     dp = vDeltaKolmogorov['p_dist'][i]
     delta = vDeltaKolmogorov['delta'][i]
     plt.plot(df[x], df[dp], lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp, delta))
-plt.title('Cumulative distribution function CDF')
+plt.title("Cumulative distribution function CDF")
 plt.xlabel(parameter_name + ' ' + parameter_units)
 plt.ylabel('CDF')
 plt.legend(loc='best', frameon=False)
@@ -343,7 +333,7 @@ if show_plot: plt.show()
 # Plot empirical vs. best fit
 plt.scatter(df[x], df['emp_weibull'], color='black', facecolors='black', s=14, label='Empirical')
 plt.plot(df[x], df[dp_best['p_dist'][0]], 'red', lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
-plt.title('Cumulative distribution function CDF - Best fit')
+plt.title("Cumulative distribution function CDF - Best fit")
 plt.xlabel(parameter_name + ' ' + parameter_units)
 plt.ylabel('CDF')
 plt.legend(loc='best', frameon=False)
@@ -351,7 +341,7 @@ plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
 if show_plot: plt.show()
 
 print('\n\n### Estimate extreme values for specific return periods\n')
-df_tr.index.name = 'id'
-print(df_tr.to_markdown())
+
+print(df_tr)
 
 #print(df.to_csv(index=False))
