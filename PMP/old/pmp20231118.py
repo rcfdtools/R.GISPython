@@ -126,7 +126,7 @@ for i in l_pdist_scipy:
 
 def fTestKolmogorov(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):  # Kolmogorov-Smirnov fit test
     dfp = pd.DataFrame()
-    dfp['dfp'] = abs(dfx['empirical']-dfx[f_dist])
+    dfp['dfp'] = abs(dfx[emp]-dfx[f_dist])
     dfp = dfp.sort_values(by='dfp', ascending=[False])
     dfp = dfp.reset_index(drop=True)
     n = len(dfp)
@@ -147,25 +147,25 @@ def fTestKolmogorov(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):  # 
 emp_dist = ['emp_california', 'emp_chegodayev', 'emp_hazen', 'emp_weibull', 'emp_blom', 'emp_turkey', 'emp_gringorten', 'emp_jenkinson', 'emp_cunnane']
 def pdist_empirical(dfx, emp):
     if emp == 'emp_california':  # Year ????
-        dfx['empirical'] = dfx['oid'] / len(dfx[x])
+        dfx[emp] = dfx['oid'] / len(dfx[x])
     elif emp == 'emp_chegodayev':  # Year ????
-        dfx['empirical'] = (dfx['oid']-0.3) / (len(dfx[x])+0.4)
+        dfx[emp] = (dfx['oid']-0.3) / (len(dfx[x])+0.4)
     elif emp == 'emp_hazen':  # Year 1914
-        dfx['empirical'] = (dfx['oid']-0.5) / len(dfx[x])
+        dfx[emp] = (dfx['oid']-0.5) / len(dfx[x])
     elif emp == 'emp_weibull':  # Year 1939
-        dfx['empirical'] = dfx['oid'] / (len(dfx[x]) + 1)
+        dfx[emp] = dfx['oid'] / (len(dfx[x]) + 1)
     elif emp == 'emp_blom':  # Year 1958
-        dfx['empirical'] = (dfx['oid']-0.375) / (len(dfx[x]) + 0.25)
+        dfx[emp] = (dfx['oid']-0.375) / (len(dfx[x]) + 0.25)
     elif emp == 'emp_turkey':  # Year 1962
-        dfx['empirical'] = (dfx['oid']-0.33) / (len(dfx[x]) + 0.33)
+        dfx[emp] = (dfx['oid']-0.33) / (len(dfx[x]) + 0.33)
     elif emp == 'emp_gringorten':  # Year 1963
-        dfx['empirical'] = (dfx['oid']-0.44) / (len(dfx[x]) + 0.12)
+        dfx[emp] = (dfx['oid']-0.44) / (len(dfx[x]) + 0.12)
     elif emp == 'emp_jenkinson':  # Year 1977
-        dfx['empirical'] = (dfx['oid']-0.31) / (len(dfx[x]) + 0.38)
+        dfx[emp] = (dfx['oid']-0.31) / (len(dfx[x]) + 0.38)
     elif emp == 'emp_cunnane':  # Year 1978
-        dfx['empirical'] = (dfx['oid']-0.4) / (len(dfx[x]) + 0.2)
+        dfx[emp] = (dfx['oid']-0.4) / (len(dfx[x]) + 0.2)
     else:
-        dfx['empirical'] = dfx['oid'] / len(dfx[x])  # California
+        dfx[emp] = dfx['oid'] / len(dfx[x])  # California
 
 
 
@@ -332,7 +332,8 @@ print('\n\n### Probability distributions')
 print('\nActive distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.')
 
-emp = 'emp_california'
+emp = 'emp_chegodayev'
+#pdist_weibull(df)
 pdist_empirical(df, emp)
 pdist_gumbel(df)
 pdist_loggumbel(df)
@@ -354,7 +355,7 @@ dp_best.index.name = 'id'
 print('\nBest fit for\n\n%s' %dp_best.to_markdown())
 
 # Plot empirical vs. all
-plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=14, label='%s (Δo: %f empirical)' %(emp, vDeltaKolmogorov['deltao'][0]))
+plt.scatter(df[x], df[emp], color='black', facecolors='black', s=14, label='%s (empirical )' % emp)
 for i in range(0, len(vDeltaKolmogorov)):
     dp = vDeltaKolmogorov['p_dist'][i]
     delta = vDeltaKolmogorov['delta'][i]
@@ -367,7 +368,7 @@ plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
 if show_plot: plt.show()
 
 # Plot empirical vs. best fit
-plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=14, label='%s (Δo: %f empirical)' %(emp, dp_best['deltao'][0]))
+plt.scatter(df[x], df[emp], color='black', facecolors='black', s=14, label='%s (empirical)' % emp)
 plt.plot(df[x], df[dp_best['p_dist'][0]], 'red', lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
 plt.title('Cumulative distribution function CDF - Best fit')
 plt.xlabel(parameter_name + ' ' + parameter_units)

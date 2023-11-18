@@ -22,3 +22,4 @@
 * https://hatarilabs.com/ih-en/statistical-analysis-of-precipitation-data-with-python
 * https://www.youtube.com/watch?v=GnC6wFkViGk
 * https://www.sciencedirect.com/science/article/pii/S0022169423005000
+* https://csce.ca/elf/apps/CONFERENCEVIEWER/conferences/2017/pdfs/HYD/FinalPaper_725.pdf
