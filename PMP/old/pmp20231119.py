@@ -140,7 +140,7 @@ def fTestKolmogorov(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):  # 
     else:
         fit, operator = 'doesn’t fit', '<='
     eval = 'Δo %s Δ, %s' % (operator, fit)
-    vDeltaKolmogorovData = [station_name, emp, f_dist, delta, deltao, eval, n, loc, scale, shape, shape1, shape2, shape3]
+    vDeltaKolmogorovData = [station_name, f_dist, delta, deltao, eval, n, loc, scale, shape, shape1, shape2, shape3]
     vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the resoults as a new record
 
 
@@ -148,25 +148,25 @@ emp_dist = ['emp_california', 'emp_chegodayev', 'emp_hazen', 'emp_weibull', 'emp
 def pdist_empirical(dfx, emp):
     dfx['empirical_dist'] = emp
     if emp == 'emp_california':  # Year ????
-        dfx['empirical'] = dfx['m'] / len(dfx[x])
+        dfx['empirical'] = dfx['oid'] / len(dfx[x])
     elif emp == 'emp_chegodayev':  # Year ????
-        dfx['empirical'] = (dfx['m']-0.3) / (len(dfx[x])+0.4)
+        dfx['empirical'] = (dfx['oid']-0.3) / (len(dfx[x])+0.4)
     elif emp == 'emp_hazen':  # Year 1914
-        dfx['empirical'] = (dfx['m']-0.5) / len(dfx[x])
+        dfx['empirical'] = (dfx['oid']-0.5) / len(dfx[x])
     elif emp == 'emp_weibull':  # Year 1939
-        dfx['empirical'] = dfx['m'] / (len(dfx[x]) + 1)
+        dfx['empirical'] = dfx['oid'] / (len(dfx[x]) + 1)
     elif emp == 'emp_blom':  # Year 1958
-        dfx['empirical'] = (dfx['m']-0.375) / (len(dfx[x]) + 0.25)
+        dfx['empirical'] = (dfx['oid']-0.375) / (len(dfx[x]) + 0.25)
     elif emp == 'emp_turkey':  # Year 1962
-        dfx['empirical'] = (dfx['m']-0.33) / (len(dfx[x]) + 0.33)
+        dfx['empirical'] = (dfx['oid']-0.33) / (len(dfx[x]) + 0.33)
     elif emp == 'emp_gringorten':  # Year 1963
-        dfx['empirical'] = (dfx['m']-0.44) / (len(dfx[x]) + 0.12)
+        dfx['empirical'] = (dfx['oid']-0.44) / (len(dfx[x]) + 0.12)
     elif emp == 'emp_jenkinson':  # Year 1977
-        dfx['empirical'] = (dfx['m']-0.31) / (len(dfx[x]) + 0.38)
+        dfx['empirical'] = (dfx['oid']-0.31) / (len(dfx[x]) + 0.38)
     elif emp == 'emp_cunnane':  # Year 1978
-        dfx['empirical'] = (dfx['m']-0.4) / (len(dfx[x]) + 0.2)
+        dfx['empirical'] = (dfx['oid']-0.4) / (len(dfx[x]) + 0.2)
     else:
-        dfx['empirical'] = dfx['m'] / len(dfx[x])  # California
+        dfx['empirical'] = dfx['oid'] / len(dfx[x])  # California
     dfx['empirical_tr'] = 1 / (1-dfx['empirical'])
 
 
@@ -299,7 +299,7 @@ df_tr = pd.DataFrame(tr, columns=['tr'])
 n_tr = len(df_tr)
 df_tr['prob_l'] = 1-1/df_tr.tr  # P≤, Probability less than, for high extreme values
 df_tr['prob_g'] = 1/df_tr.tr  # P≥, Probability greater than, for low extreme values
-vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
+vDeltaKolmogorov = pd.DataFrame(columns=['station', 'p_dist', 'delta', 'deltao', 'eval', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter', 'fit_method', 'label', 'active'])
 df_l_pdist_scipy['reference'] = '[Help](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.'+df_l_pdist_scipy.p_dist+'.html)'
 df_l_pdist_scipy.index.name = 'id'
@@ -312,8 +312,6 @@ print('## Station: %s' %station_name)
 df_tr['station'] = station_name
 #df = pd.read_csv(station_file, delimiter=',', index_col=0, parse_dates=True)
 df = pd.read_csv(station_file, delimiter=',', parse_dates=True)
-df_tr['n'] = len(df)
-df_tr['risk_rate'] = 1-(1-1/df_tr['tr'])**df_tr['tr']
 # Plot x values
 df = df.sort_values(by=date)
 plt.plot(df[date], df[x], color='black', lw=0.5, marker='o', markersize=3,)
@@ -327,7 +325,7 @@ df = df.sort_values(by=x, ascending=True)
 df = df.reset_index(drop=True)
 df.index.name = 'id'
 df['station'] = station_name
-df['m'] = df.index+1
+df['oid'] = df.index+1
 df = df.rename(columns={x: 'x', date: 'date'})
 x = 'x'  # New value column name
 date = 'date'  # New date column name
@@ -337,7 +335,6 @@ print('\nActive distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l
 print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.')
 
 emp = 'emp_hazen'
-df_tr['empirical_dist '] = emp
 pdist_empirical(df, emp)
 pdist_gumbel(df)
 pdist_loggumbel(df)
@@ -350,7 +347,7 @@ vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolm
 vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
 vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
 vDeltaKolmogorov.index.name = 'id'
-print('\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
+print('\nCumulative distribution values - CDF (%d evalated, ordered by x ascend) \n\n%s' %(dp_evalated, df.to_markdown()))
 vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
 print('\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
 dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
