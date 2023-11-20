@@ -316,7 +316,7 @@ print('## Station: %s' %station_name)
 df = df_in.sort_values(by=date_label)
 plt.plot(df_in[date_label], df_in[x_label], color='black', lw=0.5, marker='o', markersize=3, )
 plt.grid(color='gray', linestyle='--', linewidth=0.1)
-plt.title('Data series\n$_{Station: %s}$' % station_name)
+plt.title('Data series\n$_{Station: %s}$' % station_name)  #$_{ } for underscript text
 plt.xlabel('Year')
 plt.ylabel(parameter_name + ' ' + parameter_units)
 if show_plot: plt.show()
