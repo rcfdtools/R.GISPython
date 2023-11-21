@@ -287,7 +287,7 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 # General setup
 parameter_name = 'rain'  # rain, flow
 parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-show_plot = True  # Show plot on screen
+show_plot = False  # Show plot on screen
 show_warnings = False  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 pdist_gumbel_on = True  # Activate the Gumbel distribution
@@ -296,6 +296,7 @@ if not show_warnings: warnings.filterwarnings('ignore')
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
+plot_legend_ncol = 2  # Columns on the legend
 ddof = 1  # Standard deviation normalized
 x_label = 'Valor'  # Initial value column name to eval from .csv station file
 date_label = 'Fecha'  # Initial value column name from .csv station file
@@ -311,8 +312,8 @@ df_l_pdist_scipy.index.name = 'id'
 
 
 # Execution
-input_path = 'station/'  # Your local input file folder
-station_file = input_path + 'ideam_rain_25020230.csv'
+input_path = 'dataset/pmax24h_in/'  # Your local input file folder
+station_file = input_path + '25020230AHOC.csv'
 station_name = Path(station_file).stem  # File name without extension
 df_in = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
 print('## Station: %s' %station_name)
@@ -327,7 +328,7 @@ if show_plot: plt.show()
 # Plot x values - End
 #print('\n### Basic stats\n\n* n: %d\n* mean: %f\n* std(%d): %f\n* min: %f\n* max: %f' % (df[x].count(), df[x].mean(), ddof, df[x].std(ddof=ddof), df[x].min(), df[x].max()))
 print('\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
-print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.')
+print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n> n_parameter = # arguments & localization & scale.')
 print('\n\n### Probability distributions')
 # emp = 'emp_hazen'
 for emp in emp_dist:
@@ -354,6 +355,8 @@ for emp in emp_dist:
     if pdist_gumbel_on: pdist_gumbel(df)
     if pdist_loggumbel_on: pdist_loggumbel(df)
     dp_evalated = 2  # 2 means we are including Gumbel & Log Gumbel
+
+    # CDF calculations
     for i in l_pdist_scipy:
         if i[4]:
             dp_evalated += 1
@@ -376,17 +379,17 @@ for emp in emp_dist:
         dp = vDeltaKolmogorov['p_dist'][i]
         delta = vDeltaKolmogorov['delta'][i]
         plt.plot(df[x], df[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
-    plt.title('Cumulative distribution function CDF\nStation: %s' % station_name)
+    plt.title('Cumulative distribution function CDF\n$_{Station: %s}$' % station_name)
     plt.xlabel(parameter_name + ' ' + parameter_units)
     plt.ylabel('CDF')
-    plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=3, facecolor='white')
+    plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
     plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
     if show_plot: plt.show()
 
     # Plot empirical vs. best fit
     plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=20, label='%s (Δo: %f)' %(emp, dp_best['deltao'][0]))
     plt.plot(df[x], df[dp_best['p_dist'][0]], 'red', lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
-    plt.title('Cumulative distribution function CDF (Best fit)\nStation: %s' % station_name)
+    plt.title('Cumulative distribution function CDF (Best fit)\n$_{Station: %s}$' % station_name)
     plt.xlabel(parameter_name + ' ' + parameter_units)
     plt.ylabel('CDF')
     plt.legend(loc='best', frameon=False)
@@ -398,10 +401,10 @@ for emp in emp_dist:
         dp = vDeltaKolmogorov['p_dist'][i]
         delta = vDeltaKolmogorov['delta'][i]
         plt.plot(df_tr.tr, df_tr[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
-    plt.title('Extreme values for specific return periods\nStation: %s\n(Δo: %f %s)' %(station_name, vDeltaKolmogorov['deltao'][0], emp))
+    plt.title('Extreme values for specific return periods\n(Δo: %f %s)\n$_{Station: %s}$' %(vDeltaKolmogorov['deltao'][0], emp, station_name))
     plt.xlabel('Tr ($years$)')
     plt.ylabel(parameter_name + ' ' + parameter_units)
-    plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=3, facecolor='white')
+    plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
     plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
     if show_plot: plt.show()
 
