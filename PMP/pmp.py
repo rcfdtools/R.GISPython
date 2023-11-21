@@ -144,27 +144,31 @@ def fTestKolmogorov(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):  # 
     vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the resoults as a new record
 
 
-emp_dist = ['emp_california', 'emp_chegodayev', 'emp_hazen', 'emp_weibull', 'emp_blom', 'emp_turkey', 'emp_gringorten', 'emp_jenkinson', 'emp_cunnane']
+emp_dist = ['emp_california', 'emp_hazen', 'emp_weibull', 'emp_beard', 'emp_chegodayev', 'emp_blom', 'emp_tukey', 'emp_gringorten', 'emp_jenkinson', 'emp_cunnane', 'emp_adamowski']
 def pdist_empirical(dfx, emp):
     dfx['empirical_dist'] = emp
-    if emp == 'emp_california':  # Year ????
+    if emp == 'emp_california':  # 1923
         dfx['empirical'] = dfx['m'] / len(dfx[x])
-    elif emp == 'emp_chegodayev':  # Year ????
-        dfx['empirical'] = (dfx['m']-0.3) / (len(dfx[x])+0.4)
-    elif emp == 'emp_hazen':  # Year 1914
+    elif emp == 'emp_hazen':  # Year 1930
         dfx['empirical'] = (dfx['m']-0.5) / len(dfx[x])
     elif emp == 'emp_weibull':  # Year 1939
         dfx['empirical'] = dfx['m'] / (len(dfx[x]) + 1)
+    elif emp == 'emp_beard':  # Year 1943
+        dfx['empirical'] = (dfx['m']-0.31) / (len(dfx[x])+0.38)
+    elif emp == 'emp_chegodayev':  # Year 1955
+        dfx['empirical'] = (dfx['m']-0.3) / (len(dfx[x])+0.4)
     elif emp == 'emp_blom':  # Year 1958
         dfx['empirical'] = (dfx['m']-0.375) / (len(dfx[x]) + 0.25)
-    elif emp == 'emp_turkey':  # Year 1962
-        dfx['empirical'] = (dfx['m']-0.33) / (len(dfx[x]) + 0.33)
+    elif emp == 'emp_tukey':  # Year 1962
+        dfx['empirical'] = (3*dfx['m']-1) / (3*len(dfx[x]) + 1)
     elif emp == 'emp_gringorten':  # Year 1963
         dfx['empirical'] = (dfx['m']-0.44) / (len(dfx[x]) + 0.12)
     elif emp == 'emp_jenkinson':  # Year 1977
         dfx['empirical'] = (dfx['m']-0.31) / (len(dfx[x]) + 0.38)
     elif emp == 'emp_cunnane':  # Year 1978
         dfx['empirical'] = (dfx['m']-0.4) / (len(dfx[x]) + 0.2)
+    elif emp == 'emp_adamowski':  # Year 1981
+        dfx['empirical'] = (dfx['m']-0.25) / (len(dfx[x]) + 0.5)
     else:
         dfx['empirical'] = dfx['m'] / len(dfx[x])  # California
     dfx['empirical_tr'] = 1 / (1-dfx['empirical'])
@@ -316,7 +320,7 @@ print('## Station: %s' %station_name)
 df = df_in.sort_values(by=date_label)
 plt.plot(df_in[date_label], df_in[x_label], color='black', lw=0.5, marker='o', markersize=3, )
 plt.grid(color='gray', linestyle='--', linewidth=0.1)
-plt.title('Data series\n$_{Station: %s}$' % station_name)  #$_{ } for underscript text
+plt.title('Data serie\n$_{Station: %s}$' % station_name)  #$_{ } for underscript text
 plt.xlabel('Year')
 plt.ylabel(parameter_name + ' ' + parameter_units)
 if show_plot: plt.show()
