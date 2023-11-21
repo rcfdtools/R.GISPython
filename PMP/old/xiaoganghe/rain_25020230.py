@@ -57,7 +57,8 @@ tr = [2, 2.33, 5, 10, 15, 20, 25, 50, 75, 100, 200, 250, 500, 750, 1000]
 df_tr = pd.DataFrame(tr, columns=['tr'])
 
 # extreme values under each return period
-LFTmle = MLE_p_dist.ppf(1.0 - 1.0 / df_tr)
+#LFTmle = MLE_p_dist.ppf(1.0 - 1.0 / df_tr)  # maximum
+LFTmle = MLE_p_dist.ppf(1.0 / df_tr)  # minimum
 LFTmle = pd.DataFrame(LFTmle, index=tr, columns=[parameter_name])
 LFTmle.index.name = "Return period"
 print(LFTmle)

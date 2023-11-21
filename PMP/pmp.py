@@ -13,110 +13,110 @@ import tabulate  # required for print tables in Markdown using pandas
 
 # SciPy probability distributions libraries
 # l_pdist_scipy requires: ([Distribution function, parameters, fit method, label, active)]
-l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', False],
-                  ['gumbel_r', 2, 'MM', 'Gumbel Right Skew', False],
+l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
+                  ['gumbel_r', 2, 'MM', 'Gumbel Right Skew', True],
                   ['norm', 2, 'MM', 'Normal', True],
                   ['lognorm', 3, 'MLE', 'Log Normal', True],
                   ['foldnorm', 3, 'MM', 'Fold Normal', False],  # Check: not for rain data
-                  ['halfnorm', 2, 'MM', 'Half Normal', False],
-                  ['gennorm', 3, 'MLE', 'Generalized Normal', False],
+                  ['halfnorm', 2, 'MM', 'Half Normal', True],
+                  ['gennorm', 3, 'MLE', 'Generalized Normal', True],
                   ['norminvgauss', 4, 'MLE', 'Normal Inverse Gaussian', False],
-                  ['powernorm', 3, 'MLE', 'Power normal', False],
+                  ['powernorm', 3, 'MLE', 'Power normal', True],
                   ['powerlognorm', 4, 'MLE', 'Power log-normal', False],
                   ['skewnorm', 3, 'MLE', 'Skew normal', True],
-                  ['truncnorm', 4,'MLE', 'Truncated normal', False],
+                  ['truncnorm', 4,'MLE', 'Truncated normal', True],
                   ['pearson3', 3, 'MM', 'Pearson type III', True],
                   ['genextreme', 3, 'MLE', 'Generalized exponential', False],
-                  ['alpha', 3, 'MLE', 'Alpha', False],
-                  ['anglit', 2, 'MM', 'Anglit', False],
-                  ['arcsine', 2, 'MM', 'Arcsine', False],
+                  ['alpha', 3, 'MLE', 'Alpha', True],
+                  ['anglit', 2, 'MM', 'Anglit', True],
+                  ['arcsine', 2, 'MM', 'Arcsine', True],
                   ['argus', 3, 'MLE', 'Argus', False],
                   ['beta', 4, 'MLE', 'Beta', True],
-                  ['betaprime', 4, 'MLE', 'Beta prime', False],
+                  ['betaprime', 4, 'MLE', 'Beta prime', True],
                   ['bradford', 3, 'MLE', 'Bradford', False],
-                  ['burr', 4, 'MLE', 'Burr (Type III)', False],
+                  ['burr', 4, 'MLE', 'Burr (Type III)', True],
                   ['burr12', 4, 'MLE', 'Burr (Type III) 12', False],
-                  ['cauchy', 2, 'MLE', 'Cauchy', False],
-                  ['cosine', 2, 'MLE', 'Cosine', False],
+                  ['cauchy', 2, 'MLE', 'Cauchy', True],
+                  ['cosine', 2, 'MLE', 'Cosine', True],
                   ['halfcauchy', 2, 'MLE', 'Half-Cauchy', False],
-                  ['foldcauchy', 3, 'MLE', 'Fold Cauchy', False],
-                  ['skewcauchy', 3, 'MLE', 'Skewed Cauchy', False],
+                  ['foldcauchy', 3, 'MLE', 'Fold Cauchy', True],
+                  ['skewcauchy', 3, 'MLE', 'Skewed Cauchy', True],
                   ['wrapcauchy', 3, 'MLE', 'Wrapped  Cauchy', False],
                   ['chi2', 3, 'MLE', 'Chi²', True],
-                  ['crystalball', 4, 'MLE', 'Crystalball', False],
+                  ['crystalball', 4, 'MLE', 'Crystalball', True],
                   ['gamma', 3, 'MLE', 'Gamma', True],
-                  ['dgamma', 3, 'MLE', 'Double gamma', False],
-                  ['gengamma', 4, 'MLE', 'Generalized gamma', False],
-                  ['invgamma', 3, 'MLE', 'Inverted gamma', False],
-                  ['loggamma', 3, 'MLE', 'Log gamma', False],
-                  ['expon', 2, 'MLE', 'Exponential', False],
-                  ['genexpon', 5, 'MLE', 'Generalized exponential', False],
-                  ['exponnorm', 3, 'MLE', 'Exponentially modified Normal', False],
-                  ['exponweib', 4, 'MLE', 'Exponentiated Weibull', False],
+                  ['dgamma', 3, 'MLE', 'Double gamma', True],
+                  ['gengamma', 4, 'MLE', 'Generalized gamma', True],
+                  ['invgamma', 3, 'MLE', 'Inverted gamma', True],
+                  ['loggamma', 3, 'MLE', 'Log gamma', True],
+                  ['expon', 2, 'MLE', 'Exponential', True],
+                  ['genexpon', 5, 'MLE', 'Generalized exponential', True],
+                  ['exponnorm', 3, 'MLE', 'Exponentially modified Normal', True],
+                  ['exponweib', 4, 'MLE', 'Exponentiated Weibull', True],
                   ['exponpow', 3, 'MLE', 'Exponential power', False],
                   ['erlang', 3, 'MLE', 'Erlang', False],  # Check: integer value alert
                   ['fatiguelife', 3, 'MLE', 'Fatigue-life (Birnbaum-Saunders)', False],
-                  ['truncexpon', 3, 'MLE', 'Truncated exponential', False],
+                  ['truncexpon', 3, 'MLE', 'Truncated exponential', True],
                   ['f', 4, 'MLE', 'F', True],
-                  ['fisk', 3, 'MLE', 'Fisk', False],
-                  ['genlogistic', 3, 'MLE', 'Generalized logistic', False],
+                  ['fisk', 3, 'MLE', 'Fisk', True],
+                  ['genlogistic', 3, 'MLE', 'Generalized logistic', True],
                   ['gausshyper', 6, 'MLE', 'Gauss hypergeometric', True],
-                  ['genhalflogistic', 3, 'MLE', 'Generalized half-logistic', False],
+                  ['genhalflogistic', 3, 'MLE', 'Generalized half-logistic', True],
                   ['genhyperbolic', 5, 'MLE', 'Generalized hyperbolic', False],
-                  ['geninvgauss', 4, 'MLE', 'Generalized Inverse Gaussian', False],
-                  ['gibrat', 2, 'MM', 'Gibrat', False],
-                  ['gompertz', 3, 'MLE', 'Gompertz (or truncated Gumbel)', False],
-                  ['halflogistic', 2, 'MM', 'Half-logistic', False],
+                  ['geninvgauss', 4, 'MLE', 'Generalized Inverse Gaussian', True],
+                  ['gibrat', 2, 'MM', 'Gibrat', True],
+                  ['gompertz', 3, 'MLE', 'Gompertz (or truncated Gumbel)', True],
+                  ['halflogistic', 2, 'MM', 'Half-logistic', True],
                   ['halfgennorm', 3, 'MLE', 'Upper half of a generalized normal', False],
-                  ['hypsecant', 2, 'MM', 'hyperbolic secant', False],
+                  ['hypsecant', 2, 'MM', 'hyperbolic secant', True],
                   ['invgauss', 3, 'MLE', 'Inverse Gaussian', True],
-                  ['invweibull', 3, 'MLE', 'Inverted Weibull', False],
-                  ['johnsonsb', 4, 'MLE', 'Johnson SB', False],
-                  ['johnsonsu', 4, 'MLE', 'Johnson Su', False],
+                  ['invweibull', 3, 'MLE', 'Inverted Weibull', True],
+                  ['johnsonsb', 4, 'MLE', 'Johnson SB', True],
+                  ['johnsonsu', 4, 'MLE', 'Johnson Su', True],
                   ['kappa4', 4, 'MLE', 'Kappa 4', False],
-                  ['kappa3', 3, 'MLE', 'Kappa 3', False],
+                  ['kappa3', 3, 'MLE', 'Kappa 3', True],
                   ['ksone', 3, 'MLE', 'Kolmogorov-Smirnov one-sided test statistic distribution', False],
                   ['kstwo', 3, 'MLE', 'Kolmogorov-Smirnov two-sided test statistic distribution', False],  # Check: zero division, don't use
-                  ['kstwobign', 2, 'MLE', 'Limiting distribution of scaled Kolmogorov-Smirnov two-sided test statistic', False],
-                  ['laplace', 2, 'MM', 'Laplace', False],
-                  ['laplace_asymmetric', 3, 'MLE', 'Asymmetric Laplace', False],
-                  ['loglaplace', 3, 'MLE', 'Log-Laplace', False],
+                  ['kstwobign', 2, 'MLE', 'Limiting distribution of scaled Kolmogorov-Smirnov two-sided test statistic', True],
+                  ['laplace', 2, 'MM', 'Laplace', True],
+                  ['laplace_asymmetric', 3, 'MLE', 'Asymmetric Laplace', True],
+                  ['loglaplace', 3, 'MLE', 'Log-Laplace', True],
                   ['levy', 2, 'MLE', 'Levy', False],
                   ['levy_l', 2, 'MLE', 'Left-skewed Levy', False],
-                  ['levy_stable', 4, 'MLE', 'Levy-stable', False],
-                  ['logistic', 2, 'MM', 'Logistic (or Sech-squared)', False],
-                  ['maxwell', 2, 'MM', 'Maxwell', False],
-                  ['mielke', 4, 'MLE', 'Mielke Beta-Kappa / Dagum', False],
-                  ['moyal', 2, 'MM', 'Moyal', False],
-                  ['nakagami', 3, 'MLE', 'Nakagami', False],
+                  ['levy_stable', 4, 'MLE', 'Levy-stable', True],
+                  ['logistic', 2, 'MM', 'Logistic (or Sech-squared)', True],
+                  ['maxwell', 2, 'MM', 'Maxwell', True],
+                  ['mielke', 4, 'MLE', 'Mielke Beta-Kappa / Dagum', True],
+                  ['moyal', 2, 'MM', 'Moyal', True],
+                  ['nakagami', 3, 'MLE', 'Nakagami', True],
                   ['ncx2', 4, 'MLE', 'Non-central chi-squared', False],
                   ['ncf', 5, 'MLE', 'Non-central F distribution', False],
-                  ['nct', 4, 'MLE', 'Non-central Student’s t', False],
-                  ['pareto', 3, 'MLE', 'Pareto', False],
-                  ['genpareto', 3, 'MLE', 'Generalized Pareto', False],
-                  ['truncpareto', 4, 'MLE', 'Upper truncated Pareto', False],
-                  ['lomax', 3, 'MLE', 'Lomax (Pareto of the second kind)', False],
-                  ['powerlaw', 3, 'MLE', 'Power-function', False],
+                  ['nct', 4, 'MLE', 'Non-central Student’s t', True],
+                  ['pareto', 3, 'MLE', 'Pareto', True],
+                  ['genpareto', 3, 'MLE', 'Generalized Pareto', True],
+                  ['truncpareto', 4, 'MLE', 'Upper truncated Pareto', True],
+                  ['lomax', 3, 'MLE', 'Lomax (Pareto of the second kind)', True],
+                  ['powerlaw', 3, 'MLE', 'Power-function', True],
                   ['rdist', 3, 'MLE', 'R-distributed (symmetric beta)', False],
-                  ['rayleigh', 2, 'MM', 'Rayleigh', False],
-                  ['rel_breitwigner', 3, 'MLE', 'Relativistic Breit-Wigner', False],
-                  ['rice', 3, 'MLE', 'Rice', False],
-                  ['recipinvgauss', 3, 'MLE', 'Reciprocal inverse Gaussian', False],
-                  ['semicircular', 2, 'MM', 'Semicircular', False],
+                  ['rayleigh', 2, 'MM', 'Rayleigh', True],
+                  ['rel_breitwigner', 3, 'MLE', 'Relativistic Breit-Wigner', True],
+                  ['rice', 3, 'MLE', 'Rice', True],
+                  ['recipinvgauss', 3, 'MLE', 'Reciprocal inverse Gaussian', True],
+                  ['semicircular', 2, 'MM', 'Semicircular', True],
                   ['studentized_range', 4, 'MLE', 'Studentized range', False],  # Check: don't converge
-                  ['t', 3, 'MLE', 'Student’s t', False],
+                  ['t', 3, 'MLE', 'Student’s t', True],
                   ['trapezoid', 4, 'MLE', 'Trapezoid', False],
-                  ['triang', 3, 'MLE', 'Triangular', False],
-                  ['truncweibull_min', 5, 'MLE', 'Doubly truncated Weibull minimum', False],
-                  ['tukeylambda', 3, 'MLE', 'Tukey-Lamdba', False],
+                  ['triang', 3, 'MLE', 'Triangular', True],
+                  ['truncweibull_min', 5, 'MLE', 'Doubly truncated Weibull minimum', True],
+                  ['tukeylambda', 3, 'MLE', 'Tukey-Lamdba', True],
                   ['uniform', 2, 'MLE', 'Uniform', False],
-                  ['loguniform', 4, 'MLE', 'Log-Uniform or reciprocal', False],
+                  ['loguniform', 4, 'MLE', 'Log-Uniform or reciprocal', True],
                   ['vonmises', 3, 'MLE', 'Von Mises', False],  # Check: values out of range
-                  ['vonmises_line', 3, 'MLE', 'Von Mises line', False],
-                  ['wald', 2, 'MM', 'Wald', False],
-                  ['weibull_min', 3, 'MLE', 'Weibull minimum', False],
+                  ['vonmises_line', 3, 'MLE', 'Von Mises line', True],
+                  ['wald', 2, 'MM', 'Wald', True],
+                  ['weibull_min', 3, 'MLE', 'Weibull minimum', True],
                   ['weibull_max', 3, 'MLE', 'Weibull maximum', False],  # Check: not for rain data
-                  ['dweibull', 3, 'MLE', 'Double Weibull', False]
+                  ['dweibull', 3, 'MLE', 'Double Weibull', True]
                   ])
 # Load libraries only for active distributions
 for i in l_pdist_scipy:
@@ -205,6 +205,7 @@ def pdist_gumbel(dfx):  # Probability distribution: Gumbel
     else:
         x_extreme = loc - np.log(-np.log(1 - 1 / df_tr.tr)) * scale
     df_tr['gumbel'] = x_extreme
+    dfx['gumbel_pdf'] = 0  # <<<<<<<<<<<<<<<<<< pdf not calculated
     fTestKolmogorov(dfx, 'gumbel', loc, scale, yn, sn, '', '')
 
 
@@ -220,6 +221,7 @@ def pdist_loggumbel(dfx):  # Probability distribution: Log-Gumbel
     else:
         x_extreme = np.exp(loc - np.log(-np.log(1 - 1 / df_tr.tr)) * scale)
     df_tr['loggumbel'] = x_extreme
+    dfx['loggumbel_pdf'] = 0  # <<<<<<<<<<<<<<<<<< pdf not calculated
     fTestKolmogorov(dfx, 'loggumbel', loc, scale, yn, sn, '', '')
 
 
@@ -281,13 +283,14 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
         df_tr[p_dist] = x_extreme
     else:
         print('%s\n* Error: check the # parameters entered...')
+    dfx[p_dist+'_pdf'] =  frozen_dist.pdf(dfx.x)
     fTestKolmogorov(dfx, p_dist, loc, scale, shape, shape1, shape2, shape3)
 
 
 # General setup
 parameter_name = 'rain'  # rain, flow
 parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-show_plot = False  # Show plot on screen
+show_plot = True  # Show plot on screen
 show_warnings = False  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 pdist_gumbel_on = True  # Activate the Gumbel distribution
@@ -296,7 +299,7 @@ if not show_warnings: warnings.filterwarnings('ignore')
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
-plot_legend_ncol = 2  # Columns on the legend
+plot_legend_ncol = 4  # Columns on the legend
 ddof = 1  # Standard deviation normalized
 x_label = 'Valor'  # Initial value column name to eval from .csv station file
 date_label = 'Fecha'  # Initial value column name from .csv station file
@@ -321,7 +324,7 @@ print('## Station: %s' %station_name)
 df = df_in.sort_values(by=date_label)
 plt.plot(df_in[date_label], df_in[x_label], color='black', lw=0.5, marker='o', markersize=3, )
 plt.grid(color='gray', linestyle='--', linewidth=0.1)
-plt.title('Data serie\n$_{Station: %s}$' % station_name)  #$_{ } for underscript text
+plt.title('$_{Station: %s}$\nData serie' % station_name)  #$_{ } for underscript text
 plt.xlabel('Year')
 plt.ylabel(parameter_name + ' ' + parameter_units)
 if show_plot: plt.show()
@@ -359,6 +362,7 @@ for emp in emp_dist:
     # CDF calculations
     for i in l_pdist_scipy:
         if i[4]:
+            print('Processing: %s...' % i[0])  # Only for console
             dp_evalated += 1
             pdist_scipy(df, i[0], i[1], i[2], i[3])
     vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
@@ -379,7 +383,7 @@ for emp in emp_dist:
         dp = vDeltaKolmogorov['p_dist'][i]
         delta = vDeltaKolmogorov['delta'][i]
         plt.plot(df[x], df[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
-    plt.title('Cumulative distribution function CDF\n$_{Station: %s}$' % station_name)
+    plt.title('$_{Station: %s}$\nCumulative distribution function CDF' % station_name)
     plt.xlabel(parameter_name + ' ' + parameter_units)
     plt.ylabel('CDF')
     plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
@@ -389,11 +393,19 @@ for emp in emp_dist:
     # Plot empirical vs. best fit
     plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=20, label='%s (Δo: %f)' %(emp, dp_best['deltao'][0]))
     plt.plot(df[x], df[dp_best['p_dist'][0]], 'red', lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
-    plt.title('Cumulative distribution function CDF (Best fit)\n$_{Station: %s}$' % station_name)
+    plt.title('$_{Station: %s}$\nCumulative distribution function CDF (Best fit)' % station_name)
     plt.xlabel(parameter_name + ' ' + parameter_units)
     plt.ylabel('CDF')
     plt.legend(loc='best', frameon=False)
     plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
+    if show_plot: plt.show()
+
+    # Plot Empirical & Estimated PDF - Best Fit
+    plt.hist(df.x, density=True, histtype='stepfilled', alpha=0.6, color='gray', label='Empirical %s' % emp)
+    plt.plot(df.x, df[dp_best['p_dist'][0]+'_pdf'], 'r-', lw=2, color='black', label='Estimated %s' % dp_best['p_dist'][0])  # <<<<<<<<<<<<<<<<<<
+    plt.legend(loc='best', frameon=False)
+    plt.title('$_{Station: %s}$\nEmpirical & Estimated PDF (Best fit)' % station_name)
+    plt.grid(color='gray', linestyle='--', linewidth=0.1)
     if show_plot: plt.show()
 
     # Plot values over return periods Tr
@@ -401,7 +413,7 @@ for emp in emp_dist:
         dp = vDeltaKolmogorov['p_dist'][i]
         delta = vDeltaKolmogorov['delta'][i]
         plt.plot(df_tr.tr, df_tr[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
-    plt.title('Extreme values for specific return periods\n(Δo: %f %s)\n$_{Station: %s}$' %(vDeltaKolmogorov['deltao'][0], emp, station_name))
+    plt.title('$_{Station: %s}$\nExtreme values for specific return periods\n(Δo: %f %s)' %(station_name, vDeltaKolmogorov['deltao'][0], emp))
     plt.xlabel('Tr ($years$)')
     plt.ylabel(parameter_name + ' ' + parameter_units)
     plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
