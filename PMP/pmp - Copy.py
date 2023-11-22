@@ -321,8 +321,8 @@ parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
 show_plot = False  # Show plot on screen
 show_warnings = False  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
-pdist_gumbel_on = False  # Activate the Gumbel distribution
-pdist_loggumbel_on = False  # Activate the Log-Gumbel distribution
+pdist_gumbel_on = True  # Activate the Gumbel distribution
+pdist_loggumbel_on = True  # Activate the Log-Gumbel distribution
 if not show_warnings: warnings.filterwarnings('ignore')
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -375,8 +375,6 @@ date = 'date'  # New date column name
 print('\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n> n_parameter = # arguments & localization & scale.')
 print('\n\n### Probability distributions\n')
-df_l_pdist_scipy = df_l_pdist_scipy.query('active == True')
-df_l_pdist_scipy = df_l_pdist_scipy.sort_values(by=['p_dist'], ascending=True)
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 # CDF calculations
 dp_evalated = 2  # 2 means we are including Gumbel & Log Gumbel
@@ -402,12 +400,12 @@ for emp in emp_dist:
     pdist_empirical(df, emp)
 
     # Kolmogorov-Smirnov test & best fit
+    l_pdist_scipy = l_pdist_scipy.sort_values(by=['delta'], ascending=True)  # <<<<<<<<<<<<<<<<<<<<<<<<
     idk = 0
-    for i in df_l_pdist_scipy['p_dist']:
-        print('Processing Kolmogorov for: %s...' % i)
-        fTestKolmogorov(df, i, idk)
-        idk += 1
-
+    for i in l_pdist_scipy:
+        if i[4]:
+            fTestKolmogorov(df, i[0], idk)
+            idk += 1
     if pdist_gumbel_on: fTestKolmogorov(df, 'gumbel', idk)
     if pdist_loggumbel_on: fTestKolmogorov(df, 'loggumbel', idk+1)
     vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
@@ -447,7 +445,7 @@ for emp in emp_dist:
 
     # Plot Empirical & Estimated PDF - Best Fit
     plt.hist(df.x, density=True, histtype='stepfilled', alpha=0.6, color='gray', label='Empirical %s' % emp)
-    plt.plot(df.x, df[dp_best['p_dist'][0]+'_pdf'], 'r-', lw=2, color='black', label='Estimated %s' % dp_best['p_dist'][0])
+    plt.plot(df.x, df[dp_best['p_dist'][0]+'_pdf'], 'r-', lw=2, color='black', label='Estimated %s' % dp_best['p_dist'][0])  # <<<<<<<<<<<<<<<<<<
     plt.legend(loc='best', frameon=False)
     plt.title('$_{Station: %s}$\nEmpirical & Estimated PDF (Best fit)' % station_name)
     plt.grid(color='gray', linestyle='--', linewidth=0.1)
@@ -464,8 +462,8 @@ for emp in emp_dist:
     plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
     plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
     if show_plot: plt.show()
+    
 
-    vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the correctly order <<<<<<<<<<<<<<<<<<<
     print('\n\nEstimate extreme values for specific return periods\n')
     df_tr.index.name = 'id'
     print(df_tr.to_markdown())

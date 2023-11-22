@@ -356,14 +356,14 @@ for emp in emp_dist:
     pdist_empirical(df, emp)
 
     # CDF calculations
+    if pdist_gumbel_on: pdist_gumbel(df)
+    if pdist_loggumbel_on: pdist_loggumbel(df)
     dp_evalated = 2  # 2 means we are including Gumbel & Log Gumbel
     for i in l_pdist_scipy:
         if i[4]:
             print('Processing CDF: %s...' % i[0])  # Only for console
             dp_evalated += 1
             pdist_scipy(df, i[0], i[1], i[2], i[3])
-    if pdist_gumbel_on: pdist_gumbel(df)
-    if pdist_loggumbel_on: pdist_loggumbel(df)
 
     vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
