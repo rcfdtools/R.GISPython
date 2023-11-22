@@ -23,3 +23,10 @@
 * https://www.youtube.com/watch?v=GnC6wFkViGk
 * https://www.sciencedirect.com/science/article/pii/S0022169423005000
 * https://csce.ca/elf/apps/CONFERENCEVIEWER/conferences/2017/pdfs/HYD/FinalPaper_725.pdf
+
+
+How to show more lines in the PyCharm RUN console
+
+* File --> Settings --> Editor --> General --> Console -->
+* Then check "Override console cycle buffer size (1024 KB)"
+* Change that values to whatever you need, p.e. 4096

@@ -21,7 +21,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['halfnorm', 2, 'MM', 'Half Normal', True],
                   ['gennorm', 3, 'MLE', 'Generalized Normal', True],
                   ['norminvgauss', 4, 'MLE', 'Normal Inverse Gaussian', False],
-                  ['powernorm', 3, 'MLE', 'Power normal', False],
+                  ['powernorm', 3, 'MLE', 'Power normal', True],
                   ['powerlognorm', 4, 'MLE', 'Power log-normal', False],
                   ['skewnorm', 3, 'MLE', 'Skew normal', True],
                   ['truncnorm', 4,'MLE', 'Truncated normal', True],
@@ -36,11 +36,11 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['bradford', 3, 'MLE', 'Bradford', False],
                   ['burr', 4, 'MLE', 'Burr (Type III)', True],
                   ['burr12', 4, 'MLE', 'Burr (Type III) 12', False],
-                  ['cauchy', 2, 'MLE', 'Cauchy', False],
+                  ['cauchy', 2, 'MLE', 'Cauchy', True],
                   ['cosine', 2, 'MLE', 'Cosine', True],
                   ['halfcauchy', 2, 'MLE', 'Half-Cauchy', False],
-                  ['foldcauchy', 3, 'MLE', 'Fold Cauchy', False],
-                  ['skewcauchy', 3, 'MLE', 'Skewed Cauchy', False],
+                  ['foldcauchy', 3, 'MLE', 'Fold Cauchy', True],
+                  ['skewcauchy', 3, 'MLE', 'Skewed Cauchy', True],
                   ['wrapcauchy', 3, 'MLE', 'Wrapped  Cauchy', False],
                   ['chi2', 3, 'MLE', 'Chi²', True],
                   ['crystalball', 4, 'MLE', 'Crystalball', True],
@@ -49,8 +49,8 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['gengamma', 4, 'MLE', 'Generalized gamma', True],
                   ['invgamma', 3, 'MLE', 'Inverted gamma', True],
                   ['loggamma', 3, 'MLE', 'Log gamma', True],
-                  ['expon', 2, 'MLE', 'Exponential', False],
-                  ['genexpon', 5, 'MLE', 'Generalized exponential', False],
+                  ['expon', 2, 'MLE', 'Exponential', True],
+                  ['genexpon', 5, 'MLE', 'Generalized exponential', True],
                   ['exponnorm', 3, 'MLE', 'Exponentially modified Normal', True],
                   ['exponweib', 4, 'MLE', 'Exponentiated Weibull', True],
                   ['exponpow', 3, 'MLE', 'Exponential power', False],
@@ -61,7 +61,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['fisk', 3, 'MLE', 'Fisk', True],
                   ['genlogistic', 3, 'MLE', 'Generalized logistic', True],
                   ['gausshyper', 6, 'MLE', 'Gauss hypergeometric', True],
-                  ['genhalflogistic', 3, 'MLE', 'Generalized half-logistic', False],
+                  ['genhalflogistic', 3, 'MLE', 'Generalized half-logistic', True],
                   ['genhyperbolic', 5, 'MLE', 'Generalized hyperbolic', False],
                   ['geninvgauss', 4, 'MLE', 'Generalized Inverse Gaussian', True],
                   ['gibrat', 2, 'MM', 'Gibrat', True],
@@ -80,7 +80,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['kstwobign', 2, 'MLE', 'Limiting distribution of scaled Kolmogorov-Smirnov two-sided test statistic', True],
                   ['laplace', 2, 'MM', 'Laplace', True],
                   ['laplace_asymmetric', 3, 'MLE', 'Asymmetric Laplace', True],
-                  ['loglaplace', 3, 'MLE', 'Log-Laplace', False],
+                  ['loglaplace', 3, 'MLE', 'Log-Laplace', True],
                   ['levy', 2, 'MLE', 'Levy', False],
                   ['levy_l', 2, 'MLE', 'Left-skewed Levy', False],
                   ['levy_stable', 4, 'MLE', 'Levy-stable', True],
@@ -92,14 +92,14 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['ncx2', 4, 'MLE', 'Non-central chi-squared', False],
                   ['ncf', 5, 'MLE', 'Non-central F distribution', False],
                   ['nct', 4, 'MLE', 'Non-central Student’s t', True],
-                  ['pareto', 3, 'MLE', 'Pareto', False],
+                  ['pareto', 3, 'MLE', 'Pareto', True],
                   ['genpareto', 3, 'MLE', 'Generalized Pareto', True],
                   ['truncpareto', 4, 'MLE', 'Upper truncated Pareto', True],
-                  ['lomax', 3, 'MLE', 'Lomax (Pareto of the second kind)', False],
-                  ['powerlaw', 3, 'MLE', 'Power-function', False],
+                  ['lomax', 3, 'MLE', 'Lomax (Pareto of the second kind)', True],
+                  ['powerlaw', 3, 'MLE', 'Power-function', True],
                   ['rdist', 3, 'MLE', 'R-distributed (symmetric beta)', False],
                   ['rayleigh', 2, 'MM', 'Rayleigh', True],
-                  ['rel_breitwigner', 3, 'MLE', 'Relativistic Breit-Wigner', False],
+                  ['rel_breitwigner', 3, 'MLE', 'Relativistic Breit-Wigner', True],
                   ['rice', 3, 'MLE', 'Rice', True],
                   ['recipinvgauss', 3, 'MLE', 'Reciprocal inverse Gaussian', True],
                   ['semicircular', 2, 'MM', 'Semicircular', True],
@@ -107,10 +107,10 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['t', 3, 'MLE', 'Student’s t', True],
                   ['trapezoid', 4, 'MLE', 'Trapezoid', False],
                   ['triang', 3, 'MLE', 'Triangular', True],
-                  ['truncweibull_min', 5, 'MLE', 'Doubly truncated Weibull minimum', False],
+                  ['truncweibull_min', 5, 'MLE', 'Doubly truncated Weibull minimum', True],
                   ['tukeylambda', 3, 'MLE', 'Tukey-Lamdba', True],
                   ['uniform', 2, 'MLE', 'Uniform', False],
-                  ['loguniform', 4, 'MLE', 'Log-Uniform or reciprocal', False],
+                  ['loguniform', 4, 'MLE', 'Log-Uniform or reciprocal', True],
                   ['vonmises', 3, 'MLE', 'Von Mises', False],  # Check: values out of range
                   ['vonmises_line', 3, 'MLE', 'Von Mises line', True],
                   ['wald', 2, 'MM', 'Wald', True],
@@ -124,7 +124,7 @@ for i in l_pdist_scipy:
         exec('from scipy.stats import %s' %i[0])
 
 
-def fTestKolmogorov_old(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):  # Kolmogorov-Smirnov fit test
+def fTestKolmogorov(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):  # Kolmogorov-Smirnov fit test
     dfp = pd.DataFrame()
     dfp['dfp'] = abs(dfx['empirical']-dfx[f_dist])
     dfp = dfp.sort_values(by='dfp', ascending=[False])
@@ -141,29 +141,7 @@ def fTestKolmogorov_old(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):
         fit, operator = 'doesn’t fit', '<='
     eval = 'Δo %s Δ, %s' % (operator, fit)
     vDeltaKolmogorovData = [station_name, emp, f_dist, delta, deltao, eval, n, loc, scale, shape, shape1, shape2, shape3]
-    vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the results as a new record
-
-
-def fTestKolmogorov(dfx, f_dist, idk):  # Kolmogorov-Smirnov fit test
-    dfp = pd.DataFrame()
-    dfp['dfp'] = abs(dfx['empirical']-dfx[f_dist])
-    dfp = dfp.sort_values(by='dfp', ascending=[False])
-    dfp = dfp.reset_index(drop=True)
-    n = len(dfp)
-    if (n < 35):
-        deltao = 0.000003848186*n**4-0.00033109622*n**3+0.010220554*n**2-0.141035449935*n+1.07518805168
-    else:
-        deltao = 1.36/math.sqrt(n)
-    delta = dfp['dfp'][0]
-    if (deltao > delta):
-        fit, operator = 'fit', '>'
-    else:
-        fit, operator = 'doesn’t fit', '<='
-    vDeltaKolmogorov['empirical_dist'][idk] = emp
-    vDeltaKolmogorov['p_dist'][idk] = f_dist
-    vDeltaKolmogorov['delta'][idk] = delta
-    vDeltaKolmogorov['deltao'][idk] = deltao
-    vDeltaKolmogorov['eval'][idk] = 'Δo %s Δ, %s' % (operator, fit)
+    vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the resoults as a new record
 
 
 emp_dist = ['emp_california', 'emp_hazen', 'emp_weibull', 'emp_beard', 'emp_chegodayev', 'emp_blom', 'emp_tukey', 'emp_gringorten', 'emp_jenkinson', 'emp_cunnane', 'emp_adamowski']
@@ -216,7 +194,6 @@ def gumbel_sn(n, mi):  # Gumbel Sn parameter
 
 
 def pdist_gumbel(dfx):  # Probability distribution: Gumbel
-    print('Processing CDF: gumbel...')  # Only for console
     n = len(dfx[x])
     yn = gumbel_yn(n)
     sn = gumbel_sn(n, yn)
@@ -229,12 +206,10 @@ def pdist_gumbel(dfx):  # Probability distribution: Gumbel
         x_extreme = loc - np.log(-np.log(1 - 1 / df_tr.tr)) * scale
     df_tr['gumbel'] = x_extreme
     dfx['gumbel_pdf'] = 0  # <<<<<<<<<<<<<<<<<< pdf not calculated
-    vDeltaKolmogorovData = [station_name, '', '', 0.0, 0.0, '', n, loc, scale, yn, sn, '', '']
-    vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the results as a new record
+    fTestKolmogorov(dfx, 'gumbel', loc, scale, yn, sn, '', '')
 
 
 def pdist_loggumbel(dfx):  # Probability distribution: Log-Gumbel
-    print('Processing CDF: loggumbel...')  # Only for console
     n = len(dfx[x])
     yn = gumbel_yn(n)
     sn = gumbel_sn(n, yn)
@@ -247,7 +222,7 @@ def pdist_loggumbel(dfx):  # Probability distribution: Log-Gumbel
         x_extreme = np.exp(loc - np.log(-np.log(1 - 1 / df_tr.tr)) * scale)
     df_tr['loggumbel'] = x_extreme
     dfx['loggumbel_pdf'] = 0  # <<<<<<<<<<<<<<<<<< pdf not calculated
-    #fTestKolmogorov(dfx, 'loggumbel', loc, scale, yn, sn, '', '')
+    fTestKolmogorov(dfx, 'loggumbel', loc, scale, yn, sn, '', '')
 
 
 def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
@@ -256,7 +231,6 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
     # n_parameter: # parameters required
     # fit_method: parameter estimation method. (MLE) Maximum likelihood method or (MM) L-moments
     # p_dist_tag: probability distribution label for reports
-    n = len(dfx)
     n_parameter = eval(p_dist).numargs + 2  # + 2 means loc and scale
     if n_parameter == 2:
         loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
@@ -310,18 +284,17 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
     else:
         print('%s\n* Error: check the # parameters entered...')
     dfx[p_dist+'_pdf'] =  frozen_dist.pdf(dfx.x)
-    vDeltaKolmogorovData = [station_name, '', '', 0.0, 0.0, '', n, loc, scale, shape, shape1, shape2,shape3]
-    vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the results as a new record
+    fTestKolmogorov(dfx, p_dist, loc, scale, shape, shape1, shape2, shape3)
 
 
 # General setup
 parameter_name = 'rain'  # rain, flow
 parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-show_plot = True  # Show plot on screen
+show_plot = False  # Show plot on screen
 show_warnings = False  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 pdist_gumbel_on = True  # Activate the Gumbel distribution
-pdist_loggumbel_on = False  # Activate the Log-Gumbel distribution
+pdist_loggumbel_on = True  # Activate the Log-Gumbel distribution
 if not show_warnings: warnings.filterwarnings('ignore')
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -343,69 +316,54 @@ df_l_pdist_scipy.index.name = 'id'
 
 # Execution
 input_path = 'dataset/pmax24h_in/'  # Your local input file folder
-station_file = input_path + '25020230.csv'
+station_file = input_path + '25020230AHOC.csv'
 station_name = Path(station_file).stem  # File name without extension
-#df_in = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
-df = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
+df_in = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
 print('## Station: %s' %station_name)
 # Plot x values - Start
-#df = df_in.sort_values(by=date_label)
-df = df.sort_values(by=date_label)
-#plt.plot(df_in[date_label], df_in[x_label], color='black', lw=0.5, marker='o', markersize=3, )
-plt.plot(df[date_label], df[x_label], color='black', lw=0.5, marker='o', markersize=3, )
+df = df_in.sort_values(by=date_label)
+plt.plot(df_in[date_label], df_in[x_label], color='black', lw=0.5, marker='o', markersize=3, )
 plt.grid(color='gray', linestyle='--', linewidth=0.1)
 plt.title('$_{Station: %s}$\nData serie' % station_name)  #$_{ } for underscript text
 plt.xlabel('Year')
 plt.ylabel(parameter_name + ' ' + parameter_units)
 if show_plot: plt.show()
-x = x_label
-date = date_label
-df = df.dropna()
-df = df.sort_values(by=x, ascending=True)
-df = df.reset_index(drop=True)
-df.index.name = 'id'
-df['station'] = station_name
-df['m'] = df.index+1
-df = df.rename(columns={x: 'x', date: 'date'})
-x = 'x'  # New value column name
-date = 'date'  # New date column name
 # Plot x values - End
 #print('\n### Basic stats\n\n* n: %d\n* mean: %f\n* std(%d): %f\n* min: %f\n* max: %f' % (df[x].count(), df[x].mean(), ddof, df[x].std(ddof=ddof), df[x].min(), df[x].max()))
 print('\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n> n_parameter = # arguments & localization & scale.')
-print('\n\n### Probability distributions\n')
-vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
-# CDF calculations
-dp_evalated = 2  # 2 means we are including Gumbel & Log Gumbel
-for i in l_pdist_scipy:
-    if i[4]:
-        print('Processing CDF: %s...' % i[0])  # Only for console
-        dp_evalated += 1
-        pdist_scipy(df, i[0], i[1], i[2], i[3])
-idk_max = len(df_l_pdist_scipy[df_l_pdist_scipy['active'] == True])
-print('>>>>>>>>>>>>>>>>>>>>> %s' % idk_max)
-if pdist_gumbel_on: pdist_gumbel(df)
-if pdist_loggumbel_on: pdist_loggumbel(df)
+print('\n\n### Probability distributions')
 # Evaluation for each empirical distribution
 for emp in emp_dist:
     print('\n\n#### %s\n' % emp)
-    #vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
-    #df = df_in
-
+    vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
+    df = df_in
+    x = x_label
+    date = date_label
+    df = df.dropna()
+    df = df.sort_values(by=x, ascending=True)
+    df = df.reset_index(drop=True)
+    df.index.name = 'id'
+    df['station'] = station_name
+    df['m'] = df.index+1
+    df = df.rename(columns={x: 'x', date: 'date'})
+    x = 'x'  # New value column name
+    date = 'date'  # New date column name
     df_tr['empirical_dist '] = emp
     df_tr['station'] = station_name
     df_tr['n'] = len(df)
     df_tr['risk_rate'] = 1-(1-1/df_tr['tr'])**df_tr['tr']
     pdist_empirical(df, emp)
+    if pdist_gumbel_on: pdist_gumbel(df)
+    if pdist_loggumbel_on: pdist_loggumbel(df)
+    dp_evalated = 2  # 2 means we are including Gumbel & Log Gumbel
 
-    # Kolmogorov-Smirnov test & best fit
-    idk = 0
-    for i in l_pdist_scipy:  # <<<<<<<<<<<<<<<<<<<<<<<<
+    # CDF calculations
+    for i in l_pdist_scipy:
         if i[4]:
-            fTestKolmogorov(df, i[0], idk)
-            idk += 1
-    if pdist_gumbel_on: fTestKolmogorov(df, 'gumbel', idk+1)
-    if pdist_loggumbel_on: fTestKolmogorov(df, 'loggumbel', idk+2)
+            print('Processing CDF: %s...' % i[0])  # Only for console
+            dp_evalated += 1
+            pdist_scipy(df, i[0], i[1], i[2], i[3])
     vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
@@ -418,8 +376,6 @@ for emp in emp_dist:
     dp_best.index.name = 'id'
     print('\nBest fit for\n\n%s' %dp_best.to_markdown())
 
-
-    '''
     # Plot empirical vs. all
     plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=20, label='%s (Δo: %f)' %(emp, vDeltaKolmogorov['deltao'][0]))
     for i in range(0, len(vDeltaKolmogorov)):
@@ -462,8 +418,6 @@ for emp in emp_dist:
     plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
     plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
     if show_plot: plt.show()
-    
-    '''
 
     print('\n\nEstimate extreme values for specific return periods\n')
     df_tr.index.name = 'id'
