@@ -319,8 +319,8 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 # General setup
 parameter_name = 'rain'  # rain, flow
 parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-create_plot = False
-show_plot = False  # Show plot on screen
+create_plot = True
+show_plot = True  # Show plot on screen
 show_warnings = False  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
 pdist_gumbel_on = False  # Activate the Gumbel distribution
