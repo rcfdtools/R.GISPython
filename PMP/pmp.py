@@ -217,36 +217,36 @@ def gumbel_sn(n, mi):  # Gumbel Sn parameter
 
 
 def pdist_gumbel(dfx):  # Probability distribution: Gumbel
-    print('Processing CDF: gumbel...')  # Only for console
+    print('Processing CDF: zzgumbel...')  # Only for console
     n = len(dfx[x])
     yn = gumbel_yn(n)
     sn = gumbel_sn(n, yn)
     scale = math.sqrt(6) * dfx[x].std(ddof=ddof) / math.pi
     loc = dfx[x].mean() - yn / scale
-    dfx['gumbel'] = np.exp(-np.exp(-(dfx[x] - loc) / scale))
+    dfx['zzgumbel'] = np.exp(-np.exp(-(dfx[x] - loc) / scale))  ## zzgumbel: zz used to put this manual distribution at the end of the tables
     if low_extreme:
         x_extreme = loc - np.log(-np.log(1 / df_tr.tr)) * scale
     else:
         x_extreme = loc - np.log(-np.log(1 - 1 / df_tr.tr)) * scale
-    df_tr['gumbel'] = x_extreme
+    df_tr['zzgumbel'] = x_extreme
     dfx['gumbel_pdf'] = 0  # <<<<<<<<<<<<<<<<<< pdf not calculated
     vDeltaKolmogorovData = [station_name, '', '', 0.0, 0.0, '', n, loc, scale, yn, sn, '', '']
     vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the results as a new record
 
 
 def pdist_loggumbel(dfx):  # Probability distribution: Log-Gumbel
-    print('Processing CDF: loggumbel...')  # Only for console
+    print('Processing CDF: zzloggumbel...')  # Only for console
     n = len(dfx[x])
     yn = gumbel_yn(n)
     sn = gumbel_sn(n, yn)
     scale = math.sqrt(6) * np.std(np.log(dfx[x])) / math.pi
     loc = np.mean(np.log(dfx[x])) - yn * scale
-    dfx['loggumbel'] = np.exp(-np.exp(-(np.log(dfx[x]) - loc) / scale))
+    dfx['zzloggumbel'] = np.exp(-np.exp(-(np.log(dfx[x]) - loc) / scale))  ## zzloggumbel: zz used to put this manual distribution at the end of the tables
     if low_extreme:
         x_extreme = np.exp(loc - np.log(-np.log(1 / df_tr.tr)) * scale)
     else:
         x_extreme = np.exp(loc - np.log(-np.log(1 - 1 / df_tr.tr)) * scale)
-    df_tr['loggumbel'] = x_extreme
+    df_tr['zzloggumbel'] = x_extreme
     dfx['loggumbel_pdf'] = 0  # <<<<<<<<<<<<<<<<<< pdf not calculated
     vDeltaKolmogorovData = [station_name, '', '', 0.0, 0.0, '', n, loc, scale, yn, sn, '', '']
     vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the results as a new record
@@ -319,12 +319,12 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 # General setup
 parameter_name = 'rain'  # rain, flow
 parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-create_plot = True
-show_plot = True  # Show plot on screen
+create_plot = False  # Creates and print plots
+show_plot = False  # Show plot on screen
 show_warnings = False  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
-pdist_gumbel_on = False  # Activate the Gumbel distribution
-pdist_loggumbel_on = False  # Activate the Log-Gumbel distribution
+pdist_gumbel_on = True  # Activate the Gumbel distribution
+pdist_loggumbel_on = True  # Activate the Log-Gumbel distribution
 if not show_warnings: warnings.filterwarnings('ignore')
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -408,8 +408,8 @@ for emp in emp_dist:
     for i in df_l_pdist_scipy['p_dist']:
         fTestKolmogorov(df, i, idk)
         idk += 1
-    if pdist_gumbel_on: fTestKolmogorov(df, 'gumbel', idk)
-    if pdist_loggumbel_on: fTestKolmogorov(df, 'loggumbel', idk+1)
+    if pdist_gumbel_on: fTestKolmogorov(df, 'zzgumbel', idk)  # Run always after for i in df_l_pdist_scipy['p_dist']
+    if pdist_loggumbel_on: fTestKolmogorov(df, 'zzloggumbel', idk+1)  # Run always after for i in df_l_pdist_scipy['p_dist']
     vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
