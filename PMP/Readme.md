@@ -1,8 +1,5 @@
 ## PMP - Precipitación máxima probable
 
-
-
-
 ### References
 
 * https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html
@@ -23,6 +20,8 @@
 * https://www.youtube.com/watch?v=GnC6wFkViGk
 * https://www.sciencedirect.com/science/article/pii/S0022169423005000
 * https://csce.ca/elf/apps/CONFERENCEVIEWER/conferences/2017/pdfs/HYD/FinalPaper_725.pdf
+* https://www.mrl.ucsb.edu/~seshadri/PreparingFigures-June2019.pdf
+* https://zhauniarovich.com/post/2022/2022-09-matplotlib-graphs-in-research-papers/
 
 
 How to show more lines in the PyCharm RUN console
