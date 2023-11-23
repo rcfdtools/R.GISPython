@@ -22,6 +22,7 @@
 * https://csce.ca/elf/apps/CONFERENCEVIEWER/conferences/2017/pdfs/HYD/FinalPaper_725.pdf
 * https://www.mrl.ucsb.edu/~seshadri/PreparingFigures-June2019.pdf
 * https://zhauniarovich.com/post/2022/2022-09-matplotlib-graphs-in-research-papers/
+* https://www3.nd.edu/~pkamat/pdf/graphs.pdf
 
 
 How to show more lines in the PyCharm RUN console
