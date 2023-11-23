@@ -111,15 +111,21 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
 df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter', 'fit_method', 'label', 'active'])
 df_l_pdist_scipy['reference'] = '[Help](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.'+df_l_pdist_scipy.p_dist+'.html)'
 df_l_pdist_scipy.index.name = 'id'
-
 print('\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 
 
-df_l_pdist_scipy = df_l_pdist_scipy.sort_values(by=['p_dist'], ascending=True)  # <<<<<<<<<<<<<<<<<<<<<<<<
 df_l_pdist_scipy = df_l_pdist_scipy.query('active == True')
+df_l_pdist_scipy = df_l_pdist_scipy.sort_values(by=['p_dist'], ascending=True)
+df_l_pdist_scipy = df_l_pdist_scipy.reset_index(drop=True)
 print('\n### Active distributions from SciPy (%d of %d available)\n\n%s\n' % (len(df_l_pdist_scipy.query('active == True')), len(df_l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 
+'''
 idk = 0
 for i in df_l_pdist_scipy['p_dist']:
     print(i)
     idk += 1
+'''
+
+print('\n\n***********************************************\n')
+for i in range(0, len(df_l_pdist_scipy)):
+    print('%s, %d' % (df_l_pdist_scipy['p_dist'][i], df_l_pdist_scipy['n_parameter'][i]))

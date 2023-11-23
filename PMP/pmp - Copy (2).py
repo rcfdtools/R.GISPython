@@ -145,7 +145,6 @@ def fTestKolmogorov_old(dfx, f_dist, loc, scale, shape, shape1, shape2, shape3):
 
 
 def fTestKolmogorov(dfx, f_dist, idk):  # Kolmogorov-Smirnov fit test
-    print('Processing Kolmogorov for: %s...' % f_dist)
     dfp = pd.DataFrame()
     dfp['dfp'] = abs(dfx['empirical']-dfx[f_dist])
     dfp = dfp.sort_values(by='dfp', ascending=[False])
@@ -319,7 +318,6 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
 # General setup
 parameter_name = 'rain'  # rain, flow
 parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-create_plot = False
 show_plot = False  # Show plot on screen
 show_warnings = False  # Show warnings on screen
 low_extreme = False  # Eval low extreme values, if False, evaluates high extreme values
@@ -344,7 +342,6 @@ df_l_pdist_scipy['reference'] = '[Help](https://docs.scipy.org/doc/scipy/referen
 df_l_pdist_scipy.index.name = 'id'
 df_l_pdist_scipy = df_l_pdist_scipy.query('active == True')
 df_l_pdist_scipy = df_l_pdist_scipy.sort_values(by=['p_dist'], ascending=True)
-df_l_pdist_scipy = df_l_pdist_scipy.reset_index(drop=True)
 
 
 # Execution
@@ -384,10 +381,13 @@ vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 
 
 # CDF calculations
 dp_evalated = 2  # 2 means we are including Gumbel & Log Gumbel
-for i in range(0, len(df_l_pdist_scipy)):
-    print('Processing CDF: %s...' % df_l_pdist_scipy['p_dist'][i])  # Only for console
-    dp_evalated += 1
-    pdist_scipy(df, df_l_pdist_scipy['p_dist'][i], df_l_pdist_scipy['n_parameter'][i], df_l_pdist_scipy['fit_method'][i], df_l_pdist_scipy['label'][i])
+for i in l_pdist_scipy:
+    if i[4]:
+        print('Processing CDF: %s...' % i[0])  # Only for console
+        dp_evalated += 1
+        pdist_scipy(df, i[0], i[1], i[2], i[3])
+#idk_max = len(df_l_pdist_scipy[df_l_pdist_scipy['active'] == True])
+#print('>>>>>>>>>>>>>>>>>>>>> %s' % idk_max)
 if pdist_gumbel_on: pdist_gumbel(df)
 if pdist_loggumbel_on: pdist_loggumbel(df)
 
@@ -406,8 +406,10 @@ for emp in emp_dist:
     # Kolmogorov-Smirnov test & best fit
     idk = 0
     for i in df_l_pdist_scipy['p_dist']:
+        print('Processing Kolmogorov for: %s...' % i)
         fTestKolmogorov(df, i, idk)
         idk += 1
+
     if pdist_gumbel_on: fTestKolmogorov(df, 'gumbel', idk)
     if pdist_loggumbel_on: fTestKolmogorov(df, 'loggumbel', idk+1)
     vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
@@ -422,54 +424,50 @@ for emp in emp_dist:
     dp_best.index.name = 'id'
     print('\nBest fit for\n\n%s' %dp_best.to_markdown())
 
-    # Plot analysis graphs
-    if create_plot:
-        # Plot empirical vs. all
-        plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=20, label='%s (Δo: %f)' %(emp, vDeltaKolmogorov['deltao'][0]))
-        for i in range(0, len(vDeltaKolmogorov)):
-            dp = vDeltaKolmogorov['p_dist'][i]
-            delta = vDeltaKolmogorov['delta'][i]
-            plt.plot(df[x], df[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
-        plt.title('$_{Station: %s}$\nCumulative distribution function CDF' % station_name)
-        plt.xlabel(parameter_name + ' ' + parameter_units)
-        plt.ylabel('CDF')
-        plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
-        plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
-        if show_plot: plt.show()
+    # Plot empirical vs. all
+    plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=20, label='%s (Δo: %f)' %(emp, vDeltaKolmogorov['deltao'][0]))
+    for i in range(0, len(vDeltaKolmogorov)):
+        dp = vDeltaKolmogorov['p_dist'][i]
+        delta = vDeltaKolmogorov['delta'][i]
+        plt.plot(df[x], df[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
+    plt.title('$_{Station: %s}$\nCumulative distribution function CDF' % station_name)
+    plt.xlabel(parameter_name + ' ' + parameter_units)
+    plt.ylabel('CDF')
+    plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
+    plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
+    if show_plot: plt.show()
 
-        # Plot empirical vs. best fit
-        plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=20, label='%s (Δo: %f)' %(emp, dp_best['deltao'][0]))
-        plt.plot(df[x], df[dp_best['p_dist'][0]], 'red', lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
-        plt.title('$_{Station: %s}$\nCumulative distribution function CDF (Best fit)' % station_name)
-        plt.xlabel(parameter_name + ' ' + parameter_units)
-        plt.ylabel('CDF')
-        plt.legend(loc='best', frameon=False)
-        plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
-        if show_plot: plt.show()
+    # Plot empirical vs. best fit
+    plt.scatter(df[x], df['empirical'], color='black', facecolors='black', s=20, label='%s (Δo: %f)' %(emp, dp_best['deltao'][0]))
+    plt.plot(df[x], df[dp_best['p_dist'][0]], 'red', lw=1, marker='o', markersize=2, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
+    plt.title('$_{Station: %s}$\nCumulative distribution function CDF (Best fit)' % station_name)
+    plt.xlabel(parameter_name + ' ' + parameter_units)
+    plt.ylabel('CDF')
+    plt.legend(loc='best', frameon=False)
+    plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
+    if show_plot: plt.show()
 
-        # Plot Empirical & Estimated PDF - Best Fit
-        plt.hist(df.x, density=True, histtype='stepfilled', alpha=0.6, color='gray', label='Empirical %s' % emp)
-        plt.plot(df.x, df[dp_best['p_dist'][0]+'_pdf'], 'r-', lw=2, color='black', label='Estimated %s' % dp_best['p_dist'][0])
-        plt.legend(loc='best', frameon=False)
-        plt.title('$_{Station: %s}$\nEmpirical & Estimated PDF (Best fit)' % station_name)
-        plt.grid(color='gray', linestyle='--', linewidth=0.1)
-        if show_plot: plt.show()
+    # Plot Empirical & Estimated PDF - Best Fit
+    plt.hist(df.x, density=True, histtype='stepfilled', alpha=0.6, color='gray', label='Empirical %s' % emp)
+    plt.plot(df.x, df[dp_best['p_dist'][0]+'_pdf'], 'r-', lw=2, color='black', label='Estimated %s' % dp_best['p_dist'][0])
+    plt.legend(loc='best', frameon=False)
+    plt.title('$_{Station: %s}$\nEmpirical & Estimated PDF (Best fit)' % station_name)
+    plt.grid(color='gray', linestyle='--', linewidth=0.1)
+    if show_plot: plt.show()
 
-        # Plot values over return periods Tr
-        for i in range(0, len(vDeltaKolmogorov)):
-            dp = vDeltaKolmogorov['p_dist'][i]
-            delta = vDeltaKolmogorov['delta'][i]
-            plt.plot(df_tr.tr, df_tr[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
-        plt.title('$_{Station: %s}$\nExtreme values for specific return periods\n(Δo: %f %s)' %(station_name, vDeltaKolmogorov['deltao'][0], emp))
-        plt.xlabel('Tr ($years$)')
-        plt.ylabel(parameter_name + ' ' + parameter_units)
-        plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
-        plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
-        if show_plot: plt.show()
+    # Plot values over return periods Tr
+    for i in range(0, len(vDeltaKolmogorov)):
+        dp = vDeltaKolmogorov['p_dist'][i]
+        delta = vDeltaKolmogorov['delta'][i]
+        plt.plot(df_tr.tr, df_tr[dp], lw=1, marker='o', markersize=2, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
+    plt.title('$_{Station: %s}$\nExtreme values for specific return periods\n(Δo: %f %s)' %(station_name, vDeltaKolmogorov['deltao'][0], emp))
+    plt.xlabel('Tr ($years$)')
+    plt.ylabel(parameter_name + ' ' + parameter_units)
+    plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
+    plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
+    if show_plot: plt.show()
 
-    # Print extreme values table
-    vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
-    vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
+    vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the correctly order <<<<<<<<<<<<<<<<<<<
     print('\n\nEstimate extreme values for specific return periods\n')
     df_tr.index.name = 'id'
     print(df_tr.to_markdown())
