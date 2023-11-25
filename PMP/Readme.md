@@ -1,5 +1,22 @@
 ## PMP - Precipitación máxima probable
 
+
+### Probability distributions not right for rain analysis
+
+* foldcauchy
+* genextreme
+* genhyperbolic
+* halfcauchy
+* halfgennorm
+* levy
+* powerlognorm
+* powernorm
+* burr12
+* cauchy
+* skewcauchy
+* rel_breitwigner
+
+
 ### References
 
 * https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html

@@ -21,7 +21,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['halfnorm', 2, 'MM', 'Half Normal', True],
                   ['gennorm', 3, 'MLE', 'Generalized Normal', True],
                   ['norminvgauss', 4, 'MLE', 'Normal Inverse Gaussian', False],
-                  ['powernorm', 3, 'MLE', 'Power normal', True],
+                  ['powernorm', 3, 'MLE', 'Power normal', False],
                   ['powerlognorm', 4, 'MLE', 'Power log-normal', False],
                   ['skewnorm', 3, 'MLE', 'Skew normal', True],
                   ['truncnorm', 4,'MLE', 'Truncated normal', True],
@@ -36,11 +36,11 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['bradford', 3, 'MLE', 'Bradford', False],
                   ['burr', 4, 'MLE', 'Burr (Type III)', True],
                   ['burr12', 4, 'MLE', 'Burr (Type III) 12', False],
-                  ['cauchy', 2, 'MLE', 'Cauchy', True],
+                  ['cauchy', 2, 'MLE', 'Cauchy', False],
                   ['cosine', 2, 'MLE', 'Cosine', True],
                   ['halfcauchy', 2, 'MLE', 'Half-Cauchy', False],
-                  ['foldcauchy', 3, 'MLE', 'Fold Cauchy', True],
-                  ['skewcauchy', 3, 'MLE', 'Skewed Cauchy', True],
+                  ['foldcauchy', 3, 'MLE', 'Fold Cauchy', False],
+                  ['skewcauchy', 3, 'MLE', 'Skewed Cauchy', False],
                   ['wrapcauchy', 3, 'MLE', 'Wrapped  Cauchy', False],
                   ['chi2', 3, 'MLE', 'Chi²', True],
                   ['crystalball', 4, 'MLE', 'Crystalball', True],
@@ -49,8 +49,8 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['gengamma', 4, 'MLE', 'Generalized gamma', True],
                   ['invgamma', 3, 'MLE', 'Inverted gamma', True],
                   ['loggamma', 3, 'MLE', 'Log gamma', True],
-                  ['expon', 2, 'MLE', 'Exponential', True],
-                  ['genexpon', 5, 'MLE', 'Generalized exponential', True],
+                  ['expon', 2, 'MLE', 'Exponential', False],
+                  ['genexpon', 5, 'MLE', 'Generalized exponential', False],
                   ['exponnorm', 3, 'MLE', 'Exponentially modified Normal', True],
                   ['exponweib', 4, 'MLE', 'Exponentiated Weibull', True],
                   ['exponpow', 3, 'MLE', 'Exponential power', False],
@@ -61,7 +61,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['fisk', 3, 'MLE', 'Fisk', True],
                   ['genlogistic', 3, 'MLE', 'Generalized logistic', True],
                   ['gausshyper', 6, 'MLE', 'Gauss hypergeometric', True],
-                  ['genhalflogistic', 3, 'MLE', 'Generalized half-logistic', True],
+                  ['genhalflogistic', 3, 'MLE', 'Generalized half-logistic', False],
                   ['genhyperbolic', 5, 'MLE', 'Generalized hyperbolic', False],
                   ['geninvgauss', 4, 'MLE', 'Generalized Inverse Gaussian', True],
                   ['gibrat', 2, 'MM', 'Gibrat', True],
@@ -80,7 +80,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['kstwobign', 2, 'MLE', 'Limiting distribution of scaled Kolmogorov-Smirnov two-sided test statistic', True],
                   ['laplace', 2, 'MM', 'Laplace', True],
                   ['laplace_asymmetric', 3, 'MLE', 'Asymmetric Laplace', True],
-                  ['loglaplace', 3, 'MLE', 'Log-Laplace', True],
+                  ['loglaplace', 3, 'MLE', 'Log-Laplace', False],
                   ['levy', 2, 'MLE', 'Levy', False],
                   ['levy_l', 2, 'MLE', 'Left-skewed Levy', False],
                   ['levy_stable', 4, 'MLE', 'Levy-stable', True],
@@ -92,14 +92,14 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['ncx2', 4, 'MLE', 'Non-central chi-squared', False],
                   ['ncf', 5, 'MLE', 'Non-central F distribution', False],
                   ['nct', 4, 'MLE', 'Non-central Student’s t', True],
-                  ['pareto', 3, 'MLE', 'Pareto', True],
+                  ['pareto', 3, 'MLE', 'Pareto', False],
                   ['genpareto', 3, 'MLE', 'Generalized Pareto', True],
                   ['truncpareto', 4, 'MLE', 'Upper truncated Pareto', True],
-                  ['lomax', 3, 'MLE', 'Lomax (Pareto of the second kind)', True],
-                  ['powerlaw', 3, 'MLE', 'Power-function', True],
+                  ['lomax', 3, 'MLE', 'Lomax (Pareto of the second kind)', False],
+                  ['powerlaw', 3, 'MLE', 'Power-function', False],
                   ['rdist', 3, 'MLE', 'R-distributed (symmetric beta)', False],
                   ['rayleigh', 2, 'MM', 'Rayleigh', True],
-                  ['rel_breitwigner', 3, 'MLE', 'Relativistic Breit-Wigner', True],
+                  ['rel_breitwigner', 3, 'MLE', 'Relativistic Breit-Wigner', False],
                   ['rice', 3, 'MLE', 'Rice', True],
                   ['recipinvgauss', 3, 'MLE', 'Reciprocal inverse Gaussian', True],
                   ['semicircular', 2, 'MM', 'Semicircular', True],
@@ -107,10 +107,10 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['t', 3, 'MLE', 'Student’s t', True],
                   ['trapezoid', 4, 'MLE', 'Trapezoid', False],
                   ['triang', 3, 'MLE', 'Triangular', True],
-                  ['truncweibull_min', 5, 'MLE', 'Doubly truncated Weibull minimum', True],
+                  ['truncweibull_min', 5, 'MLE', 'Doubly truncated Weibull minimum', False],
                   ['tukeylambda', 3, 'MLE', 'Tukey-Lamdba', True],
                   ['uniform', 2, 'MLE', 'Uniform', False],
-                  ['loguniform', 4, 'MLE', 'Log-Uniform or reciprocal', True],
+                  ['loguniform', 4, 'MLE', 'Log-Uniform or reciprocal', False],
                   ['vonmises', 3, 'MLE', 'Von Mises', False],  # Check: values out of range
                   ['vonmises_line', 3, 'MLE', 'Von Mises line', True],
                   ['wald', 2, 'MM', 'Wald', True],
@@ -316,7 +316,7 @@ df_l_pdist_scipy.index.name = 'id'
 
 # Execution
 input_path = 'dataset/pmax24h_in/'  # Your local input file folder
-station_file = input_path + '25020230AHOC.csv'
+station_file = input_path + '25020230.csv'
 station_name = Path(station_file).stem  # File name without extension
 df_in = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
 print('## Station: %s' %station_name)
@@ -354,16 +354,17 @@ for emp in emp_dist:
     df_tr['n'] = len(df)
     df_tr['risk_rate'] = 1-(1-1/df_tr['tr'])**df_tr['tr']
     pdist_empirical(df, emp)
+
+    # CDF calculations
     if pdist_gumbel_on: pdist_gumbel(df)
     if pdist_loggumbel_on: pdist_loggumbel(df)
     dp_evalated = 2  # 2 means we are including Gumbel & Log Gumbel
-
-    # CDF calculations
     for i in l_pdist_scipy:
         if i[4]:
             print('Processing CDF: %s...' % i[0])  # Only for console
             dp_evalated += 1
             pdist_scipy(df, i[0], i[1], i[2], i[3])
+
     vDeltaKolmogorov['best_fit'] = np.where((vDeltaKolmogorov['delta'] == vDeltaKolmogorov['delta'].min()), 1, 0)
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
