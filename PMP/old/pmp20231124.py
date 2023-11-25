@@ -6,10 +6,8 @@ import warnings
 import math
 import numpy as np
 import pandas as pd
-from scipy import stats
 from pathlib import Path
 import matplotlib.pyplot as plt
-
 import tabulate  # required for print tables in Markdown using pandas
 
 
@@ -120,12 +118,16 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['weibull_max', 3, 'MLE', 'Weibull maximum', False],  # Check: not for rain data
                   ['dweibull', 3, 'MLE', 'Double Weibull', True]
                   ])
+# Load libraries only for active distributions
+for i in l_pdist_scipy:
+    if i[4]:
+        exec('from scipy.stats import %s' %i[0])
 
 
-def fTestKolmogorov(dfx, p_dist, idk):  # Kolmogorov-Smirnov fit test
-    print('Processing Kolmogorov for: %s...' % p_dist)
+def fTestKolmogorov(dfx, f_dist, idk):  # Kolmogorov-Smirnov fit test
+    print('Processing Kolmogorov for: %s...' % f_dist)
     dfp = pd.DataFrame()
-    dfp['dfp'] = abs(dfx['empirical']-dfx[p_dist])
+    dfp['dfp'] = abs(dfx['empirical']-dfx[f_dist])
     dfp = dfp.sort_values(by='dfp', ascending=[False])
     dfp = dfp.reset_index(drop=True)
     n = len(dfp)
@@ -139,7 +141,7 @@ def fTestKolmogorov(dfx, p_dist, idk):  # Kolmogorov-Smirnov fit test
     else:
         fit, fit_txt, operator = 0, 'doesn’t fit', '<='
     vDeltaKolmogorov['empirical_dist'][idk] = emp
-    vDeltaKolmogorov['p_dist'][idk] = p_dist
+    vDeltaKolmogorov['p_dist'][idk] = f_dist
     vDeltaKolmogorov['delta'][idk] = delta
     vDeltaKolmogorov['deltao'][idk] = deltao
     vDeltaKolmogorov['eval'][idk] = 'Δo %s Δ, %s' % (operator, fit_txt)
@@ -237,52 +239,52 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
     # n_parameter: # parameters required
     # fit_method: parameter estimation method. (MLE) Maximum likelihood method or (MM) L-moments
     # p_dist_tag: probability distribution label for reports
-    n_parameter = eval('stats.'+p_dist).numargs + 2  # + 2 means loc and scale
     n = len(dfx)
+    n_parameter = eval(p_dist).numargs + 2  # + 2 means loc and scale
     if n_parameter == 2:
-        loc, scale = eval('stats.'+p_dist).fit(dfx[x], method=fit_method)
-        dfx[p_dist] = eval('stats.'+p_dist).cdf(dfx[x], loc, scale)  # Cumulative distribution function
+        loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
+        dfx[p_dist] = eval(p_dist).cdf(dfx[x], loc, scale)  # Cumulative distribution function
         shape, shape1, shape2, shape3 = '', '', '', ''
-        frozen_dist = eval('stats.'+p_dist)(loc=loc, scale=scale)  # Frozen distribution
+        frozen_dist = eval(p_dist)(loc=loc, scale=scale)  # Frozen distribution
         if low_extreme:
             x_extreme = frozen_dist.ppf(1 / df_tr.tr)
         else:
             x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
         df_tr[p_dist] = x_extreme
     elif n_parameter == 3:
-        shape, loc, scale = eval('stats.'+p_dist).fit(dfx[x], method=fit_method)
-        dfx[p_dist] = eval('stats.'+p_dist).cdf(dfx[x], shape, loc, scale)  # Cumulative distribution function
+        shape, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
+        dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, loc, scale)  # Cumulative distribution function
         shape1, shape2, shape3 = '', '', ''
-        frozen_dist = eval('stats.'+p_dist)(shape, loc=loc, scale=scale)  # Frozen distribution
+        frozen_dist = eval(p_dist)(shape, loc=loc, scale=scale)  # Frozen distribution
         if low_extreme:
             x_extreme = frozen_dist.ppf(1 / df_tr.tr)
         else:
             x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
         df_tr[p_dist] = x_extreme
     elif n_parameter == 4:
-        shape, shape1, loc, scale = eval('stats.'+p_dist).fit(dfx[x], method=fit_method)
-        dfx[p_dist] = eval('stats.'+p_dist).cdf(dfx[x], shape, shape1, loc, scale)  # Cumulative distribution function
+        shape, shape1, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
+        dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, shape1, loc, scale)  # Cumulative distribution function
         shape2, shape3 = '', ''
-        frozen_dist = eval('stats.'+p_dist)(shape, shape1, loc=loc, scale=scale)  # Frozen distribution
+        frozen_dist = eval(p_dist)(shape, shape1, loc=loc, scale=scale)  # Frozen distribution
         if low_extreme:
             x_extreme = frozen_dist.ppf(1 / df_tr.tr)
         else:
             x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
         df_tr[p_dist] = x_extreme
     elif n_parameter == 5:
-        shape, shape1, shape2, loc, scale = eval('stats.'+p_dist).fit(dfx[x], method=fit_method)
-        dfx[p_dist] = eval('stats.'+p_dist).cdf(dfx[x], shape, shape1, shape2, loc, scale)  # Cumulative distribution function
+        shape, shape1, shape2, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
+        dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, shape1, shape2, loc, scale)  # Cumulative distribution function
         shape3 = ''
-        frozen_dist = eval('stats.'+p_dist)(shape, shape1, shape2, loc=loc, scale=scale)  # Frozen distribution
+        frozen_dist = eval(p_dist)(shape, shape1, shape2, loc=loc, scale=scale)  # Frozen distribution
         if low_extreme:
             x_extreme = frozen_dist.ppf(1 / df_tr.tr)
         else:
             x_extreme = frozen_dist.ppf(1 - 1 / df_tr.tr)
         df_tr[p_dist] = x_extreme
     elif n_parameter == 6:
-        shape, shape1, shape2, shape3, loc, scale = eval('stats.'+p_dist).fit(dfx[x], method=fit_method)
-        dfx[p_dist] = eval('stats.'+p_dist).cdf(dfx[x], shape, shape1, shape2, shape3, loc, scale)  # Cumulative distribution function
-        frozen_dist = eval('stats.'+p_dist)(shape, shape1, shape2, shape3, loc=loc, scale=scale)  # Frozen distribution
+        shape, shape1, shape2, shape3, loc, scale = eval(p_dist).fit(dfx[x], method=fit_method)
+        dfx[p_dist] = eval(p_dist).cdf(dfx[x], shape, shape1, shape2, shape3, loc, scale)  # Cumulative distribution function
+        frozen_dist = eval(p_dist)(shape, shape1, shape2, shape3, loc=loc, scale=scale)  # Frozen distribution
         if low_extreme:
             x_extreme = frozen_dist.ppf(1 / df_tr.tr)
         else:
@@ -340,11 +342,10 @@ if create_plot:
     df = df.sort_values(by=date_label)
     plt.plot(df[date_label], df[x_label], color=color_line_plot, lw=2, marker='o', markersize=3, )
     plt.grid(color='gray', linestyle='--', linewidth=0.1)
-    plt.title('Data serie')  #$_{ } for underscript text
+    plt.title('$_{Station: %s}$\nData serie' % station_name)  #$_{ } for underscript text
     plt.xlabel('Year')
     plt.ylabel(parameter_name + ' ' + parameter_units)
-    plt.xticks(rotation=0, ha='center')
-    plt.annotate('Station: %s' % station_name, xy=(0.99, 0.01), xycoords='axes fraction', ha='right', fontsize=9)
+    plt.xticks(rotation=25, ha='right')
     if show_plot: plt.show()
 x = x_label
 date = date_label
@@ -417,34 +418,31 @@ for emp in emp_dist:
             else:
                 plt.plot(df[x], df[dp], lw=1, marker='o', markersize=0, alpha=0.75, label='%s (Δ: %f)' %(dp, delta))
                 only_fit_txt = ''
-        plt.title('Cumulative distribution function CDF%s' %(only_fit_txt))
+        plt.title('$_{Station: %s}$\nCumulative distribution function CDF%s' %(station_name, only_fit_txt))
         plt.xlabel(parameter_name + ' ' + parameter_units)
         plt.ylabel('CDF')
         plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
         plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
-        plt.annotate('Station: %s' %(station_name), xy=(0.99, 0.98), xycoords='axes fraction', ha='right', fontsize=9)
         if show_plot: plt.show()
 
         # Plot empirical vs. best fit
         plt.scatter(df[x], df['empirical'], color='black', facecolors='darkgray', s=24, label='%s (Δo: %f)' %(emp, dp_best['deltao'][0]))
         plt.plot(df[x], df[dp_best['p_dist'][0]], color=color_line_plot, lw=2, marker='o', markersize=0, label='%s (Δ: %f)' %(dp_best['p_dist'][0], dp_best['delta'][0]))
-        plt.title('Cumulative distribution function CDF (Best fit)')
+        plt.title('$_{Station: %s}$\nCumulative distribution function CDF (Best fit)' % station_name)
         plt.xlabel(parameter_name + ' ' + parameter_units)
         plt.ylabel('CDF')
         plt.legend(loc='best', frameon=False)
         plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
-        plt.annotate('Station: %s' % (station_name), xy=(0.99, 0.01), xycoords='axes fraction', ha='right', fontsize=9)
         if show_plot: plt.show()
 
         # Plot Empirical & Estimated PDF - Best Fit
         plt.hist(df.x, density=True, histtype='stepfilled', alpha=0.4, color='gray', label='Empirical %s' % emp)
         plt.plot(df.x, df[dp_best['p_dist'][0]+'_pdf'], 'r-', lw=2, color=color_line_plot, label='Estimated %s' % dp_best['p_dist'][0])
         plt.legend(loc='best', frameon=False)
-        plt.title('Empirical & Estimated PDF (Best fit)')
+        plt.title('$_{Station: %s}$\nEmpirical & Estimated PDF (Best fit)' % station_name)
         plt.xlabel(parameter_name + ' ' + parameter_units)
         plt.ylabel('PDF')
         plt.grid(color='gray', linestyle='--', linewidth=0.1)
-        plt.annotate('Station: %s' % (station_name), xy=(0.99, 0.01), xycoords='axes fraction', ha='right', fontsize=9)
         if show_plot: plt.show()
 
         # Plot values over return periods Tr
@@ -458,12 +456,11 @@ for emp in emp_dist:
             else:
                 only_fit_txt = ''
                 plt.plot(df_tr.tr, df_tr[dp], lw=1, marker='o', markersize=0, alpha=0.75, label='%s (Δ: %f)' % (dp, delta))
-        plt.title('Extreme values for specific return periods%s' %(only_fit_txt))
+        plt.title('$_{Station: %s}$\nExtreme values for specific return periods%s\n(Δo: %f %s)' %(only_fit_txt, station_name, vDeltaKolmogorov['deltao'][0], emp))
         plt.xlabel('Tr ($years$)')
         plt.ylabel(parameter_name + ' ' + parameter_units)
         plt.legend(loc='best', frameon=True, edgecolor='white', framealpha=0.9, ncol=plot_legend_ncol, facecolor='white')
         plt.grid(color = 'gray', linestyle = '--', linewidth = 0.1)
-        plt.annotate('Station: %s (Δo: %f %s)' %(station_name, vDeltaKolmogorov['deltao'][0], emp), xy=(0.99, 0.01), xycoords='axes fraction', ha='right', fontsize=9)
         if show_plot: plt.show()
 
     # Print extreme values table
