@@ -20,7 +20,7 @@ l_pdist_scipy = ([['gumbel_l', 2, 'MM', 'Gumbel Left Skew', True],
                   ['foldnorm', 3, 'MM', 'Fold Normal', True],  # Check: not for rain data
                   ['halfnorm', 2, 'MM', 'Half Normal', True],
                   ['gennorm', 3, 'MLE', 'Generalized Normal', True],
-                  ['norminvgauss', 4, 'MLE', 'Normal Inverse Gaussian', True],
+                  ['norminvgauss', 4, 'MLE', 'Normal Inverse Gaussian', False],
                   ['powernorm', 3, 'MLE', 'Power normal', False],
                   ['powerlognorm', 4, 'MLE', 'Power log-normal', False],
                   ['skewnorm', 3, 'MLE', 'Skew normal', True],
@@ -332,23 +332,21 @@ df_l_pdist_scipy = df_l_pdist_scipy.reset_index(drop=True)
 
 # Execution
 input_path = 'dataset/pmax24h_in/'  # Your local input file folder
-station_file = input_path + '25020230.csv'
+station_file = input_path + '25020230AHOC.csv'
 station_name = Path(station_file).stem  # File name without extension
 #df_in = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
 df = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
 print('## Station: %s' %station_name)
-
 # Plot x values - Start
-df = df.sort_values(by=date_label)
-plt.plot(df[date_label], df[x_label], color=color_line_plot, lw=2, marker='o', markersize=3, )
-plt.grid(color='gray', linestyle='--', linewidth=0.1)
-plt.title('$_{Station: %s}$\nData serie' % station_name)  #$_{ } for underscript text
-plt.xlabel('Year')
-plt.ylabel(parameter_name + ' ' + parameter_units)
-plt.xticks(rotation=25, ha='right')
-if show_plot: plt.show()
-# Plot x values - End
-
+if create_plot:
+    df = df.sort_values(by=date_label)
+    plt.plot(df[date_label], df[x_label], color=color_line_plot, lw=2, marker='o', markersize=3, )
+    plt.grid(color='gray', linestyle='--', linewidth=0.1)
+    plt.title('$_{Station: %s}$\nData serie' % station_name)  #$_{ } for underscript text
+    plt.xlabel('Year')
+    plt.ylabel(parameter_name + ' ' + parameter_units)
+    plt.xticks(rotation=25, ha='right')
+    if show_plot: plt.show()
 x = x_label
 date = date_label
 df = df.dropna()
