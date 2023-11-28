@@ -386,7 +386,7 @@ for i in range(0, len(df_l_pdist_scipy)):
     pdist_scipy(df, df_l_pdist_scipy['p_dist'][i], df_l_pdist_scipy['n_parameter'][i], df_l_pdist_scipy['fit_method'][i], df_l_pdist_scipy['label'][i])
 if pdist_gumbel_on: pdist_gumbel(df)
 if pdist_loggumbel_on: pdist_loggumbel(df)
-print_log(file_log, '\n\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
+print_log(file_log, '\n\n#### Cumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
 
 # Evaluation for each empirical distribution
 for emp in emp_dist:
@@ -486,7 +486,7 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     print_log(file_log, '\n\n\nEstimate extreme values for specific return periods\n')
-    df_tr.index.name = 'id'
-    print_log(file_log,df_tr.to_markdown())
 
-    #print(df.to_csv(index=False))
+df_tr.index.name = 'id'
+print_log(file_log,df_tr.to_markdown())
+#print(df.to_csv(index=False))
