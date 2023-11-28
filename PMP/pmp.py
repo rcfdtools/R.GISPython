@@ -335,10 +335,10 @@ df_tr['prob_l'] = 1-1/df_tr.tr  # P≤, Probability less than, for high extreme 
 df_tr['prob_g'] = 1/df_tr.tr  # P≥, Probability greater than, for low extreme values
 df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter', 'fit_method', 'label', 'active'])
 df_l_pdist_scipy['reference'] = '[Help](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.'+df_l_pdist_scipy.p_dist+'.html)'
-df_l_pdist_scipy.index.name = 'id'
 df_l_pdist_scipy = df_l_pdist_scipy.query('active == True')
 df_l_pdist_scipy = df_l_pdist_scipy.sort_values(by=['p_dist'], ascending=True)
 df_l_pdist_scipy = df_l_pdist_scipy.reset_index(drop=True)
+df_l_pdist_scipy.index.name = 'id'
 
 
 # Execution
@@ -375,7 +375,7 @@ x = 'x'  # New value column name
 date = 'date'  # New date column name
 print_log(file_log, '\n\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n> n_parameter = # arguments & localization & scale.\n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
-print_log(file_log, '\n\n\n### Probability distributions\n')
+print_log(file_log, '\n\n\n### Probability distributions')
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'fit', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 
 # CDF calculations
@@ -386,6 +386,7 @@ for i in range(0, len(df_l_pdist_scipy)):
     pdist_scipy(df, df_l_pdist_scipy['p_dist'][i], df_l_pdist_scipy['n_parameter'][i], df_l_pdist_scipy['fit_method'][i], df_l_pdist_scipy['label'][i])
 if pdist_gumbel_on: pdist_gumbel(df)
 if pdist_loggumbel_on: pdist_loggumbel(df)
+print_log(file_log, '\n\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
 
 # Evaluation for each empirical distribution
 for emp in emp_dist:
@@ -409,13 +410,13 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     vDeltaKolmogorov.index.name = 'id'
-    print_log(file_log, '\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
+    print_log(file_log, '\n\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df[['id', 'date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
     vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
-    print_log(file_log, '\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
+    print_log(file_log, '\n\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
     dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
     dp_best = dp_best.reset_index(drop=True)
     dp_best.index.name = 'id'
-    print_log(file_log, '\nBest fit for\n\n%s' %dp_best.to_markdown())
+    print_log(file_log, '\n\nBest fit for\n\n%s' %dp_best.to_markdown())
 
     # Plot analysis graphs
     if create_plot:
@@ -484,7 +485,7 @@ for emp in emp_dist:
     # Print extreme values table
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
-    print_log(file_log, '\n\nEstimate extreme values for specific return periods\n')
+    print_log(file_log, '\n\n\nEstimate extreme values for specific return periods\n')
     df_tr.index.name = 'id'
     print_log(file_log,df_tr.to_markdown())
 
