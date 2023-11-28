@@ -392,7 +392,7 @@ print_log(file_log, '\n\n#### Cumulative distribution values - CDF (%d evalated,
 for emp in emp_dist:
     print_log(file_log, '\n\n\n#### Empirical: %s\n' % emp)
 
-              # Return periods & empirical values
+    # Return periods & empirical values
     df_tr['empirical_dist '] = emp
     df_tr['station'] = station_name
     df_tr['n'] = len(df)
@@ -410,13 +410,13 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     vDeltaKolmogorov.index.name = 'id'
-    print_log(file_log, '\n\nEmpirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
+    print_log(file_log, '\n\n##### Empirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
     vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
-    print_log(file_log, '\n\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
+    print_log(file_log, '\n\n#####  Parameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
     dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
     dp_best = dp_best.reset_index(drop=True)
     dp_best.index.name = 'id'
-    print_log(file_log, '\n\nBest fit for\n\n%s' %dp_best.to_markdown())
+    print_log(file_log, '\n\n##### Best fit for\n\n%s' %dp_best.to_markdown())
 
     # Plot analysis graphs
     if create_plot:
