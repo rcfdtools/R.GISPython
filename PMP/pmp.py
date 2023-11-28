@@ -2,6 +2,7 @@
 # Tested with: Python 3.10, SciPy 1.11.3, NumPy 1.26.1, Pandas 2.1.3
 
 # General libraries
+
 import warnings
 import math
 import numpy as np
@@ -295,10 +296,22 @@ def pdist_scipy(dfx, p_dist, n_parameter, fit_method, p_dist_tag):
     vDeltaKolmogorov.loc[len(vDeltaKolmogorov)] = vDeltaKolmogorovData  # Add the results as a new record
 
 
+# Function for print and show results in a log file
+def print_log(file_log, txt_print, on_screen=True, center_div=False):
+    # div50 is use for show 2 plots in the same line
+    if on_screen:
+        print(txt_print)
+    if center_div:
+        file_log.write('\n<div align="center">\n' + '\n')
+    file_log.write(txt_print)
+    if center_div:
+        file_log.write('\n\n</div>\n' + '\n')
+
+
 # General setup
 parameter_name = 'rain'  # rain, flow
 parameter_units = '($mm/d$)'  # ($mm/d$), ($m^3/s$)
-create_plot = True  # Creates and print plots
+create_plot = False  # Creates and print plots
 show_plot = True  # Show plot on screen
 plot_only_fit = True  # Plot only fit distributions with Δo > Δ
 color_line_plot = 'green'
@@ -330,11 +343,14 @@ df_l_pdist_scipy = df_l_pdist_scipy.reset_index(drop=True)
 
 # Execution
 input_path = 'dataset/pmax24h_in/'  # Your local input file folder
+ouput_path = 'dataset/pmax24h_out/'  # Your local input file folder
 station_file = input_path + '25020230AHOC.csv'
 station_name = Path(station_file).stem  # File name without extension
 #df_in = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
 df = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
-print('## Station: %s' %station_name)
+file_log_name = ouput_path + station_name + '.md'  # Markdown file log
+file_log = open(file_log_name, 'w+', encoding='utf-8')   # w+ create the file if it doesn't exist
+print_log(file_log, '## Station: %s' %station_name)
 # Plot x values - Start
 if create_plot:
     df = df.sort_values(by=date_label)
@@ -357,10 +373,9 @@ df['m'] = df.index+1
 df = df.rename(columns={x: 'x', date: 'date'})
 x = 'x'  # New value column name
 date = 'date'  # New date column name
-#print('\n### Basic stats\n\n* n: %d\n* mean: %f\n* std(%d): %f\n* min: %f\n* max: %f' % (df[x].count(), df[x].mean(), ddof, df[x].std(ddof=ddof), df[x].min(), df[x].max()))
-print('\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
-print('\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n> n_parameter = # arguments & localization & scale.\n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
-print('\n\n### Probability distributions\n')
+print_log(file_log, '\n\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
+print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n> n_parameter = # arguments & localization & scale.\n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
+print_log(file_log, '\n\n\n### Probability distributions\n')
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'fit', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 
 # CDF calculations
@@ -374,9 +389,9 @@ if pdist_loggumbel_on: pdist_loggumbel(df)
 
 # Evaluation for each empirical distribution
 for emp in emp_dist:
-    print('\n\n#### Empirical: %s\n' % emp)
+    print_log(file_log, '\n\n\n#### Empirical: %s\n' % emp)
 
-    # Return periods & empirical values
+              # Return periods & empirical values
     df_tr['empirical_dist '] = emp
     df_tr['station'] = station_name
     df_tr['n'] = len(df)
@@ -394,13 +409,13 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     vDeltaKolmogorov.index.name = 'id'
-    print('\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
+    print_log(file_log, '\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
     vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
-    print('\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
+    print_log(file_log, '\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
     dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
     dp_best = dp_best.reset_index(drop=True)
     dp_best.index.name = 'id'
-    print('\nBest fit for\n\n%s' %dp_best.to_markdown())
+    print_log(file_log, '\nBest fit for\n\n%s' %dp_best.to_markdown())
 
     # Plot analysis graphs
     if create_plot:
@@ -469,8 +484,8 @@ for emp in emp_dist:
     # Print extreme values table
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
-    print('\n\nEstimate extreme values for specific return periods\n')
+    print_log(file_log, '\n\nEstimate extreme values for specific return periods\n')
     df_tr.index.name = 'id'
-    print(df_tr.to_markdown())
+    print_log(file_log,df_tr.to_markdown())
 
     #print(df.to_csv(index=False))
