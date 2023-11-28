@@ -486,7 +486,7 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
 
-print_log(file_log, '\n\n\n## Estimate extreme values for specific return periods\n')
+print_log(file_log, '\n\n\n## Estimate extreme values for specific return periods - Tr\n')
 df_tr.index.name = 'id'
 print_log(file_log,df_tr.to_markdown())
 #print(df.to_csv(index=False))
