@@ -374,7 +374,7 @@ df = df.rename(columns={x: 'x', date: 'date'})
 x = 'x'  # New value column name
 date = 'date'  # New date column name
 print_log(file_log, '\n\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
-print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n> n_parameter = # arguments & localization & scale.\n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
+print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n>\n> n_parameter = # arguments & localization & scale.\n>\n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
 print_log(file_log, '\n\n\n### Probability distributions')
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'fit', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 
@@ -410,7 +410,7 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     vDeltaKolmogorov.index.name = 'id'
-    print_log(file_log, '\n\nCumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df[['id', 'date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
+    print_log(file_log, '\n\nEmpirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
     vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
     print_log(file_log, '\n\nParameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
     dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
