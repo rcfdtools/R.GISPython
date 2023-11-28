@@ -374,7 +374,7 @@ df = df.rename(columns={x: 'x', date: 'date'})
 x = 'x'  # New value column name
 date = 'date'  # New date column name
 print_log(file_log, '\n\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
-print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.\n>\n> n_parameter = # arguments & localization & scale.\n>\n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
+print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.  \n> n_parameter = # arguments & localization & scale.  \n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
 print_log(file_log, '\n\n\n### Probability distributions')
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'fit', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 
@@ -485,8 +485,8 @@ for emp in emp_dist:
     # Print extreme values table
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
-    print_log(file_log, '\n\n\nEstimate extreme values for specific return periods\n')
 
+print_log(file_log, '\n\n\n## Estimate extreme values for specific return periods\n')
 df_tr.index.name = 'id'
 print_log(file_log,df_tr.to_markdown())
 #print(df.to_csv(index=False))
