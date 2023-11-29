@@ -410,7 +410,7 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     vDeltaKolmogorov.index.name = 'id'
-    print_log(file_log, '\n\n#### 1. Empirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
+    print_log(file_log, '\n\n#### 1. Empirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()), center_div=True)  # <<<<<<<<<<
     vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
     print_log(file_log, '\n\n####  2. Parameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
     dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
