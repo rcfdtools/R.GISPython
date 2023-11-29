@@ -334,7 +334,7 @@ n_tr = len(df_tr)
 df_tr['prob_l'] = 1-1/df_tr.tr  # P≤, Probability less than, for high extreme values
 df_tr['prob_g'] = 1/df_tr.tr  # P≥, Probability greater than, for low extreme values
 df_l_pdist_scipy = pd.DataFrame(l_pdist_scipy, columns=['p_dist', 'n_parameter', 'fit_method', 'label', 'active'])
-df_l_pdist_scipy['reference'] = '[Help](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.'+df_l_pdist_scipy.p_dist+'.html)'
+df_l_pdist_scipy['reference'] = '[:anchor:](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.'+df_l_pdist_scipy.p_dist+'.html)'
 df_l_pdist_scipy = df_l_pdist_scipy.query('active == True')
 df_l_pdist_scipy = df_l_pdist_scipy.sort_values(by=['p_dist'], ascending=True)
 df_l_pdist_scipy = df_l_pdist_scipy.reset_index(drop=True)
@@ -373,9 +373,9 @@ df['m'] = df.index+1
 df = df.rename(columns={x: 'x', date: 'date'})
 x = 'x'  # New value column name
 date = 'date'  # New date column name
-print_log(file_log, '\n\n## Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
+print_log(file_log, '\n\n## A. Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.  \n> n_parameter = # arguments & localization & scale.  \n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
-print_log(file_log, '\n\n\n## Probability distributions')
+print_log(file_log, '\n\n\n## B. Probability distributions')
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'fit', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 
 # CDF calculations
@@ -410,13 +410,13 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     vDeltaKolmogorov.index.name = 'id'
-    print_log(file_log, '\n\n#### a. Empirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
+    print_log(file_log, '\n\n#### 1. Empirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
     vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
-    print_log(file_log, '\n\n####  b. Parameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
+    print_log(file_log, '\n\n####  2. Parameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
     dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
     dp_best = dp_best.reset_index(drop=True)
     dp_best.index.name = 'id'
-    print_log(file_log, '\n\n#### c. Best fit for\n\n%s' %dp_best.to_markdown())
+    print_log(file_log, '\n\n#### 3. Best fit for\n\n%s' %dp_best.to_markdown())
 
     # Plot analysis graphs
     if create_plot:
@@ -486,7 +486,7 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
 
-print_log(file_log, '\n\n\n## Estimate extreme values for specific return periods - Tr\n')
+print_log(file_log, '\n\n\n## C. Estimate extreme values for specific return periods - Tr\n')
 df_tr.index.name = 'id'
 print_log(file_log,df_tr.to_markdown())
 #print(df.to_csv(index=False))
