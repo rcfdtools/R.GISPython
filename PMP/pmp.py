@@ -350,7 +350,7 @@ station_name = Path(station_file).stem  # File name without extension
 df = pd.read_csv(station_file, delimiter=',', parse_dates=True)  # index_col=0
 file_log_name = ouput_path + station_name + '.md'  # Markdown file log
 file_log = open(file_log_name, 'w+', encoding='utf-8')   # w+ create the file if it doesn't exist
-print_log(file_log, '## Station: %s' %station_name)
+print_log(file_log, '# Station: %s' %station_name)
 # Plot x values - Start
 if create_plot:
     df = df.sort_values(by=date_label)
@@ -373,9 +373,9 @@ df['m'] = df.index+1
 df = df.rename(columns={x: 'x', date: 'date'})
 x = 'x'  # New value column name
 date = 'date'  # New date column name
-print_log(file_log, '\n\n### Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
+print_log(file_log, '\n\n## Active distributions from SciPy (%d of %d available)\n\n%s' % (len(df_l_pdist_scipy.query('active == True')), len(l_pdist_scipy), df_l_pdist_scipy.query('active == True').to_markdown()))
 print_log(file_log, '\n\n> Gumbel and Lob-Gumbel probability distributions are not shown in the above table.  \n> n_parameter = # arguments & localization & scale.  \n> Fit methods: (MLE) maximum likelihood, (MM) L-moments.')
-print_log(file_log, '\n\n\n### Probability distributions')
+print_log(file_log, '\n\n\n## Probability distributions')
 vDeltaKolmogorov = pd.DataFrame(columns=['station', 'empirical_dist', 'p_dist', 'delta', 'deltao', 'eval', 'fit', 'n', 'loc', 'scale', 'shape', 'shape1', 'shape2', 'shape3'])
 
 # CDF calculations
@@ -386,11 +386,11 @@ for i in range(0, len(df_l_pdist_scipy)):
     pdist_scipy(df, df_l_pdist_scipy['p_dist'][i], df_l_pdist_scipy['n_parameter'][i], df_l_pdist_scipy['fit_method'][i], df_l_pdist_scipy['label'][i])
 if pdist_gumbel_on: pdist_gumbel(df)
 if pdist_loggumbel_on: pdist_loggumbel(df)
-print_log(file_log, '\n\n#### Cumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
+print_log(file_log, '\n\n### Cumulative distribution values - CDF (%d evalated, ordered by x ascending) \n\n%s' %(dp_evalated, df.to_markdown()))
 
 # Evaluation for each empirical distribution
 for emp in emp_dist:
-    print_log(file_log, '\n\n\n#### Empirical: %s\n' % emp)
+    print_log(file_log, '\n\n\n### Empirical: %s\n' % emp)
 
     # Return periods & empirical values
     df_tr['empirical_dist '] = emp
@@ -410,13 +410,13 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['delta'], ascending=True)
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
     vDeltaKolmogorov.index.name = 'id'
-    print_log(file_log, '\n\n##### Empirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
+    print_log(file_log, '\n\n#### a. Empirical values\n\n%s' %(df[['date', 'x', 'station', 'm', 'empirical_dist', 'empirical', 'empirical_tr']].to_markdown()))  # <<<<<<<<<<
     vDeltaKolmogorov['best_fit_sort'] = vDeltaKolmogorov.index+1
-    print_log(file_log, '\n\n#####  Parameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
+    print_log(file_log, '\n\n####  b. Parameters & Kolmogorov-Smirnov fit test (sorted by Δ)\n\n%s' % vDeltaKolmogorov.to_markdown())
     dp_best = vDeltaKolmogorov[vDeltaKolmogorov.best_fit == 1]
     dp_best = dp_best.reset_index(drop=True)
     dp_best.index.name = 'id'
-    print_log(file_log, '\n\n##### Best fit for\n\n%s' %dp_best.to_markdown())
+    print_log(file_log, '\n\n#### c. Best fit for\n\n%s' %dp_best.to_markdown())
 
     # Plot analysis graphs
     if create_plot:
@@ -486,7 +486,7 @@ for emp in emp_dist:
     vDeltaKolmogorov = vDeltaKolmogorov.sort_values(by=['p_dist'], ascending=True)  # Required for asign the parameters in the right order
     vDeltaKolmogorov = vDeltaKolmogorov.reset_index(drop=True)
 
-print_log(file_log, '\n\n\n### Estimate extreme values for specific return periods - Tr\n')
+print_log(file_log, '\n\n\n## Estimate extreme values for specific return periods - Tr\n')
 df_tr.index.name = 'id'
 print_log(file_log,df_tr.to_markdown())
 #print(df.to_csv(index=False))
