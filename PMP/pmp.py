@@ -136,14 +136,14 @@ def fTestKolmogorov(dfx, p_dist, idk):  # Kolmogorov-Smirnov fit test
         deltao = 1.36/math.sqrt(n)
     delta = dfp['dfp'][0]
     if (deltao > delta):
-        fit, fit_txt, operator = 1, 'fit', '>'
+        fit, operator = 1, '>'
     else:
-        fit, fit_txt, operator = 0, 'doesn’t fit', '<='
+        fit, operator = 0, '<='
     vDeltaKolmogorov['empirical_dist'][idk] = emp
     vDeltaKolmogorov['p_dist'][idk] = p_dist
     vDeltaKolmogorov['delta'][idk] = delta
     vDeltaKolmogorov['deltao'][idk] = deltao
-    vDeltaKolmogorov['eval'][idk] = 'Δo %s Δ, %s' % (operator, fit_txt)
+    vDeltaKolmogorov['eval'][idk] = 'Δo %s Δ' % operator
     vDeltaKolmogorov['fit'][idk] = fit
 
 
