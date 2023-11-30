@@ -490,4 +490,6 @@ for emp in emp_dist:
 print_log(file_log, '\n\n\n## C. Estimate extreme values for specific return periods - Tr\n')
 df_tr.index.name = 'id'
 print_log(file_log,df_tr.to_markdown())
+print_log(file_log,'\n> risk_rate: assuming the return period as the project useful life.')
+
 #print(df.to_csv(index=False))
