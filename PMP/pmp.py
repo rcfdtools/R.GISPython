@@ -363,8 +363,8 @@ if create_plot:
     plt.xticks(rotation=0, ha='center')
     plt.annotate('Station: %s' % station_name, xy=(0.99, 0.01), xycoords='axes fraction', ha='right', fontsize=9)
     if show_plot: plt.show()
-    fig_file = ouput_path + 'graph/' + station_name + '_data_serie.png'
-    plt.savefig(fig_file, dpi=dpi)
+    fig_file = 'graph/' + station_name + '_data_serie.png'
+    plt.savefig(ouput_path + fig_file, dpi=dpi)
     print_log(file_log, '\n<img alt="R.GISPython" src="%s" width="500"></img>' % fig_file)
 x = x_label
 date = date_label
