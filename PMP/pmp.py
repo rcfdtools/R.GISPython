@@ -365,7 +365,7 @@ if create_plot:
     if show_plot: plt.show()
     fig_file = 'graph/' + station_name + '_data_serie.png'
     plt.savefig(ouput_path + fig_file, dpi=dpi)
-    print_log(file_log, '\n<img alt="R.GISPython" src="%s" width="500"></img>' % fig_file, center_div=True)
+    print_log(file_log, '\n<img alt="R.GISPython" src="%s" width="700"></img>' % fig_file, center_div=True)
 x = x_label
 date = date_label
 df = df.dropna()
