@@ -14,7 +14,15 @@ client = Socrata("www.datos.gov.co", None)
 
 # First 2000 results, returned as JSON from API / converted to Python list of
 # dictionaries by sodapy.
-results = client.get("sbwg-7ju4", limit=2000)
+
+# Variables
+# Rain: s54a-sgyg
+
+varname = "s54a-sgyg"
+results = client.get(varname, limit=231619587)
 
 # Convert to pandas DataFrame
 results_df = pd.DataFrame.from_records(results)
+
+# Save into an external .csv file
+results_df.to_csv('c:/temp/'+varname+'.csv', index=False)
