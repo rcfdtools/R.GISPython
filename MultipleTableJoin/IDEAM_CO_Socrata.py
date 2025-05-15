@@ -19,9 +19,10 @@ client = Socrata(domain='www.datos.gov.co', app_token='YbwUzaxNjS1mPkewk5AZo1qCS
 # dictionaries by sodapy.
 
 # Variables
-# Rain: s54a-sgyg (231619587 records in 20250506)
+# IDEAM Rain: s54a-sgyg (231619587 records in 20250506)
+# MADS Rain: ksew-j3zj
 
-varname = 's54a-sgyg'
+varname = 'ksew-j3zj'
 station = '24010390'
 where_txt = str('"codigoestacion='+station+'"')
 print(where_txt)
