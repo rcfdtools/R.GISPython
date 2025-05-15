@@ -21,24 +21,25 @@ client = Socrata(domain='www.datos.gov.co', app_token='YbwUzaxNjS1mPkewk5AZo1qCS
 # Variables
 # Rain: s54a-sgyg (231619587 records in 20250506)
 
-varname = "s54a-sgyg"
-station_list = ['2120000170']
-where_txt = "codigoestacion="+station_list[0]
+varname = 's54a-sgyg'
+station = '24010390'
+where_txt = str('"codigoestacion='+station+'"')
+print(where_txt)
 
 print(client.get_metadata(varname))
 
-print(f'Station: {station_list[0]}')
+print(f'Station: {station}')
 #results = client.get(varname, where="codigoestacion='2120000170'", limit=1000)
-results = client.get_all(varname, where="codigoestacion='2120000170'", limit=499999)
-#results = client.get(varname, where="codigoestacion='2120000170'", exclude_system_fields=True, limit=499999)
-#results = client.get(varname, where="codigoestacion='2120000170'", exclude_system_fields=True)
+#results = client.get_all(varname, where="codigoestacion='2120000170'", exclude_system_fields=True, limit=1000)
+results = client.get(varname, where="codigoestacion='24010390'", exclude_system_fields=True, limit=1000)
+#results = client.get(varname, where="codigoestacion='24010390'", exclude_system_fields=True)
 
 
 # Convert to pandas DataFrame
 results_df = pd.DataFrame.from_records(results)
 
 # Save into an external .csv file
-results_df.to_csv('c:/temp/'+station_list[0]+'.csv', index=False)
+results_df.to_csv('c:/temp/'+station+'.csv', index=False)
 
 client.close()
 
@@ -46,3 +47,25 @@ client.close()
 # https://github.com/afeld/sodapy
 # https://dev.socrata.com/foundry/www.datos.gov.co/v8aw-jabd
 # Get your token at: https://www.datos.gov.co/login
+
+# Ingreso a la plataforma de consulta de los Datos Abiertos del IDEAM
+# http://www.ideam.gov.co/web/guest
+# https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Cat-logo-Nacional-de-Estaciones-del-IDEAM/hp9r-jxuu/about_data
+# https://www.datos.gov.co/browse?category=Ambiente+y+Desarrollo+Sostenible&q=Instituto+de+Hidrolog%C3%ADa%2C+Meteorolog%C3%ADa+y+Estudios+Ambientales&sortBy=relevance&utf8=%E2%9C%93&pageSize=1000
+# https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Precipitaciones/ksew-j3zj
+# https://www.geeksforgeeks.org/python-extract-substrings-between-brackets/
+
+# (0.81378611, -77.66197778) to Latitude & longitude fields
+# Function call for latitude: extractlatlong(!Ubicación!)[0]
+# Function call for longitude: extractlatlong(!Ubicación!)[1]
+'''
+def extractlatlong(location):
+    latlong=[]
+    start = location.index("(") + 1
+    end = location.index(",")
+    latlong.append(location[start:end])
+    start = location.index(",") + 1
+    end = location.index(")")
+    latlong.append(location[start:end])
+    return latlong
+'''
