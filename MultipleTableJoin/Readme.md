@@ -363,7 +363,7 @@ print('\nClean file: %s' % output_path + clean_file,
 
 ### EAAB-CO [:hook:](EAAB_CO)[^4]
 
-Disclaimer: current script version is only use join monthly values.
+Disclaimer: current script version is only used to join monthly values.
 
 ```
 # -*- coding: UTF-8 -*-
